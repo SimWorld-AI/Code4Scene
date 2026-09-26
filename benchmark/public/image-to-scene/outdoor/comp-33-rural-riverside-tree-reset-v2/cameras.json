@@ -1,0 +1,63 @@
+{
+  "schema_version": "code4scene.cameras.v1",
+  "case_id": "comp-33-rural-riverside-tree-reset-v2",
+  "capture_map": "ground_truth",
+  "capture": {
+    "method": "scene_capture_2d",
+    "width": 1920,
+    "height": 1080,
+    "capture_count": 2,
+    "capture_source": "SCS_FINAL_COLOR_LDR",
+    "console": [
+      "viewmode lit",
+      "r.AntiAliasingMethod 2",
+      "sg.AntiAliasingQuality 4",
+      "r.ScreenPercentage 100",
+      "r.Streaming.PoolSize 6000",
+      "r.Streaming.FullyLoadUsedTextures 1"
+    ],
+    "fill_light": {
+      "at": "camera",
+      "attenuation_radius_cm": 3200.0,
+      "cast_shadows": false,
+      "enabled": true
+    },
+    "top_light": {
+      "at": "target",
+      "offset_z_cm": 320.0,
+      "attenuation_radius_cm": 2600.0,
+      "cast_shadows": false,
+      "enabled": true
+    },
+    "rotation": "look_at(location_cm, target_cm)",
+    "fov": "fov_deg is the horizontal field of view of the capture component"
+  },
+  "views": [
+    {
+      "name": "reference",
+      "location_cm": [
+        4544.0806968841625,
+        -1410.9204090958876,
+        293.57435607910156
+      ],
+      "target_cm": [
+        4142.602333068848,
+        -1856.8073043823242,
+        173.57435607910156
+      ],
+      "fov_deg": 38.0,
+      "lighting": {
+        "fill_intensity": 1300.0,
+        "top_intensity": 800.0,
+        "exposure_bias": 0.3
+      },
+      "publish": {
+        "file": "references/reference.jpg",
+        "format": "jpeg",
+        "width": 1600,
+        "height": 900,
+        "encoder": "ffmpeg -vf scale=1600:900 -q:v 3 (Pillow fallback: quality 90)"
+      }
+    }
+  ]
+}

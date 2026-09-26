@@ -1,0 +1,44 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "indoor-atomic-v1-030",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "medieval-forge",
+  "scene_spec": "../../../scenes/medieval-forge/scene.json",
+  "source_map": "/Game/MedievalForgePack/Maps/Forge_SampleMap",
+  "ground_truth_map": "/Game/Code4SceneGT/medieval-forge/GT",
+  "input_map": "/Game/Code4SceneInputs/indoor-atomic-v1-030/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_acc8caeba4e75accad7b528629f116af",
+      "rotation_deg": [
+        0.0,
+        -35.00003051757813,
+        0.0
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "rotation",
+        "label": "SM_Chair3",
+        "delta_rpy_deg": [
+          0.0,
+          0.0,
+          35.0
+        ]
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "SM_Chair3"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/medieval-forge/gt.fingerprint.json"
+}

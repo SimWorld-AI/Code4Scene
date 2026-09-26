@@ -1,0 +1,38 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/middle-east-river/GT",
+  "source_level": "/Game/Code4SceneGT/middle-east-river/GT",
+  "gt_id": "comp-16-middle-east-fountain-reset-v2",
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "translation",
+        "label": "SM_WaterFountain_LOD0_01",
+        "delta_cm": [
+          380.0,
+          260.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "SM_WaterFountain_LOD0_01",
+        "yaw_deg": 58.0
+      },
+      {
+        "type": "scaling",
+        "label": "SM_WaterFountain_LOD0_01",
+        "factor": 1.4
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "SM_WaterFountain_LOD0_01"
+    ]
+  }
+}

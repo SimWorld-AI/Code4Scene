@@ -1,0 +1,40 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "a20-s03-upper-chair-scaling",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "downtown-office",
+  "scene_spec": "../../../scenes/downtown-office/scene.json",
+  "source_map": "/Game/Office/Maps/Demo",
+  "ground_truth_map": "/Game/Code4SceneGT/downtown-office/GT",
+  "input_map": "/Game/Code4SceneInputs/a20-s03-upper-chair-scaling/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_f807cb6a14255a93ab003cb55f17daec",
+      "scale": [
+        0.78,
+        0.78,
+        0.78
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "scaling",
+        "label": "Sm_Chair34",
+        "factor": 0.78
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "Sm_Chair34"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/downtown-office/gt.fingerprint.json"
+}

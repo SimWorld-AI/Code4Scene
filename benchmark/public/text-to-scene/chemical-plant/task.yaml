@@ -1,0 +1,225 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: chemical-plant
+kind: scene_generation
+inputs:
+  prompt: "Build me a sprawling, weathered chemical-processing complex in a flat, pale, semi-arid landscape,\
+    \ brightly sunlit yet overgrown and slightly abandoned in mood. Arrange a dense central cluster of\
+    \ tall refinery towers, cylindrical reactors, furnaces, ducts, scaffolding, and red-and-white banded\
+    \ smokestacks, divided by a loose grid of broad concrete service roads and narrow rail tracks. Surround\
+    \ this core with roughly a dozen low corrugated-metal industrial halls, sheds, and utility buildings,\
+    \ all faded gray and facing internal yards or streets. Place several huge round storage tanks along\
+    \ one outer side, groups of white spherical gas tanks at opposite corners, and long pipe racks, elevated\
+    \ conveyors, catwalks, cooling units, transformers, pallets, stacked pipes, sacks, and small equipment\
+    \ throughout. Keep the machinery tightly packed and vertically layered near the center, with more\
+    \ open loading yards and utility plots toward the edges. Use cracked concrete, dusty gravel, puddles,\
+    \ weeds, shrubs, and mature trees between structures. Enclose the site loosely with walls and fencing,\
+    \ beyond which scrubland, winding water channels, curving roads, and a bridge define the scene’s irregular\
+    \ perimeter.\n\n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search\
+    \ is not available\nin this run, so this list is your entire library. Format:\n\n  id | name | category\
+    \ | width x depth x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path\
+    \ is what reaches UE.\nYou decide which to use, how many of each, and where they go — reuse entries\n\
+    freely.\n\n- air_duct_01 | Air Duct 01 | architecture | 1.04x1.92x1.29 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_AirDuct_01.SM_AirDuct_01\n\
+    - air_duct_02 | Air Duct 02 | architecture | 1.44x0.64x1.44 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_AirDuct_02.SM_AirDuct_02\n\
+    - air_duct_03 | Air Duct 03 | architecture | 0.97x0.96x0.96 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_AirDuct_03.SM_AirDuct_03\n\
+    - air_duct_04 | Air Duct 04 | architecture | 0.96x0.64x1.92 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_AirDuct_04.SM_AirDuct_04\n\
+    - chimney_01 | Chimney 01 | architecture | 4.6x4.6x22.58 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Chimney_01.SM_Chimney_01\n\
+    - chimney_02 | Chimney 02 | architecture | 2.5x2.5x9.2 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Chimney_02.SM_Chimney_02\n\
+    - chimney_03 | Chimney 03 | architecture | 5.7x5.72x23.04 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Chimney_03.SM_Chimney_03\n\
+    - chimney_03_b | Chimney 03 B | architecture | 4.37x4.29x17.28 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Chimney_03_B.SM_Chimney_03_B\n\
+    - chimney_base_01_b | Chimney Base 01 B | architecture | 16.89x5.62x17.28 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_ChimneyBase_01_B.SM_ChimneyBase_01_B\n\
+    - chimney_spiral | Chimney Spiral | architecture | 4.65x4.65x17.3 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_ChimneySpiral.SM_ChimneySpiral\n\
+    - column_01 | Column 01 | architecture | 0.26x0.32x5.76 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Column_01.SM_Column_01\n\
+    - column_02 | Column 02 | architecture | 0.26x0.32x3.84 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Column_02.SM_Column_02\n\
+    - column_03 | Column 03 | architecture | 0.53x0.53x5.76 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Column_03.SM_Column_03\n\
+    - column_05 | Column 05 | architecture | 0.53x0.53x7.74 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Column_05.SM_Column_05\n\
+    - column_06 | Column 06 | architecture | 7.68x0.34x0.32 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Column_06.SM_Column_06\n\
+    - column_07 | Column 07 | architecture | 6.16x0.34x0.32 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Column_07.SM_Column_07\n\
+    - columns_01 | Columns 01 | architecture | 2.82x0.38x5.64 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Columns_01.SM_Columns_01\n\
+    - columns_02 | Columns 02 | architecture | 3.14x0.77x5.64 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Columns_02.SM_Columns_02\n\
+    - conncetion_bridge_01 | Conncetion Bridge 01 | architecture | 12.17x3.83x5.76 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_ConncetionBridge_01.SM_ConncetionBridge_01\n\
+    - conncetion_bridge_02 | Conncetion Bridge 02 | architecture | 3.83x12.18x5.76 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_ConncetionBridge_02.SM_ConncetionBridge_02\n\
+    - distillation_tank_01 | Distillation Tank 01 | architecture | 4.36x4.27x7.68 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_DistillationTank_01.SM_DistillationTank_01\n\
+    - distillation_tank_02 | Distillation Tank 02 | architecture | 4.62x4.72x5.76 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_DistillationTank_02.SM_DistillationTank_02\n\
+    - distillation_tank_base_01 | Distillation Tank Base 01 | architecture | 4.34x4.41x7.68 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_DistillationTankBase_01.SM_DistillationTankBase_01\n\
+    - distillation_tank_base_02 | Distillation Tank Base 02 | architecture | 4.89x4.88x5.76 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_DistillationTankBase_02.SM_DistillationTankBase_02\n\
+    - distillation_tank_ext_01 | Distillation Tank Ext 01 | architecture | 7.16x7.15x7.68 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_DistillationTankExt_01.SM_DistillationTankExt_01\n\
+    - distillation_tank_top_01 | Distillation Tank Top 01 | architecture | 5.53x3.83x4.16 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_DistillationTankTop_01.SM_DistillationTankTop_01\n\
+    - distillation_tank_top_02 | Distillation Tank Top 02 | architecture | 4.27x5.93x4.67 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_DistillationTankTop_02.SM_DistillationTankTop_02\n\
+    - door_large | Door Large | architecture | 7.05x0.26x6.86 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_DoorLarge.SM_DoorLarge\n\
+    - door_large_r | Door Large R | architecture | 0.1x3.42x6.76 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_DoorLarge_R.SM_DoorLarge_R\n\
+    - door_medium | Door Medium | architecture | 0.29x3.8x3.46 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_DoorMedium.SM_DoorMedium\n\
+    - door_medium_door | Door Medium Door | architecture | 3.72x0.1x3.41 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_DoorMedium_Door.SM_DoorMedium_Door\n\
+    - door_medium_frame | Door Medium Frame | architecture | 3.8x0.29x3.46 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_DoorMedium_Frame.SM_DoorMedium_Frame\n\
+    - door_small_door | Door Small Door | architecture | 0.89x0.89x2.37 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_DoorSmall_Door.SM_DoorSmall_Door\n\
+    - door_small_frame | Door Small Frame | architecture | 0.16x1.7x2.82 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_DoorSmall_Frame.SM_DoorSmall_Frame\n\
+    - gutter_pipe_1 | Gutter Pipe 1 | architecture | 0.15x0.13x1.92 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_GutterPipe_1.SM_GutterPipe_1\n\
+    - gutter_pipe_2 | Gutter Pipe 2 | architecture | 0.15x0.13x3.84 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_GutterPipe_2.SM_GutterPipe_2\n\
+    - large_duct_01 | Large Duct 01 | architecture | 3.34x1.4x4.02 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_LargeDuct_01.SM_LargeDuct_01\n\
+    - large_duct_02 | Large Duct 02 | architecture | 2.43x1.69x4.86 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_LargeDuct_02.SM_LargeDuct_02\n\
+    - large_duct_03 | Large Duct 03 | architecture | 3.65x1.69x3.65 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_LargeDuct_03.SM_LargeDuct_03\n\
+    - pavement_corner | Pavement Corner | architecture | 2.56x2.56x0.25 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Pavement_Corner.SM_Pavement_Corner\n\
+    - pavement_large | Pavement Large | architecture | 5.62x5.12x0.5 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Pavement_Large.SM_Pavement_Large\n\
+    - pavement_small | Pavement Small | architecture | 2.56x5.12x0.26 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Pavement_Small.SM_Pavement_Small\n\
+    - pipe_01 | Pipe 01 | architecture | 7.77x0.83x0.82 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Pipe_01.SM_Pipe_01\n\
+    - pipe_01_curved | Pipe 01 Curved | architecture | 2.71x3.28x7.68 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Pipe_01_Curved.SM_Pipe_01_Curved\n\
+    - pipe_01_l | Pipe 01 L | architecture | 2.33x0.82x2.33 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Pipe_01_L.SM_Pipe_01_L\n\
+    - pipe_01_valve | Pipe 01 Valve | architecture | 1.29x0.83x3.84 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Pipe_01_Valve.SM_Pipe_01_Valve\n\
+    - pipe_02 | Pipe 02 | architecture | 5.43x0.81x0.81 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Pipe_02.SM_Pipe_02\n\
+    - pipe_02_l | Pipe 02 L | architecture | 1.15x3.44x3.46 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Pipe_02_L.SM_Pipe_02_L\n\
+    - pipe_02_valve | Pipe 02 Valve | architecture | 1.44x1.13x3.84 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Pipe_02_Valve.SM_Pipe_02_Valve\n\
+    - pipe_03 | Pipe 03 | architecture | 2.72x2.72x7.68 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Pipe_03.SM_Pipe_03\n\
+    - pipe_03_l | Pipe 03 L | architecture | 7.74x2.75x7.76 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Pipe_03_L.SM_Pipe_03_L\n\
+    - pipe_adapter | Pipe Adapter | architecture | 0.85x0.85x0.48 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Pipe_Adapter.SM_Pipe_Adapter\n\
+    - platform_large | Platform Large | architecture | 2.56x5.12x0.24 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Platform_Large.SM_Platform_Large\n\
+    - platform_large_a | Platform Large A | architecture | 5.12x5.12x0.24 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Platform_Large_A.SM_Platform_Large_A\n\
+    - platform_large_b | Platform Large B | architecture | 5.12x5.12x0.24 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Platform_Large_B.SM_Platform_Large_B\n\
+    - platform_small_01 | Platform Small 01 | architecture | 2.56x2.56x0.24 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Platform_Small_01.SM_Platform_Small_01\n\
+    - porch | Porch | architecture | 1.16x3.84x0.5 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Porch.SM_Porch\n\
+    - railing_01 | Railing 01 | architecture | 5.06x0.1x1.04 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Railing_01.SM_Railing_01\n\
+    - railing_02 | Railing 02 | architecture | 2.4x0.1x1.04 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Railing_02.SM_Railing_02\n\
+    - railing_03 | Railing 03 | architecture | 2.56x0.12x1.04 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Railing_03.SM_Railing_03\n\
+    - roof_01 | Roof 01 | architecture | 5.12x5.38x2.24 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Roof_01.SM_Roof_01\n\
+    - roof_02 | Roof 02 | architecture | 5.13x5.61x2.13 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Roof_02.SM_Roof_02\n\
+    - roof_03 | Roof 03 | architecture | 6.13x5.42x1.44 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Roof_03.SM_Roof_03\n\
+    - roof_ending_01 | Roof Ending 01 | architecture | 5.41x5.38x2.24 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_RoofEnding_01.SM_RoofEnding_01\n\
+    - roof_ending_02 | Roof Ending 02 | architecture | 5.41x5.38x2.24 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_RoofEnding_02.SM_RoofEnding_02\n\
+    - roof_ending_03 | Roof Ending 03 | architecture | 5.41x5.63x1.26 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_RoofEnding_03.SM_RoofEnding_03\n\
+    - roof_ending_04 | Roof Ending 04 | architecture | 5.13x5.41x2.19 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_RoofEnding_04.SM_RoofEnding_04\n\
+    - roof_flat_01 | Roof Flat 01 | architecture | 5.26x5.26x0.78 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_RoofFlat_01.SM_RoofFlat_01\n\
+    - roof_flat_02 | Roof Flat 02 | architecture | 5.26x5.12x0.78 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_RoofFlat_02.SM_RoofFlat_02\n\
+    - roof_flat_03 | Roof Flat 03 | architecture | 5.12x5.12x0.6 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_RoofFlat_03.SM_RoofFlat_03\n\
+    - round_platform_01 | Round Platform 01 | architecture | 6.75x6.75x2.14 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_RoundPlatform_01.SM_RoundPlatform_01\n\
+    - round_platform_02 | Round Platform 02 | architecture | 3.66x3.66x1.96 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_RoundPlatform_02.SM_RoundPlatform_02\n\
+    - staircase_01 | Staircase 01 | architecture | 4.59x4.53x5.31 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Staircase_01.SM_Staircase_01\n\
+    - staircase_02 | Staircase 02 | architecture | 1.99x4.57x5.32 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Staircase_02.SM_Staircase_02\n\
+    - staircase_half_01 | Staircase Half 01 | architecture | 5.11x3.12x3.34 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_StaircaseHalf_01.SM_StaircaseHalf_01\n\
+    - staircase_half_02 | Staircase Half 02 | architecture | 2.31x1.99x3.09 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_StaircaseHalf_02.SM_StaircaseHalf_02\n\
+    - steel_ladder_01 | Steel Ladder 01 | architecture | 0.54x0.87x3.84 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_SteelLadder_01.SM_SteelLadder_01\n\
+    - steel_ladder_02 | Steel Ladder 02 | architecture | 1.55x1.33x3.84 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_SteelLadder_02.SM_SteelLadder_02\n\
+    - steel_ladder_03 | Steel Ladder 03 | architecture | 1.91x1.33x1.02 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_SteelLadder_03.SM_SteelLadder_03\n\
+    - truss_01 | Truss 01 | architecture | 5.12x5.12x3.84 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Truss_01.SM_Truss_01\n\
+    - truss_02 | Truss 02 | architecture | 11.58x11.58x8.69 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Truss_02.SM_Truss_02\n\
+    - truss_03 | Truss 03 | architecture | 5.12x5.12x1.93 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Truss_03.SM_Truss_03\n\
+    - truss_04 | Truss 04 | architecture | 5.12x5.14x3.84 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Truss_04.SM_Truss_04\n\
+    - truss_05 | Truss 05 | architecture | 5.12x5.22x7.71 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Truss_05.SM_Truss_05\n\
+    - truss_06 | Truss 06 | architecture | 10.63x11.24x9.06 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Truss_06.SM_Truss_06\n\
+    - truss_07 | Truss 07 | architecture | 3.85x2.56x1.92 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Truss_07.SM_Truss_07\n\
+    - truss_09 | Truss 09 | architecture | 2.56x5.12x1.92 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Truss_09.SM_Truss_09\n\
+    - truss_12 | Truss 12 | architecture | 2.56x5.12x3.84 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Truss_12.SM_Truss_12\n\
+    - truss_13 | Truss 13 | architecture | 1.92x7.68x0.26 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Truss_13.SM_Truss_13\n\
+    - truss_14 | Truss 14 | architecture | 9.1x0.53x4.55 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Truss_14.SM_Truss_14\n\
+    - truss_15 | Truss 15 | architecture | 0.26x5.12x1.92 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Truss_15.SM_Truss_15\n\
+    - wall_01 | Wall 01 | architecture | 0.26x5.12x3.85 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_01.SM_Wall_01\n\
+    - wall_01_door | Wall 01 Door | architecture | 0.29x5.12x3.85 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_01_Door.SM_Wall_01_Door\n\
+    - wall_02 | Wall 02 | architecture | 0.26x9.42x7.71 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_02.SM_Wall_02\n\
+    - wall_02_door | Wall 02 Door | architecture | 10.24x0.32x7.71 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_02_Door.SM_Wall_02_Door\n\
+    - wall_03 | Wall 03 | architecture | 0.17x5.12x3.88 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_03.SM_Wall_03\n\
+    - wall_03_door | Wall 03 Door | architecture | 0.29x5.12x3.86 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_03_Door.SM_Wall_03_Door\n\
+    - wall_03_door_b | Wall 03 Door B | architecture | 0.29x5.12x3.86 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_03_Door_B.SM_Wall_03_Door_B\n\
+    - wall_03_window | Wall 03 Window | architecture | 0.21x5.12x3.84 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_03_Window.SM_Wall_03_Window\n\
+    - wall_04_door_b | Wall 04 Door B | architecture | 10.26x0.32x7.69 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_04_Door_B.SM_Wall_04_Door_B\n\
+    - wall_05 | Wall 05 | architecture | 10.24x0.26x3.85 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_05.SM_Wall_05\n\
+    - wall_05_door | Wall 05 Door | architecture | 0.29x10.24x3.86 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_05_Door.SM_Wall_05_Door\n\
+    - wall_06 | Wall 06 | architecture | 10.24x0.17x3.88 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_06.SM_Wall_06\n\
+    - wall_06_door | Wall 06 Door | architecture | 10.24x0.29x3.86 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_06_Door.SM_Wall_06_Door\n\
+    - wall_06_window | Wall 06 Window | architecture | 0.21x10.24x3.84 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_06_Window.SM_Wall_06_Window\n\
+    - wall_07 | Wall 07 | architecture | 5.12x0.17x4.8 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_07.SM_Wall_07\n\
+    - wall_08 | Wall 08 | architecture | 5.12x0.17x3.84 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_08.SM_Wall_08\n\
+    - wall_09 | Wall 09 | architecture | 0.17x5.12x5.76 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_09.SM_Wall_09\n\
+    - wall_10 | Wall 10 | architecture | 5.12x0.17x3.84 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_10.SM_Wall_10\n\
+    - wall_11 | Wall 11 | architecture | 5.12x0.17x5.76 m | /Game/ChemicalPlantEnv/Meshes/Architecture/SM_Wall_11.SM_Wall_11\n\
+    - bagson_pallets_1 | Bagson Pallets 1 | props | 2.35x2.34x1.14 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_BagsonPallets_1.SM_BagsonPallets_1\n\
+    - bagson_pallets_2 | Bagson Pallets 2 | props | 2.35x2.36x1.92 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_BagsonPallets_2.SM_BagsonPallets_2\n\
+    - barricade_1 | Barricade 1 | props | 0.74x1.27x1.2 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Barricade_1.SM_Barricade_1\n\
+    - box_1 | Box 1 | props | 1.21x0.91x0.68 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Box_1.SM_Box_1\n\
+    - boxes_1 | Boxes 1 | props | 1.82x1.99x0.71 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Boxes_1.SM_Boxes_1\n\
+    - boxes_2 | Boxes 2 | props | 1.99x0.91x0.71 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Boxes_2.SM_Boxes_2\n\
+    - boxes_on_pallet_1 | Boxes On Pallet 1 | props | 2.12x2.08x1.62 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_BoxesOnPallet_1.SM_BoxesOnPallet_1\n\
+    - boxes_on_pallet_2 | Boxes On Pallet 2 | props | 2.08x2.12x1.62 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_BoxesOnPallet_2.SM_BoxesOnPallet_2\n\
+    - cable_reel_1 | Cable Reel 1 | props | 2.01x2.01x1.76 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_CableReel_1.SM_CableReel_1\n\
+    - canvas_01 | Canvas 01 | props | 7.13x0.75x2.75 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Canvas_01.SM_Canvas_01\n\
+    - canvas_02 | Canvas 02 | props | 5.35x0.36x7.41 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Canvas_02.SM_Canvas_02\n\
+    - canvas_03 | Canvas 03 | props | 0.01x3.58x2.8 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Canvas_03.SM_Canvas_03\n\
+    - concrete_barrier_1 | Concrete Barrier 1 | props | 3.09x0.86x1.32 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_ConcreteBarrier_1.SM_ConcreteBarrier_1\n\
+    - concrete_barrier_2 | Concrete Barrier 2 | props | 0.62x2.18x0.93 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_ConcreteBarrier_2.SM_ConcreteBarrier_2\n\
+    - cone_1 | Cone 1 | props | 0.54x0.54x1.08 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Cone_1.SM_Cone_1\n\
+    - cone_2_bollard | Cone 2 Bollard | props | 0.24x0.24x0.98 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Cone_2_Bollard.SM_Cone_2_Bollard\n\
+    - cooler_01 | Cooler 01 | props | 3.88x6.59x4.63 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Cooler_01.SM_Cooler_01\n\
+    - cooling_fan_01 | Cooling Fan 01 | props | 4.73x4.74x2.04 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_CoolingFan_01.SM_CoolingFan_01\n\
+    - electrical_pole01 | Electrical Pole01 | props | 3.25x1.7x10.99 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_ElectricalPole01.SM_ElectricalPole01\n\
+    - fence_4 | Fence 4 | props | 0.2x2.42x3.2 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Fence_4.SM_Fence_4\n\
+    - fence_6 | Fence 6 | props | 0.26x5.4x3.48 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Fence_6.SM_Fence_6\n\
+    - fence_7 | Fence 7 | props | 0.17x1.74x2.86 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Fence_7.SM_Fence_7\n\
+    - flood_light_2 | Flood Light 2 | props | 1.31x1.29x8.31 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_FloodLight_2.SM_FloodLight_2\n\
+    - flood_light_4 | Flood Light 4 | props | 0.75x0.73x1.13 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_FloodLight_4.SM_FloodLight_4\n\
+    - flood_light_5 | Flood Light 5 | props | 1.43x0.54x8.24 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_FloodLight_5.SM_FloodLight_5\n\
+    - generator_01 | Generator 01 | props | 2.31x5.02x4.76 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Generator_01.SM_Generator_01\n\
+    - oil_barrel_01 | Oil Barrel 01 | props | 0.97x0.98x1.32 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_OilBarrel_01.SM_OilBarrel_01\n\
+    - oil_barrel_02 | Oil Barrel 02 | props | 1.95x1.95x1.32 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_OilBarrel_02.SM_OilBarrel_02\n\
+    - oil_barrel_03 | Oil Barrel 03 | props | 0.97x0.98x1.32 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_OilBarrel_03.SM_OilBarrel_03\n\
+    - oil_barrel_04 | Oil Barrel 04 | props | 1.95x1.95x1.32 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_OilBarrel_04.SM_OilBarrel_04\n\
+    - oil_barrel_05 | Oil Barrel 05 | props | 1.95x1.95x1.32 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_OilBarrel_05.SM_OilBarrel_05\n\
+    - oil_barrel_06 | Oil Barrel 06 | props | 2.08x2.12x1.56 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_OilBarrel_06.SM_OilBarrel_06\n\
+    - oil_barrel_07 | Oil Barrel 07 | props | 2.08x2.12x1.57 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_OilBarrel_07.SM_OilBarrel_07\n\
+    - pipe_pile_02 | Pipe Pile 02 | props | 4.77x2.38x0.71 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_PipePile_02.SM_PipePile_02\n\
+    - pipe_storage_01 | Pipe Storage 01 | props | 10.16x5.12x3.55 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_PipeStorage_01.SM_PipeStorage_01\n\
+    - pipe_storage_02 | Pipe Storage 02 | props | 10.28x5.12x3.55 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_PipeStorage_02.SM_PipeStorage_02\n\
+    - pipe_storage_03 | Pipe Storage 03 | props | 5.08x2.56x1.84 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_PipeStorage_03.SM_PipeStorage_03\n\
+    - pipe_storage_04 | Pipe Storage 04 | props | 4.96x2.58x1.84 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_PipeStorage_04.SM_PipeStorage_04\n\
+    - plank_2 | Plank 2 | props | 1.6x3.01x0.29 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Plank_2.SM_Plank_2\n\
+    - plank_4 | Plank 4 | props | 1.6x3.01x0.29 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Plank_4.SM_Plank_4\n\
+    - plastic_barrel_1 | Plastic Barrel 1 | props | 0.85x0.85x1.37 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_PlasticBarrel_1.SM_PlasticBarrel_1\n\
+    - plastic_barrel_on_crate | Plastic Barrel On Crate | props | 1.76x1.79x1.58 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_PlasticBarrelOnCrate.SM_PlasticBarrelOnCrate\n\
+    - plywood_cover_1 | Plywood Cover 1 | props | 2.49x3.66x0.05 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_PlywoodCover_1.SM_PlywoodCover_1\n\
+    - plywood_cover_2 | Plywood Cover 2 | props | 4.05x0.1x3.51 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_PlywoodCover_2.SM_PlywoodCover_2\n\
+    - plywood_cover_3 | Plywood Cover 3 | props | 0.05x2.47x3.29 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_PlywoodCover_3.SM_PlywoodCover_3\n\
+    - plywood_cover_4 | Plywood Cover 4 | props | 3.99x4.42x0.05 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_PlywoodCover_4.SM_PlywoodCover_4\n\
+    - plywood_cover_5 | Plywood Cover 5 | props | 0.1x4.05x3.51 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_PlywoodCover_5.SM_PlywoodCover_5\n\
+    - plywood_cover_6 | Plywood Cover 6 | props | 2.47x0.05x3.29 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_PlywoodCover_6.SM_PlywoodCover_6\n\
+    - tank01 | Tank01 | props | 10.22x4.16x3.96 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Tank01.SM_Tank01\n\
+    - tank02 | Tank02 | props | 6.9x2.88x2.66 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Tank02.SM_Tank02\n\
+    - tank_02 | Tank 02 | props | 2.08x7.3x2.96 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Tank_02.SM_Tank_02\n\
+    - tank_03 | Tank 03 | props | 5.65x2.17x4.11 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Tank_03.SM_Tank_03\n\
+    - tank_04 | Tank 04 | props | 1.76x2.38x4.12 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Tank_04.SM_Tank_04\n\
+    - tank_05 | Tank 05 | props | 5.59x5.58x14.53 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Tank_05.SM_Tank_05\n\
+    - tarped_crates_01 | Tarped Crates 01 | props | 2.8x3.03x2.42 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_TarpedCrates_01.SM_TarpedCrates_01\n\
+    - toilet_01 | Toilet 01 | props | 1.29x1.25x2.57 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Toilet_01.SM_Toilet_01\n\
+    - trench_drain_2 | Trench Drain 2 | props | 5.6x1.06x0.24 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_TrenchDrain_2.SM_TrenchDrain_2\n\
+    - wagon | Wagon | props | 13.89x3.39x1.16 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_Wagon.SM_Wagon\n\
+    - water_tank_01 | Water Tank 01 | props | 1.27x1.33x1.44 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_WaterTank_01.SM_WaterTank_01\n\
+    - wooden_pallet_3 | Wooden Pallet 3 | props | 2.54x2.12x1.85 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_WoodenPallet_3.SM_WoodenPallet_3\n\
+    - wooden_pallet_4 | Wooden Pallet 4 | props | 2.13x2.13x1.12 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_WoodenPallet_4.SM_WoodenPallet_4\n\
+    - wooden_pallet_5 | Wooden Pallet 5 | props | 1.25x1.86x0.76 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_WoodenPallet_5.SM_WoodenPallet_5\n\
+    - wooden_pallet_6 | Wooden Pallet 6 | props | 1.82x1.44x0.52 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_WoodenPallet_6.SM_WoodenPallet_6\n\
+    - wooden_pallet_7 | Wooden Pallet 7 | props | 1.85x1.8x1.74 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_WoodenPallet_7.SM_WoodenPallet_7\n\
+    - wooden_pallet_8 | Wooden Pallet 8 | props | 1.85x2.23x0.58 m | /Game/ChemicalPlantEnv/Meshes/Props/SM_WoodenPallet_8.SM_WoodenPallet_8\n\
+    - road_asphalt_1 | Road Asphalt 1 | road | 20.48x10.72x0.37 m | /Game/ChemicalPlantEnv/Meshes/Road/SM_RoadAsphalt_1.SM_RoadAsphalt_1\n\
+    - road_junction_1 | Road Junction 1 | road | 15.88x20.48x0.37 m | /Game/ChemicalPlantEnv/Meshes/Road/SM_RoadJunction_1.SM_RoadJunction_1\n\
+    - road_junction_1_m | Road Junction 1 M | road | 21.84x16.28x0.37 m | /Game/ChemicalPlantEnv/Meshes/Road/SM_RoadJunction_1_M.SM_RoadJunction_1_M\n\
+    - road_junction_3 | Road Junction 3 | road | 21.84x16.28x0.94 m | /Game/ChemicalPlantEnv/Meshes/Road/SM_RoadJunction_3.SM_RoadJunction_3\n\
+    - road_junction_plus | Road Junction Plus | road | 21.84x21.03x0.37 m | /Game/ChemicalPlantEnv/Meshes/Road/SM_RoadJunction_Plus.SM_RoadJunction_Plus\n\
+    - speed_bump | Speed Bump | road | 7.23x18.29x0.37 m | /Game/ChemicalPlantEnv/Meshes/Road/SM_SpeedBump.SM_SpeedBump\n\
+    - traffic_sign_10 | Traffic Sign 10 | road | 1.01x0.06x2.87 m | /Game/ChemicalPlantEnv/Meshes/Road/SM_TrafficSign_10.SM_TrafficSign_10\n\
+    - traffic_sign_5 | Traffic Sign 5 | road | 1.08x0.15x2.9 m | /Game/ChemicalPlantEnv/Meshes/Road/SM_TrafficSign_5.SM_TrafficSign_5\n\
+    - traffic_sign_9 | Traffic Sign 9 | road | 0.06x1.78x2.46 m | /Game/ChemicalPlantEnv/Meshes/Road/SM_TrafficSign_9.SM_TrafficSign_9\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes — you are not\
+    \ expected to use all of it, but clean collision and\nfloating numbers are not on their own evidence\
+    \ that the scene is finished.\nTake screenshots, look at them, and judge the result against the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/chemical-plant.bundle.json
+- name: overview_prompt_alignment
+assets:
+  packs:
+  - ChemicalPlantEnv

@@ -1,0 +1,23 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/old-building/GT",
+  "source_level": "/Game/Code4SceneGT/old-building/GT",
+  "gt_id": "comp-30-old-industrial-air-tank-recovery-v2",
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "insertion",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "AirTanks_Cluster_330"
+      }
+    ],
+    "category": "repair_completion",
+    "target_labels": [
+      "AirTanks_Cluster_330"
+    ]
+  }
+}

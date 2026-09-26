@@ -1,0 +1,53 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "indoor-atomic-v1-076",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "laboratory-loft",
+  "scene_spec": "../../../scenes/laboratory-loft/scene.json",
+  "source_map": "/Game/Laboratory_in_Loft_Style/Maps/Demo",
+  "ground_truth_map": "/Game/Code4SceneGT/laboratory-loft/GT",
+  "input_map": "/Game/Code4SceneInputs/indoor-atomic-v1-076/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_static_mesh",
+      "target": "sca_generated_fa8d9834423f2c987f3b1f8dff01faba",
+      "component": "StaticMeshComponent0",
+      "static_mesh": "/Game/Laboratory_in_Loft_Style/Meshes/SM_Art_4_01.SM_Art_4_01",
+      "replaces": "/Game/Laboratory_in_Loft_Style/Meshes/SM_Art_5_01.SM_Art_5_01",
+      "expect": {
+        "material_slots": [
+          {
+            "component_identity": "StaticMeshComponent0|/Script/Engine.StaticMeshComponent",
+            "is_dynamic": false,
+            "material_class_path": "/Script/Engine.MaterialInstanceConstant",
+            "material_path": "/Game/Laboratory_in_Loft_Style/Materials/Instances/MI_Art_4_01.MI_Art_4_01",
+            "slot_index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "replacement"
+    ],
+    "authored_operations": [
+      {
+        "type": "replacement",
+        "label": "SM_Art_13",
+        "asset": "/Game/Laboratory_in_Loft_Style/Meshes/SM_Art_4_01.SM_Art_4_01",
+        "component_name": "StaticMeshComponent0",
+        "material_paths": [
+          "/Game/Laboratory_in_Loft_Style/Materials/Instances/MI_Art_4_01.MI_Art_4_01"
+        ]
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "SM_Art_13"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/laboratory-loft/gt.fingerprint.json"
+}

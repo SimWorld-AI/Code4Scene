@@ -1,0 +1,52 @@
+# Code4Scene public task. Build the Input/GT levels and reference views with
+# dataset_builder (see docs/BUILD_DATASET.md) before running it.
+id: comp-09-winter-square-bench-recovery-v2
+kind: scene_repair
+case_type: image_to_scene
+scene_environment: outdoor
+status: ready
+inputs:
+  prompt: Repair the current outdoor scene so it matches the provided reference image. Make only the minimum
+    changes needed, and preserve all unrelated actors and properties.
+  init_map: /Game/Code4SceneInputs/comp-09-winter-square-bench-recovery-v2/Input
+  budget:
+    tool_calls: 80
+    wall_minutes: 20
+  skills: contracts
+source:
+  schema_version: scenebench.outdoor_compositional_repair.v1
+  pack: Winter Town
+  scene: Winter Town
+  category: repair_completion
+  intrinsic_tier_prior: easy
+  mechanics:
+  - insertion
+  - translation
+  - rotation
+  reference_views:
+  - references/reference.jpg
+  content_fingerprints:
+    algorithm: c4s-fp-1
+    ground_truth:
+      root: a180c248a345322a392124ac6899ea06a3b302eac0b9cf3edd6a20d818d79782
+      actor_count: 2669
+    input:
+      root: bb0c833d6d0f27dfe53eb81096bd0db8aad67fb6d68f293a59eb208db9f14856
+      actor_count: 2668
+render:
+  mode: authored
+  resolution:
+  - 1920
+  - 1080
+verifiers:
+- name: gt_repair
+  ground_truth: /Game/Code4SceneGT/winter-town/GT
+  visual_semantic_diff:
+    caption_diff: true
+    paired_visual: true
+experiment:
+  input_condition: prompt_and_screenshots
+assets:
+  packs:
+  - WinterTown
+  - Code4SceneInputs

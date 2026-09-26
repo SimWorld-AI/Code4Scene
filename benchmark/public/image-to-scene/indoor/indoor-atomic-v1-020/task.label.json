@@ -1,0 +1,26 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/downtown-office/GT",
+  "source_level": "/Game/Code4SceneGT/downtown-office/GT",
+  "gt_id": "indoor-atomic-v1-020",
+  "schema_version": "code4scene.gt_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "reflection"
+    ],
+    "authored_operations": [
+      {
+        "type": "rotation",
+        "label": "Sm_PcScreen17",
+        "rotation_rpy_deg": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "category": "symmetry_pattern",
+    "target_labels": [
+      "Sm_PcScreen17"
+    ]
+  }
+}

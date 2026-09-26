@@ -1,0 +1,40 @@
+{
+  "schema_version": "code4scene.scene.v1",
+  "scene_id": "train-station",
+  "environment": "outdoor",
+  "source_pack": "Train Station",
+  "content_roots": [
+    "TrainStation"
+  ],
+  "source_map": "/Game/TrainStation/Maps/TrainStation_Optimised",
+  "ground_truth_map": "/Game/Code4SceneGT/train-station/GT",
+  "identity": {
+    "scheme": "uuid5-source-v1",
+    "gt_id": "gt-007",
+    "namespace_url": "https://simworld.ai/SimCodeArena/stable-actor-id/v1",
+    "tag_actor_origin": "source",
+    "rule": "stable_id = 'sca_source_' + uuid5(uuid5(NAMESPACE_URL, namespace_url), 'v1|source|' + gt_id + '|' + source_map + '|' + actor_path_in_source_map + '|' + class_path).hex; written as tags 'simcodearena.stable_actor_id=<id>' and 'simcodearena.actor_origin=source' on every persistent-level actor of the source map that is not a child actor."
+  },
+  "patches": [],
+  "key_assets": [
+    "/Game/TrainStation/Maps/TrainStation_Optimised",
+    "/Game/TrainStation/Meshes/BridgeModular/SM_ModularBridge_Underside_500.SM_ModularBridge_Underside_500",
+    "/Game/TrainStation/Meshes/BuildingFacades/SM_Wall_Basic.SM_Wall_Basic",
+    "/Game/TrainStation/Meshes/SM_Pipes_Pipe100.SM_Pipes_Pipe100",
+    "/Game/TrainStation/Meshes/SM_Traintracks_01a.SM_Traintracks_01a"
+  ],
+  "known_unresolved_dependencies": [],
+  "expected_fingerprint": {
+    "file": "gt.fingerprint.json",
+    "algorithm": "c4s-fp-1",
+    "root": "b20a02b4b0a412fa584ace72600c834d9992b014dd46ac01482d219f81d87a14",
+    "actor_count": 3888
+  },
+  "cases": [
+    "comp-05-train-east-bench-recovery-v2",
+    "comp-08-train-crossing-sign-reset-v2",
+    "comp-44-train-east-bin-replacement-v2",
+    "comp-63-train-parking-sign-recovery-v2",
+    "comp-64-train-streetlamp-pair-repair-v2"
+  ]
+}

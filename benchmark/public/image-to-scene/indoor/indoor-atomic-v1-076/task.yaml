@@ -1,0 +1,40 @@
+# Code4Scene public task. Build the Input/GT levels and reference views with
+# dataset_builder (see docs/BUILD_DATASET.md) before running it.
+id: indoor-atomic-v1-076
+kind: scene_repair
+case_type: image_to_scene
+scene_environment: indoor
+inputs:
+  prompt: Repair the current indoor scene so it matches the two provided reference images and the canonical
+    scene. Make only the minimum changes needed, and preserve all unrelated actors and properties.
+  init_map: /Game/Code4SceneInputs/indoor-atomic-v1-076/Input
+  budget:
+    tool_calls: 120
+    wall_minutes: 45
+  skills: contracts
+source:
+  schema_version: scenebench.gt_repair_task.v1
+  task_id: indoor-atomic-v1-076
+  pack: Laboratory Interior Studio in Loft Style
+  reference_views:
+  - references/view-01.png
+  - references/view-02.png
+  content_fingerprints:
+    algorithm: c4s-fp-1
+    ground_truth:
+      root: 956888ccdc680b40786da6df439b66b832cc47ca9a8e071693cd663bb8688d63
+      actor_count: 1068
+    input:
+      root: a1c684caa0198ea6fd50b512b2320af0577bcfffbfa1958cf137bcc2c056a181
+      actor_count: 1068
+verifiers:
+- name: gt_repair
+  ground_truth: /Game/Code4SceneGT/laboratory-loft/GT
+  visual_semantic_diff:
+    caption_diff: true
+    paired_visual: true
+assets:
+  packs:
+  - Laboratory_in_Loft_Style
+  - Code4SceneInputs
+status: ready

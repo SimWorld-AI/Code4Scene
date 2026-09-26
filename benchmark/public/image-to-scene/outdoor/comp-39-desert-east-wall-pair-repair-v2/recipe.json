@@ -1,0 +1,96 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-39-desert-east-wall-pair-repair-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "african-desert",
+  "scene_spec": "../../../scenes/african-desert/scene.json",
+  "source_map": "/Game/AfricanLocation/Locations/Desert2",
+  "ground_truth_map": "/Game/Code4SceneGT/african-desert/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-39-desert-east-wall-pair-repair-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_14d73c2ca7cb56d3b76e626dda6c4cde",
+      "location_cm": [
+        30500.0,
+        -140.0,
+        -1280.0
+      ],
+      "rotation_deg": [
+        0.0,
+        38.000000000000014,
+        -0.0
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_generated_a2c8c55f35ad209a021df780912ef434",
+      "identity_tag": false,
+      "object_name": "StaticMeshActor_1",
+      "label": "building_1_mesh2_23_CorruptDuplicate",
+      "from": {
+        "static_mesh": "/Game/AfricanLocation/models/Scans/ruins/building_1_mesh.building_1_mesh"
+      },
+      "location_cm": [
+        29780.0,
+        370.0,
+        -1280.0
+      ],
+      "rotation_deg": [
+        0.0,
+        -24.000000000000004,
+        0.0
+      ],
+      "scale": [
+        0.9,
+        0.9,
+        0.9
+      ],
+      "expect": {
+        "like": "sca_source_7e3f1d8ae08350d48fdf9df5be74c7fe"
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "removal",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "building_1_mesh2_23",
+        "new_label": "building_1_mesh2_23_CorruptDuplicate",
+        "delta_cm": [
+          -420.0,
+          300.0,
+          0.0
+        ],
+        "yaw_deg": -24.0,
+        "factor": 0.9
+      },
+      {
+        "type": "translation",
+        "label": "building_1_mesh2_23",
+        "delta_cm": [
+          300.0,
+          -210.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "building_1_mesh2_23",
+        "yaw_deg": 38.0
+      }
+    ],
+    "category": "layout_rearrangement",
+    "target_labels": [
+      "building_1_mesh2_23"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/african-desert/gt.fingerprint.json"
+}

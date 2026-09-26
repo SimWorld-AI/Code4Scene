@@ -1,0 +1,36 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-25-route66-fuel-pump-recovery-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "route66-gas-station",
+  "scene_spec": "../../../scenes/route66-gas-station/scene.json",
+  "source_map": "/Game/Gas_Station/Maps/Demo_Scene",
+  "ground_truth_map": "/Game/Code4SceneGT/route66-gas-station/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-25-route66-fuel-pump-recovery-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "remove_actor",
+      "target": "sca_source_941c95db75ea539e9cd715b81230db75"
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "insertion",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "Vintage_American_Gas___Oil_Pumps"
+      }
+    ],
+    "category": "repair_completion",
+    "target_labels": [
+      "Vintage_American_Gas___Oil_Pumps"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/route66-gas-station/gt.fingerprint.json"
+}

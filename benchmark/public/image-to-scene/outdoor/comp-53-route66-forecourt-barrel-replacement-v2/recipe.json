@@ -1,0 +1,90 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-53-route66-forecourt-barrel-replacement-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "route66-gas-station",
+  "scene_spec": "../../../scenes/route66-gas-station/scene.json",
+  "source_map": "/Game/Gas_Station/Maps/Demo_Scene",
+  "ground_truth_map": "/Game/Code4SceneGT/route66-gas-station/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-53-route66-forecourt-barrel-replacement-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_static_mesh",
+      "target": "sca_source_ede164e67d4d55d189fb9ec266f79ae8",
+      "component": "StaticMeshComponent0",
+      "static_mesh": "/Game/Gas_Station/Assets/Meshes/_Props/SM_Crate.SM_Crate",
+      "replaces": "/Game/Gas_Station/Assets/Meshes/_Props/SM_Barrel.SM_Barrel",
+      "expect": {
+        "material_slots": [
+          {
+            "component_identity": "StaticMeshComponent0|/Script/Engine.StaticMeshComponent",
+            "is_dynamic": false,
+            "material_class_path": "/Script/Engine.Material",
+            "material_path": "/Game/Gas_Station/Assets/Materials/M_Metal_Barrel.M_Metal_Barrel",
+            "slot_index": 0
+          }
+        ]
+      }
+    },
+    {
+      "op": "set_transform",
+      "target": "sca_source_ede164e67d4d55d189fb9ec266f79ae8",
+      "location_cm": [
+        693.2944030761719,
+        23.520553588867188,
+        132.11441040039062
+      ],
+      "rotation_deg": [
+        -3.8156611919403076,
+        59.85249328613281,
+        2.217055082321167
+      ],
+      "scale": [
+        1.231034517288208,
+        1.231034517288208,
+        1.231034517288208
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "replacement",
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "replacement",
+        "label": "Props_Barrel_Trash",
+        "asset": "/Game/Gas_Station/Assets/Meshes/_Props/SM_Crate.SM_Crate"
+      },
+      {
+        "type": "translation",
+        "label": "Props_Barrel_Trash",
+        "delta_cm": [
+          220.0,
+          -170.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "Props_Barrel_Trash",
+        "yaw_deg": 60.0
+      },
+      {
+        "type": "scaling",
+        "label": "Props_Barrel_Trash",
+        "factor": 1.5
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "Props_Barrel_Trash"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/route66-gas-station/gt.fingerprint.json"
+}

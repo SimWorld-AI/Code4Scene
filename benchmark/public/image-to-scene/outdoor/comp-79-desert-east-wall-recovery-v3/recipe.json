@@ -1,0 +1,36 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-79-desert-east-wall-recovery-v3",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "african-desert",
+  "scene_spec": "../../../scenes/african-desert/scene.json",
+  "source_map": "/Game/AfricanLocation/Locations/Desert2",
+  "ground_truth_map": "/Game/Code4SceneGT/african-desert/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-79-desert-east-wall-recovery-v3/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "remove_actor",
+      "target": "sca_source_14d73c2ca7cb56d3b76e626dda6c4cde"
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "insertion",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "building_1_mesh2_23"
+      }
+    ],
+    "category": "repair_completion",
+    "target_labels": [
+      "building_1_mesh2_23"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/african-desert/gt.fingerprint.json"
+}

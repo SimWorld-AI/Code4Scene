@@ -1,0 +1,53 @@
+# Code4Scene public task. Build the Input/GT levels and reference views with
+# dataset_builder (see docs/BUILD_DATASET.md) before running it.
+id: comp-47-middle-east-rooftop-awning-replacement-v4
+kind: scene_repair
+case_type: image_to_scene
+scene_environment: outdoor
+status: ready
+inputs:
+  prompt: Repair the current outdoor scene so it matches the provided reference image. Make only the minimum
+    changes needed, and preserve all unrelated actors and properties.
+  init_map: /Game/Code4SceneInputs/comp-47-middle-east-rooftop-awning-replacement-v4/Input
+  budget:
+    tool_calls: 80
+    wall_minutes: 20
+  skills: contracts
+source:
+  schema_version: scenebench.outdoor_compositional_repair.v1
+  pack: middle_eastern_river_town
+  scene: Middle Eastern River Town
+  category: object_lifecycle
+  intrinsic_tier_prior: medium
+  mechanics:
+  - replacement
+  - translation
+  - rotation
+  - scaling
+  reference_views:
+  - references/reference.jpg
+  content_fingerprints:
+    algorithm: c4s-fp-1
+    ground_truth:
+      root: 2fe420aa3dac8d3efd3f18a92e9027ac9a248b8fb19da6e0b6091b77d4aae2a3
+      actor_count: 6694
+    input:
+      root: 8e135903a32c85e2c274575e54bd4c328ffcecf5090cb5286484e630d6be29a8
+      actor_count: 6694
+render:
+  mode: authored
+  resolution:
+  - 1920
+  - 1080
+verifiers:
+- name: gt_repair
+  ground_truth: /Game/Code4SceneGT/middle-east-river/GT
+  visual_semantic_diff:
+    caption_diff: true
+    paired_visual: true
+experiment:
+  input_condition: prompt_and_screenshots
+assets:
+  packs:
+  - MiddleEasternTown
+  - Code4SceneInputs

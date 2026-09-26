@@ -1,0 +1,22 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/downtown-office/GT",
+  "source_level": "/Game/Code4SceneGT/downtown-office/GT",
+  "gt_id": "a20-s03-upper-chair-scaling",
+  "schema_version": "code4scene.gt_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "scaling",
+        "label": "Sm_Chair34",
+        "factor": 0.78
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "Sm_Chair34"
+    ]
+  }
+}

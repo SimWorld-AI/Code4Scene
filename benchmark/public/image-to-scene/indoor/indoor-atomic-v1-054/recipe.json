@@ -1,0 +1,53 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "indoor-atomic-v1-054",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "detective-office",
+  "scene_spec": "../../../scenes/detective-office/scene.json",
+  "source_map": "/Game/DetectiveOffice/Maps/DetectiveOffice",
+  "ground_truth_map": "/Game/Code4SceneGT/detective-office/GT",
+  "input_map": "/Game/Code4SceneInputs/indoor-atomic-v1-054/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_static_mesh",
+      "target": "sca_source_210947ba5fb15be3ad2537de40b2cc22",
+      "component": "StaticMeshComponent0",
+      "static_mesh": "/Game/DetectiveOffice/Models/Fan/SM_Fan.SM_Fan",
+      "replaces": "/Game/DetectiveOffice/Models/World_Globe/SM_World_Globe.SM_World_Globe",
+      "expect": {
+        "material_slots": [
+          {
+            "component_identity": "StaticMeshComponent0|/Script/Engine.StaticMeshComponent",
+            "is_dynamic": false,
+            "material_class_path": "/Script/Engine.Material",
+            "material_path": "/Game/DetectiveOffice/Models/Fan/M_Fan.M_Fan",
+            "slot_index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "replacement"
+    ],
+    "authored_operations": [
+      {
+        "type": "replacement",
+        "label": "WorldGlobe",
+        "asset": "/Game/DetectiveOffice/Models/Fan/SM_Fan.SM_Fan",
+        "component_name": "StaticMeshComponent0",
+        "material_paths": [
+          "/Game/DetectiveOffice/Models/Fan/M_Fan.M_Fan"
+        ]
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "WorldGlobe"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/detective-office/gt.fingerprint.json"
+}

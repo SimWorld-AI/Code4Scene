@@ -1,0 +1,33 @@
+{
+  "schema_version": "code4scene.scene.v1",
+  "scene_id": "victorian-dining",
+  "environment": "indoor",
+  "source_pack": "Victorian Dining Room",
+  "content_roots": [
+    "VictorianRoom"
+  ],
+  "source_map": "/Game/VictorianRoom/Maps/Demonstration",
+  "ground_truth_map": "/Game/Code4SceneGT/victorian-dining/GT",
+  "identity": {
+    "scheme": "untagged",
+    "rule": "no tags are written; the snapshot exporter derives 'sca_generated_' IDs from object name, class and component assets."
+  },
+  "patches": [],
+  "key_assets": [
+    "/Game/VictorianRoom/Maps/Demonstration",
+    "/Game/VictorianRoom/Meshes/SM_Plate.SM_Plate",
+    "/Game/VictorianRoom/Meshes/SM_WineGlass.SM_WineGlass",
+    "/Game/VictorianRoom/Meshes/SM_Fork.SM_Fork",
+    "/Game/VictorianRoom/Meshes/SM_Spoon.SM_Spoon"
+  ],
+  "known_unresolved_dependencies": [],
+  "expected_fingerprint": {
+    "file": "gt.fingerprint.json",
+    "algorithm": "c4s-fp-1",
+    "root": "1bf3dd7d0e7a70a8bb3e75900c8c9531edfe05257b6395d9bf8b0d5d0de274bd",
+    "actor_count": 399
+  },
+  "cases": [
+    "indoor-atomic-v1-077"
+  ]
+}

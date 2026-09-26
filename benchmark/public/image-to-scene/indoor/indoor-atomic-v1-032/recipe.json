@@ -1,0 +1,74 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "indoor-atomic-v1-032",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "medieval-forge",
+  "scene_spec": "../../../scenes/medieval-forge/scene.json",
+  "source_map": "/Game/MedievalForgePack/Maps/Forge_SampleMap",
+  "ground_truth_map": "/Game/Code4SceneGT/medieval-forge/GT",
+  "input_map": "/Game/Code4SceneInputs/indoor-atomic-v1-032/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_atomic80_extra_forge_crate_0001",
+      "identity_tag": true,
+      "object_name": "StaticMeshActor_0",
+      "label": "SB_ATOMIC80_EXTRA__a80-s06-extra-crate-removal__00",
+      "from": {
+        "static_mesh": "/Game/MedievalForgePack/Props/SM_WoodBox.SM_WoodBox"
+      },
+      "location_cm": [
+        -500.0,
+        300.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        -25.0,
+        0.0
+      ],
+      "scale": [
+        0.707092,
+        0.707092,
+        0.707092
+      ],
+      "expect": {
+        "like": "sca_source_d58a56e27eb95aafb41b3cd4798616c2"
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "removal"
+    ],
+    "authored_operations": [
+      {
+        "type": "insertion",
+        "label": "SB_ATOMIC80_EXTRA__a80-s06-extra-crate-removal__00",
+        "asset": "/Game/MedievalForgePack/Props/SM_WoodBox.SM_WoodBox",
+        "location_cm": [
+          -500.0,
+          300.0,
+          0.0
+        ],
+        "rotation_rpy_deg": [
+          0.0,
+          0.0,
+          -25.0
+        ],
+        "scale_xyz": [
+          0.707092,
+          0.707092,
+          0.707092
+        ]
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "SB_ATOMIC80_EXTRA__a80-s06-extra-crate-removal__00"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/medieval-forge/gt.fingerprint.json"
+}

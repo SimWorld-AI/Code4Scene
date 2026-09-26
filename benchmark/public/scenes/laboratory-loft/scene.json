@@ -1,0 +1,55 @@
+{
+  "schema_version": "code4scene.scene.v1",
+  "scene_id": "laboratory-loft",
+  "environment": "indoor",
+  "source_pack": "Laboratory Interior Studio in Loft Style",
+  "content_roots": [
+    "Laboratory_in_Loft_Style"
+  ],
+  "source_map": "/Game/Laboratory_in_Loft_Style/Maps/Demo",
+  "ground_truth_map": "/Game/Code4SceneGT/laboratory-loft/GT",
+  "identity": {
+    "scheme": "untagged",
+    "rule": "no tags are written; the snapshot exporter derives 'sca_generated_' IDs from object name, class and component assets."
+  },
+  "patches": [
+    {
+      "op": "set_component_property",
+      "target": "sca_generated_208265f771175dec10a5f75efd528cc7",
+      "component_class": "/Script/Engine.LightComponent",
+      "property": "use_temperature",
+      "value": true
+    },
+    {
+      "op": "set_component_property",
+      "target": "sca_generated_0ab05f5cd2f42d3a6956f7fba31c8977",
+      "component_class": "/Script/Engine.LightComponent",
+      "property": "use_temperature",
+      "value": true
+    },
+    {
+      "op": "set_label",
+      "target": "sca_generated_90c90d424b55a3952209c334b80fe795",
+      "label": "BP_Spotlight257"
+    }
+  ],
+  "key_assets": [
+    "/Game/Laboratory_in_Loft_Style/Maps/Demo",
+    "/Game/Laboratory_in_Loft_Style/Meshes/SM_TubesRound_1_01.SM_TubesRound_1_01",
+    "/Game/Laboratory_in_Loft_Style/Meshes/Modular/SM_ModulePipe_1_11.SM_ModulePipe_1_11",
+    "/Game/Laboratory_in_Loft_Style/Meshes/Modular/SM_ModulePipe_1_09.SM_ModulePipe_1_09",
+    "/Game/Laboratory_in_Loft_Style/Meshes/SM_Bulb_1_01.SM_Bulb_1_01"
+  ],
+  "known_unresolved_dependencies": [],
+  "expected_fingerprint": {
+    "file": "gt.fingerprint.json",
+    "algorithm": "c4s-fp-1",
+    "root": "956888ccdc680b40786da6df439b66b832cc47ca9a8e071693cd663bb8688d63",
+    "actor_count": 1068
+  },
+  "cases": [
+    "indoor-atomic-v1-045",
+    "indoor-atomic-v1-073",
+    "indoor-atomic-v1-076"
+  ]
+}

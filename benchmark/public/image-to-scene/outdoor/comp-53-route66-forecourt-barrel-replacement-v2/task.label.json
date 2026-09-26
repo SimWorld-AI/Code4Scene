@@ -1,0 +1,44 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/route66-gas-station/GT",
+  "source_level": "/Game/Code4SceneGT/route66-gas-station/GT",
+  "gt_id": "comp-53-route66-forecourt-barrel-replacement-v2",
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "replacement",
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "replacement",
+        "label": "Props_Barrel_Trash",
+        "asset": "/Game/Gas_Station/Assets/Meshes/_Props/SM_Crate.SM_Crate"
+      },
+      {
+        "type": "translation",
+        "label": "Props_Barrel_Trash",
+        "delta_cm": [
+          220.0,
+          -170.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "Props_Barrel_Trash",
+        "yaw_deg": 60.0
+      },
+      {
+        "type": "scaling",
+        "label": "Props_Barrel_Trash",
+        "factor": 1.5
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "Props_Barrel_Trash"
+    ]
+  }
+}

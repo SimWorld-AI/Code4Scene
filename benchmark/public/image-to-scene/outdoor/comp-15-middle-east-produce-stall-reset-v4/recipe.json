@@ -1,0 +1,119 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-15-middle-east-produce-stall-reset-v4",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "middle-east-river",
+  "scene_spec": "../../../scenes/middle-east-river/scene.json",
+  "source_map": "/Game/MiddleEasternTown/Levels/L_MiddleEasternTown",
+  "ground_truth_map": "/Game/Code4SceneGT/middle-east-river/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-15-middle-east-produce-stall-reset-v4/Input",
+  "level_structure": [
+    {
+      "op": "retarget_streaming_level",
+      "from": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "to": "/Game/Code4SceneInputs/_shared/middle-east-river/buildings_base",
+      "copy_package": true,
+      "note": "The Input streams a copy of the GT's custom sublevel under the Input root so that no Input package references the scorer-only GT root."
+    }
+  ],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_098812e70ee856f8b5faffa14bc53ad8",
+      "location_cm": [
+        -17301.830317032283,
+        -9346.17658102071,
+        -239.79195310996707
+      ],
+      "rotation_deg": [
+        0.0,
+        100.67914581298828,
+        -0.0
+      ],
+      "scale": [
+        1.25,
+        0.82,
+        1.15
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_generated_2ee5c091b3e45399f93d15b79e9c9177",
+      "identity_tag": false,
+      "object_name": "BPP_LI_Food_01_Shop_C_0",
+      "label": "BPP_LI_Food_01_Shop6_CorruptDuplicate",
+      "from": {
+        "class": "/Game/MiddleEasternTown/Blueprints/PackedBlueprints/Markets/BPP_LI_Food_01_Shop.BPP_LI_Food_01_Shop_C"
+      },
+      "location_cm": [
+        -16021.830317032283,
+        -10226.17658102071,
+        -239.79195310996707
+      ],
+      "rotation_deg": [
+        0.0,
+        84.67914581298831,
+        -0.0
+      ],
+      "scale": [
+        1.2,
+        1.2,
+        1.2
+      ],
+      "expect": {
+        "like": "sca_source_f4b71e3711fd51a0bf3cc752563dba1a"
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "removal",
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "BPP_LI_Food_01_Shop6",
+        "new_label": "BPP_LI_Food_01_Shop6_CorruptDuplicate",
+        "delta_cm": [
+          760.0,
+          -520.0,
+          0.0
+        ],
+        "yaw_deg": 52.0,
+        "factor": 1.2
+      },
+      {
+        "type": "translation",
+        "label": "BPP_LI_Food_01_Shop6",
+        "delta_cm": [
+          -520.0,
+          360.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "BPP_LI_Food_01_Shop6",
+        "yaw_deg": 68.0
+      },
+      {
+        "type": "scaling",
+        "label": "BPP_LI_Food_01_Shop6",
+        "factor": [
+          1.25,
+          0.82,
+          1.15
+        ]
+      }
+    ],
+    "category": "layout_rearrangement",
+    "target_labels": [
+      "BPP_LI_Food_01_Shop6"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/middle-east-river/gt.fingerprint.json"
+}

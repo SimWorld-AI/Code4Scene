@@ -1,0 +1,56 @@
+# Canonical GT-paired holistic visual similarity rubric.
+id: visual-gt-paired
+scale_max: 4
+channels: [rgb, base_color, scene_depth]
+
+instructions: >
+  Compare only the labelled GT and candidate images from the same view and
+  channel. Preserve the distinction between semantic visual judgement and
+  measured geometry: explain visible silhouette or layout differences, but
+  never invent bounds, distances, pixel IoU, SSIM, or Chamfer values. A
+  candidate can preserve the same scene identity without being pixel-identical.
+
+criteria:
+  - id: composition_layout
+    question: How closely does the candidate match the GT whole-scene composition and visible layout?
+    weight: 30
+    channels: [rgb, scene_depth]
+    guidance: >
+      Compare massing, spacing, visual occupancy, foreground/midground/background
+      organization, and whether buildings are compact, irregular, row-like, or
+      symmetric. Do not claim actor coordinates or bounds.
+
+  - id: silhouette_geometry
+    question: How closely do visible building, terrain, mountain, and ground silhouettes match GT?
+    weight: 25
+    channels: [scene_depth, rgb]
+    guidance: >
+      Use Scene Depth for measurable shape evidence and RGB only to clarify
+      visible boundaries. Describe mismatch qualitatively; deterministic
+      silhouette IoU and edge Chamfer are supplied separately.
+
+  - id: material_fidelity
+    question: How closely do candidate materials and surface colors match GT?
+    weight: 20
+    channels: [base_color]
+    guidance: >
+      Use Base Color so shadows and exposure do not masquerade as material
+      differences. Compare ground, structures, terrain, and repeated palette.
+
+  - id: landmark_content
+    question: Does the candidate preserve the GT scene identity and its key visible landmarks and props?
+    weight: 15
+    channels: [rgb, base_color, scene_depth]
+    guidance: >
+      Compare recognizable buildings, terrain enclosure, transport, paths,
+      vehicles, and major props. Do not require exact asset identity when the
+      same visible role and scene identity are preserved.
+
+  - id: lighting_fidelity
+    question: How closely does the final candidate lighting and RGB atmosphere match GT?
+    weight: 10
+    channels: [rgb]
+    guidance: >
+      Judge illumination direction, contrast, shadow character, exposure,
+      weather, time-of-day impression, and final lit appearance. Do not reduce
+      Base Color or geometry judgements for lighting-only changes.

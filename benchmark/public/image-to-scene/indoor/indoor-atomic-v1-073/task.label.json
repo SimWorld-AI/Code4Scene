@@ -1,0 +1,26 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/laboratory-loft/GT",
+  "source_level": "/Game/Code4SceneGT/laboratory-loft/GT",
+  "gt_id": "indoor-atomic-v1-073",
+  "schema_version": "code4scene.gt_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "translation"
+    ],
+    "authored_operations": [
+      {
+        "type": "translation",
+        "label": "SM_Chair9",
+        "delta_cm": [
+          0.0,
+          -45.0,
+          0.0
+        ]
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "SM_Chair9"
+    ]
+  }
+}

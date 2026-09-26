@@ -1,0 +1,76 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-41-new-york-storefront-planter-pair-recovery-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "new-york-street",
+  "scene_spec": "../../../scenes/new-york-street/scene.json",
+  "source_map": "/Game/Street_NY/Maps/Demo",
+  "ground_truth_map": "/Game/Code4SceneGT/new-york-street/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-41-new-york-storefront-planter-pair-recovery-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_213263b0b9ac56b0bfbe2fa2c716429a",
+      "location_cm": [
+        4093.53369140625,
+        -497.68011474609375,
+        63.145263671875
+      ],
+      "rotation_deg": [
+        0.0,
+        59.99999999999999,
+        -0.0
+      ],
+      "scale": [
+        1.5,
+        1.5,
+        1.5
+      ]
+    },
+    {
+      "op": "remove_actor",
+      "target": "sca_source_e19a65f3cd255cfbbd935ecdcaf8d31c"
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "duplication",
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "Flower_Pot_34"
+      },
+      {
+        "type": "translation",
+        "label": "Flower_Pot_35",
+        "delta_cm": [
+          180.0,
+          130.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "Flower_Pot_35",
+        "yaw_deg": 60.0
+      },
+      {
+        "type": "scaling",
+        "label": "Flower_Pot_35",
+        "factor": 1.5
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "Flower_Pot_34",
+      "Flower_Pot_35"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/new-york-street/gt.fingerprint.json"
+}

@@ -1,0 +1,23 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/suburban-night/GT",
+  "source_level": "/Game/Code4SceneGT/suburban-night/GT",
+  "gt_id": "comp-51-suburban-driveway-mailbox-recovery-v2",
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "insertion",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "BP_Mailbox_01_C_443"
+      }
+    ],
+    "category": "repair_completion",
+    "target_labels": [
+      "BP_Mailbox_01_C_443"
+    ]
+  }
+}

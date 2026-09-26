@@ -1,0 +1,53 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "indoor-atomic-v1-042",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "dungeon-hall",
+  "scene_spec": "../../../scenes/dungeon-hall/scene.json",
+  "source_map": "/Game/Dungeon/Levels/Dungeon_Demo_00",
+  "ground_truth_map": "/Game/Code4SceneGT/dungeon-hall/GT",
+  "input_map": "/Game/Code4SceneInputs/indoor-atomic-v1-042/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_static_mesh",
+      "target": "sca_srcmap_dd2e7577d8319fe11fd6166ea447c467",
+      "component": "StaticMeshComponent0",
+      "static_mesh": "/Game/Dungeon/Swords/Meshes/SM_Medieval_Weapons_Cinquedea.SM_Medieval_Weapons_Cinquedea",
+      "replaces": "/Game/Dungeon/Meshes/Props/SM_Torch.SM_Torch",
+      "expect": {
+        "material_slots": [
+          {
+            "component_identity": "StaticMeshComponent0|/Script/Engine.StaticMeshComponent",
+            "is_dynamic": false,
+            "material_class_path": "/Script/Engine.MaterialInstanceConstant",
+            "material_path": "/Game/Dungeon/Swords/Material_Instances/Default_Colors/MI_Medieval_Weapons_Cinquedea.MI_Medieval_Weapons_Cinquedea",
+            "slot_index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "replacement"
+    ],
+    "authored_operations": [
+      {
+        "type": "replacement",
+        "label": "SM_Torch7",
+        "asset": "/Game/Dungeon/Swords/Meshes/SM_Medieval_Weapons_Cinquedea.SM_Medieval_Weapons_Cinquedea",
+        "component_name": "StaticMeshComponent0",
+        "material_paths": [
+          "/Game/Dungeon/Swords/Material_Instances/Default_Colors/MI_Medieval_Weapons_Cinquedea.MI_Medieval_Weapons_Cinquedea"
+        ]
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "SM_Torch7"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/dungeon-hall/gt.fingerprint.json"
+}

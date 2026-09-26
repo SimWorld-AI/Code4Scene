@@ -1,0 +1,138 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: european-street-3d-scene
+kind: scene_generation
+inputs:
+  prompt: "Build me a bright, stylized old European street scene with a warm, cheerful, slightly polished\
+    \ mood. Create a narrow cobblestone road that curves gently between two continuous rows of tightly\
+    \ packed two- and three-story buildings, with slim brick-paved sidewalks and raised curb strips along\
+    \ both sides. Use roughly fifteen adjoining façades in saturated yellow, orange, red, cream, green,\
+    \ and exposed dark brick, all facing the street and varying organically in width and setback. Give\
+    \ them stucco or masonry walls, stone-textured lower courses and window surrounds, tiled overhanging\
+    \ roofs, tall rectangular windows, occasional green shutters, small wrought-iron balconies, storefront-like\
+    \ openings, and several heavy wooden doors set into rounded stone arches. Place ornate black wall\
+    \ lanterns at regular intervals and freestanding multi-lamp streetlights along the sidewalks, with\
+    \ drainpipes running down several façades. Keep the street empty of people, vehicles, and vegetation.\
+    \ Let the dense building corridor bend toward a larger brick building at one end, while the opposite\
+    \ end opens abruptly onto a flat dark horizon beneath a vivid blue, cloud-dappled sky.\n\n=== ASSET\
+    \ PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\nin this\
+    \ run, so this list is your entire library. Format:\n\n  id | name | category | width x depth x height\
+    \ (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches UE.\n\
+    You decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n- street_building_01\
+    \ | street building 01 | building_01 | 3.53x4.14x7.67 m | /Game/EuropeanStreet/Meshes/Building_01/SM_street_building_01.SM_street_building_01\n\
+    - street_building_02 | street building 02 | building_02 | 6.19x4.61x6.05 m | /Game/EuropeanStreet/Meshes/Building_02/SM_street_building_02.SM_street_building_02\n\
+    - street_building_03 | street building 03 | building_03 | 5.62x5.09x7.43 m | /Game/EuropeanStreet/Meshes/Building_03/SM_street_building_03.SM_street_building_03\n\
+    - street_building_04 | street building 04 | building_04 | 12.27x6.11x11.79 m | /Game/EuropeanStreet/Meshes/Building_04/SM_street_building_04.SM_street_building_04\n\
+    - street_building_05 | street building 05 | building_05 | 14.0x6.06x12.71 m | /Game/EuropeanStreet/Meshes/Building_05/SM_street_building_05.SM_street_building_05\n\
+    - street_building_06 | street building 06 | building_06 | 5.17x5.36x7.72 m | /Game/EuropeanStreet/Meshes/Building_06/SM_street_building_06.SM_street_building_06\n\
+    - street_building_07 | street building 07 | building_07 | 8.0x5.86x9.53 m | /Game/EuropeanStreet/Meshes/Building_07/SM_street_building_07.SM_street_building_07\n\
+    - street_building_08 | street building 08 | building_08 | 20.16x28.29x12.34 m | /Game/EuropeanStreet/Meshes/Building_08/SM_street_building_08.SM_street_building_08\n\
+    - street_building_01_copy_01 | street building 01 copy 01 | buildingscopies | 5.39x6.07x10.25 m |\
+    \ /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_01_copy_01.SM_street_building_01_copy_01\n\
+    - street_building_01_copy_02 | street building 01 copy 02 | buildingscopies | 6.63x7.0x10.25 m | /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_01_copy_02.SM_street_building_01_copy_02\n\
+    - street_building_02_copy_03 | street building 02 copy 03 | buildingscopies | 9.84x8.4x8.19 m | /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_02_copy_03.SM_street_building_02_copy_03\n\
+    - street_building_03_copy_04 | street building 03 copy 04 | buildingscopies | 7.66x6.94x8.81 m | /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_03_copy_04.SM_street_building_03_copy_04\n\
+    - street_building_04_copy_05 | street building 04 copy 05 | buildingscopies | 12.79x7.57x11.79 m |\
+    \ /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_04_copy_05.SM_street_building_04_copy_05\n\
+    - street_building_04_copy_06 | street building 04 copy 06 | buildingscopies | 13.16x9.64x11.79 m |\
+    \ /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_04_copy_06.SM_street_building_04_copy_06\n\
+    - street_building_04_copy_07 | street building 04 copy 07 | buildingscopies | 13.15x9.44x11.79 m |\
+    \ /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_04_copy_07.SM_street_building_04_copy_07\n\
+    - street_building_05_copy_08 | street building 05 copy 08 | buildingscopies | 14.98x9.27x12.71 m |\
+    \ /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_05_copy_08.SM_street_building_05_copy_08\n\
+    - street_building_05_copy_09 | street building 05 copy 09 | buildingscopies | 14.66x7.92x12.71 m |\
+    \ /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_05_copy_09.SM_street_building_05_copy_09\n\
+    - street_building_07_copy_10 | street building 07 copy 10 | buildingscopies | 9.04x7.63x9.53 m | /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_07_copy_10.SM_street_building_07_copy_10\n\
+    - street_building_07_copy_11 | street building 07 copy 11 | buildingscopies | 8.69x6.96x9.53 m | /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_07_copy_11.SM_street_building_07_copy_11\n\
+    - sky_sphere | Sky Sphere | enginesky | 32768.0x32768.0x32768.0 m | /Engine/EngineSky/SM_SkySphere.SM_SkySphere\n\
+    - street_drain_pipe_001 | street drain pipe 001 | pipes | 0.23x0.27x6.24 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_001.SM_street_drain_pipe_001\n\
+    - street_drain_pipe_002 | street drain pipe 002 | pipes | 0.23x0.27x6.64 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_002.SM_street_drain_pipe_002\n\
+    - street_drain_pipe_003 | street drain pipe 003 | pipes | 0.25x0.26x11.53 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_003.SM_street_drain_pipe_003\n\
+    - street_drain_pipe_004 | street drain pipe 004 | pipes | 0.23x0.13x10.62 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_004.SM_street_drain_pipe_004\n\
+    - street_drain_pipe_005 | street drain pipe 005 | pipes | 0.34x0.14x8.92 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_005.SM_street_drain_pipe_005\n\
+    - street_drain_pipe_006 | street drain pipe 006 | pipes | 0.23x0.13x10.62 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_006.SM_street_drain_pipe_006\n\
+    - street_drain_pipe_007 | street drain pipe 007 | pipes | 0.25x0.26x8.88 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_007.SM_street_drain_pipe_007\n\
+    - street_drain_pipe_008 | street drain pipe 008 | pipes | 0.33x0.18x8.92 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_008.SM_street_drain_pipe_008\n\
+    - street_drain_pipe_009 | street drain pipe 009 | pipes | 0.34x0.23x11.5 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_009.SM_street_drain_pipe_009\n\
+    - street_drain_pipe_010 | street drain pipe 010 | pipes | 0.25x0.97x11.53 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_010.SM_street_drain_pipe_010\n\
+    - street_drain_pipe_011 | street drain pipe 011 | pipes | 0.3x0.18x6.7 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_011.SM_street_drain_pipe_011\n\
+    - street_drain_pipe_012 | street drain pipe 012 | pipes | 0.27x0.25x6.24 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_012.SM_street_drain_pipe_012\n\
+    - street_drain_pipe_013 | street drain pipe 013 | pipes | 0.25x0.29x11.53 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_013.SM_street_drain_pipe_013\n\
+    - street_drain_pipe_014 | street drain pipe 014 | pipes | 0.34x0.2x8.92 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_014.SM_street_drain_pipe_014\n\
+    - street_drain_pipe_015 | street drain pipe 015 | pipes | 0.34x0.19x8.92 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_015.SM_street_drain_pipe_015\n\
+    - street_drain_pipe_016 | street drain pipe 016 | pipes | 0.32x0.23x8.92 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_016.SM_street_drain_pipe_016\n\
+    - street_sidewalk_001 | street sidewalk 001 | sidewalk | 84.32x23.86x0.77 m | /Game/EuropeanStreet/Meshes/Sidewalk/SM_street_sidewalk_001.SM_street_sidewalk_001\n\
+    - street_sidewalk_002 | street sidewalk 002 | sidewalk | 12.52x17.08x0.0 m | /Game/EuropeanStreet/Meshes/Sidewalk/SM_street_sidewalk_002.SM_street_sidewalk_002\n\
+    - street_street | street street | street | 83.53x21.13x0.0 m | /Game/EuropeanStreet/Meshes/Street/SM_street_street.SM_street_street\n\
+    - street_street_lamp_02 | street street lamp 02 | streetlamps | 0.37x0.83x1.09 m | /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02.SM_street_street_lamp_02\n\
+    - street_street_lamp_02_copy_01 | street street lamp 02 copy 01 | streetlamps | 0.37x0.83x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_01.SM_street_street_lamp_02_copy_01\n\
+    - street_street_lamp_02_copy_02 | street street lamp 02 copy 02 | streetlamps | 0.37x0.83x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_02.SM_street_street_lamp_02_copy_02\n\
+    - street_street_lamp_02_copy_03 | street street lamp 02 copy 03 | streetlamps | 0.36x0.83x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_03.SM_street_street_lamp_02_copy_03\n\
+    - street_street_lamp_02_copy_04 | street street lamp 02 copy 04 | streetlamps | 0.37x0.82x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_04.SM_street_street_lamp_02_copy_04\n\
+    - street_street_lamp_02_copy_05 | street street lamp 02 copy 05 | streetlamps | 0.37x0.82x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_05.SM_street_street_lamp_02_copy_05\n\
+    - street_street_lamp_02_copy_06 | street street lamp 02 copy 06 | streetlamps | 0.37x0.81x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_06.SM_street_street_lamp_02_copy_06\n\
+    - street_street_lamp_02_copy_07 | street street lamp 02 copy 07 | streetlamps | 0.37x0.81x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_07.SM_street_street_lamp_02_copy_07\n\
+    - street_street_lamp_02_copy_08 | street street lamp 02 copy 08 | streetlamps | 0.48x0.76x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_08.SM_street_street_lamp_02_copy_08\n\
+    - street_street_lamp_02_copy_09 | street street lamp 02 copy 09 | streetlamps | 0.37x0.83x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_09.SM_street_street_lamp_02_copy_09\n\
+    - street_street_lamp_02_copy_10 | street street lamp 02 copy 10 | streetlamps | 0.37x0.83x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_10.SM_street_street_lamp_02_copy_10\n\
+    - street_street_lamp_02_copy_11 | street street lamp 02 copy 11 | streetlamps | 0.37x0.83x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_11.SM_street_street_lamp_02_copy_11\n\
+    - street_street_lamp_02_copy_12 | street street lamp 02 copy 12 | streetlamps | 0.37x0.82x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_12.SM_street_street_lamp_02_copy_12\n\
+    - street_street_lamp_02_copy_13 | street street lamp 02 copy 13 | streetlamps | 0.39x0.8x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_13.SM_street_street_lamp_02_copy_13\n\
+    - street_street_lamp_02_copy_14 | street street lamp 02 copy 14 | streetlamps | 0.39x0.8x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_14.SM_street_street_lamp_02_copy_14\n\
+    - street_street_lamp_02_copy_15 | street street lamp 02 copy 15 | streetlamps | 0.45x0.78x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_15.SM_street_street_lamp_02_copy_15\n\
+    - street_street_lamp_pole_001 | street street lamp pole 001 | streetlampspoles | 0.32x0.95x3.26 m\
+    \ | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_001.SM_street_street_lamp_pole_001\n\
+    - street_street_lamp_pole_01_copy_01 | street street lamp pole 01 copy 01 | streetlampspoles | 0.32x0.95x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_01.SM_street_street_lamp_pole_01_copy_01\n\
+    - street_street_lamp_pole_01_copy_02 | street street lamp pole 01 copy 02 | streetlampspoles | 0.35x0.97x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_02.SM_street_street_lamp_pole_01_copy_02\n\
+    - street_street_lamp_pole_01_copy_03 | street street lamp pole 01 copy 03 | streetlampspoles | 0.35x0.97x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_03.SM_street_street_lamp_pole_01_copy_03\n\
+    - street_street_lamp_pole_01_copy_04 | street street lamp pole 01 copy 04 | streetlampspoles | 0.5x0.99x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_04.SM_street_street_lamp_pole_01_copy_04\n\
+    - street_street_lamp_pole_01_copy_05 | street street lamp pole 01 copy 05 | streetlampspoles | 0.5x0.99x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_05.SM_street_street_lamp_pole_01_copy_05\n\
+    - street_street_lamp_pole_01_copy_06 | street street lamp pole 01 copy 06 | streetlampspoles | 0.5x0.99x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_06.SM_street_street_lamp_pole_01_copy_06\n\
+    - street_street_lamp_pole_01_copy_07 | street street lamp pole 01 copy 07 | streetlampspoles | 0.5x0.99x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_07.SM_street_street_lamp_pole_01_copy_07\n\
+    - street_street_lamp_pole_01_copy_08 | street street lamp pole 01 copy 08 | streetlampspoles | 0.67x0.97x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_08.SM_street_street_lamp_pole_01_copy_08\n\
+    - street_street_lamp_pole_01_copy_09 | street street lamp pole 01 copy 09 | streetlampspoles | 0.66x0.97x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_09.SM_street_street_lamp_pole_01_copy_09\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
+    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
+    \ for yourself when the scene\nmatches the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+assets:
+  packs:
+  - EuropeanStreet
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/european-street-3d-scene.bundle.json
+- name: overview_prompt_alignment

@@ -1,0 +1,44 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-67-middle-east-canopy-recovery-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "middle-east-river",
+  "scene_spec": "../../../scenes/middle-east-river/scene.json",
+  "source_map": "/Game/MiddleEasternTown/Levels/L_MiddleEasternTown",
+  "ground_truth_map": "/Game/Code4SceneGT/middle-east-river/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-67-middle-east-canopy-recovery-v2/Input",
+  "level_structure": [
+    {
+      "op": "retarget_streaming_level",
+      "from": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "to": "/Game/Code4SceneInputs/_shared/middle-east-river/buildings_base",
+      "copy_package": true,
+      "note": "The Input streams a copy of the GT's custom sublevel under the Input root so that no Input package references the scorer-only GT root."
+    }
+  ],
+  "operations": [
+    {
+      "op": "remove_actor",
+      "target": "sca_source_58b0a1078e555a239114027a8c27f3f8"
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "duplication",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "LI_Canopy_3"
+      }
+    ],
+    "category": "repair_completion",
+    "target_labels": [
+      "LI_Canopy_3"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/middle-east-river/gt.fingerprint.json"
+}

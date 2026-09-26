@@ -1,0 +1,38 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/rosies-diner/GT",
+  "source_level": "/Game/Code4SceneGT/rosies-diner/GT",
+  "gt_id": "comp-17-rosies-service-bin-reset-v3",
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "translation",
+        "label": "SM_Trashcan3",
+        "delta_cm": [
+          260.0,
+          180.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "SM_Trashcan3",
+        "yaw_deg": 65.0
+      },
+      {
+        "type": "scaling",
+        "label": "SM_Trashcan3",
+        "factor": 1.45
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "SM_Trashcan3"
+    ]
+  }
+}

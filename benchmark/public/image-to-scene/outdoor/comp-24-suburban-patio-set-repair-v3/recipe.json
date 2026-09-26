@@ -1,0 +1,97 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-24-suburban-patio-set-repair-v3",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "suburban-night",
+  "scene_spec": "../../../scenes/suburban-night/scene.json",
+  "source_map": "/Game/Modular_house/Maps/Enviroment_Night",
+  "ground_truth_map": "/Game/Code4SceneGT/suburban-night/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-24-suburban-patio-set-repair-v3/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_1e3a1ec13c9757e8854cca44c6a6b1c4",
+      "location_cm": [
+        2895.000041,
+        1530.00002,
+        -40.0
+      ],
+      "rotation_deg": [
+        0.0,
+        -134.0,
+        0.0
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_generated_17a78b9f218518bd47a49c5b2096e250",
+      "identity_tag": false,
+      "object_name": "StaticMeshActor_12",
+      "label": "PatioUmbrella_CorruptDuplicate",
+      "from": {
+        "static_mesh": "/Game/Modular_house/Meshes/Outdoor/SM_Umbrella_01.SM_Umbrella_01"
+      },
+      "location_cm": [
+        3530.000054,
+        2000.000022,
+        -40.0
+      ],
+      "rotation_deg": [
+        0.0,
+        -143.0,
+        0.0
+      ],
+      "scale": [
+        1.18,
+        1.18,
+        1.18
+      ],
+      "expect": {
+        "like": "sca_source_fa3c7e6b12b355c29d4bae0761642642"
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "removal",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "StaticMeshActor_591",
+        "new_label": "PatioUmbrella_CorruptDuplicate",
+        "delta_cm": [
+          420.0,
+          0.0,
+          0.0
+        ],
+        "yaw_deg": 37.0,
+        "factor": 1.18
+      },
+      {
+        "type": "translation",
+        "label": "StaticMeshActor_532",
+        "delta_cm": [
+          -300.0,
+          250.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "StaticMeshActor_532",
+        "yaw_deg": 46.0
+      }
+    ],
+    "category": "layout_rearrangement",
+    "target_labels": [
+      "StaticMeshActor_532",
+      "StaticMeshActor_591"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/suburban-night/gt.fingerprint.json"
+}

@@ -1,0 +1,40 @@
+# Code4Scene public task. Build the Input/GT levels and reference views with
+# dataset_builder (see docs/BUILD_DATASET.md) before running it.
+id: indoor-atomic-v1-042
+kind: scene_repair
+case_type: image_to_scene
+scene_environment: indoor
+inputs:
+  prompt: Repair the current indoor scene so it matches the two provided reference images and the canonical
+    scene. Make only the minimum changes needed, and preserve all unrelated actors and properties.
+  init_map: /Game/Code4SceneInputs/indoor-atomic-v1-042/Input
+  budget:
+    tool_calls: 120
+    wall_minutes: 45
+  skills: contracts
+source:
+  schema_version: scenebench.gt_repair_task.v1
+  task_id: indoor-atomic-v1-042
+  pack: Dungeon
+  reference_views:
+  - references/view-01.png
+  - references/view-02.png
+  content_fingerprints:
+    algorithm: c4s-fp-1
+    ground_truth:
+      root: 649226e6b2c6b6a0425e83d6071712340c79393bee98a557625ea6c12e30b895
+      actor_count: 1022
+    input:
+      root: fcce7fcf990774240c0c1766e98c53e0d6c3c2b5f6c7578e1a84622458afa537
+      actor_count: 1022
+verifiers:
+- name: gt_repair
+  ground_truth: /Game/Code4SceneGT/dungeon-hall/GT
+  visual_semantic_diff:
+    caption_diff: true
+    paired_visual: true
+assets:
+  packs:
+  - Dungeon
+  - Code4SceneInputs
+status: ready

@@ -1,0 +1,44 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "indoor-atomic-v1-077",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "victorian-dining",
+  "scene_spec": "../../../scenes/victorian-dining/scene.json",
+  "source_map": "/Game/VictorianRoom/Maps/Demonstration",
+  "ground_truth_map": "/Game/Code4SceneGT/victorian-dining/GT",
+  "input_map": "/Game/Code4SceneInputs/indoor-atomic-v1-077/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_generated_8411e416ab43586ae9098c7873b788c6",
+      "location_cm": [
+        -100.0,
+        -145.0,
+        -2.2664883136749268
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "translation"
+    ],
+    "authored_operations": [
+      {
+        "type": "translation",
+        "label": "SM_Chair13",
+        "delta_cm": [
+          0.0,
+          -45.0,
+          0.0
+        ]
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "SM_Chair13"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/victorian-dining/gt.fingerprint.json"
+}

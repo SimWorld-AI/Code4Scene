@@ -1,0 +1,38 @@
+{
+  "schema_version": "code4scene.scene.v1",
+  "scene_id": "downtown-office",
+  "environment": "indoor",
+  "source_pack": "Downtown Office Legacy",
+  "content_roots": [
+    "Office"
+  ],
+  "source_map": "/Game/Office/Maps/Demo",
+  "ground_truth_map": "/Game/Code4SceneGT/downtown-office/GT",
+  "identity": {
+    "scheme": "uuid5-source-v1",
+    "gt_id": "gt-04ab85b9f349",
+    "namespace_url": "https://simworld.ai/SimCodeArena/stable-actor-id/v1",
+    "tag_actor_origin": "source",
+    "rule": "stable_id = 'sca_source_' + uuid5(uuid5(NAMESPACE_URL, namespace_url), 'v1|source|' + gt_id + '|' + source_map + '|' + actor_path_in_source_map + '|' + class_path).hex; written as tags 'simcodearena.stable_actor_id=<id>' and 'simcodearena.actor_origin=source' on every persistent-level actor of the source map that is not a child actor."
+  },
+  "patches": [],
+  "key_assets": [
+    "/Game/Office/Maps/Demo",
+    "/Game/Office/Meshes/Building/Sm_Floor01.Sm_Floor01",
+    "/Game/Office/Textures/Folliage/Sm_Folliage02.Sm_Folliage02",
+    "/Game/Office/Foliage/SM_Plant02.SM_Plant02",
+    "/Game/Office/Meshes/Building/Sm_Ceilling01B.Sm_Ceilling01B"
+  ],
+  "known_unresolved_dependencies": [],
+  "expected_fingerprint": {
+    "file": "gt.fingerprint.json",
+    "algorithm": "c4s-fp-1",
+    "root": "e425535b8d5ac2832918b8e8a3c1e611e7480aeed14d41a9e130c0eafb6b514e",
+    "actor_count": 3168
+  },
+  "cases": [
+    "a20-s03-extra-upper-chair-removal",
+    "a20-s03-upper-chair-scaling",
+    "indoor-atomic-v1-020"
+  ]
+}

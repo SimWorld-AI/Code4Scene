@@ -1,0 +1,55 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-33-rural-riverside-tree-reset-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "rural-australia",
+  "scene_spec": "../../../scenes/rural-australia/scene.json",
+  "source_map": "/Game/RuralAustralia/Maps/RuralAustralia_Example_02",
+  "ground_truth_map": "/Game/Code4SceneGT/rural-australia/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-33-rural-riverside-tree-reset-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_a768c8b9d6bf5c04b34b86403117cbb1",
+      "location_cm": [
+        4431.0234375,
+        -2046.516357421875,
+        126.48231506347656
+      ],
+      "rotation_deg": [
+        0.0,
+        55.0,
+        -0.0
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "translation",
+        "label": "SM_GrassTree_163",
+        "delta_cm": [
+          280.0,
+          -190.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "SM_GrassTree_163",
+        "yaw_deg": 55.0
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "SM_GrassTree_163"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/rural-australia/gt.fingerprint.json"
+}

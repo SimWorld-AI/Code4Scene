@@ -1,0 +1,53 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "indoor-atomic-v1-060",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "cyberpunk-toilet",
+  "scene_spec": "../../../scenes/cyberpunk-toilet/scene.json",
+  "source_map": "/Game/CyberpunkWC/Maps/Demonstration",
+  "ground_truth_map": "/Game/Code4SceneGT/cyberpunk-toilet/GT",
+  "input_map": "/Game/Code4SceneInputs/indoor-atomic-v1-060/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_static_mesh",
+      "target": "sca_source_2f1ca7bececa5b23a929ca0defeaa777",
+      "component": "StaticMeshComponent0",
+      "static_mesh": "/Game/CyberpunkWC/Meshes/SM_HandDryer01.SM_HandDryer01",
+      "replaces": "/Game/CyberpunkWC/Meshes/SM_PaperRoll01.SM_PaperRoll01",
+      "expect": {
+        "material_slots": [
+          {
+            "component_identity": "StaticMeshComponent0|/Script/Engine.StaticMeshComponent",
+            "is_dynamic": false,
+            "material_class_path": "/Script/Engine.MaterialInstanceConstant",
+            "material_path": "/Game/CyberpunkWC/Materials/MI_AirconAndProps.MI_AirconAndProps",
+            "slot_index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "replacement"
+    ],
+    "authored_operations": [
+      {
+        "type": "replacement",
+        "label": "SM_HandDryer2",
+        "asset": "/Game/CyberpunkWC/Meshes/SM_HandDryer01.SM_HandDryer01",
+        "component_name": "StaticMeshComponent0",
+        "material_paths": [
+          "/Game/CyberpunkWC/Materials/MI_AirconAndProps.MI_AirconAndProps"
+        ]
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "SM_HandDryer2"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/cyberpunk-toilet/gt.fingerprint.json"
+}

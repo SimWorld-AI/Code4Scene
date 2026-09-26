@@ -1,0 +1,54 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-26-route66-seating-vignette-recovery-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "route66-gas-station",
+  "scene_spec": "../../../scenes/route66-gas-station/scene.json",
+  "source_map": "/Game/Gas_Station/Maps/Demo_Scene",
+  "ground_truth_map": "/Game/Code4SceneGT/route66-gas-station/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-26-route66-seating-vignette-recovery-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "remove_actor",
+      "target": "sca_source_6990a99f3dee5e3dbc8e80491a485a46"
+    },
+    {
+      "op": "remove_actor",
+      "target": "sca_source_02e115d41c7f5546b4b153b589d3ba75"
+    },
+    {
+      "op": "remove_actor",
+      "target": "sca_source_0886c87e48f75944a3423916e2e943fe"
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "insertion",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "Props_Wooden_Table"
+      },
+      {
+        "type": "removal",
+        "label": "Props_Chair5"
+      },
+      {
+        "type": "removal",
+        "label": "Props_OilLamp"
+      }
+    ],
+    "category": "repair_completion",
+    "target_labels": [
+      "Props_Wooden_Table",
+      "Props_Chair5",
+      "Props_OilLamp"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/route66-gas-station/gt.fingerprint.json"
+}

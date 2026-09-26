@@ -1,0 +1,54 @@
+# Current rubric for candidate-only scene-quality judging.
+id: scene-quality
+scale_max: 4
+
+instructions: >
+  Judge the scene as a place, not as a screenshot. Prefer the interpretation
+  a person walking through it would have. Do not reward density that is
+  incoherent, and do not penalise restraint that is deliberate.
+
+criteria:
+  - id: task_fidelity
+    question: Does the scene depict what the request asked for?
+    weight: 3
+    guidance: >
+      Named elements present and recognisable; the setting reads as the one
+      requested rather than a generic version of it.
+  - id: coherence
+    question: Does the scene read as a single believable place?
+    weight: 2
+    guidance: >
+      Consistent setting and era; objects placed where they would plausibly
+      be; no props from an unrelated world.
+  - id: composition
+    question: Is the space organised, with a focal point and usable routes?
+    weight: 2
+    guidance: >
+      Something anchors the scene; the area is used rather than clustered in
+      one corner; paths are walkable rather than blocked.
+  - id: finish
+    question: Does the scene look finished?
+    weight: 1
+    guidance: >
+      Ground covered rather than bare default floor; edges resolved rather
+      than stopping abruptly; lighting that lets the scene be seen.
+
+ceilings:
+  - metric: structural_collision_rate
+    above: 0.30
+    max_score: 0.5
+    reason: >
+      Over 30% of structures intersect something — the scene does not hold
+      together regardless of how it looks from a chosen angle.
+  - metric: structural_collision_rate
+    above: 0.10
+    max_score: 0.8
+    reason: Over 10% of structures intersect something.
+  - metric: floating_rate
+    above: 0.15
+    max_score: 0.7
+    reason: Over 15% of objects float unsupported.
+  - metric: actors
+    below: 20
+    max_score: 0.4
+    reason: Fewer than 20 objects placed — too little was built to judge as a scene.

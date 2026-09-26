@@ -1,0 +1,48 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/african-desert/GT",
+  "source_level": "/Game/Code4SceneGT/african-desert/GT",
+  "gt_id": "comp-80-desert-central-wall-replacement-v2",
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "replacement",
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "replacement",
+        "label": "building_4_mesh4_46",
+        "asset": "/Game/AfricanLocation/models/Scans/ruins/building_8_mesh.building_8_mesh"
+      },
+      {
+        "type": "translation",
+        "label": "building_4_mesh4_46",
+        "delta_cm": [
+          380.0,
+          -260.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "building_4_mesh4_46",
+        "yaw_deg": 42.0
+      },
+      {
+        "type": "scaling",
+        "label": "building_4_mesh4_46",
+        "factor": [
+          0.76,
+          1.2,
+          0.84
+        ]
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "building_4_mesh4_46"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+schema_version: scenebenchmark.score_policy.v1
+policy_id: text-to-scene-human-aligned
+description: >-
+  Human-aligned text-to-scene aggregation. Semantic families remain separately
+  reported, and the final score combines semantic fidelity, physical safety,
+  and holistic overview alignment.
+
+# The launcher fails before Candidate access if either task-owned verifier is
+# absent. physical_safety is runner-owned and therefore is not declared here.
+required_task_verifiers:
+  - semantic_requirements
+  - overview_prompt_alignment
+
+semantic_family_weights:
+  identity_environment: 0.25
+  content_quantity: 0.40
+  spatial_composition: 0.20
+  attributes_materials: 0.15
+
+total_weights:
+  semantic: 0.20
+  physics: 0.20
+  holistic_overview: 0.60
+
+# A family that the prompt does not ask for is N/A; the remaining applicable
+# family weights are renormalized. Unknown evidence is not N/A and remains in
+# the denominator with zero credit.
+missing_family_policy: renormalize_applicable
+missing_component_policy: zero_without_renormalization
+published_score: score

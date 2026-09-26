@@ -1,0 +1,21 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/laboratory-loft/GT",
+  "source_level": "/Game/Code4SceneGT/laboratory-loft/GT",
+  "gt_id": "indoor-atomic-v1-045",
+  "schema_version": "code4scene.gt_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "duplication"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "SM_Sofa_FBX"
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "SM_Sofa_FBX"
+    ]
+  }
+}

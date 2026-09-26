@@ -1,0 +1,44 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "indoor-atomic-v1-041",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "dungeon-hall",
+  "scene_spec": "../../../scenes/dungeon-hall/scene.json",
+  "source_map": "/Game/Dungeon/Levels/Dungeon_Demo_00",
+  "ground_truth_map": "/Game/Code4SceneGT/dungeon-hall/GT",
+  "input_map": "/Game/Code4SceneInputs/indoor-atomic-v1-041/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_srcmap_b6322d622602fa9cc02919b7f471535d",
+      "rotation_deg": [
+        0.0,
+        -179.9998016357422,
+        12.820112228393555
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "reflection"
+    ],
+    "authored_operations": [
+      {
+        "type": "rotation",
+        "label": "SM_Torch8",
+        "rotation_rpy_deg": [
+          12.820112228393555,
+          0.0,
+          -179.9998016357422
+        ]
+      }
+    ],
+    "category": "symmetry_pattern",
+    "target_labels": [
+      "SM_Torch8"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/dungeon-hall/gt.fingerprint.json"
+}

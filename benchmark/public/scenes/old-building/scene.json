@@ -1,0 +1,43 @@
+{
+  "schema_version": "code4scene.scene.v1",
+  "scene_id": "old-building",
+  "environment": "outdoor",
+  "source_pack": "OldBuilding",
+  "content_roots": [
+    "OldBuilding"
+  ],
+  "source_map": "/Game/OldBuilding/Maps/OldBuilding",
+  "ground_truth_map": "/Game/Code4SceneGT/old-building/GT",
+  "identity": {
+    "scheme": "uuid5-source-v1",
+    "gt_id": "gt-4f48b83cdd6e",
+    "namespace_url": "https://simworld.ai/SimCodeArena/stable-actor-id/v1",
+    "tag_actor_origin": "source",
+    "rule": "stable_id = 'sca_source_' + uuid5(uuid5(NAMESPACE_URL, namespace_url), 'v1|source|' + gt_id + '|' + source_map + '|' + actor_path_in_source_map + '|' + class_path).hex; written as tags 'simcodearena.stable_actor_id=<id>' and 'simcodearena.actor_origin=source' on every persistent-level actor of the source map that is not a child actor."
+  },
+  "patches": [],
+  "key_assets": [
+    "/Game/OldBuilding/Maps/OldBuilding",
+    "/Game/OldBuilding/Meshes/Props/Fence/FenceMain02.FenceMain02",
+    "/Game/OldBuilding/Meshes/Windows/Window03_Ledge.Window03_Ledge",
+    "/Game/OldBuilding/Meshes/Windows/Window02_FullTrim.Window02_FullTrim",
+    "/Game/OldBuilding/Meshes/Walls/Pillar.Pillar"
+  ],
+  "known_unresolved_dependencies": [
+    "/Game/Cabin_Pack/Master_Mat/T_MacroVariation"
+  ],
+  "expected_fingerprint": {
+    "file": "gt.fingerprint.json",
+    "algorithm": "c4s-fp-1",
+    "root": "dc7cae01c90fbc4fb1766729c8229686994c6d2e6e87e73a5b784a4f9e3e3cf9",
+    "actor_count": 473
+  },
+  "cases": [
+    "comp-29-old-industrial-bench-reset-v2",
+    "comp-30-old-industrial-air-tank-recovery-v2",
+    "comp-31-old-industrial-pallet-bay-repair-v2",
+    "comp-55-old-industrial-pallet-recovery-v3",
+    "comp-56-old-industrial-barrel-symmetry-repair-v2",
+    "comp-76-old-industrial-barrel-row-repair-v2"
+  ]
+}

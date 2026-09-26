@@ -1,0 +1,96 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-64-train-streetlamp-pair-repair-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "train-station",
+  "scene_spec": "../../../scenes/train-station/scene.json",
+  "source_map": "/Game/TrainStation/Maps/TrainStation_Optimised",
+  "ground_truth_map": "/Game/Code4SceneGT/train-station/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-64-train-streetlamp-pair-repair-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_db1f27fa7f2a5cdb92f5ce6134725df2",
+      "rotation_deg": [
+        0.0,
+        65.0000228881836,
+        -0.0
+      ],
+      "scale": [
+        1.25,
+        1.25,
+        1.25
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_generated_baa24808f377623474d5c22bf8ea1d2e",
+      "identity_tag": false,
+      "object_name": "StaticMeshActor_0",
+      "label": "SM_StreetLamp3_CorruptDuplicate",
+      "from": {
+        "static_mesh": "/Game/TrainStation/Meshes/SM_StreetLamp.SM_StreetLamp"
+      },
+      "location_cm": [
+        -1235.25927734375,
+        -1885.5859375,
+        -1020.0
+      ],
+      "rotation_deg": [
+        0.0,
+        40.0000228881836,
+        -0.0
+      ],
+      "scale": [
+        0.85,
+        0.85,
+        0.85
+      ],
+      "expect": {
+        "like": "sca_source_d491b48c92725d6d927240ed7a4be296"
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "removal",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "SM_StreetLamp3",
+        "new_label": "SM_StreetLamp3_CorruptDuplicate",
+        "delta_cm": [
+          240.0,
+          160.0,
+          0.0
+        ],
+        "yaw_deg": 30.0,
+        "factor": 0.85
+      },
+      {
+        "type": "rotation",
+        "label": "SM_StreetLamp3",
+        "yaw_deg": 55.0
+      },
+      {
+        "type": "scaling",
+        "label": "SM_StreetLamp3",
+        "factor": [
+          1.25,
+          1.25,
+          1.25
+        ]
+      }
+    ],
+    "category": "layout_rearrangement",
+    "target_labels": [
+      "SM_StreetLamp3"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/train-station/gt.fingerprint.json"
+}

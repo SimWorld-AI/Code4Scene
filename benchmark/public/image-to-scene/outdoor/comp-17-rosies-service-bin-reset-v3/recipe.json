@@ -1,0 +1,66 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-17-rosies-service-bin-reset-v3",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "rosies-diner",
+  "scene_spec": "../../../scenes/rosies-diner/scene.json",
+  "source_map": "/Game/Diner/Maps/Diner",
+  "ground_truth_map": "/Game/Code4SceneGT/rosies-diner/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-17-rosies-service-bin-reset-v3/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_608392fff89c5f7790b74fb2d022e7c4",
+      "location_cm": [
+        -1357.9771728515625,
+        -2298.219482421875,
+        110.0
+      ],
+      "rotation_deg": [
+        0.0,
+        37.90786743164063,
+        -0.0
+      ],
+      "scale": [
+        1.99375,
+        1.99375,
+        1.99375
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "translation",
+        "label": "SM_Trashcan3",
+        "delta_cm": [
+          260.0,
+          180.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "SM_Trashcan3",
+        "yaw_deg": 65.0
+      },
+      {
+        "type": "scaling",
+        "label": "SM_Trashcan3",
+        "factor": 1.45
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "SM_Trashcan3"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/rosies-diner/gt.fingerprint.json"
+}

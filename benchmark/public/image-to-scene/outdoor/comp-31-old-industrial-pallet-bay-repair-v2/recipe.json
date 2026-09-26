@@ -1,0 +1,96 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-31-old-industrial-pallet-bay-repair-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "old-building",
+  "scene_spec": "../../../scenes/old-building/scene.json",
+  "source_map": "/Game/OldBuilding/Maps/OldBuilding",
+  "ground_truth_map": "/Game/Code4SceneGT/old-building/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-31-old-industrial-pallet-bay-repair-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_a4b993b39772504d8bed2941e523f50a",
+      "location_cm": [
+        1778.0126953125,
+        1684.7939453125,
+        3822.0576171875
+      ],
+      "rotation_deg": [
+        0.0,
+        35.0,
+        -0.0
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_generated_e9a35068be8b26b5d75cd5700004da28",
+      "identity_tag": false,
+      "object_name": "StaticMeshActor_0",
+      "label": "Pallets_Stacked_65_CorruptDuplicate",
+      "from": {
+        "static_mesh": "/Game/OldBuilding/Meshes/Props/Pallet/Pallets_Stacked.Pallets_Stacked"
+      },
+      "location_cm": [
+        1388.0126953125,
+        1964.7939453125,
+        3822.0576171875
+      ],
+      "rotation_deg": [
+        0.0,
+        -28.0,
+        0.0
+      ],
+      "scale": [
+        1.15,
+        1.15,
+        1.15
+      ],
+      "expect": {
+        "like": "sca_source_a4b993b39772504d8bed2941e523f50a"
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "removal",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "Pallets_Stacked_65",
+        "new_label": "Pallets_Stacked_65_CorruptDuplicate",
+        "delta_cm": [
+          -230.0,
+          160.0,
+          0.0
+        ],
+        "yaw_deg": -28.0,
+        "factor": 1.15
+      },
+      {
+        "type": "translation",
+        "label": "Pallets_Stacked_65",
+        "delta_cm": [
+          160.0,
+          -120.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "Pallets_Stacked_65",
+        "yaw_deg": 35.0
+      }
+    ],
+    "category": "layout_rearrangement",
+    "target_labels": [
+      "Pallets_Stacked_65"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/old-building/gt.fingerprint.json"
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "a20-s06-crate-replacement",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "medieval-forge",
+  "scene_spec": "../../../scenes/medieval-forge/scene.json",
+  "source_map": "/Game/MedievalForgePack/Maps/Forge_SampleMap",
+  "ground_truth_map": "/Game/Code4SceneGT/medieval-forge/GT",
+  "input_map": "/Game/Code4SceneInputs/a20-s06-crate-replacement/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_static_mesh",
+      "target": "sca_source_4119e8746d2b56509344306415867bd2",
+      "component": "StaticMeshComponent0",
+      "static_mesh": "/Game/MedievalForgePack/Props/SM_Barrel.SM_Barrel",
+      "replaces": "/Game/MedievalForgePack/Props/SM_WoodBox.SM_WoodBox",
+      "expect": {
+        "material_slots": [
+          {
+            "component_identity": "StaticMeshComponent0|/Script/Engine.StaticMeshComponent",
+            "is_dynamic": false,
+            "material_class_path": "/Script/Engine.Material",
+            "material_path": "/Game/MedievalForgePack/Materials/M_AssetsPack1.M_AssetsPack1",
+            "slot_index": 0
+          }
+        ]
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "replacement"
+    ],
+    "authored_operations": [
+      {
+        "type": "replacement",
+        "label": "SM_WoodBox13",
+        "asset": "/Game/MedievalForgePack/Props/SM_Barrel.SM_Barrel",
+        "component_name": "StaticMeshComponent0",
+        "material_paths": [
+          "/Game/MedievalForgePack/Materials/M_AssetsPack1.M_AssetsPack1"
+        ]
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "SM_WoodBox13"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/medieval-forge/gt.fingerprint.json"
+}

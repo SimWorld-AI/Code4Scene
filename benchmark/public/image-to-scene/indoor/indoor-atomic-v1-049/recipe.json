@@ -1,0 +1,44 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "indoor-atomic-v1-049",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "archviz-apartment",
+  "scene_spec": "../../../scenes/archviz-apartment/scene.json",
+  "source_map": "/Game/ArchVizInteriorVol2/Maps/Apartment",
+  "ground_truth_map": "/Game/Code4SceneGT/archviz-apartment/GT",
+  "input_map": "/Game/Code4SceneInputs/indoor-atomic-v1-049/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_4e3a9093cfa95f3daed92e20955a97d8",
+      "location_cm": [
+        -293.1930236816406,
+        246.92447662353516,
+        129.57162475585938
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "translation"
+    ],
+    "authored_operations": [
+      {
+        "type": "translation",
+        "label": "SM_Stack_of_Books_7",
+        "delta_cm": [
+          0.0,
+          140.0,
+          0.0
+        ]
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "SM_Stack_of_Books_7"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/archviz-apartment/gt.fingerprint.json"
+}

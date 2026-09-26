@@ -1,0 +1,44 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "indoor-atomic-v1-073",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "laboratory-loft",
+  "scene_spec": "../../../scenes/laboratory-loft/scene.json",
+  "source_map": "/Game/Laboratory_in_Loft_Style/Maps/Demo",
+  "ground_truth_map": "/Game/Code4SceneGT/laboratory-loft/GT",
+  "input_map": "/Game/Code4SceneInputs/indoor-atomic-v1-073/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_generated_3bb2ca2a6166caf40e97ea5de51ea4e9",
+      "location_cm": [
+        1604.627685546875,
+        299.5989990234375,
+        31.999954223632812
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "translation"
+    ],
+    "authored_operations": [
+      {
+        "type": "translation",
+        "label": "SM_Chair9",
+        "delta_cm": [
+          0.0,
+          -45.0,
+          0.0
+        ]
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "SM_Chair9"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/laboratory-loft/gt.fingerprint.json"
+}

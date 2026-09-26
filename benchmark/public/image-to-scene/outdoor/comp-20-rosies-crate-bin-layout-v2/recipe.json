@@ -1,0 +1,97 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-20-rosies-crate-bin-layout-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "rosies-diner",
+  "scene_spec": "../../../scenes/rosies-diner/scene.json",
+  "source_map": "/Game/Diner/Maps/Diner",
+  "ground_truth_map": "/Game/Code4SceneGT/rosies-diner/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-20-rosies-crate-bin-layout-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_04c9f26f8a26559ca03f88e645192c93",
+      "location_cm": [
+        -609.9527587890625,
+        -1300.3465576171875,
+        111.60424041748047
+      ],
+      "rotation_deg": [
+        0.0,
+        48.000000000000014,
+        -0.0
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_generated_2feb7aa41047815298c09e0fa07f4a4c",
+      "identity_tag": false,
+      "object_name": "StaticMeshActor_0",
+      "label": "SM_Box001_CorruptDuplicate",
+      "from": {
+        "static_mesh": "/Game/Diner/Meshs/Props/SM_Box001.SM_Box001"
+      },
+      "location_cm": [
+        -128.96047973632812,
+        -927.623779296875,
+        230.6124725341797
+      ],
+      "rotation_deg": [
+        7.951386703658792e-16,
+        32.0,
+        -7.6663999557495135
+      ],
+      "scale": [
+        1.640625,
+        1.640625,
+        1.640625
+      ],
+      "expect": {
+        "like": "sca_source_dda0fb5a42e4564cac2f10bf2a65fe62"
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "removal",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "SM_Box001",
+        "new_label": "SM_Box001_CorruptDuplicate",
+        "delta_cm": [
+          220.0,
+          170.0,
+          0.0
+        ],
+        "yaw_deg": 32.0,
+        "factor": 1.25
+      },
+      {
+        "type": "translation",
+        "label": "SM_Trashcan01",
+        "delta_cm": [
+          -260.0,
+          -210.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "SM_Trashcan01",
+        "yaw_deg": 48.0
+      }
+    ],
+    "category": "layout_rearrangement",
+    "target_labels": [
+      "SM_Box001",
+      "SM_Trashcan01"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/rosies-diner/gt.fingerprint.json"
+}

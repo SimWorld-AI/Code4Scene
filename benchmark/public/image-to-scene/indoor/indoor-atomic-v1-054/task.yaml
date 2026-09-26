@@ -1,0 +1,40 @@
+# Code4Scene public task. Build the Input/GT levels and reference views with
+# dataset_builder (see docs/BUILD_DATASET.md) before running it.
+id: indoor-atomic-v1-054
+kind: scene_repair
+case_type: image_to_scene
+scene_environment: indoor
+inputs:
+  prompt: Repair the current indoor scene so it matches the two provided reference images and the canonical
+    scene. Make only the minimum changes needed, and preserve all unrelated actors and properties.
+  init_map: /Game/Code4SceneInputs/indoor-atomic-v1-054/Input
+  budget:
+    tool_calls: 120
+    wall_minutes: 45
+  skills: contracts
+source:
+  schema_version: scenebench.gt_repair_task.v1
+  task_id: indoor-atomic-v1-054
+  pack: Detective Office
+  reference_views:
+  - references/view-01.png
+  - references/view-02.png
+  content_fingerprints:
+    algorithm: c4s-fp-1
+    ground_truth:
+      root: dd4afe096ed9826b92c34dce08d3ce50080a990a237e3d89d783dde319061bb7
+      actor_count: 1325
+    input:
+      root: 0420add7edd0fbac0e99b02651abf2a6650dff3b170e9b12e580164aa83f2a10
+      actor_count: 1325
+verifiers:
+- name: gt_repair
+  ground_truth: /Game/Code4SceneGT/detective-office/GT
+  visual_semantic_diff:
+    caption_diff: true
+    paired_visual: true
+assets:
+  packs:
+  - DetectiveOffice
+  - Code4SceneInputs
+status: ready

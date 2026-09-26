@@ -1,0 +1,96 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-61-new-york-mailbox-pair-repair-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "new-york-street",
+  "scene_spec": "../../../scenes/new-york-street/scene.json",
+  "source_map": "/Game/Street_NY/Maps/Demo",
+  "ground_truth_map": "/Game/Code4SceneGT/new-york-street/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-61-new-york-mailbox-pair-repair-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_eca332ec37ca5114a4e9b485ac3eebe8",
+      "rotation_deg": [
+        0.0,
+        -45.00000000000001,
+        0.0
+      ],
+      "scale": [
+        1.3,
+        0.8,
+        1.2
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_generated_5d90554c7358cdec7edbfc41978b2f20",
+      "identity_tag": false,
+      "object_name": "StaticMeshActor_0",
+      "label": "Mailbox2_CorruptDuplicate",
+      "from": {
+        "static_mesh": "/Game/Street_NY/Models/Props/SM_Mailbox.SM_Mailbox"
+      },
+      "location_cm": [
+        1466.174560546875,
+        542.2686767578125,
+        7.62939453125e-06
+      ],
+      "rotation_deg": [
+        0.0,
+        25.0,
+        -0.0
+      ],
+      "scale": [
+        1.15,
+        1.15,
+        1.15
+      ],
+      "expect": {
+        "like": "sca_source_1b6b9865d98c538a9d7730307c0479f0"
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "removal",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "Mailbox2",
+        "new_label": "Mailbox2_CorruptDuplicate",
+        "delta_cm": [
+          180.0,
+          140.0,
+          0.0
+        ],
+        "yaw_deg": 25.0,
+        "factor": 1.15
+      },
+      {
+        "type": "rotation",
+        "label": "Mailbox2",
+        "yaw_deg": -45.0
+      },
+      {
+        "type": "scaling",
+        "label": "Mailbox2",
+        "factor": [
+          1.3,
+          0.8,
+          1.2
+        ]
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "Mailbox2"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/new-york-street/gt.fingerprint.json"
+}

@@ -1,0 +1,431 @@
+{
+  "schema_version": "code4scene.scene.v1",
+  "scene_id": "middle-east-river",
+  "environment": "outdoor",
+  "source_pack": "middle_eastern_river_town",
+  "content_roots": [
+    "MiddleEasternTown"
+  ],
+  "source_map": "/Game/MiddleEasternTown/Levels/L_MiddleEasternTown",
+  "ground_truth_map": "/Game/Code4SceneGT/middle-east-river/GT",
+  "identity": {
+    "scheme": "uuid5-source-v1",
+    "gt_id": "gt-66e8b595172d",
+    "namespace_url": "https://simworld.ai/SimCodeArena/stable-actor-id/v1",
+    "tag_actor_origin": "source",
+    "rule": "stable_id = 'sca_source_' + uuid5(uuid5(NAMESPACE_URL, namespace_url), 'v1|source|' + gt_id + '|' + source_map + '|' + actor_path_in_source_map + '|' + class_path).hex; written as tags 'simcodearena.stable_actor_id=<id>' and 'simcodearena.actor_origin=source' on every persistent-level actor of the source map that is not a child actor."
+  },
+  "patches": [
+    {
+      "op": "set_label",
+      "target": "sca_source_2870fcd436fc597da55579b8ee57eee9",
+      "label": "BP_SplinePalace1",
+      "note": "label observed on the scored GT; the stock map labels this actor BP_SplinePalace"
+    },
+    {
+      "op": "remove_streaming_level",
+      "level": "/Game/MiddleEasternTown/Levels/SubLevels/L_CityBuildings"
+    },
+    {
+      "op": "add_streaming_level",
+      "level": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "create_empty": true,
+      "streaming_class_like": "/Game/MiddleEasternTown/Levels/SubLevels/L_CityBuildings"
+    },
+    {
+      "op": "spawn_actor",
+      "level": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "stable_id": "sca_generated_2c01e5188c91226eb827a12694348d26",
+      "identity_tag": false,
+      "object_name": "LevelInstance_0",
+      "label": "LI_EnbankmentSet04a139",
+      "from": {
+        "class": "/Game/MiddleEasternTown/Blueprints/PackedBlueprints/BPP_LI_EnbankmentSet04a.BPP_LI_EnbankmentSet04a_C"
+      },
+      "location_cm": [
+        -34776.682987,
+        -4649.725425,
+        -534.833659
+      ],
+      "rotation_deg": [
+        0.0,
+        136.685812,
+        -0.0
+      ],
+      "scale": [
+        0.773859,
+        0.88706,
+        1.15049
+      ],
+      "tags": [
+        "ShoreRock"
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "level": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "stable_id": "sca_generated_1ccf7517b126da629d9732bd86d60108",
+      "identity_tag": false,
+      "object_name": "LevelInstance_1",
+      "label": "Cube_255",
+      "from": {
+        "class": "/Game/MiddleEasternTown/Blueprints/PackedBlueprints/BPP_LI_EnbankmentSet03a.BPP_LI_EnbankmentSet03a_C"
+      },
+      "location_cm": [
+        -14390.634057,
+        19696.346222,
+        -479.529912
+      ],
+      "rotation_deg": [
+        2.470443,
+        164.951809,
+        10.157753000000001
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tags": []
+    },
+    {
+      "op": "spawn_actor",
+      "level": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "stable_id": "sca_generated_50496b72372f59890b1f67825fcbd46c",
+      "identity_tag": false,
+      "object_name": "LevelInstance_2",
+      "label": "Cube_257",
+      "from": {
+        "class": "/Game/MiddleEasternTown/Blueprints/PackedBlueprints/BPP_LI_EnbankmentSet03a.BPP_LI_EnbankmentSet03a_C"
+      },
+      "location_cm": [
+        -10767.97424,
+        19167.287334,
+        -522.715087
+      ],
+      "rotation_deg": [
+        3.5333390000000002,
+        176.638098,
+        9.559099000000002
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tags": []
+    },
+    {
+      "op": "spawn_actor",
+      "level": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "stable_id": "sca_generated_ba7b57f47222b105df4a1003371ac685",
+      "identity_tag": false,
+      "object_name": "LevelInstance_3",
+      "label": "Cube_269",
+      "from": {
+        "class": "/Game/MiddleEasternTown/Blueprints/PackedBlueprints/BPP_LI_EnbankmentSet03a.BPP_LI_EnbankmentSet03a_C"
+      },
+      "location_cm": [
+        -8020.133049,
+        14354.379382,
+        -542.889828
+      ],
+      "rotation_deg": [
+        1.7140779999999993,
+        178.74049500000004,
+        -9.46904599999999
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tags": []
+    },
+    {
+      "op": "spawn_actor",
+      "level": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "stable_id": "sca_generated_6c37150f5e653021a9230837b44ef810",
+      "identity_tag": false,
+      "object_name": "LevelInstance_4",
+      "label": "Cube_279",
+      "from": {
+        "class": "/Game/MiddleEasternTown/Blueprints/PackedBlueprints/BPP_LI_EnbankmentSet03a.BPP_LI_EnbankmentSet03a_C"
+      },
+      "location_cm": [
+        -5133.994794,
+        16186.851409,
+        -519.590254
+      ],
+      "rotation_deg": [
+        1.41986,
+        22.669209000000002,
+        4.235206
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tags": []
+    },
+    {
+      "op": "spawn_actor",
+      "level": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "stable_id": "sca_generated_ddd2e7260cd251d12075ad6ddb4f1fe5",
+      "identity_tag": false,
+      "object_name": "LevelInstance_5",
+      "label": "LI_EnbankmentSet04a175",
+      "from": {
+        "class": "/Game/MiddleEasternTown/Blueprints/PackedBlueprints/BPP_LI_EnbankmentSet04a.BPP_LI_EnbankmentSet04a_C"
+      },
+      "location_cm": [
+        -31888.05226,
+        -11094.524853,
+        -525.097192
+      ],
+      "rotation_deg": [
+        2.028617,
+        10.322289999999999,
+        -0.6345339999999738
+      ],
+      "scale": [
+        1.100115,
+        1.100115,
+        1.100115
+      ],
+      "tags": [
+        "ShoreRock"
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "level": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "stable_id": "sca_generated_9250c937c49b682d67cd08dbd5149b2b",
+      "identity_tag": false,
+      "object_name": "LevelInstance_6",
+      "label": "LI_B02_v115",
+      "from": {
+        "class": "/Game/MiddleEasternTown/Blueprints/PackedBlueprints/B02_Houses/BPP_LI_B02_v01.BPP_LI_B02_v01_C"
+      },
+      "location_cm": [
+        -9320.956362,
+        9434.215126,
+        -188.021993
+      ],
+      "rotation_deg": [
+        0.0,
+        -134.565107,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tags": [
+        "Houses"
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "level": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "stable_id": "sca_generated_f3c502df530a57aeda7289819bdd40db",
+      "identity_tag": false,
+      "object_name": "LevelInstance_7",
+      "label": "LI_B02_v113",
+      "from": {
+        "class": "/Game/MiddleEasternTown/Blueprints/PackedBlueprints/B02_Houses/BPP_LI_B02_v03.BPP_LI_B02_v03_C"
+      },
+      "location_cm": [
+        -8396.998654,
+        12270.202295,
+        -260.0
+      ],
+      "rotation_deg": [
+        0.0,
+        -168.345248,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tags": [
+        "Houses"
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "level": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "stable_id": "sca_generated_98801f39a1372e1520323e805d352669",
+      "identity_tag": false,
+      "object_name": "LevelInstance_8",
+      "label": "LI_B02_v112",
+      "from": {
+        "class": "/Game/MiddleEasternTown/Blueprints/PackedBlueprints/B02_Houses/BPP_LI_B02_v04.BPP_LI_B02_v04_C"
+      },
+      "location_cm": [
+        -10152.538595,
+        12201.838205,
+        -228.522567
+      ],
+      "rotation_deg": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tags": [
+        "Houses"
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "level": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "stable_id": "sca_generated_2e2755e1be6addb32dc7c76339a64f12",
+      "identity_tag": false,
+      "object_name": "LevelInstance_9",
+      "label": "LI_B02_v110",
+      "from": {
+        "class": "/Game/MiddleEasternTown/Blueprints/PackedBlueprints/B02_Houses/BPP_LI_B02_v06.BPP_LI_B02_v06_C"
+      },
+      "location_cm": [
+        -14990.158184,
+        13182.660682,
+        -253.347744
+      ],
+      "rotation_deg": [
+        0.0,
+        10.767991,
+        -0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tags": [
+        "Houses"
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "level": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "stable_id": "sca_generated_fee9d07270f10eba78d8dbf68bbfff56",
+      "identity_tag": false,
+      "object_name": "LevelInstance_10",
+      "label": "LI_B02_v107",
+      "from": {
+        "class": "/Game/MiddleEasternTown/Blueprints/PackedBlueprints/B02_Houses/BPP_LI_B02_v13.BPP_LI_B02_v13_C"
+      },
+      "location_cm": [
+        -13118.465788,
+        11583.51183,
+        -234.328452
+      ],
+      "rotation_deg": [
+        0.0,
+        133.919955,
+        -0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tags": [
+        "Houses"
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "level": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "stable_id": "sca_generated_a65e55361c20f603a9b51aa1466c2443",
+      "identity_tag": false,
+      "object_name": "LevelInstance_11",
+      "label": "LI_B02_v106",
+      "from": {
+        "class": "/Game/MiddleEasternTown/Blueprints/PackedBlueprints/B02_Houses/BPP_LI_B02_v14.BPP_LI_B02_v14_C"
+      },
+      "location_cm": [
+        -14983.659908,
+        8751.930361,
+        -200.0
+      ],
+      "rotation_deg": [
+        0.0,
+        -45.571125,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tags": [
+        "Houses"
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "level": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "stable_id": "sca_generated_87841d9929652eca1348fbe0fd58545f",
+      "identity_tag": false,
+      "object_name": "LevelInstance_12",
+      "label": "LI_B02_v108",
+      "from": {
+        "class": "/Game/MiddleEasternTown/Blueprints/PackedBlueprints/B02_Houses/BPP_LI_B02_v12.BPP_LI_B02_v12_C"
+      },
+      "location_cm": [
+        -16349.247495,
+        10463.994927,
+        -217.318343
+      ],
+      "rotation_deg": [
+        0.0,
+        42.72957,
+        -0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "tags": [
+        "Houses"
+      ]
+    }
+  ],
+  "key_assets": [
+    "/Game/MiddleEasternTown/Levels/L_MiddleEasternTown",
+    "/Game/MiddleEasternTown/Meshes/Building01_Meshes/LOD0/Buildings/CityWall/SM_B03_WallRailingDecoration_LOD0_LOD0.SM_B03_WallRailingDecoration_LOD0_LOD0",
+    "/Game/MiddleEasternTown/Meshes/Building01_Meshes/LOD0/Buildings/CityWall/SM_B03_WallRailing_LOD0.SM_B03_WallRailing_LOD0",
+    "/Game/MiddleEasternTown/Meshes/Building01_Meshes/LOD0/SM_Enbankment_01_LOD0.SM_Enbankment_01_LOD0",
+    "/Game/MiddleEasternTown/Meshes/Building01_Meshes/LOD0/Buildings/CityWall/SM_B03_FloorTile01a_LOD0.SM_B03_FloorTile01a_LOD0"
+  ],
+  "known_unresolved_dependencies": [
+    "/Game/MiddleEasternTown/PCG/PCG_Foliage",
+    "/Game/Rocket/VFX/NiagaraSystems/Textures/T_Fire_Tiled_D"
+  ],
+  "expected_fingerprint": {
+    "file": "gt.fingerprint.json",
+    "algorithm": "c4s-fp-1",
+    "root": "2fe420aa3dac8d3efd3f18a92e9027ac9a248b8fb19da6e0b6091b77d4aae2a3",
+    "actor_count": 6694
+  },
+  "cases": [
+    "comp-13-middle-east-market-awning-recovery-v4",
+    "comp-15-middle-east-produce-stall-reset-v4",
+    "comp-16-middle-east-fountain-reset-v2",
+    "comp-47-middle-east-rooftop-awning-replacement-v4",
+    "comp-48-middle-east-market-awning-symmetry-repair-v3",
+    "comp-67-middle-east-canopy-recovery-v2",
+    "comp-68-middle-east-canopy-pair-repair-v2"
+  ]
+}

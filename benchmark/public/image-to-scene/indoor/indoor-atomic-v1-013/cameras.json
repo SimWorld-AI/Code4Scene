@@ -1,0 +1,86 @@
+{
+  "schema_version": "code4scene.cameras.v1",
+  "case_id": "indoor-atomic-v1-013",
+  "capture_map": "ground_truth",
+  "capture": {
+    "method": "scene_capture_2d",
+    "width": 1920,
+    "height": 1080,
+    "capture_count": 4,
+    "capture_source": "SCS_FINAL_COLOR_LDR",
+    "console": [
+      "viewmode lit",
+      "r.AntiAliasingMethod 2",
+      "sg.AntiAliasingQuality 4",
+      "r.ScreenPercentage 100",
+      "r.Streaming.FullyLoadUsedTextures 1"
+    ],
+    "fill_light": {
+      "at": "camera",
+      "attenuation_radius_cm": 3200.0,
+      "cast_shadows": false
+    },
+    "top_light": {
+      "at": "target",
+      "offset_z_cm": 320.0,
+      "attenuation_radius_cm": 2600.0,
+      "cast_shadows": false
+    },
+    "rotation": "look_at(location_cm, target_cm)",
+    "fov": "fov_deg is the horizontal field of view of the capture component"
+  },
+  "views": [
+    {
+      "name": "view-01",
+      "location_cm": [
+        153.3302,
+        354.7815,
+        135.0
+      ],
+      "target_cm": [
+        120.0,
+        -80.0,
+        85.0
+      ],
+      "fov_deg": 70.0,
+      "lighting": {
+        "fill_intensity": 300.0,
+        "top_intensity": 150.0,
+        "exposure_bias": 0.0
+      },
+      "streaming_pool_mb": 4000,
+      "publish": {
+        "file": "references/view-01.png",
+        "format": "png",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "name": "view-02",
+      "location_cm": [
+        -120.0,
+        -60.0,
+        140.0
+      ],
+      "target_cm": [
+        130.0,
+        -60.0,
+        80.0
+      ],
+      "fov_deg": 70.0,
+      "lighting": {
+        "fill_intensity": 300.0,
+        "top_intensity": 150.0,
+        "exposure_bias": 0.0
+      },
+      "streaming_pool_mb": 4000,
+      "publish": {
+        "file": "references/view-02.png",
+        "format": "png",
+        "width": 1280,
+        "height": 720
+      }
+    }
+  ]
+}

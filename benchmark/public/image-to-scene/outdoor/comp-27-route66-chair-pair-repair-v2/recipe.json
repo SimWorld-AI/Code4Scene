@@ -1,0 +1,97 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-27-route66-chair-pair-repair-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "route66-gas-station",
+  "scene_spec": "../../../scenes/route66-gas-station/scene.json",
+  "source_map": "/Game/Gas_Station/Maps/Demo_Scene",
+  "ground_truth_map": "/Game/Code4SceneGT/route66-gas-station/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-27-route66-chair-pair-repair-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_98f1bacb2125584dbd662ce177bc0f10",
+      "location_cm": [
+        -239.26823043823242,
+        471.263671875,
+        128.29698181152344
+      ],
+      "rotation_deg": [
+        0.0,
+        25.366626739501953,
+        -0.0
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_generated_1c33e3156b46bdcd0a9438d92b6c131a",
+      "identity_tag": false,
+      "object_name": "StaticMeshActor_0",
+      "label": "Props_Chair3_CorruptDuplicate",
+      "from": {
+        "static_mesh": "/Game/Gas_Station/Assets/Meshes/_Props/SM_Large_Chair.SM_Large_Chair"
+      },
+      "location_cm": [
+        -22.791229248046875,
+        457.2802429199219,
+        129.05465698242188
+      ],
+      "rotation_deg": [
+        0.0,
+        13.20116806030274,
+        -0.0
+      ],
+      "scale": [
+        1.2,
+        1.2,
+        1.2
+      ],
+      "expect": {
+        "like": "sca_source_d58b06a564e35f8abfa7dae7fa36aded"
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "removal",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "Props_Chair3",
+        "new_label": "Props_Chair3_CorruptDuplicate",
+        "delta_cm": [
+          180.0,
+          180.0,
+          0.0
+        ],
+        "yaw_deg": 35.0,
+        "factor": 1.2
+      },
+      {
+        "type": "translation",
+        "label": "Props_Chair4",
+        "delta_cm": [
+          -240.0,
+          200.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "Props_Chair4",
+        "yaw_deg": 62.0
+      }
+    ],
+    "category": "layout_rearrangement",
+    "target_labels": [
+      "Props_Chair3",
+      "Props_Chair4"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/route66-gas-station/gt.fingerprint.json"
+}

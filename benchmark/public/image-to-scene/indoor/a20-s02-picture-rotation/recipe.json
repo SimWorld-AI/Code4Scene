@@ -1,0 +1,44 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "a20-s02-picture-rotation",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "detective-office",
+  "scene_spec": "../../../scenes/detective-office/scene.json",
+  "source_map": "/Game/DetectiveOffice/Maps/DetectiveOffice",
+  "ground_truth_map": "/Game/Code4SceneGT/detective-office/GT",
+  "input_map": "/Game/Code4SceneInputs/a20-s02-picture-rotation/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_d38ca2c9511153ce9fc95b96563f63ae",
+      "rotation_deg": [
+        0.0001570943422848359,
+        179.99989318847656,
+        102.00006866455078
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "rotation",
+        "label": "Picture_01",
+        "delta_rpy_deg": [
+          12.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "Picture_01"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/detective-office/gt.fingerprint.json"
+}

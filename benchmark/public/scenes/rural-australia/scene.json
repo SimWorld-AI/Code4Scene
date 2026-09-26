@@ -1,0 +1,38 @@
+{
+  "schema_version": "code4scene.scene.v1",
+  "scene_id": "rural-australia",
+  "environment": "outdoor",
+  "source_pack": "RuralAustralia",
+  "content_roots": [
+    "RuralAustralia"
+  ],
+  "source_map": "/Game/RuralAustralia/Maps/RuralAustralia_Example_02",
+  "ground_truth_map": "/Game/Code4SceneGT/rural-australia/GT",
+  "identity": {
+    "scheme": "uuid5-source-v1",
+    "gt_id": "gt-008",
+    "namespace_url": "https://simworld.ai/SimCodeArena/stable-actor-id/v1",
+    "tag_actor_origin": "source",
+    "rule": "stable_id = 'sca_source_' + uuid5(uuid5(NAMESPACE_URL, namespace_url), 'v1|source|' + gt_id + '|' + source_map + '|' + actor_path_in_source_map + '|' + class_path).hex; written as tags 'simcodearena.stable_actor_id=<id>' and 'simcodearena.actor_origin=source' on every persistent-level actor of the source map that is not a child actor."
+  },
+  "patches": [],
+  "key_assets": [
+    "/Game/RuralAustralia/Maps/RuralAustralia_Example_02",
+    "/Game/RuralAustralia/StaticMeshes/Rocks/Rock_M_01/SM_Rock_M_01.SM_Rock_M_01",
+    "/Game/RuralAustralia/StaticMeshes/Rocks/Ridge_Rock_01/SM_Ridge_Rock_01.SM_Ridge_Rock_01",
+    "/Game/RuralAustralia/StaticMeshes/Rocks/Rock_M_02/SM_Rock_M_02.SM_Rock_M_02",
+    "/Game/RuralAustralia/StaticMeshes/Rocks/Ridge_Rock_02/SM_Ridge_Rock_02.SM_Ridge_Rock_02"
+  ],
+  "known_unresolved_dependencies": [],
+  "expected_fingerprint": {
+    "file": "gt.fingerprint.json",
+    "algorithm": "c4s-fp-1",
+    "root": "a830ed38523773590c48f38eb3ec3da9c718bec64ab95a955f275f8999600a0a",
+    "actor_count": 915
+  },
+  "cases": [
+    "comp-33-rural-riverside-tree-reset-v2",
+    "comp-57-rural-bank-tree-recovery-v2",
+    "comp-58-rural-riverside-rock-symmetry-repair-v2"
+  ]
+}

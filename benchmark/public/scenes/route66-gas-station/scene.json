@@ -1,0 +1,41 @@
+{
+  "schema_version": "code4scene.scene.v1",
+  "scene_id": "route66-gas-station",
+  "environment": "outdoor",
+  "source_pack": "Route 66 Gas Station",
+  "content_roots": [
+    "Gas_Station"
+  ],
+  "source_map": "/Game/Gas_Station/Maps/Demo_Scene",
+  "ground_truth_map": "/Game/Code4SceneGT/route66-gas-station/GT",
+  "identity": {
+    "scheme": "uuid5-source-v1",
+    "gt_id": "gt-4ab47392da54",
+    "namespace_url": "https://simworld.ai/SimCodeArena/stable-actor-id/v1",
+    "tag_actor_origin": "source",
+    "rule": "stable_id = 'sca_source_' + uuid5(uuid5(NAMESPACE_URL, namespace_url), 'v1|source|' + gt_id + '|' + source_map + '|' + actor_path_in_source_map + '|' + class_path).hex; written as tags 'simcodearena.stable_actor_id=<id>' and 'simcodearena.actor_origin=source' on every persistent-level actor of the source map that is not a child actor."
+  },
+  "patches": [],
+  "key_assets": [
+    "/Game/Gas_Station/Maps/Demo_Scene",
+    "/Game/Gas_Station/Assets/Meshes/_Props/SM_Billet.SM_Billet",
+    "/Game/Gas_Station/Assets/Meshes/_Props/SM_Grass.SM_Grass",
+    "/Game/Gas_Station/Assets/Meshes/_Props/SM_Sandbag.SM_Sandbag",
+    "/Game/Gas_Station/Assets/Meshes/_Props/SM_Tire.SM_Tire"
+  ],
+  "known_unresolved_dependencies": [],
+  "expected_fingerprint": {
+    "file": "gt.fingerprint.json",
+    "algorithm": "c4s-fp-1",
+    "root": "81d30ec5f94fcef925c4570349a00115e7d8b892cc8af3544673084d40cb2bd3",
+    "actor_count": 524
+  },
+  "cases": [
+    "comp-25-route66-fuel-pump-recovery-v2",
+    "comp-26-route66-seating-vignette-recovery-v2",
+    "comp-27-route66-chair-pair-repair-v2",
+    "comp-28-route66-rear-barrel-reset-v2",
+    "comp-53-route66-forecourt-barrel-replacement-v2",
+    "comp-54-route66-crate-pair-recovery-v2"
+  ]
+}

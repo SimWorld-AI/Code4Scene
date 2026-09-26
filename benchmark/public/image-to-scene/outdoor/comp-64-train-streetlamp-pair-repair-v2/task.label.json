@@ -1,0 +1,45 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/train-station/GT",
+  "source_level": "/Game/Code4SceneGT/train-station/GT",
+  "gt_id": "comp-64-train-streetlamp-pair-repair-v2",
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "removal",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "SM_StreetLamp3",
+        "new_label": "SM_StreetLamp3_CorruptDuplicate",
+        "delta_cm": [
+          240.0,
+          160.0,
+          0.0
+        ],
+        "yaw_deg": 30.0,
+        "factor": 0.85
+      },
+      {
+        "type": "rotation",
+        "label": "SM_StreetLamp3",
+        "yaw_deg": 55.0
+      },
+      {
+        "type": "scaling",
+        "label": "SM_StreetLamp3",
+        "factor": [
+          1.25,
+          1.25,
+          1.25
+        ]
+      }
+    ],
+    "category": "layout_rearrangement",
+    "target_labels": [
+      "SM_StreetLamp3"
+    ]
+  }
+}

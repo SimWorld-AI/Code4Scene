@@ -1,0 +1,40 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "indoor-atomic-v1-027",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "cyberpunk-toilet",
+  "scene_spec": "../../../scenes/cyberpunk-toilet/scene.json",
+  "source_map": "/Game/CyberpunkWC/Maps/Demonstration",
+  "ground_truth_map": "/Game/Code4SceneGT/cyberpunk-toilet/GT",
+  "input_map": "/Game/Code4SceneInputs/indoor-atomic-v1-027/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_4a2ca759974b53568fbcfd67c07813e0",
+      "scale": [
+        0.78,
+        0.78,
+        0.78
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "scaling",
+        "label": "SM_Sink2",
+        "factor": 0.78
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "SM_Sink2"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/cyberpunk-toilet/gt.fingerprint.json"
+}

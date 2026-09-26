@@ -1,0 +1,74 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-16-middle-east-fountain-reset-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "middle-east-river",
+  "scene_spec": "../../../scenes/middle-east-river/scene.json",
+  "source_map": "/Game/MiddleEasternTown/Levels/L_MiddleEasternTown",
+  "ground_truth_map": "/Game/Code4SceneGT/middle-east-river/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-16-middle-east-fountain-reset-v2/Input",
+  "level_structure": [
+    {
+      "op": "retarget_streaming_level",
+      "from": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "to": "/Game/Code4SceneInputs/_shared/middle-east-river/buildings_base",
+      "copy_package": true,
+      "note": "The Input streams a copy of the GT's custom sublevel under the Input root so that no Input package references the scorer-only GT root."
+    }
+  ],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_20b057b958cb5c3785f636ab52e2bdd8",
+      "location_cm": [
+        -3537.807541,
+        2336.297211,
+        210.0
+      ],
+      "rotation_deg": [
+        0.0,
+        58.00000000000003,
+        -0.0
+      ],
+      "scale": [
+        1.4,
+        1.4,
+        1.4
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "translation",
+        "label": "SM_WaterFountain_LOD0_01",
+        "delta_cm": [
+          380.0,
+          260.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "SM_WaterFountain_LOD0_01",
+        "yaw_deg": 58.0
+      },
+      {
+        "type": "scaling",
+        "label": "SM_WaterFountain_LOD0_01",
+        "factor": 1.4
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "SM_WaterFountain_LOD0_01"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/middle-east-river/gt.fingerprint.json"
+}

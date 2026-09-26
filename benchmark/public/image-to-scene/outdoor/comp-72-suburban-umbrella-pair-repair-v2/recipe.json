@@ -1,0 +1,96 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-72-suburban-umbrella-pair-repair-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "suburban-night",
+  "scene_spec": "../../../scenes/suburban-night/scene.json",
+  "source_map": "/Game/Modular_house/Maps/Enviroment_Night",
+  "ground_truth_map": "/Game/Code4SceneGT/suburban-night/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-72-suburban-umbrella-pair-repair-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_3729cedcaef05acabe2bcf58f88e22f2",
+      "rotation_deg": [
+        0.0,
+        -134.0,
+        0.0
+      ],
+      "scale": [
+        1.28,
+        1.28,
+        1.18
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_generated_17a78b9f218518bd47a49c5b2096e250",
+      "identity_tag": false,
+      "object_name": "StaticMeshActor_12",
+      "label": "StaticMeshActor_565_CorruptDuplicate",
+      "from": {
+        "static_mesh": "/Game/Modular_house/Meshes/Outdoor/SM_Umbrella_01.SM_Umbrella_01"
+      },
+      "location_cm": [
+        3719.000041,
+        1491.000006,
+        -39.0
+      ],
+      "rotation_deg": [
+        0.0,
+        152.0,
+        -0.0
+      ],
+      "scale": [
+        0.82,
+        0.82,
+        0.82
+      ],
+      "expect": {
+        "like": "sca_source_fa3c7e6b12b355c29d4bae0761642642"
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "removal",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "StaticMeshActor_565",
+        "new_label": "StaticMeshActor_565_CorruptDuplicate",
+        "delta_cm": [
+          -300.0,
+          220.0,
+          0.0
+        ],
+        "yaw_deg": -28.0,
+        "factor": 0.82
+      },
+      {
+        "type": "rotation",
+        "label": "StaticMeshActor_565",
+        "yaw_deg": 46.0
+      },
+      {
+        "type": "scaling",
+        "label": "StaticMeshActor_565",
+        "factor": [
+          1.28,
+          1.28,
+          1.18
+        ]
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "StaticMeshActor_565"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/suburban-night/gt.fingerprint.json"
+}

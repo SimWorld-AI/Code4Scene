@@ -1,0 +1,39 @@
+{
+  "schema_version": "code4scene.scene.v1",
+  "scene_id": "medieval-forge",
+  "environment": "indoor",
+  "source_pack": "Medieval Forge Pack",
+  "content_roots": [
+    "MedievalForgePack"
+  ],
+  "source_map": "/Game/MedievalForgePack/Maps/Forge_SampleMap",
+  "ground_truth_map": "/Game/Code4SceneGT/medieval-forge/GT",
+  "identity": {
+    "scheme": "uuid5-source-v1",
+    "gt_id": "gt-db3d7e02d3fa",
+    "namespace_url": "https://simworld.ai/SimCodeArena/stable-actor-id/v1",
+    "tag_actor_origin": "source",
+    "rule": "stable_id = 'sca_source_' + uuid5(uuid5(NAMESPACE_URL, namespace_url), 'v1|source|' + gt_id + '|' + source_map + '|' + actor_path_in_source_map + '|' + class_path).hex; written as tags 'simcodearena.stable_actor_id=<id>' and 'simcodearena.actor_origin=source' on every persistent-level actor of the source map that is not a child actor."
+  },
+  "patches": [],
+  "key_assets": [
+    "/Game/MedievalForgePack/Maps/Forge_SampleMap",
+    "/Game/MedievalForgePack/Props/SM_TransversalColumn.SM_TransversalColumn",
+    "/Game/MedievalForgePack/Props/SM_Wall.SM_Wall",
+    "/Game/MedievalForgePack/Props/SM_ColumnSmall.SM_ColumnSmall",
+    "/Game/MedievalForgePack/Props/SM_MiniColumn.SM_MiniColumn"
+  ],
+  "known_unresolved_dependencies": [],
+  "expected_fingerprint": {
+    "file": "gt.fingerprint.json",
+    "algorithm": "c4s-fp-1",
+    "root": "e1e123f32511b195a188f938ed8fae1cdf0041e2f8405b40c0e8259cd6f79066",
+    "actor_count": 371
+  },
+  "cases": [
+    "a20-s06-crate-replacement",
+    "indoor-atomic-v1-030",
+    "indoor-atomic-v1-032",
+    "indoor-atomic-v1-033"
+  ]
+}

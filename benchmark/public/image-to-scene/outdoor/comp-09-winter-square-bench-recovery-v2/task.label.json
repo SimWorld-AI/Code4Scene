@@ -1,0 +1,23 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/winter-town/GT",
+  "source_level": "/Game/Code4SceneGT/winter-town/GT",
+  "gt_id": "comp-09-winter-square-bench-recovery-v2",
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "insertion",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "SM_Bench01"
+      }
+    ],
+    "category": "repair_completion",
+    "target_labels": [
+      "SM_Bench01"
+    ]
+  }
+}

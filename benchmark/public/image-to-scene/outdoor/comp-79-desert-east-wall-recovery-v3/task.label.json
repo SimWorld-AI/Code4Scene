@@ -1,0 +1,23 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/african-desert/GT",
+  "source_level": "/Game/Code4SceneGT/african-desert/GT",
+  "gt_id": "comp-79-desert-east-wall-recovery-v3",
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "insertion",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "building_1_mesh2_23"
+      }
+    ],
+    "category": "repair_completion",
+    "target_labels": [
+      "building_1_mesh2_23"
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-23-suburban-patio-table-pair-v3",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "suburban-night",
+  "scene_spec": "../../../scenes/suburban-night/scene.json",
+  "source_map": "/Game/Modular_house/Maps/Enviroment_Night",
+  "ground_truth_map": "/Game/Code4SceneGT/suburban-night/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-23-suburban-patio-table-pair-v3/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_7491d19618fe5ad4868da07146a065f5",
+      "location_cm": [
+        -2730.99996,
+        1090.000194,
+        -42.0
+      ],
+      "rotation_deg": [
+        0.0,
+        -128.0,
+        0.0
+      ]
+    },
+    {
+      "op": "remove_actor",
+      "target": "sca_source_b3a595e08b0f5ee9a89c3bfd25aa83d0"
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "insertion",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "StaticMeshActor_14"
+      },
+      {
+        "type": "translation",
+        "label": "StaticMeshActor_21",
+        "delta_cm": [
+          220.0,
+          -160.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "StaticMeshActor_21",
+        "yaw_deg": 52.0
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "StaticMeshActor_14",
+      "StaticMeshActor_21"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/suburban-night/gt.fingerprint.json"
+}

@@ -1,0 +1,112 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-42-new-york-sidewalk-bench-pair-repair-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "new-york-street",
+  "scene_spec": "../../../scenes/new-york-street/scene.json",
+  "source_map": "/Game/Street_NY/Maps/Demo",
+  "ground_truth_map": "/Game/Code4SceneGT/new-york-street/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-42-new-york-sidewalk-bench-pair-repair-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_47d6cc28dc975f06b79ab586cbe19520",
+      "location_cm": [
+        -3390.60498046875,
+        26.724037170410156,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        -140.5334930419922,
+        0.0
+      ],
+      "scale": [
+        1.35,
+        1.35,
+        1.35
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_generated_a79ec3a190ac0f1272ec4573e2bfeac7",
+      "identity_tag": false,
+      "object_name": "StaticMeshActor_0",
+      "label": "Bench_2_CorruptMirror",
+      "from": {
+        "static_mesh": "/Game/Street_NY/Models/Props/SM_Bench_01.SM_Bench_01"
+      },
+      "location_cm": [
+        -2950.60498046875,
+        36.724037170410156,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        -65.53349304199219,
+        0.0
+      ],
+      "scale": [
+        -0.8,
+        0.8,
+        0.8
+      ],
+      "expect": {
+        "like": "sca_source_f348b3c03db651dd91525f3280f8752d"
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "removal",
+      "reflection",
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "Bench_2",
+        "new_label": "Bench_2_CorruptMirror",
+        "delta_cm": [
+          260.0,
+          160.0,
+          0.0
+        ],
+        "yaw_deg": 25.0,
+        "factor": [
+          -0.8,
+          0.8,
+          0.8
+        ]
+      },
+      {
+        "type": "translation",
+        "label": "Bench_2",
+        "delta_cm": [
+          -180.0,
+          150.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "Bench_2",
+        "yaw_deg": -50.0
+      },
+      {
+        "type": "scaling",
+        "label": "Bench_2",
+        "factor": 1.35
+      }
+    ],
+    "category": "layout_rearrangement",
+    "target_labels": [
+      "Bench_2"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/new-york-street/gt.fingerprint.json"
+}

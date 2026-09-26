@@ -1,0 +1,36 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-30-old-industrial-air-tank-recovery-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "old-building",
+  "scene_spec": "../../../scenes/old-building/scene.json",
+  "source_map": "/Game/OldBuilding/Maps/OldBuilding",
+  "ground_truth_map": "/Game/Code4SceneGT/old-building/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-30-old-industrial-air-tank-recovery-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "remove_actor",
+      "target": "sca_source_6f24ce0ac76f5f1fb05b67379d341d2c"
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "insertion",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "AirTanks_Cluster_330"
+      }
+    ],
+    "category": "repair_completion",
+    "target_labels": [
+      "AirTanks_Cluster_330"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/old-building/gt.fingerprint.json"
+}

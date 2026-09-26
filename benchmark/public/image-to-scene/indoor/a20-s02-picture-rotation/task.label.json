@@ -1,0 +1,26 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/detective-office/GT",
+  "source_level": "/Game/Code4SceneGT/detective-office/GT",
+  "gt_id": "a20-s02-picture-rotation",
+  "schema_version": "code4scene.gt_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "rotation",
+        "label": "Picture_01",
+        "delta_rpy_deg": [
+          12.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "Picture_01"
+    ]
+  }
+}

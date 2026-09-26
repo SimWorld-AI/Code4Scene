@@ -1,0 +1,40 @@
+# Code4Scene public task. Build the Input/GT levels and reference views with
+# dataset_builder (see docs/BUILD_DATASET.md) before running it.
+id: indoor-atomic-v1-077
+kind: scene_repair
+case_type: image_to_scene
+scene_environment: indoor
+inputs:
+  prompt: Repair the current indoor scene so it matches the two provided reference images and the canonical
+    scene. Make only the minimum changes needed, and preserve all unrelated actors and properties.
+  init_map: /Game/Code4SceneInputs/indoor-atomic-v1-077/Input
+  budget:
+    tool_calls: 120
+    wall_minutes: 45
+  skills: contracts
+source:
+  schema_version: scenebench.gt_repair_task.v1
+  task_id: indoor-atomic-v1-077
+  pack: Victorian Dining Room
+  reference_views:
+  - references/view-01.png
+  - references/view-02.png
+  content_fingerprints:
+    algorithm: c4s-fp-1
+    ground_truth:
+      root: 1bf3dd7d0e7a70a8bb3e75900c8c9531edfe05257b6395d9bf8b0d5d0de274bd
+      actor_count: 399
+    input:
+      root: 1f02035f1af4080ef3819b39bced957b913a9006595446febc1d9dc19213977c
+      actor_count: 399
+verifiers:
+- name: gt_repair
+  ground_truth: /Game/Code4SceneGT/victorian-dining/GT
+  visual_semantic_diff:
+    caption_diff: true
+    paired_visual: true
+assets:
+  packs:
+  - VictorianRoom
+  - Code4SceneInputs
+status: ready

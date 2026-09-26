@@ -1,0 +1,53 @@
+# Code4Scene public task. Build the Input/GT levels and reference views with
+# dataset_builder (see docs/BUILD_DATASET.md) before running it.
+id: comp-80-desert-central-wall-replacement-v2
+kind: scene_repair
+case_type: image_to_scene
+scene_environment: outdoor
+status: ready
+inputs:
+  prompt: Repair the current outdoor scene so it matches the provided reference image. Make only the minimum
+    changes needed, and preserve all unrelated actors and properties.
+  init_map: /Game/Code4SceneInputs/comp-80-desert-central-wall-replacement-v2/Input
+  budget:
+    tool_calls: 80
+    wall_minutes: 20
+  skills: contracts
+source:
+  schema_version: scenebench.outdoor_compositional_repair.v1
+  pack: AfricanLocation
+  scene: African Desert Ruins
+  category: geometric_transformation
+  intrinsic_tier_prior: hard
+  mechanics:
+  - replacement
+  - translation
+  - rotation
+  - scaling
+  reference_views:
+  - references/reference.jpg
+  content_fingerprints:
+    algorithm: c4s-fp-1
+    ground_truth:
+      root: c368f41895a1b4b3d5603d9e8add382f9d4a78ad1773d87ec24ab4bbf1fd2ccb
+      actor_count: 264
+    input:
+      root: 5fae9cb134f01e57fa5cf6aec5a292c7529525ee79f5770665fcd5b7f210ca01
+      actor_count: 264
+render:
+  mode: authored
+  resolution:
+  - 1920
+  - 1080
+verifiers:
+- name: gt_repair
+  ground_truth: /Game/Code4SceneGT/african-desert/GT
+  visual_semantic_diff:
+    caption_diff: true
+    paired_visual: true
+experiment:
+  input_condition: prompt_and_screenshots
+assets:
+  packs:
+  - AfricanLocation
+  - Code4SceneInputs

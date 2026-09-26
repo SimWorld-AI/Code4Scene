@@ -1,0 +1,27 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: middle-eastern-bazaar
+kind: scene_generation
+inputs:
+  prompt: 'A Middle Eastern bazaar courtyard with awnings, pottery, crates, carts, carpets, lanterns,
+    plants, and market clutter.
+
+    '
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 130
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+assets:
+  packs:
+  - MiddleEast
+  - DesertTown
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/middle-eastern-bazaar.bundle.json
+- name: overview_prompt_alignment

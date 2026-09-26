@@ -1,0 +1,124 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-48-middle-east-market-awning-symmetry-repair-v3",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "middle-east-river",
+  "scene_spec": "../../../scenes/middle-east-river/scene.json",
+  "source_map": "/Game/MiddleEasternTown/Levels/L_MiddleEasternTown",
+  "ground_truth_map": "/Game/Code4SceneGT/middle-east-river/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-48-middle-east-market-awning-symmetry-repair-v3/Input",
+  "level_structure": [
+    {
+      "op": "retarget_streaming_level",
+      "from": "/Game/Code4SceneGT/middle-east-river/buildings_gt",
+      "to": "/Game/Code4SceneInputs/_shared/middle-east-river/buildings_base",
+      "copy_package": true,
+      "note": "The Input streams a copy of the GT's custom sublevel under the Input root so that no Input package references the scorer-only GT root."
+    }
+  ],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_4f356e4c25a45639bcf64820a135c0f1",
+      "location_cm": [
+        10532.939645077917,
+        -8413.641534496503,
+        1269.13096
+      ],
+      "rotation_deg": [
+        0.0,
+        -71.82762908935545,
+        0.0
+      ],
+      "scale": [
+        1.4749999999999999,
+        1.025,
+        1.4000000000000001
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_generated_2b152a1a9e57f73954eb4df0e22fb8c6",
+      "identity_tag": false,
+      "object_name": "StaticMeshActor_574",
+      "label": "SM_AwningRich_LOD0_54_CorruptMirror",
+      "from": {
+        "static_mesh": "/Game/MiddleEasternTown/Meshes/Building01_Meshes/LOD0/SM_AwningRich_LOD0.SM_AwningRich_LOD0"
+      },
+      "location_cm": [
+        10752.939645077917,
+        -7893.641534496503,
+        1389.13096
+      ],
+      "rotation_deg": [
+        0.0,
+        -87.82762908935545,
+        0.0
+      ],
+      "scale": [
+        -1.125,
+        1.125,
+        1.125
+      ],
+      "expect": {
+        "like": "sca_source_6ec35404e6f152b3aadaabb36e1bcabd"
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "removal",
+      "reflection",
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "SM_AwningRich_LOD0_54",
+        "new_label": "SM_AwningRich_LOD0_54_CorruptMirror",
+        "delta_cm": [
+          520.0,
+          300.0,
+          0.0
+        ],
+        "yaw_deg": 32.0,
+        "factor": [
+          -0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "type": "translation",
+        "label": "SM_AwningRich_LOD0_54",
+        "delta_cm": [
+          300.0,
+          -220.0,
+          -120.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "SM_AwningRich_LOD0_54",
+        "yaw_deg": 48.0
+      },
+      {
+        "type": "scaling",
+        "label": "SM_AwningRich_LOD0_54",
+        "factor": [
+          1.18,
+          0.82,
+          1.12
+        ]
+      }
+    ],
+    "category": "symmetry_pattern",
+    "target_labels": [
+      "SM_AwningRich_LOD0_54"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/middle-east-river/gt.fingerprint.json"
+}

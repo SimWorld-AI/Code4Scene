@@ -1,0 +1,40 @@
+{
+  "schema_version": "code4scene.scene.v1",
+  "scene_id": "new-york-street",
+  "environment": "outdoor",
+  "source_pack": "New York Street",
+  "content_roots": [
+    "Street_NY"
+  ],
+  "source_map": "/Game/Street_NY/Maps/Demo",
+  "ground_truth_map": "/Game/Code4SceneGT/new-york-street/GT",
+  "identity": {
+    "scheme": "uuid5-source-v1",
+    "gt_id": "gt-18679fe2035b",
+    "namespace_url": "https://simworld.ai/SimCodeArena/stable-actor-id/v1",
+    "tag_actor_origin": "source",
+    "rule": "stable_id = 'sca_source_' + uuid5(uuid5(NAMESPACE_URL, namespace_url), 'v1|source|' + gt_id + '|' + source_map + '|' + actor_path_in_source_map + '|' + class_path).hex; written as tags 'simcodearena.stable_actor_id=<id>' and 'simcodearena.actor_origin=source' on every persistent-level actor of the source map that is not a child actor."
+  },
+  "patches": [],
+  "key_assets": [
+    "/Game/Street_NY/Maps/Demo",
+    "/Game/Street_NY/Models/Props/SM_Garbage_Bag_01.SM_Garbage_Bag_01",
+    "/Game/Street_NY/Models/Street/SM_Fence_08.SM_Fence_08",
+    "/Game/Street_NY/Models/Props/SM_Cardboard_Box_01.SM_Cardboard_Box_01",
+    "/Game/Street_NY/Models/Street/SM_Fallen_Leaves_01.SM_Fallen_Leaves_01"
+  ],
+  "known_unresolved_dependencies": [],
+  "expected_fingerprint": {
+    "file": "gt.fingerprint.json",
+    "algorithm": "c4s-fp-1",
+    "root": "163de92b910b9e25c150619179cb6463be3283b78b96ec032a9d1015af2793c8",
+    "actor_count": 803
+  },
+  "cases": [
+    "comp-02-new-york-bench-reset-v2",
+    "comp-41-new-york-storefront-planter-pair-recovery-v2",
+    "comp-42-new-york-sidewalk-bench-pair-repair-v2",
+    "comp-61-new-york-mailbox-pair-repair-v2",
+    "comp-62-new-york-bench-trash-bay-repair-v2"
+  ]
+}

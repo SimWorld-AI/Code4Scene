@@ -1,0 +1,74 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "a20-s03-extra-upper-chair-removal",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "downtown-office",
+  "scene_spec": "../../../scenes/downtown-office/scene.json",
+  "source_map": "/Game/Office/Maps/Demo",
+  "ground_truth_map": "/Game/Code4SceneGT/downtown-office/GT",
+  "input_map": "/Game/Code4SceneInputs/a20-s03-extra-upper-chair-removal/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_atomic20_extra_downtown_chair_0001",
+      "identity_tag": true,
+      "object_name": "StaticMeshActor_126",
+      "label": "SB_ATOMIC20_EXTRA__a20-s03-extra-upper-chair-removal__00",
+      "from": {
+        "static_mesh": "/Game/Office/Meshes/Sm_Chair01.Sm_Chair01"
+      },
+      "location_cm": [
+        -1270.0,
+        1050.0,
+        550.0
+      ],
+      "rotation_deg": [
+        0.0,
+        89.99999999999999,
+        -0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "expect": {
+        "like": "sca_source_9ecee4416dd25c67a07e540e67ef5c24"
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "removal"
+    ],
+    "authored_operations": [
+      {
+        "type": "insertion",
+        "label": "SB_ATOMIC20_EXTRA__a20-s03-extra-upper-chair-removal__00",
+        "asset": "/Game/Office/Meshes/Sm_Chair01.Sm_Chair01",
+        "location_cm": [
+          -1270.0,
+          1050.0,
+          550.0
+        ],
+        "rotation_rpy_deg": [
+          0.0,
+          0.0,
+          90.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "SB_ATOMIC20_EXTRA__a20-s03-extra-upper-chair-removal__00"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/downtown-office/gt.fingerprint.json"
+}

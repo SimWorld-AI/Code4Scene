@@ -1,0 +1,90 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-44-train-east-bin-replacement-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "train-station",
+  "scene_spec": "../../../scenes/train-station/scene.json",
+  "source_map": "/Game/TrainStation/Maps/TrainStation_Optimised",
+  "ground_truth_map": "/Game/Code4SceneGT/train-station/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-44-train-east-bin-replacement-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_static_mesh",
+      "target": "sca_source_8fc99e1b056656d68367daafac39be32",
+      "component": "StaticMeshComponent0",
+      "static_mesh": "/Game/TrainStation/Meshes/SM_RubbishBin.SM_RubbishBin",
+      "replaces": "/Game/TrainStation/Meshes/SM_TrashCan.SM_TrashCan",
+      "expect": {
+        "material_slots": [
+          {
+            "component_identity": "StaticMeshComponent0|/Script/Engine.StaticMeshComponent",
+            "is_dynamic": false,
+            "material_class_path": "/Script/Engine.MaterialInstanceConstant",
+            "material_path": "/Game/TrainStation/Materials/Mi_RubbishBin.Mi_RubbishBin",
+            "slot_index": 0
+          }
+        ]
+      }
+    },
+    {
+      "op": "set_transform",
+      "target": "sca_source_8fc99e1b056656d68367daafac39be32",
+      "location_cm": [
+        2655.0,
+        -940.0,
+        -1020.0
+      ],
+      "rotation_deg": [
+        0.0,
+        58.00000000000003,
+        -0.0
+      ],
+      "scale": [
+        1.45,
+        1.45,
+        1.45
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "replacement",
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "replacement",
+        "label": "SM_TrashCan11",
+        "asset": "/Game/TrainStation/Meshes/SM_RubbishBin.SM_RubbishBin"
+      },
+      {
+        "type": "translation",
+        "label": "SM_TrashCan11",
+        "delta_cm": [
+          240.0,
+          -170.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "SM_TrashCan11",
+        "yaw_deg": 58.0
+      },
+      {
+        "type": "scaling",
+        "label": "SM_TrashCan11",
+        "factor": 1.45
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "SM_TrashCan11"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/train-station/gt.fingerprint.json"
+}

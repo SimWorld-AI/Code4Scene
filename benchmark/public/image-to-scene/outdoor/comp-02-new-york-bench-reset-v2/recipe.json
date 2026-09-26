@@ -1,0 +1,90 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-02-new-york-bench-reset-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "new-york-street",
+  "scene_spec": "../../../scenes/new-york-street/scene.json",
+  "source_map": "/Game/Street_NY/Maps/Demo",
+  "ground_truth_map": "/Game/Code4SceneGT/new-york-street/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-02-new-york-bench-reset-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_static_mesh",
+      "target": "sca_source_dace3005e4be50b38760bbfaa870a445",
+      "component": "StaticMeshComponent0",
+      "static_mesh": "/Game/Street_NY/Models/Props/SM_Chair_01.SM_Chair_01",
+      "replaces": "/Game/Street_NY/Models/Props/SM_Bench_01.SM_Bench_01",
+      "expect": {
+        "material_slots": [
+          {
+            "component_identity": "StaticMeshComponent0|/Script/Engine.StaticMeshComponent",
+            "is_dynamic": false,
+            "material_class_path": "/Script/Engine.MaterialInstanceConstant",
+            "material_path": "/Game/Street_NY/Materials/Props/MI_Bench.MI_Bench",
+            "slot_index": 0
+          }
+        ]
+      }
+    },
+    {
+      "op": "set_transform",
+      "target": "sca_source_dace3005e4be50b38760bbfaa870a445",
+      "location_cm": [
+        3436.003662109375,
+        393.08111572265625,
+        -1.52587890625e-05
+      ],
+      "rotation_deg": [
+        0.0,
+        -125.00022888183601,
+        0.0
+      ],
+      "scale": [
+        1.45,
+        1.45,
+        1.45
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "replacement",
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "asset": "/Game/Street_NY/Models/Props/SM_Chair_01.SM_Chair_01",
+        "label": "Bench_4",
+        "type": "replacement"
+      },
+      {
+        "delta_cm": [
+          0.0,
+          -280.0,
+          0.0
+        ],
+        "label": "Bench_4",
+        "type": "translation"
+      },
+      {
+        "label": "Bench_4",
+        "type": "rotation",
+        "yaw_deg": 55.0
+      },
+      {
+        "factor": 1.45,
+        "label": "Bench_4",
+        "type": "scaling"
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "Bench_4"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/new-york-street/gt.fingerprint.json"
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-28-route66-rear-barrel-reset-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "route66-gas-station",
+  "scene_spec": "../../../scenes/route66-gas-station/scene.json",
+  "source_map": "/Game/Gas_Station/Maps/Demo_Scene",
+  "ground_truth_map": "/Game/Code4SceneGT/route66-gas-station/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-28-route66-rear-barrel-reset-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_c43e3a7182255a34a276dec3ed847511",
+      "location_cm": [
+        -378.1324462890625,
+        -303.7376708984375,
+        132.11441040039062
+      ],
+      "rotation_deg": [
+        -3.8156609535217285,
+        63.852489471435575,
+        2.2170550823211657
+      ],
+      "scale": [
+        1.2310349643230438,
+        1.2310349643230438,
+        1.2310349643230438
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "translation",
+        "label": "Props_Barrel_Trash2",
+        "delta_cm": [
+          280.0,
+          210.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "Props_Barrel_Trash2",
+        "yaw_deg": 64.0
+      },
+      {
+        "type": "scaling",
+        "label": "Props_Barrel_Trash2",
+        "factor": 1.5
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "Props_Barrel_Trash2"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/route66-gas-station/gt.fingerprint.json"
+}

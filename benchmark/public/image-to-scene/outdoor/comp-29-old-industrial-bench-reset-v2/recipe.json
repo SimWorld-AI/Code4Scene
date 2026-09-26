@@ -1,0 +1,55 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-29-old-industrial-bench-reset-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "old-building",
+  "scene_spec": "../../../scenes/old-building/scene.json",
+  "source_map": "/Game/OldBuilding/Maps/OldBuilding",
+  "ground_truth_map": "/Game/Code4SceneGT/old-building/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-29-old-industrial-bench-reset-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_ac9e9241e46155879f1b549cc071fff1",
+      "location_cm": [
+        1131.15869140625,
+        648.09423828125,
+        3822.058349609375
+      ],
+      "rotation_deg": [
+        0.0,
+        -110.08221435546875,
+        0.0
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "translation",
+        "label": "bench_14",
+        "delta_cm": [
+          260.0,
+          -180.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "bench_14",
+        "yaw_deg": 42.0
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "bench_14"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/old-building/gt.fingerprint.json"
+}

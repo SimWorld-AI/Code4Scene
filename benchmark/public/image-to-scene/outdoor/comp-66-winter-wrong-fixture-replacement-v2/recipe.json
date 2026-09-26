@@ -1,0 +1,94 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-66-winter-wrong-fixture-replacement-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "winter-town",
+  "scene_spec": "../../../scenes/winter-town/scene.json",
+  "source_map": "/Game/WinterTown/Maps/RussianWinterTownDemo02",
+  "ground_truth_map": "/Game/Code4SceneGT/winter-town/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-66-winter-wrong-fixture-replacement-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_static_mesh",
+      "target": "sca_source_a9bf0267ed6d50aabd4ba6314af9a04f",
+      "component": "StaticMeshComponent0",
+      "static_mesh": "/Game/WinterTown/Meshes/SM_Bench01.SM_Bench01",
+      "replaces": "/Game/WinterTown/Meshes/SM_LampPost01.SM_LampPost01",
+      "expect": {
+        "material_slots": [
+          {
+            "component_identity": "StaticMeshComponent0|/Script/Engine.StaticMeshComponent",
+            "is_dynamic": false,
+            "material_class_path": "/Script/Engine.Material",
+            "material_path": "/Game/WinterTown/Materials/M_Bench01.M_Bench01",
+            "slot_index": 0
+          }
+        ]
+      }
+    },
+    {
+      "op": "set_transform",
+      "target": "sca_source_a9bf0267ed6d50aabd4ba6314af9a04f",
+      "location_cm": [
+        3798.5107421875,
+        -2861.2998046875,
+        97.75735473632812
+      ],
+      "rotation_deg": [
+        0.0,
+        -55.00021362304687,
+        0.0
+      ],
+      "scale": [
+        0.8,
+        1.15,
+        0.75
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "replacement",
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "replacement",
+        "label": "SM_LampPost2",
+        "asset": "/Game/WinterTown/Meshes/SM_Bench01.SM_Bench01"
+      },
+      {
+        "type": "translation",
+        "label": "SM_LampPost2",
+        "delta_cm": [
+          220.0,
+          -180.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "SM_LampPost2",
+        "yaw_deg": -55.0
+      },
+      {
+        "type": "scaling",
+        "label": "SM_LampPost2",
+        "factor": [
+          0.8,
+          1.15,
+          0.75
+        ]
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "SM_LampPost2"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/winter-town/gt.fingerprint.json"
+}

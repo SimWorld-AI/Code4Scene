@@ -1,0 +1,48 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/route66-gas-station/GT",
+  "source_level": "/Game/Code4SceneGT/route66-gas-station/GT",
+  "gt_id": "comp-54-route66-crate-pair-recovery-v2",
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "duplication",
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "Props_WoodenBox"
+      },
+      {
+        "type": "translation",
+        "label": "Props_WoodenBox4",
+        "delta_cm": [
+          -230.0,
+          180.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "Props_WoodenBox4",
+        "yaw_deg": -58.0
+      },
+      {
+        "type": "scaling",
+        "label": "Props_WoodenBox4",
+        "factor": [
+          1.55,
+          1.3,
+          1.45
+        ]
+      }
+    ],
+    "category": "layout_rearrangement",
+    "target_labels": [
+      "Props_WoodenBox",
+      "Props_WoodenBox4"
+    ]
+  }
+}

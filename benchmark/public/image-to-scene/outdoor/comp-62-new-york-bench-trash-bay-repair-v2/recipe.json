@@ -1,0 +1,77 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-62-new-york-bench-trash-bay-repair-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "new-york-street",
+  "scene_spec": "../../../scenes/new-york-street/scene.json",
+  "source_map": "/Game/Street_NY/Maps/Demo",
+  "ground_truth_map": "/Game/Code4SceneGT/new-york-street/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-62-new-york-bench-trash-bay-repair-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "remove_actor",
+      "target": "sca_source_8f6fc507264d52329483b599ebf7672f"
+    },
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_generated_8a5328617c5eb5cf87210694f0736563",
+      "identity_tag": false,
+      "object_name": "StaticMeshActor_0",
+      "label": "Trash_5_CorruptDuplicate",
+      "from": {
+        "static_mesh": "/Game/Street_NY/Models/Props/SM_Trash_02.SM_Trash_02"
+      },
+      "location_cm": [
+        58.2257080078125,
+        1869.170654296875,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        29.999999999999996,
+        -0.0
+      ],
+      "scale": [
+        1.2,
+        1.2,
+        1.2
+      ],
+      "expect": {
+        "like": "sca_source_27f5d3304f4555ebb3d35837153cc630"
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "insertion",
+      "removal",
+      "translation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "Bench_3"
+      },
+      {
+        "type": "duplication",
+        "label": "Trash_5",
+        "new_label": "Trash_5_CorruptDuplicate",
+        "delta_cm": [
+          170.0,
+          -140.0,
+          0.0
+        ],
+        "yaw_deg": 30.0,
+        "factor": 1.2
+      }
+    ],
+    "category": "layout_rearrangement",
+    "target_labels": [
+      "Bench_3",
+      "Trash_5"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/new-york-street/gt.fingerprint.json"
+}

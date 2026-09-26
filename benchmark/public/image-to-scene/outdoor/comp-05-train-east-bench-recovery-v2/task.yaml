@@ -1,0 +1,52 @@
+# Code4Scene public task. Build the Input/GT levels and reference views with
+# dataset_builder (see docs/BUILD_DATASET.md) before running it.
+id: comp-05-train-east-bench-recovery-v2
+kind: scene_repair
+case_type: image_to_scene
+scene_environment: outdoor
+status: ready
+inputs:
+  prompt: Repair the current outdoor scene so it matches the provided reference image. Make only the minimum
+    changes needed, and preserve all unrelated actors and properties.
+  init_map: /Game/Code4SceneInputs/comp-05-train-east-bench-recovery-v2/Input
+  budget:
+    tool_calls: 80
+    wall_minutes: 20
+  skills: contracts
+source:
+  schema_version: scenebench.outdoor_compositional_repair.v1
+  pack: Train Station
+  scene: Train Station
+  category: repair_completion
+  intrinsic_tier_prior: easy
+  mechanics:
+  - insertion
+  - translation
+  - rotation
+  reference_views:
+  - references/reference.jpg
+  content_fingerprints:
+    algorithm: c4s-fp-1
+    ground_truth:
+      root: b20a02b4b0a412fa584ace72600c834d9992b014dd46ac01482d219f81d87a14
+      actor_count: 3888
+    input:
+      root: 25a969046eac696bf99f724bb3cad59fad324288d3f2cd8557e96d1466ea92fe
+      actor_count: 3887
+render:
+  mode: authored
+  resolution:
+  - 1920
+  - 1080
+verifiers:
+- name: gt_repair
+  ground_truth: /Game/Code4SceneGT/train-station/GT
+  visual_semantic_diff:
+    caption_diff: true
+    paired_visual: true
+experiment:
+  input_condition: prompt_and_screenshots
+assets:
+  packs:
+  - TrainStation
+  - Code4SceneInputs

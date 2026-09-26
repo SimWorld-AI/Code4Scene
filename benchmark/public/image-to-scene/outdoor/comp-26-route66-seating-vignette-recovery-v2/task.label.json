@@ -1,0 +1,33 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/route66-gas-station/GT",
+  "source_level": "/Game/Code4SceneGT/route66-gas-station/GT",
+  "gt_id": "comp-26-route66-seating-vignette-recovery-v2",
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "insertion",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "Props_Wooden_Table"
+      },
+      {
+        "type": "removal",
+        "label": "Props_Chair5"
+      },
+      {
+        "type": "removal",
+        "label": "Props_OilLamp"
+      }
+    ],
+    "category": "repair_completion",
+    "target_labels": [
+      "Props_Wooden_Table",
+      "Props_Chair5",
+      "Props_OilLamp"
+    ]
+  }
+}

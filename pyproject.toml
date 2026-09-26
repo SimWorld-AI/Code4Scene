@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "code4scene"
+version = "1.0.0"
+description = "Verifiers and the scoring protocol of Code4Scene, a benchmark for coding agents that construct and edit Unreal Engine scenes."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+# NumPy is imported by the RequirementGraph contracts reached from the eager
+# verifier registry. Pillow and OpenEXR are needed by the image metrics and by
+# the multi-channel visual evidence path. All three are base dependencies so a
+# clean install matches the supported scoring surface.
+dependencies = ["PyYAML>=6", "numpy>=1.24", "pillow>=10", "OpenEXR>=3.2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+code4scene = "code4scene.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["code4scene*"]
+
+[tool.setuptools.package-data]
+code4scene = [
+  # Scoring, judge and rubric policies are read at run time through
+  # importlib.resources; an installed copy without them cannot score.
+  "configs/*/*.yaml",
+  # Executed INSIDE the Unreal editor, not imported: their source is sent over
+  # the editor bridge. Not a package (no __init__), so nothing else ships them.
+  "ue_scripts/*.py",
+  "evaluation/requirement_graph/README.md",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 92
+# Source executed inside Unreal's embedded Python keeps the editor's conventions.
+exclude = ["code4scene/ue_scripts"]
+
+[tool.ruff.lint]
+select = ["F", "E9", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+# A fake must keep the real signature even where it ignores an argument.
+"tests/*" = ["ARG001", "ARG002", "ARG005"]

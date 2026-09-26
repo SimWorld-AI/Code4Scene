@@ -1,0 +1,39 @@
+{
+  "schema_version": "code4scene.scene.v1",
+  "scene_id": "african-desert",
+  "environment": "outdoor",
+  "source_pack": "AfricanLocation",
+  "content_roots": [
+    "AfricanLocation"
+  ],
+  "source_map": "/Game/AfricanLocation/Locations/Desert2",
+  "ground_truth_map": "/Game/Code4SceneGT/african-desert/GT",
+  "identity": {
+    "scheme": "uuid5-source-v1",
+    "gt_id": "gt-21cdc738ab8f",
+    "namespace_url": "https://simworld.ai/SimCodeArena/stable-actor-id/v1",
+    "tag_actor_origin": "source",
+    "rule": "stable_id = 'sca_source_' + uuid5(uuid5(NAMESPACE_URL, namespace_url), 'v1|source|' + gt_id + '|' + source_map + '|' + actor_path_in_source_map + '|' + class_path).hex; written as tags 'simcodearena.stable_actor_id=<id>' and 'simcodearena.actor_origin=source' on every persistent-level actor of the source map that is not a child actor."
+  },
+  "patches": [],
+  "key_assets": [
+    "/Game/AfricanLocation/Locations/Desert2",
+    "/Game/AfricanLocation/models/Acacia_tree/acacia_mesh.acacia_mesh",
+    "/Game/AfricanLocation/models/Dry_palms/palm_small_1_dry_mesh.palm_small_1_dry_mesh",
+    "/Game/AfricanLocation/models/Dry_palms/palm_tall_01_dry_mesh.palm_tall_01_dry_mesh",
+    "/Game/AfricanLocation/models/Scans/rocks/rocks1/rock_large_mesh.rock_large_mesh"
+  ],
+  "known_unresolved_dependencies": [],
+  "expected_fingerprint": {
+    "file": "gt.fingerprint.json",
+    "algorithm": "c4s-fp-1",
+    "root": "c368f41895a1b4b3d5603d9e8add382f9d4a78ad1773d87ec24ab4bbf1fd2ccb",
+    "actor_count": 264
+  },
+  "cases": [
+    "comp-39-desert-east-wall-pair-repair-v2",
+    "comp-60-desert-oasis-wall-symmetry-repair-v3",
+    "comp-79-desert-east-wall-recovery-v3",
+    "comp-80-desert-central-wall-replacement-v2"
+  ]
+}

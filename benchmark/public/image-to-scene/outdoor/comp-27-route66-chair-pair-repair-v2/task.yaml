@@ -1,0 +1,52 @@
+# Code4Scene public task. Build the Input/GT levels and reference views with
+# dataset_builder (see docs/BUILD_DATASET.md) before running it.
+id: comp-27-route66-chair-pair-repair-v2
+kind: scene_repair
+case_type: image_to_scene
+scene_environment: outdoor
+status: ready
+inputs:
+  prompt: Repair the current outdoor scene so it matches the provided reference image. Make only the minimum
+    changes needed, and preserve all unrelated actors and properties.
+  init_map: /Game/Code4SceneInputs/comp-27-route66-chair-pair-repair-v2/Input
+  budget:
+    tool_calls: 80
+    wall_minutes: 20
+  skills: contracts
+source:
+  schema_version: scenebench.outdoor_compositional_repair.v1
+  pack: Route 66 Gas Station
+  scene: Route 66 Garage
+  category: layout_rearrangement
+  intrinsic_tier_prior: medium
+  mechanics:
+  - removal
+  - translation
+  - rotation
+  reference_views:
+  - references/reference.jpg
+  content_fingerprints:
+    algorithm: c4s-fp-1
+    ground_truth:
+      root: 81d30ec5f94fcef925c4570349a00115e7d8b892cc8af3544673084d40cb2bd3
+      actor_count: 524
+    input:
+      root: 7c8d6023c9591e00025a7448091f65eb0045416687a34f541c978a83be2f8f64
+      actor_count: 525
+render:
+  mode: authored
+  resolution:
+  - 1920
+  - 1080
+verifiers:
+- name: gt_repair
+  ground_truth: /Game/Code4SceneGT/route66-gas-station/GT
+  visual_semantic_diff:
+    caption_diff: true
+    paired_visual: true
+experiment:
+  input_condition: prompt_and_screenshots
+assets:
+  packs:
+  - Gas_Station
+  - Code4SceneInputs

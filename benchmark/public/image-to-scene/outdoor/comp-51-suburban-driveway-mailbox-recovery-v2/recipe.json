@@ -1,0 +1,36 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-51-suburban-driveway-mailbox-recovery-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "suburban-night",
+  "scene_spec": "../../../scenes/suburban-night/scene.json",
+  "source_map": "/Game/Modular_house/Maps/Enviroment_Night",
+  "ground_truth_map": "/Game/Code4SceneGT/suburban-night/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-51-suburban-driveway-mailbox-recovery-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "remove_actor",
+      "target": "sca_source_c64337ee11bf5ea3b14ac230bc326c40"
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "insertion",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "BP_Mailbox_01_C_443"
+      }
+    ],
+    "category": "repair_completion",
+    "target_labels": [
+      "BP_Mailbox_01_C_443"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/suburban-night/gt.fingerprint.json"
+}

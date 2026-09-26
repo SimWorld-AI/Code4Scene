@@ -1,0 +1,41 @@
+{
+  "schema_version": "code4scene.scene.v1",
+  "scene_id": "archviz-apartment",
+  "environment": "indoor",
+  "source_pack": "ArchViz Interior Vol. 2",
+  "content_roots": [
+    "ArchVizInteriorVol2"
+  ],
+  "source_map": "/Game/ArchVizInteriorVol2/Maps/Apartment",
+  "ground_truth_map": "/Game/Code4SceneGT/archviz-apartment/GT",
+  "identity": {
+    "scheme": "uuid5-source-v1",
+    "gt_id": "gt-da94020d6e35",
+    "namespace_url": "https://simworld.ai/SimCodeArena/stable-actor-id/v1",
+    "tag_actor_origin": "source",
+    "rule": "stable_id = 'sca_source_' + uuid5(uuid5(NAMESPACE_URL, namespace_url), 'v1|source|' + gt_id + '|' + source_map + '|' + actor_path_in_source_map + '|' + class_path).hex; written as tags 'simcodearena.stable_actor_id=<id>' and 'simcodearena.actor_origin=source' on every persistent-level actor of the source map that is not a child actor."
+  },
+  "patches": [],
+  "key_assets": [
+    "/Game/ArchVizInteriorVol2/Maps/Apartment",
+    "/Game/ArchVizInteriorVol2/Meshes/SM_Chair.SM_Chair",
+    "/Game/ArchVizInteriorVol2/Meshes/SM_Tumblr_1.SM_Tumblr_1",
+    "/Game/ArchVizInteriorVol2/Meshes/SM_Ceiling.SM_Ceiling",
+    "/Game/ArchVizInteriorVol2/Meshes/SM_Window.SM_Window"
+  ],
+  "known_unresolved_dependencies": [],
+  "expected_fingerprint": {
+    "file": "gt.fingerprint.json",
+    "algorithm": "c4s-fp-1",
+    "root": "0b0ad7e24b15d95bd246f092d7fc7e92e22a7e33162df470b04268d283941b5d",
+    "actor_count": 95
+  },
+  "cases": [
+    "a20-s01-extra-chair-removal",
+    "indoor-atomic-v1-013",
+    "indoor-atomic-v1-037",
+    "indoor-atomic-v1-038",
+    "indoor-atomic-v1-049",
+    "indoor-atomic-v1-070"
+  ]
+}

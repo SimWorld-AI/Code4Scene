@@ -1,0 +1,129 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-56-old-industrial-barrel-symmetry-repair-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "old-building",
+  "scene_spec": "../../../scenes/old-building/scene.json",
+  "source_map": "/Game/OldBuilding/Maps/OldBuilding",
+  "ground_truth_map": "/Game/Code4SceneGT/old-building/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-56-old-industrial-barrel-symmetry-repair-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_a5a7513a9384525399f327bce2fbfc0e",
+      "location_cm": [
+        -2894.68310546875,
+        1489.125732421875,
+        3853.9658203125
+      ],
+      "rotation_deg": [
+        -76.19641876220706,
+        -145.00015258789068,
+        89.99985504150393
+      ],
+      "scale": [
+        1.35,
+        1.35,
+        1.25
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_generated_a35079a81e132ad0c22821fc790e8b39",
+      "identity_tag": false,
+      "object_name": "StaticMeshActor_0",
+      "label": "Barrel_9_CorruptMirror",
+      "from": {
+        "static_mesh": "/Game/OldBuilding/Meshes/Props/Barrel_01/Barrel_01.Barrel_01"
+      },
+      "location_cm": [
+        -2494.68310546875,
+        1499.125732421875,
+        3853.9658203125
+      ],
+      "rotation_deg": [
+        -76.19641876220706,
+        -174.00015258789062,
+        89.99985504150393
+      ],
+      "scale": [
+        -0.9,
+        0.9,
+        0.9
+      ],
+      "expect": {
+        "component_asset_paths": [
+          "/Game/OldBuilding/Meshes/Props/Barrel_01/Barrel_01.Barrel_01"
+        ],
+        "material_slots": [
+          {
+            "component_identity": "StaticMeshComponent0|/Script/Engine.StaticMeshComponent",
+            "is_dynamic": false,
+            "material_class_path": "/Script/Engine.Material",
+            "material_path": "/Game/OldBuilding/Materials_Textures/MasterMaterials/PropsMaster.PropsMaster",
+            "slot_index": 0
+          }
+        ],
+        "tags": [],
+        "properties": {}
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "removal",
+      "reflection",
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "Barrel_9",
+        "new_label": "Barrel_9_CorruptMirror",
+        "delta_cm": [
+          210.0,
+          150.0,
+          0.0
+        ],
+        "yaw_deg": 26.0,
+        "factor": [
+          -0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "type": "translation",
+        "label": "Barrel_9",
+        "delta_cm": [
+          -190.0,
+          140.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "Barrel_9",
+        "yaw_deg": 55.0
+      },
+      {
+        "type": "scaling",
+        "label": "Barrel_9",
+        "factor": [
+          1.35,
+          1.35,
+          1.25
+        ]
+      }
+    ],
+    "category": "symmetry_pattern",
+    "target_labels": [
+      "Barrel_9"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/old-building/gt.fingerprint.json"
+}

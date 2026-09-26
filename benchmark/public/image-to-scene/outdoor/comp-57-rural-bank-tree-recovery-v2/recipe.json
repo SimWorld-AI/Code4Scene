@@ -1,0 +1,36 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-57-rural-bank-tree-recovery-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "rural-australia",
+  "scene_spec": "../../../scenes/rural-australia/scene.json",
+  "source_map": "/Game/RuralAustralia/Maps/RuralAustralia_Example_02",
+  "ground_truth_map": "/Game/Code4SceneGT/rural-australia/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-57-rural-bank-tree-recovery-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "remove_actor",
+      "target": "sca_source_20d0c9c0cb7d57e49c6dcd0c9a758518"
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "insertion",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "SM_GrassTree_28"
+      }
+    ],
+    "category": "repair_completion",
+    "target_labels": [
+      "SM_GrassTree_28"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/rural-australia/gt.fingerprint.json"
+}

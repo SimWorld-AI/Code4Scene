@@ -1,0 +1,81 @@
+# Canonical formal policy for the report-only image-to-scene paired visual judge.
+#
+# The judge endpoint is NOT part of the policy: supply it with --vlm-base-url or
+# CODE4SCENE_VLM_BASE_URL.
+#
+# Tasks do not select an implementation generation.  This file is the single
+# shipped policy: Indoor and Outdoor routing is derived from task environment
+# metadata, and all Candidate/GT views use independently normalized per-view
+# photometry.
+id: visual-gt-paired-formal
+status: frozen
+scoring_policy: formal
+mode: gt_paired
+
+rubric:
+  path: ../rubrics/visual-gt-paired.yaml
+
+judge:
+  backend: openai_compat
+  model: Qwen/Qwen3.8-27B
+  structured_output: true
+  structured_output_method: json_schema_response_format
+  max_tokens: 16000
+  timeout_s: 600.0
+  temperature: 0.0
+  seed: 0
+  enable_thinking: false
+  evidence_layout: channel_major_blocks
+
+render:
+  protocol: gt-paired-scene-graph-environment-routed-visibility
+  lighting_normalization: gt-paired-per-view-independent-photometry
+  exposure_normalization: camera-manual-fixed-per-view-bias-search
+  scene_alignment: gt-scene-graph-environment-routed-frozen
+  camera_plan_policy: visual-gt-environment-routed-visibility-frozen
+  frame_quality_policy: visual-gt-geometry-locked-per-view-independent-photometry
+  base_color_encoding: rgb8-opaque-png
+  view_count: 4
+  minimum_complete_viewpoints: 4
+  width: 1280
+  height: 720
+  fov_deg: 55.0
+  radius_half_extent_multiplier: 1.7
+  height_radius_multiplier: 0.55
+  channels: [rgb, base_color, scene_depth]
+  timeout_s: 300.0
+  depth_visualization:
+    policy: linear-fixed-camera-space-cm
+    near_cm: 0.0
+    far_cm: 26000.0
+
+aggregation:
+  protocol: gt-paired-weighted
+  view_aggregation: arithmetic-mean
+  dimension_weights:
+    composition_layout: 0.30
+    silhouette_geometry: 0.25
+    material_fidelity: 0.20
+    landmark_content: 0.15
+    lighting_fidelity: 0.10
+  deterministic_blend:
+    composition_layout:
+      vlm: 0.60
+      foreground_silhouette_iou: 0.20
+      depth_edge_similarity: 0.20
+    silhouette_geometry:
+      vlm: 0.50
+      foreground_silhouette_iou: 0.25
+      depth_edge_similarity: 0.25
+    material_fidelity:
+      vlm: 0.50
+      base_color_similarity: 0.50
+    landmark_content:
+      vlm: 1.0
+    lighting_fidelity:
+      vlm: 0.50
+      rgb_perceptual_similarity: 0.50
+  depth_edge_threshold_cm: 50.0
+  depth_edge_chamfer_normalization_px: 32.0
+
+calibration_status: validated_environment_routed_visibility_locked_per_view_photometry

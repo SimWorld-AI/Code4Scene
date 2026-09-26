@@ -1,0 +1,80 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-54-route66-crate-pair-recovery-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "route66-gas-station",
+  "scene_spec": "../../../scenes/route66-gas-station/scene.json",
+  "source_map": "/Game/Gas_Station/Maps/Demo_Scene",
+  "ground_truth_map": "/Game/Code4SceneGT/route66-gas-station/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-54-route66-crate-pair-recovery-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_ca978466ca545004b04e0a05c8b87633",
+      "location_cm": [
+        -1406.909423828125,
+        502.677734375,
+        130.96099853515625
+      ],
+      "rotation_deg": [
+        0.30027559399604786,
+        -61.25299072265626,
+        5.2687954902648935
+      ],
+      "scale": [
+        2.0454343020915986,
+        1.7155255436897279,
+        1.9134707987308501
+      ]
+    },
+    {
+      "op": "remove_actor",
+      "target": "sca_source_6d35b98f6e9058fcb741ae0ff65a04f8"
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "duplication",
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "Props_WoodenBox"
+      },
+      {
+        "type": "translation",
+        "label": "Props_WoodenBox4",
+        "delta_cm": [
+          -230.0,
+          180.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "Props_WoodenBox4",
+        "yaw_deg": -58.0
+      },
+      {
+        "type": "scaling",
+        "label": "Props_WoodenBox4",
+        "factor": [
+          1.55,
+          1.3,
+          1.45
+        ]
+      }
+    ],
+    "category": "layout_rearrangement",
+    "target_labels": [
+      "Props_WoodenBox",
+      "Props_WoodenBox4"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/route66-gas-station/gt.fingerprint.json"
+}

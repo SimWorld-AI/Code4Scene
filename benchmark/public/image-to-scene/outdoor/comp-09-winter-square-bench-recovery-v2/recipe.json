@@ -1,0 +1,36 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-09-winter-square-bench-recovery-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "winter-town",
+  "scene_spec": "../../../scenes/winter-town/scene.json",
+  "source_map": "/Game/WinterTown/Maps/RussianWinterTownDemo02",
+  "ground_truth_map": "/Game/Code4SceneGT/winter-town/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-09-winter-square-bench-recovery-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "remove_actor",
+      "target": "sca_source_85454b0ae5be52f3b795ab1b58667249"
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "insertion",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "SM_Bench01"
+      }
+    ],
+    "category": "repair_completion",
+    "target_labels": [
+      "SM_Bench01"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/winter-town/gt.fingerprint.json"
+}

@@ -1,0 +1,56 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/new-york-street/GT",
+  "source_level": "/Game/Code4SceneGT/new-york-street/GT",
+  "gt_id": "comp-42-new-york-sidewalk-bench-pair-repair-v2",
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "removal",
+      "reflection",
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "Bench_2",
+        "new_label": "Bench_2_CorruptMirror",
+        "delta_cm": [
+          260.0,
+          160.0,
+          0.0
+        ],
+        "yaw_deg": 25.0,
+        "factor": [
+          -0.8,
+          0.8,
+          0.8
+        ]
+      },
+      {
+        "type": "translation",
+        "label": "Bench_2",
+        "delta_cm": [
+          -180.0,
+          150.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "Bench_2",
+        "yaw_deg": -50.0
+      },
+      {
+        "type": "scaling",
+        "label": "Bench_2",
+        "factor": 1.35
+      }
+    ],
+    "category": "layout_rearrangement",
+    "target_labels": [
+      "Bench_2"
+    ]
+  }
+}

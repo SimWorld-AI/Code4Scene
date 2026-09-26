@@ -1,0 +1,53 @@
+# Code4Scene public task. Build the Input/GT levels and reference views with
+# dataset_builder (see docs/BUILD_DATASET.md) before running it.
+id: comp-41-new-york-storefront-planter-pair-recovery-v2
+kind: scene_repair
+case_type: image_to_scene
+scene_environment: outdoor
+status: ready
+inputs:
+  prompt: Repair the current outdoor scene so it matches the provided reference image. Make only the minimum
+    changes needed, and preserve all unrelated actors and properties.
+  init_map: /Game/Code4SceneInputs/comp-41-new-york-storefront-planter-pair-recovery-v2/Input
+  budget:
+    tool_calls: 80
+    wall_minutes: 20
+  skills: contracts
+source:
+  schema_version: scenebench.outdoor_compositional_repair.v1
+  pack: New York Street
+  scene: New York Street
+  category: object_lifecycle
+  intrinsic_tier_prior: medium
+  mechanics:
+  - duplication
+  - translation
+  - rotation
+  - scaling
+  reference_views:
+  - references/reference.jpg
+  content_fingerprints:
+    algorithm: c4s-fp-1
+    ground_truth:
+      root: 163de92b910b9e25c150619179cb6463be3283b78b96ec032a9d1015af2793c8
+      actor_count: 803
+    input:
+      root: d200dfcca2f0cb498c6ea21d785e85345742466a5965d8b564ca3fe72df2e88c
+      actor_count: 802
+render:
+  mode: authored
+  resolution:
+  - 1920
+  - 1080
+verifiers:
+- name: gt_repair
+  ground_truth: /Game/Code4SceneGT/new-york-street/GT
+  visual_semantic_diff:
+    caption_diff: true
+    paired_visual: true
+experiment:
+  input_condition: prompt_and_screenshots
+assets:
+  packs:
+  - Street_NY
+  - Code4SceneInputs

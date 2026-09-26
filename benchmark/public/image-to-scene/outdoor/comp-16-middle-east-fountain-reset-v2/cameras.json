@@ -1,0 +1,63 @@
+{
+  "schema_version": "code4scene.cameras.v1",
+  "case_id": "comp-16-middle-east-fountain-reset-v2",
+  "capture_map": "ground_truth",
+  "capture": {
+    "method": "scene_capture_2d",
+    "width": 1920,
+    "height": 1080,
+    "capture_count": 2,
+    "capture_source": "SCS_FINAL_COLOR_LDR",
+    "console": [
+      "viewmode lit",
+      "r.AntiAliasingMethod 2",
+      "sg.AntiAliasingQuality 4",
+      "r.ScreenPercentage 100",
+      "r.Streaming.PoolSize 6000",
+      "r.Streaming.FullyLoadUsedTextures 1"
+    ],
+    "fill_light": {
+      "at": "camera",
+      "attenuation_radius_cm": 3200.0,
+      "cast_shadows": false,
+      "enabled": true
+    },
+    "top_light": {
+      "at": "target",
+      "offset_z_cm": 320.0,
+      "attenuation_radius_cm": 2600.0,
+      "cast_shadows": false,
+      "enabled": true
+    },
+    "rotation": "look_at(location_cm, target_cm)",
+    "fov": "fov_deg is the horizontal field of view of the capture component"
+  },
+  "views": [
+    {
+      "name": "reference",
+      "location_cm": [
+        -2496.7978497347403,
+        2423.357455971847,
+        430.0
+      ],
+      "target_cm": [
+        -3727.807541,
+        2206.2972338881837,
+        491.0045101121068
+      ],
+      "fov_deg": 46.0,
+      "lighting": {
+        "fill_intensity": 900.0,
+        "top_intensity": 600.0,
+        "exposure_bias": 0.0
+      },
+      "publish": {
+        "file": "references/reference.jpg",
+        "format": "jpeg",
+        "width": 1600,
+        "height": 900,
+        "encoder": "ffmpeg -vf scale=1600:900 -q:v 3 (Pillow fallback: quality 90)"
+      }
+    }
+  ]
+}

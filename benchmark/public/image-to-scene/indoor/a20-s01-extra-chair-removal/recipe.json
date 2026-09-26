@@ -1,0 +1,74 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "a20-s01-extra-chair-removal",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "archviz-apartment",
+  "scene_spec": "../../../scenes/archviz-apartment/scene.json",
+  "source_map": "/Game/ArchVizInteriorVol2/Maps/Apartment",
+  "ground_truth_map": "/Game/Code4SceneGT/archviz-apartment/GT",
+  "input_map": "/Game/Code4SceneInputs/a20-s01-extra-chair-removal/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_atomic20_extra_archviz_chair_0001",
+      "identity_tag": true,
+      "object_name": "StaticMeshActor_0",
+      "label": "SB_ATOMIC20_EXTRA__a20-s01-extra-chair-removal__00",
+      "from": {
+        "static_mesh": "/Game/ArchVizInteriorVol2/Meshes/SM_Chair.SM_Chair"
+      },
+      "location_cm": [
+        30.0,
+        -110.0,
+        0.0
+      ],
+      "rotation_deg": [
+        0.0,
+        -45.00000000000001,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "expect": {
+        "like": "sca_source_7e9bc928cf765aa4a3afa07b608ad594"
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "removal"
+    ],
+    "authored_operations": [
+      {
+        "type": "insertion",
+        "label": "SB_ATOMIC20_EXTRA__a20-s01-extra-chair-removal__00",
+        "asset": "/Game/ArchVizInteriorVol2/Meshes/SM_Chair.SM_Chair",
+        "location_cm": [
+          30.0,
+          -110.0,
+          0.0
+        ],
+        "rotation_rpy_deg": [
+          0.0,
+          0.0,
+          -45.0
+        ],
+        "scale_xyz": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "SB_ATOMIC20_EXTRA__a20-s01-extra-chair-removal__00"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/archviz-apartment/gt.fingerprint.json"
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "indoor-atomic-v1-072",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "basement",
+  "scene_spec": "../../../scenes/basement/scene.json",
+  "source_map": "/Game/HorrorEnviroment/Levels/DemoMap",
+  "ground_truth_map": "/Game/Code4SceneGT/basement/GT",
+  "input_map": "/Game/Code4SceneInputs/indoor-atomic-v1-072/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_3fa18fdd76f9539fa1322a80813ba7e7",
+      "location_cm": [
+        199.73316955566406,
+        576.5227661132812,
+        1.4999999621068127e-05
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "translation"
+    ],
+    "authored_operations": [
+      {
+        "type": "translation",
+        "label": "SM_box_4",
+        "delta_cm": [
+          60.0,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "SM_box_4"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/basement/gt.fingerprint.json"
+}

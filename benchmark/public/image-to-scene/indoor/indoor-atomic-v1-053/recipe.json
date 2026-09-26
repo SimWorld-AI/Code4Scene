@@ -1,0 +1,40 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "indoor-atomic-v1-053",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "detective-office",
+  "scene_spec": "../../../scenes/detective-office/scene.json",
+  "source_map": "/Game/DetectiveOffice/Maps/DetectiveOffice",
+  "ground_truth_map": "/Game/Code4SceneGT/detective-office/GT",
+  "input_map": "/Game/Code4SceneInputs/indoor-atomic-v1-053/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_db5b79d5b0755d34900c6751e454f087",
+      "scale": [
+        0.6120000171661377,
+        0.6120000171661377,
+        0.6120000171661377
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "scaling",
+        "label": "Fan",
+        "factor": 0.72
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "Fan"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/detective-office/gt.fingerprint.json"
+}

@@ -1,0 +1,21 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/archviz-apartment/GT",
+  "source_level": "/Game/Code4SceneGT/archviz-apartment/GT",
+  "gt_id": "indoor-atomic-v1-013",
+  "schema_version": "code4scene.gt_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "insertion"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "SM_Ceiling_lamp"
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "SM_Ceiling_lamp"
+    ]
+  }
+}

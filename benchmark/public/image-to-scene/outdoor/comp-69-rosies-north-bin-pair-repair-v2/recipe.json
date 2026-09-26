@@ -1,0 +1,96 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-69-rosies-north-bin-pair-repair-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "rosies-diner",
+  "scene_spec": "../../../scenes/rosies-diner/scene.json",
+  "source_map": "/Game/Diner/Maps/Diner",
+  "ground_truth_map": "/Game/Code4SceneGT/rosies-diner/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-69-rosies-north-bin-pair-repair-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_a273db8d880f58208f4e8b8f5508d074",
+      "rotation_deg": [
+        43.48215866088868,
+        -107.99987792968751,
+        90.00012207031251
+      ],
+      "scale": [
+        1.38125,
+        0.87125,
+        1.275
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_generated_145d92425142b503d49fae97a69f8cb4",
+      "identity_tag": false,
+      "object_name": "StaticMeshActor_0",
+      "label": "SM_Trashcan5_CorruptDuplicate",
+      "from": {
+        "static_mesh": "/Game/Diner/Meshs/Props/SM_Trashcan01.SM_Trashcan01"
+      },
+      "location_cm": [
+        -845.533935546875,
+        1607.03076171875,
+        142.6958465576172
+      ],
+      "rotation_deg": [
+        43.48215866088867,
+        -27.999881744384766,
+        90.00012207031247
+      ],
+      "scale": [
+        1.2218749999999998,
+        1.2218749999999998,
+        1.2218749999999998
+      ],
+      "expect": {
+        "like": "sca_source_04c9f26f8a26559ca03f88e645192c93"
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "removal",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "SM_Trashcan5",
+        "new_label": "SM_Trashcan5_CorruptDuplicate",
+        "delta_cm": [
+          190.0,
+          150.0,
+          0.0
+        ],
+        "yaw_deg": 32.0,
+        "factor": 1.15
+      },
+      {
+        "type": "rotation",
+        "label": "SM_Trashcan5",
+        "yaw_deg": -48.0
+      },
+      {
+        "type": "scaling",
+        "label": "SM_Trashcan5",
+        "factor": [
+          1.3,
+          0.82,
+          1.2
+        ]
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "SM_Trashcan5"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/rosies-diner/gt.fingerprint.json"
+}

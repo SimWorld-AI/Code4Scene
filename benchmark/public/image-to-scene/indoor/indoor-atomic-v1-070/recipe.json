@@ -1,0 +1,34 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "indoor-atomic-v1-070",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "archviz-apartment",
+  "scene_spec": "../../../scenes/archviz-apartment/scene.json",
+  "source_map": "/Game/ArchVizInteriorVol2/Maps/Apartment",
+  "ground_truth_map": "/Game/Code4SceneGT/archviz-apartment/GT",
+  "input_map": "/Game/Code4SceneInputs/indoor-atomic-v1-070/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "remove_actor",
+      "target": "sca_source_be96c119f6f25acb835896b3f3789839"
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "duplication"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "SM_Bed_Lamp2"
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "SM_Bed_Lamp2"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/archviz-apartment/gt.fingerprint.json"
+}

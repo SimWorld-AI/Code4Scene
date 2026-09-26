@@ -1,0 +1,90 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-08-train-crossing-sign-reset-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "train-station",
+  "scene_spec": "../../../scenes/train-station/scene.json",
+  "source_map": "/Game/TrainStation/Maps/TrainStation_Optimised",
+  "ground_truth_map": "/Game/Code4SceneGT/train-station/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-08-train-crossing-sign-reset-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_static_mesh",
+      "target": "sca_source_f0c780dd9c005ce898116137e2f9a4fc",
+      "component": "StaticMeshComponent0",
+      "static_mesh": "/Game/TrainStation/Meshes/SM_StreetSigns_NoEntry.SM_StreetSigns_NoEntry",
+      "replaces": "/Game/TrainStation/Meshes/SM_StreetSigns_Crossing.SM_StreetSigns_Crossing",
+      "expect": {
+        "material_slots": [
+          {
+            "component_identity": "StaticMeshComponent0|/Script/Engine.StaticMeshComponent",
+            "is_dynamic": false,
+            "material_class_path": "/Script/Engine.MaterialInstanceConstant",
+            "material_path": "/Game/TrainStation/Materials/Mi_StreetSigns.Mi_StreetSigns",
+            "slot_index": 0
+          }
+        ]
+      }
+    },
+    {
+      "op": "set_transform",
+      "target": "sca_source_f0c780dd9c005ce898116137e2f9a4fc",
+      "location_cm": [
+        -276.8944091796875,
+        -1488.8681640625,
+        -1020.0
+      ],
+      "rotation_deg": [
+        0.0,
+        -25.000167846679688,
+        0.0
+      ],
+      "scale": [
+        1.55,
+        1.55,
+        1.55
+      ]
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "replacement",
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "asset": "/Game/TrainStation/Meshes/SM_StreetSigns_NoEntry.SM_StreetSigns_NoEntry",
+        "label": "SM_StreetSigns_Crossing",
+        "type": "replacement"
+      },
+      {
+        "delta_cm": [
+          320.0,
+          -240.0,
+          0.0
+        ],
+        "label": "SM_StreetSigns_Crossing",
+        "type": "translation"
+      },
+      {
+        "label": "SM_StreetSigns_Crossing",
+        "type": "rotation",
+        "yaw_deg": 70.0
+      },
+      {
+        "factor": 1.55,
+        "label": "SM_StreetSigns_Crossing",
+        "type": "scaling"
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "SM_StreetSigns_Crossing"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/train-station/gt.fingerprint.json"
+}

@@ -1,0 +1,130 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-76-old-industrial-barrel-row-repair-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "old-building",
+  "scene_spec": "../../../scenes/old-building/scene.json",
+  "source_map": "/Game/OldBuilding/Maps/OldBuilding",
+  "ground_truth_map": "/Game/Code4SceneGT/old-building/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-76-old-industrial-barrel-row-repair-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_a5a7513a9384525399f327bce2fbfc0e",
+      "location_cm": [
+        -2884.68310546875,
+        1469.125732421875,
+        3853.9658203125
+      ],
+      "rotation_deg": [
+        -76.19641876220703,
+        -155.00015258789065,
+        89.9998550415039
+      ]
+    },
+    {
+      "op": "set_transform",
+      "target": "sca_source_07691a8983e15504ba40e4ccf5567703",
+      "scale": [
+        1.35,
+        1.35,
+        1.2
+      ]
+    },
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_generated_a35079a81e132ad0c22821fc790e8b39",
+      "identity_tag": false,
+      "object_name": "StaticMeshActor_0",
+      "label": "Barrel_10_CorruptDuplicate",
+      "from": {
+        "static_mesh": "/Game/OldBuilding/Meshes/Props/Barrel_01/Barrel_01.Barrel_01"
+      },
+      "location_cm": [
+        -2540.97021484375,
+        1543.010986328125,
+        3822.056396484375
+      ],
+      "rotation_deg": [
+        0.0,
+        161.19778442382812,
+        -0.0
+      ],
+      "scale": [
+        1.1,
+        1.1,
+        1.1
+      ],
+      "expect": {
+        "component_asset_paths": [
+          "/Game/OldBuilding/Meshes/Props/Barrel_01/Barrel_01.Barrel_01"
+        ],
+        "material_slots": [
+          {
+            "component_identity": "StaticMeshComponent0|/Script/Engine.StaticMeshComponent",
+            "is_dynamic": false,
+            "material_class_path": "/Script/Engine.Material",
+            "material_path": "/Game/OldBuilding/Materials_Textures/MasterMaterials/PropsMaster.PropsMaster",
+            "slot_index": 0
+          }
+        ],
+        "tags": [],
+        "properties": {}
+      }
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "removal",
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "Barrel_10",
+        "new_label": "Barrel_10_CorruptDuplicate",
+        "delta_cm": [
+          180.0,
+          130.0,
+          0.0
+        ],
+        "yaw_deg": 25.0,
+        "factor": 1.1
+      },
+      {
+        "type": "translation",
+        "label": "Barrel_122",
+        "delta_cm": [
+          -180.0,
+          120.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "Barrel_122",
+        "yaw_deg": 45.0
+      },
+      {
+        "type": "scaling",
+        "label": "Barrel_124",
+        "factor": [
+          1.35,
+          1.35,
+          1.2
+        ]
+      }
+    ],
+    "category": "layout_rearrangement",
+    "target_labels": [
+      "Barrel_122",
+      "Barrel_10",
+      "Barrel_124"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/old-building/gt.fingerprint.json"
+}

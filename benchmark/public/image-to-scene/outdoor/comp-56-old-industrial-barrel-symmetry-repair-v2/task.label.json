@@ -1,0 +1,60 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/old-building/GT",
+  "source_level": "/Game/Code4SceneGT/old-building/GT",
+  "gt_id": "comp-56-old-industrial-barrel-symmetry-repair-v2",
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "removal",
+      "reflection",
+      "translation",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "Barrel_9",
+        "new_label": "Barrel_9_CorruptMirror",
+        "delta_cm": [
+          210.0,
+          150.0,
+          0.0
+        ],
+        "yaw_deg": 26.0,
+        "factor": [
+          -0.9,
+          0.9,
+          0.9
+        ]
+      },
+      {
+        "type": "translation",
+        "label": "Barrel_9",
+        "delta_cm": [
+          -190.0,
+          140.0,
+          0.0
+        ]
+      },
+      {
+        "type": "rotation",
+        "label": "Barrel_9",
+        "yaw_deg": 55.0
+      },
+      {
+        "type": "scaling",
+        "label": "Barrel_9",
+        "factor": [
+          1.35,
+          1.35,
+          1.25
+        ]
+      }
+    ],
+    "category": "symmetry_pattern",
+    "target_labels": [
+      "Barrel_9"
+    ]
+  }
+}

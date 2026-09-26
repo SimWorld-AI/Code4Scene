@@ -1,0 +1,22 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/cyberpunk-toilet/GT",
+  "source_level": "/Game/Code4SceneGT/cyberpunk-toilet/GT",
+  "gt_id": "indoor-atomic-v1-027",
+  "schema_version": "code4scene.gt_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "scaling",
+        "label": "SM_Sink2",
+        "factor": 0.78
+      }
+    ],
+    "category": "geometric_transformation",
+    "target_labels": [
+      "SM_Sink2"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": "code4scene.scene.v1",
+  "scene_id": "rosies-diner",
+  "environment": "outdoor",
+  "source_pack": "Rosie's Diner",
+  "content_roots": [
+    "Diner"
+  ],
+  "source_map": "/Game/Diner/Maps/Diner",
+  "ground_truth_map": "/Game/Code4SceneGT/rosies-diner/GT",
+  "identity": {
+    "scheme": "uuid5-source-v1",
+    "gt_id": "gt-8c3204be41c0",
+    "namespace_url": "https://simworld.ai/SimCodeArena/stable-actor-id/v1",
+    "tag_actor_origin": "source",
+    "rule": "stable_id = 'sca_source_' + uuid5(uuid5(NAMESPACE_URL, namespace_url), 'v1|source|' + gt_id + '|' + source_map + '|' + actor_path_in_source_map + '|' + class_path).hex; written as tags 'simcodearena.stable_actor_id=<id>' and 'simcodearena.actor_origin=source' on every persistent-level actor of the source map that is not a child actor."
+  },
+  "patches": [],
+  "key_assets": [
+    "/Game/Diner/Maps/Diner",
+    "/Game/Diner/Meshs/ModularBuildings/Building01/SM_Building01_03.SM_Building01_03",
+    "/Game/Diner/Meshs/ModularBuildings/Building01/SM_Building01_016.SM_Building01_016",
+    "/Game/Diner/Meshs/ModularBuildings/Building01/SM_Building01_07.SM_Building01_07",
+    "/Game/Diner/Meshs/Props/SM_Sidewalk.SM_Sidewalk"
+  ],
+  "known_unresolved_dependencies": [],
+  "expected_fingerprint": {
+    "file": "gt.fingerprint.json",
+    "algorithm": "c4s-fp-1",
+    "root": "9e962d0f87534ed69197bd7133b62a58d4eeca8fb8c6bf737e4336c60932e1a5",
+    "actor_count": 3534
+  },
+  "cases": [
+    "comp-17-rosies-service-bin-reset-v3",
+    "comp-18-rosies-roadside-billboard-reset-v3",
+    "comp-20-rosies-crate-bin-layout-v2",
+    "comp-49-rosies-service-garbage-recovery-v2",
+    "comp-69-rosies-north-bin-pair-repair-v2",
+    "comp-70-rosies-east-garbage-bag-recovery-v2"
+  ]
+}

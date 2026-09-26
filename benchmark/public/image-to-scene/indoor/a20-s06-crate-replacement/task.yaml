@@ -1,0 +1,40 @@
+# Code4Scene public task. Build the Input/GT levels and reference views with
+# dataset_builder (see docs/BUILD_DATASET.md) before running it.
+id: a20-s06-crate-replacement
+kind: scene_repair
+case_type: image_to_scene
+scene_environment: indoor
+inputs:
+  prompt: Repair the current indoor scene so it matches the two provided reference images and the canonical
+    scene. Make only the minimum changes needed, and preserve all unrelated actors and properties.
+  init_map: /Game/Code4SceneInputs/a20-s06-crate-replacement/Input
+  budget:
+    tool_calls: 120
+    wall_minutes: 45
+  skills: contracts
+source:
+  schema_version: scenebench.gt_repair_task.v1
+  task_id: a20-s06-crate-replacement
+  pack: Medieval Forge Pack
+  reference_views:
+  - references/view-01.png
+  - references/view-02.png
+  content_fingerprints:
+    algorithm: c4s-fp-1
+    ground_truth:
+      root: e1e123f32511b195a188f938ed8fae1cdf0041e2f8405b40c0e8259cd6f79066
+      actor_count: 371
+    input:
+      root: 12a5fe7a2bcff8bf1254d829d281702bc04ef50e4030d701b926483161042878
+      actor_count: 371
+verifiers:
+- name: gt_repair
+  ground_truth: /Game/Code4SceneGT/medieval-forge/GT
+  visual_semantic_diff:
+    caption_diff: true
+    paired_visual: true
+assets:
+  packs:
+  - MedievalForgePack
+  - Code4SceneInputs
+status: ready

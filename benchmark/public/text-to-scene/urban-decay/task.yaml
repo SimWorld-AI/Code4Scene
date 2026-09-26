@@ -1,0 +1,132 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: urban-decay
+kind: scene_generation
+inputs:
+  prompt: "Build me a sparse, decaying industrial district at amber dusk, with deep blue-black shadows,\
+    \ hazy air, and a flat, largely featureless pale-beige ground plane stretching between isolated structures.\
+    \ Organize the scene around a broad elevated roadway running lengthwise through the district on regular\
+    \ concrete piers, its unusually bright, plain deck dominating the aerial views; place a narrower rusted\
+    \ steel rail viaduct diagonally across and beneath it, with exposed trusses and dark tracks. Cluster\
+    \ roughly twenty-five brick warehouses, workshops, and tenement-like blocks along both corridors,\
+    \ leaving broad empty lots and unfinished-looking gaps between them. Most buildings should be rectangular,\
+    \ two to four stories tall, with red or faded tan brick, weathered plaster patches, repetitive dark\
+    \ windows, flat or gently pitched rust-streaked roofs, and occasional decorative cornices; include\
+    \ several larger freestanding mill buildings around the outer area and smaller sheds packed near the\
+    \ central crossing. Add wooden utility poles and dense sagging overhead wires along the streets, chain-link\
+    \ fencing and graffiti-covered metal barriers beneath the viaduct, exterior fire escapes, narrow catwalks,\
+    \ suspended industrial pipes, rooftop vents, service doors, steps, and shadowed passages between buildings.\
+    \ Keep streets and yards empty of people and vehicles, with no vegetation and little visible surface\
+    \ detailing. Frame the distant edges with thin, hazy silhouettes of a modern city skyline, while keeping\
+    \ the reconstructed district low-rise, fragmented, and irregularly spaced, denser around the rail\
+    \ junction and markedly emptier toward the perimeter.\n\n=== ASSET PALETTE ===\nBuild this scene using\
+    \ ONLY the assets below — asset search is not available\nin this run, so this list is your entire\
+    \ library. Format:\n\n  id | name | category | width x depth x height (m) | spawn path\n\nThe id is\
+    \ what a scene graph refers to; the spawn path is what reaches UE.\nYou decide which to use, how many\
+    \ of each, and where they go — reuse entries\nfreely.\n\n- cube | Cube | basicshapes | 336.62x27.84x1.0\
+    \ m | /Engine/BasicShapes/Cube.Cube\n- plane | Plane | basicshapes | 9.0x9.0x0.0 m | /Engine/BasicShapes/Plane.Plane\n\
+    - residential_building1 | Residential Building1 | buildingexamples | 6.42x17.44x8.29 m | /Game/UrbanDecay/Blueprints/BuildingExamples/BP_ResidentialBuilding1.BP_ResidentialBuilding1_C\n\
+    - residential_building1_facade_only | Residential Building1 Facade Only | buildingexamples | 6.29x17.67x8.28\
+    \ m | /Game/UrbanDecay/Blueprints/BuildingExamples/BP_ResidentialBuilding1_FacadeOnly.BP_ResidentialBuilding1_FacadeOnly_C\n\
+    - residential_building2 | Residential Building2 | buildingexamples | 17.47x6.47x8.28 m | /Game/UrbanDecay/Blueprints/BuildingExamples/BP_ResidentialBuilding2.BP_ResidentialBuilding2_C\n\
+    - residential_building2_facade_only | Residential Building2 Facade Only | buildingexamples | 17.47x6.29x8.28\
+    \ m | /Game/UrbanDecay/Blueprints/BuildingExamples/BP_ResidentialBuilding2_FacadeOnly.BP_ResidentialBuilding2_FacadeOnly_C\n\
+    - residential_building3 | Residential Building3 | buildingexamples | 17.4x6.32x11.29 m | /Game/UrbanDecay/Blueprints/BuildingExamples/BP_ResidentialBuilding3.BP_ResidentialBuilding3_C\n\
+    - residential_building3_facade_only | Residential Building3 Facade Only | buildingexamples | 6.3x17.3x11.29\
+    \ m | /Game/UrbanDecay/Blueprints/BuildingExamples/BP_ResidentialBuilding3_FacadeOnly.BP_ResidentialBuilding3_FacadeOnly_C\n\
+    - residential_building4 | Residential Building4 | buildingexamples | 17.44x7.47x8.28 m | /Game/UrbanDecay/Blueprints/BuildingExamples/BP_ResidentialBuilding4.BP_ResidentialBuilding4_C\n\
+    - residential_building4_facade_only | Residential Building4 Facade Only | buildingexamples | 7.35x17.15x8.28\
+    \ m | /Game/UrbanDecay/Blueprints/BuildingExamples/BP_ResidentialBuilding4_FacadeOnly.BP_ResidentialBuilding4_FacadeOnly_C\n\
+    - residential_building_corner1 | Residential Building Corner1 | buildingexamples | 10.49x9.52x8.19\
+    \ m | /Game/UrbanDecay/Blueprints/BuildingExamples/BP_ResidentialBuildingCorner1.BP_ResidentialBuildingCorner1_C\n\
+    - residential_building_corner2 | Residential Building Corner2 | buildingexamples | 9.28x10.28x10.79\
+    \ m | /Game/UrbanDecay/Blueprints/BuildingExamples/BP_ResidentialBuildingCorner2.BP_ResidentialBuildingCorner2_C\n\
+    - merged_building1 | Merged Building1 | examplemergedactors | 5.17x17.41x10.01 m | /Game/UrbanDecay/Meshes/ExampleMergedActors/SM_MergedBuilding1.SM_MergedBuilding1\n\
+    - merged_building11 | Merged Building11 | examplemergedactors | 5.01x16.17x7.0 m | /Game/UrbanDecay/Meshes/ExampleMergedActors/SM_MergedBuilding11.SM_MergedBuilding11\n\
+    - merged_building12 | Merged Building12 | examplemergedactors | 45.98x26.18x18.53 m | /Game/UrbanDecay/Meshes/ExampleMergedActors/SM_MergedBuilding12.SM_MergedBuilding12\n\
+    - merged_building2 | Merged Building2 | examplemergedactors | 8.2x11.19x10.09 m | /Game/UrbanDecay/Meshes/ExampleMergedActors/SM_MergedBuilding2.SM_MergedBuilding2\n\
+    - merged_building4 | Merged Building4 | examplemergedactors | 5.17x17.41x10.02 m | /Game/UrbanDecay/Meshes/ExampleMergedActors/SM_MergedBuilding4.SM_MergedBuilding4\n\
+    - merged_building5 | Merged Building5 | examplemergedactors | 10.4x9.09x7.09 m | /Game/UrbanDecay/Meshes/ExampleMergedActors/SM_MergedBuilding5.SM_MergedBuilding5\n\
+    - merged_building6 | Merged Building6 | examplemergedactors | 6.09x17.11x7.06 m | /Game/UrbanDecay/Meshes/ExampleMergedActors/SM_MergedBuilding6.SM_MergedBuilding6\n\
+    - merged_building7 | Merged Building7 | examplemergedactors | 17.05x5.3x7.01 m | /Game/UrbanDecay/Meshes/ExampleMergedActors/SM_MergedBuilding7.SM_MergedBuilding7\n\
+    - merged_building8 | Merged Building8 | examplemergedactors | 5.3x17.05x7.01 m | /Game/UrbanDecay/Meshes/ExampleMergedActors/SM_MergedBuilding8.SM_MergedBuilding8\n\
+    - merged_building9 | Merged Building9 | examplemergedactors | 5.01x17.03x7.01 m | /Game/UrbanDecay/Meshes/ExampleMergedActors/SM_MergedBuilding9.SM_MergedBuilding9\n\
+    - acunit | ACUnit | meshes | 0.64x0.73x0.44 m | /Game/UrbanDecay/Meshes/SM_ACUnit.SM_ACUnit\n- barbed_wire\
+    \ | Barbed Wire | meshes | 3.56x0.63x0.56 m | /Game/UrbanDecay/Meshes/SM_BarbedWire.SM_BarbedWire\n\
+    - bgoverpass | BGOverpass | meshes | 56.25x31.25x2.48 m | /Game/UrbanDecay/Meshes/SM_BGOverpass.SM_BGOverpass\n\
+    - board1 | Board1 | meshes | 1.47x1.87x0.05 m | /Game/UrbanDecay/Meshes/SM_Board1.SM_Board1\n- board2\
+    \ | Board2 | meshes | 0.09x4.02x1.0 m | /Game/UrbanDecay/Meshes/SM_Board2.SM_Board2\n- bridge_ceiling\
+    \ | Bridge Ceiling | meshes | 2.0x2.0x0.5 m | /Game/UrbanDecay/Meshes/SM_BridgeCeiling.SM_BridgeCeiling\n\
+    - bridge_side_piece | Bridge Side Piece | meshes | 6.0x0.63x2.64 m | /Game/UrbanDecay/Meshes/SM_BridgeSidePiece.SM_BridgeSidePiece\n\
+    - bridge_support1 | Bridge Support1 | meshes | 2.03x7.02x4.61 m | /Game/UrbanDecay/Meshes/SM_BridgeSupport1.SM_BridgeSupport1\n\
+    - building_trim2 | Building Trim2 | meshes | 5.0x0.38x0.5 m | /Game/UrbanDecay/Meshes/SM_BuildingTrim2.SM_BuildingTrim2\n\
+    - cardboard_box | Cardboard Box | meshes | 1.28x1.48x0.33 m | /Game/UrbanDecay/Meshes/SM_CardboardBox.SM_CardboardBox\n\
+    - cardboard_box_flattened | Cardboard Box Flattened | meshes | 0.3x0.3x0.02 m | /Game/UrbanDecay/Meshes/SM_CardboardBoxFlattened.SM_CardboardBoxFlattened\n\
+    - cardboard_box_flattened2 | Cardboard Box Flattened2 | meshes | 0.47x0.46x0.02 m | /Game/UrbanDecay/Meshes/SM_CardboardBoxFlattened2.SM_CardboardBoxFlattened2\n\
+    - chainlink_fence | Chainlink Fence | meshes | 0.11x10.07x2.07 m | /Game/UrbanDecay/Meshes/SM_ChainlinkFence.SM_ChainlinkFence\n\
+    - chainlink_fence_damaged | Chainlink Fence Damaged | meshes | 3.73x0.64x2.4 m | /Game/UrbanDecay/Meshes/SM_ChainlinkFenceDamaged.SM_ChainlinkFenceDamaged\n\
+    - chimney_pipe_corner | Chimney Pipe Corner | meshes | 1.27x0.74x1.27 m | /Game/UrbanDecay/Meshes/SM_ChimneyPipeCorner.SM_ChimneyPipeCorner\n\
+    - chimney_pipe_straight | Chimney Pipe Straight | meshes | 1.01x1.01x1.44 m | /Game/UrbanDecay/Meshes/SM_ChimneyPipeStraight.SM_ChimneyPipeStraight\n\
+    - cloth_covering1 | Cloth Covering1 | meshes | 0.26x3.97x2.0 m | /Game/UrbanDecay/Meshes/SM_ClothCovering1.SM_ClothCovering1\n\
+    - corrugated_sheet1 | Corrugated Sheet1 | meshes | 0.07x2.0x2.0 m | /Game/UrbanDecay/Meshes/SM_CorrugatedSheet1.SM_CorrugatedSheet1\n\
+    - corrugated_sheet2 | Corrugated Sheet2 | meshes | 1.64x2.04x2.17 m | /Game/UrbanDecay/Meshes/SM_CorrugatedSheet2.SM_CorrugatedSheet2\n\
+    - curb_mesh1 | Curb Mesh1 | meshes | 3.97x0.56x0.08 m | /Game/UrbanDecay/Meshes/SM_CurbMesh1.SM_CurbMesh1\n\
+    - damaged_basketball_net | Damaged Basketball Net | meshes | 0.77x1.6x5.06 m | /Game/UrbanDecay/Meshes/SM_DamagedBasketballNet.SM_DamagedBasketballNet\n\
+    - electrical_box | Electrical Box | meshes | 0.54x1.03x1.5 m | /Game/UrbanDecay/Meshes/SM_ElectricalBox.SM_ElectricalBox\n\
+    - facade_column | Facade Column | meshes | 0.26x0.29x3.39 m | /Game/UrbanDecay/Meshes/SM_FacadeColumn.SM_FacadeColumn\n\
+    - fire_escape | Fire Escape | meshes | 1.63x5.95x4.47 m | /Game/UrbanDecay/Meshes/SM_FireEscape.SM_FireEscape\n\
+    - fire_hydrant | Fire Hydrant | meshes | 0.46x0.5x1.26 m | /Game/UrbanDecay/Meshes/SM_FireHydrant.SM_FireHydrant\n\
+    - flat_board | Flat Board | meshes | 0.03x2.01x1.33 m | /Game/UrbanDecay/Meshes/SM_FlatBoard.SM_FlatBoard\n\
+    - fuse_box | Fuse Box | meshes | 0.1x0.05x0.33 m | /Game/UrbanDecay/Meshes/SM_FuseBox.SM_FuseBox\n\
+    - grass_clump1 | Grass Clump1 | meshes | 0.35x0.32x0.35 m | /Game/UrbanDecay/Meshes/SM_GrassClump1.SM_GrassClump1\n\
+    - mesh_clearance_sign | Mesh Clearance Sign | meshes | 3.5x0.33x0.94 m | /Game/UrbanDecay/Meshes/SM_Mesh_ClearanceSign.SM_Mesh_ClearanceSign\n\
+    - modular_facade1x3 | Modular Facade1x3 | meshes | 0.0x1.0x3.0 m | /Game/UrbanDecay/Meshes/SM_ModularFacade1x3.SM_ModularFacade1x3\n\
+    - modular_facade2x3 | Modular Facade2x3 | meshes | 0.0x2.0x3.0 m | /Game/UrbanDecay/Meshes/SM_ModularFacade2x3.SM_ModularFacade2x3\n\
+    - modular_facade_foundation3 | Modular Facade Foundation3 | meshes | 0.21x5.01x0.5 m | /Game/UrbanDecay/Meshes/SM_ModularFacadeFoundation3.SM_ModularFacadeFoundation3\n\
+    - newspaper_scatter2 | Newspaper Scatter2 | meshes | 0.37x0.49x0.08 m | /Game/UrbanDecay/Meshes/SM_NewspaperScatter2.SM_NewspaperScatter2\n\
+    - newspaper_scatter3 | Newspaper Scatter3 | meshes | 0.41x0.41x0.01 m | /Game/UrbanDecay/Meshes/SM_NewspaperScatter3.SM_NewspaperScatter3\n\
+    - one_way_sign | One Way Sign | meshes | 1.19x0.0x0.46 m | /Game/UrbanDecay/Meshes/SM_OneWaySign.SM_OneWaySign\n\
+    - overpass_support | Overpass Support | meshes | 2.0x25.0x11.53 m | /Game/UrbanDecay/Meshes/SM_OverpassSupport.SM_OverpassSupport\n\
+    - parking_sign | Parking Sign | meshes | 0.15x0.46x2.7 m | /Game/UrbanDecay/Meshes/SM_ParkingSign.SM_ParkingSign\n\
+    - road_closed_sign | Road Closed Sign | meshes | 0.05x2.0x1.61 m | /Game/UrbanDecay/Meshes/SM_RoadClosedSign.SM_RoadClosedSign\n\
+    - road_mesh | Road Mesh | meshes | 26.44x26.44x0.22 m | /Game/UrbanDecay/Meshes/SM_RoadMesh.SM_RoadMesh\n\
+    - rooftop_acunit | Rooftop ACUnit | meshes | 1.77x1.77x1.11 m | /Game/UrbanDecay/Meshes/SM_RooftopACUnit.SM_RooftopACUnit\n\
+    - shade | Shade | meshes | 1.0x0.76x0.69 m | /Game/UrbanDecay/Meshes/SM_Shade.SM_Shade\n- sidewalk_corner\
+    \ | Sidewalk Corner | meshes | 3.25x3.25x0.45 m | /Game/UrbanDecay/Meshes/SM_SidewalkCorner.SM_SidewalkCorner\n\
+    - sidewalk_mesh | Sidewalk Mesh | meshes | 4.0x3.88x0.15 m | /Game/UrbanDecay/Meshes/SM_SidewalkMesh.SM_SidewalkMesh\n\
+    - small_pipe_corner | Small Pipe Corner | meshes | 0.16x0.18x0.08 m | /Game/UrbanDecay/Meshes/SM_SmallPipeCorner.SM_SmallPipeCorner\n\
+    - small_pipe_straight | Small Pipe Straight | meshes | 0.08x0.5x0.08 m | /Game/UrbanDecay/Meshes/SM_SmallPipeStraight.SM_SmallPipeStraight\n\
+    - steps | Steps | meshes | 3.35x1.26x0.64 m | /Game/UrbanDecay/Meshes/SM_Steps.SM_Steps\n- stop_sign\
+    \ | Stop Sign | meshes | 0.07x0.74x3.02 m | /Game/UrbanDecay/Meshes/SM_StopSign.SM_StopSign\n- street_bollard\
+    \ | Street Bollard | meshes | 0.23x0.23x1.1 m | /Game/UrbanDecay/Meshes/SM_StreetBollard.SM_StreetBollard\n\
+    - trash_bag | Trash Bag | meshes | 0.69x0.62x0.76 m | /Game/UrbanDecay/Meshes/SM_TrashBag.SM_TrashBag\n\
+    - trash_can | Trash Can | meshes | 1.0x0.95x1.03 m | /Game/UrbanDecay/Meshes/SM_TrashCan.SM_TrashCan\n\
+    - trashcan_lid | Trashcan Lid | meshes | 0.79x0.65x0.65 m | /Game/UrbanDecay/Meshes/SM_TrashcanLid.SM_TrashcanLid\n\
+    - utility_pole_var1 | Utility Pole Var1 | meshes | 2.2x3.54x10.51 m | /Game/UrbanDecay/Meshes/SM_UtilityPoleVar1.SM_UtilityPoleVar1\n\
+    - utility_pole_var2 | Utility Pole Var2 | meshes | 2.2x4.57x10.51 m | /Game/UrbanDecay/Meshes/SM_UtilityPoleVar2.SM_UtilityPoleVar2\n\
+    - window_grate1 | Window Grate1 | meshes | 1.03x0.03x1.53 m | /Game/UrbanDecay/Meshes/SM_WindowGrate1.SM_WindowGrate1\n\
+    - window_trim | Window Trim | meshes | 0.14x1.01x0.16 m | /Game/UrbanDecay/Meshes/SM_WindowTrim.SM_WindowTrim\n\
+    - wire_attachment | Wire Attachment | meshes | 0.02x0.02x0.13 m | /Game/UrbanDecay/Meshes/SM_WireAttachment.SM_WireAttachment\n\
+    - wire_loop | WIre Loop | meshes | 1.3x0.36x1.09 m | /Game/UrbanDecay/Meshes/SM_WIreLoop.SM_WIreLoop\n\
+    - wire_mesh | Wire Mesh | meshes | 12.93x0.12x0.62 m | /Game/UrbanDecay/Meshes/SM_WireMesh.SM_WireMesh\n\
+    - sidewalk_straight | Sidewalk Straight | proceduraltools | 3.05x6.35x0.72 m | /Game/UrbanDecay/Blueprints/ProceduralTools/BP_SidewalkStraight.BP_SidewalkStraight_C\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
+    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
+    \ for yourself when the scene\nmatches the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/urban-decay.bundle.json
+- name: overview_prompt_alignment
+assets:
+  packs:
+  - UrbanDecay

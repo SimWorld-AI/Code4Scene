@@ -1,0 +1,52 @@
+# Code4Scene public task. Build the Input/GT levels and reference views with
+# dataset_builder (see docs/BUILD_DATASET.md) before running it.
+id: comp-17-rosies-service-bin-reset-v3
+kind: scene_repair
+case_type: image_to_scene
+scene_environment: outdoor
+status: ready
+inputs:
+  prompt: Repair the current outdoor scene so it matches the provided reference image. Make only the minimum
+    changes needed, and preserve all unrelated actors and properties.
+  init_map: /Game/Code4SceneInputs/comp-17-rosies-service-bin-reset-v3/Input
+  budget:
+    tool_calls: 80
+    wall_minutes: 20
+  skills: contracts
+source:
+  schema_version: scenebench.outdoor_compositional_repair.v1
+  pack: Rosie's Diner
+  scene: Rosie's Diner
+  category: geometric_transformation
+  intrinsic_tier_prior: easy
+  mechanics:
+  - translation
+  - rotation
+  - scaling
+  reference_views:
+  - references/reference.jpg
+  content_fingerprints:
+    algorithm: c4s-fp-1
+    ground_truth:
+      root: 9e962d0f87534ed69197bd7133b62a58d4eeca8fb8c6bf737e4336c60932e1a5
+      actor_count: 3534
+    input:
+      root: 2f7094412185f972aebf54e66e44ab3ca1840b6db0ba3c72422fc9fbfa194ef2
+      actor_count: 3534
+render:
+  mode: authored
+  resolution:
+  - 1920
+  - 1080
+verifiers:
+- name: gt_repair
+  ground_truth: /Game/Code4SceneGT/rosies-diner/GT
+  visual_semantic_diff:
+    caption_diff: true
+    paired_visual: true
+experiment:
+  input_condition: prompt_and_screenshots
+assets:
+  packs:
+  - Diner
+  - Code4SceneInputs

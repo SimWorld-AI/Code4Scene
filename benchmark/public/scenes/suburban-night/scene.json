@@ -1,0 +1,40 @@
+{
+  "schema_version": "code4scene.scene.v1",
+  "scene_id": "suburban-night",
+  "environment": "outdoor",
+  "source_pack": "Suburban Night",
+  "content_roots": [
+    "Modular_house"
+  ],
+  "source_map": "/Game/Modular_house/Maps/Enviroment_Night",
+  "ground_truth_map": "/Game/Code4SceneGT/suburban-night/GT",
+  "identity": {
+    "scheme": "uuid5-source-v1",
+    "gt_id": "gt-bcf4bff784c7",
+    "namespace_url": "https://simworld.ai/SimCodeArena/stable-actor-id/v1",
+    "tag_actor_origin": "source",
+    "rule": "stable_id = 'sca_source_' + uuid5(uuid5(NAMESPACE_URL, namespace_url), 'v1|source|' + gt_id + '|' + source_map + '|' + actor_path_in_source_map + '|' + class_path).hex; written as tags 'simcodearena.stable_actor_id=<id>' and 'simcodearena.actor_origin=source' on every persistent-level actor of the source map that is not a child actor."
+  },
+  "patches": [],
+  "key_assets": [
+    "/Game/Modular_house/Maps/Enviroment_Night",
+    "/Game/Modular_house/Meshes/Sidewalk/SM_Sidewalk_01.SM_Sidewalk_01",
+    "/Game/Modular_house/Meshes/Sidewalk/SM_Sidewalk_04.SM_Sidewalk_04",
+    "/Game/Modular_house/Meshes/Decor/SM_Tulle_01.SM_Tulle_01",
+    "/Game/Modular_house/Meshes/Garden/SM_Thuja_01.SM_Thuja_01"
+  ],
+  "known_unresolved_dependencies": [],
+  "expected_fingerprint": {
+    "file": "gt.fingerprint.json",
+    "algorithm": "c4s-fp-1",
+    "root": "72c9ed9ce1776ea0699999ff5556fb11b706833160ae9551e42ec38897cdf1ed",
+    "actor_count": 756
+  },
+  "cases": [
+    "comp-23-suburban-patio-table-pair-v3",
+    "comp-24-suburban-patio-set-repair-v3",
+    "comp-51-suburban-driveway-mailbox-recovery-v2",
+    "comp-52-suburban-patio-table-symmetry-repair-v2",
+    "comp-72-suburban-umbrella-pair-repair-v2"
+  ]
+}

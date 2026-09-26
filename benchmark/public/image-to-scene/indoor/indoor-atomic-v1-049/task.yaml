@@ -1,0 +1,40 @@
+# Code4Scene public task. Build the Input/GT levels and reference views with
+# dataset_builder (see docs/BUILD_DATASET.md) before running it.
+id: indoor-atomic-v1-049
+kind: scene_repair
+case_type: image_to_scene
+scene_environment: indoor
+inputs:
+  prompt: Repair the current indoor scene so it matches the two provided reference images and the canonical
+    scene. Make only the minimum changes needed, and preserve all unrelated actors and properties.
+  init_map: /Game/Code4SceneInputs/indoor-atomic-v1-049/Input
+  budget:
+    tool_calls: 120
+    wall_minutes: 45
+  skills: contracts
+source:
+  schema_version: scenebench.gt_repair_task.v1
+  task_id: indoor-atomic-v1-049
+  pack: ArchViz Interior Vol. 2
+  reference_views:
+  - references/view-01.png
+  - references/view-02.png
+  content_fingerprints:
+    algorithm: c4s-fp-1
+    ground_truth:
+      root: 0b0ad7e24b15d95bd246f092d7fc7e92e22a7e33162df470b04268d283941b5d
+      actor_count: 95
+    input:
+      root: 1880f9c334b05cb628402b487c3d37e709c8fc5aa453da6f4194e9e52a1d63c3
+      actor_count: 95
+verifiers:
+- name: gt_repair
+  ground_truth: /Game/Code4SceneGT/archviz-apartment/GT
+  visual_semantic_diff:
+    caption_diff: true
+    paired_visual: true
+assets:
+  packs:
+  - ArchVizInteriorVol2
+  - Code4SceneInputs
+status: ready

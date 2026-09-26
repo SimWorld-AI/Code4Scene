@@ -1,0 +1,21 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/archviz-apartment/GT",
+  "source_level": "/Game/Code4SceneGT/archviz-apartment/GT",
+  "gt_id": "indoor-atomic-v1-070",
+  "schema_version": "code4scene.gt_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "duplication"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "SM_Bed_Lamp2"
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "SM_Bed_Lamp2"
+    ]
+  }
+}

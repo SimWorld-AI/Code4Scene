@@ -1,0 +1,45 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/new-york-street/GT",
+  "source_level": "/Game/Code4SceneGT/new-york-street/GT",
+  "gt_id": "comp-61-new-york-mailbox-pair-repair-v2",
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "removal",
+      "rotation",
+      "scaling"
+    ],
+    "authored_operations": [
+      {
+        "type": "duplication",
+        "label": "Mailbox2",
+        "new_label": "Mailbox2_CorruptDuplicate",
+        "delta_cm": [
+          180.0,
+          140.0,
+          0.0
+        ],
+        "yaw_deg": 25.0,
+        "factor": 1.15
+      },
+      {
+        "type": "rotation",
+        "label": "Mailbox2",
+        "yaw_deg": -45.0
+      },
+      {
+        "type": "scaling",
+        "label": "Mailbox2",
+        "factor": [
+          1.3,
+          0.8,
+          1.2
+        ]
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "Mailbox2"
+    ]
+  }
+}

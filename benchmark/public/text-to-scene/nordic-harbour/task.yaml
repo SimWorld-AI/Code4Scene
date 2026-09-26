@@ -1,0 +1,134 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: nordic-harbour
+kind: scene_generation
+inputs:
+  prompt: "Build me a compact, sunlit Copenhagen-style canal district with narrow cobblestone streets\
+    \ and rectangular waterways enclosing dense urban blocks. Arrange roughly thirty attached four- to\
+    \ six-storey townhouses in continuous street and canal-front rows, using slender façades, repetitive\
+    \ white-framed windows, arched doors and carriage entrances, modest cornices, and steep tiled roofs\
+    \ packed with dormers and brick chimneys. Include occasional exposed party walls between staggered\
+    \ building rows. Finish the façades in weathered muted red, mustard yellow, dusty blue, warm grey,\
+    \ beige, and exposed brick, with red, orange, and charcoal roof tiles. Run a principal waterfront\
+    \ street along a stone quay, crossed by smaller streets and linked across the canals by short, gently\
+    \ arched stone-and-metal bridges, including one opening onto a broad paved promenade with rounded\
+    \ landings. Form the canal edges from stepped pale stone, dark timber retaining walls, and iron railings\
+    \ around reflective rippling water. Add regularly spaced leafy trees, ornate black lamps, stone bollards,\
+    \ benches, European road signs, zebra crossings, puddles, grime, and sparse weeds.\n\n    === GROUND\
+    \ ===\n    Build the FLOOR FIRST, before placing anything else. Call the benchmark\n    tool `ground_pass`\
+    \ as your first build action: it carpets the whole 200 m\n    plate deterministically from a tile\
+    \ chosen for this scene. If you skip it,\n    and do not tile a floor yourself, the scene renders\
+    \ as objects floating\n    over empty space -- which is a failed reconstruction no matter how good\n\
+    \    the massing is. These palette entries are also flat surfaces you can tile\n    by hand if you\
+    \ prefer:\n\n      - SM_RoadRound | 8.0x8.0x0.00 m | /Game/NordicHarbour/Props/StreetModules/SM_RoadRound.SM_RoadRound\n\
+    \      - SM_Road | 8.0x8.0x0.00 m | /Game/NordicHarbour/Props/StreetModules/SM_Road.SM_Road\n    \
+    \  - SM_DockFloor | 3.0x3.0x0.05 m | /Game/NordicHarbour/Props/StreetModules/SM_DockFloor.SM_DockFloor\n\
+    \n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\n\
+    in this run, so this list is your entire library. Format:\n\n  id | name | category | width x depth\
+    \ x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches\
+    \ UE.\nYou decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n-\
+    \ building10_6_m | Building10 6 M | blueprints | 12.05x10.22x16.01 m | /Game/NordicHarbour/Blueprints/BP_Building10_6M.BP_Building10_6M_C\n\
+    - building1_2_m | Building1 2 M | blueprints | 7.48x4.05x19.63 m | /Game/NordicHarbour/Blueprints/BP_Building1_2M.BP_Building1_2M_C\n\
+    - building2_5_m | Building2 5 M | blueprints | 12.04x10.05x21.41 m | /Game/NordicHarbour/Blueprints/BP_Building2_5M.BP_Building2_5M_C\n\
+    - building3_3_m | Building3 3 M | blueprints | 6.5x12.04x20.72 m | /Game/NordicHarbour/Blueprints/BP_Building3_3M.BP_Building3_3M_C\n\
+    - building4_4_m | Building4 4 M | blueprints | 12.04x8.05x18.41 m | /Game/NordicHarbour/Blueprints/BP_Building4_4M.BP_Building4_4M_C\n\
+    - building5_3_m | Building5 3 M | blueprints | 6.05x7.23x19.0 m | /Game/NordicHarbour/Blueprints/BP_Building5_3M.BP_Building5_3M_C\n\
+    - building6_3_m | Building6 3 M | blueprints | 6.05x7.02x17.97 m | /Game/NordicHarbour/Blueprints/BP_Building6_3M.BP_Building6_3M_C\n\
+    - building7_4_m | Building7 4 M | blueprints | 8.05x7.02x15.1 m | /Game/NordicHarbour/Blueprints/BP_Building7_4M.BP_Building7_4M_C\n\
+    - building8_6_m | Building8 6 M | blueprints | 12.05x6.98x14.97 m | /Game/NordicHarbour/Blueprints/BP_Building8_6M.BP_Building8_6M_C\n\
+    - building9_5_m | Building9 5 M | blueprints | 10.05x7.07x14.97 m | /Game/NordicHarbour/Blueprints/BP_Building9_5M.BP_Building9_5M_C\n\
+    - corner_building1 | Corner Building1 | blueprints | 13.23x13.23x17.04 m | /Game/NordicHarbour/Blueprints/BP_CornerBuilding1.BP_CornerBuilding1_C\n\
+    - corner_building2 | Corner Building2 | blueprints | 12.76x12.76x19.04 m | /Game/NordicHarbour/Blueprints/BP_CornerBuilding2.BP_CornerBuilding2_C\n\
+    - corner_building4 | Corner Building4 | blueprints | 8.76x8.76x16.66 m | /Game/NordicHarbour/Blueprints/BP_CornerBuilding4.BP_CornerBuilding4_C\n\
+    - corner_building5 | Corner Building5 | blueprints | 11.13x13.54x14.97 m | /Game/NordicHarbour/Blueprints/BP_CornerBuilding5.BP_CornerBuilding5_C\n\
+    - grass_cluster_type1 | Grass Cluster Type1 | grass | 0.46x0.58x0.18 m | /Game/NordicHarbour/Props/Grass/SM_GrassCluster_Type1.SM_GrassCluster_Type1\n\
+    - grass_cluster_type2 | Grass Cluster Type2 | grass | 0.7x0.7x0.3 m | /Game/NordicHarbour/Props/Grass/SM_GrassCluster_Type2.SM_GrassCluster_Type2\n\
+    - street_grass | Street Grass | grass | 0.65x0.24x0.31 m | /Game/NordicHarbour/Props/Grass/SM_StreetGrass.SM_StreetGrass\n\
+    - street_grass_small | Street Grass Small | grass | 0.35x0.1x0.17 m | /Game/NordicHarbour/Props/Grass/SM_StreetGrassSmall.SM_StreetGrassSmall\n\
+    - bench | Bench | streetfurniture | 2.06x1.14x1.42 m | /Game/NordicHarbour/Props/StreetFurniture/SM_Bench.SM_Bench\n\
+    - boat_rings | Boat Rings | streetfurniture | 1.0x1.0x0.26 m | /Game/NordicHarbour/Props/StreetFurniture/SM_BoatRings.SM_BoatRings\n\
+    - electricity_box_type_a | Electricity Box Type A | streetfurniture | 0.4x0.3x1.3 m | /Game/NordicHarbour/Props/StreetFurniture/SM_ElectricityBox_TypeA.SM_ElectricityBox_TypeA\n\
+    - electricity_box_type_b | Electricity Box Type B | streetfurniture | 0.32x0.78x0.86 m | /Game/NordicHarbour/Props/StreetFurniture/SM_ElectricityBox_TypeB.SM_ElectricityBox_TypeB\n\
+    - electricity_box_type_c | Electricity Box Type C | streetfurniture | 0.38x0.53x1.09 m | /Game/NordicHarbour/Props/StreetFurniture/SM_ElectricityBox_TypeC.SM_ElectricityBox_TypeC\n\
+    - pallet | Pallet | streetfurniture | 1.21x0.81x0.16 m | /Game/NordicHarbour/Props/StreetFurniture/SM_Pallet.SM_Pallet\n\
+    - pilar | Pilar | streetfurniture | 0.5x0.5x1.09 m | /Game/NordicHarbour/Props/StreetFurniture/SM_Pilar.SM_Pilar\n\
+    - pivot | Pivot | streetfurniture | 0.16x0.16x1.14 m | /Game/NordicHarbour/Props/StreetFurniture/SM_Pivot.SM_Pivot\n\
+    - pivot_fence | Pivot Fence | streetfurniture | 1.5x0.06x0.41 m | /Game/NordicHarbour/Props/StreetFurniture/SM_Pivot_Fence.SM_Pivot_Fence\n\
+    - small_trash | Small Trash | streetfurniture | 0.73x0.74x1.01 m | /Game/NordicHarbour/Props/StreetFurniture/SM_SmallTrash.SM_SmallTrash\n\
+    - street_light | Street Light | streetfurniture | 0.53x0.53x4.03 m | /Game/NordicHarbour/Props/StreetFurniture/SM_StreetLight.SM_StreetLight\n\
+    - traffic_cone | Traffic Cone | streetfurniture | 0.52x0.52x0.56 m | /Game/NordicHarbour/Props/StreetFurniture/SM_TrafficCone.SM_TrafficCone\n\
+    - traffic_light_car | Traffic Light Car | streetfurniture | 0.3x0.51x1.09 m | /Game/NordicHarbour/Props/StreetFurniture/SM_TrafficLight_Car.SM_TrafficLight_Car\n\
+    - traffic_light_pedestrian | Traffic Light Pedestrian | streetfurniture | 0.48x0.29x0.87 m | /Game/NordicHarbour/Props/StreetFurniture/SM_TrafficLight_Pedestrian.SM_TrafficLight_Pedestrian\n\
+    - traffic_light_pole | Traffic Light Pole | streetfurniture | 0.19x0.19x3.0 m | /Game/NordicHarbour/Props/StreetFurniture/SM_TrafficLight_Pole.SM_TrafficLight_Pole\n\
+    - trash_blue | Trash Blue | streetfurniture | 1.05x0.89x1.38 m | /Game/NordicHarbour/Props/StreetFurniture/SM_Trash_Blue.SM_Trash_Blue\n\
+    - trash_brown | Trash Brown | streetfurniture | 1.07x0.91x1.38 m | /Game/NordicHarbour/Props/StreetFurniture/SM_Trash_Brown.SM_Trash_Brown\n\
+    - trash_yellow | Trash Yellow | streetfurniture | 1.05x0.89x1.38 m | /Game/NordicHarbour/Props/StreetFurniture/SM_Trash_Yellow.SM_Trash_Yellow\n\
+    - tree_base | Tree Base | streetfurniture | 1.0x2.0x0.07 m | /Game/NordicHarbour/Props/StreetFurniture/SM_TreeBase.SM_TreeBase\n\
+    - water_pump | Water Pump | streetfurniture | 0.5x0.5x1.27 m | /Game/NordicHarbour/Props/StreetFurniture/SM_WaterPump.SM_WaterPump\n\
+    - bridge | Bridge | streetmodules | 21.08x9.3x3.83 m | /Game/NordicHarbour/Props/StreetModules/SM_Bridge.SM_Bridge\n\
+    - corner_pavement | Corner Pavement | streetmodules | 4.32x4.33x0.12 m | /Game/NordicHarbour/Props/StreetModules/SM_CornerPavement.SM_CornerPavement\n\
+    - dock_corner | Dock Corner | streetmodules | 0.8x0.8x2.31 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_Corner.SM_Dock_Corner\n\
+    - dock_floor | Dock Floor | streetmodules | 3.0x3.0x0.05 m | /Game/NordicHarbour/Props/StreetModules/SM_DockFloor.SM_DockFloor\n\
+    - dock_floor_corner | Dock Floor Corner | streetmodules | 1.0x1.0x0.05 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_FloorCorner.SM_Dock_FloorCorner\n\
+    - dock_large_stairs | Dock Large Stairs | streetmodules | 2.0x1.4x1.05 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_LargeStairs.SM_Dock_LargeStairs\n\
+    - dock_lower_wall | Dock Lower Wall | streetmodules | 0.0x1.0x1.1 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_LowerWall.SM_Dock_LowerWall\n\
+    - dock_lower_wall_corner | Dock Lower Wall Corner | streetmodules | 1.1x1.1x1.1 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_LowerWallCorner.SM_Dock_LowerWallCorner\n\
+    - dock_lower_wall_outer_corner | Dock Lower Wall Outer Corner | streetmodules | 0.9x0.9x1.1 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_LowerWallOuterCorner.SM_Dock_LowerWallOuterCorner\n\
+    - dock_short_stairs | Dock Short Stairs | streetmodules | 1.2x1.0x0.6 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_ShortStairs.SM_Dock_ShortStairs\n\
+    - dock_stick | Dock Stick | streetmodules | 0.23x0.23x2.0 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_Stick.SM_Dock_Stick\n\
+    - dock_wall | Dock Wall | streetmodules | 0.49x1.0x2.31 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_Wall.SM_Dock_Wall\n\
+    - harbour | Harbour | streetmodules | 0.55x2.15x2.6 m | /Game/NordicHarbour/Props/StreetModules/SM_Harbour.SM_Harbour\n\
+    - harbour_corner | Harbour Corner | streetmodules | 6.38x6.23x2.6 m | /Game/NordicHarbour/Props/StreetModules/SM_HarbourCorner.SM_HarbourCorner\n\
+    - pavement | Pavement | streetmodules | 2.08x2.0x0.12 m | /Game/NordicHarbour/Props/StreetModules/SM_Pavement.SM_Pavement\n\
+    - pavement_small_corner | Pavement Small Corner | streetmodules | 2.08x2.08x0.12 m | /Game/NordicHarbour/Props/StreetModules/SM_PavementSmallCorner.SM_PavementSmallCorner\n\
+    - road | Road | streetmodules | 8.0x8.0x0.0 m | /Game/NordicHarbour/Props/StreetModules/SM_Road.SM_Road\n\
+    - road_round | Road Round | streetmodules | 8.0x8.0x0.0 m | /Game/NordicHarbour/Props/StreetModules/SM_RoadRound.SM_RoadRound\n\
+    - water_plane | Water Plane | streetmodules | 24.0x24.0x0.0 m | /Game/NordicHarbour/Props/StreetModules/SM_WaterPlane.SM_WaterPlane\n\
+    - traffic_sign_20kph | Traffic Sign 20kph | trafficsigns | 0.54x0.08x0.55 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_20kph.SM_TrafficSign_20kph\n\
+    - traffic_sign_30kph | Traffic Sign 30kph | trafficsigns | 0.54x0.08x0.55 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_30kph.SM_TrafficSign_30kph\n\
+    - traffic_sign_50kph | Traffic Sign 50kph | trafficsigns | 0.08x0.54x0.55 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_50kph.SM_TrafficSign_50kph\n\
+    - traffic_sign_bridge_warning | Traffic Sign Bridge Warning | trafficsigns | 0.08x0.52x0.47 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_BridgeWarning.SM_TrafficSign_BridgeWarning\n\
+    - traffic_sign_forbidden | Traffic Sign Forbidden | trafficsigns | 0.54x0.08x0.55 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_Forbidden.SM_TrafficSign_Forbidden\n\
+    - traffic_sign_no_parking | Traffic Sign No Parking | trafficsigns | 0.08x0.54x0.55 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_NoParking.SM_TrafficSign_NoParking\n\
+    - traffic_sign_pole | Traffic Sign Pole | trafficsigns | 0.09x0.03x2.0 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_Pole.SM_TrafficSign_Pole\n\
+    - traffic_sign_set_b_arrow | Traffic Sign Set B Arrow | trafficsigns | 0.75x0.38x0.71 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_SetB_Arrow.SM_TrafficSign_SetB_Arrow\n\
+    - traffic_sign_set_b_bike_lane | Traffic Sign Set B Bike Lane | trafficsigns | 0.08x0.54x0.55 m |\
+    \ /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_SetB_BikeLane.SM_TrafficSign_SetB_BikeLane\n\
+    - traffic_sign_set_b_car_bikes_forbidden | Traffic Sign Set B Car Bikes Forbidden | trafficsigns |\
+    \ 0.08x0.54x0.55 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_SetB_CarBikesForbidden.SM_TrafficSign_SetB_CarBikesForbidden\n\
+    - traffic_sign_set_b_dead_end | Traffic Sign Set B Dead End | trafficsigns | 0.5x0.08x0.5 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_SetB_DeadEnd.SM_TrafficSign_SetB_DeadEnd\n\
+    - traffic_sign_set_b_forbidden_turn | Traffic Sign Set B Forbidden Turn | trafficsigns | 0.54x0.08x0.55\
+    \ m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_SetB_ForbiddenTurn.SM_TrafficSign_SetB_ForbiddenTurn\n\
+    - traffic_sign_set_b_parking_lot | Traffic Sign Set B Parking Lot | trafficsigns | 0.08x0.5x0.5 m\
+    \ | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_SetB_ParkingLot.SM_TrafficSign_SetB_ParkingLot\n\
+    - traffic_sign_set_b_stop | Traffic Sign Set B Stop | trafficsigns | 0.51x0.08x0.51 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_SetB_Stop.SM_TrafficSign_SetB_Stop\n\
+    - traffic_sign_set_b_zebra_crossing | Traffic Sign Set B Zebra Crossing | trafficsigns | 0.08x0.5x0.5\
+    \ m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_SetB_ZebraCrossing.SM_TrafficSign_SetB_ZebraCrossing\n\
+    - traffic_sign_water_warning | Traffic Sign Water Warning | trafficsigns | 0.08x0.52x0.47 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_WaterWarning.SM_TrafficSign_WaterWarning\n\
+    - traffic_sign_yield | Traffic Sign Yield | trafficsigns | 0.08x0.52x0.47 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_Yield.SM_TrafficSign_Yield\n\
+    - european_tree_type1 | European Tree Type1 | trees | 10.15x10.73x14.01 m | /Game/NordicHarbour/Props/Trees/SM_EuropeanTree_Type1.SM_EuropeanTree_Type1\n\
+    - european_tree_type2 | European Tree Type2 | trees | 5.07x5.83x9.2 m | /Game/NordicHarbour/Props/Trees/SM_EuropeanTree_Type2.SM_EuropeanTree_Type2\n\
+    - european_tree_type3 | European Tree Type3 | trees | 11.06x11.06x11.18 m | /Game/NordicHarbour/Props/Trees/SM_EuropeanTree_Type3.SM_EuropeanTree_Type3\n\
+    - european_tree_type4 | European Tree Type4 | trees | 8.39x8.22x10.23 m | /Game/NordicHarbour/Props/Trees/SM_EuropeanTree_Type4.SM_EuropeanTree_Type4\n\
+    - window_type_d | Window Type D | windows | 0.63x0.15x0.93 m | /Game/NordicHarbour/Props/Windows/SM_Window_TypeD.SM_Window_TypeD\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
+    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
+    \ for yourself when the scene\nmatches the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+assets:
+  packs:
+  - NordicHarbour
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/nordic-harbour.bundle.json
+- name: overview_prompt_alignment

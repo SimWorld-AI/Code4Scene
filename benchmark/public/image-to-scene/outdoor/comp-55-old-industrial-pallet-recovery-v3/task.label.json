@@ -1,0 +1,23 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/old-building/GT",
+  "source_level": "/Game/Code4SceneGT/old-building/GT",
+  "gt_id": "comp-55-old-industrial-pallet-recovery-v3",
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "insertion",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "Pallets_Stacked_65"
+      }
+    ],
+    "category": "repair_completion",
+    "target_labels": [
+      "Pallets_Stacked_65"
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "comp-49-rosies-service-garbage-recovery-v2",
+  "setting": "image-to-scene/outdoor",
+  "scene_id": "rosies-diner",
+  "scene_spec": "../../../scenes/rosies-diner/scene.json",
+  "source_map": "/Game/Diner/Maps/Diner",
+  "ground_truth_map": "/Game/Code4SceneGT/rosies-diner/GT",
+  "input_map": "/Game/Code4SceneInputs/comp-49-rosies-service-garbage-recovery-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "remove_actor",
+      "target": "sca_source_2c872929ee55523eb37a57e7967bce49"
+    }
+  ],
+  "authored_corruption": {
+    "atomic_operations": [
+      "insertion",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "SM_Garbage02"
+      }
+    ],
+    "category": "repair_completion",
+    "target_labels": [
+      "SM_Garbage02"
+    ]
+  },
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/rosies-diner/gt.fingerprint.json"
+}

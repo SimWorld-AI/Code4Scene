@@ -1,0 +1,23 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/middle-east-river/GT",
+  "source_level": "/Game/Code4SceneGT/middle-east-river/GT",
+  "gt_id": "comp-67-middle-east-canopy-recovery-v2",
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "duplication",
+      "translation",
+      "rotation"
+    ],
+    "authored_operations": [
+      {
+        "type": "removal",
+        "label": "LI_Canopy_3"
+      }
+    ],
+    "category": "repair_completion",
+    "target_labels": [
+      "LI_Canopy_3"
+    ]
+  }
+}

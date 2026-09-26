@@ -1,0 +1,26 @@
+{
+  "canonical_map": "/Game/Code4SceneGT/detective-office/GT",
+  "source_level": "/Game/Code4SceneGT/detective-office/GT",
+  "gt_id": "indoor-atomic-v1-054",
+  "schema_version": "code4scene.gt_repair_label.v1",
+  "corruption_contract": {
+    "atomic_operations": [
+      "replacement"
+    ],
+    "authored_operations": [
+      {
+        "type": "replacement",
+        "label": "WorldGlobe",
+        "asset": "/Game/DetectiveOffice/Models/Fan/SM_Fan.SM_Fan",
+        "component_name": "StaticMeshComponent0",
+        "material_paths": [
+          "/Game/DetectiveOffice/Models/Fan/M_Fan.M_Fan"
+        ]
+      }
+    ],
+    "category": "object_lifecycle",
+    "target_labels": [
+      "WorldGlobe"
+    ]
+  }
+}

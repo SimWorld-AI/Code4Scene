@@ -1,0 +1,38 @@
+{
+  "schema_version": "code4scene.scene.v1",
+  "scene_id": "cyberpunk-toilet",
+  "environment": "indoor",
+  "source_pack": "Cyberpunk Toilet Environment Kit",
+  "content_roots": [
+    "CyberpunkWC",
+    "StarterContent"
+  ],
+  "source_map": "/Game/CyberpunkWC/Maps/Demonstration",
+  "ground_truth_map": "/Game/Code4SceneGT/cyberpunk-toilet/GT",
+  "identity": {
+    "scheme": "uuid5-source-v1",
+    "gt_id": "gt-aa06048def5f",
+    "namespace_url": "https://simworld.ai/SimCodeArena/stable-actor-id/v1",
+    "tag_actor_origin": "source",
+    "rule": "stable_id = 'sca_source_' + uuid5(uuid5(NAMESPACE_URL, namespace_url), 'v1|source|' + gt_id + '|' + source_map + '|' + actor_path_in_source_map + '|' + class_path).hex; written as tags 'simcodearena.stable_actor_id=<id>' and 'simcodearena.actor_origin=source' on every persistent-level actor of the source map that is not a child actor."
+  },
+  "patches": [],
+  "key_assets": [
+    "/Game/CyberpunkWC/Maps/Demonstration",
+    "/Game/CyberpunkWC/Meshes/SM_WallTiles01.SM_WallTiles01",
+    "/Game/CyberpunkWC/Meshes/SM_Wall01.SM_Wall01",
+    "/Game/CyberpunkWC/Meshes/SM_WallTiles03.SM_WallTiles03",
+    "/Game/CyberpunkWC/Meshes/SM_Ventilation05.SM_Ventilation05"
+  ],
+  "known_unresolved_dependencies": [],
+  "expected_fingerprint": {
+    "file": "gt.fingerprint.json",
+    "algorithm": "c4s-fp-1",
+    "root": "7984970989ae71151e8611c08ab99903f5dde1274048ea1613b7e2515ebe906e",
+    "actor_count": 1346
+  },
+  "cases": [
+    "indoor-atomic-v1-027",
+    "indoor-atomic-v1-060"
+  ]
+}

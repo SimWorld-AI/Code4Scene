@@ -1,0 +1,86 @@
+{
+  "schema_version": "code4scene.cameras.v1",
+  "case_id": "indoor-atomic-v1-076",
+  "capture_map": "ground_truth",
+  "capture": {
+    "method": "scene_capture_2d",
+    "width": 1920,
+    "height": 1080,
+    "capture_count": 4,
+    "capture_source": "SCS_FINAL_COLOR_LDR",
+    "console": [
+      "viewmode lit",
+      "r.AntiAliasingMethod 2",
+      "sg.AntiAliasingQuality 4",
+      "r.ScreenPercentage 100",
+      "r.Streaming.FullyLoadUsedTextures 1"
+    ],
+    "fill_light": {
+      "at": "camera",
+      "attenuation_radius_cm": 3200.0,
+      "cast_shadows": false
+    },
+    "top_light": {
+      "at": "target",
+      "offset_z_cm": 320.0,
+      "attenuation_radius_cm": 2600.0,
+      "cast_shadows": false
+    },
+    "rotation": "look_at(location_cm, target_cm)",
+    "fov": "fov_deg is the horizontal field of view of the capture component"
+  },
+  "views": [
+    {
+      "name": "view-01",
+      "location_cm": [
+        861.6541748046875,
+        -316.7801513671875,
+        245.43930053710938
+      ],
+      "target_cm": [
+        1516.0001585039745,
+        414.94934059652485,
+        54.64285348648983
+      ],
+      "fov_deg": 90.0,
+      "lighting": {
+        "fill_intensity": 0.0,
+        "top_intensity": 0.0,
+        "exposure_bias": 0.0
+      },
+      "streaming_pool_mb": 4000,
+      "publish": {
+        "file": "references/view-01.png",
+        "format": "png",
+        "width": 1280,
+        "height": 720
+      }
+    },
+    {
+      "name": "view-02",
+      "location_cm": [
+        497.7411193847656,
+        354.87579345703125,
+        223.99999237060547
+      ],
+      "target_cm": [
+        155.71972478298807,
+        -584.8163719006752,
+        223.99999237060547
+      ],
+      "fov_deg": 90.0,
+      "lighting": {
+        "fill_intensity": 0.0,
+        "top_intensity": 0.0,
+        "exposure_bias": 0.0
+      },
+      "streaming_pool_mb": 4000,
+      "publish": {
+        "file": "references/view-02.png",
+        "format": "png",
+        "width": 1280,
+        "height": 720
+      }
+    }
+  ]
+}

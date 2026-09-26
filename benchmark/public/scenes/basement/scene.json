@@ -1,0 +1,36 @@
+{
+  "schema_version": "code4scene.scene.v1",
+  "scene_id": "basement",
+  "environment": "indoor",
+  "source_pack": "Basement Environments",
+  "content_roots": [
+    "HorrorEnviroment"
+  ],
+  "source_map": "/Game/HorrorEnviroment/Levels/DemoMap",
+  "ground_truth_map": "/Game/Code4SceneGT/basement/GT",
+  "identity": {
+    "scheme": "uuid5-source-v1",
+    "gt_id": "gt-e4316e0dbd9e",
+    "namespace_url": "https://simworld.ai/SimCodeArena/stable-actor-id/v1",
+    "tag_actor_origin": "source",
+    "rule": "stable_id = 'sca_source_' + uuid5(uuid5(NAMESPACE_URL, namespace_url), 'v1|source|' + gt_id + '|' + source_map + '|' + actor_path_in_source_map + '|' + class_path).hex; written as tags 'simcodearena.stable_actor_id=<id>' and 'simcodearena.actor_origin=source' on every persistent-level actor of the source map that is not a child actor."
+  },
+  "patches": [],
+  "key_assets": [
+    "/Game/HorrorEnviroment/Levels/DemoMap",
+    "/Game/HorrorEnviroment/Meshes/Constructor/Stone/SM_stone_wall_02.SM_stone_wall_02",
+    "/Game/HorrorEnviroment/Meshes/Constructor/Wood/SM_wood_part_02.SM_wood_part_02",
+    "/Game/HorrorEnviroment/Meshes/Constructor/Stone/SM_stone_plinth_01.SM_stone_plinth_01",
+    "/Game/HorrorEnviroment/Meshes/Constructor/Wood/SM_wood_part_04.SM_wood_part_04"
+  ],
+  "known_unresolved_dependencies": [],
+  "expected_fingerprint": {
+    "file": "gt.fingerprint.json",
+    "algorithm": "c4s-fp-1",
+    "root": "012922bd594d3d2a6f62bcd712b16d6499fab4a9696b20f5c733e392b09848ac",
+    "actor_count": 398
+  },
+  "cases": [
+    "indoor-atomic-v1-072"
+  ]
+}
