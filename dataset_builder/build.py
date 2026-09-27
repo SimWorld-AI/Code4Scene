@@ -120,8 +120,15 @@ def editor_command(args, job_path: Path, render: bool) -> list[str]:
     common = ["-unattended", "-nosplash", "-nop4", "-nosound", "-stdout", "-FullStdOutLogOutput"]
     if args.mode == "commandlet" and not render:
         return [args.editor, str(args.project), "-run=pythonscript", f"-script={script}", *common]
+    if render:
+        # -ExecutePythonScript closes the editor when the script returns, before
+        # a single frame is rendered; -ExecCmds keeps it ticking, and the job
+        # quits the editor itself (tick_driven job, see ue/c4s_job.py).
+        command = [args.editor, str(args.project), f"-ExecCmds=py {script}", *common,
+                   "-RenderOffscreen"]
+        return command + list(args.editor_arg or [])
     command = [args.editor, str(args.project), f"-ExecutePythonScript={script}", *common]
-    command += ["-RenderOffscreen"] if render else ["-NullRHI"]
+    command += ["-NullRHI"]
     return command + list(args.editor_arg or [])
 
 
@@ -132,11 +139,17 @@ def run_job(args, name: str, tasks: list[dict], render: bool = False) -> dict:
     result_path = jobs / f"{name}.result.json"
     job = {"schema_version": "code4scene.ue_job.v1", "name": name, "result_path": str(result_path),
            "tasks": tasks, "quit_when_done": True, "commandlet": args.mode == "commandlet" and not render}
+    if render:
+        job.update(tick_driven=True, settle_ticks=args.render_settle_ticks,
+                   settle_seconds=args.render_settle_seconds)
     job_path.write_text(json.dumps(job, indent=1))
     command = editor_command(args, job_path, render)
     env = dict(os.environ, C4S_JOB=str(job_path), C4S_UE_DIR=str(UE_DIR))
     log(f"{name}: {len(tasks)} task(s)")
-    log("command: " + " ".join(f'"{c}"' if " " in c else c for c in command))
+    # The job script reads its job file from the environment; print it too so a
+    # command copied from --dry-run output can be run by hand.
+    log(f"command: C4S_JOB={job_path} C4S_UE_DIR={UE_DIR} "
+        + " ".join(f'"{c}"' if " " in c else c for c in command))
     if args.dry_run:
         return {"dry_run": True, "tasks": []}
     if result_path.exists():
@@ -218,7 +231,30 @@ def step_verify(args, cases):
     print(text)
 
 
+def _trim_png(raw: Path) -> None:
+    """Drop bytes after the PNG IEND chunk.
+
+    UE 5.8's export_render_target can leave trailing bytes after IEND; ffmpeg's
+    image demuxer then reports "Invalid PNG signature" for a second frame.
+    """
+
+    data = raw.read_bytes()
+    end = data.find(b"IEND")
+    if data[:8] == b"\x89PNG\r\n\x1a\n" and end != -1 and len(data) > end + 8:
+        raw.write_bytes(data[:end + 8])
+
+
+def _mean_luminance(path: Path) -> float | None:
+    try:
+        from PIL import Image, ImageStat  # type: ignore
+    except ImportError:
+        return None
+    with Image.open(path) as image:
+        return float(ImageStat.Stat(image.convert("L")).mean[0])
+
+
 def _publish(raw: Path, publish: dict, target: Path) -> str:
+    _trim_png(raw)
     target.parent.mkdir(parents=True, exist_ok=True)
     width, height = int(publish["width"]), int(publish["height"])
     if publish.get("format") == "jpeg" and shutil.which("ffmpeg"):
@@ -250,7 +286,12 @@ def step_render(args, cases, ready):
                       "cameras": case.cameras, "output_dir": str(raw_dir)})
     if not tasks:
         return
-    run_job(args, "render", tasks, render=True)
+    # One editor per GT map: the map is loaded before the editor starts ticking.
+    by_map: dict[str, list[dict]] = {}
+    for task in tasks:
+        by_map.setdefault(task["map"], []).append(task)
+    for game_map, group in by_map.items():
+        run_job(args, "render-" + game_map.rstrip("/").split("/")[-2], group, render=True)
     if args.dry_run:
         return
     for case in cases:
@@ -262,6 +303,10 @@ def step_render(args, cases, ready):
             if raw.exists():
                 how = _publish(raw, view["publish"], case_dir / view["publish"]["file"])
                 log(f"render: {case.case_id}/{view['publish']['file']} ({how})")
+                mean = _mean_luminance(raw)
+                if mean is not None and mean < 20.0:
+                    log(f"  WARNING {case.case_id}/{view['name']}: nearly black frame (mean luminance "
+                        f"{mean:.1f}/255); raise --render-settle-ticks and render again")
             else:
                 log(f"render: {case.case_id}/{view['name']} missing")
 
@@ -321,6 +366,10 @@ def main(argv=None) -> int:
     parser.add_argument("--force", action="store_true", help="rebuild levels that already exist")
     parser.add_argument("--allow-missing-packs", action="store_true",
                         help="continue with the cases whose packs are installed")
+    parser.add_argument("--render-settle-ticks", type=int, default=400,
+                        help="editor frames to render before each reference capture")
+    parser.add_argument("--render-settle-seconds", type=float, default=20.0,
+                        help="minimum wall time before each reference capture")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args(argv)
     args.project = args.project.resolve()
@@ -335,7 +384,9 @@ def main(argv=None) -> int:
     cases = catalog.load_cases(args.cases, args.settings)
     if not cases:
         parser.error("no cases selected")
-    args.dataset.mkdir(parents=True, exist_ok=True)
+    if any(step != "init-project" for step in steps):
+        # init-project only edits the .uproject; do not leave an empty dataset dir behind.
+        args.dataset.mkdir(parents=True, exist_ok=True)
     ready: dict[str, bool] = {}
     if "init-project" in steps:
         step_init_project(args)
@@ -348,7 +399,11 @@ def main(argv=None) -> int:
         log(f"check: {s['ready']}/{s['total']} cases have their packs installed")
         for root in s["missing_roots"]:
             info = report["roots"][root].get("listing") or {}
-            hint = f" ({info.get('title')}: {info.get('fab_url')})" if info else ""
+            hint = ""
+            if info.get("title") and info.get("fab_url"):
+                hint = f" ({info['title']}: {info['fab_url']})"
+            elif info.get("title"):
+                hint = f" ({info['title']})"
             log(f"  missing Content/{root}{hint}")
         blocked = [k for k, v in ready.items() if not v]
         if blocked and needs_editor and not args.allow_missing_packs:

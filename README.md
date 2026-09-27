@@ -41,9 +41,10 @@ code4scene --help
 
 1. Create an empty UE 5.8 project.
 2. Install the packs listed in [docs/PACKS.md](docs/PACKS.md).
-3. Run the builder:
+3. Run the builder from the repository root:
 
 ```bash
+export UE_EDITOR=/path/to/UE_5.8/Engine/Binaries/Linux/UnrealEditor-Cmd   # or pass --editor
 python -m dataset_builder.build --project /path/Code4SceneData/Code4SceneData.uproject \
     --dataset ./code4scene-dataset --steps check blank gt inputs verify package
 python -m dataset_builder.build --project ... --dataset ./code4scene-dataset --steps render   # reference views, needs a GPU
@@ -73,7 +74,7 @@ Scores are comparable to the paper's only when agents run under the same interfa
 ## Tests
 
 ```bash
-pip install -e .[dev] && pytest
+pip install -e ".[dev]" && pytest     # quote the extra in zsh
 ```
 
 The suite runs fully offline.

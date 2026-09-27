@@ -42,7 +42,7 @@ testpaths = ["tests"]
 [tool.ruff]
 line-length = 92
 # Source executed inside Unreal's embedded Python keeps the editor's conventions.
-exclude = ["code4scene/ue_scripts"]
+exclude = ["code4scene/ue_scripts", "dataset_builder/ue"]
 
 [tool.ruff.lint]
 select = ["F", "E9", "B", "UP"]
@@ -50,3 +50,5 @@ select = ["F", "E9", "B", "UP"]
 [tool.ruff.lint.per-file-ignores]
 # A fake must keep the real signature even where it ignores an argument.
 "tests/*" = ["ARG001", "ARG002", "ARG005"]
+# The dataset builder supports Python 3.9 on the host (no zip(strict=), typing imports).
+"dataset_builder/*" = ["UP035", "B905"]

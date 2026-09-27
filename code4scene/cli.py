@@ -86,14 +86,15 @@ def cmd_score(args: argparse.Namespace) -> int:
     from . import scoring
 
     judge = "none" if args.no_vlm else args.judge
-    if judge == "live":
+    loaded = bundle_mod.load(args.bundle_dir, verify=not args.no_verify)
+    # Image-to-scene cases never use the judge, so only warn for text-to-scene.
+    if judge == "live" and loaded.is_t2s:
         from .evaluation import vlm_model_config
 
         if not vlm_model_config.base_url():
             print("note: no judge endpoint configured; VLM-dependent leaves will fail. "
                   "Pass --vlm-base-url, set CODE4SCENE_VLM_BASE_URL, or use --no-vlm.",
                   file=sys.stderr)
-    loaded = bundle_mod.load(args.bundle_dir, verify=not args.no_verify)
     task = _load_task(args.task)
     record = scoring.score_bundle(loaded, task, judge=judge, include_audit=args.audit)
     _write(record, args.out)

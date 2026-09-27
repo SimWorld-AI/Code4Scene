@@ -53,6 +53,13 @@ Create a new UE 5.8 project from the **Blank** template, Blueprint, no starter
 content, for example `Code4SceneData`. Close the editor again: the builder
 starts its own editor process and the project must not be open elsewhere.
 
+On a headless Linux server (no editor GUI), create the same project by hand:
+copy `<UE>/Templates/TP_BlankBP/Config` into a new directory, copy
+`<UE>/Templates/TP_BlankBP/TP_BlankBP.uproject` next to it as
+`Code4SceneData.uproject`, drop `Config/TemplateDefs.ini`, and create an empty
+`Content/` directory. A minimal `.uproject` with only `"FileVersion": 3` and an
+empty `"Plugins"` list also works; step 3 adds the plugins the builder needs.
+
 The indoor scene `cyberpunk-toilet` also uses Epic's **Starter Content**
 (`Content/StarterContent`). Add it with *Add > Add Feature or Content Pack >
 Content > Starter Content*.
@@ -74,6 +81,13 @@ For each pack:
 
 You can install only the packs of the cases you want and pass `--cases` or
 `--settings` (below).
+
+## Where to run the builder
+
+Run every `python -m dataset_builder.build` command below from the root of this
+repository: `pip install -e .` installs only the `code4scene` package, so
+`dataset_builder` is importable from the repository root only. Relative
+`--dataset` paths are resolved against the current directory.
 
 ## 3. Enable the editor scripting plugins
 
@@ -122,7 +136,8 @@ What each step does:
 
 Existing levels are kept; pass `--force` to rebuild them. `--dry-run` writes
 the job files under `code4scene-dataset/jobs/` and prints the editor commands
-without running them. Each editor job logs to `jobs/<step>.log` and records a
+without running them (to run one by hand, set `C4S_JOB` to its
+`jobs/<step>.job.json` and `C4S_UE_DIR` to `dataset_builder/ue`, as printed). Each editor job logs to `jobs/<step>.log` and records a
 per-task result in `jobs/<step>.result.json`. If the editor cannot run a
 level-editing script under `-ExecutePythonScript` on your platform, try
 `--mode commandlet` (uses `-run=pythonscript`).
@@ -141,6 +156,12 @@ published size (`references/view-01.png`, `view-02.png` for indoor cases,
 1280x720 or 1920x1080 as recorded; `references/reference.jpg` at 1600x900
 for outdoor cases, encoded with `ffmpeg -q:v 3` when ffmpeg is available). The
 level is never saved during rendering.
+
+Each GT level is rendered in its own editor process, and only after the editor
+has drawn `--render-settle-ticks` frames (default 400, and at least
+`--render-settle-seconds`, default 20) so that shaders compile and textures
+stream in. A capture taken before the editor has ticked is black. A nearly
+black frame is reported as a `WARNING`; render again with a larger value.
 
 Rendered pixels will not be bit-identical to the images the benchmark agents
 saw (GPU, driver and texture streaming differ). The pose, lens, lighting and

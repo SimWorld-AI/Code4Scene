@@ -118,6 +118,30 @@ Rules enforced by `code4scene validate-bundle` and on every load:
    or `primary_score.apply_to_result(result)` for image-to-scene (modules in
    `code4scene.evaluation`, `config_file` in `code4scene.resources`), and save
    it as `result.json`. Its `overall_score` is the paper case score.
+
+   What the call needs, beyond the task:
+
+   * **An editor-side bridge.** This repository ships the client only; a
+     reference server is `tools/c4s_editor_bridge.py` (start the scoring
+     editor with `-ExecutePythonScript=tools/c4s_editor_bridge.py` and
+     `C4S_BRIDGE_SOCK=<socket>`). `UnrealEditor-Cmd` closes the editor when
+     that script returns, and the editor's embedded Python does not run
+     background threads while the editor is idle, so the server answers
+     requests from the startup script itself.
+   * **The candidate level open in that editor**, copied into the scoring
+     project under the `/Game/...` path it was saved at (the package name is
+     stored in the `.umap`).
+   * **`record`**: at least `scene_map` (the candidate's `/Game/...` package)
+     and `scene_dependencies` (the JSON written by
+     `ue_scripts/export_scene_dependencies.py` for that level). Without the
+     manifest Candidate Integrity reports `error` and every score is withheld.
+   * **`scoring=`**: an object with `bridge` (the Bridge) and `measure_path`
+     (a file path under your output directory). It marks the editor as the
+     independent scoring editor; without it `gt_repair` and
+     `physical_safety` refuse to capture ("runtime repair scene capture
+     requires the independent scoring editor"). Pass `bridge=None`.
+
+   `tools/score_saved_level.py` does all of this for an image-to-scene case.
 3. Pack it:
 
    ```bash

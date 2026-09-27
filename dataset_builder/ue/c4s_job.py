@@ -68,6 +68,63 @@ def run_task(task):
     raise RuntimeError("unknown task kind {}".format(kind))
 
 
+def run_tick_driven(job, results, result_path):
+    """Capture render tasks from a post-tick callback so the editor renders frames.
+
+    Every task of a tick-driven job uses the same map. It is loaded here, in the
+    script body: loading a map from inside a Slate tick callback crashes the
+    editor. The editor then ticks ``settle_ticks`` times (and at least
+    ``settle_seconds``) so shaders compile and textures stream before the first
+    capture, and quits when every task has finished.
+    """
+    tasks = list(job["tasks"])
+    maps = sorted({task["map"] for task in tasks})
+    if len(maps) != 1:
+        raise RuntimeError("a tick-driven job renders exactly one map, got {}".format(maps))
+    settle_ticks = int(job.get("settle_ticks", 400))
+    settle_seconds = float(job.get("settle_seconds", 20.0))
+    load_started = time.time()
+    c4s_levels.load_map(maps[0])
+    state = {"index": 0, "ticks": 0, "since": time.time(), "load_seconds": time.time() - load_started}
+
+    def finish():
+        results["finished"] = True
+        _write(result_path, results)
+        unreal.unregister_slate_post_tick_callback(state["handle"])
+        unreal.SystemLibrary.quit_editor()
+
+    def tick(_delta):
+        if state["index"] >= len(tasks):
+            finish()
+            return
+        state["ticks"] += 1
+        if state["ticks"] < settle_ticks or time.time() - state["since"] < settle_seconds:
+            return
+        task = tasks[state["index"]]
+        started = time.time()
+        entry = {"kind": task["kind"], "id": task.get("id")}
+        try:
+            cameras = task["cameras"]
+            rendered = []
+            for view in cameras["views"]:
+                output = os.path.join(task["output_dir"], view["name"] + ".png")
+                rendered.append(c4s_render.render_view(cameras["capture"], view, output))
+            entry["result"] = {"map": task["map"], "views": rendered, "settle_ticks": state["ticks"],
+                               "map_load_seconds": round(state["load_seconds"], 1)}
+            entry["status"] = "ok"
+        except Exception as error:
+            entry["status"] = "error"
+            entry["error"] = str(error)
+            entry["traceback"] = traceback.format_exc()
+            unreal.log_error("[code4scene] render {} failed: {}".format(task.get("id"), error))
+        entry["seconds"] = round(time.time() - started, 1)
+        results["tasks"].append(entry)
+        _write(result_path, results)
+        state["index"] += 1
+
+    state["handle"] = unreal.register_slate_post_tick_callback(tick)
+
+
 def main():
     job_path = os.environ.get("C4S_JOB")
     if not job_path:
@@ -78,6 +135,19 @@ def main():
     results = {"schema_version": "code4scene.ue_job_result.v1", "job": job.get("name"),
                "engine_version": str(unreal.SystemLibrary.get_engine_version()), "tasks": []}
     _write(result_path, results)
+    if job.get("tick_driven"):
+        try:
+            run_tick_driven(job, results, result_path)
+        except Exception as error:
+            # -ExecCmds keeps the editor open: record the failure and quit.
+            for task in job["tasks"]:
+                results["tasks"].append({"kind": task["kind"], "id": task.get("id"),
+                                         "status": "error", "error": str(error),
+                                         "traceback": traceback.format_exc()})
+            results["finished"] = True
+            _write(result_path, results)
+            unreal.SystemLibrary.quit_editor()
+        return
     for task in job["tasks"]:
         started = time.time()
         entry = {"kind": task["kind"], "id": task.get("id")}
