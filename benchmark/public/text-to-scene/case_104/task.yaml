@@ -1,0 +1,93 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_104
+kind: scene_generation
+inputs:
+  prompt: "A pale turquoise, fast-flowing river winds through a vast abandoned stone city, dividing dense\
+    \ districts of ruins on both banks. The rugged mountain valley presses around it in broad rock shelves,\
+    \ cliffs, large pale boulders, gullies, and steep enclosing ridges, with uneven brown earth between\
+    \ the rock.\n\nDozens upon dozens of roofless medieval buildings follow narrow dirt lanes organically,\
+    \ alongside irregular courtyards, and stepped rocky ground. They crowd closest beside the river and\
+    \ thin toward the surrounding slopes. Weathered gray masonry shapes squat rectangular houses, taller\
+    \ blocky halls, broken towers, and several larger Gothic structures with pointed and rounded arches,\
+    \ arcades, buttress-like wall sections, and partially collapsed upper stories. Most retain only jagged\
+    \ exterior walls and exposed room divisions; a few preserve decayed timber frames, beams, balconies,\
+    \ or skeletal roofs.\n\nA narrow arched stone bridge joins the banks. Scattered stairs, retaining\
+    \ walls, rubble piles, fallen logs, and isolated masonry fragments lie among the ruins. Irregular\
+    \ clusters of mature leafy trees, sparse woodland, scrub, grasses, weeds, and small wildflowers fill\
+    \ open spaces and settlement edges, leaving a few broad bare courtyards within the denser blocks.\n\
+    \nBeyond the city, rocky, lightly forested mountains continue under low white clouds and mist threading\
+    \ between slopes and buildings. Soft daylight holds a quiet, hazy, overgrown atmosphere. The sprawling\
+    \ city stays tightly packed and distinctly unordered, its architecture following the natural rock\
+    \ rather than a grid.\n\n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset\
+    \ search is not available\nin this run, so this list is your entire library. Format:\n\n  id | name\
+    \ | category | width x depth x height (m) | spawn path\n\nThe id is what a scene graph refers to;\
+    \ the spawn path is what reaches UE.\nYou decide which to use, how many of each, and where they go\
+    \ — reuse entries\nfreely.\n\n- acacia | Acacia | meshes | 11.71x11.55x8.47 m | /Game/Ruins/Meshes/SM_Acacia.SM_Acacia\n\
+    - cliff | Cliff | meshes | 9.85x12.75x4.32 m | /Game/Ruins/Meshes/SM_Cliff.SM_Cliff\n- cloud_a | Cloud\
+    \ A | meshes | 52.26x171.1x55.0 m | /Game/Ruins/Meshes/SM_CloudA.SM_CloudA\n- cloud_b | Cloud B |\
+    \ meshes | 106.44x235.72x80.26 m | /Game/Ruins/Meshes/SM_CloudB.SM_CloudB\n- log_b | Log B | meshes\
+    \ | 2.33x5.04x1.62 m | /Game/Ruins/Meshes/SM_LogB.SM_LogB\n- rock_a | Rock A | meshes | 1.42x1.23x1.36\
+    \ m | /Game/Ruins/Meshes/SM_RockA.SM_RockA\n- rock_b | Rock B | meshes | 5.83x4.84x2.17 m | /Game/Ruins/Meshes/SM_RockB.SM_RockB\n\
+    - rock_c | Rock C | meshes | 4.48x4.47x1.9 m | /Game/Ruins/Meshes/SM_RockC.SM_RockC\n- rock_d | Rock\
+    \ D | meshes | 8.51x10.68x6.2 m | /Game/Ruins/Meshes/SM_RockD.SM_RockD\n- rock_e | Rock E | meshes\
+    \ | 6.05x6.36x4.77 m | /Game/Ruins/Meshes/SM_RockE.SM_RockE\n- rock_f | Rock F | meshes | 7.28x7.2x3.57\
+    \ m | /Game/Ruins/Meshes/SM_RockF.SM_RockF\n- rock_g | Rock G | meshes | 4.59x5.43x2.52 m | /Game/Ruins/Meshes/SM_RockG.SM_RockG\n\
+    - rock_h | Rock H | meshes | 25.32x17.33x7.85 m | /Game/Ruins/Meshes/SM_RockH.SM_RockH\n- ruins_base_a\
+    \ | Ruins Base A | meshes | 4.2x4.23x1.86 m | /Game/Ruins/Meshes/SM_RuinsBaseA.SM_RuinsBaseA\n- ruins_base_b\
+    \ | Ruins Base B | meshes | 4.21x4.23x1.87 m | /Game/Ruins/Meshes/SM_RuinsBaseB.SM_RuinsBaseB\n- ruins_base_c\
+    \ | Ruins Base C | meshes | 4.23x4.2x1.85 m | /Game/Ruins/Meshes/SM_RuinsBaseC.SM_RuinsBaseC\n- ruins_cart\
+    \ | Ruins Cart | meshes | 4.2x3.02x1.65 m | /Game/Ruins/Meshes/SM_RuinsCart.SM_RuinsCart\n- ruins_column_a\
+    \ | Ruins Column A | meshes | 1.45x1.45x1.62 m | /Game/Ruins/Meshes/SM_RuinsColumnA.SM_RuinsColumnA\n\
+    - ruins_column_b | Ruins Column B | meshes | 1.85x1.85x5.0 m | /Game/Ruins/Meshes/SM_RuinsColumnB.SM_RuinsColumnB\n\
+    - ruins_column_c | Ruins Column C | meshes | 1.45x1.45x5.0 m | /Game/Ruins/Meshes/SM_RuinsColumnC.SM_RuinsColumnC\n\
+    - ruins_column_d | Ruins Column D | meshes | 1.87x1.85x3.8 m | /Game/Ruins/Meshes/SM_RuinsColumnD.SM_RuinsColumnD\n\
+    - ruins_fountain_a | Ruins Fountain A | meshes | 4.3x4.3x1.82 m | /Game/Ruins/Meshes/SM_RuinsFountainA.SM_RuinsFountainA\n\
+    - ruins_fountain_b | Ruins Fountain B | meshes | 4.3x4.3x1.5 m | /Game/Ruins/Meshes/SM_RuinsFountainB.SM_RuinsFountainB\n\
+    - ruins_furniture_a | Ruins Furniture A | meshes | 5.67x4.96x2.59 m | /Game/Ruins/Meshes/SM_RuinsFurnitureA.SM_RuinsFurnitureA\n\
+    - ruins_furniture_b | Ruins Furniture B | meshes | 4.12x4.2x2.37 m | /Game/Ruins/Meshes/SM_RuinsFurnitureB.SM_RuinsFurnitureB\n\
+    - ruins_gate_a | Ruins Gate A | meshes | 4.6x7.11x5.48 m | /Game/Ruins/Meshes/SM_RuinsGateA.SM_RuinsGateA\n\
+    - ruins_home_a | Ruins Home A | meshes | 26.17x25.81x11.66 m | /Game/Ruins/Meshes/SM_RuinsHomeA.SM_RuinsHomeA\n\
+    - ruins_home_b | Ruins Home B | meshes | 19.46x19.45x11.89 m | /Game/Ruins/Meshes/SM_RuinsHomeB.SM_RuinsHomeB\n\
+    - ruins_lamp_post | Ruins Lamp Post | meshes | 2.12x1.64x5.34 m | /Game/Ruins/Meshes/SM_RuinsLampPost.SM_RuinsLampPost\n\
+    - ruins_military_a | Ruins Military A | meshes | 14.53x14.85x11.87 m | /Game/Ruins/Meshes/SM_RuinsMilitaryA.SM_RuinsMilitaryA\n\
+    - ruins_military_b | Ruins Military B | meshes | 6.29x6.21x9.63 m | /Game/Ruins/Meshes/SM_RuinsMilitaryB.SM_RuinsMilitaryB\n\
+    - ruins_rubble_a | Ruins Rubble A | meshes | 6.91x6.79x2.03 m | /Game/Ruins/Meshes/SM_RuinsRubbleA.SM_RuinsRubbleA\n\
+    - ruins_rubble_b | Ruins Rubble B | meshes | 6.34x6.29x1.3 m | /Game/Ruins/Meshes/SM_RuinsRubbleB.SM_RuinsRubbleB\n\
+    - ruins_rubble_c | Ruins Rubble C | meshes | 6.4x6.7x2.68 m | /Game/Ruins/Meshes/SM_RuinsRubbleC.SM_RuinsRubbleC\n\
+    - ruins_shelter_a | Ruins Shelter A | meshes | 16.01x15.68x3.34 m | /Game/Ruins/Meshes/SM_RuinsShelterA.SM_RuinsShelterA\n\
+    - ruins_shelter_b | Ruins Shelter B | meshes | 17.53x17.88x3.97 m | /Game/Ruins/Meshes/SM_RuinsShelterB.SM_RuinsShelterB\n\
+    - ruins_stairs_large_a | Ruins Stairs Large A | meshes | 2.19x4.01x2.03 m | /Game/Ruins/Meshes/SM_RuinsStairsLargeA.SM_RuinsStairsLargeA\n\
+    - ruins_stairs_large_b | Ruins Stairs Large B | meshes | 2.19x4.49x2.03 m | /Game/Ruins/Meshes/SM_RuinsStairsLargeB.SM_RuinsStairsLargeB\n\
+    - ruins_villa_a | Ruins Villa A | meshes | 43.0x36.92x15.28 m | /Game/Ruins/Meshes/SM_RuinsVillaA.SM_RuinsVillaA\n\
+    - ruins_villa_b | Ruins Villa B | meshes | 45.11x45.15x10.43 m | /Game/Ruins/Meshes/SM_RuinsVillaB.SM_RuinsVillaB\n\
+    - ruins_wall_arc_a | Ruins Wall Arc A | meshes | 5.94x2.98x6.01 m | /Game/Ruins/Meshes/SM_RuinsWallArcA.SM_RuinsWallArcA\n\
+    - ruins_wall_arc_b | Ruins Wall Arc B | meshes | 7.6x1.11x5.04 m | /Game/Ruins/Meshes/SM_RuinsWallArcB.SM_RuinsWallArcB\n\
+    - ruins_wall_high_a | Ruins Wall High A | meshes | 0.69x4.21x8.34 m | /Game/Ruins/Meshes/SM_RuinsWallHighA.SM_RuinsWallHighA\n\
+    - ruins_wall_high_b | Ruins Wall High B | meshes | 4.31x4.21x8.38 m | /Game/Ruins/Meshes/SM_RuinsWallHighB.SM_RuinsWallHighB\n\
+    - ruins_wall_high_c | Ruins Wall High C | meshes | 0.69x4.14x8.34 m | /Game/Ruins/Meshes/SM_RuinsWallHighC.SM_RuinsWallHighC\n\
+    - ruins_wall_high_d | Ruins Wall High D | meshes | 0.69x4.13x5.62 m | /Game/Ruins/Meshes/SM_RuinsWallHighD.SM_RuinsWallHighD\n\
+    - ruins_wall_low_a | Ruins Wall Low A | meshes | 2.53x4.46x1.6 m | /Game/Ruins/Meshes/SM_RuinsWallLowA.SM_RuinsWallLowA\n\
+    - ruins_wall_low_b | Ruins Wall Low B | meshes | 4.12x2.14x1.68 m | /Game/Ruins/Meshes/SM_RuinsWallLowB.SM_RuinsWallLowB\n\
+    - ruins_well | Ruins Well | meshes | 2.87x3.2x2.25 m | /Game/Ruins/Meshes/SM_RuinsWell.SM_RuinsWell\n\
+    - stump | Stump | meshes | 0.46x0.51x0.57 m | /Game/Ruins/Meshes/SM_Stump.SM_Stump\n\n=== THE TASK\
+    \ ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\nand arrangement\
+    \ the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result reports\
+    \ how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide for yourself\
+    \ when the scene\nmatches the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_104.bundle.json
+- name: overview_prompt_alignment
+assets:
+  packs:
+  - Ruins

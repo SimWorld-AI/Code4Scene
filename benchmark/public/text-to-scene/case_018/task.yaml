@@ -1,0 +1,358 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_018
+kind: scene_generation
+inputs:
+  prompt: "Scene:\n  identity: secluded, abandoned institutional complex\n  time: night\n  sky: cold blue-gray,\
+    \ faintly starry\n  atmosphere: light mist softening distant slopes and tree line\nComposition:\n\
+    \  setting: broad basin of dark, uneven hills\n  density: sparse and isolated\n  occupancy: the single\
+    \ building cluster occupying only a small portion of the expansive, dark landscape\n  clearing: loose,\
+    \ rather than a developed town\nHospital:\n  count: one dominant hospital building\n  position: near\
+    \ the center of the landscape\n  height: two to three stories\n  material: red-brown brick\n  footprint:\
+    \ large squared C or U, long rectangular wings\n  entrance: recessed central court, smaller projecting\
+    \ central block\n  roofs: flat or very shallow, dark\n  details: pale cornices, repeated tall narrow\
+    \ windows\n  main façade orientation: facing into the wooded grounds\n  rear: simpler continuous institutional\
+    \ wall\nGrounds:\n  enclosure coverage: parts of the immediate hospital grounds\n  enclosure elements:\
+    \ dark chain-link fencing and gates\n  borders: low rough stone borders\n  circulation: sparse paths\
+    \ or worn drives\n  objects: scattered rocks, shrubs, a few small ornamental plantings near building\n\
+    Trees:\n  location: surrounding the hospital\n  mix: irregular grove of mature deciduous trees mixed\
+    \ with thinner columnar trees\n  density: greatest around the façade and sides, thinning naturally\
+    \ toward the hills\n  spacing: organic, isolated trunks and small clusters\n  shadows: long\nTerrain:\n\
+    \  surface: rolling, softly eroded ground\n  features: shallow ridges, hollows, steepening slopes\n\
+    \  outer scene boundary: slopes rising around the complex on nearly every side\n\n=== ASSET PALETTE\
+    \ ===\nBuild this scene using ONLY the assets below — asset search is not available\nin this run,\
+    \ so this list is your entire library. Format:\n\n  id | name | category | width x depth x height\
+    \ (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches UE.\n\
+    You decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n- house_02\
+    \ | House 02 | blueprints | 8.6x12.55x10.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/Blueprints/BP_House_02.BP_House_02_C\n\
+    - armchair | Armchair | corridor | 1.93x0.6x1.01 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Armchair.SM_Armchair\n\
+    - axe | Axe | corridor | 0.33x0.39x0.87 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Axe.SM_Axe\n\
+    - board_windows_01 | Board Windows 01 | corridor | 0.05x1.37x1.86 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Board_Windows_01.SM_Board_Windows_01\n\
+    - board_windows_02 | Board Windows 02 | corridor | 1.74x0.05x1.99 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Board_Windows_02.SM_Board_Windows_02\n\
+    - clock_02 | Clock 02 | corridor | 0.19x0.58x0.41 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Clock_02.SM_Clock_02\n\
+    - computers_01 | Computers 01 | corridor | 1.04x0.99x0.59 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Computers_01.SM_Computers_01\n\
+    - construction_table_01 | Construction Table 01 | corridor | 2.14x0.87x1.24 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Construction_Table_01.SM_Construction_Table_01\n\
+    - drinking_fountain | Drinking Fountain | corridor | 0.61x0.52x0.66 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Drinking_Fountain.SM_Drinking_Fountain\n\
+    - extinguisher_01 | Extinguisher 01 | corridor | 0.32x0.22x0.64 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Extinguisher_01.SM_Extinguisher_01\n\
+    - fire_call | Fire Call | corridor | 0.17x0.07x0.17 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Fire_Call.SM_Fire_Call\n\
+    - fire_fighting | Fire Fighting | corridor | 0.13x0.07x0.17 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Fire_Fighting.SM_Fire_Fighting\n\
+    - fire_pipe_01 | Fire Pipe 01 | corridor | 2.0x0.13x0.57 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_FirePipe_01.SM_FirePipe_01\n\
+    - fire_pipe_02 | Fire Pipe 02 | corridor | 1.0x1.12x0.12 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_FirePipe_02.SM_FirePipe_02\n\
+    - fire_pipe_03 | Fire Pipe 03 | corridor | 2.0x1.06x0.57 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_FirePipe_03.SM_FirePipe_03\n\
+    - fire_pipe_04 | Fire Pipe 04 | corridor | 0.56x0.56x0.12 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_FirePipe_04.SM_FirePipe_04\n\
+    - fire_pipe_05 | Fire Pipe 05 | corridor | 4.0x0.13x0.57 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_FirePipe_05.SM_FirePipe_05\n\
+    - fire_pipe_06 | Fire Pipe 06 | corridor | 1.0x0.12x0.12 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_FirePipe_06.SM_FirePipe_06\n\
+    - fire_pipe_07 | Fire Pipe 07 | corridor | 2.0x0.12x0.49 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_FirePipe_07.SM_FirePipe_07\n\
+    - folder_01 | Folder 01 | corridor | 0.36x0.48x0.06 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Folder_01.SM_Folder_01\n\
+    - folder_02 | Folder 02 | corridor | 0.38x0.49x0.05 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Folder_02.SM_Folder_02\n\
+    - folder_03 | Folder 03 | corridor | 0.23x0.34x0.38 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Folder_03.SM_Folder_03\n\
+    - folder_04 | Folder 04 | corridor | 0.19x0.34x0.39 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Folder_04.SM_Folder_04\n\
+    - folder_05 | Folder 05 | corridor | 0.34x0.15x0.38 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Folder_05.SM_Folder_05\n\
+    - lamp_01 | Lamp 01 | corridor | 2.56x2.56x2.56 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Lamp_01.SM_Lamp_01\n\
+    - lamp_02 | Lamp 02 | corridor | 0.22x1.92x1.01 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Lamp_02.SM_Lamp_02\n\
+    - lamp_03 | Lamp 03 | corridor | 2.56x2.56x2.56 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Lamp_03.SM_Lamp_03\n\
+    - lamp_04 | Lamp 04 | corridor | 2.56x2.56x2.63 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Lamp_04.SM_Lamp_04\n\
+    - loudspeaker | Loudspeaker | corridor | 0.25x0.09x0.31 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Loudspeaker.SM_Loudspeaker\n\
+    - plaster_fallen_01 | Plaster Fallen 01 | corridor | 1.12x0.98x0.04 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Plaster_Fallen_01.SM_Plaster_Fallen_01\n\
+    - plaster_fallen_02 | Plaster Fallen 02 | corridor | 1.19x0.29x0.07 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Plaster_Fallen_02.SM_Plaster_Fallen_02\n\
+    - plaster_fallen_03 | Plaster Fallen 03 | corridor | 0.91x0.32x0.09 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Plaster_Fallen_03.SM_Plaster_Fallen_03\n\
+    - plaster_fallen_04 | Plaster Fallen 04 | corridor | 1.12x0.94x0.05 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Plaster_Fallen_04.SM_Plaster_Fallen_04\n\
+    - pressure_hose | Pressure Hose | corridor | 0.54x0.16x0.54 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Pressure_Hose.SM_Pressure_Hose\n\
+    - radiator | Radiator | corridor | 1.28x0.24x0.72 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Radiator.SM_Radiator\n\
+    - railing | Railing | corridor | 2.0x0.1x0.14 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Railing.SM_Railing\n\
+    - reception_01 | Reception 01 | corridor | 4.0x1.07x3.71 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Reception_01.SM_Reception_01\n\
+    - s_m_trash_01 | s M Trash 01 | corridor | 1.2x1.24x0.03 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/sM_Trash_01.SM_Trash_01\n\
+    - stand_folders_01 | Stand Folders 01 | corridor | 0.58x0.5x0.41 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Stand_Folders_01.SM_Stand_Folders_01\n\
+    - stationery | Stationery | corridor | 0.13x0.12x0.29 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Stationery.SM_Stationery\n\
+    - surgical_bowl | Surgical Bowl | corridor | 0.42x0.39x0.04 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Surgical_Bowl.SM_Surgical_Bowl\n\
+    - surgical_table | Surgical Table | corridor | 1.15x1.12x1.07 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Surgical_Table.SM_Surgical_Table\n\
+    - tablet_01 | Tablet 01 | corridor | 0.41x0.03x0.17 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Tablet_01.SM_Tablet_01\n\
+    - tablet_02 | Tablet 02 | corridor | 0.41x0.03x0.17 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Tablet_02.SM_Tablet_02\n\
+    - tablet_03 | Tablet 03 | corridor | 0.41x0.03x0.17 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Tablet_03.SM_Tablet_03\n\
+    - tablet_04 | Tablet 04 | corridor | 0.41x0.03x0.17 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Tablet_04.SM_Tablet_04\n\
+    - tablet_05 | Tablet 05 | corridor | 0.41x0.03x0.17 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Tablet_05.SM_Tablet_05\n\
+    - tablet_06 | Tablet 06 | corridor | 0.41x0.03x0.17 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Tablet_06.SM_Tablet_06\n\
+    - tablet_07 | Tablet 07 | corridor | 0.05x1.17x0.75 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Tablet_07.SM_Tablet_07\n\
+    - tablet_08 | Tablet 08 | corridor | 0.58x0.09x0.27 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Tablet_08.SM_Tablet_08\n\
+    - tablet_09 | Tablet 09 | corridor | 0.5x0.02x0.73 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Tablet_09.SM_Tablet_09\n\
+    - telephone | Telephone | corridor | 0.37x0.21x0.58 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Telephone.SM_Telephone\n\
+    - trash_02 | Trash 02 | corridor | 1.72x0.76x0.02 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Trash_02.SM_Trash_02\n\
+    - trash_03 | Trash 03 | corridor | 0.32x0.37x0.02 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Trash_03.SM_Trash_03\n\
+    - urn_01 | Urn 01 | corridor | 0.45x0.45x0.78 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Urn_01.SM_Urn_01\n\
+    - urn_02 | Urn 02 | corridor | 0.43x0.31x0.5 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Urn_02.SM_Urn_02\n\
+    - ventilation_system_01 | Ventilation System 01 | corridor | 2.0x0.6x0.84 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Ventilation_System_01.SM_Ventilation_System_01\n\
+    - ventilation_system_02 | Ventilation System 02 | corridor | 2.0x1.3x0.84 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Ventilation_System_02.SM_Ventilation_System_02\n\
+    - ventilation_system_03 | Ventilation System 03 | corridor | 1.3x1.29x0.84 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Ventilation_System_03.SM_Ventilation_System_03\n\
+    - ventilation_system_05 | Ventilation System 05 | corridor | 0.02x0.56x0.56 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Ventilation_System_05.SM_Ventilation_System_05\n\
+    - ventilation_system_06 | Ventilation System 06 | corridor | 2.0x0.92x0.84 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Ventilation_System_06.SM_Ventilation_System_06\n\
+    - ventilation_system_07 | Ventilation System 07 | corridor | 2.0x0.6x1.06 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Ventilation_System_07.SM_Ventilation_System_07\n\
+    - wardrobe_01_2 | Wardrobe 01 | corridor | 1.3x0.6x2.56 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Wardrobe_01.SM_Wardrobe_01\n\
+    - wardrobe_01_door_01 | Wardrobe 01 Door 01 | corridor | 0.26x0.61x1.27 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Wardrobe_01_Door_01.SM_Wardrobe_01_Door_01\n\
+    - wardrobe_01_door_02_2 | Wardrobe 01 Door 02 | corridor | 0.26x0.61x1.27 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Wardrobe_01_Door_02.SM_Wardrobe_01_Door_02\n\
+    - wardrobe_02 | Wardrobe 02 | corridor | 0.96x0.58x2.58 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Wardrobe_02.SM_Wardrobe_02\n\
+    - wheelchair | Wheelchair | corridor | 1.39x1.54x1.31 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Corridor/SM_Wheelchair.SM_Wheelchair\n\
+    - blood_decals_01 | Blood Decals 01 | decals | 0.67x0.67x0.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Blood_Decals_01.SM_Blood_Decals_01\n\
+    - blood_decals_02 | Blood Decals 02 | decals | 0.21x0.0x0.21 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Blood_Decals_02.SM_Blood_Decals_02\n\
+    - blood_decals_03 | Blood Decals 03 | decals | 0.4x0.4x0.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Blood_Decals_03.SM_Blood_Decals_03\n\
+    - blood_decals_04 | Blood Decals 04 | decals | 0.55x0.0x0.55 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Blood_Decals_04.SM_Blood_Decals_04\n\
+    - blood_decals_05 | Blood Decals 05 | decals | 0.0x0.67x0.67 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Blood_Decals_05.SM_Blood_Decals_05\n\
+    - blood_decals_06 | Blood Decals 06 | decals | 0.0x0.84x0.84 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Blood_Decals_06.SM_Blood_Decals_06\n\
+    - blood_decals_07 | Blood Decals 07 | decals | 1.37x1.37x0.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Blood_Decals_07.SM_Blood_Decals_07\n\
+    - blood_decals_08 | Blood Decals 08 | decals | 0.0x0.67x0.67 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Blood_Decals_08.SM_Blood_Decals_08\n\
+    - blood_decals_09 | Blood Decals 09 | decals | 0.0x0.67x0.67 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Blood_Decals_09.SM_Blood_Decals_09\n\
+    - decal_pentagram | Decal Pentagram | decals | 2.29x2.29x0.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decal_Pentagram.SM_Decal_Pentagram\n\
+    - decals_01 | Decals 01 | decals | 2.6x0.0x0.26 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_01.SM_Decals_01\n\
+    - decals_04 | Decals 04 | decals | 1.16x0.0x0.23 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_04.SM_Decals_04\n\
+    - decals_05 | Decals 05 | decals | 0.0x0.56x0.29 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_05.SM_Decals_05\n\
+    - decals_06 | Decals 06 | decals | 0.5x0.0x4.58 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_06.SM_Decals_06\n\
+    - decals_07 | Decals 07 | decals | 0.53x0.0x0.24 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_07.SM_Decals_07\n\
+    - decals_08 | Decals 08 | decals | 0.66x0.0x0.24 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_08.SM_Decals_08\n\
+    - decals_10 | Decals 10 | decals | 1.03x0.0x0.55 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_10.SM_Decals_10\n\
+    - decals_11 | Decals 11 | decals | 0.23x0.0x3.75 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_11.SM_Decals_11\n\
+    - decals_12 | Decals 12 | decals | 0.09x0.14x2.6 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_12.SM_Decals_12\n\
+    - decals_15 | Decals 15 | decals | 1.11x0.0x1.24 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_15.SM_Decals_15\n\
+    - decals_16 | Decals 16 | decals | 0.0x1.51x1.52 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_16.SM_Decals_16\n\
+    - decals_17 | Decals 17 | decals | 1.27x0.0x0.51 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_17.SM_Decals_17\n\
+    - decals_18 | Decals 18 | decals | 1.51x0.0x1.35 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_18.SM_Decals_18\n\
+    - decals_20 | Decals 20 | decals | 2.87x0.0x0.57 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_20.SM_Decals_20\n\
+    - decals_21 | Decals 21 | decals | 2.87x0.0x0.62 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_21.SM_Decals_21\n\
+    - decals_22 | Decals 22 | decals | 1.51x0.0x0.52 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_22.SM_Decals_22\n\
+    - decals_23 | Decals 23 | decals | 1.51x0.0x0.45 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_23.SM_Decals_23\n\
+    - decals_24 | Decals 24 | decals | 0.0x5.34x2.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_24.SM_Decals_24\n\
+    - decals_25 | Decals 25 | decals | 0.0x4.93x2.17 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_25.SM_Decals_25\n\
+    - decals_26 | Decals 26 | decals | 1.09x0.0x0.66 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_26.SM_Decals_26\n\
+    - decals_27 | Decals 27 | decals | 0.57x0.63x0.77 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_27.SM_Decals_27\n\
+    - decals_28 | Decals 28 | decals | 0.76x0.85x0.45 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_28.SM_Decals_28\n\
+    - decals_29 | Decals 29 | decals | 0.56x0.56x1.24 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_29.SM_Decals_29\n\
+    - decals_30 | Decals 30 | decals | 0.7x0.75x0.52 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_30.SM_Decals_30\n\
+    - decals_31 | Decals 31 | decals | 3.44x0.0x1.14 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_31.SM_Decals_31\n\
+    - decals_32 | Decals 32 | decals | 4.32x0.0x1.02 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_32.SM_Decals_32\n\
+    - decals_33 | Decals 33 | decals | 1.61x1.93x0.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_33.SM_Decals_33\n\
+    - decals_34 | Decals 34 | decals | 0.93x0.0x1.87 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_34.SM_Decals_34\n\
+    - decals_35 | Decals 35 | decals | 0.6x0.0x1.57 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_35.SM_Decals_35\n\
+    - decals_36 | Decals 36 | decals | 0.0x1.01x0.93 m | /Game/Abandoned_Psychiatric_Hospital/Models/Decals/SM_Decals_36.SM_Decals_36\n\
+    - ashtray | Ashtray | directors_office | 0.13x0.13x0.04 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Ashtray.SM_Ashtray\n\
+    - ballpoint_pen | Ballpoint Pen | directors_office | 0.25x0.1x0.24 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Ballpoint_Pen.SM_Ballpoint_Pen\n\
+    - bedside_table | Bedside Table | directors_office | 1.35x1.59x0.9 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Bedside_Table.SM_Bedside_Table\n\
+    - books_01 | Books 01 | directors_office | 0.35x0.33x0.04 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Books_01.SM_Books_01\n\
+    - books_02 | Books 02 | directors_office | 0.18x0.27x0.04 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Books_02.SM_Books_02\n\
+    - books_03 | Books 03 | directors_office | 0.3x0.32x0.03 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Books_03.SM_Books_03\n\
+    - books_04 | Books 04 | directors_office | 0.23x0.29x0.03 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Books_04.SM_Books_04\n\
+    - books_05 | Books 05 | directors_office | 0.3x0.32x0.02 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Books_05.SM_Books_05\n\
+    - books_06 | Books 06 | directors_office | 0.23x0.14x0.34 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Books_06.SM_Books_06\n\
+    - books_08 | Books 08 | directors_office | 0.26x0.33x0.29 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Books_08.SM_Books_08\n\
+    - books_09 | Books 09 | directors_office | 0.25x0.38x0.36 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Books_09.SM_Books_09\n\
+    - books_10 | Books 10 | directors_office | 0.25x0.34x0.36 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Books_10.SM_Books_10\n\
+    - certificate_01 | Certificate 01 | directors_office | 0.46x0.01x0.31 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Certificate_01.SM_Certificate_01\n\
+    - certificate_02 | Certificate 02 | directors_office | 0.4x0.01x0.46 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Certificate_02.SM_Certificate_02\n\
+    - certificate_03 | Certificate 03 | directors_office | 0.56x0.01x0.4 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Certificate_03.SM_Certificate_03\n\
+    - certificate_04 | Certificate 04 | directors_office | 0.49x0.01x0.38 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Certificate_04.SM_Certificate_04\n\
+    - curtain_02 | Curtain 02 | directors_office | 3.69x0.18x2.3 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Curtain_02.SM_Curtain_02\n\
+    - directors_chair | Directors Chair | directors_office | 0.85x0.9x1.28 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Directors_Chair.SM_Directors_Chair\n\
+    - metronome | Metronome | directors_office | 0.17x0.15x0.3 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Metronome.SM_Metronome\n\
+    - organizer | Organizer | directors_office | 0.13x0.13x0.15 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Organizer.SM_Organizer\n\
+    - paper_storage | Paper Storage | directors_office | 0.28x0.42x0.19 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Paper_Storage.SM_Paper_Storage\n\
+    - sheet_paper_01 | Sheet paper 01 | directors_office | 0.24x0.37x0.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Sheet_paper_01.SM_Sheet_paper_01\n\
+    - sheet_paper_02 | Sheet paper 02 | directors_office | 0.37x0.45x0.01 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Sheet_paper_02.SM_Sheet_paper_02\n\
+    - sheet_paper_03 | Sheet paper 03 | directors_office | 0.25x0.37x0.01 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Sheet_paper_03.SM_Sheet_paper_03\n\
+    - stapler | Stapler | directors_office | 0.15x0.07x0.04 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Stapler.SM_Stapler\n\
+    - table_lamp | Table Lamp | directors_office | 0.32x0.32x0.71 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Table_Lamp.SM_Table_Lamp\n\
+    - telephone_02 | Telephone 02 | directors_office | 0.37x0.32x0.15 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Telephone_02.SM_Telephone_02\n\
+    - wardrobe_03 | Wardrobe 03 | directors_office | 0.59x1.74x2.21 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Directors_Office/SM_Wardrobe_03.SM_Wardrobe_03\n\
+    - booth_toilet_door | Booth Toilet Door | doors | 1.65x1.55x2.26 m | /Game/Abandoned_Psychiatric_Hospital/Models/Blueprints/Doors/BP_Booth_Toilet_Door.BP_Booth_Toilet_Door_C\n\
+    - directors_door | Directors Door | doors | 1.65x1.65x2.69 m | /Game/Abandoned_Psychiatric_Hospital/Models/Blueprints/Doors/BP_Directors_Door.BP_Directors_Door_C\n\
+    - door_corridor | Door Corridor | doors | 1.65x1.44x2.65 m | /Game/Abandoned_Psychiatric_Hospital/Models/Blueprints/Doors/BP_Door_Corridor.BP_Door_Corridor_C\n\
+    - front_door | Front Door | doors | 1.62x1.65x2.73 m | /Game/Abandoned_Psychiatric_Hospital/Models/Blueprints/Doors/BP_Front_Door.BP_Front_Door_C\n\
+    - interior_door_01 | Interior Door 01 | doors | 1.64x1.65x2.7 m | /Game/Abandoned_Psychiatric_Hospital/Models/Blueprints/Doors/BP_Interior_Door_01.BP_Interior_Door_01_C\n\
+    - interior_door_02 | Interior Door 02 | doors | 1.64x1.65x2.69 m | /Game/Abandoned_Psychiatric_Hospital/Models/Blueprints/Doors/BP_Interior_Door_02.BP_Interior_Door_02_C\n\
+    - reception_door | Reception Door | doors | 1.6x1.65x2.6 m | /Game/Abandoned_Psychiatric_Hospital/Models/Blueprints/Doors/BP_Reception_Door.BP_Reception_Door_C\n\
+    - wardrobe_01_door_02 | Wardrobe 01 Door 02 | doors | 1.76x1.61x2.05 m | /Game/Abandoned_Psychiatric_Hospital/Models/Blueprints/Doors/BP_Wardrobe_01_Door_02.BP_Wardrobe_01_Door_02_C\n\
+    - wardrobe_02_door | Wardrobe 02 Door | doors | 1.76x1.62x2.54 m | /Game/Abandoned_Psychiatric_Hospital/Models/Blueprints/Doors/BP_Wardrobe_02_Door.BP_Wardrobe_02_Door_C\n\
+    - bench_01 | Bench 01 | exterior | 0.74x2.36x1.05 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Bench_01.SM_Bench_01\n\
+    - bench_02 | Bench 02 | exterior | 2.36x0.74x1.05 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Bench_02.SM_Bench_02\n\
+    - brick_trash_01 | Brick Trash 01 | exterior | 1.83x1.87x0.34 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Brick_Trash_01.SM_Brick_Trash_01\n\
+    - brick_trash_02 | Brick Trash 02 | exterior | 0.43x0.24x0.18 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Brick_Trash_02.SM_Brick_Trash_02\n\
+    - curbstone_01 | Curbstone 01 | exterior | 0.16x2.0x0.15 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Curbstone_01.SM_Curbstone_01\n\
+    - curbstone_02 | Curbstone 02 | exterior | 0.16x0.8x0.15 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Curbstone_02.SM_Curbstone_02\n\
+    - drainpipe_02 | Drainpipe 02 | exterior | 0.26x0.24x0.83 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Drainpipe_02.SM_Drainpipe_02\n\
+    - drainpipe_04 | Drainpipe 04 | exterior | 0.1x0.15x0.45 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Drainpipe_04.SM_Drainpipe_04\n\
+    - drainpipe_05 | Drainpipe 05 | exterior | 0.26x0.24x9.22 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Drainpipe_05.SM_Drainpipe_05\n\
+    - drainpipe_06 | Drainpipe 06 | exterior | 0.73x0.68x3.07 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Drainpipe_06.SM_Drainpipe_06\n\
+    - fence_01 | Fence 01 | exterior | 4.1x0.17x2.19 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Fence_01.SM_Fence_01\n\
+    - fence_02 | Fence 02 | exterior | 8.1x1.47x2.22 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Fence_02.SM_Fence_02\n\
+    - fence_gates | Fence Gates | exterior | 3.32x2.84x2.19 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Fence_Gates.SM_Fence_Gates\n\
+    - hatch_metal | Hatch Metal | exterior | 1.17x1.17x0.38 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Hatch_Metal.SM_Hatch_Metal\n\
+    - sign | Sign | exterior | 0.75x0.03x0.41 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Sign.SM_Sign\n\
+    - stone_sign | Stone Sign | exterior | 4.03x1.5x1.38 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Stone_Sign.SM_Stone_Sign\n\
+    - street_lamp_01 | Street Lamp 01 | exterior | 0.34x1.2x3.52 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Street_Lamp_01.SM_Street_Lamp_01\n\
+    - urn_03 | Urn 03 | exterior | 0.41x0.41x0.62 m | /Game/Abandoned_Psychiatric_Hospital/Models/Exterior/SM_Urn_03.SM_Urn_03\n\
+    - house_01 | House 01 | models | 13.09x8.62x10.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/SM_House_01.SM_House_01\n\
+    - house_03 | House 03 | models | 11.64x16.55x10.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/SM_House_03.SM_House_03\n\
+    - house_04 | House 04 | models | 9.09x19.16x11.96 m | /Game/Abandoned_Psychiatric_Hospital/Models/SM_House_04.SM_House_04\n\
+    - house_05 | House 05 | models | 7.11x16.55x10.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/SM_House_05.SM_House_05\n\
+    - house_06 | House 06 | models | 10.55x13.55x10.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/SM_House_06.SM_House_06\n\
+    - house_07 | House 07 | models | 12.71x10.55x10.09 m | /Game/Abandoned_Psychiatric_Hospital/Models/SM_House_07.SM_House_07\n\
+    - directors_wall_01 | Directors Wall 01 | modules | 0.06x2.0x1.15 m | /Game/Abandoned_Psychiatric_Hospital/Models/Modules/SM_Directors_Wall_01.SM_Directors_Wall_01\n\
+    - directors_wall_03 | Directors Wall 03 | modules | 4.0x0.08x1.15 m | /Game/Abandoned_Psychiatric_Hospital/Models/Modules/SM_Directors_Wall_03.SM_Directors_Wall_03\n\
+    - directors_wall_04 | Directors Wall 04 | modules | 1.0x0.06x1.15 m | /Game/Abandoned_Psychiatric_Hospital/Models/Modules/SM_Directors_Wall_04.SM_Directors_Wall_04\n\
+    - directors_wall_05 | Directors Wall 05 | modules | 4.0x0.06x1.15 m | /Game/Abandoned_Psychiatric_Hospital/Models/Modules/SM_Directors_Wall_05.SM_Directors_Wall_05\n\
+    - directors_wall_06 | Directors Wall 06 | modules | 1.0x0.06x1.15 m | /Game/Abandoned_Psychiatric_Hospital/Models/Modules/SM_Directors_Wall_06.SM_Directors_Wall_06\n\
+    - foundation_angle_02 | Foundation Angle 02 | modules | 0.12x0.12x0.19 m | /Game/Abandoned_Psychiatric_Hospital/Models/Modules/SM_Foundation_Angle_02.SM_Foundation_Angle_02\n\
+    - electric_box | Electric Box | pipes_wires | 0.38x0.28x0.46 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Electric_Box.SM_Electric_Box\n\
+    - electric_box_02 | Electric Box 02 | pipes_wires | 0.11x0.16x0.25 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Electric_Box_02.SM_Electric_Box_02\n\
+    - pipes_01 | Pipes 01 | pipes_wires | 0.18x0.18x2.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Pipes_01.SM_Pipes_01\n\
+    - pipes_02 | Pipes 02 | pipes_wires | 0.18x0.18x2.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Pipes_02.SM_Pipes_02\n\
+    - pipes_03 | Pipes 03 | pipes_wires | 0.2x0.27x0.2 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Pipes_03.SM_Pipes_03\n\
+    - pipes_04 | Pipes 04 | pipes_wires | 0.15x0.15x0.19 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Pipes_04.SM_Pipes_04\n\
+    - pipes_05 | Pipes 05 | pipes_wires | 0.23x0.24x0.15 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Pipes_05.SM_Pipes_05\n\
+    - pipes_06 | Pipes 06 | pipes_wires | 0.1x0.1x2.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Pipes_06.SM_Pipes_06\n\
+    - pipes_07 | Pipes 07 | pipes_wires | 0.07x0.07x2.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Pipes_07.SM_Pipes_07\n\
+    - pipes_08 | Pipes 08 | pipes_wires | 0.18x0.15x0.15 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Pipes_08.SM_Pipes_08\n\
+    - pipes_09 | Pipes 09 | pipes_wires | 0.11x0.11x2.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Pipes_09.SM_Pipes_09\n\
+    - pipes_11 | Pipes 11 | pipes_wires | 0.11x0.1x3.06 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Pipes_11.SM_Pipes_11\n\
+    - pipes_12 | Pipes 12 | pipes_wires | 0.07x0.09x3.06 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Pipes_12.SM_Pipes_12\n\
+    - pipes_13 | Pipes 13 | pipes_wires | 4.12x0.07x0.12 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Pipes_13.SM_Pipes_13\n\
+    - pipes_14 | Pipes 14 | pipes_wires | 0.23x0.11x0.07 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Pipes_14.SM_Pipes_14\n\
+    - pipes_15 | Pipes 15 | pipes_wires | 2.1x0.11x0.07 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Pipes_15.SM_Pipes_15\n\
+    - wires_01 | Wires 01 | pipes_wires | 0.02x0.07x1.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Wires_01.SM_Wires_01\n\
+    - wires_02 | Wires 02 | pipes_wires | 0.02x0.07x1.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Wires_02.SM_Wires_02\n\
+    - wires_03 | Wires 03 | pipes_wires | 0.07x0.14x1.07 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Wires_03.SM_Wires_03\n\
+    - wires_04 | Wires 04 | pipes_wires | 0.1x0.08x1.06 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Wires_04.SM_Wires_04\n\
+    - wires_05 | Wires 05 | pipes_wires | 0.1x0.04x1.06 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Wires_05.SM_Wires_05\n\
+    - wires_06 | Wires 06 | pipes_wires | 0.06x0.06x0.31 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Wires_06.SM_Wires_06\n\
+    - wires_08 | Wires 08 | pipes_wires | 1.0x0.02x0.29 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Wires_08.SM_Wires_08\n\
+    - wires_09 | Wires 09 | pipes_wires | 0.17x0.02x1.01 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Pipes_Wires/SM_Wires_09.SM_Wires_09\n\
+    - bag_plaster | Bag Plaster | props | 0.86x0.9x0.19 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Bag_Plaster.SM_Bag_Plaster\n\
+    - bathroom | Bathroom | props | 1.99x2.8x0.71 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Bathroom.SM_Bathroom\n\
+    - bed_01 | Bed 01 | props | 2.05x0.99x1.11 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Bed_01.SM_Bed_01\n\
+    - bed_02 | Bed 02 | props | 0.99x2.05x1.11 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Bed_02.SM_Bed_02\n\
+    - bed_03 | Bed 03 | props | 1.03x2.1x1.11 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Bed_03.SM_Bed_03\n\
+    - bed_04 | Bed 04 | props | 0.99x2.05x1.11 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Bed_04.SM_Bed_04\n\
+    - booth_toilet | Booth Toilet | props | 2.04x1.3x2.47 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Booth_Toilet.SM_Booth_Toilet\n\
+    - bowl | Bowl | props | 0.75x0.78x0.16 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Bowl.SM_Bowl\n\
+    - candle_01 | Candle 01 | props | 0.09x0.08x0.26 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Candle_01.SM_Candle_01\n\
+    - candle_02 | Candle 02 | props | 0.08x0.08x0.32 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Candle_02.SM_Candle_02\n\
+    - candle_03 | Candle 03 | props | 2.56x2.56x2.56 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Candle_03.SM_Candle_03\n\
+    - candle_04 | Candle 04 | props | 0.13x0.14x0.32 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Candle_04.SM_Candle_04\n\
+    - candle_05 | Candle 05 | props | 2.56x2.56x2.56 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Candle_05.SM_Candle_05\n\
+    - candle_06 | Candle 06 | props | 0.09x0.09x0.47 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Candle_06.SM_Candle_06\n\
+    - clock | Clock | props | 0.22x0.24x0.26 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Clock.SM_Clock\n\
+    - cross | Cross | props | 0.31x0.04x0.48 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Cross.SM_Cross\n\
+    - cup | Cup | props | 0.14x0.11x0.12 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Cup.SM_Cup\n\
+    - cup_02 | Cup 02 | props | 0.15x0.15x0.15 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Cup_02.SM_Cup_02\n\
+    - curtain | Curtain | props | 1.43x2.85x3.48 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Curtain.SM_Curtain\n\
+    - curtain_03 | Curtain 03 | props | 1.42x0.17x1.0 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Curtain_03.SM_Curtain_03\n\
+    - curtain_04 | Curtain 04 | props | 1.42x0.18x0.95 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Curtain_04.SM_Curtain_04\n\
+    - devil_s_book_01 | Devil s Book 01 | props | 0.54x0.32x0.04 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Devil_s_Book_01.SM_Devil_s_Book_01\n\
+    - devil_s_book_02 | Devil s Book 02 | props | 0.37x0.4x0.06 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Devil_s_Book_02.SM_Devil_s_Book_02\n\
+    - directors_desk | Directors Desk | props | 2.08x0.93x0.94 m | /Game/Abandoned_Psychiatric_Hospital/Models/Blueprints/Props/BP_Directors_Desk.BP_Directors_Desk_C\n\
+    - electric_box_03 | Electric Box 03 | props | 3.53x1.25x1.13 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Electric_Box_03.SM_Electric_Box_03\n\
+    - electric_chair | Electric Chair | props | 0.85x1.06x1.63 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Electric_Chair.SM_Electric_Chair\n\
+    - filing_cabinet | Filing Cabinet | props | 0.82x0.68x1.78 m | /Game/Abandoned_Psychiatric_Hospital/Models/Blueprints/Props/BP_Filing_Cabinet.BP_Filing_Cabinet_C\n\
+    - flashlight | Flashlight | props | 2.56x2.56x2.56 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Flashlight.SM_Flashlight\n\
+    - grate_window_01 | Grate Window 01 | props | 1.04x0.06x1.63 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Grate_Window_01.SM_Grate_Window_01\n\
+    - grate_window_02 | Grate Window 02 | props | 0.99x0.18x1.64 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Grate_Window_02.SM_Grate_Window_02\n\
+    - lockup_bed | Lockup Bed | props | 1.08x2.33x0.71 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Lockup_Bed.SM_Lockup_Bed\n\
+    - mattress | Mattress | props | 2.15x1.54x0.15 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Mattress.SM_Mattress\n\
+    - mirror | Mirror | props | 0.04x0.7x0.91 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Mirror.SM_Mirror\n\
+    - nightstand | Nightstand | props | 1.08x1.01x1.04 m | /Game/Abandoned_Psychiatric_Hospital/Models/Blueprints/Props/BP_Nightstand.BP_Nightstand_C\n\
+    - pad | Pad | props | 0.19x0.01x0.32 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Pad.SM_Pad\n\
+    - paint_can | Paint Can | props | 0.36x0.42x0.41 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Paint_Can.SM_Paint_Can\n\
+    - paint_roller | Paint Roller | props | 0.54x0.56x0.14 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Paint_Roller.SM_Paint_Roller\n\
+    - photo_frame | Photo Frame | props | 0.28x0.23x0.21 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Photo_Frame.SM_Photo_Frame\n\
+    - poster_01 | Poster 01 | props | 2.56x2.56x3.08 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Poster_01.SM_Poster_01\n\
+    - poster_02 | Poster 02 | props | 2.56x2.56x3.09 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Poster_02.SM_Poster_02\n\
+    - poster_03 | Poster 03 | props | 2.56x2.56x3.09 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Poster_03.SM_Poster_03\n\
+    - poster_04 | Poster 04 | props | 2.56x2.56x3.1 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Poster_04.SM_Poster_04\n\
+    - projector | Projector | props | 0.31x0.59x0.7 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Projector.SM_Projector\n\
+    - projector_screen_01 | Projector Screen 01 | props | 2.55x0.31x2.07 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Projector_Screen_01.SM_Projector_Screen_01\n\
+    - reception_chair | Reception Chair | props | 0.92x0.93x1.16 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Reception_Chair.SM_Reception_Chair\n\
+    - rosary | Rosary | props | 0.1x0.15x0.01 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Rosary.SM_Rosary\n\
+    - sacrificial_knife | Sacrificial knife | props | 0.38x0.22x0.03 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Sacrificial_knife.SM_Sacrificial_knife\n\
+    - shelf | Shelf | props | 1.04x0.25x0.19 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Shelf.SM_Shelf\n\
+    - sink | Sink | props | 0.55x0.69x0.59 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Sink.SM_Sink\n\
+    - sink_02 | Sink 02 | props | 0.96x0.58x1.28 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Sink_02.SM_Sink_02\n\
+    - toilet_bowl | Toilet Bowl | props | 0.82x0.45x1.77 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Toilet_Bowl.SM_Toilet_Bowl\n\
+    - toilet_bowl_cap | Toilet Bowl Cap | props | 0.14x0.4x0.63 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Toilet_Bowl_Cap.SM_Toilet_Bowl_Cap\n\
+    - urinal | Urinal | props | 0.3x0.75x1.29 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/SM_Urinal.SM_Urinal\n\
+    - wardrobe_01 | Wardrobe 01 | props | 1.3x0.6x2.56 m | /Game/Abandoned_Psychiatric_Hospital/Models/Blueprints/Props/BP_Wardrobe_01.BP_Wardrobe_01_C\n\
+    - stone_01 | Stone 01 | stone | 2.25x2.22x1.48 m | /Game/Abandoned_Psychiatric_Hospital/Models/Stone/SM_Stone_01.SM_Stone_01\n\
+    - stone_02 | Stone 02 | stone | 2.23x3.0x1.12 m | /Game/Abandoned_Psychiatric_Hospital/Models/Stone/SM_Stone_02.SM_Stone_02\n\
+    - stone_03 | Stone 03 | stone | 2.13x1.69x0.84 m | /Game/Abandoned_Psychiatric_Hospital/Models/Stone/SM_Stone_03.SM_Stone_03\n\
+    - stone_04 | Stone 04 | stone | 1.0x1.12x0.04 m | /Game/Abandoned_Psychiatric_Hospital/Models/Stone/SM_Stone_04.SM_Stone_04\n\
+    - artificial_lung_ventilation | Artificial Lung Ventilation | surgery | 1.81x1.67x2.06 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Artificial_Lung_Ventilation.SM_Artificial_Lung_Ventilation\n\
+    - bit | Bit | surgery | 0.38x0.09x0.02 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Bit.SM_Bit\n\
+    - clock_03 | Clock 03 | surgery | 0.09x0.68x0.53 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Clock_03.SM_Clock_03\n\
+    - conditioner_01 | Conditioner 01 | surgery | 0.73x0.27x0.65 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Conditioner_01.SM_Conditioner_01\n\
+    - drill | Drill | surgery | 0.64x0.16x0.05 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Drill.SM_Drill\n\
+    - hammer_01 | Hammer 01 | surgery | 0.22x0.07x0.04 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Hammer_01.SM_Hammer_01\n\
+    - knife_01 | Knife 01 | surgery | 0.24x0.09x0.02 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Knife_01.SM_Knife_01\n\
+    - knife_02 | Knife 02 | surgery | 0.32x0.2x0.01 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Knife_02.SM_Knife_02\n\
+    - packaging_tablets_01 | Packaging Tablets 01 | surgery | 0.09x0.09x0.1 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Packaging_Tablets_01.SM_Packaging_Tablets_01\n\
+    - packaging_tablets_02 | Packaging Tablets 02 | surgery | 0.06x0.06x0.13 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Packaging_Tablets_02.SM_Packaging_Tablets_02\n\
+    - packaging_tablets_03 | Packaging Tablets 03 | surgery | 0.08x0.08x0.14 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Packaging_Tablets_03.SM_Packaging_Tablets_03\n\
+    - packaging_tablets_04 | Packaging Tablets 04 | surgery | 0.04x0.04x0.09 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Packaging_Tablets_04.SM_Packaging_Tablets_04\n\
+    - packaging_tablets_05 | Packaging Tablets 05 | surgery | 0.15x0.15x0.32 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Packaging_Tablets_05.SM_Packaging_Tablets_05\n\
+    - packaging_tablets_06 | Packaging Tablets 06 | surgery | 0.15x0.15x0.23 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Packaging_Tablets_06.SM_Packaging_Tablets_06\n\
+    - packaging_tablets_07 | Packaging Tablets 07 | surgery | 0.09x0.09x0.17 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Packaging_Tablets_07.SM_Packaging_Tablets_07\n\
+    - packaging_tablets_08 | Packaging Tablets 08 | surgery | 0.03x0.03x0.11 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Packaging_Tablets_08.SM_Packaging_Tablets_08\n\
+    - packaging_tablets_09 | Packaging Tablets 09 | surgery | 0.05x0.05x0.07 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Packaging_Tablets_09.SM_Packaging_Tablets_09\n\
+    - packaging_tablets_10 | Packaging Tablets 10 | surgery | 0.05x0.05x0.07 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Packaging_Tablets_10.SM_Packaging_Tablets_10\n\
+    - packaging_tablets_11 | Packaging Tablets 11 | surgery | 0.05x0.05x0.08 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Packaging_Tablets_11.SM_Packaging_Tablets_11\n\
+    - packaging_tablets_12 | Packaging Tablets 12 | surgery | 0.05x0.05x0.08 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Packaging_Tablets_12.SM_Packaging_Tablets_12\n\
+    - pills_01 | Pills 01 | surgery | 0.32x0.34x0.01 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Pills_01.SM_Pills_01\n\
+    - saw | Saw | surgery | 0.48x0.16x0.03 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Saw.SM_Saw\n\
+    - scissors | Scissors | surgery | 0.28x0.2x0.01 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Scissors.SM_Scissors\n\
+    - shelving | Shelving | surgery | 0.44x2.09x1.6 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Shelving.SM_Shelving\n\
+    - surgical_bedside_table | Surgical Bedside Table | surgery | 1.01x0.99x0.92 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Surgical_Bedside_Table.SM_Surgical_Bedside_Table\n\
+    - surgical_box_01 | Surgical Box 01 | surgery | 0.45x0.45x0.19 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Surgical_Box_01.SM_Surgical_Box_01\n\
+    - surgical_box_02 | Surgical Box 02 | surgery | 0.51x0.67x0.18 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Surgical_Box_02.SM_Surgical_Box_02\n\
+    - surgical_box_03 | Surgical Box 03 | surgery | 0.34x0.54x0.16 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Surgical_Box_03.SM_Surgical_Box_03\n\
+    - surgical_devices_01 | Surgical Devices 01 | surgery | 0.64x0.61x0.24 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Surgical_Devices_01.SM_Surgical_Devices_01\n\
+    - surgical_devices_02 | Surgical Devices 02 | surgery | 0.39x0.34x0.3 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Surgical_Devices_02.SM_Surgical_Devices_02\n\
+    - surgical_devices_03 | Surgical Devices 03 | surgery | 0.47x0.41x0.33 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Surgical_Devices_03.SM_Surgical_Devices_03\n\
+    - surgical_lamp | Surgical Lamp | surgery | 2.04x2.27x2.33 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Surgical_Lamp.SM_Surgical_Lamp\n\
+    - surgical_table_02 | Surgical Table 02 | surgery | 2.14x0.79x0.85 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Surgical_Table_02.SM_Surgical_Table_02\n\
+    - syringe_01 | Syringe 01 | surgery | 0.31x0.1x0.06 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Syringe_01.SM_Syringe_01\n\
+    - syringe_02 | Syringe 02 | surgery | 0.15x0.1x0.03 m | /Game/Abandoned_Psychiatric_Hospital/Models/Props/Surgery/SM_Syringe_02.SM_Syringe_02\n\
+    - aspen_01 | Aspen 01 | vegetation | 11.6x11.59x10.51 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Aspen_01.SM_Aspen_01\n\
+    - aspen_02 | Aspen 02 | vegetation | 7.37x7.94x7.43 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Aspen_02.SM_Aspen_02\n\
+    - aspen_03 | Aspen 03 | vegetation | 1.42x1.4x2.35 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Aspen_03.SM_Aspen_03\n\
+    - billboard_aspen_01 | Billboard Aspen 01 | vegetation | 8.65x8.63x10.69 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Billboard_Aspen_01.SM_Billboard_Aspen_01\n\
+    - billboard_aspen_02 | Billboard Aspen 02 | vegetation | 7.35x8.1x7.56 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Billboard_Aspen_02.SM_Billboard_Aspen_02\n\
+    - billboard_aspen_03 | Billboard Aspen 03 | vegetation | 1.36x1.37x2.54 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Billboard_Aspen_03.SM_Billboard_Aspen_03\n\
+    - billboard_maple_01 | Billboard Maple 01 | vegetation | 6.57x7.84x7.89 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Billboard_Maple_01.SM_Billboard_Maple_01\n\
+    - billboard_maple_02 | Billboard Maple 02 | vegetation | 2.33x2.35x4.27 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Billboard_Maple_02.SM_Billboard_Maple_02\n\
+    - bushes_01 | Bushes 01 | vegetation | 1.99x2.01x1.61 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Bushes_01.SM_Bushes_01\n\
+    - bushes_02 | Bushes 02 | vegetation | 2.32x2.42x1.92 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Bushes_02.SM_Bushes_02\n\
+    - bushes_03 | Bushes 03 | vegetation | 1.81x1.75x1.68 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Bushes_03.SM_Bushes_03\n\
+    - fern_01 | Fern 01 | vegetation | 2.18x2.29x0.72 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Fern_01.SM_Fern_01\n\
+    - fern_02 | Fern 02 | vegetation | 2.62x2.42x0.62 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Fern_02.SM_Fern_02\n\
+    - grass_01 | Grass 01 | vegetation | 1.0x1.02x0.41 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Grass_01.SM_Grass_01\n\
+    - grass_02 | Grass 02 | vegetation | 1.65x1.72x0.37 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Grass_02.SM_Grass_02\n\
+    - grass_03 | Grass 03 | vegetation | 0.8x0.81x0.91 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Grass_03.SM_Grass_03\n\
+    - grass_04 | Grass 04 | vegetation | 0.25x0.25x0.57 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Grass_04.SM_Grass_04\n\
+    - maple_01 | Maple 01 | vegetation | 6.1x7.7x7.73 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Maple_01.SM_Maple_01\n\
+    - maple_02 | Maple 02 | vegetation | 2.34x2.38x4.15 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Maple_02.SM_Maple_02\n\
+    - stump | Stump | vegetation | 0.66x0.66x2.49 m | /Game/Abandoned_Psychiatric_Hospital/Models/Vegetation/SM_Stump.SM_Stump\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
+    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
+    \ for yourself when the scene\nmatches the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+assets:
+  packs:
+  - Abandoned_Psychiatric_Hospital
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_018.bundle.json
+- name: overview_prompt_alignment

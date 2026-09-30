@@ -1,0 +1,139 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_027
+kind: scene_generation
+inputs:
+  prompt: "Create a cold-blue unfinished concrete town on a broad square platform surrounded by rough\
+    \ rocky terrain. Arrange several dozen weathered gray masonry buildings, one to four stories tall,\
+    \ around a damaged central compound with exposed framework and debris. Keep the center cramped and\
+    \ irregular, with winding gaps and open yards, and thin the buildings toward the perimeter. Use flat\
+    \ roofs, barred windows, rusty doors, sparse balconies, and wall-mounted air conditioners. Place tall\
+    \ slender concrete towers among the buildings and across the surrounding terrain. Cover the ground\
+    \ with coarse gravel and exclude marked roads, pavements, vegetation, vehicles, and people. Use low\
+    \ harsh sunlight, long shadows, and a pale hazy sky.\n\n=== ASSET PALETTE ===\nBuild this scene using\
+    \ ONLY the assets below — asset search is not available\nin this run, so this list is your entire\
+    \ library. Format:\n\n  id | name | category | width x depth x height (m) | spawn path\n\nThe id is\
+    \ what a scene graph refers to; the spawn path is what reaches UE.\nYou decide which to use, how many\
+    \ of each, and where they go — reuse entries\nfreely.\n\n- aircon01 | Aircon01 | meshes | 0.5x0.83x0.8\
+    \ m | /Game/BattlegroundKit/Meshes/SM_Aircon01.SM_Aircon01\n- aircon02 | Aircon02 | meshes | 0.37x0.58x0.83\
+    \ m | /Game/BattlegroundKit/Meshes/SM_Aircon02.SM_Aircon02\n- aircon03 | Aircon03 | meshes | 0.5x0.05x0.49\
+    \ m | /Game/BattlegroundKit/Meshes/SM_Aircon03.SM_Aircon03\n- antena01 | Antena01 | meshes | 1.62x0.46x1.72\
+    \ m | /Game/BattlegroundKit/Meshes/SM_Antena01.SM_Antena01\n- antena02 | Antena02 | meshes | 1.62x0.63x2.12\
+    \ m | /Game/BattlegroundKit/Meshes/SM_Antena02.SM_Antena02\n- background_building01 | Background Building01\
+    \ | meshes | 10.11x7.65x9.7 m | /Game/BattlegroundKit/Meshes/SM_BackgroundBuilding01.SM_BackgroundBuilding01\n\
+    - barrel01 | Barrel01 | meshes | 0.52x0.52x0.79 m | /Game/BattlegroundKit/Meshes/SM_Barrel01.SM_Barrel01\n\
+    - barrel02 | Barrel02 | meshes | 1.08x1.09x0.79 m | /Game/BattlegroundKit/Meshes/SM_Barrel02.SM_Barrel02\n\
+    - base_floor3m | Base Floor3m | meshes | 3.0x3.0x0.2 m | /Game/BattlegroundKit/Meshes/SM_BaseFloor3m.SM_BaseFloor3m\n\
+    - border_wall01 | Border Wall01 | meshes | 0.65x4.0x0.89 m | /Game/BattlegroundKit/Meshes/SM_BorderWall01.SM_BorderWall01\n\
+    - border_wall_brick01 | Border Wall Brick01 | meshes | 0.43x0.73x0.17 m | /Game/BattlegroundKit/Meshes/SM_BorderWallBrick01.SM_BorderWallBrick01\n\
+    - border_wall_brick02 | Border Wall Brick02 | meshes | 0.45x0.43x0.26 m | /Game/BattlegroundKit/Meshes/SM_BorderWallBrick02.SM_BorderWallBrick02\n\
+    - burned_car01 | Burned Car01 | meshes | 5.94x7.54x2.08 m | /Game/BattlegroundKit/Meshes/SM_BurnedCar01.SM_BurnedCar01\n\
+    - burned_car05 | Burned Car05 | meshes | 2.08x2.71x0.72 m | /Game/BattlegroundKit/Meshes/SM_BurnedCar05.SM_BurnedCar05\n\
+    - cable01 | Cable01 | meshes | 14.07x9.62x2.84 m | /Game/BattlegroundKit/Meshes/SM_Cable01.SM_Cable01\n\
+    - cable02 | Cable02 | meshes | 14.13x9.7x3.33 m | /Game/BattlegroundKit/Meshes/SM_Cable02.SM_Cable02\n\
+    - cable03 | Cable03 | meshes | 2.26x1.3x2.72 m | /Game/BattlegroundKit/Meshes/SM_Cable03.SM_Cable03\n\
+    - concrete_stairs01 | Concrete Stairs01 | meshes | 3.01x2.0x1.53 m | /Game/BattlegroundKit/Meshes/SM_ConcreteStairs01.SM_ConcreteStairs01\n\
+    - concrete_wall_tiles01 | Concrete Wall Tiles01 | meshes | 3.03x0.27x3.01 m | /Game/BattlegroundKit/Meshes/SM_ConcreteWallTiles01.SM_ConcreteWallTiles01\n\
+    - concrete_wall_tiles02 | Concrete Wall Tiles02 | meshes | 3.03x0.28x3.01 m | /Game/BattlegroundKit/Meshes/SM_ConcreteWallTiles02.SM_ConcreteWallTiles02\n\
+    - debris01 | Debris01 | meshes | 2.02x1.31x0.26 m | /Game/BattlegroundKit/Meshes/SM_Debris01.SM_Debris01\n\
+    - debris_pile01 | Debris Pile01 | meshes | 6.31x4.46x0.76 m | /Game/BattlegroundKit/Meshes/SM_DebrisPile01.SM_DebrisPile01\n\
+    - debris_pile02 | Debris Pile02 | meshes | 2.39x2.22x0.24 m | /Game/BattlegroundKit/Meshes/SM_DebrisPile02.SM_DebrisPile02\n\
+    - debris_pile03 | Debris Pile03 | meshes | 2.19x1.84x0.19 m | /Game/BattlegroundKit/Meshes/SM_DebrisPile03.SM_DebrisPile03\n\
+    - debris_pile04 | Debris Pile04 | meshes | 0.14x0.3x0.09 m | /Game/BattlegroundKit/Meshes/SM_DebrisPile04.SM_DebrisPile04\n\
+    - debris_pile05 | Debris Pile05 | meshes | 0.1x0.2x0.08 m | /Game/BattlegroundKit/Meshes/SM_DebrisPile05.SM_DebrisPile05\n\
+    - debris_pile07 | Debris Pile07 | meshes | 0.55x0.54x0.02 m | /Game/BattlegroundKit/Meshes/SM_DebrisPile07.SM_DebrisPile07\n\
+    - debris_pile08 | Debris Pile08 | meshes | 2.0x1.28x0.12 m | /Game/BattlegroundKit/Meshes/SM_DebrisPile08.SM_DebrisPile08\n\
+    - door_frame | Door Frame | meshes | 0.25x3.0x3.0 m | /Game/BattlegroundKit/Meshes/SM_DoorFrame.SM_DoorFrame\n\
+    - door_frame03 | Door Frame03 | meshes | 0.13x1.41x2.16 m | /Game/BattlegroundKit/Meshes/SM_DoorFrame03.SM_DoorFrame03\n\
+    - fabric01 | Fabric01 | meshes | 0.34x1.56x1.83 m | /Game/BattlegroundKit/Meshes/SM_Fabric01.SM_Fabric01\n\
+    - fabric02 | Fabric02 | meshes | 1.19x1.17x0.64 m | /Game/BattlegroundKit/Meshes/SM_Fabric02.SM_Fabric02\n\
+    - fabric03 | Fabric03 | meshes | 1.29x1.23x0.81 m | /Game/BattlegroundKit/Meshes/SM_Fabric03.SM_Fabric03\n\
+    - fabric_carpet01 | Fabric Carpet01 | meshes | 4.39x5.5x0.1 m | /Game/BattlegroundKit/Meshes/SM_FabricCarpet01.SM_FabricCarpet01\n\
+    - floor01 | FLoor01 | meshes | 3.0x3.0x0.21 m | /Game/BattlegroundKit/Meshes/SM_FLoor01.SM_FLoor01\n\
+    - floor_cable01 | Floor Cable01 | meshes | 3.02x1.66x0.08 m | /Game/BattlegroundKit/Meshes/SM_FloorCable01.SM_FloorCable01\n\
+    - floor_cable02 | Floor Cable02 | meshes | 3.66x1.03x0.08 m | /Game/BattlegroundKit/Meshes/SM_FloorCable02.SM_FloorCable02\n\
+    - floor_cable03 | Floor Cable03 | meshes | 2.68x1.7x0.06 m | /Game/BattlegroundKit/Meshes/SM_FloorCable03.SM_FloorCable03\n\
+    - furniture01 | Furniture01 | meshes | 0.7x0.7x1.19 m | /Game/BattlegroundKit/Meshes/SM_Furniture01.SM_Furniture01\n\
+    - furniture02 | Furniture02 | meshes | 0.48x0.48x0.12 m | /Game/BattlegroundKit/Meshes/SM_Furniture02.SM_Furniture02\n\
+    - furniture03 | Furniture03 | meshes | 0.5x0.5x0.97 m | /Game/BattlegroundKit/Meshes/SM_Furniture03.SM_Furniture03\n\
+    - furniture04 | Furniture04 | meshes | 0.58x0.58x0.06 m | /Game/BattlegroundKit/Meshes/SM_Furniture04.SM_Furniture04\n\
+    - furniture05 | Furniture05 | meshes | 1.22x1.22x0.21 m | /Game/BattlegroundKit/Meshes/SM_Furniture05.SM_Furniture05\n\
+    - furniture06 | Furniture06 | meshes | 0.64x0.64x0.13 m | /Game/BattlegroundKit/Meshes/SM_Furniture06.SM_Furniture06\n\
+    - fusebox01 | Fusebox01 | meshes | 0.13x0.37x0.38 m | /Game/BattlegroundKit/Meshes/SM_Fusebox01.SM_Fusebox01\n\
+    - fusebox02 | Fusebox02 | meshes | 0.1x0.22x0.23 m | /Game/BattlegroundKit/Meshes/SM_Fusebox02.SM_Fusebox02\n\
+    - gate01 | Gate01 | meshes | 3.11x0.85x3.78 m | /Game/BattlegroundKit/Meshes/SM_Gate01.SM_Gate01\n\
+    - gate02 | Gate02 | meshes | 1.3x3.22x3.48 m | /Game/BattlegroundKit/Meshes/SM_Gate02.SM_Gate02\n\
+    - gate03 | Gate03 | meshes | 0.38x3.01x0.95 m | /Game/BattlegroundKit/Meshes/SM_Gate03.SM_Gate03\n\
+    - ground_tiles01 | Ground Tiles01 | meshes | 3.0x3.0x0.1 m | /Game/BattlegroundKit/Meshes/SM_GroundTiles01.SM_GroundTiles01\n\
+    - ground_tiles02 | Ground Tiles02 | meshes | 3.0x3.0x0.1 m | /Game/BattlegroundKit/Meshes/SM_GroundTiles02.SM_GroundTiles02\n\
+    - ground_tiles03 | Ground Tiles03 | meshes | 3.33x3.32x0.22 m | /Game/BattlegroundKit/Meshes/SM_GroundTiles03.SM_GroundTiles03\n\
+    - light_bulb01 | Light Bulb01 | meshes | 0.39x0.64x0.42 m | /Game/BattlegroundKit/Meshes/SM_LightBulb01.SM_LightBulb01\n\
+    - light_bulb02 | Light Bulb02 | meshes | 0.17x0.17x0.28 m | /Game/BattlegroundKit/Meshes/SM_LightBulb02.SM_LightBulb02\n\
+    - light_post01 | Light Post01 | meshes | 3.39x1.99x9.97 m | /Game/BattlegroundKit/Meshes/SM_LightPost01.SM_LightPost01\n\
+    - light_post03 | Light Post03 | meshes | 3.16x2.26x9.88 m | /Game/BattlegroundKit/Meshes/SM_LightPost03.SM_LightPost03\n\
+    - ornament_wall01 | Ornament Wall01 | meshes | 0.02x1.55x1.27 m | /Game/BattlegroundKit/Meshes/SM_OrnamentWall01.SM_OrnamentWall01\n\
+    - pallette01 | Pallette01 | meshes | 0.88x1.0x0.16 m | /Game/BattlegroundKit/Meshes/SM_Pallette01.SM_Pallette01\n\
+    - pallette02 | Pallette02 | meshes | 0.82x0.88x0.82 m | /Game/BattlegroundKit/Meshes/SM_Pallette02.SM_Pallette02\n\
+    - pallette03 | Pallette03 | meshes | 0.82x0.88x0.82 m | /Game/BattlegroundKit/Meshes/SM_Pallette03.SM_Pallette03\n\
+    - pavement_border01 | Pavement Border01 | meshes | 0.37x4.0x0.15 m | /Game/BattlegroundKit/Meshes/SM_PavementBorder01.SM_PavementBorder01\n\
+    - pavement_border02 | Pavement Border02 | meshes | 0.32x2.0x0.15 m | /Game/BattlegroundKit/Meshes/SM_PavementBorder02.SM_PavementBorder02\n\
+    - pavement_border03 | Pavement Border03 | meshes | 0.46x2.02x0.25 m | /Game/BattlegroundKit/Meshes/SM_PavementBorder03.SM_PavementBorder03\n\
+    - pillar01 | Pillar01 | meshes | 0.97x0.91x4.0 m | /Game/BattlegroundKit/Meshes/SM_Pillar01.SM_Pillar01\n\
+    - pillar02 | Pillar02 | meshes | 0.76x0.66x3.33 m | /Game/BattlegroundKit/Meshes/SM_Pillar02.SM_Pillar02\n\
+    - pillar03 | Pillar03 | meshes | 1.26x1.26x4.81 m | /Game/BattlegroundKit/Meshes/SM_Pillar03.SM_Pillar03\n\
+    - sandbags01 | Sandbags01 | meshes | 1.0x4.94x1.61 m | /Game/BattlegroundKit/Meshes/SM_Sandbags01.SM_Sandbags01\n\
+    - sandbags02 | Sandbags02 | meshes | 2.7x2.75x1.43 m | /Game/BattlegroundKit/Meshes/SM_Sandbags02.SM_Sandbags02\n\
+    - sandbags03 | Sandbags03 | meshes | 1.47x1.15x0.26 m | /Game/BattlegroundKit/Meshes/SM_Sandbags03.SM_Sandbags03\n\
+    - sandbags04 | Sandbags04 | meshes | 1.53x0.85x0.2 m | /Game/BattlegroundKit/Meshes/SM_Sandbags04.SM_Sandbags04\n\
+    - shopfront01 | Shopfront01 | meshes | 0.79x1.4x1.46 m | /Game/BattlegroundKit/Meshes/SM_Shopfront01.SM_Shopfront01\n\
+    - shopfront02 | Shopfront02 | meshes | 1.36x0.54x1.69 m | /Game/BattlegroundKit/Meshes/SM_Shopfront02.SM_Shopfront02\n\
+    - shopfront03 | Shopfront03 | meshes | 0.32x2.6x0.86 m | /Game/BattlegroundKit/Meshes/SM_Shopfront03.SM_Shopfront03\n\
+    - tower01 | Tower01 | meshes | 4.07x4.07x15.28 m | /Game/BattlegroundKit/Meshes/SM_Tower01.SM_Tower01\n\
+    - tower02 | Tower02 | meshes | 3.61x3.61x4.2 m | /Game/BattlegroundKit/Meshes/SM_Tower02.SM_Tower02\n\
+    - tower03 | Tower03 | meshes | 2.44x2.44x6.65 m | /Game/BattlegroundKit/Meshes/SM_Tower03.SM_Tower03\n\
+    - wall_bricks01 | Wall Bricks01 | meshes | 0.21x2.01x0.98 m | /Game/BattlegroundKit/Meshes/SM_WallBricks01.SM_WallBricks01\n\
+    - wall_cable01 | Wall Cable01 | meshes | 0.06x0.14x2.0 m | /Game/BattlegroundKit/Meshes/SM_WallCable01.SM_WallCable01\n\
+    - wall_cable02 | Wall Cable02 | meshes | 0.06x1.0x1.0 m | /Game/BattlegroundKit/Meshes/SM_WallCable02.SM_WallCable02\n\
+    - wall_decal01 | Wall Decal01 | meshes | 2.7x0.01x3.15 m | /Game/BattlegroundKit/Meshes/SM_WallDecal01.SM_WallDecal01\n\
+    - wall_decal02 | Wall Decal02 | meshes | 0.0x2.11x2.54 m | /Game/BattlegroundKit/Meshes/SM_WallDecal02.SM_WallDecal02\n\
+    - wall_decal03 | Wall Decal03 | meshes | 0.0x2.26x1.78 m | /Game/BattlegroundKit/Meshes/SM_WallDecal03.SM_WallDecal03\n\
+    - wall_decal04 | Wall Decal04 | meshes | 1.62x0.0x1.97 m | /Game/BattlegroundKit/Meshes/SM_WallDecal04.SM_WallDecal04\n\
+    - wall_decal_corner01 | Wall Decal Corner01 | meshes | 0.34x0.26x2.89 m | /Game/BattlegroundKit/Meshes/SM_WallDecalCorner01.SM_WallDecalCorner01\n\
+    - wall_decal_corner02 | Wall Decal Corner02 | meshes | 0.27x0.26x2.93 m | /Game/BattlegroundKit/Meshes/SM_WallDecalCorner02.SM_WallDecalCorner02\n\
+    - wall_decal_corner03 | Wall Decal Corner03 | meshes | 0.22x0.07x2.89 m | /Game/BattlegroundKit/Meshes/SM_WallDecalCorner03.SM_WallDecalCorner03\n\
+    - wall_decal_corner04 | Wall Decal Corner04 | meshes | 0.45x0.32x2.89 m | /Game/BattlegroundKit/Meshes/SM_WallDecalCorner04.SM_WallDecalCorner04\n\
+    - wall_tiles01 | Wall Tiles01 | meshes | 0.03x1.0x1.0 m | /Game/BattlegroundKit/Meshes/SM_WallTiles01.SM_WallTiles01\n\
+    - wall_tiles02 | Wall Tiles02 | meshes | 0.03x1.0x1.0 m | /Game/BattlegroundKit/Meshes/SM_WallTiles02.SM_WallTiles02\n\
+    - wall_tiles03 | Wall Tiles03 | meshes | 0.15x1.64x0.52 m | /Game/BattlegroundKit/Meshes/SM_WallTiles03.SM_WallTiles03\n\
+    - window_shuttered01 | Window Shuttered01 | meshes | 0.07x1.14x1.43 m | /Game/BattlegroundKit/Meshes/SM_WindowShuttered01.SM_WindowShuttered01\n\
+    - window_wall | Window Wall | meshes | 3.0x0.26x3.0 m | /Game/BattlegroundKit/Meshes/SM_WindowWall.SM_WindowWall\n\
+    - windows01 | Windows01 | meshes | 0.33x2.73x3.3 m | /Game/BattlegroundKit/Meshes/SM_Windows01.SM_Windows01\n\
+    - windows_rail01 | Windows Rail01 | meshes | 0.19x2.64x0.77 m | /Game/BattlegroundKit/Meshes/SM_WindowsRail01.SM_WindowsRail01\n\
+    - wood01 | Wood01 | meshes | 1.21x0.96x2.01 m | /Game/BattlegroundKit/Meshes/SM_Wood01.SM_Wood01\n\
+    - wood02 | Wood02 | meshes | 0.14x2.55x0.08 m | /Game/BattlegroundKit/Meshes/SM_Wood02.SM_Wood02\n\
+    - wood03 | Wood03 | meshes | 2.07x1.34x0.04 m | /Game/BattlegroundKit/Meshes/SM_Wood03.SM_Wood03\n\
+    - wood04 | Wood04 | meshes | 0.29x0.31x2.27 m | /Game/BattlegroundKit/Meshes/SM_Wood04.SM_Wood04\n\
+    - wood05 | Wood05 | meshes | 2.29x0.35x2.91 m | /Game/BattlegroundKit/Meshes/SM_Wood05.SM_Wood05\n\
+    - wooden_crate01 | Wooden Crate01 | meshes | 1.0x1.01x1.0 m | /Game/BattlegroundKit/Meshes/SM_WoodenCrate01.SM_WoodenCrate01\n\
+    - wooden_crate02 | Wooden Crate02 | meshes | 1.0x1.01x1.0 m | /Game/BattlegroundKit/Meshes/SM_WoodenCrate02.SM_WoodenCrate02\n\
+    - wooden_door01 | Wooden Door01 | meshes | 0.11x1.32x1.91 m | /Game/BattlegroundKit/Meshes/SM_WoodenDoor01.SM_WoodenDoor01\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
+    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
+    \ for yourself when the scene\nmatches the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_027.bundle.json
+- name: overview_prompt_alignment
+assets:
+  packs:
+  - BattlegroundKit

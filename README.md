@@ -109,8 +109,7 @@ next to the evaluator's scores.
 
 ## What's in this repository
 
-This repository currently includes **20 Text-to-Scene and 75 Image-to-Scene task definitions**. The release target is **139 + 152**;
-the remaining **21 + 8** benchmark tasks are in preparation.
+This repository currently includes **129 Text-to-Scene and 72 Image-to-Scene task definitions**; more tasks are in preparation.
 
 | | |
 |---|---|

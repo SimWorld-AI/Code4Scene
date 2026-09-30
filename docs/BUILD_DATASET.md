@@ -1,7 +1,7 @@
 # Building the Code4Scene public dataset
 
-The public set is 95 cases: text-to-scene construction, indoor image-to-scene
-editing and outdoor image-to-scene editing. Its levels are built from
+The public set is 201 cases: 129 text-to-scene construction, 22 indoor
+image-to-scene editing and 50 outdoor image-to-scene editing. Its levels are built from
 third-party Unreal Engine content packs, which this repository does not
 redistribute. You download the packs from Fab yourself, then run the dataset
 builder, which rebuilds on a stock Unreal Engine 5.8 editor:

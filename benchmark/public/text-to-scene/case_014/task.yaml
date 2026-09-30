@@ -1,0 +1,204 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_014
+kind: scene_generation
+inputs:
+  prompt: "Build me a compact, sunlit New York City brownstone block centered on two narrow asphalt streets\
+    \ meeting at a right-angle intersection. Line concrete curbs and sidewalks with roughly fifteen tightly\
+    \ spaced three- to five-story row houses and small apartment buildings, creating a nearly continuous\
+    \ street wall with slight variations in height and setback. Use predominantly weathered red brick,\
+    \ with occasional brownstone and pale stone façades, dark-painted trim, flat parapet roofs, and a\
+    \ few mansard or stepped-gable profiles. Detail the buildings with repetitive sash windows, shutters,\
+    \ projecting bays, cornices, window air conditioners, fire escapes, basement openings, and raised\
+    \ stoops enclosed by ornate black iron railings. Add mature leafy street trees in guards, small planted\
+    \ front areas, benches, and American flags. Mark the roads with crosswalks, dashed lane lines, manholes,\
+    \ and scattered fallen leaves. Include curved streetlamps, blue mailboxes, hydrants, refuse bins,\
+    \ street signs, a yellow taxi, a van, and a dark sedan. Use bright midday sunlight, strong tree shadows,\
+    \ and light atmospheric haze.\n\n    === GROUND ===\n    Build the FLOOR FIRST, before placing anything\
+    \ else. Call the benchmark\n    tool `ground_pass` as your first build action: it carpets the whole\
+    \ 200 m\n    plate deterministically from a tile chosen for this scene. If you skip it,\n    and do\
+    \ not tile a floor yourself, the scene renders as objects floating\n    over empty space -- which\
+    \ is a failed reconstruction no matter how good\n    the massing is. These palette entries are also\
+    \ flat surfaces you can tile\n    by hand if you prefer:\n\n      - SM_Road_Marking_02 | 2.9x6.6x0.00\
+    \ m | /Game/Street_NY/Models/Street/SM_Road_Marking_02.SM_Road_Marking_02\n      - SM_Sidewalk_02\
+    \ | 4.0x2.0x0.00 m | /Game/Street_NY/Models/Street/SM_Sidewalk_02.SM_Sidewalk_02\n\n=== ASSET PALETTE\
+    \ ===\nBuild this scene using ONLY the assets below — asset search is not available\nin this run,\
+    \ so this list is your entire library. Format:\n\n  id | name | category | width x depth x height\
+    \ (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches UE.\n\
+    You decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n- minivan_01_blueprint\
+    \ | Minivan 01 Blueprint | blueprint | 4.91x2.34x1.91 m | /Game/Street_NY/Models/Blueprint/BP_Minivan_01_Blueprint.BP_Minivan_01_Blueprint_C\n\
+    - minivan_builders_blueprint | Minivan Builders Blueprint | blueprint | 4.91x2.34x1.89 m | /Game/Street_NY/Models/Blueprint/BP_Minivan_Builders_Blueprint.BP_Minivan_Builders_Blueprint_C\n\
+    - sedan_taxi_blueprint | Sedan Taxi Blueprint | blueprint | 5.37x2.21x1.65 m | /Game/Street_NY/Models/Blueprint/BP_Sedan_Taxi_Blueprint.BP_Sedan_Taxi_Blueprint_C\n\
+    - sedan_victoria_blueprint | Sedan Victoria Blueprint | blueprint | 5.46x2.34x1.64 m | /Game/Street_NY/Models/Blueprint/BP_Sedan_Victoria_Blueprint.BP_Sedan_Victoria_Blueprint_C\n\
+    - door_animation | Door Animation | blueprint_house | 1.82x1.68x2.68 m | /Game/Street_NY/Models/Blueprint_House/BP_Door_Animation.BP_Door_Animation_C\n\
+    - house_01_door_01_f | House 01 Door 01 F | blueprint_house | 1.82x1.68x2.72 m | /Game/Street_NY/Models/Blueprint_House/BP_House_01_Door_01F.BP_House_01_Door_01F_C\n\
+    - house_02_door_f | House 02 Door F | blueprint_house | 1.82x1.68x2.58 m | /Game/Street_NY/Models/Blueprint_House/BP_House_02_DoorF.BP_House_02_DoorF_C\n\
+    - house_03_door_01_f | House 03 Door 01 F | blueprint_house | 1.82x1.68x2.75 m | /Game/Street_NY/Models/Blueprint_House/BP_House_03_Door_01F.BP_House_03_Door_01F_C\n\
+    - house_04_door_01_f | House 04 Door 01 F | blueprint_house | 1.82x1.68x2.93 m | /Game/Street_NY/Models/Blueprint_House/BP_House_04_Door_01F.BP_House_04_Door_01F_C\n\
+    - house_04_door_02_f | House 04 Door 02 F | blueprint_house | 1.82x1.68x2.93 m | /Game/Street_NY/Models/Blueprint_House/BP_House_04_Door_02F.BP_House_04_Door_02F_C\n\
+    - house_05_door_f | House 05 Door F | blueprint_house | 1.82x1.68x2.48 m | /Game/Street_NY/Models/Blueprint_House/BP_House_05_DoorF.BP_House_05_DoorF_C\n\
+    - house_06_door_f | House 06 Door F | blueprint_house | 1.82x1.68x2.58 m | /Game/Street_NY/Models/Blueprint_House/BP_House_06_DoorF.BP_House_06_DoorF_C\n\
+    - inner_door_01_f | Inner Door 01 F | blueprint_house | 1.68x1.82x2.45 m | /Game/Street_NY/Models/Blueprint_House/BP_Inner_Door_01F.BP_Inner_Door_01F_C\n\
+    - inner_door_02_f | Inner Door 02 F | blueprint_house | 1.82x1.68x2.45 m | /Game/Street_NY/Models/Blueprint_House/BP_Inner_Door_02F.BP_Inner_Door_02F_C\n\
+    - inner_door_03_f | Inner Door 03 F | blueprint_house | 1.68x1.82x2.46 m | /Game/Street_NY/Models/Blueprint_House/BP_Inner_Door_03F.BP_Inner_Door_03F_C\n\
+    - inner_door_04_f | Inner Door 04 F | blueprint_house | 1.82x1.68x2.46 m | /Game/Street_NY/Models/Blueprint_House/BP_Inner_Door_04F.BP_Inner_Door_04F_C\n\
+    - porch_05_door_f | Porch 05 Door F | blueprint_house | 1.82x1.68x2.7 m | /Game/Street_NY/Models/Blueprint_House/BP_Porch_05_DoorF.BP_Porch_05_DoorF_C\n\
+    - bay_window_01 | Bay Window 01 | house | 1.24x2.72x3.25 m | /Game/Street_NY/Models/House/SM_Bay_Window_01.SM_Bay_Window_01\n\
+    - bay_window_02 | Bay Window 02 | house | 2.8x0.99x2.86 m | /Game/Street_NY/Models/House/SM_Bay_Window_02.SM_Bay_Window_02\n\
+    - bay_window_03 | Bay Window 03 | house | 2.34x0.9x2.73 m | /Game/Street_NY/Models/House/SM_Bay_Window_03.SM_Bay_Window_03\n\
+    - garage_01 | Garage 01 | house | 9.05x6.1x3.08 m | /Game/Street_NY/Models/House/SM_Garage_01.SM_Garage_01\n\
+    - scaffolding_01 | Scaffolding 01 | house | 4.0x3.5x3.5 m | /Game/Street_NY/Models/House/SM_Scaffolding_01.SM_Scaffolding_01\n\
+    - scaffolding_02 | Scaffolding 02 | house | 4.46x2.23x3.0 m | /Game/Street_NY/Models/House/SM_Scaffolding_02.SM_Scaffolding_02\n\
+    - house_01 | House 01 | house_optimization | 8.66x12.66x13.01 m | /Game/Street_NY/Models/House_Optimization/SM_House_01.SM_House_01\n\
+    - house_02 | House 02 | house_optimization | 8.33x13.5x16.46 m | /Game/Street_NY/Models/House_Optimization/SM_House_02.SM_House_02\n\
+    - house_03 | House 03 | house_optimization | 6.09x14.18x10.75 m | /Game/Street_NY/Models/House_Optimization/SM_House_03.SM_House_03\n\
+    - house_04 | House 04 | house_optimization | 8.0x13.71x14.01 m | /Game/Street_NY/Models/House_Optimization/SM_House_04.SM_House_04\n\
+    - house_05 | House 05 | house_optimization | 12.18x13.33x16.56 m | /Game/Street_NY/Models/House_Optimization/SM_House_05.SM_House_05\n\
+    - house_06 | House 06 | house_optimization | 12.31x14.01x11.67 m | /Game/Street_NY/Models/House_Optimization/SM_House_06.SM_House_06\n\
+    - house_07 | House 07 | house_optimization | 10.52x9.79x14.07 m | /Game/Street_NY/Models/House_Optimization/SM_House_07.SM_House_07\n\
+    - house_08 | House 08 | house_optimization | 8.98x12.0x12.02 m | /Game/Street_NY/Models/House_Optimization/SM_House_08.SM_House_08\n\
+    - house_09 | House 09 | house_optimization | 8.66x8.66x15.96 m | /Game/Street_NY/Models/House_Optimization/SM_House_09.SM_House_09\n\
+    - house_10 | House 10 | house_optimization | 8.62x9.79x14.67 m | /Game/Street_NY/Models/House_Optimization/SM_House_10.SM_House_10\n\
+    - house_12 | House 12 | house_optimization | 12.72x14.55x15.0 m | /Game/Street_NY/Models/House_Optimization/SM_House_12.SM_House_12\n\
+    - house_13 | House 13 | house_optimization | 8.0x8.93x10.17 m | /Game/Street_NY/Models/House_Optimization/SM_House_13.SM_House_13\n\
+    - house_14 | House 14 | house_optimization | 8.24x9.57x10.63 m | /Game/Street_NY/Models/House_Optimization/SM_House_14.SM_House_14\n\
+    - house_15 | House 15 | house_optimization | 12.66x8.66x12.96 m | /Game/Street_NY/Models/House_Optimization/SM_House_15.SM_House_15\n\
+    - house_16 | House 16 | house_optimization | 8.15x9.5x13.5 m | /Game/Street_NY/Models/House_Optimization/SM_House_16.SM_House_16\n\
+    - house_17 | House 17 | house_optimization | 8.42x12.86x14.0 m | /Game/Street_NY/Models/House_Optimization/SM_House_17.SM_House_17\n\
+    - house_18 | House 18 | house_optimization | 11.34x10.79x13.02 m | /Game/Street_NY/Models/House_Optimization/SM_House_18.SM_House_18\n\
+    - house_19 | House 19 | house_optimization | 21.09x11.04x15.0 m | /Game/Street_NY/Models/House_Optimization/SM_House_19.SM_House_19\n\
+    - aspen_01 | Aspen 01 | plants | 4.98x4.91x6.31 m | /Game/Street_NY/Models/Plants/SM_Aspen_01.SM_Aspen_01\n\
+    - aspen_02 | Aspen 02 | plants | 4.73x5.1x4.77 m | /Game/Street_NY/Models/Plants/SM_Aspen_02.SM_Aspen_02\n\
+    - aspen_03 | Aspen 03 | plants | 1.42x1.4x2.35 m | /Game/Street_NY/Models/Plants/SM_Aspen_03.SM_Aspen_03\n\
+    - bushes_01 | Bushes 01 | plants | 1.08x1.1x1.03 m | /Game/Street_NY/Models/Plants/SM_Bushes_01.SM_Bushes_01\n\
+    - bushes_02 | Bushes 02 | plants | 2.23x2.02x1.46 m | /Game/Street_NY/Models/Plants/SM_Bushes_02.SM_Bushes_02\n\
+    - bushes_03 | Bushes 03 | plants | 0.82x0.84x0.96 m | /Game/Street_NY/Models/Plants/SM_Bushes_03.SM_Bushes_03\n\
+    - fern | Fern | plants | 1.31x1.25x0.73 m | /Game/Street_NY/Models/Plants/SM_Fern.SM_Fern\n- grass_01\
+    \ | Grass 01 | plants | 1.15x0.69x0.53 m | /Game/Street_NY/Models/Plants/SM_Grass_01.SM_Grass_01\n\
+    - grass_02 | Grass 02 | plants | 0.77x0.9x0.53 m | /Game/Street_NY/Models/Plants/SM_Grass_02.SM_Grass_02\n\
+    - maple_01 | Maple 01 | plants | 6.1x7.7x7.73 m | /Game/Street_NY/Models/Plants/SM_Maple_01.SM_Maple_01\n\
+    - maple_02 | Maple 02 | plants | 1.95x1.99x3.46 m | /Game/Street_NY/Models/Plants/SM_Maple_02.SM_Maple_02\n\
+    - stump | Stump | plants | 0.66x0.66x2.49 m | /Game/Street_NY/Models/Plants/SM_Stump.SM_Stump\n- balcony_pot_01\
+    \ | Balcony Pot 01 | props | 0.9x0.22x0.39 m | /Game/Street_NY/Models/Props/SM_Balcony_Pot_01.SM_Balcony_Pot_01\n\
+    - balcony_pot_02 | Balcony Pot 02 | props | 0.24x1.01x0.59 m | /Game/Street_NY/Models/Props/SM_Balcony_Pot_02.SM_Balcony_Pot_02\n\
+    - balcony_pot_03 | Balcony Pot 03 | props | 1.06x0.26x0.42 m | /Game/Street_NY/Models/Props/SM_Balcony_Pot_03.SM_Balcony_Pot_03\n\
+    - bench_01 | Bench 01 | props | 0.6x2.09x0.95 m | /Game/Street_NY/Models/Props/SM_Bench_01.SM_Bench_01\n\
+    - bowl_01 | Bowl 01 | props | 0.16x0.18x0.08 m | /Game/Street_NY/Models/Props/SM_Bowl_01.SM_Bowl_01\n\
+    - bowl_02 | Bowl 02 | props | 0.16x0.18x0.08 m | /Game/Street_NY/Models/Props/SM_Bowl_02.SM_Bowl_02\n\
+    - bread_01 | Bread 01 | props | 0.16x0.43x0.16 m | /Game/Street_NY/Models/Props/SM_Bread_01.SM_Bread_01\n\
+    - bread_02 | Bread 02 | props | 0.13x0.28x0.11 m | /Game/Street_NY/Models/Props/SM_Bread_02.SM_Bread_02\n\
+    - bread_03 | Bread 03 | props | 0.33x0.31x0.16 m | /Game/Street_NY/Models/Props/SM_Bread_03.SM_Bread_03\n\
+    - buns_01 | Buns 01 | props | 0.21x0.2x0.04 m | /Game/Street_NY/Models/Props/SM_Buns_01.SM_Buns_01\n\
+    - cardboard_box_01 | Cardboard Box 01 | props | 0.4x0.59x0.36 m | /Game/Street_NY/Models/Props/SM_Cardboard_Box_01.SM_Cardboard_Box_01\n\
+    - cash_register_machine | Cash Register Machine | props | 0.68x0.61x0.61 m | /Game/Street_NY/Models/Props/SM_Cash_Register_Machine.SM_Cash_Register_Machine\n\
+    - chair_01 | Chair 01 | props | 0.68x0.52x1.1 m | /Game/Street_NY/Models/Props/SM_Chair_01.SM_Chair_01\n\
+    - coffee_machine | Coffee Machine | props | 0.72x0.73x0.47 m | /Game/Street_NY/Models/Props/SM_Coffee_Machine.SM_Coffee_Machine\n\
+    - column_01 | Column 01 | props | 0.15x0.15x0.65 m | /Game/Street_NY/Models/Props/SM_Column_01.SM_Column_01\n\
+    - conditioner_01 | Conditioner 01 | props | 0.57x0.53x0.77 m | /Game/Street_NY/Models/Props/SM_Conditioner_01.SM_Conditioner_01\n\
+    - conditioner_02 | Conditioner 02 | props | 0.52x0.53x0.55 m | /Game/Street_NY/Models/Props/SM_Conditioner_02.SM_Conditioner_02\n\
+    - construction_bag | Construction Bag | props | 0.98x0.76x0.44 m | /Game/Street_NY/Models/Props/SM_Construction_Bag.SM_Construction_Bag\n\
+    - construction_level | Construction Level | props | 1.04x0.08x0.58 m | /Game/Street_NY/Models/Props/SM_Construction_Level.SM_Construction_Level\n\
+    - croissant | Croissant | props | 0.25x0.2x0.03 m | /Game/Street_NY/Models/Props/SM_Croissant.SM_Croissant\n\
+    - flag | Flag | props | 0.88x1.74x2.08 m | /Game/Street_NY/Models/Props/SM_Flag.SM_Flag\n- garbage_bag_01\
+    \ | Garbage Bag 01 | props | 0.74x0.49x0.58 m | /Game/Street_NY/Models/Props/SM_Garbage_Bag_01.SM_Garbage_Bag_01\n\
+    - garbage_bag_02 | Garbage Bag 02 | props | 0.8x0.75x0.41 m | /Game/Street_NY/Models/Props/SM_Garbage_Bag_02.SM_Garbage_Bag_02\n\
+    - garbage_can_01 | Garbage Can 01 | props | 0.87x0.87x1.01 m | /Game/Street_NY/Models/Props/SM_Garbage_Can_01.SM_Garbage_Can_01\n\
+    - garbage_can_02 | Garbage Can 02 | props | 0.74x0.66x0.89 m | /Game/Street_NY/Models/Props/SM_Garbage_Can_02.SM_Garbage_Can_02\n\
+    - garbage_can_03 | Garbage Can 03 | props | 1.01x2.09x0.92 m | /Game/Street_NY/Models/Props/SM_Garbage_Can_03.SM_Garbage_Can_03\n\
+    - garbage_can_04 | Garbage Can 04 | props | 1.2x0.7x0.83 m | /Game/Street_NY/Models/Props/SM_Garbage_Can_04.SM_Garbage_Can_04\n\
+    - garbage_can_05 | Garbage Can 05 | props | 0.26x0.32x0.52 m | /Game/Street_NY/Models/Props/SM_Garbage_Can_05.SM_Garbage_Can_05\n\
+    - hammer_01 | Hammer 01 | props | 0.4x0.14x0.07 m | /Game/Street_NY/Models/Props/SM_Hammer_01.SM_Hammer_01\n\
+    - hydrant_01 | Hydrant 01 | props | 0.35x0.39x0.7 m | /Game/Street_NY/Models/Props/SM_Hydrant_01.SM_Hydrant_01\n\
+    - hydrant_02 | Hydrant 02 | props | 0.36x0.36x1.87 m | /Game/Street_NY/Models/Props/SM_Hydrant_02.SM_Hydrant_02\n\
+    - mailbox | Mailbox | props | 0.68x0.61x1.13 m | /Game/Street_NY/Models/Props/SM_Mailbox.SM_Mailbox\n\
+    - paint_bucket | Paint Bucket | props | 0.38x0.35x0.41 m | /Game/Street_NY/Models/Props/SM_Paint_Bucket.SM_Paint_Bucket\n\
+    - plate_01 | Plate 01 | props | 0.3x0.3x0.03 m | /Game/Street_NY/Models/Props/SM_Plate_01.SM_Plate_01\n\
+    - plate_02 | Plate 02 | props | 0.3x0.3x0.03 m | /Game/Street_NY/Models/Props/SM_Plate_02.SM_Plate_02\n\
+    - stairs | Stairs | props | 1.68x0.97x3.75 m | /Game/Street_NY/Models/Props/SM_Stairs.SM_Stairs\n\
+    - table_01 | Table 01 | props | 0.9x1.49x0.82 m | /Game/Street_NY/Models/Props/SM_Table_01.SM_Table_01\n\
+    - trash_01 | Trash 01 | props | 0.7x0.73x0.08 m | /Game/Street_NY/Models/Props/SM_Trash_01.SM_Trash_01\n\
+    - trash_02 | Trash 02 | props | 1.22x1.21x0.06 m | /Game/Street_NY/Models/Props/SM_Trash_02.SM_Trash_02\n\
+    - tree_attachment | Tree Attachment | props | 0.54x0.07x1.05 m | /Game/Street_NY/Models/Props/SM_Tree_Attachment.SM_Tree_Attachment\n\
+    - fallen_leaves_01 | Fallen Leaves 01 | street | 3.52x1.35x0.02 m | /Game/Street_NY/Models/Street/SM_Fallen_Leaves_01.SM_Fallen_Leaves_01\n\
+    - fallen_leaves_02 | Fallen Leaves 02 | street | 3.99x1.47x0.06 m | /Game/Street_NY/Models/Street/SM_Fallen_Leaves_02.SM_Fallen_Leaves_02\n\
+    - fallen_leaves_03 | Fallen Leaves 03 | street | 2.07x1.41x0.05 m | /Game/Street_NY/Models/Street/SM_Fallen_Leaves_03.SM_Fallen_Leaves_03\n\
+    - fallen_leaves_04 | Fallen Leaves 04 | street | 3.31x2.83x0.02 m | /Game/Street_NY/Models/Street/SM_Fallen_Leaves_04.SM_Fallen_Leaves_04\n\
+    - fence_01 | Fence 01 | street | 2.12x2.12x1.0 m | /Game/Street_NY/Models/Street/SM_Fence_01.SM_Fence_01\n\
+    - fence_02 | Fence 02 | street | 0.24x2.0x1.0 m | /Game/Street_NY/Models/Street/SM_Fence_02.SM_Fence_02\n\
+    - fence_03 | Fence 03 | street | 0.24x1.0x1.0 m | /Game/Street_NY/Models/Street/SM_Fence_03.SM_Fence_03\n\
+    - fence_04 | Fence 04 | street | 2.02x0.2x1.29 m | /Game/Street_NY/Models/Street/SM_Fence_04.SM_Fence_04\n\
+    - fence_05 | Fence 05 | street | 1.03x0.2x1.29 m | /Game/Street_NY/Models/Street/SM_Fence_05.SM_Fence_05\n\
+    - fence_06 | Fence 06 | street | 2.03x0.07x1.02 m | /Game/Street_NY/Models/Street/SM_Fence_06.SM_Fence_06\n\
+    - fence_08 | Fence 08 | street | 2.0x0.19x1.07 m | /Game/Street_NY/Models/Street/SM_Fence_08.SM_Fence_08\n\
+    - fence_09 | Fence 09 | street | 1.0x0.19x1.07 m | /Game/Street_NY/Models/Street/SM_Fence_09.SM_Fence_09\n\
+    - flower_pot_01 | Flower Pot 01 | street | 0.83x0.95x0.91 m | /Game/Street_NY/Models/Street/SM_Flower_Pot_01.SM_Flower_Pot_01\n\
+    - flower_pot_02 | Flower Pot 02 | street | 0.6x0.62x1.24 m | /Game/Street_NY/Models/Street/SM_Flower_Pot_02.SM_Flower_Pot_02\n\
+    - flower_pot_03 | Flower Pot 03 | street | 0.51x0.47x0.89 m | /Game/Street_NY/Models/Street/SM_Flower_Pot_03.SM_Flower_Pot_03\n\
+    - flower_pot_04 | Flower Pot 04 | street | 0.84x0.67x1.07 m | /Game/Street_NY/Models/Street/SM_Flower_Pot_04.SM_Flower_Pot_04\n\
+    - flower_pot_05 | Flower Pot 05 | street | 0.27x0.29x0.44 m | /Game/Street_NY/Models/Street/SM_Flower_Pot_05.SM_Flower_Pot_05\n\
+    - flower_pot_06 | Flower Pot 06 | street | 0.37x1.0x0.61 m | /Game/Street_NY/Models/Street/SM_Flower_Pot_06.SM_Flower_Pot_06\n\
+    - flower_pot_07 | Flower Pot 07 | street | 0.42x0.9x0.52 m | /Game/Street_NY/Models/Street/SM_Flower_Pot_07.SM_Flower_Pot_07\n\
+    - flower_pot_08 | Flower Pot 08 | street | 0.38x0.36x0.85 m | /Game/Street_NY/Models/Street/SM_Flower_Pot_08.SM_Flower_Pot_08\n\
+    - flowerbed_01 | Flowerbed 01 | street | 0.76x0.76x0.23 m | /Game/Street_NY/Models/Street/SM_Flowerbed_01.SM_Flowerbed_01\n\
+    - flowerbed_02 | Flowerbed 02 | street | 1.34x1.32x0.49 m | /Game/Street_NY/Models/Street/SM_Flowerbed_02.SM_Flowerbed_02\n\
+    - flowerbed_03 | Flowerbed 03 | street | 0.62x0.61x0.29 m | /Game/Street_NY/Models/Street/SM_Flowerbed_03.SM_Flowerbed_03\n\
+    - flowerbed_04 | Flowerbed 04 | street | 1.05x0.8x0.12 m | /Game/Street_NY/Models/Street/SM_Flowerbed_04.SM_Flowerbed_04\n\
+    - flowerbed_05 | Flowerbed 05 | street | 0.92x0.94x0.39 m | /Game/Street_NY/Models/Street/SM_Flowerbed_05.SM_Flowerbed_05\n\
+    - flowerbed_06 | Flowerbed 06 | street | 0.8x1.5x0.1 m | /Game/Street_NY/Models/Street/SM_Flowerbed_06.SM_Flowerbed_06\n\
+    - ground | Ground | street | 2.0x2.0x0.14 m | /Game/Street_NY/Models/Street/SM_Ground.SM_Ground\n\
+    - hatchway_01 | Hatchway 01 | street | 0.69x0.69x0.04 m | /Game/Street_NY/Models/Street/SM_Hatchway_01.SM_Hatchway_01\n\
+    - hatchway_02 | Hatchway 02 | street | 0.69x0.69x0.04 m | /Game/Street_NY/Models/Street/SM_Hatchway_02.SM_Hatchway_02\n\
+    - hatchway_03 | Hatchway 03 | street | 0.79x1.39x0.02 m | /Game/Street_NY/Models/Street/SM_Hatchway_03.SM_Hatchway_03\n\
+    - hatchway_04 | Hatchway 04 | street | 0.61x0.36x0.03 m | /Game/Street_NY/Models/Street/SM_Hatchway_04.SM_Hatchway_04\n\
+    - hatchway_05 | Hatchway 05 | street | 0.99x0.99x0.03 m | /Game/Street_NY/Models/Street/SM_Hatchway_05.SM_Hatchway_05\n\
+    - hatchway_06 | Hatchway 06 | street | 2.0x0.99x0.03 m | /Game/Street_NY/Models/Street/SM_Hatchway_06.SM_Hatchway_06\n\
+    - hatchway_07 | Hatchway 07 | street | 0.97x1.77x0.01 m | /Game/Street_NY/Models/Street/SM_Hatchway_07.SM_Hatchway_07\n\
+    - lamppost_01 | Lamppost 01 | street | 0.34x2.51x6.44 m | /Game/Street_NY/Models/Street/SM_Lamppost_01.SM_Lamppost_01\n\
+    - optimized_scene_01 | Optimized Scene 01 | street | 56.0x17.0x0.88 m | /Game/Street_NY/Models/Street/SM_Optimized_Scene_01.SM_Optimized_Scene_01\n\
+    - optimized_scene_02 | Optimized Scene 02 | street | 18.0x23.0x0.88 m | /Game/Street_NY/Models/Street/SM_Optimized_Scene_02.SM_Optimized_Scene_02\n\
+    - optimized_scene_03 | Optimized Scene 03 | street | 18.0x41.01x0.19 m | /Game/Street_NY/Models/Street/SM_Optimized_Scene_03.SM_Optimized_Scene_03\n\
+    - optimized_scene_04 | Optimized Scene 04 | street | 15.0x35.0x0.19 m | /Game/Street_NY/Models/Street/SM_Optimized_Scene_04.SM_Optimized_Scene_04\n\
+    - optimized_scene_05 | Optimized Scene 05 | street | 20.06x15.0x0.19 m | /Game/Street_NY/Models/Street/SM_Optimized_Scene_05.SM_Optimized_Scene_05\n\
+    - road_cone | Road Cone | street | 0.33x0.33x0.51 m | /Game/Street_NY/Models/Street/SM_Road_Cone.SM_Road_Cone\n\
+    - road_decal_01 | Road Decal 01 | street | 2.95x1.59x0.0 m | /Game/Street_NY/Models/Street/SM_Road_Decal_01.SM_Road_Decal_01\n\
+    - road_decal_02 | Road Decal 02 | street | 1.58x1.17x0.0 m | /Game/Street_NY/Models/Street/SM_Road_Decal_02.SM_Road_Decal_02\n\
+    - road_marking_01 | Road Marking 01 | street | 0.28x3.35x0.0 m | /Game/Street_NY/Models/Street/SM_Road_Marking_01.SM_Road_Marking_01\n\
+    - road_marking_02 | Road Marking 02 | street | 2.87x6.62x0.0 m | /Game/Street_NY/Models/Street/SM_Road_Marking_02.SM_Road_Marking_02\n\
+    - road_marking_03 | Road Marking 03 | street | 4.0x0.21x0.0 m | /Game/Street_NY/Models/Street/SM_Road_Marking_03.SM_Road_Marking_03\n\
+    - road_marking_04 | Road Marking 04 | street | 2.89x1.14x0.0 m | /Game/Street_NY/Models/Street/SM_Road_Marking_04.SM_Road_Marking_04\n\
+    - road_marking_05 | Road Marking 05 | street | 4.0x0.21x0.0 m | /Game/Street_NY/Models/Street/SM_Road_Marking_05.SM_Road_Marking_05\n\
+    - road_sign_01 | Road Sign 01 | street | 0.63x0.06x2.05 m | /Game/Street_NY/Models/Street/SM_Road_Sign_01.SM_Road_Sign_01\n\
+    - road_sign_02 | Road Sign 02 | street | 0.65x0.06x2.05 m | /Game/Street_NY/Models/Street/SM_Road_Sign_02.SM_Road_Sign_02\n\
+    - road_sign_03 | Road Sign 03 | street | 0.36x0.25x2.17 m | /Game/Street_NY/Models/Street/SM_Road_Sign_03.SM_Road_Sign_03\n\
+    - road_sign_04 | Road Sign 04 | street | 0.36x0.32x2.06 m | /Game/Street_NY/Models/Street/SM_Road_Sign_04.SM_Road_Sign_04\n\
+    - road_sign_05 | Road Sign 05 | street | 0.21x0.38x2.17 m | /Game/Street_NY/Models/Street/SM_Road_Sign_05.SM_Road_Sign_05\n\
+    - road_sign_06 | Road Sign 06 | street | 0.12x0.45x2.17 m | /Game/Street_NY/Models/Street/SM_Road_Sign_06.SM_Road_Sign_06\n\
+    - road_sign_07 | Road Sign 07 | street | 0.38x0.06x2.05 m | /Game/Street_NY/Models/Street/SM_Road_Sign_07.SM_Road_Sign_07\n\
+    - road_sign_08 | Road Sign 08 | street | 0.69x0.69x2.17 m | /Game/Street_NY/Models/Street/SM_Road_Sign_08.SM_Road_Sign_08\n\
+    - road_sign_09 | Road Sign 09 | street | 0.5x0.01x0.16 m | /Game/Street_NY/Models/Street/SM_Road_Sign_09.SM_Road_Sign_09\n\
+    - sidewalk_02 | Sidewalk 02 | street | 4.0x2.0x0.0 m | /Game/Street_NY/Models/Street/SM_Sidewalk_02.SM_Sidewalk_02\n\
+    - wooden_fence_01 | Wooden Fence 01 | street | 6.0x0.05x2.0 m | /Game/Street_NY/Models/Street/SM_Wooden_Fence_01.SM_Wooden_Fence_01\n\
+    - wooden_fence_02 | Wooden Fence 02 | street | 0.06x6.0x2.0 m | /Game/Street_NY/Models/Street/SM_Wooden_Fence_02.SM_Wooden_Fence_02\n\
+    - wooden_fence_03 | Wooden Fence 03 | street | 6.0x0.1x2.0 m | /Game/Street_NY/Models/Street/SM_Wooden_Fence_03.SM_Wooden_Fence_03\n\
+    - wooden_fence_04 | Wooden Fence 04 | street | 6.0x0.11x2.0 m | /Game/Street_NY/Models/Street/SM_Wooden_Fence_04.SM_Wooden_Fence_04\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
+    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
+    \ for yourself when the scene\nmatches the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+assets:
+  packs:
+  - Street_NY
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_014.bundle.json
+- name: overview_prompt_alignment

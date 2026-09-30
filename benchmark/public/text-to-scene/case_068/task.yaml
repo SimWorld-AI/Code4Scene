@@ -1,0 +1,80 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_068
+kind: scene_generation
+inputs:
+  prompt: "Create a dense Gothic cathedral on dark rock, surrounded by smaller chapel and tower clusters\
+    \ across deep chasms. Connect them with elevated stone bridges and narrow causeways in an asymmetrical\
+    \ radiating layout. Use spires, buttresses, weathered masonry, dark roofs, and sparse warm lamps amid\
+    \ cold blue-gray mist.\n\n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset\
+    \ search is not available\nin this run, so this list is your entire library. Format:\n\n  id | name\
+    \ | category | width x depth x height (m) | spawn path\n\nThe id is what a scene graph refers to;\
+    \ the spawn path is what reaches UE.\nYou decide which to use, how many of each, and where they go\
+    \ — reuse entries\nfreely.\n\n- cube | Cube | basicshapes | 73.75x36.5x2.0 m | /Engine/BasicShapes/Cube.Cube\n\
+    - floor5x5_2 | Floor5x5-2 | building | 5.0x5.0x1.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_Floor5x5-2.SM_Floor5x5-2\n\
+    - floor5x5_2_half | Floor5x5-2 Half | building | 5.0x5.0x1.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_Floor5x5-2Half.SM_Floor5x5-2Half\n\
+    - modular_tower_bottom_1 | Modular Tower Bottom-1 | building | 20.36x20.36x20.32 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_ModularTowerBottom-1.SM_ModularTowerBottom-1\n\
+    - modular_tower_bottom_2 | Modular Tower Bottom-2 | building | 20.36x20.36x20.32 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_ModularTowerBottom-2.SM_ModularTowerBottom-2\n\
+    - modular_tower_top_1 | Modular Tower Top-1 | building | 20.97x20.97x63.6 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_ModularTowerTop-1.SM_ModularTowerTop-1\n\
+    - modular_tower_top_2 | Modular Tower Top-2 | building | 19.01x19.01x63.6 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_ModularTowerTop-2.SM_ModularTowerTop-2\n\
+    - roof_spire_1 | Roof Spire-1 | building | 14.0x14.0x35.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_RoofSpire-1.SM_RoofSpire-1\n\
+    - slanted_roof_1 | Slanted Roof-1 | building | 5.0x5.0x5.1 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_SlantedRoof-1.SM_SlantedRoof-1\n\
+    - slanted_roof_1_corner | Slanted Roof-1 Corner | building | 5.0x5.0x5.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_SlantedRoof-1Corner.SM_SlantedRoof-1Corner\n\
+    - slanted_roof_2 | Slanted Roof-2 | building | 5.0x5.0x10.1 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_SlantedRoof-2.SM_SlantedRoof-2\n\
+    - sm_floor5x5_1 | SM Floor5x5-1 | building | 5.0x5.0x1.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_SM_Floor5x5-1.SM_SM_Floor5x5-1\n\
+    - stone_archway_half | Stone Archway-Half | building | 3.46x1.0x8.23 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneArchway-Half.SM_StoneArchway-Half\n\
+    - stone_column_1 | Stone Column-1 | building | 0.85x0.85x3.3 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneColumn-1.SM_StoneColumn-1\n\
+    - stone_pillar1_half | Stone Pillar1-Half | building | 1.88x1.88x2.5 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StonePillar1-Half.SM_StonePillar1-Half\n\
+    - stone_pillar2_full | Stone Pillar2-Full | building | 1.88x1.88x10.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StonePillar2-Full.SM_StonePillar2-Full\n\
+    - stone_pillar2_half | Stone Pillar2-Half | building | 2.06x2.06x2.5 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StonePillar2-Half.SM_StonePillar2-Half\n\
+    - stone_pillar3_full | Stone Pillar3-Full | building | 1.88x1.88x10.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StonePillar3-Full.SM_StonePillar3-Full\n\
+    - stone_pillar3_half | Stone Pillar3-Half | building | 1.88x1.88x5.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StonePillar3-Half.SM_StonePillar3-Half\n\
+    - stone_pillar4_full | Stone Pillar4-Full | building | 6.3x0.94x6.3 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StonePillar4-Full.SM_StonePillar4-Full\n\
+    - stone_pillar4_half | Stone Pillar4-Half | building | 1.88x1.88x2.5 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StonePillar4-Half.SM_StonePillar4-Half\n\
+    - stone_pillar5_full | Stone Pillar5-Full | building | 2.88x2.88x12.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StonePillar5-Full.SM_StonePillar5-Full\n\
+    - stone_railing_1 | Stone Railing-1 | building | 0.6x5.0x1.1 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneRailing-1.SM_StoneRailing-1\n\
+    - stone_stairs4x2 | Stone Stairs4x2 | building | 4.0x2.0x2.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneStairs4x2.SM_StoneStairs4x2\n\
+    - stone_stairs4x2_half | Stone Stairs4x2 Half | building | 2.0x2.0x1.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneStairs4x2Half.SM_StoneStairs4x2Half\n\
+    - stone_support_arch_1 | Stone Support Arch-1 | building | 1.0x7.5x2.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneSupportArch-1.SM_StoneSupportArch-1\n\
+    - stone_trim5x2_1 | Stone Trim5x2-1 | building | 1.49x5.0x1.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneTrim5x2-1.SM_StoneTrim5x2-1\n\
+    - stone_trim5x2_2 | Stone Trim5x2-2 | building | 1.49x5.0x2.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneTrim5x2-2.SM_StoneTrim5x2-2\n\
+    - stone_trim5x2_3 | Stone Trim5x2-3 | building | 5.91x5.91x2.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneTrim5x2-3.SM_StoneTrim5x2-3\n\
+    - stone_trim_small_5x1 | Stone Trim Small-5x1 | building | 0.6x5.0x0.15 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneTrimSmall-5x1.SM_StoneTrimSmall-5x1\n\
+    - wall10x5_1 | Wall10x5-1 | building | 5.0x0.5x10.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_Wall10x5-1.SM_Wall10x5-1\n\
+    - wall10x5_2 | Wall10x5-2 | building | 5.0x0.9x10.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_Wall10x5-2.SM_Wall10x5-2\n\
+    - wall10x5_2_window | Wall10x5-2 Window | building | 5.0x0.9x10.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_Wall10x5-2Window.SM_Wall10x5-2Window\n\
+    - wall10x5_3 | Wall10x5-3 | building | 5.0x2.0x10.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_Wall10x5-3.SM_Wall10x5-3\n\
+    - wall5x5_1 | Wall5x5-1 | building | 5.0x0.5x5.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_Wall5x5-1.SM_Wall5x5-1\n\
+    - dried_grass_card_1 | Dried Grass Card-1 | foliage | 10.63x10.63x0.25 m | /Game/ModularGothicFantasyEnvironment/Meshes/Foliage/SM_DriedGrassCard-1.SM_DriedGrassCard-1\n\
+    - vine_mesh | Vine Mesh | foliage | 0.86x1.68x8.75 m | /Game/ModularGothicFantasyEnvironment/Meshes/Foliage/SM_VineMesh.SM_VineMesh\n\
+    - angel_statue | Angel Statue | props | 1.55x1.84x5.89 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_AngelStatue.SM_AngelStatue\n\
+    - metal_gate_1 | Metal Gate-1 | props | 3.0x0.14x8.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_MetalGate-1.SM_MetalGate-1\n\
+    - metal_gate_2 | Metal Gate-2 | props | 5.41x0.41x7.95 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_MetalGate-2.SM_MetalGate-2\n\
+    - metal_gate_3 | Metal Gate-3 | props | 0.41x5.41x5.95 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_MetalGate-3.SM_MetalGate-3\n\
+    - metal_gate_4 | Metal Gate-4 | props | 5.31x0.32x7.04 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_MetalGate-4.SM_MetalGate-4\n\
+    - post_lantern_1 | Post Lantern-1 | props | 2.56x2.56x4.71 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_PostLantern-1.SM_PostLantern-1\n\
+    - stone_fountain | Stone Fountain | props | 5.0x5.0x1.25 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_StoneFountain.SM_StoneFountain\n\
+    - stone_fountain_half | Stone Fountain-Half | props | 5.3x5.3x1.25 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_StoneFountain-Half.SM_StoneFountain-Half\n\
+    - wall_lantern_1 | Wall Lantern-1 | props | 4.16x2.56x3.36 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_WallLantern-1.SM_WallLantern-1\n\
+    - cliff_1 | Cliff-1 | rocks | 19.27x18.61x10.29 m | /Game/ModularGothicFantasyEnvironment/Meshes/Rocks/SM_Cliff-1.SM_Cliff-1\n\
+    - rock_1 | Rock-1 | rocks | 19.42x8.52x14.14 m | /Game/ModularGothicFantasyEnvironment/Meshes/Rocks/SM_Rock-1.SM_Rock-1\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
+    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
+    \ for yourself when the scene\nmatches the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_068.bundle.json
+- name: overview_prompt_alignment
+assets:
+  packs:
+  - ModularGothicFantasyEnvironment

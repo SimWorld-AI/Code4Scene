@@ -26,9 +26,9 @@ match_confidence_levels:
   title_only: Only the title matches.
   unresolved: No Fab listing could be identified.
 totals:
-  third_party_packs: 37
-  packs_with_listing: 36
-  list_price_usd_resolved_packs: 1664.67
+  third_party_packs: 44
+  packs_with_listing: 43
+  list_price_usd_resolved_packs: 1310.72
 packs:
 - folder: Abandoned_Psychiatric_Hospital
   title: Abandoned Psychiatric Hospital
@@ -44,442 +44,75 @@ packs:
   distribution: asset_pack
   used_by:
     counts:
-      text_to_scene: 1
+      text_to_scene: 5
     text_to_scene:
-    - abandoned-psychiatric-hospital
+    - case_001
+    - case_017
+    - case_018
+    - case_019
+    - case_020
   demo_maps_used: []
   match_confidence: title_seller
   notes: >-
     Title and seller match; folder layout (Maps/Demo, Maps/Models) consistent. The reference copy has
     fewer textures than the current listing reports (older build), so a few palette assets may differ.
-- folder: Bazaar_Meshingun
-  title: The Bazaar
-  seller: Meshingun Studio
-  fab_url: https://www.fab.com/listings/cff79d2c-4b55-45a2-80fc-960193a6dfd4
-  fab_uid: cff79d2c-4b55-45a2-80fc-960193a6dfd4
-  license: Standard License
-  price_usd_at_check: 94.99
-  ai_usage: not allowed
-  engine_versions:
-  - 4.24-4.27
-  - 5.0-5.8
-  lists_ue_5_8: true
-  distribution: asset_pack
+- folder: AbandonedBuilding
+  title: Abandoned Building
+  seller: DevTon Studio
+  fab_url: https://www.fab.com/listings/8dfc1bcd-c652-4fc8-8b2f-88df9155725b
+  fab_uid: 8dfc1bcd-c652-4fc8-8b2f-88df9155725b
+  ai_usage: allowed
   used_by:
     counts:
-      text_to_scene: 1
+      text_to_scene: 4
     text_to_scene:
-    - bazaar
-  demo_maps_used: []
+    - case_043
+    - case_044
+    - case_045
+    - case_046
   match_confidence: title_seller
-  notes: >-
-    Listing states "Allows usage with AI: No". Reference copy matches the UE 5.0 build (LV_Bazaar maps,
-    MasterShader_Meshingun materials).
-- folder: Chefchaouen_Village
-  title: Stylized Blue City – Modular Environment Kit (UE5)
-  seller: Aksil Games
-  fab_url: https://www.fab.com/listings/5219d07d-8fea-4f62-897f-c78c680b2cc7
-  fab_uid: 5219d07d-8fea-4f62-897f-c78c680b2cc7
+  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
+- folder: AfricanLocation
+  title: African desert 4x4 km2 open world location
+  seller: 3dlocatons
+  fab_url: https://www.fab.com/listings/75c21d61-c868-4cd5-aec9-e3e310cdcbce
+  fab_uid: 75c21d61-c868-4cd5-aec9-e3e310cdcbce
   license: Standard License
-  price_usd_at_check: 49.99
-  ai_usage: allowed
-  engine_versions:
-  - 5.5-5.7
-  lists_ue_5_8: false
-  distribution: complete_project
-  used_by:
-    counts:
-      text_to_scene: 1
-    text_to_scene:
-    - blue-city
-  demo_maps_used: []
-  match_confidence: exact_uid_confirmed
-  notes: >-
-    Listing was previously titled "The Blue City: Modular City Environment" (Chefchaouen-inspired). Build
-    artifact id prefix and mesh/material/texture counts (101/7+29/77) match the reference copy. Complete
-    project: copy Content/Chefchaouen_Village into your project.
-- folder: CastleRiver
-  title: Fantasy Medieval Castle Kit
-  seller: Denys Rutkovskyi
-  fab_url: https://www.fab.com/listings/0748515c-18e0-48bc-bcaf-d5e39e66bc46
-  fab_uid: 0748515c-18e0-48bc-bcaf-d5e39e66bc46
-  license: Standard License
-  price_usd_at_check: 59.99
-  ai_usage: allowed
-  engine_versions:
-  - 4.21-5.6
-  lists_ue_5_8: false
-  distribution: asset_pack
-  used_by:
-    counts:
-      text_to_scene: 1
-    text_to_scene:
-    - castleriver
-  demo_maps_used: []
-  match_confidence: exact_uid_confirmed
-  notes: >-
-    Folder name does not resemble the product title. Identified by exact mesh and texture counts (127
-    meshes, 85 textures) and demo map names (Demonstration, Overview).
-- folder: ChemicalPlantEnv
-  title: Chemical Plant & Refinery Environment ( Refinery, Factory, Factory  Building )
-  seller: FreshCan
-  fab_url: https://www.fab.com/listings/a70632d1-f2d2-4b4d-a621-0dc5c3b259fd
-  fab_uid: a70632d1-f2d2-4b4d-a621-0dc5c3b259fd
-  license: Standard License
-  price_usd_at_check: 119.99
-  ai_usage: not allowed
-  engine_versions:
-  - 4.26-4.27
-  - 5.1-5.8
-  lists_ue_5_8: true
-  distribution: asset_pack
-  used_by:
-    counts:
-      text_to_scene: 1
-    text_to_scene:
-    - chemical-plant
-  demo_maps_used: []
-  match_confidence: title_seller
-  notes: >-
-    Listing states "Allows usage with AI: No". Description names the Map_Prefab_Group_1 assembly map (reference
-    copy: Map_PrefabGroup_1); counts are close to the listing (267 meshes, 385 textures).
-- folder: CyberPunk_City_VR_Mobile
-  title: CyberPunk City Mobile and VR
-  seller: Egor Ilin
-  fab_url: https://www.fab.com/listings/73e1dd8c-a755-415e-89f6-b011a4bd7503
-  fab_uid: 73e1dd8c-a755-415e-89f6-b011a4bd7503
-  license: UE Marketplace
-  price_usd_at_check: 8.99
-  ai_usage: allowed
-  engine_versions:
-  - 4.20-5.4
-  lists_ue_5_8: false
-  distribution: asset_pack
-  used_by:
-    counts:
-      text_to_scene: 1
-    text_to_scene:
-    - cyberpunk
-  demo_maps_used: []
-  match_confidence: exact_uid_confirmed
-  notes: Mesh, material and texture counts (168/30/37) match exactly.
-- folder: DesertTown
-  title: Desert Town
-  seller: PolyPixel
-  fab_url: https://www.fab.com/listings/57708a6e-3bba-4469-8820-c2494713ffd6
-  fab_uid: 57708a6e-3bba-4469-8820-c2494713ffd6
-  license: Standard License
-  price_usd_at_check: 38.99
-  ai_usage: not allowed
-  engine_versions:
-  - 4.10-4.27
-  - '5.2'
-  lists_ue_5_8: false
-  distribution: asset_pack
-  used_by:
-    counts:
-      text_to_scene: 2
-    text_to_scene:
-    - desert-town
-    - middle-eastern-bazaar
-  demo_maps_used: []
-  match_confidence: title_seller
-  notes: >-
-    Listing states "Allows usage with AI: No". Not to be confused with "Desert Town" by SergOrc (a medieval
-    marketplace pack). Content (modern desert town, motel, broken cars, wires, ~200 assets, ambient sounds)
-    and UE 4.14-era build match PolyPixel. The listing now also offers a UE 5.2 build that may be restructured.
-- folder: EgyptianTemple
-  title: Egyptian Temple
-  seller: Infuse Studio
-  fab_url: https://www.fab.com/listings/e7c415c9-9e0d-4d2c-ba3f-f1c5ae537e91
-  fab_uid: e7c415c9-9e0d-4d2c-ba3f-f1c5ae537e91
-  license: UE Marketplace
-  price_usd_at_check: 29.99
-  ai_usage: allowed
-  engine_versions:
-  - 4.18-4.24
-  lists_ue_5_8: false
-  distribution: asset_pack
-  used_by:
-    counts:
-      text_to_scene: 1
-    text_to_scene:
-    - egyptian-temple
-  demo_maps_used: []
-  match_confidence: exact_uid_confirmed
-  notes: >-
-    Build artifact id matches the reference copy exactly; counts match (29 meshes, 95 textures). UE4-only
-    listing (4.18-4.24): install into a 4.24 project and migrate, or add to a newer project via the launcher
-    "Show all projects" option.
-- folder: EuropeanStreet
-  title: European Street 3d Scene
-  seller: 3D Happy
-  fab_url: https://www.fab.com/listings/89fe67c8-718c-4b91-84b7-3e863c3dc4e5
-  fab_uid: 89fe67c8-718c-4b91-84b7-3e863c3dc4e5
-  license: Standard License
-  price_usd_at_check: 24.99
-  ai_usage: allowed
-  engine_versions:
-  - 5.6-5.7
-  lists_ue_5_8: false
-  distribution: complete_project
-  used_by:
-    counts:
-      text_to_scene: 1
-    text_to_scene:
-    - european-street-3d-scene
-  demo_maps_used: []
-  match_confidence: title_seller
-  notes: >-
-    Complete project: copy Content/EuropeanStreet into your project. Texture and material counts match
-    (66/26).
-- folder: Hong_Kong_Street
-  title: Hong Kong Street
-  seller: ART EQUILIBRIUM
-  fab_url: https://www.fab.com/listings/8cce67d3-acf7-4e1d-bf14-2c2186bf439f
-  fab_uid: 8cce67d3-acf7-4e1d-bf14-2c2186bf439f
-  license: Standard License
-  price_usd_at_check: 34.99
-  ai_usage: allowed
-  engine_versions:
-  - 4.25-5.8
-  lists_ue_5_8: true
-  distribution: asset_pack
-  used_by:
-    counts:
-      text_to_scene: 1
-    text_to_scene:
-    - hong-kong
-  demo_maps_used: []
-  match_confidence: title_seller
-  notes: Title and seller match; material and texture counts close to the listing.
-- folder: bugchonmunhwa
-  title: KHS - House of Gyedong
-  seller: KOREA HERITAGE SERVICE
-  fab_url: https://www.fab.com/listings/ec435a53-b1ce-4f92-affb-8289e729d53e
-  fab_uid: ec435a53-b1ce-4f92-affb-8289e729d53e
-  license: CC BY 4.0
-  price_usd_at_check: 0.0
-  ai_usage: allowed
-  engine_versions:
-  - 5.2-5.4
-  lists_ue_5_8: false
-  distribution: asset_pack
-  used_by:
-    counts:
-      text_to_scene: 1
-    text_to_scene:
-    - khs-house-of-baeryeom
-  demo_maps_used: []
-  match_confidence: exact_uid_confirmed
-  notes: >-
-    Free. Every mesh in the folder is named SM_Gyedong_*; counts match this listing (about 199 meshes,
-    24 materials). Note: the text-to-scene case id says "house-of-baeryeom", but the content is House
-    of Gyedong, not the separate "KHS - House of Baeryeom" listing. CC BY 4.0 requires crediting Korea
-    Heritage Service.
-- folder: Big_Town
-  title: Medieval Big Farm Town
-  seller: SliderOK
-  fab_url: https://www.fab.com/listings/b93a9f61-9220-4342-83d0-361aee394e77
-  fab_uid: b93a9f61-9220-4342-83d0-361aee394e77
-  license: Standard License
-  price_usd_at_check: 55.99
+  price_usd_at_check: 10.99
   ai_usage: allowed
   engine_versions:
   - '4.27'
-  - 5.1-5.4
+  - 5.0-5.4
   lists_ue_5_8: false
   distribution: asset_pack
   used_by:
     counts:
-      text_to_scene: 1
-    text_to_scene:
-    - medieval-big-farm-town
-  demo_maps_used: []
-  match_confidence: title_seller
-  notes: Title and seller match; reference copy is the UE 5.1 build.
-- folder: MedievalBuildings01
-  title: Medieval Buildings Volume 1
-  seller: Moore Game Dev
-  fab_url: https://www.fab.com/listings/18e7c2f6-166d-4808-8ed7-7f95018e7961
-  fab_uid: 18e7c2f6-166d-4808-8ed7-7f95018e7961
-  license: Standard License
-  price_usd_at_check: 19.99
-  ai_usage: allowed
-  engine_versions:
-  - 4.21-5.4
-  lists_ue_5_8: false
-  distribution: asset_pack
-  used_by:
-    counts:
-      text_to_scene: 1
-    text_to_scene:
-    - medieval-buildings-volume-1
-  demo_maps_used: []
-  match_confidence: exact_uid_confirmed
-  notes: Mesh and texture counts match (548/1101 listed vs 560/1133 in the reference copy).
-- folder: MiddleEast
-  title: Middle East
-  seller: Kyrylo Sibiriakov
-  fab_url: https://www.fab.com/listings/85cdf444-b566-433b-8f4f-361536361b0e
-  fab_uid: 85cdf444-b566-433b-8f4f-361536361b0e
-  license: Standard License
-  price_usd_at_check: 79.99
-  ai_usage: not allowed
-  engine_versions:
-  - 4.21-5.7
-  lists_ue_5_8: false
-  distribution: asset_pack
-  used_by:
-    counts:
-      text_to_scene: 1
-    text_to_scene:
-    - middle-eastern-bazaar
-  demo_maps_used: []
-  match_confidence: exact_uid_confirmed
-  notes: >-
-    Listing states "Allows usage with AI: No". Not to be confused with "MIDDLE EAST" by Meshingun Studio.
-    Identified by exact counts (144 meshes, 125 materials, 305 textures).
-- folder: NordicHarbour
-  title: Nordic Harbour - Modular City Building Kit
-  seller: Wester Games
-  fab_url: https://www.fab.com/listings/5b9be947-566c-4a65-9fe7-ec2eeb7701bd
-  fab_uid: 5b9be947-566c-4a65-9fe7-ec2eeb7701bd
-  license: Standard License
-  price_usd_at_check: 49.99
-  ai_usage: allowed
-  engine_versions:
-  - 4.22-5.6
-  lists_ue_5_8: false
-  distribution: asset_pack
-  used_by:
-    counts:
-      text_to_scene: 1
-    text_to_scene:
-    - nordic-harbour
-  demo_maps_used: []
-  match_confidence: exact_uid_confirmed
-  notes: Mesh, material and texture counts match (126/140/275).
-- folder: CityCore_Paris
-  title: City Core - Paris
-  seller: PolySphere Studio
-  fab_url: https://www.fab.com/listings/9155a337-2c74-4c5b-bff1-43adae672618
-  fab_uid: 9155a337-2c74-4c5b-bff1-43adae672618
-  license: Standard License
-  price_usd_at_check: 219.99
-  ai_usage: allowed
-  engine_versions:
-  - 5.2-5.8
-  lists_ue_5_8: true
-  distribution: asset_pack
-  used_by:
-    counts:
-      text_to_scene: 1
-    text_to_scene:
-    - paris
-  demo_maps_used: []
-  match_confidence: title_seller
-  notes: Title and seller match.
-- folder: Ruins
-  title: Ruins
-  seller: Anil Isbilir
-  fab_url: https://www.fab.com/listings/e108cf47-d633-4584-a392-0eef0caaf484
-  fab_uid: e108cf47-d633-4584-a392-0eef0caaf484
-  license: Standard License
-  price_usd_at_check: 49.99
-  ai_usage: allowed
-  engine_versions:
-  - 4.20-4.27
-  - 5.0-5.8
-  lists_ue_5_8: true
-  distribution: complete_project
-  used_by:
-    counts:
-      text_to_scene: 1
-    text_to_scene:
-    - ruins
-  demo_maps_used: []
-  match_confidence: exact_uid_confirmed
-  notes: >-
-    Exact counts (71 meshes, 34 materials, 95 textures). This is /Game/Ruins, not /Game/AncientRuins ("Modular
-    Ancient Ruins"), which the public set does not use. Complete project: copy Content/Ruins into your
-    project.
-- folder: Street_NY
-  title: Street New York
-  seller: ART EQUILIBRIUM
-  fab_url: https://www.fab.com/listings/d327e87a-7aaf-4e4e-b3a9-69e98e0bc25a
-  fab_uid: d327e87a-7aaf-4e4e-b3a9-69e98e0bc25a
-  license: Standard License
-  price_usd_at_check: 34.99
-  ai_usage: allowed
-  engine_versions:
-  - 4.20-5.8
-  lists_ue_5_8: true
-  distribution: asset_pack
-  used_by:
-    counts:
-      image_to_scene_outdoor: 5
-      text_to_scene: 1
+      image_to_scene_outdoor: 4
     image_to_scene_outdoor:
-    - comp-02-new-york-bench-reset-v2
-    - comp-41-new-york-storefront-planter-pair-recovery-v2
-    - comp-42-new-york-sidewalk-bench-pair-repair-v2
-    - comp-61-new-york-mailbox-pair-repair-v2
-    - comp-62-new-york-bench-trash-bay-repair-v2
-    text_to_scene:
-    - street-new-york
+    - comp-39-desert-east-wall-pair-repair-v2
+    - comp-60-desert-oasis-wall-symmetry-repair-v3
+    - comp-79-desert-east-wall-recovery-v3
+    - comp-80-desert-central-wall-replacement-v2
   demo_maps_used:
-  - /Game/Street_NY/Maps/Demo
+  - /Game/AfricanLocation/Locations/Desert2
   match_confidence: title_seller
-  notes: >-
-    Title and seller match. The reference copy has fewer textures than the current listing reports (older
-    build).
-- folder: UrbanDecay
-  title: Post-Industrial Environment
-  seller: Joshua Giles
-  fab_url: https://www.fab.com/listings/060b1fea-0ed5-4172-b59d-165ea89ae606
-  fab_uid: 060b1fea-0ed5-4172-b59d-165ea89ae606
-  license: UE Marketplace
-  price_usd_at_check: 49.99
+  notes: Title and seller match ("3dlocatons" is the seller's own spelling).
+- folder: AncientRuins
+  title: Modular Ancient Ruins
+  seller: Darchall
+  fab_url: https://www.fab.com/listings/45c37ee1-b508-43e7-8839-c212f7041e6f
+  fab_uid: 45c37ee1-b508-43e7-8839-c212f7041e6f
   ai_usage: allowed
-  engine_versions:
-  - 4.25-5.1
-  lists_ue_5_8: false
-  distribution: asset_pack
   used_by:
     counts:
-      text_to_scene: 1
+      text_to_scene: 4
     text_to_scene:
-    - urban-decay
-  demo_maps_used: []
-  match_confidence: exact_uid_confirmed
-  notes: Material and texture counts match (127/276).
-- folder: WinterTown
-  title: Russian Winter Town
-  seller: GeorgeShachnev
-  fab_url: https://www.fab.com/listings/5bd7045e-b0ae-45a4-ab00-72b2060ab4c5
-  fab_uid: 5bd7045e-b0ae-45a4-ab00-72b2060ab4c5
-  license: Standard License
-  price_usd_at_check: 1.99
-  ai_usage: allowed
-  engine_versions:
-  - 4.19-5.8
-  lists_ue_5_8: true
-  distribution: asset_pack
-  used_by:
-    counts:
-      image_to_scene_outdoor: 3
-      text_to_scene: 1
-    image_to_scene_outdoor:
-    - comp-09-winter-square-bench-recovery-v2
-    - comp-46-winter-entry-lamppost-pair-repair-v2
-    - comp-66-winter-wrong-fixture-replacement-v2
-    text_to_scene:
-    - winter-town
-  demo_maps_used:
-  - /Game/WinterTown/Maps/RussianWinterTownDemo02
-  match_confidence: exact_uid_confirmed
-  notes: Demo maps are named RussianWinterTown*; mesh count matches (123).
+    - case_021
+    - case_022
+    - case_023
+    - case_024
+  match_confidence: title_seller
+  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: ArchVizInteriorVol2
   title: Archviz Interior vol.2
   seller: Next Level 3D
@@ -508,82 +141,215 @@ packs:
   notes: >-
     Counts match (67 meshes, 84 materials, 47 textures). Complete project: copy Content/ArchVizInteriorVol2
     into your project.
-- folder: DetectiveOffice
-  title: Detective Office
-  seller: Emran Arts
-  fab_url: https://www.fab.com/listings/a240ec0c-aabc-4c7e-917a-41949b0c2578
-  fab_uid: a240ec0c-aabc-4c7e-917a-41949b0c2578
+- folder: BattlegroundKit
+  title: Military Battlefield Kit and Middle East Set
+  seller: Denys Rutkovskyi
+  fab_url: https://www.fab.com/listings/ea809594-f461-49c9-9dd1-32db3eb9def3
+  fab_uid: ea809594-f461-49c9-9dd1-32db3eb9def3
+  ai_usage: allowed
+  used_by:
+    counts:
+      text_to_scene: 4
+    text_to_scene:
+    - case_025
+    - case_026
+    - case_027
+    - case_028
+  match_confidence: title_seller
+  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
+- folder: Big_Town
+  title: Medieval Big Farm Town
+  seller: SliderOK
+  fab_url: https://www.fab.com/listings/b93a9f61-9220-4342-83d0-361aee394e77
+  fab_uid: b93a9f61-9220-4342-83d0-361aee394e77
   license: Standard License
-  price_usd_at_check: 19.99
-  ai_usage: not allowed
+  price_usd_at_check: 55.99
+  ai_usage: allowed
   engine_versions:
-  - 4.19-4.26
-  - 4.27-5.7
+  - '4.27'
+  - 5.1-5.4
   lists_ue_5_8: false
   distribution: asset_pack
   used_by:
     counts:
-      image_to_scene_indoor: 3
-    image_to_scene_indoor:
-    - a20-s02-picture-rotation
-    - indoor-atomic-v1-053
-    - indoor-atomic-v1-054
-  demo_maps_used:
-  - /Game/DetectiveOffice/Maps/DetectiveOffice
-  match_confidence: exact_uid_confirmed
-  notes: >-
-    Listing states "Allows usage with AI: No". Not to be confused with "Detective Office" by 1DSTUDIO.
-    Identified by the UE 4.19 build and counts (172 meshes, 138 materials, 283 textures). The seller says
-    the 4.27+ build replaced the Substance materials of the 4.19 build with regular textures, so some
-    material assets may differ from the reference scenes.
-- folder: Office
-  title: DownTown Office
-  seller: Replex
-  fab_url: https://www.fab.com/listings/0c920ed7-64f9-4010-a099-5374b4f79bfb
-  fab_uid: 0c920ed7-64f9-4010-a099-5374b4f79bfb
-  license: Standard License (UEFN reference-only tier also offered)
-  price_usd_at_check: 79.99
+      text_to_scene: 5
+    text_to_scene:
+    - case_009
+    - case_083
+    - case_084
+    - case_085
+    - case_086
+  demo_maps_used: []
+  match_confidence: title_seller
+  notes: Title and seller match; reference copy is the UE 5.1 build.
+- folder: bugchonmunhwa
+  title: KHS - House of Gyedong
+  seller: KOREA HERITAGE SERVICE
+  fab_url: https://www.fab.com/listings/ec435a53-b1ce-4f92-affb-8289e729d53e
+  fab_uid: ec435a53-b1ce-4f92-affb-8289e729d53e
+  license: CC BY 4.0
+  price_usd_at_check: 0.0
   ai_usage: allowed
   engine_versions:
-  - 5.0-5.8
+  - 5.2-5.4
+  lists_ue_5_8: false
+  distribution: asset_pack
+  used_by:
+    counts:
+      text_to_scene: 5
+    text_to_scene:
+    - case_008
+    - case_079
+    - case_080
+    - case_081
+    - case_082
+  demo_maps_used: []
+  match_confidence: exact_uid_confirmed
+  notes: >-
+    Free. Every mesh in the folder is named SM_Gyedong_*; counts match this listing (about 199 meshes,
+    24 materials). Note: the text-to-scene case id says "house-of-baeryeom", but the content is House
+    of Gyedong, not the separate "KHS - House of Baeryeom" listing. CC BY 4.0 requires crediting Korea
+    Heritage Service.
+- folder: CastleRiver
+  title: Fantasy Medieval Castle Kit
+  seller: Denys Rutkovskyi
+  fab_url: https://www.fab.com/listings/0748515c-18e0-48bc-bcaf-d5e39e66bc46
+  fab_uid: 0748515c-18e0-48bc-bcaf-d5e39e66bc46
+  license: Standard License
+  price_usd_at_check: 59.99
+  ai_usage: allowed
+  engine_versions:
+  - 4.21-5.6
+  lists_ue_5_8: false
+  distribution: asset_pack
+  used_by:
+    counts:
+      text_to_scene: 6
+    text_to_scene:
+    - case_003
+    - case_033
+    - case_034
+    - case_035
+    - case_036
+    - case_037
+  demo_maps_used: []
+  match_confidence: exact_uid_confirmed
+  notes: >-
+    Folder name does not resemble the product title. Identified by exact mesh and texture counts (127
+    meshes, 85 textures) and demo map names (Demonstration, Overview).
+- folder: Chefchaouen_Village
+  title: Stylized Blue City – Modular Environment Kit (UE5)
+  seller: Aksil Games
+  fab_url: https://www.fab.com/listings/5219d07d-8fea-4f62-897f-c78c680b2cc7
+  fab_uid: 5219d07d-8fea-4f62-897f-c78c680b2cc7
+  license: Standard License
+  price_usd_at_check: 49.99
+  ai_usage: allowed
+  engine_versions:
+  - 5.5-5.7
+  lists_ue_5_8: false
+  distribution: complete_project
+  used_by:
+    counts:
+      text_to_scene: 5
+    text_to_scene:
+    - case_002
+    - case_029
+    - case_030
+    - case_031
+    - case_032
+  demo_maps_used: []
+  match_confidence: exact_uid_confirmed
+  notes: >-
+    Listing was previously titled "The Blue City: Modular City Environment" (Chefchaouen-inspired). Build
+    artifact id prefix and mesh/material/texture counts (101/7+29/77) match the reference copy. Complete
+    project: copy Content/Chefchaouen_Village into your project.
+- folder: CityCore_Paris
+  title: City Core - Paris
+  seller: PolySphere Studio
+  fab_url: https://www.fab.com/listings/9155a337-2c74-4c5b-bff1-43adae672618
+  fab_uid: 9155a337-2c74-4c5b-bff1-43adae672618
+  license: Standard License
+  price_usd_at_check: 219.99
+  ai_usage: allowed
+  engine_versions:
+  - 5.2-5.8
   lists_ue_5_8: true
   distribution: asset_pack
   used_by:
     counts:
-      image_to_scene_indoor: 3
-    image_to_scene_indoor:
-    - a20-s03-extra-upper-chair-removal
-    - a20-s03-upper-chair-scaling
-    - indoor-atomic-v1-020
-  demo_maps_used:
-  - /Game/Office/Maps/Demo
-  match_confidence: exact_uid_confirmed
-  notes: >-
-    Counts match (183 meshes, 96 materials, 171 textures). Discounted to $39.99 on the check date.
-- folder: MedievalForgePack
-  title: Medieval Forge Pack - VR READY
-  seller: Wester Games
-  fab_url: https://www.fab.com/listings/9833039f-55a2-4624-be88-9291a2864097
-  fab_uid: 9833039f-55a2-4624-be88-9291a2864097
-  license: Standard License
-  price_usd_at_check: 9.99
+      text_to_scene: 5
+    text_to_scene:
+    - case_012
+    - case_100
+    - case_101
+    - case_102
+    - case_103
+  demo_maps_used: []
+  match_confidence: title_seller
+  notes: Title and seller match.
+- folder: ContainerYard
+  title: Container Yard Environment Set
+  seller: Denys Rutkovskyi
+  fab_url: https://www.fab.com/listings/3a882c55-de05-4790-8d03-b1adc99da4bc
+  fab_uid: 3a882c55-de05-4790-8d03-b1adc99da4bc
+  ai_usage: allowed
+  used_by:
+    counts:
+      text_to_scene: 9
+    text_to_scene:
+    - case_043
+    - case_044
+    - case_045
+    - case_046
+    - case_074
+    - case_075
+    - case_076
+    - case_077
+    - case_078
+  match_confidence: title_seller
+  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
+- folder: CyberPunk_City_VR_Mobile
+  title: CyberPunk City Mobile and VR
+  seller: Egor Ilin
+  fab_url: https://www.fab.com/listings/73e1dd8c-a755-415e-89f6-b011a4bd7503
+  fab_uid: 73e1dd8c-a755-415e-89f6-b011a4bd7503
+  license: UE Marketplace
+  price_usd_at_check: 8.99
   ai_usage: allowed
   engine_versions:
-  - 4.22-5.6
+  - 4.20-5.4
   lists_ue_5_8: false
   distribution: asset_pack
   used_by:
     counts:
-      image_to_scene_indoor: 4
-    image_to_scene_indoor:
-    - a20-s06-crate-replacement
-    - indoor-atomic-v1-030
-    - indoor-atomic-v1-032
-    - indoor-atomic-v1-033
-  demo_maps_used:
-  - /Game/MedievalForgePack/Maps/Forge_SampleMap
+      text_to_scene: 6
+    text_to_scene:
+    - case_004
+    - case_047
+    - case_048
+    - case_049
+    - case_050
+    - case_051
+  demo_maps_used: []
+  match_confidence: exact_uid_confirmed
+  notes: Mesh, material and texture counts (168/30/37) match exactly.
+- folder: CyberPunk_street
+  title: Cyberpunk Kyiv Street Environment ( Cyberpunk Kyiv Street Street Ukraine Slav )
+  seller: Leartes Studios
+  fab_url: https://www.fab.com/listings/0b982fb2-2262-47b9-9bab-d4d0fb6bb55f
+  fab_uid: 0b982fb2-2262-47b9-9bab-d4d0fb6bb55f
+  ai_usage: allowed
+  used_by:
+    counts:
+      text_to_scene: 4
+    text_to_scene:
+    - case_052
+    - case_053
+    - case_054
+    - case_055
   match_confidence: title_seller
-  notes: Title and seller match; the build name ("MedievalForgePack 8.0") matches the folder.
+  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: CyberpunkWC
   title: Cyberpunk Toilet Environment Kit
   seller: Denys Rutkovskyi
@@ -608,6 +374,32 @@ packs:
   notes: >-
     Exact counts (72 meshes, 39 materials, 48 textures). Its demo scene also uses two StarterContent particle
     systems, so StarterContent is required too.
+- folder: Diner
+  title: Rosie's Restaurant/Diner
+  seller: SoloMode
+  fab_url: https://www.fab.com/listings/dccbefcf-1f53-45c3-aae1-105bb836683f
+  fab_uid: dccbefcf-1f53-45c3-aae1-105bb836683f
+  license: UE Marketplace
+  price_usd_at_check: 29.99
+  ai_usage: allowed
+  engine_versions:
+  - 4.23-5.3
+  lists_ue_5_8: false
+  distribution: asset_pack
+  used_by:
+    counts:
+      image_to_scene_outdoor: 6
+    image_to_scene_outdoor:
+    - comp-17-rosies-service-bin-reset-v3
+    - comp-18-rosies-roadside-billboard-reset-v3
+    - comp-20-rosies-crate-bin-layout-v2
+    - comp-49-rosies-service-garbage-recovery-v2
+    - comp-69-rosies-north-bin-pair-repair-v2
+    - comp-70-rosies-east-garbage-bag-recovery-v2
+  demo_maps_used:
+  - /Game/Diner/Maps/Diner
+  match_confidence: exact_uid_confirmed
+  notes: Counts match (74 meshes, 96 materials, 168 textures).
 - folder: Dungeon
   title: Dungeon Environment / 135+ Assets
   seller: PackDev
@@ -632,6 +424,173 @@ packs:
   notes: >-
     Free. Exact counts (135 meshes, 446 textures). The listing notes it bundles assets from PackDev packs
     (skeletons, swords, candles, torches, tavern props), which matches the subfolders.
+- folder: EgyptianTemple
+  title: Egyptian Temple
+  seller: Infuse Studio
+  fab_url: https://www.fab.com/listings/e7c415c9-9e0d-4d2c-ba3f-f1c5ae537e91
+  fab_uid: e7c415c9-9e0d-4d2c-ba3f-f1c5ae537e91
+  license: UE Marketplace
+  price_usd_at_check: 29.99
+  ai_usage: allowed
+  engine_versions:
+  - 4.18-4.24
+  lists_ue_5_8: false
+  distribution: asset_pack
+  used_by:
+    counts:
+      text_to_scene: 6
+    text_to_scene:
+    - case_005
+    - case_056
+    - case_057
+    - case_058
+    - case_059
+    - case_060
+  demo_maps_used: []
+  match_confidence: exact_uid_confirmed
+  notes: >-
+    Build artifact id matches the reference copy exactly; counts match (29 meshes, 95 textures). UE4-only
+    listing (4.18-4.24): install into a 4.24 project and migrate, or add to a newer project via the launcher
+    "Show all projects" option.
+- folder: EuropeanStreet
+  title: European Street 3d Scene
+  seller: 3D Happy
+  fab_url: https://www.fab.com/listings/89fe67c8-718c-4b91-84b7-3e863c3dc4e5
+  fab_uid: 89fe67c8-718c-4b91-84b7-3e863c3dc4e5
+  license: Standard License
+  price_usd_at_check: 24.99
+  ai_usage: allowed
+  engine_versions:
+  - 5.6-5.7
+  lists_ue_5_8: false
+  distribution: complete_project
+  used_by:
+    counts:
+      text_to_scene: 5
+    text_to_scene:
+    - case_006
+    - case_061
+    - case_062
+    - case_063
+    - case_064
+  demo_maps_used: []
+  match_confidence: title_seller
+  notes: >-
+    Complete project: copy Content/EuropeanStreet into your project. Texture and material counts match
+    (66/26).
+- folder: FactoryEnvironment
+  title: Factory Environment Collection
+  seller: Denys Rutkovskyi
+  fab_url: https://www.fab.com/listings/2ee66462-8c2b-4303-892c-83f7fc0d9b3e
+  fab_uid: 2ee66462-8c2b-4303-892c-83f7fc0d9b3e
+  ai_usage: allowed
+  used_by:
+    counts:
+      text_to_scene: 9
+    text_to_scene:
+    - case_043
+    - case_044
+    - case_045
+    - case_046
+    - case_074
+    - case_075
+    - case_076
+    - case_077
+    - case_078
+  match_confidence: title_seller
+  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
+- folder: Gas_Station
+  title: Route 66 Gas Station / Modular Environment
+  seller: PackDev
+  fab_url: https://www.fab.com/listings/421cef13-0000-4b2c-9814-974bfea2790f
+  fab_uid: 421cef13-0000-4b2c-9814-974bfea2790f
+  license: Standard License
+  price_usd_at_check: 29.99
+  ai_usage: allowed
+  engine_versions:
+  - 4.22-5.7
+  lists_ue_5_8: false
+  distribution: asset_pack
+  used_by:
+    counts:
+      image_to_scene_outdoor: 6
+    image_to_scene_outdoor:
+    - comp-25-route66-fuel-pump-recovery-v2
+    - comp-26-route66-seating-vignette-recovery-v2
+    - comp-27-route66-chair-pair-repair-v2
+    - comp-28-route66-rear-barrel-reset-v2
+    - comp-53-route66-forecourt-barrel-replacement-v2
+    - comp-54-route66-crate-pair-recovery-v2
+  demo_maps_used:
+  - /Game/Gas_Station/Maps/Demo_Scene
+  match_confidence: title_seller
+  notes: >-
+    Title and seller match; the reference copy is the UE 4.22 build, which is the listing's minimum version.
+- folder: Hangar
+  title: Hangar
+  seller: MGX Studio
+  fab_url: https://www.fab.com/listings/26114680-5785-4ba4-88d6-bd0961a485aa
+  fab_uid: 26114680-5785-4ba4-88d6-bd0961a485aa
+  ai_usage: allowed
+  used_by:
+    counts:
+      text_to_scene: 5
+    text_to_scene:
+    - case_074
+    - case_075
+    - case_076
+    - case_077
+    - case_078
+  match_confidence: title_seller
+  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
+- folder: Hong_Kong_Street
+  title: Hong Kong Street
+  seller: ART EQUILIBRIUM
+  fab_url: https://www.fab.com/listings/8cce67d3-acf7-4e1d-bf14-2c2186bf439f
+  fab_uid: 8cce67d3-acf7-4e1d-bf14-2c2186bf439f
+  license: Standard License
+  price_usd_at_check: 34.99
+  ai_usage: allowed
+  engine_versions:
+  - 4.25-5.8
+  lists_ue_5_8: true
+  distribution: asset_pack
+  used_by:
+    counts:
+      text_to_scene: 6
+    text_to_scene:
+    - case_007
+    - case_069
+    - case_070
+    - case_071
+    - case_072
+    - case_073
+  demo_maps_used: []
+  match_confidence: title_seller
+  notes: Title and seller match; material and texture counts close to the listing.
+- folder: HorrorEnviroment
+  title: Basement environments
+  seller: 3Devils
+  fab_url: https://www.fab.com/listings/38709327-620f-4580-9d4f-e0b0e4ed556d
+  fab_uid: 38709327-620f-4580-9d4f-e0b0e4ed556d
+  license: Standard License
+  price_usd_at_check: 24.99
+  ai_usage: allowed
+  engine_versions:
+  - 4.20-5.4
+  lists_ue_5_8: false
+  distribution: asset_pack
+  used_by:
+    counts:
+      image_to_scene_indoor: 1
+    image_to_scene_indoor:
+    - indoor-atomic-v1-072
+  demo_maps_used:
+  - /Game/HorrorEnviroment/Levels/DemoMap
+  match_confidence: exact_uid_confirmed
+  notes: >-
+    Folder name (spelled "HorrorEnviroment") does not resemble the title; counts match (59 meshes, 96
+    textures).
 - folder: Laboratory_in_Loft_Style
   title: Laboratory Interior Studio in Loft Style
   seller: Dragon Motion
@@ -658,81 +617,71 @@ packs:
   notes: >-
     Exact counts (377 meshes, 226 materials, 630 textures). The reference copy is the UE4 build; the UE
     5.1+ build ("LaboratoryLUM") was reworked for Lumen and may differ in materials/lighting.
-- folder: HorrorEnviroment
-  title: Basement environments
-  seller: 3Devils
-  fab_url: https://www.fab.com/listings/38709327-620f-4580-9d4f-e0b0e4ed556d
-  fab_uid: 38709327-620f-4580-9d4f-e0b0e4ed556d
+- folder: MedievalBuildings01
+  title: Medieval Buildings Volume 1
+  seller: Moore Game Dev
+  fab_url: https://www.fab.com/listings/18e7c2f6-166d-4808-8ed7-7f95018e7961
+  fab_uid: 18e7c2f6-166d-4808-8ed7-7f95018e7961
   license: Standard License
-  price_usd_at_check: 24.99
+  price_usd_at_check: 19.99
   ai_usage: allowed
   engine_versions:
-  - 4.20-5.4
+  - 4.21-5.4
   lists_ue_5_8: false
   distribution: asset_pack
   used_by:
     counts:
-      image_to_scene_indoor: 1
-    image_to_scene_indoor:
-    - indoor-atomic-v1-072
-  demo_maps_used:
-  - /Game/HorrorEnviroment/Levels/DemoMap
+      text_to_scene: 5
+    text_to_scene:
+    - case_010
+    - case_087
+    - case_088
+    - case_089
+    - case_090
+  demo_maps_used: []
   match_confidence: exact_uid_confirmed
-  notes: >-
-    Folder name (spelled "HorrorEnviroment") does not resemble the title; counts match (59 meshes, 96
-    textures).
-- folder: VictorianRoom
-  title: Victorian Dining Room
-  seller: Infuse Studio
-  fab_url: https://www.fab.com/listings/39fb2fee-f389-49bf-a90a-408d0481dc63
-  fab_uid: 39fb2fee-f389-49bf-a90a-408d0481dc63
-  license: UE Marketplace
-  price_usd_at_check: 24.99
+  notes: Mesh and texture counts match (548/1101 listed vs 560/1133 in the reference copy).
+- folder: MedievalForgePack
+  title: Medieval Forge Pack - VR READY
+  seller: Wester Games
+  fab_url: https://www.fab.com/listings/9833039f-55a2-4624-be88-9291a2864097
+  fab_uid: 9833039f-55a2-4624-be88-9291a2864097
+  license: Standard License
+  price_usd_at_check: 9.99
   ai_usage: allowed
   engine_versions:
-  - 4.13-4.24
+  - 4.22-5.6
   lists_ue_5_8: false
   distribution: asset_pack
   used_by:
     counts:
-      image_to_scene_indoor: 1
+      image_to_scene_indoor: 4
     image_to_scene_indoor:
-    - indoor-atomic-v1-077
+    - a20-s06-crate-replacement
+    - indoor-atomic-v1-030
+    - indoor-atomic-v1-032
+    - indoor-atomic-v1-033
   demo_maps_used:
-  - /Game/VictorianRoom/Maps/Demonstration
+  - /Game/MedievalForgePack/Maps/Forge_SampleMap
   match_confidence: title_seller
-  notes: >-
-    Build name "VictorianRoom" matches the folder. UE4-only listing (4.13-4.24): install into a 4.24 project
-    and migrate, or use the launcher "Show all projects" option.
-- folder: TrainStation
-  title: null
-  seller: null
-  fab_url: null
-  fab_uid: null
-  license: null
-  price_usd_at_check: null
-  ai_usage: unknown
-  engine_versions: []
-  lists_ue_5_8: false
-  distribution: null
+  notes: Title and seller match; the build name ("MedievalForgePack 8.0") matches the folder.
+- folder: MedievalScandinavianVillage
+  title: Medieval Scandinavian Village - Modular Environment
+  seller: Lumits
+  fab_url: https://www.fab.com/listings/7eb8c2c4-373e-4ee7-bb06-1b3aff8752e1
+  fab_uid: 7eb8c2c4-373e-4ee7-bb06-1b3aff8752e1
+  ai_usage: allowed
   used_by:
     counts:
-      image_to_scene_outdoor: 5
-    image_to_scene_outdoor:
-    - comp-05-train-east-bench-recovery-v2
-    - comp-08-train-crossing-sign-reset-v2
-    - comp-44-train-east-bin-replacement-v2
-    - comp-63-train-parking-sign-recovery-v2
-    - comp-64-train-streetlamp-pair-repair-v2
-  demo_maps_used:
-  - /Game/TrainStation/Maps/TrainStation_Optimised
-  match_confidence: unresolved
-  notes: >-
-    Fab listing NOT identified. Content: modern urban train station (overpass, skyscrapers, branded signs,
-    overhead-wire splines), originally saved with UE 4.20, six maps (TrainStation, TrainStation_Optimised,
-    Demonstration, Overview, Cinematography_Level, Sound_Level), about 540 meshes. It does NOT match "Victorian
-    Train Station and Railroad Modular Set" (Denys Rutkovskyi, 112 meshes) or "Modular Train Station Environment"
-    (Vojtech Vejtasa, 127 meshes, UE 5.2+).
+      text_to_scene: 5
+    text_to_scene:
+    - case_091
+    - case_092
+    - case_093
+    - case_094
+    - case_095
+  match_confidence: title_seller
+  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: MiddleEasternTown
   title: Middle Eastern Town Gigapack w/ Level PCG ( MET, Palace, Bazaar, City)
   seller: Leartes Studios
@@ -763,32 +712,23 @@ packs:
     Title and seller match (the project is named TownGigapack). The reference copy holds more assets than
     the listing reports (it may include later updates). Complete project: copy Content/MiddleEasternTown
     into your project.
-- folder: Diner
-  title: Rosie's Restaurant/Diner
-  seller: SoloMode
-  fab_url: https://www.fab.com/listings/dccbefcf-1f53-45c3-aae1-105bb836683f
-  fab_uid: dccbefcf-1f53-45c3-aae1-105bb836683f
-  license: UE Marketplace
-  price_usd_at_check: 29.99
+- folder: Modular_Gardens
+  title: Classical Modular Gardens
+  seller: ScottFlinders
+  fab_url: https://www.fab.com/listings/deb3141f-0f08-444f-b0a3-2c177f627b92
+  fab_uid: deb3141f-0f08-444f-b0a3-2c177f627b92
   ai_usage: allowed
-  engine_versions:
-  - 4.23-5.3
-  lists_ue_5_8: false
-  distribution: asset_pack
   used_by:
     counts:
-      image_to_scene_outdoor: 6
-    image_to_scene_outdoor:
-    - comp-17-rosies-service-bin-reset-v3
-    - comp-18-rosies-roadside-billboard-reset-v3
-    - comp-20-rosies-crate-bin-layout-v2
-    - comp-49-rosies-service-garbage-recovery-v2
-    - comp-69-rosies-north-bin-pair-repair-v2
-    - comp-70-rosies-east-garbage-bag-recovery-v2
-  demo_maps_used:
-  - /Game/Diner/Maps/Diner
-  match_confidence: exact_uid_confirmed
-  notes: Counts match (74 meshes, 96 materials, 168 textures).
+      text_to_scene: 5
+    text_to_scene:
+    - case_038
+    - case_039
+    - case_040
+    - case_041
+    - case_042
+  match_confidence: title_seller
+  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: Modular_house
   title: Suburban Modular House Pack
   seller: Alexandr Bratus
@@ -818,33 +758,70 @@ packs:
   notes: >-
     Counts match (493 meshes, 342 textures). Separate builds per engine version; the reference copy is
     the 5.6 build. Discounted to $69.99 on the check date.
-- folder: Gas_Station
-  title: Route 66 Gas Station / Modular Environment
-  seller: PackDev
-  fab_url: https://www.fab.com/listings/421cef13-0000-4b2c-9814-974bfea2790f
-  fab_uid: 421cef13-0000-4b2c-9814-974bfea2790f
+- folder: ModularGothicFantasyEnvironment
+  title: Modular Gothic/Fantasy Environment
+  seller: Stormcrow Studios
+  fab_url: https://www.fab.com/listings/92987f7a-6ff7-4884-962b-4c41dddd4cc1
+  fab_uid: 92987f7a-6ff7-4884-962b-4c41dddd4cc1
+  ai_usage: allowed
+  used_by:
+    counts:
+      text_to_scene: 4
+    text_to_scene:
+    - case_065
+    - case_066
+    - case_067
+    - case_068
+  match_confidence: title_seller
+  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
+- folder: NordicHarbour
+  title: Nordic Harbour - Modular City Building Kit
+  seller: Wester Games
+  fab_url: https://www.fab.com/listings/5b9be947-566c-4a65-9fe7-ec2eeb7701bd
+  fab_uid: 5b9be947-566c-4a65-9fe7-ec2eeb7701bd
   license: Standard License
-  price_usd_at_check: 29.99
+  price_usd_at_check: 49.99
   ai_usage: allowed
   engine_versions:
-  - 4.22-5.7
+  - 4.22-5.6
   lists_ue_5_8: false
   distribution: asset_pack
   used_by:
     counts:
-      image_to_scene_outdoor: 6
-    image_to_scene_outdoor:
-    - comp-25-route66-fuel-pump-recovery-v2
-    - comp-26-route66-seating-vignette-recovery-v2
-    - comp-27-route66-chair-pair-repair-v2
-    - comp-28-route66-rear-barrel-reset-v2
-    - comp-53-route66-forecourt-barrel-replacement-v2
-    - comp-54-route66-crate-pair-recovery-v2
+      text_to_scene: 5
+    text_to_scene:
+    - case_011
+    - case_096
+    - case_097
+    - case_098
+    - case_099
+  demo_maps_used: []
+  match_confidence: exact_uid_confirmed
+  notes: Mesh, material and texture counts match (126/140/275).
+- folder: Office
+  title: DownTown Office
+  seller: Replex
+  fab_url: https://www.fab.com/listings/0c920ed7-64f9-4010-a099-5374b4f79bfb
+  fab_uid: 0c920ed7-64f9-4010-a099-5374b4f79bfb
+  license: Standard License (UEFN reference-only tier also offered)
+  price_usd_at_check: 79.99
+  ai_usage: allowed
+  engine_versions:
+  - 5.0-5.8
+  lists_ue_5_8: true
+  distribution: asset_pack
+  used_by:
+    counts:
+      image_to_scene_indoor: 3
+    image_to_scene_indoor:
+    - a20-s03-extra-upper-chair-removal
+    - a20-s03-upper-chair-scaling
+    - indoor-atomic-v1-020
   demo_maps_used:
-  - /Game/Gas_Station/Maps/Demo_Scene
-  match_confidence: title_seller
+  - /Game/Office/Maps/Demo
+  match_confidence: exact_uid_confirmed
   notes: >-
-    Title and seller match; the reference copy is the UE 4.22 build, which is the listing's minimum version.
+    Counts match (183 meshes, 96 materials, 171 textures). Discounted to $39.99 on the check date.
 - folder: OldBuilding
   title: Old Building
   seller: Paradox Studio
@@ -871,6 +848,35 @@ packs:
   - /Game/OldBuilding/Maps/OldBuilding
   match_confidence: title_seller
   notes: Not the "Old Building" listing by MeikWModels. Title, seller and UE 4.24 build match.
+- folder: Ruins
+  title: Ruins
+  seller: Anil Isbilir
+  fab_url: https://www.fab.com/listings/e108cf47-d633-4584-a392-0eef0caaf484
+  fab_uid: e108cf47-d633-4584-a392-0eef0caaf484
+  license: Standard License
+  price_usd_at_check: 49.99
+  ai_usage: allowed
+  engine_versions:
+  - 4.20-4.27
+  - 5.0-5.8
+  lists_ue_5_8: true
+  distribution: complete_project
+  used_by:
+    counts:
+      text_to_scene: 6
+    text_to_scene:
+    - case_013
+    - case_104
+    - case_105
+    - case_106
+    - case_107
+    - case_108
+  demo_maps_used: []
+  match_confidence: exact_uid_confirmed
+  notes: >-
+    Exact counts (71 meshes, 34 materials, 95 textures). This is /Game/Ruins, not /Game/AncientRuins ("Modular
+    Ancient Ruins"), which the public set does not use. Complete project: copy Content/Ruins into your
+    project.
 - folder: RuralAustralia
   title: Rural Australia
   seller: Andrew Svanberg Hamilton
@@ -895,31 +901,22 @@ packs:
   - /Game/RuralAustralia/Maps/RuralAustralia_Example_02
   match_confidence: exact_uid_confirmed
   notes: Free. Exact counts (85 meshes, 129 textures).
-- folder: AfricanLocation
-  title: African desert 4x4 km2 open world location
-  seller: 3dlocatons
-  fab_url: https://www.fab.com/listings/75c21d61-c868-4cd5-aec9-e3e310cdcbce
-  fab_uid: 75c21d61-c868-4cd5-aec9-e3e310cdcbce
-  license: Standard License
-  price_usd_at_check: 10.99
+- folder: Scrapopolis
+  title: Scrapopolis - Steampunk village
+  seller: ARK.KRA
+  fab_url: https://www.fab.com/listings/fa19fa3a-62e4-4528-82dc-19bc66521f3b
+  fab_uid: fa19fa3a-62e4-4528-82dc-19bc66521f3b
   ai_usage: allowed
-  engine_versions:
-  - '4.27'
-  - 5.0-5.4
-  lists_ue_5_8: false
-  distribution: asset_pack
   used_by:
     counts:
-      image_to_scene_outdoor: 4
-    image_to_scene_outdoor:
-    - comp-39-desert-east-wall-pair-repair-v2
-    - comp-60-desert-oasis-wall-symmetry-repair-v3
-    - comp-79-desert-east-wall-recovery-v3
-    - comp-80-desert-central-wall-replacement-v2
-  demo_maps_used:
-  - /Game/AfricanLocation/Locations/Desert2
+      text_to_scene: 4
+    text_to_scene:
+    - case_109
+    - case_110
+    - case_111
+    - case_112
   match_confidence: title_seller
-  notes: Title and seller match ("3dlocatons" is the seller's own spelling).
+  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: StarterContent
   title: Starter Content (ships with Unreal Engine)
   seller: Epic Games
@@ -944,3 +941,160 @@ packs:
     No download. Add it with Add > Add Feature or Content Pack > Starter Content in the editor, or tick
     "Starter Content" when you create the project. It must end up at Content/StarterContent. Needed for
     the CyberpunkWC scenes (two particle systems).
+- folder: Street_NY
+  title: Street New York
+  seller: ART EQUILIBRIUM
+  fab_url: https://www.fab.com/listings/d327e87a-7aaf-4e4e-b3a9-69e98e0bc25a
+  fab_uid: d327e87a-7aaf-4e4e-b3a9-69e98e0bc25a
+  license: Standard License
+  price_usd_at_check: 34.99
+  ai_usage: allowed
+  engine_versions:
+  - 4.20-5.8
+  lists_ue_5_8: true
+  distribution: asset_pack
+  used_by:
+    counts:
+      text_to_scene: 5
+      image_to_scene_outdoor: 5
+    text_to_scene:
+    - case_014
+    - case_113
+    - case_114
+    - case_115
+    - case_116
+    image_to_scene_outdoor:
+    - comp-02-new-york-bench-reset-v2
+    - comp-41-new-york-storefront-planter-pair-recovery-v2
+    - comp-42-new-york-sidewalk-bench-pair-repair-v2
+    - comp-61-new-york-mailbox-pair-repair-v2
+    - comp-62-new-york-bench-trash-bay-repair-v2
+  demo_maps_used:
+  - /Game/Street_NY/Maps/Demo
+  match_confidence: title_seller
+  notes: >-
+    Title and seller match. The reference copy has fewer textures than the current listing reports (older
+    build).
+- folder: TrainStation
+  title: null
+  seller: null
+  fab_url: null
+  fab_uid: null
+  license: null
+  price_usd_at_check: null
+  ai_usage: unknown
+  engine_versions: []
+  lists_ue_5_8: false
+  distribution: null
+  used_by:
+    counts:
+      image_to_scene_outdoor: 5
+    image_to_scene_outdoor:
+    - comp-05-train-east-bench-recovery-v2
+    - comp-08-train-crossing-sign-reset-v2
+    - comp-44-train-east-bin-replacement-v2
+    - comp-63-train-parking-sign-recovery-v2
+    - comp-64-train-streetlamp-pair-repair-v2
+  demo_maps_used:
+  - /Game/TrainStation/Maps/TrainStation_Optimised
+  match_confidence: unresolved
+  notes: >-
+    Fab listing NOT identified. Content: modern urban train station (overpass, skyscrapers, branded signs,
+    overhead-wire splines), originally saved with UE 4.20, six maps (TrainStation, TrainStation_Optimised,
+    Demonstration, Overview, Cinematography_Level, Sound_Level), about 540 meshes. It does NOT match "Victorian
+    Train Station and Railroad Modular Set" (Denys Rutkovskyi, 112 meshes) or "Modular Train Station Environment"
+    (Vojtech Vejtasa, 127 meshes, UE 5.2+).
+- folder: UrbanDecay
+  title: Post-Industrial Environment
+  seller: Joshua Giles
+  fab_url: https://www.fab.com/listings/060b1fea-0ed5-4172-b59d-165ea89ae606
+  fab_uid: 060b1fea-0ed5-4172-b59d-165ea89ae606
+  license: UE Marketplace
+  price_usd_at_check: 49.99
+  ai_usage: allowed
+  engine_versions:
+  - 4.25-5.1
+  lists_ue_5_8: false
+  distribution: asset_pack
+  used_by:
+    counts:
+      text_to_scene: 5
+    text_to_scene:
+    - case_015
+    - case_117
+    - case_118
+    - case_119
+    - case_120
+  demo_maps_used: []
+  match_confidence: exact_uid_confirmed
+  notes: Material and texture counts match (127/276).
+- folder: VictorianRoom
+  title: Victorian Dining Room
+  seller: Infuse Studio
+  fab_url: https://www.fab.com/listings/39fb2fee-f389-49bf-a90a-408d0481dc63
+  fab_uid: 39fb2fee-f389-49bf-a90a-408d0481dc63
+  license: UE Marketplace
+  price_usd_at_check: 24.99
+  ai_usage: allowed
+  engine_versions:
+  - 4.13-4.24
+  lists_ue_5_8: false
+  distribution: asset_pack
+  used_by:
+    counts:
+      image_to_scene_indoor: 1
+    image_to_scene_indoor:
+    - indoor-atomic-v1-077
+  demo_maps_used:
+  - /Game/VictorianRoom/Maps/Demonstration
+  match_confidence: title_seller
+  notes: >-
+    Build name "VictorianRoom" matches the folder. UE4-only listing (4.13-4.24): install into a 4.24 project
+    and migrate, or use the launcher "Show all projects" option.
+- folder: Wild_West_Race
+  title: Stylized Wild West ( Stylized Stylised Wild West Cowboy Wild West Cowboy Sand )
+  seller: StylArts
+  fab_url: https://www.fab.com/listings/2ffbbbf9-752a-478b-b630-02a78825c498
+  fab_uid: 2ffbbbf9-752a-478b-b630-02a78825c498
+  ai_usage: allowed
+  used_by:
+    counts:
+      text_to_scene: 4
+    text_to_scene:
+    - case_121
+    - case_122
+    - case_123
+    - case_124
+  match_confidence: title_seller
+  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
+- folder: WinterTown
+  title: Russian Winter Town
+  seller: GeorgeShachnev
+  fab_url: https://www.fab.com/listings/5bd7045e-b0ae-45a4-ab00-72b2060ab4c5
+  fab_uid: 5bd7045e-b0ae-45a4-ab00-72b2060ab4c5
+  license: Standard License
+  price_usd_at_check: 1.99
+  ai_usage: allowed
+  engine_versions:
+  - 4.19-5.8
+  lists_ue_5_8: true
+  distribution: asset_pack
+  used_by:
+    counts:
+      text_to_scene: 6
+      image_to_scene_outdoor: 3
+    text_to_scene:
+    - case_016
+    - case_125
+    - case_126
+    - case_127
+    - case_128
+    - case_129
+    image_to_scene_outdoor:
+    - comp-09-winter-square-bench-recovery-v2
+    - comp-46-winter-entry-lamppost-pair-repair-v2
+    - comp-66-winter-wrong-fixture-replacement-v2
+  demo_maps_used:
+  - /Game/WinterTown/Maps/RussianWinterTownDemo02
+  match_confidence: exact_uid_confirmed
+  notes: Demo maps are named RussianWinterTown*; mesh count matches (123).

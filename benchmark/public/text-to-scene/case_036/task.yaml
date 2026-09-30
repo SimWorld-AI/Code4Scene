@@ -1,0 +1,134 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_036
+kind: scene_generation
+inputs:
+  prompt: "Create an isolated ruined medieval fortress on a rocky rise beside a broad shallow muddy river,\
+    \ enclosed by rolling terrain and pale eroded mountains. Place one compact castle at one end, combining\
+    \ a rectangular keep, round and square towers, broken curtain walls, roofless chambers, and scattered\
+    \ red banners. Extend a long straight fortified stone bridge across the water, supported by repeated\
+    \ arches and ending at a small roofed gateway. Near the castle, add damaged wooden ramps, stairs,\
+    \ platforms, and irregular piles rising from the water. Scatter shoreline boulders, low vegetation,\
+    \ and a few dark tree clusters. Keep the fortress and bridge as the only major built elements, with\
+    \ generous open space and warm low sunlight.\n\n    === GROUND ===\n    Build the FLOOR FIRST, before\
+    \ placing anything else. Call the benchmark\n    tool `ground_pass` as your first build action: it\
+    \ carpets the whole 200 m\n    plate deterministically from a tile chosen for this scene. If you skip\
+    \ it,\n    and do not tile a floor yourself, the scene renders as objects floating\n    over empty\
+    \ space -- which is a failed reconstruction no matter how good\n    the massing is. These palette\
+    \ entries are also flat surfaces you can tile\n    by hand if you prefer:\n\n      - SM_Floor02 |\
+    \ 8.5x8.5x0.50 m | /Game/CastleRiver/Meshes/SM_Floor02.SM_Floor02\n      - SM_Floor03 | 6.4x6.4x0.50\
+    \ m | /Game/CastleRiver/Meshes/SM_Floor03.SM_Floor03\n      - SM_Floor01 | 6.0x6.0x0.50 m | /Game/CastleRiver/Meshes/SM_Floor01.SM_Floor01\n\
+    \      - SM_FloorStones01 | 5.3x4.1x0.07 m | /Game/CastleRiver/Meshes/SM_FloorStones01.SM_FloorStones01\n\
+    \n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\n\
+    in this run, so this list is your entire library. Format:\n\n  id | name | category | width x depth\
+    \ x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches\
+    \ UE.\nYou decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n-\
+    \ bridge01 | Bridge01 | meshes | 18.09x14.45x20.38 m | /Game/CastleRiver/Meshes/SM_Bridge01.SM_Bridge01\n\
+    - bridge02 | Bridge02 | meshes | 18.09x14.45x19.12 m | /Game/CastleRiver/Meshes/SM_Bridge02.SM_Bridge02\n\
+    - bridge03 | Bridge03 | meshes | 18.61x14.57x19.12 m | /Game/CastleRiver/Meshes/SM_Bridge03.SM_Bridge03\n\
+    - cannon01 | Cannon01 | meshes | 1.39x3.8x1.52 m | /Game/CastleRiver/Meshes/SM_Cannon01.SM_Cannon01\n\
+    - cannon02 | Cannon02 | meshes | 2.58x1.83x0.47 m | /Game/CastleRiver/Meshes/SM_Cannon02.SM_Cannon02\n\
+    - cannon03 | Cannon03 | meshes | 1.81x2.75x1.41 m | /Game/CastleRiver/Meshes/SM_Cannon03.SM_Cannon03\n\
+    - cannon04 | Cannon04 | meshes | 1.43x1.32x0.56 m | /Game/CastleRiver/Meshes/SM_Cannon04.SM_Cannon04\n\
+    - entrance_large_pillar01 | Entrance Large Pillar01 | meshes | 6.0x6.0x20.0 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar01.SM_EntranceLargePillar01\n\
+    - entrance_large_pillar02 | Entrance Large Pillar02 | meshes | 10.77x10.48x20.16 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar02.SM_EntranceLargePillar02\n\
+    - entrance_large_pillar03 | Entrance Large Pillar03 | meshes | 7.58x7.55x20.64 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar03.SM_EntranceLargePillar03\n\
+    - entrance_large_pillar04 | Entrance Large Pillar04 | meshes | 8.86x8.9x21.24 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar04.SM_EntranceLargePillar04\n\
+    - entrance_large_pillar05 | Entrance Large Pillar05 | meshes | 8.86x8.9x20.65 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar05.SM_EntranceLargePillar05\n\
+    - entrance_large_pillar06 | Entrance Large Pillar06 | meshes | 12.32x12.31x20.58 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar06.SM_EntranceLargePillar06\n\
+    - entrance_large_pillar07 | Entrance Large Pillar07 | meshes | 12.31x12.32x20.58 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar07.SM_EntranceLargePillar07\n\
+    - entrance_large_pillar08 | Entrance Large Pillar08 | meshes | 12.12x12.14x20.65 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar08.SM_EntranceLargePillar08\n\
+    - fabric01 | Fabric01 | meshes | 8.05x3.51x7.41 m | /Game/CastleRiver/Meshes/SM_Fabric01.SM_Fabric01\n\
+    - fabric02 | Fabric02 | meshes | 4.29x2.44x5.2 m | /Game/CastleRiver/Meshes/SM_Fabric02.SM_Fabric02\n\
+    - fabric03 | Fabric03 | meshes | 5.87x6.61x1.61 m | /Game/CastleRiver/Meshes/SM_Fabric03.SM_Fabric03\n\
+    - flag01 | Flag01 | meshes | 4.14x4.65x8.6 m | /Game/CastleRiver/Meshes/SM_Flag01.SM_Flag01\n- flag02\
+    \ | Flag02 | meshes | 1.79x2.58x7.93 m | /Game/CastleRiver/Meshes/SM_Flag02.SM_Flag02\n- floor01 |\
+    \ Floor01 | meshes | 6.0x6.0x0.5 m | /Game/CastleRiver/Meshes/SM_Floor01.SM_Floor01\n- floor02 | Floor02\
+    \ | meshes | 8.49x8.49x0.5 m | /Game/CastleRiver/Meshes/SM_Floor02.SM_Floor02\n- floor03 | Floor03\
+    \ | meshes | 6.36x6.36x0.5 m | /Game/CastleRiver/Meshes/SM_Floor03.SM_Floor03\n- floor04 | Floor04\
+    \ | meshes | 4.24x4.24x0.5 m | /Game/CastleRiver/Meshes/SM_Floor04.SM_Floor04\n- floor_stones01 |\
+    \ Floor Stones01 | meshes | 5.3x4.14x0.07 m | /Game/CastleRiver/Meshes/SM_FloorStones01.SM_FloorStones01\n\
+    - ground_plate04 | Ground Plate04 | meshes | 3.02x3.02x0.52 m | /Game/CastleRiver/Meshes/SM_GroundPlate04.SM_GroundPlate04\n\
+    - ground_plate05 | Ground Plate05 | meshes | 3.01x3.02x0.11 m | /Game/CastleRiver/Meshes/SM_GroundPlate05.SM_GroundPlate05\n\
+    - metal_cage02 | Metal Cage02 | meshes | 1.36x1.37x3.31 m | /Game/CastleRiver/Meshes/SM_MetalCage02.SM_MetalCage02\n\
+    - metal_gate01 | Metal Gate01 | meshes | 0.23x5.15x10.08 m | /Game/CastleRiver/Meshes/SM_MetalGate01.SM_MetalGate01\n\
+    - metal_gate04 | Metal Gate04 | meshes | 3.08x0.14x8.46 m | /Game/CastleRiver/Meshes/SM_MetalGate04.SM_MetalGate04\n\
+    - rock01 | Rock01 | meshes | 8.89x15.85x10.19 m | /Game/CastleRiver/Meshes/SM_Rock01.SM_Rock01\n-\
+    \ rock02 | Rock02 | meshes | 12.26x22.57x20.1 m | /Game/CastleRiver/Meshes/SM_Rock02.SM_Rock02\n-\
+    \ rope01 | Rope01 | meshes | 3.77x4.85x0.07 m | /Game/CastleRiver/Meshes/SM_Rope01.SM_Rope01\n- round_stones\
+    \ | Round Stones | meshes | 3.09x3.07x3.98 m | /Game/CastleRiver/Meshes/SM_RoundStones.SM_RoundStones\n\
+    - showroom01 | Showroom01 | meshes | 100.0x100.0x0.0 m | /Game/CastleRiver/Meshes/SM_Showroom01.SM_Showroom01\n\
+    - stairs02 | Stairs02 | meshes | 2.02x5.97x0.82 m | /Game/CastleRiver/Meshes/SM_Stairs02.SM_Stairs02\n\
+    - stairs03 | Stairs03 | meshes | 4.07x11.94x1.63 m | /Game/CastleRiver/Meshes/SM_Stairs03.SM_Stairs03\n\
+    - stairs_box01 | Stairs Box01 | meshes | 3.28x4.72x3.13 m | /Game/CastleRiver/Meshes/SM_StairsBox01.SM_StairsBox01\n\
+    - stairs_box02 | Stairs Box02 | meshes | 4.75x3.29x3.15 m | /Game/CastleRiver/Meshes/SM_StairsBox02.SM_StairsBox02\n\
+    - stairs_box03 | Stairs Box03 | meshes | 3.27x3.29x3.13 m | /Game/CastleRiver/Meshes/SM_StairsBox03.SM_StairsBox03\n\
+    - stone01 | Stone01 | meshes | 7.97x7.95x5.14 m | /Game/CastleRiver/Meshes/SM_Stone01.SM_Stone01\n\
+    - stone03 | Stone03 | meshes | 2.56x2.56x1.65 m | /Game/CastleRiver/Meshes/SM_Stone03.SM_Stone03\n\
+    - stone04 | Stone04 | meshes | 1.9x1.77x0.83 m | /Game/CastleRiver/Meshes/SM_Stone04.SM_Stone04\n\
+    - stone11 | Stone11 | meshes | 3.41x3.92x3.44 m | /Game/CastleRiver/Meshes/SM_Stone11.SM_Stone11\n\
+    - stone14 | Stone14 | meshes | 4.82x2.63x0.94 m | /Game/CastleRiver/Meshes/SM_Stone14.SM_Stone14\n\
+    - stone15 | Stone15 | meshes | 3.83x3.28x1.15 m | /Game/CastleRiver/Meshes/SM_Stone15.SM_Stone15\n\
+    - stone_border01 | Stone Border01 | meshes | 9.09x2.25x0.95 m | /Game/CastleRiver/Meshes/SM_StoneBorder01.SM_StoneBorder01\n\
+    - stone_border02 | Stone Border02 | meshes | 9.0x0.93x0.55 m | /Game/CastleRiver/Meshes/SM_StoneBorder02.SM_StoneBorder02\n\
+    - tomb_stone01 | Tomb Stone01 | meshes | 0.5x1.24x1.41 m | /Game/CastleRiver/Meshes/SM_TombStone01.SM_TombStone01\n\
+    - tomb_stone02 | Tomb Stone02 | meshes | 0.36x1.0x1.62 m | /Game/CastleRiver/Meshes/SM_TombStone02.SM_TombStone02\n\
+    - tomb_stone03 | Tomb Stone03 | meshes | 0.34x1.0x1.4 m | /Game/CastleRiver/Meshes/SM_TombStone03.SM_TombStone03\n\
+    - tomb_stone04 | Tomb Stone04 | meshes | 0.36x1.0x1.42 m | /Game/CastleRiver/Meshes/SM_TombStone04.SM_TombStone04\n\
+    - tomb_stone05 | Tomb Stone05 | meshes | 0.34x0.99x2.03 m | /Game/CastleRiver/Meshes/SM_TombStone05.SM_TombStone05\n\
+    - tomb_stone06 | Tomb Stone06 | meshes | 0.67x1.1x2.59 m | /Game/CastleRiver/Meshes/SM_TombStone06.SM_TombStone06\n\
+    - tomb_stone07 | Tomb Stone07 | meshes | 0.66x1.05x2.38 m | /Game/CastleRiver/Meshes/SM_TombStone07.SM_TombStone07\n\
+    - tomb_stone08 | Tomb Stone08 | meshes | 0.33x0.99x1.41 m | /Game/CastleRiver/Meshes/SM_TombStone08.SM_TombStone08\n\
+    - tomb_stone09 | Tomb Stone09 | meshes | 0.32x0.99x2.1 m | /Game/CastleRiver/Meshes/SM_TombStone09.SM_TombStone09\n\
+    - tomb_stone10 | Tomb Stone10 | meshes | 0.33x0.99x1.97 m | /Game/CastleRiver/Meshes/SM_TombStone10.SM_TombStone10\n\
+    - torch02 | Torch02 | meshes | 0.43x0.65x1.04 m | /Game/CastleRiver/Meshes/SM_Torch02.SM_Torch02\n\
+    - wall01 | Wall01 | meshes | 1.5x6.02x10.0 m | /Game/CastleRiver/Meshes/SM_Wall01.SM_Wall01\n- wall02\
+    \ | Wall02 | meshes | 2.17x6.47x10.12 m | /Game/CastleRiver/Meshes/SM_Wall02.SM_Wall02\n- wall03 |\
+    \ Wall03 | meshes | 2.18x5.92x10.1 m | /Game/CastleRiver/Meshes/SM_Wall03.SM_Wall03\n- wall04 | Wall04\
+    \ | meshes | 2.15x7.81x3.95 m | /Game/CastleRiver/Meshes/SM_Wall04.SM_Wall04\n- wall05 | Wall05 |\
+    \ meshes | 6.34x2.15x2.97 m | /Game/CastleRiver/Meshes/SM_Wall05.SM_Wall05\n- wall06 | Wall06 | meshes\
+    \ | 2.18x6.42x10.2 m | /Game/CastleRiver/Meshes/SM_Wall06.SM_Wall06\n- wall07 | Wall07 | meshes |\
+    \ 2.84x6.92x10.33 m | /Game/CastleRiver/Meshes/SM_Wall07.SM_Wall07\n- wall08 | Wall08 | meshes | 2.87x6.73x10.32\
+    \ m | /Game/CastleRiver/Meshes/SM_Wall08.SM_Wall08\n- wall09 | Wall09 | meshes | 6.94x5.27x10.33 m\
+    \ | /Game/CastleRiver/Meshes/SM_Wall09.SM_Wall09\n- wall_arch01 | Wall Arch01 | meshes | 3.49x10.53x17.5\
+    \ m | /Game/CastleRiver/Meshes/SM_WallArch01.SM_WallArch01\n- wall_arch03 | Wall Arch03 | meshes |\
+    \ 2.4x12.03x20.0 m | /Game/CastleRiver/Meshes/SM_WallArch03.SM_WallArch03\n- wall_arch04 | Wall Arch04\
+    \ | meshes | 6.61x2.18x10.26 m | /Game/CastleRiver/Meshes/SM_WallArch04.SM_WallArch04\n- wall_arch05\
+    \ | Wall Arch05 | meshes | 6.49x2.18x10.23 m | /Game/CastleRiver/Meshes/SM_WallArch05.SM_WallArch05\n\
+    - wall_arch06 | Wall Arch06 | meshes | 1.8x2.33x7.99 m | /Game/CastleRiver/Meshes/SM_WallArch06.SM_WallArch06\n\
+    - wall_leaves01 | Wall Leaves01 | meshes | 0.44x1.78x2.44 m | /Game/CastleRiver/Meshes/SM_WallLeaves01.SM_WallLeaves01\n\
+    - wall_leaves02 | Wall Leaves02 | meshes | 0.47x1.85x3.12 m | /Game/CastleRiver/Meshes/SM_WallLeaves02.SM_WallLeaves02\n\
+    - wall_leaves03 | Wall Leaves03 | meshes | 1.49x1.26x2.94 m | /Game/CastleRiver/Meshes/SM_WallLeaves03.SM_WallLeaves03\n\
+    - wall_leaves04 | Wall Leaves04 | meshes | 0.29x3.26x4.51 m | /Game/CastleRiver/Meshes/SM_WallLeaves04.SM_WallLeaves04\n\
+    - wall_leaves05 | Wall Leaves05 | meshes | 0.29x1.62x1.05 m | /Game/CastleRiver/Meshes/SM_WallLeaves05.SM_WallLeaves05\n\
+    - wall_leaves06 | Wall Leaves06 | meshes | 0.29x0.87x2.71 m | /Game/CastleRiver/Meshes/SM_WallLeaves06.SM_WallLeaves06\n\
+    - wood_plank01 | Wood Plank01 | meshes | 0.29x0.42x5.0 m | /Game/CastleRiver/Meshes/SM_WoodPlank01.SM_WoodPlank01\n\
+    - wood_plank02 | Wood Plank02 | meshes | 0.33x3.71x10.0 m | /Game/CastleRiver/Meshes/SM_WoodPlank02.SM_WoodPlank02\n\
+    - wood_plank03 | Wood Plank03 | meshes | 1.61x1.56x8.89 m | /Game/CastleRiver/Meshes/SM_WoodPlank03.SM_WoodPlank03\n\
+    - wood_plank04 | Wood Plank04 | meshes | 5.0x1.5x0.08 m | /Game/CastleRiver/Meshes/SM_WoodPlank04.SM_WoodPlank04\n\
+    - wood_plank05 | Wood Plank05 | meshes | 6.28x0.33x3.71 m | /Game/CastleRiver/Meshes/SM_WoodPlank05.SM_WoodPlank05\n\
+    - wood_plank06 | Wood Plank06 | meshes | 5.28x2.22x0.08 m | /Game/CastleRiver/Meshes/SM_WoodPlank06.SM_WoodPlank06\n\
+    - wood_plank07 | Wood Plank07 | meshes | 6.11x2.79x0.13 m | /Game/CastleRiver/Meshes/SM_WoodPlank07.SM_WoodPlank07\n\
+    - wood_plank08 | Wood Plank08 | meshes | 6.07x2.14x0.13 m | /Game/CastleRiver/Meshes/SM_WoodPlank08.SM_WoodPlank08\n\
+    - wooden_pier01 | Wooden Pier01 | meshes | 5.69x4.4x1.46 m | /Game/CastleRiver/Meshes/SM_WoodenPier01.SM_WoodenPier01\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
+    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
+    \ for yourself when the scene\nmatches the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+assets:
+  packs:
+  - CastleRiver
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_036.bundle.json
+- name: overview_prompt_alignment

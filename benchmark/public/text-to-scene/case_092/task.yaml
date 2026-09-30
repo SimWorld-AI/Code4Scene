@@ -1,0 +1,123 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_092
+kind: scene_generation
+inputs:
+  prompt: "Create a medieval Scandinavian farm village within a grassy plain, enclosed at a distance by\
+    \ softly rolling low green-brown hills. Make the settlement an irregular oval of churned gray-brown\
+    \ earth amid meadow. Define its edge mostly through an abrupt change from muddy tracks and patchy\
+    \ weeds to dense grass rather than a continuous wall. Scatter grass tufts, weeds, daisies, red wildflowers,\
+    \ and damp-looking ruts over disturbed ground, with denser, more colorful growth toward the perimeter.\n\
+    \nLeave a broad central yard and distribute roughly seven raised timber buildings loosely around it,\
+    \ separated by open spaces. Link them with connected organic rutted footpaths that curve, fork, and\
+    \ circle through the village. Build compact rectangular log cabins on timber-post foundations, using\
+    \ dark horizontal round-log walls, exposed interlocking corner ends, pale plank gables, steep straw-thatched\
+    \ roofs, tiny square lattice windows, simple wooden doors, short stairs, narrow porches, and rough\
+    \ railings.\n\nToward one edge of the yard, face the largest and most decorative hall inward. Give\
+    \ it flanking wings, a projecting central gable, a broad porch, climbing greenery, and a round painted\
+    \ shield high on its façade. Set smaller cabins and sheds around it at varied angles rather than in\
+    \ formal rows, with one or two longer halls near the outer edge. Enclose several irregular garden\
+    \ or animal plots with low split-rail fences, without enclosing the whole village. Place a few small\
+    \ grazing animals near the yard and fences.\n\nFurnish the yard sparingly with a stone-ring firepit,\
+    \ benches, trestle tables, drying or working racks, handcarts and wagon wheels, stacked logs, lumber\
+    \ piles, barrels, ceramic pots, baskets, crates, sacks, hay bundles, and small work surfaces. Concentrate\
+    \ these beside porches and along paths so the center stays readable and open. Let light smoke rise\
+    \ from several roofs, and place ivy patches on selected walls and thatch. Keep the composition informal,\
+    \ spacious, weathered, and organically accumulated rather than tightly packed or geometrically planned.\n\
+    \n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\n\
+    in this run, so this list is your entire library. Format:\n\n  id | name | category | width x depth\
+    \ x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches\
+    \ UE.\nYou decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n-\
+    \ cube | Cube | basicshapes | 5.83x6.51x2.61 m | /Engine/BasicShapes/Cube.Cube\n- sphere | Sphere\
+    \ | basicshapes | 26.77x2.3x11.1 m | /Engine/BasicShapes/Sphere.Sphere\n- ivy_fence_01a | Ivy Fence\
+    \ 01a | foliage | 0.83x1.72x2.19 m | /Game/MedievalScandinavianVillage/Meshes/Foliage/SM_Ivy_Fence_01a.SM_Ivy_Fence_01a\n\
+    - ivy_fence_01b | Ivy Fence 01b | foliage | 0.54x1.53x1.37 m | /Game/MedievalScandinavianVillage/Meshes/Foliage/SM_Ivy_Fence_01b.SM_Ivy_Fence_01b\n\
+    - ivy_roof_1a | Ivy roof 1a | foliage | 2.97x3.09x2.83 m | /Game/MedievalScandinavianVillage/Meshes/Foliage/SM_Ivy_roof_1a.SM_Ivy_roof_1a\n\
+    - ivy_roof_2a | Ivy roof 2a | foliage | 0.04x2.96x2.61 m | /Game/MedievalScandinavianVillage/Meshes/Foliage/SM_Ivy_roof_2a.SM_Ivy_roof_2a\n\
+    - ivy_roof_3a | Ivy roof 3a | foliage | 2.59x2.18x2.32 m | /Game/MedievalScandinavianVillage/Meshes/Foliage/SM_Ivy_roof_3a.SM_Ivy_roof_3a\n\
+    - ivy_roof_3b | Ivy roof 3b | foliage | 2.34x2.17x1.97 m | /Game/MedievalScandinavianVillage/Meshes/Foliage/SM_Ivy_roof_3b.SM_Ivy_roof_3b\n\
+    - ivy_roof_3c | Ivy roof 3c | foliage | 2.36x1.54x1.54 m | /Game/MedievalScandinavianVillage/Meshes/Foliage/SM_Ivy_roof_3c.SM_Ivy_roof_3c\n\
+    - axe_01a | Axe 01a | meshes | 0.31x0.78x0.45 m | /Game/MedievalScandinavianVillage/Meshes/SM_Axe_01a.SM_Axe_01a\n\
+    - barrel_01a | Barrel 01a | meshes | 0.64x0.66x0.84 m | /Game/MedievalScandinavianVillage/Meshes/SM_Barrel_01a.SM_Barrel_01a\n\
+    - bench_01a | Bench 01a | meshes | 1.49x1.66x0.43 m | /Game/MedievalScandinavianVillage/Meshes/SM_Bench_01a.SM_Bench_01a\n\
+    - bucket_01a | Bucket 01a | meshes | 0.79x0.79x0.35 m | /Game/MedievalScandinavianVillage/Meshes/SM_Bucket_01a.SM_Bucket_01a\n\
+    - cart_01a | Cart 01a | meshes | 3.9x2.01x1.3 m | /Game/MedievalScandinavianVillage/Meshes/SM_Cart_01a.SM_Cart_01a\n\
+    - cart_01b | Cart 01b | meshes | 3.9x1.85x1.15 m | /Game/MedievalScandinavianVillage/Meshes/SM_Cart_01b.SM_Cart_01b\n\
+    - cart_01c | Cart 01c | meshes | 1.13x0.57x1.16 m | /Game/MedievalScandinavianVillage/Meshes/SM_Cart_01c.SM_Cart_01c\n\
+    - column_01a | Column 01a | meshes | 0.32x0.32x2.75 m | /Game/MedievalScandinavianVillage/Meshes/SM_Column_01a.SM_Column_01a\n\
+    - door_01a | Door 01a | meshes | 0.27x2.0x2.5 m | /Game/MedievalScandinavianVillage/Meshes/SM_Door_01a.SM_Door_01a\n\
+    - door_01b | Door 01b | meshes | 0.3x2.0x2.5 m | /Game/MedievalScandinavianVillage/Meshes/SM_Door_01b.SM_Door_01b\n\
+    - dryer_rack_01a | dryer rack 01a | meshes | 3.2x3.85x1.9 m | /Game/MedievalScandinavianVillage/Meshes/SM_dryer_rack_01a.SM_dryer_rack_01a\n\
+    - fence_01a | Fence 01a | meshes | 0.55x2.01x1.12 m | /Game/MedievalScandinavianVillage/Meshes/SM_Fence_01a.SM_Fence_01a\n\
+    - fence_01b | Fence 01b | meshes | 0.58x2.07x1.12 m | /Game/MedievalScandinavianVillage/Meshes/SM_Fence_01b.SM_Fence_01b\n\
+    - fence_01c | Fence 01c | meshes | 0.9x2.0x1.12 m | /Game/MedievalScandinavianVillage/Meshes/SM_Fence_01c.SM_Fence_01c\n\
+    - fence_02a | Fence 02a | meshes | 2.03x0.23x1.12 m | /Game/MedievalScandinavianVillage/Meshes/SM_Fence_02a.SM_Fence_02a\n\
+    - fence_02b | Fence 02b | meshes | 2.04x2.03x1.12 m | /Game/MedievalScandinavianVillage/Meshes/SM_Fence_02b.SM_Fence_02b\n\
+    - fire_holder_01 | Fire Holder 01 | meshes | 3.43x3.39x1.5 m | /Game/MedievalScandinavianVillage/Meshes/SM_FireHolder_01.SM_FireHolder_01\n\
+    - floor_01a | Floor 01a | meshes | 2.01x2.01x0.07 m | /Game/MedievalScandinavianVillage/Meshes/SM_Floor_01a.SM_Floor_01a\n\
+    - floor_01b | Floor 01b | meshes | 2.0x0.51x0.07 m | /Game/MedievalScandinavianVillage/Meshes/SM_Floor_01b.SM_Floor_01b\n\
+    - floor_01c | Floor 01c | meshes | 0.5x0.5x0.07 m | /Game/MedievalScandinavianVillage/Meshes/SM_Floor_01c.SM_Floor_01c\n\
+    - ladder_01a | Ladder 01a | meshes | 2.92x1.27x3.12 m | /Game/MedievalScandinavianVillage/Meshes/SM_Ladder_01a.SM_Ladder_01a\n\
+    - log_01a | Log 01a | meshes | 0.97x0.73x0.3 m | /Game/MedievalScandinavianVillage/Meshes/SM_Log_01a.SM_Log_01a\n\
+    - log_01b | Log 01b | meshes | 0.73x0.6x0.3 m | /Game/MedievalScandinavianVillage/Meshes/SM_Log_01b.SM_Log_01b\n\
+    - log_01c | Log 01c | meshes | 0.48x0.48x0.37 m | /Game/MedievalScandinavianVillage/Meshes/SM_Log_01c.SM_Log_01c\n\
+    - log_01d | Log 01d | meshes | 0.57x0.46x0.3 m | /Game/MedievalScandinavianVillage/Meshes/SM_Log_01d.SM_Log_01d\n\
+    - log_01e | Log 01e | meshes | 0.37x0.52x0.13 m | /Game/MedievalScandinavianVillage/Meshes/SM_Log_01e.SM_Log_01e\n\
+    - log_holder_01a | Log Holder 01a | meshes | 1.68x0.81x0.64 m | /Game/MedievalScandinavianVillage/Meshes/SM_LogHolder_01a.SM_LogHolder_01a\n\
+    - pitchfork_01a | Pitchfork 01a | meshes | 1.69x0.52x0.03 m | /Game/MedievalScandinavianVillage/Meshes/SM_Pitchfork_01a.SM_Pitchfork_01a\n\
+    - platform_01a | Platform 01a | meshes | 1.92x1.95x1.0 m | /Game/MedievalScandinavianVillage/Meshes/SM_Platform_01a.SM_Platform_01a\n\
+    - pot_cap_01a | POT Cap 01a | meshes | 0.57x0.57x0.09 m | /Game/MedievalScandinavianVillage/Meshes/SM_POT_Cap_01a.SM_POT_Cap_01a\n\
+    - pot_closed_01a | POT Closed 01a | meshes | 0.73x0.68x0.82 m | /Game/MedievalScandinavianVillage/Meshes/SM_POT_Closed_01a.SM_POT_Closed_01a\n\
+    - pot_opened_01a | POT Opened 01a | meshes | 0.73x0.75x0.55 m | /Game/MedievalScandinavianVillage/Meshes/SM_POT_Opened_01a.SM_POT_Opened_01a\n\
+    - racks_01a | Racks 01a | meshes | 0.6x0.6x0.18 m | /Game/MedievalScandinavianVillage/Meshes/SM_Racks_01a.SM_Racks_01a\n\
+    - racks_01b | Racks 01b | meshes | 2.78x2.68x0.63 m | /Game/MedievalScandinavianVillage/Meshes/SM_Racks_01b.SM_Racks_01b\n\
+    - racks_02a | Racks 02a | meshes | 0.41x0.57x0.76 m | /Game/MedievalScandinavianVillage/Meshes/SM_Racks_02a.SM_Racks_02a\n\
+    - racks_02b | Racks 02b | meshes | 0.31x0.47x0.58 m | /Game/MedievalScandinavianVillage/Meshes/SM_Racks_02b.SM_Racks_02b\n\
+    - racks_02c | Racks 02c | meshes | 0.31x0.46x0.5 m | /Game/MedievalScandinavianVillage/Meshes/SM_Racks_02c.SM_Racks_02c\n\
+    - racks_03a | Racks 03a | meshes | 0.69x1.14x0.65 m | /Game/MedievalScandinavianVillage/Meshes/SM_Racks_03a.SM_Racks_03a\n\
+    - racks_03b | Racks 03b | meshes | 0.16x0.71x0.65 m | /Game/MedievalScandinavianVillage/Meshes/SM_Racks_03b.SM_Racks_03b\n\
+    - roof_01a | Roof 01a | meshes | 7.93x2.02x2.82 m | /Game/MedievalScandinavianVillage/Meshes/SM_Roof_01a.SM_Roof_01a\n\
+    - roof_01b | Roof 01b | meshes | 7.92x1.54x2.9 m | /Game/MedievalScandinavianVillage/Meshes/SM_Roof_01b.SM_Roof_01b\n\
+    - roof_01c | Roof 01c | meshes | 7.5x0.12x2.5 m | /Game/MedievalScandinavianVillage/Meshes/SM_Roof_01c.SM_Roof_01c\n\
+    - roof_01d | Roof 01d | meshes | 5.02x7.93x2.82 m | /Game/MedievalScandinavianVillage/Meshes/SM_Roof_01d.SM_Roof_01d\n\
+    - sack_bag_01a | Sack Bag 01a | meshes | 0.63x0.46x0.73 m | /Game/MedievalScandinavianVillage/Meshes/SM_SackBag_01a.SM_SackBag_01a\n\
+    - sack_bag_01b | Sack Bag 01b | meshes | 0.75x0.66x0.73 m | /Game/MedievalScandinavianVillage/Meshes/SM_SackBag_01b.SM_SackBag_01b\n\
+    - sack_bag_02a | Sack Bag 02a | meshes | 0.75x0.71x0.22 m | /Game/MedievalScandinavianVillage/Meshes/SM_SackBag_02a.SM_SackBag_02a\n\
+    - shield_01a | Shield 01a | meshes | 1.1x1.1x0.21 m | /Game/MedievalScandinavianVillage/Meshes/SM_Shield_01a.SM_Shield_01a\n\
+    - shovel_01a | Shovel 01a | meshes | 1.18x1.24x0.09 m | /Game/MedievalScandinavianVillage/Meshes/SM_Shovel_01a.SM_Shovel_01a\n\
+    - stairs_01a | Stairs 01a | meshes | 2.1x2.02x1.01 m | /Game/MedievalScandinavianVillage/Meshes/SM_Stairs_01a.SM_Stairs_01a\n\
+    - stone_01a | Stone 01a | meshes | 0.5x0.71x0.46 m | /Game/MedievalScandinavianVillage/Meshes/SM_Stone_01a.SM_Stone_01a\n\
+    - stone_01b | Stone 01b | meshes | 0.11x0.07x0.06 m | /Game/MedievalScandinavianVillage/Meshes/SM_Stone_01b.SM_Stone_01b\n\
+    - stone_01c | Stone 01c | meshes | 0.05x0.03x0.03 m | /Game/MedievalScandinavianVillage/Meshes/SM_Stone_01c.SM_Stone_01c\n\
+    - stone_01d | Stone 01d | meshes | 0.06x0.04x0.04 m | /Game/MedievalScandinavianVillage/Meshes/SM_Stone_01d.SM_Stone_01d\n\
+    - stone_01e | Stone 01e | meshes | 1.08x0.76x0.71 m | /Game/MedievalScandinavianVillage/Meshes/SM_Stone_01e.SM_Stone_01e\n\
+    - table_01a | Table 01a | meshes | 2.82x3.02x0.97 m | /Game/MedievalScandinavianVillage/Meshes/SM_Table_01a.SM_Table_01a\n\
+    - wall_01a | Wall 01a | meshes | 2.0x0.13x2.5 m | /Game/MedievalScandinavianVillage/Meshes/SM_Wall_01a.SM_Wall_01a\n\
+    - wall_corner_01a | Wall Corner 01a | meshes | 0.45x0.44x2.55 m | /Game/MedievalScandinavianVillage/Meshes/SM_WallCorner_01a.SM_WallCorner_01a\n\
+    - wall_separater_01a | Wall Separater 01a | meshes | 0.63x0.25x2.75 m | /Game/MedievalScandinavianVillage/Meshes/SM_WallSeparater_01a.SM_WallSeparater_01a\n\
+    - window_01a | Window 01a | meshes | 0.13x2.0x2.5 m | /Game/MedievalScandinavianVillage/Meshes/SM_Window_01a.SM_Window_01a\n\
+    - window_01b | Window 01b | meshes | 0.19x2.0x2.5 m | /Game/MedievalScandinavianVillage/Meshes/SM_Window_01b.SM_Window_01b\n\
+    - woden_planks_01a | Woden Planks 01a | meshes | 0.06x2.5x0.25 m | /Game/MedievalScandinavianVillage/Meshes/SM_WodenPlanks_01a.SM_WodenPlanks_01a\n\
+    - woden_planks_01b | Woden Planks 01b | meshes | 2.0x0.06x0.2 m | /Game/MedievalScandinavianVillage/Meshes/SM_WodenPlanks_01b.SM_WodenPlanks_01b\n\
+    - wooden_box_01a | Wooden Box 01a | meshes | 0.51x0.51x0.4 m | /Game/MedievalScandinavianVillage/Meshes/SM_WoodenBox_01a.SM_WoodenBox_01a\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
+    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
+    \ for yourself when the scene\nmatches the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+assets:
+  packs:
+  - MedievalScandinavianVillage
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_092.bundle.json
+- name: overview_prompt_alignment

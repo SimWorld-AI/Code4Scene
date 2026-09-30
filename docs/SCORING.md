@@ -255,8 +255,8 @@ S_I2S   = mean of ALL I2S case scores = (N_in * S_in + N_out * S_out) / (N_in + 
 S_model = 0.5 * S_T2S + 0.5 * S_I2S
 ```
 
-Indoor and outdoor cases are weighted equally per case (with 25 indoor and
-50 outdoor public cases, the domains weigh 1/3 and 2/3). Case scores keep
+Indoor and outdoor cases are weighted equally per case (with the 25 indoor and
+50 outdoor cases of the paper's public set, the domains weigh 1/3 and 2/3). Case scores keep
 full precision when averaged. Policy IDs recorded with every score:
 `text-to-scene-human-aligned`, `i2s-actor-f1-0.8-physics-0.2-case-macro.v1`,
 `t2s-0.5-i2s-0.5-pooled-case-macro.v2`.

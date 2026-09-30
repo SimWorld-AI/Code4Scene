@@ -1,0 +1,138 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_128
+kind: scene_generation
+inputs:
+  prompt: "Create a sparse winter settlement beside a frozen lake in a broad snowy basin at warm hazy\
+    \ sunset. Group roughly three ten-story apartment slabs and about five smaller four- or five-story\
+    \ brick blocks along one shore, loosely arranged around access roads and open courtyards. Run a cracked\
+    \ asphalt road past the buildings and along the lake, then across the frozen water on a long low bridge.\
+    \ Add segmented concrete fencing, isolated cottages, chimneys, antennas, and occasional warm windows.\
+    \ Keep the central landscape mostly undeveloped, with rolling snowbanks, gullies, shrubs, and dark\
+    \ openings in the ice. Place snow-laden birch and pine near the settlement and thicker forest on enclosing\
+    \ hills.\n\n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is\
+    \ not available\nin this run, so this list is your entire library. Format:\n\n  id | name | category\
+    \ | width x depth x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path\
+    \ is what reaches UE.\nYou decide which to use, how many of each, and where they go — reuse entries\n\
+    freely.\n\n- enterance01 | Enterance01 | blueprints | 1.76x1.09x2.51 m | /Game/WinterTown/Blueprints/BP_Enterance01.BP_Enterance01_C\n\
+    - steaming_pipe | Steaming Pipe | blueprints | 0.56x0.56x3.44 m | /Game/WinterTown/Blueprints/BP_SteamingPipe.BP_SteamingPipe_C\n\
+    - bed01 | Bed01 | furnituremeshes | 1.43x2.24x1.32 m | /Game/WinterTown/Meshes/FurnitureMeshes/SM_Bed01.SM_Bed01\n\
+    - chair01 | Chair01 | furnituremeshes | 0.97x0.97x1.3 m | /Game/WinterTown/Meshes/FurnitureMeshes/SM_Chair01.SM_Chair01\n\
+    - cupboard_backpanel | Cupboard Backpanel | furnituremeshes | 0.05x2.0x1.0 m | /Game/WinterTown/Meshes/FurnitureMeshes/SM_CupboardBackpanel.SM_CupboardBackpanel\n\
+    - cupboard_door_left | Cupboard Door Left | furnituremeshes | 0.13x1.0x1.0 m | /Game/WinterTown/Meshes/FurnitureMeshes/SM_CupboardDoorLeft.SM_CupboardDoorLeft\n\
+    - cupboard_door_right | Cupboard Door Right | furnituremeshes | 0.8x0.8x1.0 m | /Game/WinterTown/Meshes/FurnitureMeshes/SM_CupboardDoorRight.SM_CupboardDoorRight\n\
+    - cupboard_shelves | Cupboard Shelves | furnituremeshes | 0.8x2.0x1.0 m | /Game/WinterTown/Meshes/FurnitureMeshes/SM_CupboardShelves.SM_CupboardShelves\n\
+    - fridge01 | Fridge01 | furnituremeshes | 0.7x0.9x1.43 m | /Game/WinterTown/Meshes/FurnitureMeshes/SM_Fridge01.SM_Fridge01\n\
+    - fridge01_door | Fridge01 Door | furnituremeshes | 0.4x0.93x1.4 m | /Game/WinterTown/Meshes/FurnitureMeshes/SM_Fridge01Door.SM_Fridge01Door\n\
+    - radiator_whole_plane_040 | Radiator Whole Plane 040 | furnituremeshes | 0.2x0.28x0.87 m | /Game/WinterTown/Meshes/FurnitureMeshes/SM_RadiatorWhole_Plane_040.SM_RadiatorWhole_Plane_040\n\
+    - radiator_whole_plane_051 | Radiator Whole Plane 051 | furnituremeshes | 0.46x0.26x0.44 m | /Game/WinterTown/Meshes/FurnitureMeshes/SM_RadiatorWhole_Plane_051.SM_RadiatorWhole_Plane_051\n\
+    - table01 | Table01 | furnituremeshes | 1.47x1.47x1.06 m | /Game/WinterTown/Meshes/FurnitureMeshes/SM_Table01.SM_Table01\n\
+    - air_conditioner | Air Conditioner | meshes | 0.34x0.8x0.7 m | /Game/WinterTown/Meshes/SM_AirConditioner.SM_AirConditioner\n\
+    - antenna01 | Antenna01 | meshes | 1.34x0.67x1.61 m | /Game/WinterTown/Meshes/SM_Antenna01.SM_Antenna01\n\
+    - balcony_ext_frame | Balcony Ext Frame | meshes | 3.26x2.67x1.87 m | /Game/WinterTown/Meshes/SM_BalconyExtFrame.SM_BalconyExtFrame\n\
+    - balcony_ext_glass | Balcony Ext Glass | meshes | 3.12x2.49x1.67 m | /Game/WinterTown/Meshes/SM_BalconyExtGlass.SM_BalconyExtGlass\n\
+    - balcony_exterior01 | Balcony Exterior01 | meshes | 3.32x2.73x1.28 m | /Game/WinterTown/Meshes/SM_BalconyExterior01.SM_BalconyExterior01\n\
+    - balcony_exterior02 | Balcony Exterior02 | meshes | 2.6x3.16x1.23 m | /Game/WinterTown/Meshes/SM_BalconyExterior02.SM_BalconyExterior02\n\
+    - balcony_left | Balcony Left | meshes | 0.56x0.4x2.49 m | /Game/WinterTown/Meshes/SM_BalconyLeft.SM_BalconyLeft\n\
+    - balcony_right | Balcony Right | meshes | 0.97x0.64x2.49 m | /Game/WinterTown/Meshes/SM_BalconyRight.SM_BalconyRight\n\
+    - balcony_wall | Balcony Wall | meshes | 2.7x1.67x3.0 m | /Game/WinterTown/Meshes/SM_BalconyWall.SM_BalconyWall\n\
+    - bench01 | Bench01 | meshes | 2.0x0.78x0.86 m | /Game/WinterTown/Meshes/SM_Bench01.SM_Bench01\n-\
+    \ bench_part2 | Bench Part2 | meshes | 2.42x0.71x1.28 m | /Game/WinterTown/Meshes/SM_BenchPart2.SM_BenchPart2\n\
+    - board01 | Board01 | meshes | 0.6x0.03x0.3 m | /Game/WinterTown/Meshes/SM_Board01.SM_Board01\n- board02\
+    \ | Board02 | meshes | 0.57x0.11x0.38 m | /Game/WinterTown/Meshes/SM_Board02.SM_Board02\n- board03\
+    \ | Board03 | meshes | 2.14x0.09x0.35 m | /Game/WinterTown/Meshes/SM_Board03.SM_Board03\n- board04\
+    \ | Board04 | meshes | 1.46x0.02x0.44 m | /Game/WinterTown/Meshes/SM_Board04.SM_Board04\n- board05\
+    \ | Board05 | meshes | 1.96x0.05x0.61 m | /Game/WinterTown/Meshes/SM_Board05.SM_Board05\n- board06\
+    \ | Board06 | meshes | 0.11x0.86x0.14 m | /Game/WinterTown/Meshes/SM_Board06.SM_Board06\n- board07\
+    \ | Board07 | meshes | 0.34x2.88x0.21 m | /Game/WinterTown/Meshes/SM_Board07.SM_Board07\n- building_corner_decor01\
+    \ | Building Corner Decor01 | meshes | 0.52x0.51x0.6 m | /Game/WinterTown/Meshes/SM_BuildingCornerDecor01.SM_BuildingCornerDecor01\n\
+    - building_corner_decor02 | Building Corner Decor02 | meshes | 0.3x0.3x0.5 m | /Game/WinterTown/Meshes/SM_BuildingCornerDecor02.SM_BuildingCornerDecor02\n\
+    - concrete_hedge01 | Concrete Hedge01 | meshes | 2.91x1.69x3.01 m | /Game/WinterTown/Meshes/SM_ConcreteHedge01.SM_ConcreteHedge01\n\
+    - door_small01 | Door Small01 | meshes | 1.09x0.76x2.03 m | /Game/WinterTown/Meshes/SM_DoorSmall01.SM_DoorSmall01\n\
+    - door_way01 | Door Way01 | meshes | 2.69x1.66x3.0 m | /Game/WinterTown/Meshes/SM_DoorWay01.SM_DoorWay01\n\
+    - doors_enterance01 | Doors Enterance01 | meshes | 0.15x1.77x2.2 m | /Game/WinterTown/Meshes/SM_DoorsEnterance01.SM_DoorsEnterance01\n\
+    - doorway_small_ext | Doorway Small Ext | meshes | 0.2x3.0x3.0 m | /Game/WinterTown/Meshes/SM_DoorwaySmallExt.SM_DoorwaySmallExt\n\
+    - doorway_small_int | Doorway Small Int | meshes | 0.0x3.0x3.0 m | /Game/WinterTown/Meshes/SM_DoorwaySmallInt.SM_DoorwaySmallInt\n\
+    - drain_bottom_piece | Drain Bottom Piece | meshes | 0.53x0.41x0.94 m | /Game/WinterTown/Meshes/SM_DrainBottomPiece.SM_DrainBottomPiece\n\
+    - drain_vert | Drain Vert | meshes | 0.2x0.2x3.1 m | /Game/WinterTown/Meshes/SM_DrainVert.SM_DrainVert\n\
+    - drainall_hor | Drainall Hor | meshes | 3.1x0.2x0.1 m | /Game/WinterTown/Meshes/SM_Drainall_Hor.SM_Drainall_Hor\n\
+    - drainall_joint | Drainall Joint | meshes | 0.56x0.56x0.39 m | /Game/WinterTown/Meshes/SM_Drainall_Joint.SM_Drainall_Joint\n\
+    - enterance_door01 | Enterance Door01 | meshes | 0.96x0.96x2.06 m | /Game/WinterTown/Meshes/SM_EnteranceDoor01.SM_EnteranceDoor01\n\
+    - enterance_door02 | Enterance Door02 | meshes | 2.01x0.05x2.51 m | /Game/WinterTown/Meshes/SM_EnteranceDoor02.SM_EnteranceDoor02\n\
+    - enterance_roof | Enterance Roof | meshes | 19.05x17.42x1.11 m | /Game/WinterTown/Meshes/SM_EnteranceRoof.SM_EnteranceRoof\n\
+    - ext_wall_enterance01 | Ext Wall Enterance01 | meshes | 3.0x0.2x3.0 m | /Game/WinterTown/Meshes/SM_Ext_Wall_Enterance01.SM_Ext_Wall_Enterance01\n\
+    - fuse01 | Fuse01 | meshes | 0.1x0.1x0.12 m | /Game/WinterTown/Meshes/SM_Fuse01.SM_Fuse01\n- glass_balcony_left\
+    \ | Glass Balcony Left | meshes | 0.34x0.19x1.06 m | /Game/WinterTown/Meshes/SM_GlassBalconyLeft.SM_GlassBalconyLeft\n\
+    - glass_balcony_right | Glass Balcony Right | meshes | 0.61x0.35x1.06 m | /Game/WinterTown/Meshes/SM_GlassBalconyRight.SM_GlassBalconyRight\n\
+    - hall_floor3m | Hall Floor3m | meshes | 3.0x1.5x0.1 m | /Game/WinterTown/Meshes/SM_HallFloor3m.SM_HallFloor3m\n\
+    - hall_window_glass | Hall Window Glass | meshes | 1.64x0.95x2.64 m | /Game/WinterTown/Meshes/SM_HallWindowGlass.SM_HallWindowGlass\n\
+    - hallway_rails01 | Hallway Rails01 | meshes | 1.82x1.46x2.45 m | /Game/WinterTown/Meshes/SM_HallwayRails01.SM_HallwayRails01\n\
+    - hallway_rails01_broken | Hallway Rails01 Broken | meshes | 0.78x1.7x2.45 m | /Game/WinterTown/Meshes/SM_HallwayRails01Broken.SM_HallwayRails01Broken\n\
+    - int_floor_01 | Int Floor 01 | meshes | 3.0x3.0x0.0 m | /Game/WinterTown/Meshes/SM_IntFloor_01.SM_IntFloor_01\n\
+    - int_hall_stairway | Int Hall Stairway | meshes | 5.4x4.85x3.0 m | /Game/WinterTown/Meshes/SM_Int_HallStairway.SM_Int_HallStairway\n\
+    - int_hall_stairway02 | Int Hall Stairway02 | meshes | 2.91x3.01x1.5 m | /Game/WinterTown/Meshes/SM_Int_HallStairway02.SM_Int_HallStairway02\n\
+    - int_wall_01 | Int Wall 01 | meshes | 0.0x3.0x2.6 m | /Game/WinterTown/Meshes/SM_IntWall_01.SM_IntWall_01\n\
+    - int_wall_02_balcony | Int Wall 02 Balcony | meshes | 1.5x2.6x2.6 m | /Game/WinterTown/Meshes/SM_IntWall_02Balcony.SM_IntWall_02Balcony\n\
+    - int_wall_02_small_window | Int Wall 02 Small Window | meshes | 3.0x0.2x2.6 m | /Game/WinterTown/Meshes/SM_IntWall_02SmallWindow.SM_IntWall_02SmallWindow\n\
+    - int_wall_02_wide_window | Int Wall 02 Wide Window | meshes | 1.67x2.7x2.6 m | /Game/WinterTown/Meshes/SM_IntWall_02WideWindow.SM_IntWall_02WideWindow\n\
+    - int_wall_enterance01 | Int Wall Enterance01 | meshes | 3.0x0.0x3.0 m | /Game/WinterTown/Meshes/SM_Int_Wall_Enterance01.SM_Int_Wall_Enterance01\n\
+    - int_wall_hall_window | Int Wall Hall Window | meshes | 3.0x0.0x3.0 m | /Game/WinterTown/Meshes/SM_Int_WallHallWindow.SM_Int_WallHallWindow\n\
+    - ladder01 | Ladder01 | meshes | 0.87x1.08x1.0 m | /Game/WinterTown/Meshes/SM_Ladder01.SM_Ladder01\n\
+    - lamp_base01 | Lamp Base01 | meshes | 0.45x0.45x0.56 m | /Game/WinterTown/Meshes/SM_LampBase01.SM_LampBase01\n\
+    - lamp_post01 | Lamp Post01 | meshes | 1.92x2.88x9.16 m | /Game/WinterTown/Meshes/SM_LampPost01.SM_LampPost01\n\
+    - lightbulb01 | Lightbulb01 | meshes | 0.17x0.12x0.14 m | /Game/WinterTown/Meshes/SM_Lightbulb01.SM_Lightbulb01\n\
+    - pine03_low_poly | Pine03 Low Poly | meshes | 17.36x17.66x31.21 m | /Game/WinterTown/Meshes/SM_Pine03LowPoly.SM_Pine03LowPoly\n\
+    - pipe3m | Pipe3m | meshes | 0.12x0.12x2.63 m | /Game/WinterTown/Meshes/SM_Pipe3m.SM_Pipe3m\n- plywood1\
+    \ | Plywood1 | meshes | 1.35x0.01x1.47 m | /Game/WinterTown/Meshes/SM_Plywood1.SM_Plywood1\n- road01\
+    \ | Road01 | meshes | 6.83x6.83x0.3 m | /Game/WinterTown/Meshes/SM_Road01.SM_Road01\n- road01_hole\
+    \ | Road01 Hole | meshes | 6.64x6.64x0.3 m | /Game/WinterTown/Meshes/SM_Road01Hole.SM_Road01Hole\n\
+    - road02 | Road02 | meshes | 4.0x5.0x0.0 m | /Game/WinterTown/Meshes/SM_Road02.SM_Road02\n- roof_corner\
+    \ | Roof Corner | meshes | 5.0x5.0x2.0 m | /Game/WinterTown/Meshes/SM_RoofCorner.SM_RoofCorner\n-\
+    \ roof_hedge01 | Roof Hedge01 | meshes | 1.14x2.9x1.0 m | /Game/WinterTown/Meshes/SM_RoofHedge01.SM_RoofHedge01\n\
+    - roof_hedge02 | Roof Hedge02 | meshes | 0.14x0.14x1.0 m | /Game/WinterTown/Meshes/SM_RoofHedge02.SM_RoofHedge02\n\
+    - roof_middle | Roof Middle | meshes | 5.83x5.1x2.0 m | /Game/WinterTown/Meshes/SM_RoofMiddle.SM_RoofMiddle\n\
+    - roof_step02_left | Roof Step02 Left | meshes | 1.76x2.75x0.5 m | /Game/WinterTown/Meshes/SM_RoofStep02Left.SM_RoofStep02Left\n\
+    - roof_step02_middle | Roof Step02 Middle | meshes | 1.76x2.75x0.5 m | /Game/WinterTown/Meshes/SM_RoofStep02Middle.SM_RoofStep02Middle\n\
+    - roof_step02_right | Roof Step02 Right | meshes | 1.76x2.75x0.5 m | /Game/WinterTown/Meshes/SM_RoofStep02Right.SM_RoofStep02Right\n\
+    - roof_top_attic | Roof Top Attic | meshes | 2.86x1.32x2.05 m | /Game/WinterTown/Meshes/SM_RoofTopAttic.SM_RoofTopAttic\n\
+    - sat_dish01 | Sat Dish01 | meshes | 1.33x1.22x0.77 m | /Game/WinterTown/Meshes/SM_SatDish01.SM_SatDish01\n\
+    - sewer_hatch01 | Sewer Hatch01 | meshes | 1.09x1.11x0.34 m | /Game/WinterTown/Meshes/SM_SewerHatch01.SM_SewerHatch01\n\
+    - sewer_hatch_base | Sewer Hatch Base | meshes | 1.0x1.0x1.37 m | /Game/WinterTown/Meshes/SM_SewerHatchBase.SM_SewerHatchBase\n\
+    - spruce01 | Spruce01 | meshes | 5.98x6.12x11.58 m | /Game/WinterTown/Meshes/SM_Spruce01.SM_Spruce01\n\
+    - tire01 | Tire01 | meshes | 1.61x0.8x1.56 m | /Game/WinterTown/Meshes/SM_Tire01.SM_Tire01\n- tree_birch01\
+    \ | Tree Birch01 | meshes | 5.86x5.91x8.48 m | /Game/WinterTown/Meshes/SM_TreeBirch01.SM_TreeBirch01\n\
+    - tree_old01 | Tree Old01 | meshes | 7.12x8.41x11.73 m | /Game/WinterTown/Meshes/SM_TreeOld01.SM_TreeOld01\n\
+    - tree_old02_branches | Tree Old02 Branches | meshes | 19.63x16.25x20.59 m | /Game/WinterTown/Meshes/SM_TreeOld02Branches.SM_TreeOld02Branches\n\
+    - tree_old04 | Tree Old04 | meshes | 3.54x3.85x2.45 m | /Game/WinterTown/Meshes/SM_TreeOld04.SM_TreeOld04\n\
+    - wall | Wall | meshes | 0.0x3.0x3.0 m | /Game/WinterTown/Meshes/SM_Wall.SM_Wall\n- wall_hall_window\
+    \ | Wall Hall Window | meshes | 3.0x0.2x3.0 m | /Game/WinterTown/Meshes/SM_WallHallWindow.SM_WallHallWindow\n\
+    - wall_window | Wall Window | meshes | 2.6x1.5x3.0 m | /Game/WinterTown/Meshes/SM_WallWindow.SM_WallWindow\n\
+    - wall_window_small | Wall Window Small | meshes | 3.0x0.0x3.0 m | /Game/WinterTown/Meshes/SM_WallWindowSmall.SM_WallWindowSmall\n\
+    - window_frame_nbase | Window Frame NBase | meshes | 1.5x0.96x1.35 m | /Game/WinterTown/Meshes/SM_WindowFrameNBase.SM_WindowFrameNBase\n\
+    - window_grid01 | Window Grid01 | meshes | 0.06x1.35x1.32 m | /Game/WinterTown/Meshes/SM_WindowGrid01.SM_WindowGrid01\n\
+    - window_hall | Window Hall | meshes | 1.88x1.16x2.84 m | /Game/WinterTown/Meshes/SM_WindowHall.SM_WindowHall\n\
+    - window_small_frame_and_base | Window Small Frame And Base | meshes | 1.31x0.14x1.29 m | /Game/WinterTown/Meshes/SM_WindowSmallFrameAndBase.SM_WindowSmallFrameAndBase\n\
+    - window_small_glass | Window Small Glass | meshes | 1.12x0.0x1.1 m | /Game/WinterTown/Meshes/SM_WindowSmallGlass.SM_WindowSmallGlass\n\
+    - window_wide_glass | Window Wide Glass | meshes | 1.29x0.74x1.14 m | /Game/WinterTown/Meshes/SM_WindowWideGlass.SM_WindowWideGlass\n\
+    - wire12m_bowed | Wire12m Bowed | meshes | 12.0x0.02x1.02 m | /Game/WinterTown/Meshes/SM_Wire12mBowed.SM_Wire12mBowed\n\
+    - wire3m_bowed | Wire3m Bowed | meshes | 4.23x1.55x0.31 m | /Game/WinterTown/Meshes/SM_Wire3mBowed.SM_Wire3mBowed\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
+    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
+    \ for yourself when the scene\nmatches the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_128.bundle.json
+- name: overview_prompt_alignment
+assets:
+  packs:
+  - WinterTown

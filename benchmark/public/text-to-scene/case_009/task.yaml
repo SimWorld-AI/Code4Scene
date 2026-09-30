@@ -1,0 +1,210 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_009
+kind: scene_generation
+inputs:
+  prompt: "Build me a sprawling medieval farm town set in a rugged, enclosed mountain basin, with a dense\
+    \ fortified settlement occupying the rocky northern half and broad, open farmland spreading southward.\
+    \ Ring the scene with massive irregular gray boulders, steep mossy outcrops, scattered grassy plateaus,\
+    \ and narrow turquoise streams that descend through gaps in the rocks, including several small white\
+    \ waterfalls. Place roughly sixty to eighty compact timber-and-stone buildings inside and around a\
+    \ rectangular walled town: mostly one- and two-story houses with dark wooden framing, pale infill\
+    \ or masonry walls, and steep orange-brown tiled roofs. Arrange them tightly and organically along\
+    \ narrow dirt lanes, small courtyards, canals, and bridges, with taller square gate towers and watchtowers\
+    \ punctuating the long timber-and-stone walls. Outside the walls, transition to a much sparser patchwork\
+    \ of fenced fields, orchards, livestock enclosures, winding dirt tracks, isolated cottages, sheds,\
+    \ tents, carts, stacked materials, and scattered rocks. Distribute several tall wooden windmills across\
+    \ the fields, some attached to heavy stone or timber tower bases, and place additional lookout buildings\
+    \ on remote rocky peaks and grassy ledges. Let streams skirt both sides of the settlement, feed small\
+    \ turquoise pools within the town, and pass beneath simple wooden footbridges. Use uneven grassy ground\
+    \ with worn pale paths, low fences, shrubs, tall grass, and thin, irregularly spaced trees, keeping\
+    \ the town center crowded and layered while the agricultural outskirts remain open, loosely ordered,\
+    \ and visibly bounded by cliffs and boulder formations.\n\n    === GROUND ===\n    The scene needs\
+    \ a floor before anything stands on it. These palette\n    entries are flat surfaces you can tile\
+    \ edge to edge to make one:\n\n      - SM_main_ground_f1 | 57.8x94.9x2.75 m | /Game/Big_Town/Assets/ground/SM_main_ground_f1.SM_main_ground_f1\n\
+    \      - SM_main_ground_g | 42.0x71.8x2.49 m | /Game/Big_Town/Assets/ground/SM_main_ground_g.SM_main_ground_g\n\
+    \      - SM_river_ground_b1 | 50.6x18.8x1.79 m | /Game/Big_Town/Assets/ground/SM_river_ground_b1.SM_river_ground_b1\n\
+    \      - SM_main_ground_c | 40.3x46.6x4.21 m | /Game/Big_Town/Assets/ground/SM_main_ground_c.SM_main_ground_c\n\
+    \n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\n\
+    in this run, so this list is your entire library. Format:\n\n  id | name | category | width x depth\
+    \ x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches\
+    \ UE.\nYou decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n-\
+    \ cube | Cube | basicshapes | 0.07x0.4x0.11 m | /Engine/BasicShapes/Cube.Cube\n- flag_a_blue | flag\
+    \ a blue | buildings | 1.04x0.1x1.96 m | /Game/Big_Town/Assets/buildings/SM_flag_a_blue.SM_flag_a_blue\n\
+    - flag_a_red | flag a red | buildings | 1.09x0.1x1.96 m | /Game/Big_Town/Assets/buildings/SM_flag_a_red.SM_flag_a_red\n\
+    - flag_b_blue | flag b blue | buildings | 0.6x0.27x1.91 m | /Game/Big_Town/Assets/buildings/SM_flag_b_blue.SM_flag_b_blue\n\
+    - flag_b_red | flag b red | buildings | 0.27x0.6x1.91 m | /Game/Big_Town/Assets/buildings/SM_flag_b_red.SM_flag_b_red\n\
+    - flag_c_blue | flag c blue | buildings | 1.0x0.1x1.39 m | /Game/Big_Town/Assets/buildings/SM_flag_c_blue.SM_flag_c_blue\n\
+    - flag_d_blue | flag d blue | buildings | 0.08x1.35x1.69 m | /Game/Big_Town/Assets/buildings/SM_flag_d_blue.SM_flag_d_blue\n\
+    - flag_d_red | flag d red | buildings | 0.07x1.33x1.76 m | /Game/Big_Town/Assets/buildings/SM_flag_d_red.SM_flag_d_red\n\
+    - haystack_a | haystack a | buildings | 5.31x4.0x2.83 m | /Game/Big_Town/Assets/buildings/SM_haystack_a.SM_haystack_a\n\
+    - haystack_b | haystack b | buildings | 5.31x4.0x2.89 m | /Game/Big_Town/Assets/buildings/SM_haystack_b.SM_haystack_b\n\
+    - haystack_rope_a | haystack rope a | buildings | 1.98x0.96x1.01 m | /Game/Big_Town/Assets/buildings/SM_haystack_rope_a.SM_haystack_rope_a\n\
+    - haystack_rope_b | haystack rope b | buildings | 0.02x0.24x0.81 m | /Game/Big_Town/Assets/buildings/SM_haystack_rope_b.SM_haystack_rope_b\n\
+    - haystack_rope_c | haystack rope c | buildings | 0.35x0.35x0.91 m | /Game/Big_Town/Assets/buildings/SM_haystack_rope_c.SM_haystack_rope_c\n\
+    - house_a1 | house a1 | buildings | 10.45x5.54x10.09 m | /Game/Big_Town/BP/buildings/BP_house_a1.BP_house_a1_C\n\
+    - house_a2 | house a2 | buildings | 5.14x9.33x10.34 m | /Game/Big_Town/BP/buildings/BP_house_a2.BP_house_a2_C\n\
+    - house_b1 | house b1 | buildings | 6.3x16.19x10.44 m | /Game/Big_Town/BP/buildings/BP_house_b1.BP_house_b1_C\n\
+    - house_bridge_a | house bridge a | buildings | 2.81x4.35x6.14 m | /Game/Big_Town/Assets/buildings/SM_house_bridge_a.SM_house_bridge_a\n\
+    - house_bridge_b | house bridge b | buildings | 5.49x3.55x3.9 m | /Game/Big_Town/Assets/buildings/SM_house_bridge_b.SM_house_bridge_b\n\
+    - house_c1 | house c1 | buildings | 5.08x8.8x7.27 m | /Game/Big_Town/BP/buildings/BP_house_c1.BP_house_c1_C\n\
+    - house_roof_window_b | house roof window b | buildings | 0.69x1.24x0.68 m | /Game/Big_Town/Assets/buildings/SM_house_roof_window_b.SM_house_roof_window_b\n\
+    - house_threshold_a | house threshold a | buildings | 0.88x1.22x0.12 m | /Game/Big_Town/Assets/buildings/SM_house_threshold_a.SM_house_threshold_a\n\
+    - house_threshold_b | house threshold b | buildings | 0.98x1.41x0.16 m | /Game/Big_Town/Assets/buildings/SM_house_threshold_b.SM_house_threshold_b\n\
+    - mill_a | mill a | buildings | 7.79x26.08x26.08 m | /Game/Big_Town/BP/buildings/BP_mill_a.BP_mill_a_C\n\
+    - roof_medium | roof medium | buildings | 0.57x1.38x0.22 m | /Game/Big_Town/Assets/buildings/SM_roof_medium.SM_roof_medium\n\
+    - stone_well_a | stone well a | buildings | 2.73x2.0x4.43 m | /Game/Big_Town/BP/buildings/BP_stone_well_a.BP_stone_well_a_C\n\
+    - stone_well_cap | stone well cap | buildings | 2.08x1.79x0.26 m | /Game/Big_Town/Assets/buildings/SM_stone_well_cap.SM_stone_well_cap\n\
+    - street_light_a | street light a | buildings | 0.16x0.44x0.34 m | /Game/Big_Town/Assets/buildings/SM_street_light_a.SM_street_light_a\n\
+    - street_light_b | street light b | buildings | 0.19x0.4x0.34 m | /Game/Big_Town/Assets/buildings/SM_street_light_b.SM_street_light_b\n\
+    - street_light_c | street light c | buildings | 0.19x0.19x0.3 m | /Game/Big_Town/Assets/buildings/SM_street_light_c.SM_street_light_c\n\
+    - street_sign_a | street sign a | buildings | 1.09x0.13x0.5 m | /Game/Big_Town/Assets/buildings/SM_street_sign_a.SM_street_sign_a\n\
+    - street_sign_a1 | street sign a1 | buildings | 0.03x0.73x0.48 m | /Game/Big_Town/Assets/buildings/SM_street_sign_a1.SM_street_sign_a1\n\
+    - street_sign_b | street sign b | buildings | 0.12x1.01x0.69 m | /Game/Big_Town/Assets/buildings/SM_street_sign_b.SM_street_sign_b\n\
+    - tower_a_left | tower a left | buildings | 6.21x5.27x18.43 m | /Game/Big_Town/BP/buildings/BP_tower_a_left.BP_tower_a_left_C\n\
+    - tower_a_right | tower a right | buildings | 5.27x6.32x18.43 m | /Game/Big_Town/BP/buildings/BP_tower_a_right.BP_tower_a_right_C\n\
+    - tower_b_left | tower b left | buildings | 8.04x8.15x19.37 m | /Game/Big_Town/BP/buildings/BP_tower_b_left.BP_tower_b_left_C\n\
+    - wooden_beam_a | wooden beam a | buildings | 0.75x0.72x3.31 m | /Game/Big_Town/Assets/buildings/SM_wooden_beam_a.SM_wooden_beam_a\n\
+    - wooden_beam_c | wooden beam c | buildings | 2.59x0.29x4.83 m | /Game/Big_Town/Assets/buildings/SM_wooden_beam_c.SM_wooden_beam_c\n\
+    - wooden_beams | wooden beams | buildings | 1.36x0.96x1.1 m | /Game/Big_Town/Assets/buildings/SM_wooden_beams.SM_wooden_beams\n\
+    - stone_fence_a | stone fence a | fence | 2.26x0.39x1.79 m | /Game/Big_Town/Assets/fence/SM_stone_fence_a.SM_stone_fence_a\n\
+    - stone_fence_a_broken | stone fence a broken | fence | 2.09x0.46x1.79 m | /Game/Big_Town/Assets/fence/SM_stone_fence_a_broken.SM_stone_fence_a_broken\n\
+    - stone_fence_b | stone fence b | fence | 0.39x2.26x1.79 m | /Game/Big_Town/Assets/fence/SM_stone_fence_b.SM_stone_fence_b\n\
+    - stone_fence_c | stone fence c | fence | 0.42x2.11x1.81 m | /Game/Big_Town/Assets/fence/SM_stone_fence_c.SM_stone_fence_c\n\
+    - stone_fence_column | stone fence column | fence | 0.39x0.42x1.79 m | /Game/Big_Town/Assets/fence/SM_stone_fence_column.SM_stone_fence_column\n\
+    - stone_fence_d | stone fence d | fence | 0.42x4.11x1.81 m | /Game/Big_Town/Assets/fence/SM_stone_fence_d.SM_stone_fence_d\n\
+    - stone_fence_e | stone fence e | fence | 0.42x4.11x3.57 m | /Game/Big_Town/Assets/fence/SM_stone_fence_e.SM_stone_fence_e\n\
+    - wood_fence_a | wood fence a | fence | 2.06x0.13x1.41 m | /Game/Big_Town/Assets/fence/SM_wood_fence_a.SM_wood_fence_a\n\
+    - wood_fence_a_broken | wood fence a broken | fence | 2.06x0.95x1.56 m | /Game/Big_Town/Assets/fence/SM_wood_fence_a_broken.SM_wood_fence_a_broken\n\
+    - wood_fence_b | wood fence b | fence | 0.13x2.01x1.41 m | /Game/Big_Town/Assets/fence/SM_wood_fence_b.SM_wood_fence_b\n\
+    - wood_fence_b_broken | wood fence b broken | fence | 1.52x1.52x1.41 m | /Game/Big_Town/Assets/fence/SM_wood_fence_b_broken.SM_wood_fence_b_broken\n\
+    - wood_fence_beam_a | wood fence beam a | fence | 0.11x0.13x1.41 m | /Game/Big_Town/Assets/fence/SM_wood_fence_beam_a.SM_wood_fence_beam_a\n\
+    - wood_fence_beam_b | wood fence beam b | fence | 0.13x0.13x1.42 m | /Game/Big_Town/Assets/fence/SM_wood_fence_beam_b.SM_wood_fence_beam_b\n\
+    - wood_fence_beam_c | wood fence beam c | fence | 0.12x0.15x1.42 m | /Game/Big_Town/Assets/fence/SM_wood_fence_beam_c.SM_wood_fence_beam_c\n\
+    - wood_fence_c | wood fence c | fence | 2.07x0.18x1.42 m | /Game/Big_Town/Assets/fence/SM_wood_fence_c.SM_wood_fence_c\n\
+    - wood_fence_d | wood fence d | fence | 0.17x2.02x1.41 m | /Game/Big_Town/Assets/fence/SM_wood_fence_d.SM_wood_fence_d\n\
+    - wood_wicked_l | wood wicked l | fence | 0.6x1.25x0.75 m | /Game/Big_Town/Assets/fence/SM_wood_wicked_l.SM_wood_wicked_l\n\
+    - wood_wicked_r | wood wicked r | fence | 0.61x1.25x0.75 m | /Game/Big_Town/Assets/fence/SM_wood_wicked_r.SM_wood_wicked_r\n\
+    - big_wall_a | big wall a | gate | 3.8x7.32x8.55 m | /Game/Big_Town/Assets/gate/SM_big_wall_a.SM_big_wall_a\n\
+    - big_wall_a_corner | big wall a corner | gate | 5.61x5.44x8.55 m | /Game/Big_Town/Assets/gate/SM_big_wall_a_corner.SM_big_wall_a_corner\n\
+    - big_wall_b | big wall b | gate | 3.74x7.32x8.55 m | /Game/Big_Town/Assets/gate/SM_big_wall_b.SM_big_wall_b\n\
+    - big_wall_c | big wall c | gate | 3.8x7.32x8.55 m | /Game/Big_Town/Assets/gate/SM_big_wall_c.SM_big_wall_c\n\
+    - big_wall_end_a | big wall end a | gate | 0.1x3.26x2.12 m | /Game/Big_Town/Assets/gate/SM_big_wall_end_a.SM_big_wall_end_a\n\
+    - big_wall_end_b | big wall end b | gate | 0.15x3.74x2.65 m | /Game/Big_Town/Assets/gate/SM_big_wall_end_b.SM_big_wall_end_b\n\
+    - big_wall_roof | big wall roof | gate | 2.1x1.98x5.12 m | /Game/Big_Town/Assets/gate/SM_big_wall_roof.SM_big_wall_roof\n\
+    - gate_frame | gate frame | gate | 0.76x5.65x5.06 m | /Game/Big_Town/Assets/gate/SM_gate_frame.SM_gate_frame\n\
+    - gate_l | gate l | gate | 2.36x1.15x4.44 m | /Game/Big_Town/Assets/gate/SM_gate_l.SM_gate_l\n- gate_r\
+    \ | gate r | gate | 1.82x2.07x4.44 m | /Game/Big_Town/Assets/gate/SM_gate_r.SM_gate_r\n- main_ground_b\
+    \ | main ground b | ground | 28.02x27.27x0.27 m | /Game/Big_Town/Assets/ground/SM_main_ground_b.SM_main_ground_b\n\
+    - main_ground_c | main ground c | ground | 40.27x46.57x4.21 m | /Game/Big_Town/Assets/ground/SM_main_ground_c.SM_main_ground_c\n\
+    - main_ground_d | main ground d | ground | 19.61x33.6x1.13 m | /Game/Big_Town/Assets/ground/SM_main_ground_d.SM_main_ground_d\n\
+    - main_ground_e | main ground e | ground | 44.79x35.57x2.67 m | /Game/Big_Town/Assets/ground/SM_main_ground_e.SM_main_ground_e\n\
+    - main_ground_f1 | main ground f1 | ground | 57.83x94.91x2.75 m | /Game/Big_Town/Assets/ground/SM_main_ground_f1.SM_main_ground_f1\n\
+    - main_ground_g | main ground g | ground | 42.04x71.75x2.49 m | /Game/Big_Town/Assets/ground/SM_main_ground_g.SM_main_ground_g\n\
+    - moss_a | moss a | ground | 11.43x11.29x4.0 m | /Game/Big_Town/Assets/ground/SM_moss_a.SM_moss_a\n\
+    - river_ground_b1 | river ground b1 | ground | 50.58x18.79x1.79 m | /Game/Big_Town/Assets/ground/SM_river_ground_b1.SM_river_ground_b1\n\
+    - river_ground_c | river ground c | ground | 65.25x6.38x0.11 m | /Game/Big_Town/Assets/ground/SM_river_ground_c.SM_river_ground_c\n\
+    - house_a_balcony_b | house a balcony b | house_a | 1.96x2.35x3.37 m | /Game/Big_Town/Assets/buildings/house_a/SM_house_a_balcony_b.SM_house_a_balcony_b\n\
+    - house_a_outhouse | house a outhouse | house_a | 2.39x0.73x1.91 m | /Game/Big_Town/Assets/buildings/house_a/SM_house_a_outhouse.SM_house_a_outhouse\n\
+    - house_a_watermill | house a watermill | house_a | 4.4x1.21x4.38 m | /Game/Big_Town/Assets/buildings/house_a/SM_house_a_watermill.SM_house_a_watermill\n\
+    - watermill_support | watermill support | house_a | 1.64x0.42x1.9 m | /Game/Big_Town/Assets/buildings/house_a/SM_watermill_support.SM_watermill_support\n\
+    - house_b_wall_b | house b wall b | house_b | 0.09x4.15x3.36 m | /Game/Big_Town/Assets/buildings/house_b/SM_house_b_wall_b.SM_house_b_wall_b\n\
+    - s_water_plane_256 | S Water Plane 256 | meshes | 48.67x8.95x2.78 m | /Water/Meshes/S_WaterPlane_256.S_WaterPlane_256\n\
+    - big_rock_a | big rock a | nature | 17.0x18.61x25.33 m | /Game/Big_Town/Assets/nature/SM_big_rock_a.SM_big_rock_a\n\
+    - big_rock_b | big rock b | nature | 20.77x13.01x34.01 m | /Game/Big_Town/Assets/nature/SM_big_rock_b.SM_big_rock_b\n\
+    - bush_a | bush a | nature | 1.6x1.48x1.7 m | /Game/Big_Town/Assets/nature/SM_bush_a.SM_bush_a\n-\
+    \ bush_b | bush b | nature | 2.39x2.26x2.5 m | /Game/Big_Town/Assets/nature/SM_bush_b.SM_bush_b\n\
+    - grass_a | grass a | nature | 2.21x2.19x0.51 m | /Game/Big_Town/Assets/nature/SM_grass_a.SM_grass_a\n\
+    - grass_a_line | grass a line | nature | 0.1x0.96x0.19 m | /Game/Big_Town/Assets/nature/SM_grass_a_line.SM_grass_a_line\n\
+    - grass_a_small | grass a small | nature | 0.99x1.05x0.3 m | /Game/Big_Town/Assets/nature/SM_grass_a_small.SM_grass_a_small\n\
+    - ivy_a | ivy a | nature | 1.93x2.44x3.63 m | /Game/Big_Town/Assets/nature/SM_ivy_a.SM_ivy_a\n- ivy_b\
+    \ | ivy b | nature | 0.65x3.62x4.21 m | /Game/Big_Town/Assets/nature/SM_ivy_b.SM_ivy_b\n- reeds_a\
+    \ | reeds a | nature | 1.65x1.63x2.03 m | /Game/Big_Town/Assets/nature/SM_reeds_a.SM_reeds_a\n- stone_a\
+    \ | stone a | nature | 1.79x2.13x1.09 m | /Game/Big_Town/Assets/nature/SM_stone_a.SM_stone_a\n- stone_b\
+    \ | stone b | nature | 1.15x0.95x0.5 m | /Game/Big_Town/Assets/nature/SM_stone_b.SM_stone_b\n- stones\
+    \ | stones | nature | 1.48x1.8x0.26 m | /Game/Big_Town/Assets/nature/SM_stones.SM_stones\n- tree_a\
+    \ | tree a | nature | 6.94x5.51x6.69 m | /Game/Big_Town/Assets/nature/SM_tree_a.SM_tree_a\n- tree_b\
+    \ | tree b | nature | 4.61x3.98x7.06 m | /Game/Big_Town/Assets/nature/SM_tree_b.SM_tree_b\n- water_lily_a\
+    \ | water lily a | nature | 2.13x2.18x0.02 m | /Game/Big_Town/Assets/nature/SM_water_lily_a.SM_water_lily_a\n\
+    - wheat_a | wheat a | nature_farm | 2.23x2.34x1.77 m | /Game/Big_Town/Assets/nature_farm/SM_wheat_a.SM_wheat_a\n\
+    - wheat_b | wheat b | nature_farm | 6.16x6.2x1.04 m | /Game/Big_Town/Assets/nature_farm/SM_wheat_b.SM_wheat_b\n\
+    - basket_a | basket a | props | 0.85x0.94x0.62 m | /Game/Big_Town/Assets/props/SM_basket_a.SM_basket_a\n\
+    - basket_b | basket b | props | 0.85x0.94x0.66 m | /Game/Big_Town/Assets/props/SM_basket_b.SM_basket_b\n\
+    - basket_cap | basket cap | props | 0.82x0.8x0.6 m | /Game/Big_Town/Assets/props/SM_basket_cap.SM_basket_cap\n\
+    - boat_a | boat a | props | 6.61x2.28x2.58 m | /Game/Big_Town/Assets/props/SM_boat_a.SM_boat_a\n-\
+    \ boat_b | boat b | props | 4.67x6.05x0.78 m | /Game/Big_Town/Assets/props/SM_boat_b.SM_boat_b\n-\
+    \ bow | bow | props | 1.23x0.81x0.02 m | /Game/Big_Town/Assets/props/SM_bow.SM_bow\n- bow_arrow |\
+    \ bow arrow | props | 0.34x0.53x0.01 m | /Game/Big_Town/Assets/props/SM_bow_arrow.SM_bow_arrow\n-\
+    \ cauldron_a | cauldron a | props | 0.55x0.54x0.55 m | /Game/Big_Town/Assets/props/SM_cauldron_a.SM_cauldron_a\n\
+    - cauldron_b | cauldron b | props | 0.81x0.76x0.48 m | /Game/Big_Town/Assets/props/SM_cauldron_b.SM_cauldron_b\n\
+    - chain | chain | props | 0.04x0.04x0.82 m | /Game/Big_Town/Assets/props/SM_chain.SM_chain\n- fireplace\
+    \ | fireplace | props | 0.69x0.64x0.31 m | /Game/Big_Town/Assets/props/SM_fireplace.SM_fireplace\n\
+    - footman | footman | props | 1.02x0.86x1.73 m | /Game/Big_Town/Assets/props/SM_footman.SM_footman\n\
+    - footman_2 | footman | props | 1.33x1.29x1.73 m | /Game/Big_Town/BP/props/BP_footman.BP_footman_C\n\
+    - hammer | hammer | props | 0.6x0.17x0.1 m | /Game/Big_Town/Assets/props/SM_hammer.SM_hammer\n- hat\
+    \ | hat | props | 0.9x0.84x0.57 m | /Game/Big_Town/Assets/props/SM_hat.SM_hat\n- haystack_a_2 | haystack\
+    \ a | props | 4.78x4.86x3.53 m | /Game/Big_Town/Assets/props/SM_haystack_a.SM_haystack_a\n- haystack_a_small\
+    \ | haystack a small | props | 2.2x2.59x1.01 m | /Game/Big_Town/Assets/props/SM_haystack_a_small.SM_haystack_a_small\n\
+    - ladder_a | ladder a | props | 0.78x0.68x3.98 m | /Game/Big_Town/Assets/props/SM_ladder_a.SM_ladder_a\n\
+    - ladder_b | ladder b | props | 4.0x0.36x0.49 m | /Game/Big_Town/Assets/props/SM_ladder_b.SM_ladder_b\n\
+    - market_cabin | market cabin | props | 2.97x2.88x2.59 m | /Game/Big_Town/Assets/props/SM_market_cabin.SM_market_cabin\n\
+    - market_cabin_a | market cabin a | props | 3.32x4.23x2.59 m | /Game/Big_Town/BP/props/BP_market_cabin_a.BP_market_cabin_a_C\n\
+    - market_chair | market chair | props | 0.51x0.48x0.6 m | /Game/Big_Town/Assets/props/SM_market_chair.SM_market_chair\n\
+    - market_table_a | market table a | props | 2.38x0.78x0.88 m | /Game/Big_Town/Assets/props/SM_market_table_a.SM_market_table_a\n\
+    - market_table_b | market table b | props | 2.33x0.61x0.85 m | /Game/Big_Town/Assets/props/SM_market_table_b.SM_market_table_b\n\
+    - market_waggon_a | market waggon a | props | 4.46x2.78x1.87 m | /Game/Big_Town/Assets/props/SM_market_waggon_a.SM_market_waggon_a\n\
+    - market_waggon_a_2 | market waggon a | props | 2.51x4.42x2.43 m | /Game/Big_Town/BP/props/BP_market_waggon_a.BP_market_waggon_a_C\n\
+    - market_waggon_a_broken | market waggon a broken | props | 3.31x4.22x1.0 m | /Game/Big_Town/Assets/props/SM_market_waggon_a_broken.SM_market_waggon_a_broken\n\
+    - market_wagon_wheel | market wagon wheel | props | 0.88x1.0x0.81 m | /Game/Big_Town/Assets/props/SM_market_wagon_wheel.SM_market_wagon_wheel\n\
+    - oar | oar | props | 1.95x0.18x1.17 m | /Game/Big_Town/Assets/props/SM_oar.SM_oar\n- plate_a | plate\
+    \ a | props | 0.54x0.53x0.05 m | /Game/Big_Town/Assets/props/SM_plate_a.SM_plate_a\n- sand_bag_a |\
+    \ sand bag a | props | 1.06x1.01x0.31 m | /Game/Big_Town/Assets/props/SM_sand_bag_a.SM_sand_bag_a\n\
+    - sand_bag_b | sand bag b | props | 0.91x1.04x0.34 m | /Game/Big_Town/Assets/props/SM_sand_bag_b.SM_sand_bag_b\n\
+    - sand_bag_c | sand bag c | props | 0.75x0.78x0.75 m | /Game/Big_Town/Assets/props/SM_sand_bag_c.SM_sand_bag_c\n\
+    - scarecrow | scarecrow | props | 1.55x1.77x2.61 m | /Game/Big_Town/Assets/props/SM_scarecrow.SM_scarecrow\n\
+    - shield_a | shield a | props | 0.66x0.72x1.05 m | /Game/Big_Town/Assets/props/SM_shield_a.SM_shield_a\n\
+    - skin_a | skin a | props | 0.15x0.76x0.76 m | /Game/Big_Town/Assets/props/SM_skin_a.SM_skin_a\n-\
+    \ skin_b | skin b | props | 1.62x0.83x0.07 m | /Game/Big_Town/Assets/props/SM_skin_b.SM_skin_b\n-\
+    \ sword | sword | props | 1.01x0.7x0.02 m | /Game/Big_Town/Assets/props/SM_sword.SM_sword\n- target\
+    \ | target | props | 0.58x0.9x1.52 m | /Game/Big_Town/Assets/props/SM_target.SM_target\n- target_a\
+    \ | target a | props | 0.8x0.68x0.73 m | /Game/Big_Town/Assets/props/SM_target_a.SM_target_a\n- wood_plank_a\
+    \ | wood plank a | props | 1.97x7.39x0.48 m | /Game/Big_Town/Assets/props/SM_wood_plank_a.SM_wood_plank_a\n\
+    - wood_plank_b | wood plank b | props | 2.27x7.3x0.48 m | /Game/Big_Town/Assets/props/SM_wood_plank_b.SM_wood_plank_b\n\
+    - wooden_barrel_a | wooden barrel a | props | 0.81x0.79x0.93 m | /Game/Big_Town/Assets/props/SM_wooden_barrel_a.SM_wooden_barrel_a\n\
+    - wooden_bin_a | wooden bin a | props | 0.66x0.68x0.67 m | /Game/Big_Town/Assets/props/SM_wooden_bin_a.SM_wooden_bin_a\n\
+    - wooden_box | wooden box | props | 0.53x0.89x0.65 m | /Game/Big_Town/Assets/props/SM_wooden_box.SM_wooden_box\n\
+    - bridge | bridge | river_wall | 3.96x10.16x3.5 m | /Game/Big_Town/Assets/river_wall/SM_bridge.SM_bridge\n\
+    - bridge_road | bridge road | river_wall | 6.49x6.39x2.76 m | /Game/Big_Town/Assets/river_wall/SM_bridge_road.SM_bridge_road\n\
+    - river_dam | river dam | river_wall | 4.05x5.58x4.85 m | /Game/Big_Town/Assets/river_wall/SM_river_dam.SM_river_dam\n\
+    - river_wall_a | river wall a | river_wall | 5.58x0.57x4.85 m | /Game/Big_Town/Assets/river_wall/SM_river_wall_a.SM_river_wall_a\n\
+    - river_wall_b | river wall b | river_wall | 0.42x1.05x3.24 m | /Game/Big_Town/Assets/river_wall/SM_river_wall_b.SM_river_wall_b\n\
+    - river_wall_c | river wall c | river_wall | 0.42x1.05x3.24 m | /Game/Big_Town/Assets/river_wall/SM_river_wall_c.SM_river_wall_c\n\
+    - river_wall_d | river wall d | river_wall | 1.35x1.35x4.84 m | /Game/Big_Town/Assets/river_wall/SM_river_wall_d.SM_river_wall_d\n\
+    - river_wall_e | river wall e | river_wall | 3.44x1.76x4.85 m | /Game/Big_Town/Assets/river_wall/SM_river_wall_e.SM_river_wall_e\n\
+    - stairs_a | stairs a | stairs | 2.0x2.17x1.29 m | /Game/Big_Town/Assets/stairs/SM_stairs_a.SM_stairs_a\n\
+    - stairs_a_long | stairs a long | stairs | 2.17x6.0x1.29 m | /Game/Big_Town/Assets/stairs/SM_stairs_a_long.SM_stairs_a_long\n\
+    - waterffall_a | waterffall a | water | 12.02x10.94x33.48 m | /Game/Big_Town/Assets/water/SM_waterffall_a.SM_waterffall_a\n\
+    - waterffall_b | waterffall b | water | 2.45x1.34x7.85 m | /Game/Big_Town/Assets/water/SM_waterffall_b.SM_waterffall_b\n\
+    - waterffall_c | waterffall c | water | 2.46x5.7x2.95 m | /Game/Big_Town/Assets/water/SM_waterffall_c.SM_waterffall_c\n\
+    - waterffall_d | waterffall d | water | 5.42x7.56x2.91 m | /Game/Big_Town/Assets/water/SM_waterffall_d.SM_waterffall_d\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
+    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
+    \ for yourself when the scene\nmatches the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+assets:
+  packs:
+  - Big_Town
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_009.bundle.json
+- name: overview_prompt_alignment

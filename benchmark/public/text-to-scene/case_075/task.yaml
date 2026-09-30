@@ -1,0 +1,43 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_075
+kind: scene_generation
+inputs:
+  prompt: 'Cranes provide the vertical landmarks of an industrial harbor loading dock; below them, shipping
+    containers form the main storage masses. Deliberate rows and compact groups give the containers an
+    ordered rhythm, with clearer gaps separating stored cargo from a recognizable loading and cargo-handling
+    area.
+
+
+    Near the containers and around the working area, pallets and warehouse props gather in smaller clusters
+    that suggest separate handling and storage points. Barrels collect beside some of these pallet groups
+    and warehouse props, rather than appearing evenly across the whole dock. Warning signs stand at the
+    edges of working and storage areas, visibly tied to the cargo-handling activity they mark.
+
+
+    The cranes, containers, and loading space remain visually dominant. Barrels, pallets, warehouse props,
+    and signs supply the smaller details, each group supporting the same reading of an organized industrial
+    workplace. Connected areas for handling and storing cargo make the overall arrangement unmistakably
+    a harbor loading dock, its layout held together by the relationship between open working space and
+    grouped storage.
+
+    '
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 130
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+assets:
+  packs:
+  - ContainerYard
+  - Hangar
+  - FactoryEnvironment
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_075.bundle.json
+- name: overview_prompt_alignment

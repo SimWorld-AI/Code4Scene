@@ -1,0 +1,39 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_077
+kind: scene_generation
+inputs:
+  prompt: "scene:\n  identity: Industrial harbor loading dock\n  organization: Clearly recognizable, organized\
+    \ industrial workplace\n  areas: Connected cargo handling and storage\ncargo handling:\n  role: Recognizable\
+    \ organizing center of the dock\n  cranes:\n    role: Principal vertical structures of the dock\n\
+    \    prominence: Visually dominant within cargo handling area\n  loading space: Visually dominant\
+    \ alongside cranes and containers\ncontainer storage:\n  shipping containers: Main storage masses\n\
+    \  arrangement: Deliberate rows and compact groups\n  separation: Clearer gaps between groups; loading\
+    \ area distinct from stored cargo\nhandling and storage details:\n  inventory: Pallets and warehouse\
+    \ props\n  placement:\n    containers: Pallets and warehouse props nearby\n    working area: Pallets\
+    \ and warehouse props grouped around it\n  grouping: Smaller clusters suggesting separate handling\
+    \ and storage points\nbarrels:\n  grouping: Gather beside some pallet groups and warehouse props\n\
+    \  distribution: Grouped rather than evenly distributed across entire dock\nwarning signs:\n  placement:\
+    \ Edges of working and storage areas\n  relationship: Visible connection to cargo-handling activity\n\
+    visual hierarchy:\n  primary: Cranes, shipping containers, loading space\n  secondary: Barrels, pallets,\
+    \ warehouse props, warning signs supplying smaller details\n  overall reading: Coherent harbor loading\
+    \ dock; handling and stored cargo identifiable within the connected arrangement\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 130
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+assets:
+  packs:
+  - ContainerYard
+  - Hangar
+  - FactoryEnvironment
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_077.bundle.json
+- name: overview_prompt_alignment

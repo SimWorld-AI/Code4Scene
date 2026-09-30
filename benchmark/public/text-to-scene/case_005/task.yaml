@@ -1,0 +1,77 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_005
+kind: scene_generation
+inputs:
+  prompt: "Build me a Egyptian temple ruin isolated in a vast, softly rolling orange desert. Place one\
+    \ compact rectangular temple as the dominant structure, its massive pale sandstone walls slightly\
+    \ battered and articulated with shallow projecting sections, engraved panels, faded figures and hieroglyphic\
+    \ bands, thin gold accents, and turquoise, yellow, red, and blue painted friezes. Give it a flat,\
+    \ nearly complete slab roof enclosed by an uneven pale stone coping. Orient the decorated entrance\
+    \ toward an open forecourt: the façade should have a broad shadowed central opening, several closely\
+    \ spaced papyrus-style columns with colorful flared capitals, shorter square supports, and low painted\
+    \ railings, revealing a dark columned interior and a faintly illuminated passage beyond. Keep the\
+    \ other three elevations mostly solid and monumental, with repeated rectangular relief panels and\
+    \ horizontal ornamental courses. In front and slightly to one side, arrange the remains of a detached\
+    \ colonnade: four tall, slender painted columns set in a loose line beneath two incomplete, offset\
+    \ sandstone lintel beams, leaving obvious gaps and broken continuity. Scatter an irregular trail of\
+    \ cracked paving slabs and small fragments around their bases, partly swallowed by sand.\n\n    ===\
+    \ GROUND ===\n    Build the FLOOR FIRST, before placing anything else. Call the benchmark\n    tool\
+    \ `ground_pass` as your first build action: it carpets the whole 200 m\n    plate deterministically\
+    \ from a tile chosen for this scene. If you skip it,\n    and do not tile a floor yourself, the scene\
+    \ renders as objects floating\n    over empty space -- which is a failed reconstruction no matter\
+    \ how good\n    the massing is. These palette entries are also flat surfaces you can tile\n    by\
+    \ hand if you prefer:\n\n      - SM_Temple_Floor | 10.0x10.0x0.50 m | /Game/EgyptianTemple/Meshes/SM_Temple_Floor.SM_Temple_Floor\n\
+    \n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\n\
+    in this run, so this list is your entire library. Format:\n\n  id | name | category | width x depth\
+    \ x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches\
+    \ UE.\nYou decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n-\
+    \ ceiling_block | Ceiling Block | meshes | 1.2x6.0x2.0 m | /Game/EgyptianTemple/Meshes/SM_Ceiling_Block.SM_Ceiling_Block\n\
+    - ceiling_block_corner | Ceiling Block Corner | meshes | 5.6x5.6x2.0 m | /Game/EgyptianTemple/Meshes/SM_Ceiling_BlockCorner.SM_Ceiling_BlockCorner\n\
+    - ceiling_edge | Ceiling Edge | meshes | 2.15x5.01x1.7 m | /Game/EgyptianTemple/Meshes/SM_Ceiling_Edge.SM_Ceiling_Edge\n\
+    - ceiling_edge_corner | Ceiling Edge Corner | meshes | 6.55x6.59x1.7 m | /Game/EgyptianTemple/Meshes/SM_Ceiling_Edge_Corner.SM_Ceiling_Edge_Corner\n\
+    - chest_base | Chest Base | meshes | 0.78x0.78x0.71 m | /Game/EgyptianTemple/Meshes/SM_Chest_Base.SM_Chest_Base\n\
+    - chest_lid | Chest Lid | meshes | 0.68x0.68x0.07 m | /Game/EgyptianTemple/Meshes/SM_Chest_Lid.SM_Chest_Lid\n\
+    - cup | Cup | meshes | 0.18x0.18x0.16 m | /Game/EgyptianTemple/Meshes/SM_Cup.SM_Cup\n- emblem | Emblem\
+    \ | meshes | 3.97x0.25x0.59 m | /Game/EgyptianTemple/Meshes/SM_Emblem.SM_Emblem\n- front_ceiling_block\
+    \ | Front Ceiling Block | meshes | 5.0x1.2x2.0 m | /Game/EgyptianTemple/Meshes/SM_Front_Ceiling_Block.SM_Front_Ceiling_Block\n\
+    - platter_01 | Platter 01 | meshes | 0.43x0.43x0.02 m | /Game/EgyptianTemple/Meshes/SM_Platter_01.SM_Platter_01\n\
+    - platter_02 | Platter 02 | meshes | 0.44x0.44x0.1 m | /Game/EgyptianTemple/Meshes/SM_Platter_02.SM_Platter_02\n\
+    - pyre_empty | Pyre Empty | meshes | 0.6x0.65x0.88 m | /Game/EgyptianTemple/Meshes/SM_Pyre_Empty.SM_Pyre_Empty\n\
+    - pyre_fire | Pyre Fire | meshes | 0.6x0.66x0.98 m | /Game/EgyptianTemple/Meshes/SM_Pyre_Fire.SM_Pyre_Fire\n\
+    - round_pillar | Round Pillar | meshes | 3.45x3.45x9.07 m | /Game/EgyptianTemple/Meshes/SM_Round_Pillar.SM_Round_Pillar\n\
+    - sarc | Sarc | meshes | 0.89x2.52x0.88 m | /Game/EgyptianTemple/Meshes/SM_Sarc.SM_Sarc\n- sarc_stand\
+    \ | Sarc Stand | meshes | 4.0x4.0x1.03 m | /Game/EgyptianTemple/Meshes/SM_Sarc_Stand.SM_Sarc_Stand\n\
+    - small_wall_2 | Small Wall 2 | meshes | 1.12x5.0x4.94 m | /Game/EgyptianTemple/Meshes/SM_Small_Wall_2.SM_Small_Wall_2\n\
+    - square_pillar | Square Pillar | meshes | 1.32x2.19x5.0 m | /Game/EgyptianTemple/Meshes/SM_Square_Pillar.SM_Square_Pillar\n\
+    - statue | Statue | meshes | 0.97x1.48x3.12 m | /Game/EgyptianTemple/Meshes/SM_Statue.SM_Statue\n\
+    - stone_wedge | Stone Wedge | meshes | 1.43x2.53x0.15 m | /Game/EgyptianTemple/Meshes/SM_Stone_Wedge.SM_Stone_Wedge\n\
+    - table | Table | meshes | 0.86x0.91x1.2 m | /Game/EgyptianTemple/Meshes/SM_Table.SM_Table\n- temple_floor\
+    \ | Temple Floor | meshes | 10.0x10.0x0.5 m | /Game/EgyptianTemple/Meshes/SM_Temple_Floor.SM_Temple_Floor\n\
+    - temple_wall_corner | Temple Wall Corner | meshes | 6.68x6.68x9.2 m | /Game/EgyptianTemple/Meshes/SM_Temple_WallCorner.SM_Temple_WallCorner\n\
+    - temple_wall_doorway | Temple Wall Doorway | meshes | 5.96x10.12x9.24 m | /Game/EgyptianTemple/Meshes/SM_Temple_Wall_Doorway.SM_Temple_Wall_Doorway\n\
+    - temple_wall_middle | Temple Wall Middle | meshes | 3.27x5.12x9.2 m | /Game/EgyptianTemple/Meshes/SM_Temple_Wall_Middle.SM_Temple_Wall_Middle\n\
+    - vase_01 | Vase 01 | meshes | 0.65x0.76x1.07 m | /Game/EgyptianTemple/Meshes/SM_Vase_01.SM_Vase_01\n\
+    - vase_02 | Vase 02 | meshes | 0.41x0.41x0.49 m | /Game/EgyptianTemple/Meshes/SM_Vase_02.SM_Vase_02\n\
+    - vase_03 | Vase 03 | meshes | 0.35x0.35x0.34 m | /Game/EgyptianTemple/Meshes/SM_Vase_03.SM_Vase_03\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
+    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
+    \ for yourself when the scene\nmatches the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+assets:
+  packs:
+  - EgyptianTemple
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_005.bundle.json
+- name: overview_prompt_alignment

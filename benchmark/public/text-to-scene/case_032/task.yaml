@@ -1,0 +1,90 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_032
+kind: scene_generation
+inputs:
+  prompt: "Create a sunlit Chefchaouen-style street with fifteen to twenty adjoining low-to-mid-rise buildings\
+    \ along a broad straight road. Use weathered blue and pastel stucco, arches, terraces, and tiled roofs.\
+    \ Feature a tall blue tower house with a projecting timber room, plus palms, vines, lanterns, and\
+    \ worn paving with puddles.\n\n    === GROUND ===\n    Build the FLOOR FIRST, before placing anything\
+    \ else. Call the benchmark\n    tool `ground_pass` as your first build action: it carpets the whole\
+    \ 200 m\n    plate deterministically from a tile chosen for this scene. If you skip it,\n    and do\
+    \ not tile a floor yourself, the scene renders as objects floating\n    over empty space -- which\
+    \ is a failed reconstruction no matter how good\n    the massing is. These palette entries are also\
+    \ flat surfaces you can tile\n    by hand if you prefer:\n\n      - BP_Chwn_Grass_02 | 2.9x4.5x0.60\
+    \ m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_Grass_02.BP_Chwn_Grass_02_C\n      -\
+    \ BP_Chwn_SideWalk_01 | 4.4x4.1x0.28 m | /Game/Chefchaouen_Village/Blueprints/Street_Assets/BP_Chwn_SideWalk_01.BP_Chwn_SideWalk_01_C\n\
+    \      - SM_Sidewalk_01 | 4.0x4.0x0.15 m | /Game/Chefchaouen_Village/Assets/SM_Sidewalk_01.SM_Sidewalk_01\n\
+    \      - SM_Ground_01 | 4.0x4.0x0.00 m | /Game/Chefchaouen_Village/Assets/SM_Ground_01.SM_Ground_01\n\
+    \n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\n\
+    in this run, so this list is your entire library. Format:\n\n  id | name | category | width x depth\
+    \ x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches\
+    \ UE.\nYou decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n-\
+    \ chwn_arch_01 | Chwn Arch 01 | assets | 1.32x4.83x4.79 m | /Game/Chefchaouen_Village/Assets/SM_Chwn_Arch_01.SM_Chwn_Arch_01\n\
+    - chwn_arch_wall_01 | Chwn Arch Wall 01 | assets | 4.2x0.87x2.85 m | /Game/Chefchaouen_Village/Assets/SM_Chwn_ArchWall_01.SM_Chwn_ArchWall_01\n\
+    - chwn_bench_01 | Chwn Bench 01 | assets | 0.86x1.98x1.28 m | /Game/Chefchaouen_Village/Assets/SM_Chwn_Bench_01.SM_Chwn_Bench_01\n\
+    - chwn_stairs | Chwn Stairs | assets | 4.7x3.36x3.0 m | /Game/Chefchaouen_Village/Assets/SM_Chwn_Stairs.SM_Chwn_Stairs\n\
+    - ground_01 | Ground 01 | assets | 4.0x4.0x0.0 m | /Game/Chefchaouen_Village/Assets/SM_Ground_01.SM_Ground_01\n\
+    - sidewalk_01 | Sidewalk 01 | assets | 4.0x4.0x0.15 m | /Game/Chefchaouen_Village/Assets/SM_Sidewalk_01.SM_Sidewalk_01\n\
+    - wall_4_m_01 | Wall 4 M 01 | assets | 0.25x4.0x4.0 m | /Game/Chefchaouen_Village/Assets/SM_Wall_4M_01.SM_Wall_4M_01\n\
+    - arch_01_ivy | Arch 01 Ivy | buildings | 1.49x12.87x4.88 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Arch_01_Ivy.BP_Arch_01_Ivy_C\n\
+    - arch_03_no_ivy | Arch 03 No Ivy | buildings | 12.81x1.41x4.85 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Arch_03_NoIvy.BP_Arch_03_NoIvy_C\n\
+    - chwn_house_02 | Chwn House 02 | buildings | 8.49x8.33x17.15 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_02.BP_Chwn_House_02_C\n\
+    - chwn_house_02_no_ivy | Chwn House 02 No Ivy | buildings | 8.49x8.33x17.15 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_02_NoIvy.BP_Chwn_House_02_NoIvy_C\n\
+    - chwn_house_03 | Chwn House 03 | buildings | 8.33x8.49x17.85 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_03.BP_Chwn_House_03_C\n\
+    - chwn_house_04_ivy | Chwn House 04 Ivy | buildings | 13.16x13.16x22.45 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_04_Ivy.BP_Chwn_House_04_Ivy_C\n\
+    - chwn_house_04_no_ivy | Chwn House 04 No Ivy | buildings | 8.49x15.29x22.45 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_04_NoIvy.BP_Chwn_House_04_NoIvy_C\n\
+    - chwn_house_05_ivy | Chwn House 05 Ivy | buildings | 7.91x7.82x12.66 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_05_Ivy.BP_Chwn_House_05_Ivy_C\n\
+    - chwn_house_05_ivy_no_door | Chwn House 05 Ivy No Door | buildings | 7.82x7.59x12.66 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_05_IvyNoDoor.BP_Chwn_House_05_IvyNoDoor_C\n\
+    - chwn_house_05_ivy_no_door_2 | Chwn House 05 Ivy No Door | buildings | 7.82x7.59x12.66 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_05_Ivy_NoDoor.BP_Chwn_House_05_Ivy_NoDoor_C\n\
+    - chwn_house_05_no_ivy | Chwn House 05 No Ivy | buildings | 7.82x7.91x12.66 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_05_NoIvy.BP_Chwn_House_05_NoIvy_C\n\
+    - chwn_house_06_ivy | Chwn House 06 Ivy | buildings | 8.33x8.49x17.15 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_06_Ivy.BP_Chwn_House_06_Ivy_C\n\
+    - chwn_house_06_no_ivy | Chwn House 06 No Ivy | buildings | 8.33x8.49x17.15 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_06_NoIvy.BP_Chwn_House_06_NoIvy_C\n\
+    - chwn_house_07_ivy | Chwn House 07 Ivy | buildings | 7.82x7.81x12.66 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_07_Ivy.BP_Chwn_House_07_Ivy_C\n\
+    - chwn_house_07_no_ivy | Chwn House 07 No Ivy | buildings | 7.91x7.82x12.66 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_07_NoIvy.BP_Chwn_House_07_NoIvy_C\n\
+    - chwn_house_07_no_ivy_no_doors | Chwn House 07 No Ivy No Doors | buildings | 7.82x7.59x12.66 m |\
+    \ /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_07_NoIvy_NoDoors.BP_Chwn_House_07_NoIvy_NoDoors_C\n\
+    - chwn_house_08_ivy | Chwn House 08 Ivy | buildings | 11.9x8.06x15.79 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_08_Ivy.BP_Chwn_House_08_Ivy_C\n\
+    - chwn_house_08_no_ivy | Chwn House 08 No Ivy | buildings | 11.9x8.06x15.79 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_08_NoIvy.BP_Chwn_House_08_NoIvy_C\n\
+    - chwn_house_09_ivy | Chwn House 09 Ivy | buildings | 8.45x8.12x16.27 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_09_Ivy.BP_Chwn_House_09_Ivy_C\n\
+    - chwn_house_10_ivy | Chwn House 10 Ivy | buildings | 8.45x8.12x16.27 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_10_Ivy.BP_Chwn_House_10_Ivy_C\n\
+    - chwn_house_extension_01_no_ivy | Chwn House Extension 01 No Ivy | buildings | 6.08x5.79x11.39 m\
+    \ | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_HouseExtension_01_NoIvy.BP_Chwn_HouseExtension_01_NoIvy_C\n\
+    - chwn_house_hotel_02_ivy | Chwn House Hotel 02 Ivy | buildings | 14.81x25.83x20.74 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_HouseHotel_02_Ivy.BP_Chwn_HouseHotel_02_Ivy_C\n\
+    - chwn_house_hotel_02_no_ivy | Chwn House Hotel 02 No Ivy | buildings | 25.83x14.81x20.74 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_HouseHotel_02_NoIvy.BP_Chwn_HouseHotel_02_NoIvy_C\n\
+    - chwn_house_hotel_03_ivy | Chwn House Hotel 03 Ivy | buildings | 25.83x14.81x20.74 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_HouseHotel_03_Ivy.BP_Chwn_HouseHotel_03_Ivy_C\n\
+    - chwn_house_hotel_03_no_ivy | Chwn House Hotel 03 No Ivy | buildings | 25.83x14.81x20.74 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_HouseHotel_03_NoIvy.BP_Chwn_HouseHotel_03_NoIvy_C\n\
+    - chwn_side_walk_01 | Chwn Side Walk 01 | street_assets | 4.4x4.07x0.28 m | /Game/Chefchaouen_Village/Blueprints/Street_Assets/BP_Chwn_SideWalk_01.BP_Chwn_SideWalk_01_C\n\
+    - chwn_sidwwalk_02 | Chwn Sidwwalk 02 | street_assets | 4.44x4.1x0.28 m | /Game/Chefchaouen_Village/Blueprints/Street_Assets/BP_Chwn_Sidwwalk_02.BP_Chwn_Sidwwalk_02_C\n\
+    - chwn_sidwwalk_03 | Chwn Sidwwalk 03 | street_assets | 4.07x4.39x0.28 m | /Game/Chefchaouen_Village/Blueprints/Street_Assets/BP_Chwn_Sidwwalk_03.BP_Chwn_Sidwwalk_03_C\n\
+    - chwn_street_lamp_02 | Chwn Street Lamp 02 | street_assets | 4.14x2.56x7.81 m | /Game/Chefchaouen_Village/Blueprints/Street_Assets/BP_Chwn_StreetLamp_02.BP_Chwn_StreetLamp_02_C\n\
+    - chwn_grass_02 | Chwn Grass 02 | vegetation | 2.85x4.46x0.6 m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_Grass_02.BP_Chwn_Grass_02_C\n\
+    - chwn_ivy_red_02 | Chwn Ivy RED 02 | vegetation | 2.55x0.42x3.91 m | /Game/Chefchaouen_Village/Vegetation/SM_Chwn_Ivy_RED_02.SM_Chwn_Ivy_RED_02\n\
+    - chwn_vegetation_kit_01 | Chwn Vegetation Kit 01 | vegetation | 5.3x5.39x11.21 m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_VegetationKit_01.BP_Chwn_VegetationKit_01_C\n\
+    - chwn_vegetation_kit_02 | Chwn Vegetation Kit 02 | vegetation | 6.18x6.18x8.49 m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_VegetationKit_02.BP_Chwn_VegetationKit_02_C\n\
+    - chwn_vegetation_kit_04 | Chwn Vegetation Kit 04 | vegetation | 4.31x4.43x8.63 m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_VegetationKit_04.BP_Chwn_VegetationKit_04_C\n\
+    - chwn_vegetation_kit_05 | Chwn Vegetation Kit 05 | vegetation | 5.39x5.3x11.21 m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_VegetationKit_05.BP_Chwn_VegetationKit_05_C\n\
+    - chwn_vegetation_kit_06 | Chwn Vegetation Kit 06 | vegetation | 5.62x2.87x1.95 m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_VegetationKit_06.BP_Chwn_VegetationKit_06_C\n\
+    - chwn_vegetation_kit_07 | Chwn Vegetation Kit 07 | vegetation | 12.63x12.75x26.43 m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_VegetationKit_07.BP_Chwn_VegetationKit_07_C\n\
+    - chwn_vegetation_kit_08 | Chwn Vegetation Kit 08 | vegetation | 3.03x2.85x1.95 m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_VegetationKit_08.BP_Chwn_VegetationKit_08_C\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
+    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
+    \ for yourself when the scene\nmatches the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+assets:
+  packs:
+  - Chefchaouen_Village
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_032.bundle.json
+- name: overview_prompt_alignment
