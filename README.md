@@ -30,14 +30,6 @@
 </p>
 
 <p align="center">
-  <sub>
-    Xiaokang Ye<sup>1*</sup>, Siddhant Hitesh Mantri<sup>1*</sup>, Zimeng Chen<sup>1*</sup>, Edward Zhang<sup>1</sup>, Zhaoxu Zheng<sup>1</sup>,
-    Yuanheng Li<sup>2</sup>, Yizhao Chen<sup>1</sup>, Tianyang Huang<sup>1</sup>, Lianhui Qin<sup>1†</sup><br />
-    <sup>1</sup>UC San Diego &nbsp; <sup>2</sup>UC Berkeley &nbsp; <sup>*</sup>Equal contribution &nbsp; <sup>†</sup>Corresponding author
-  </sub>
-</p>
-
-<p align="center">
   <a href="https://simworld-ai-code4scene.static.hf.space/#leaderboard">Leaderboard</a> ·
   <a href="https://simworld-ai-code4scene.static.hf.space/cases.html">Cases in 3D</a> ·
   <a href="#quick-start">Quick Start</a> ·
