@@ -33,44 +33,6 @@
       "target": "sca_source_e19a65f3cd255cfbbd935ecdcaf8d31c"
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "duplication",
-      "translation",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "Flower_Pot_34"
-      },
-      {
-        "type": "translation",
-        "label": "Flower_Pot_35",
-        "delta_cm": [
-          180.0,
-          130.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "Flower_Pot_35",
-        "yaw_deg": 60.0
-      },
-      {
-        "type": "scaling",
-        "label": "Flower_Pot_35",
-        "factor": 1.5
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "Flower_Pot_34",
-      "Flower_Pot_35"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/new-york-street/gt.fingerprint.json"
 }

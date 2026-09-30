@@ -14,23 +14,6 @@
       "target": "sca_source_92401788790a5b3e9abcbf969997276d"
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "insertion",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "SM_Garbage6"
-      }
-    ],
-    "category": "repair_completion",
-    "target_labels": [
-      "SM_Garbage6"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/rosies-diner/gt.fingerprint.json"
 }

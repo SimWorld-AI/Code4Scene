@@ -28,8 +28,9 @@ CLASS = "open_ended"
 
 RENDER_PROTOCOL = "overview_prompt_alignment.candidate_clearance_gallery"
 REPORT_ONLY_REASON = (
-    "global overview alignment has not yet been calibrated against independent "
-    "human judgements"
+    "global overview alignment counts toward the score only under the "
+    "text-to-scene score policy, whose component weights were fitted to human "
+    "preferences"
 )
 
 

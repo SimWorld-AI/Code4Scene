@@ -22,24 +22,6 @@
       "target": "sca_source_6ec35404e6f152b3aadaabb36e1bcabd"
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "insertion",
-      "translation",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "SM_AwningRich_LOD0_5"
-      }
-    ],
-    "category": "repair_completion",
-    "target_labels": [
-      "SM_AwningRich_LOD0_5"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/middle-east-river/gt.fingerprint.json"
 }

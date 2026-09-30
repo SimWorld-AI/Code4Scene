@@ -10,7 +10,7 @@ inputs:
   init_map: /Game/Code4SceneInputs/indoor-atomic-v1-045/Input
   budget:
     tool_calls: 120
-    wall_minutes: 45
+    wall_minutes: 40
   skills: contracts
 source:
   schema_version: scenebench.gt_repair_task.v1

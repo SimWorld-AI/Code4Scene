@@ -430,11 +430,15 @@ def materialize(recipe, force=False):
     for op in recipe.get("level_structure") or []:
         if op["op"] != "retarget_streaming_level":
             raise BuildError("unknown level-structure op {}".format(op["op"]))
+        copied = False
         if op.get("copy_package") and not unreal.EditorAssetLibrary.does_asset_exist(op["to"]):
             if unreal.EditorAssetLibrary.duplicate_asset(op["from"], op["to"]) is None:
                 raise BuildError("could not copy {} to {}".format(op["from"], op["to"]))
+            copied = True
         cls = remove_streaming_level(world, op["from"])
-        add_streaming_level(world, op["to"], cls, False)
+        streaming = add_streaming_level(world, op["to"], cls, False)
+        if copied:
+            save_streaming_level(world, streaming)
     index = index_by_stable_id()
     templates = templates_for(recipe["operations"], index)
     for op in recipe["operations"]:

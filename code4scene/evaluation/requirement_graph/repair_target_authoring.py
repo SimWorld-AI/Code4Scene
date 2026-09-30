@@ -19,7 +19,10 @@ from pathlib import PurePosixPath
 from typing import Any
 
 from ..scene_diff import (
+    DEFAULT_TOLERANCES,
     Change,
+    _property_differences,
+    _transform_differences,
     actor_identity,
     actor_summary,
     diff_scenes,
@@ -357,6 +360,47 @@ def _equivalent_class_representation(
     return bool(desired_name and desired_name == source_name)
 
 
+def _same_actor_content(desired: Mapping[str, Any], source: Mapping[str, Any]) -> bool:
+    """Whether two Actors differ at most in identity and non-visual fields."""
+
+    from ..repair_success import _rotation_error, _vector
+
+    left, right = desired.get("transform") or {}, source.get("transform") or {}
+    fields = _transform_differences(left, right, DEFAULT_TOLERANCES)
+    a, b = _vector(left.get("rotation_deg")), _vector(right.get("rotation_deg"))
+    if a is not None and b is not None:
+        fields = [f for f in fields if f != "rotation"]
+        if _rotation_error(a, b) > DEFAULT_TOLERANCES["rotation_deg"] + 1e-9:
+            return False
+    if fields:
+        return False
+    visible = [
+        f for f in _property_differences(desired, source)
+        if f not in _NON_VISUAL_REPAIR_PROPERTY_FIELDS
+    ]
+    if "class" in visible and _equivalent_class_representation(desired, source):
+        visible.remove("class")
+    if visible:
+        return False
+    return "properties" not in desired or desired.get("properties") == source.get("properties")
+
+
+def _identity_only_pairs(
+    gt_only: list[Mapping[str, Any]], input_only: list[Mapping[str, Any]]
+) -> tuple[set[int], set[int]]:
+    """One-to-one pairs of GT-only and Input-only Actors with identical content."""
+
+    paired_gt: set[int] = set()
+    paired_input: set[int] = set()
+    for desired in gt_only:
+        for source in input_only:
+            if id(source) not in paired_input and _same_actor_content(desired, source):
+                paired_gt.add(id(desired))
+                paired_input.add(id(source))
+                break
+    return paired_gt, paired_input
+
+
 def derive_repair_targets(
     input_scene: Mapping[str, Any],
     gt_scene: Mapping[str, Any],
@@ -380,14 +424,15 @@ def derive_repair_targets(
         ]
     ] = []
 
-    for actor in difference.removed:
-        if not _is_semantic_scene_actor(actor):
-            continue
-        pending.append((actor_identity(actor), "add", actor, None, ("existence",)))
-    for actor in difference.added:
-        if not _is_semantic_scene_actor(actor):
-            continue
-        pending.append((actor_identity(actor), "remove", None, actor, ("existence",)))
+    gt_only = [actor for actor in difference.removed if _is_semantic_scene_actor(actor)]
+    input_only = [actor for actor in difference.added if _is_semantic_scene_actor(actor)]
+    paired_gt, paired_input = _identity_only_pairs(gt_only, input_only)
+    for actor in gt_only:
+        if id(actor) not in paired_gt:
+            pending.append((actor_identity(actor), "add", actor, None, ("existence",)))
+    for actor in input_only:
+        if id(actor) not in paired_input:
+            pending.append((actor_identity(actor), "remove", None, actor, ("existence",)))
 
     moved = _changes_by_key(difference.moved)
     modified = _changes_by_key(difference.modified)

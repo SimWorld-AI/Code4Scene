@@ -2,25 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/basement/GT",
   "source_level": "/Game/Code4SceneGT/basement/GT",
   "gt_id": "indoor-atomic-v1-072",
-  "schema_version": "code4scene.gt_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "translation"
-    ],
-    "authored_operations": [
-      {
-        "type": "translation",
-        "label": "SM_box_4",
-        "delta_cm": [
-          60.0,
-          0.0,
-          0.0
-        ]
-      }
-    ],
-    "category": "geometric_transformation",
-    "target_labels": [
-      "SM_box_4"
-    ]
-  }
+  "schema_version": "code4scene.gt_repair_label.v1"
 }

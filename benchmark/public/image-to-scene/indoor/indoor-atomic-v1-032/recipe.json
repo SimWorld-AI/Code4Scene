@@ -38,37 +38,6 @@
       }
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "removal"
-    ],
-    "authored_operations": [
-      {
-        "type": "insertion",
-        "label": "SB_ATOMIC80_EXTRA__a80-s06-extra-crate-removal__00",
-        "asset": "/Game/MedievalForgePack/Props/SM_WoodBox.SM_WoodBox",
-        "location_cm": [
-          -500.0,
-          300.0,
-          0.0
-        ],
-        "rotation_rpy_deg": [
-          0.0,
-          0.0,
-          -25.0
-        ],
-        "scale_xyz": [
-          0.707092,
-          0.707092,
-          0.707092
-        ]
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SB_ATOMIC80_EXTRA__a80-s06-extra-crate-removal__00"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/medieval-forge/gt.fingerprint.json"
 }

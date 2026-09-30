@@ -19,22 +19,6 @@
       ]
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "scaling",
-        "label": "Fan",
-        "factor": 0.72
-      }
-    ],
-    "category": "geometric_transformation",
-    "target_labels": [
-      "Fan"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/detective-office/gt.fingerprint.json"
 }

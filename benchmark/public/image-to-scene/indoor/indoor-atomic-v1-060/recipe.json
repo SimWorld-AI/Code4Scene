@@ -28,26 +28,6 @@
       }
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "replacement"
-    ],
-    "authored_operations": [
-      {
-        "type": "replacement",
-        "label": "SM_HandDryer2",
-        "asset": "/Game/CyberpunkWC/Meshes/SM_HandDryer01.SM_HandDryer01",
-        "component_name": "StaticMeshComponent0",
-        "material_paths": [
-          "/Game/CyberpunkWC/Materials/MI_AirconAndProps.MI_AirconAndProps"
-        ]
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SM_HandDryer2"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/cyberpunk-toilet/gt.fingerprint.json"
 }

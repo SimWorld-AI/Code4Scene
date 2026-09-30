@@ -19,26 +19,6 @@
       ]
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "reflection"
-    ],
-    "authored_operations": [
-      {
-        "type": "rotation",
-        "label": "Sm_PcScreen17",
-        "rotation_rpy_deg": [
-          0.0,
-          0.0,
-          0.0
-        ]
-      }
-    ],
-    "category": "symmetry_pattern",
-    "target_labels": [
-      "Sm_PcScreen17"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/downtown-office/gt.fingerprint.json"
 }

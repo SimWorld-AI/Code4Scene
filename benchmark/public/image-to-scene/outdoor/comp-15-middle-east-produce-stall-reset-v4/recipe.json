@@ -65,55 +65,6 @@
       }
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "removal",
-      "translation",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "duplication",
-        "label": "BPP_LI_Food_01_Shop6",
-        "new_label": "BPP_LI_Food_01_Shop6_CorruptDuplicate",
-        "delta_cm": [
-          760.0,
-          -520.0,
-          0.0
-        ],
-        "yaw_deg": 52.0,
-        "factor": 1.2
-      },
-      {
-        "type": "translation",
-        "label": "BPP_LI_Food_01_Shop6",
-        "delta_cm": [
-          -520.0,
-          360.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "BPP_LI_Food_01_Shop6",
-        "yaw_deg": 68.0
-      },
-      {
-        "type": "scaling",
-        "label": "BPP_LI_Food_01_Shop6",
-        "factor": [
-          1.25,
-          0.82,
-          1.15
-        ]
-      }
-    ],
-    "category": "layout_rearrangement",
-    "target_labels": [
-      "BPP_LI_Food_01_Shop6"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/middle-east-river/gt.fingerprint.json"
 }

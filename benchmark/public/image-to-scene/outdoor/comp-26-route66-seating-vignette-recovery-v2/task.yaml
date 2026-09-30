@@ -10,19 +10,13 @@ inputs:
     changes needed, and preserve all unrelated actors and properties.
   init_map: /Game/Code4SceneInputs/comp-26-route66-seating-vignette-recovery-v2/Input
   budget:
-    tool_calls: 80
-    wall_minutes: 20
+    tool_calls: 120
+    wall_minutes: 40
   skills: contracts
 source:
   schema_version: scenebench.outdoor_compositional_repair.v1
   pack: Route 66 Gas Station
   scene: Route 66 Garage
-  category: repair_completion
-  intrinsic_tier_prior: medium
-  mechanics:
-  - insertion
-  - translation
-  - rotation
   reference_views:
   - references/reference.jpg
   content_fingerprints:

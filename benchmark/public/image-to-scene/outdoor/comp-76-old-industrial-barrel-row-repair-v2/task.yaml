@@ -10,20 +10,13 @@ inputs:
     changes needed, and preserve all unrelated actors and properties.
   init_map: /Game/Code4SceneInputs/comp-76-old-industrial-barrel-row-repair-v2/Input
   budget:
-    tool_calls: 80
-    wall_minutes: 20
+    tool_calls: 120
+    wall_minutes: 40
   skills: contracts
 source:
   schema_version: scenebench.outdoor_compositional_repair.v1
   pack: OldBuilding
   scene: Old Industrial Courtyard
-  category: layout_rearrangement
-  intrinsic_tier_prior: hard
-  mechanics:
-  - removal
-  - translation
-  - rotation
-  - scaling
   reference_views:
   - references/reference.jpg
   content_fingerprints:

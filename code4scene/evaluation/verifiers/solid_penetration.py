@@ -427,15 +427,20 @@ def _checks(case: Case, assertion: Mapping[str, Any]) -> list[Check]:
             actor, record, effective_tolerance_cm, collider_lookup, role_index
         )
         if verdict is not None:
-            trusted_count += 1
-            effective_tolerances.append(effective_tolerance_cm)
+            # Incomplete evidence can prove a violation but cannot establish
+            # a clean actor, so an unproven one stays out of the evaluated set.
+            counted = verdict["violating"] or not verdict["unresolved"]
+            if counted:
+                trusted_count += 1
+                effective_tolerances.append(effective_tolerance_cm)
             depth_penalty, normalized_excess, _ = _penetration_depth_penalty(
                 actor, verdict["depth_cm"], effective_tolerance_cm
             )
-            depth_penalties.append(depth_penalty)
-            actor_failure_penalties.append(
-                1.0 if verdict["violating"] else 0.0
-            )
+            if counted:
+                depth_penalties.append(depth_penalty)
+                actor_failure_penalties.append(
+                    1.0 if verdict["violating"] else 0.0
+                )
             if verdict["environment_containment"]:
                 environment_containment_actors.add(actor_name(actor))
             if verdict["ordinary_penetration"]:

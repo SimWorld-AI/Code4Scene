@@ -107,7 +107,7 @@ next to the evaluator's scores.
 ## Key Findings
 
 - 🧭 **Construction and editing probe different capabilities**: scene-level spatial reasoning and precise control of scene state. Despite
-  identical overall scores, Astra is stronger at construction and Gemini at editing.
+  nearly identical overall scores, Astra is stronger at construction and Gemini at editing.
 - 🧩 **Spatial Composition remains the weakest requirement family for all 14 agents.** Errors persist even when the required objects are
   present: generating the right objects does not ensure that their relationships satisfy the specification.
 - 🔧 **Editing ability varies substantially across repair types.** Astra performs best on Transform repairs, while Gemini is stronger on
@@ -168,6 +168,10 @@ python -m dataset_builder.build --project ... --dataset ./code4scene-dataset --s
 ```
 
 [docs/BUILD_DATASET.md](docs/BUILD_DATASET.md) covers disk and time estimates, the verification report, and scene-specific notes.
+
+> **Keep the answers away from agents.** An agent under test may only see `code4scene-dataset/agent/` (task prompts,
+> case facts and reference views). Never give it this repository's `benchmark/` directory, `code4scene-dataset/scorer/`,
+> `snapshots/` or the `Code4SceneGT` content, including through a shell or file tool: they contain the answers.
 
 ### 3. Score a scene
 

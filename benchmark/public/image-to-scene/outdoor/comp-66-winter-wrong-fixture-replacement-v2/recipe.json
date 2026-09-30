@@ -47,48 +47,6 @@
       ]
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "replacement",
-      "translation",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "replacement",
-        "label": "SM_LampPost2",
-        "asset": "/Game/WinterTown/Meshes/SM_Bench01.SM_Bench01"
-      },
-      {
-        "type": "translation",
-        "label": "SM_LampPost2",
-        "delta_cm": [
-          220.0,
-          -180.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "SM_LampPost2",
-        "yaw_deg": -55.0
-      },
-      {
-        "type": "scaling",
-        "label": "SM_LampPost2",
-        "factor": [
-          0.8,
-          1.15,
-          0.75
-        ]
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SM_LampPost2"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/winter-town/gt.fingerprint.json"
 }

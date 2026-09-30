@@ -2,43 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/new-york-street/GT",
   "source_level": "/Game/Code4SceneGT/new-york-street/GT",
   "gt_id": "comp-02-new-york-bench-reset-v2",
-  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "replacement",
-      "translation",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "asset": "/Game/Street_NY/Models/Props/SM_Chair_01.SM_Chair_01",
-        "label": "Bench_4",
-        "type": "replacement"
-      },
-      {
-        "delta_cm": [
-          0.0,
-          -280.0,
-          0.0
-        ],
-        "label": "Bench_4",
-        "type": "translation"
-      },
-      {
-        "label": "Bench_4",
-        "type": "rotation",
-        "yaw_deg": 55.0
-      },
-      {
-        "factor": 1.45,
-        "label": "Bench_4",
-        "type": "scaling"
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "Bench_4"
-    ]
-  }
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1"
 }

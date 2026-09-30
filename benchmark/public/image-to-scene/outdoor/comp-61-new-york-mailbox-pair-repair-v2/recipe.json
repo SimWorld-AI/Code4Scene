@@ -52,45 +52,6 @@
       }
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "removal",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "duplication",
-        "label": "Mailbox2",
-        "new_label": "Mailbox2_CorruptDuplicate",
-        "delta_cm": [
-          180.0,
-          140.0,
-          0.0
-        ],
-        "yaw_deg": 25.0,
-        "factor": 1.15
-      },
-      {
-        "type": "rotation",
-        "label": "Mailbox2",
-        "yaw_deg": -45.0
-      },
-      {
-        "type": "scaling",
-        "label": "Mailbox2",
-        "factor": [
-          1.3,
-          0.8,
-          1.2
-        ]
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "Mailbox2"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/new-york-street/gt.fingerprint.json"
 }

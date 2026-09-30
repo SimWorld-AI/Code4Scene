@@ -14,21 +14,6 @@
       "target": "sca_generated_d51b401afbd369d14ecf70fefd4c0aee"
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "duplication"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "SM_Sofa_FBX"
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SM_Sofa_FBX"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/laboratory-loft/gt.fingerprint.json"
 }

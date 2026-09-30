@@ -2,25 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/archviz-apartment/GT",
   "source_level": "/Game/Code4SceneGT/archviz-apartment/GT",
   "gt_id": "indoor-atomic-v1-037",
-  "schema_version": "code4scene.gt_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "rotation",
-        "label": "SM_Decor_12",
-        "delta_rpy_deg": [
-          0.0,
-          0.0,
-          35.0
-        ]
-      }
-    ],
-    "category": "geometric_transformation",
-    "target_labels": [
-      "SM_Decor_12"
-    ]
-  }
+  "schema_version": "code4scene.gt_repair_label.v1"
 }

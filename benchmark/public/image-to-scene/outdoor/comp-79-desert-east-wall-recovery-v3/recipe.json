@@ -14,23 +14,6 @@
       "target": "sca_source_14d73c2ca7cb56d3b76e626dda6c4cde"
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "insertion",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "building_1_mesh2_23"
-      }
-    ],
-    "category": "repair_completion",
-    "target_labels": [
-      "building_1_mesh2_23"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/african-desert/gt.fingerprint.json"
 }

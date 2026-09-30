@@ -14,21 +14,6 @@
       "target": "sca_source_14840cb0a916557fb99b5a09f966c106"
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "insertion"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "SM_Chair"
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SM_Chair"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/medieval-forge/gt.fingerprint.json"
 }

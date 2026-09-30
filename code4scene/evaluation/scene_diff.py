@@ -42,6 +42,7 @@ untouched.
 from __future__ import annotations
 
 import json
+import re
 from collections.abc import Mapping, Sequence
 from dataclasses import dataclass, field
 from typing import Any
@@ -186,6 +187,35 @@ def _is_engine_transient_dynamic_slot(value: Any) -> bool:
     )
 
 
+def _is_level_local_dynamic_slot(value: Any) -> bool:
+    """Whether a material slot names a dynamic instance owned by the level."""
+
+    return (
+        isinstance(value, Mapping)
+        and value.get("is_dynamic") is True
+        and ":PersistentLevel." in str(value.get("material_path") or "")
+    )
+
+
+def _level_local_dynamic_identity(path: Any) -> tuple[str, str]:
+    """A level-local dynamic instance without the counter Unreal renumbers on save."""
+
+    _, local = _material_path_identity(path)
+    owner, _, name = local.rpartition(".")
+    return "level_local_dynamic", f"{owner}.{re.sub(r'_[0-9]+$', '', name)}"
+
+
+def _level_local_dynamic_material_paths(actor: Mapping[str, Any]) -> set[str]:
+    values = actor.get("component_material_slots") or []
+    if not isinstance(values, list):
+        return set()
+    return {
+        str(value["material_path"]).casefold()
+        for value in values
+        if _is_level_local_dynamic_slot(value)
+    }
+
+
 def _dynamic_transient_material_paths(actor: Mapping[str, Any]) -> set[str]:
     values = actor.get("component_material_slots") or []
     if not isinstance(values, list):
@@ -201,10 +231,13 @@ def _actor_material_path_identities(
     actor: Mapping[str, Any],
 ) -> list[tuple[str, str]]:
     transient = _dynamic_transient_material_paths(actor)
+    level_dynamic = _level_local_dynamic_material_paths(actor)
     return sorted(
         (
             ("engine_transient_dynamic", "material_instance")
             if str(value).casefold() in transient
+            else _level_local_dynamic_identity(value)
+            if str(value).casefold() in level_dynamic
             else _material_path_identity(value)
         )
         for value in actor.get("material_paths") or []
@@ -239,6 +272,8 @@ def _stable_material_slots(actor: Mapping[str, Any]) -> list[Any]:
         item["material_path"] = (
             ("engine_transient_dynamic", "material_instance")
             if _is_engine_transient_dynamic_slot(item)
+            else _level_local_dynamic_identity(item["material_path"])
+            if _is_level_local_dynamic_slot(item)
             else _material_path_identity(item["material_path"])
         )
         normalized.append(item)

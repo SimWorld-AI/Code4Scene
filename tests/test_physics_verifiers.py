@@ -1707,3 +1707,32 @@ def test_one_measured_side_withholds_the_measured_halves(tmp_path):
     ground = check_by_id(report, "physics.regression.ground_contact")
     assert ground["status"] == "not_evaluated"
     assert "incomplete" in ground["failure_reason"]
+
+
+def test_an_unmeasured_overlap_never_counts_as_a_clean_actor(tmp_path):
+    crate = actor("crate", location=(0.0, 0.0, 50.0), extent=(50.0, 50.0, 50.0))
+    shelf = actor("shelf", location=(60.0, 0.0, 50.0), extent=(50.0, 50.0, 50.0))
+    lamp = actor("lamp", location=(600.0, 0.0, 200.0), extent=(20.0, 20.0, 200.0))
+    bench = actor("bench", location=(-900.0, 0.0, 50.0), extent=(80.0, 30.0, 50.0))
+    exact = "ue_fhitresult_initial_overlap_mtd"
+    report = solid_penetration.verify(context(
+        tmp_path, candidate=scene([crate, shelf, lamp, bench]), case_spec=PENETRATION_ALL,
+        spec={"candidate_measurements": _write(tmp_path, "mixed.json", measurements(
+            crate={"solid_penetration_evaluated": True, "solid_penetrations": [{
+                "collider": "shelf", "confirmed_overlap": True,
+                "penetration_depth_cm": 40.0, "depth_method": exact}]},
+            shelf={"solid_penetration_evaluated": True, "solid_penetrations": [{
+                "collider": "crate", "confirmed_overlap": True,
+                "penetration_depth_cm": 40.0, "depth_method": exact}]},
+            lamp={"solid_penetration_evaluated": True, "solid_penetrations": [{
+                "collider": "shelf", "confirmed_overlap": True,
+                "penetration_depth_cm": None}]},
+            bench={"solid_penetration_evaluated": True, "solid_penetrations": []},
+        ))}))
+
+    check = check_by_id(report, "physics.solid_penetration")
+    assert report["status"] == contracts.MEASURED
+    assert check["observed"]["evaluated_actor_count"] == 3
+    assert check["observed"]["penetrating_actor_count"] == 2
+    assert report["score"] == pytest.approx(0.3333, abs=1e-4)
+    assert check["observed"]["unresolved_actor_count"] == 1

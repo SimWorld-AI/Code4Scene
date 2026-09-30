@@ -55,44 +55,6 @@
       ]
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "replacement",
-      "translation",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "replacement",
-        "label": "SM_AwningRich_LOD0_55",
-        "asset": "/Game/MiddleEasternTown/Meshes/Building01_Meshes/LOD0/SM_MiniTable_LOD0.SM_MiniTable_LOD0"
-      },
-      {
-        "type": "translation",
-        "label": "SM_AwningRich_LOD0_55",
-        "delta_cm": [
-          250.0,
-          -180.0,
-          -100.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "SM_AwningRich_LOD0_55",
-        "yaw_deg": 55.0
-      },
-      {
-        "type": "scaling",
-        "label": "SM_AwningRich_LOD0_55",
-        "factor": 0.8
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SM_AwningRich_LOD0_55"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/middle-east-river/gt.fingerprint.json"
 }

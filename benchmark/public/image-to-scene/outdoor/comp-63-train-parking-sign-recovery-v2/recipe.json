@@ -14,23 +14,6 @@
       "target": "sca_source_aabf265f6f675fc1b7be2b1cde79523c"
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "insertion",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "SM_StreetSigns_Parking"
-      }
-    ],
-    "category": "repair_completion",
-    "target_labels": [
-      "SM_StreetSigns_Parking"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/train-station/gt.fingerprint.json"
 }

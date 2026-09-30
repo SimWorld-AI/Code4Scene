@@ -52,45 +52,6 @@
       }
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "removal",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "duplication",
-        "label": "building_1_mesh2_23",
-        "new_label": "building_1_mesh2_23_CorruptDuplicate",
-        "delta_cm": [
-          -420.0,
-          300.0,
-          0.0
-        ],
-        "yaw_deg": -24.0,
-        "factor": 0.9
-      },
-      {
-        "type": "translation",
-        "label": "building_1_mesh2_23",
-        "delta_cm": [
-          300.0,
-          -210.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "building_1_mesh2_23",
-        "yaw_deg": 38.0
-      }
-    ],
-    "category": "layout_rearrangement",
-    "target_labels": [
-      "building_1_mesh2_23"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/african-desert/gt.fingerprint.json"
 }

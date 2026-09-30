@@ -14,6 +14,7 @@ import argparse
 import hashlib
 import json
 import math
+import re
 from collections.abc import Callable, Mapping, Sequence
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
@@ -250,11 +251,11 @@ def select_overview_frames(
     return tuple(selected)
 
 
+_AGENT_SECTION = re.compile(r"\n[ \t]*\n[ \t]*=== (?:GROUND|ASSET PALETTE) ===")
+
+
 def _prompt_for_overview(value: str) -> str:
-    prompt = str(value).strip()
-    for marker in ("\n\n=== GROUND ===", "\n\n=== ASSET PALETTE ==="):
-        prompt = prompt.split(marker, 1)[0].strip()
-    return prompt
+    return _AGENT_SECTION.split(str(value).strip(), maxsplit=1)[0].strip()
 
 
 def _scene_prompt(result: Mapping[str, Any]) -> str:
@@ -891,7 +892,7 @@ def evaluate_overview_frames(
             "severe_requires_issue_text_and_category": True,
         },
         "score_policy": SCORE_POLICY,
-        "calibration_status": "not_human_calibrated",
+        "calibration_status": "component_weight_fitted_to_human_preferences",
         "explanation_protocol": EXPLANATION_PROTOCOL,
         "alignment_protocol": ALIGNMENT_PROTOCOL,
         "structural_integrity_protocol": STRUCTURAL_INTEGRITY_PROTOCOL,

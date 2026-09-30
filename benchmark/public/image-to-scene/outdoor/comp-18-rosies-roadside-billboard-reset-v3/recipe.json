@@ -29,38 +29,6 @@
       ]
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "translation",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "translation",
-        "label": "SM_Billboard02",
-        "delta_cm": [
-          650.0,
-          400.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "SM_Billboard02",
-        "yaw_deg": 55.0
-      },
-      {
-        "type": "scaling",
-        "label": "SM_Billboard02",
-        "factor": 1.35
-      }
-    ],
-    "category": "geometric_transformation",
-    "target_labels": [
-      "SM_Billboard02"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/rosies-diner/gt.fingerprint.json"
 }

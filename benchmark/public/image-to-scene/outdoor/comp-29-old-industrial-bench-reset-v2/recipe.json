@@ -24,32 +24,6 @@
       ]
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "translation",
-        "label": "bench_14",
-        "delta_cm": [
-          260.0,
-          -180.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "bench_14",
-        "yaw_deg": 42.0
-      }
-    ],
-    "category": "geometric_transformation",
-    "target_labels": [
-      "bench_14"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/old-building/gt.fingerprint.json"
 }

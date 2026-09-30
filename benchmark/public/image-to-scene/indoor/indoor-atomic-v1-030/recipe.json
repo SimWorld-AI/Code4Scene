@@ -19,26 +19,6 @@
       ]
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "rotation",
-        "label": "SM_Chair3",
-        "delta_rpy_deg": [
-          0.0,
-          0.0,
-          35.0
-        ]
-      }
-    ],
-    "category": "geometric_transformation",
-    "target_labels": [
-      "SM_Chair3"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/medieval-forge/gt.fingerprint.json"
 }

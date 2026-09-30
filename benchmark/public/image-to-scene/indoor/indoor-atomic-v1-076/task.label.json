@@ -2,25 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/laboratory-loft/GT",
   "source_level": "/Game/Code4SceneGT/laboratory-loft/GT",
   "gt_id": "indoor-atomic-v1-076",
-  "schema_version": "code4scene.gt_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "replacement"
-    ],
-    "authored_operations": [
-      {
-        "type": "replacement",
-        "label": "SM_Art_13",
-        "asset": "/Game/Laboratory_in_Loft_Style/Meshes/SM_Art_4_01.SM_Art_4_01",
-        "component_name": "StaticMeshComponent0",
-        "material_paths": [
-          "/Game/Laboratory_in_Loft_Style/Materials/Instances/MI_Art_4_01.MI_Art_4_01"
-        ]
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SM_Art_13"
-    ]
-  }
+  "schema_version": "code4scene.gt_repair_label.v1"
 }

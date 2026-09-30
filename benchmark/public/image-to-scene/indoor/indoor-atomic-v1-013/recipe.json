@@ -14,21 +14,6 @@
       "target": "sca_source_18879cb9c7a3546a839617f223098270"
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "insertion"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "SM_Ceiling_lamp"
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SM_Ceiling_lamp"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/archviz-apartment/gt.fingerprint.json"
 }

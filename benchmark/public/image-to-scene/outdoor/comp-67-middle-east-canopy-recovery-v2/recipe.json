@@ -22,23 +22,6 @@
       "target": "sca_source_58b0a1078e555a239114027a8c27f3f8"
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "duplication",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "LI_Canopy_3"
-      }
-    ],
-    "category": "repair_completion",
-    "target_labels": [
-      "LI_Canopy_3"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/middle-east-river/gt.fingerprint.json"
 }

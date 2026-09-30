@@ -38,37 +38,6 @@
       }
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "removal"
-    ],
-    "authored_operations": [
-      {
-        "type": "insertion",
-        "label": "SB_ATOMIC20_EXTRA__a20-s03-extra-upper-chair-removal__00",
-        "asset": "/Game/Office/Meshes/Sm_Chair01.Sm_Chair01",
-        "location_cm": [
-          -1270.0,
-          1050.0,
-          550.0
-        ],
-        "rotation_rpy_deg": [
-          0.0,
-          0.0,
-          90.0
-        ],
-        "scale_xyz": [
-          1.0,
-          1.0,
-          1.0
-        ]
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SB_ATOMIC20_EXTRA__a20-s03-extra-upper-chair-removal__00"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/downtown-office/gt.fingerprint.json"
 }

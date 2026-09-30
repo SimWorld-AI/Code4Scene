@@ -22,33 +22,6 @@
       "target": "sca_source_0886c87e48f75944a3423916e2e943fe"
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "insertion",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "Props_Wooden_Table"
-      },
-      {
-        "type": "removal",
-        "label": "Props_Chair5"
-      },
-      {
-        "type": "removal",
-        "label": "Props_OilLamp"
-      }
-    ],
-    "category": "repair_completion",
-    "target_labels": [
-      "Props_Wooden_Table",
-      "Props_Chair5",
-      "Props_OilLamp"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/route66-gas-station/gt.fingerprint.json"
 }

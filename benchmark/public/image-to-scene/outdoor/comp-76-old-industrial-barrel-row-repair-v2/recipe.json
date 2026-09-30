@@ -74,57 +74,6 @@
       }
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "removal",
-      "translation",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "duplication",
-        "label": "Barrel_10",
-        "new_label": "Barrel_10_CorruptDuplicate",
-        "delta_cm": [
-          180.0,
-          130.0,
-          0.0
-        ],
-        "yaw_deg": 25.0,
-        "factor": 1.1
-      },
-      {
-        "type": "translation",
-        "label": "Barrel_122",
-        "delta_cm": [
-          -180.0,
-          120.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "Barrel_122",
-        "yaw_deg": 45.0
-      },
-      {
-        "type": "scaling",
-        "label": "Barrel_124",
-        "factor": [
-          1.35,
-          1.35,
-          1.2
-        ]
-      }
-    ],
-    "category": "layout_rearrangement",
-    "target_labels": [
-      "Barrel_122",
-      "Barrel_10",
-      "Barrel_124"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/old-building/gt.fingerprint.json"
 }

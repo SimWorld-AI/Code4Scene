@@ -377,6 +377,23 @@ def measure(
     )
     passed = [(g, c) for g, c in assigned if not failures[g][c]]
     matched_gt, matched_candidate = {g for g, _ in passed}, {c for _, c in passed}
+    # A candidate that restores a repair target stands for that target's own
+    # input actor when correspondence tied it to a removal target instead.
+    restored_by = {
+        id(t.desired_actor): actor_identity(t.input_actor)
+        for t in targets
+        if t.operation == "repair" and t.input_actor is not None and t.desired_actor is not None
+    }
+    rebound = []
+    for g, c in passed:
+        own = restored_by.get(id(desired[g]))
+        candidate_id = actor_identity(candidates[c])
+        held_by = inverse.get(candidate_id)
+        if own and held_by and held_by != own and held_by in removal_targets and own not in mapping:
+            del mapping[held_by]
+            mapping[own] = candidate_id
+            inverse[candidate_id] = own
+            rebound.append({"candidate": candidate_id, "from": held_by, "to": own})
     removed = set(before) - set(mapping)
     # A pose-anchored replacement no longer contains the old asset. Its new
     # presence is evaluated separately; this is not an ID-based deletion.
@@ -415,6 +432,7 @@ def measure(
         "off_target_removal_ids": sorted(off_target_removals),
         "repurposed_background_ids": sorted(repurposed_background),
         "structurally_replaced_input_ids": sorted(replaced),
+        "target_rebinds": rebound,
         "removed_non_deletion_target_ids": sorted((removed & frozen_ids) - removal_targets),
         "candidate_reasons": reasons,
         "actor_correspondence": correspondence,

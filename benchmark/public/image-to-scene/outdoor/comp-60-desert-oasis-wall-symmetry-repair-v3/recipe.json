@@ -57,60 +57,6 @@
       }
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "removal",
-      "reflection",
-      "translation",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "duplication",
-        "label": "building_6_mesh2_58",
-        "new_label": "building_6_mesh2_58_CorruptMirror",
-        "delta_cm": [
-          480.0,
-          -320.0,
-          0.0
-        ],
-        "yaw_deg": 24.0,
-        "factor": [
-          -0.82,
-          0.82,
-          0.82
-        ]
-      },
-      {
-        "type": "translation",
-        "label": "building_6_mesh2_58",
-        "delta_cm": [
-          -360.0,
-          260.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "building_6_mesh2_58",
-        "yaw_deg": -46.0
-      },
-      {
-        "type": "scaling",
-        "label": "building_6_mesh2_58",
-        "factor": [
-          1.2,
-          0.78,
-          1.15
-        ]
-      }
-    ],
-    "category": "layout_rearrangement",
-    "target_labels": [
-      "building_6_mesh2_58"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/african-desert/gt.fingerprint.json"
 }

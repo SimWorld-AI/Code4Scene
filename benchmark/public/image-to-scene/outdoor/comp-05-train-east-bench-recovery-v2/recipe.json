@@ -14,23 +14,6 @@
       "target": "sca_source_c9addb26eab0503bb19790d3e1ca22b7"
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "insertion",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "label": "SM_Bench_01a5",
-        "type": "removal"
-      }
-    ],
-    "category": "repair_completion",
-    "target_labels": [
-      "SM_Bench_01a5"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/train-station/gt.fingerprint.json"
 }

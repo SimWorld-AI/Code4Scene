@@ -2,37 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/route66-gas-station/GT",
   "source_level": "/Game/Code4SceneGT/route66-gas-station/GT",
   "gt_id": "comp-28-route66-rear-barrel-reset-v2",
-  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "translation",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "translation",
-        "label": "Props_Barrel_Trash2",
-        "delta_cm": [
-          280.0,
-          210.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "Props_Barrel_Trash2",
-        "yaw_deg": 64.0
-      },
-      {
-        "type": "scaling",
-        "label": "Props_Barrel_Trash2",
-        "factor": 1.5
-      }
-    ],
-    "category": "geometric_transformation",
-    "target_labels": [
-      "Props_Barrel_Trash2"
-    ]
-  }
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1"
 }

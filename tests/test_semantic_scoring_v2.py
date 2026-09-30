@@ -378,3 +378,33 @@ def test_case_macro_average_rejects_duplicate_case_ids():
         macro_average_case_scores(
             [{"case": "same", "score": 1.0}, {"case": "same", "score": 0.0}]
         )
+
+
+def _tower_rows(river_status: str) -> tuple[str, list[dict]]:
+    prompt = "A tall stone tower beside a river."
+    relation = "tall stone tower beside a river"
+    rows = [
+        _requirement("relation", relation, _span(prompt, relation), "spatial_relation", "MATCH"),
+        _requirement("tall", "tall", _span(prompt, "tall"), "attribute", "MATCH"),
+        _requirement("stone", "stone", _span(prompt, "stone"), "attribute", "MATCH"),
+        # An exact duplicate is excluded before evidence and never judged.
+        _requirement("stone_again", "stone", _span(prompt, "stone"), "attribute", "NOT_EVALUATED"),
+        _requirement("tower", "tower", _span(prompt, "tower"), "existence", "MATCH"),
+        _requirement("river", "river", _span(prompt, "river"), "existence", river_status),
+    ]
+    return prompt, rows
+
+
+def test_a_requirement_that_is_never_scored_does_not_cap_its_parent():
+    result = score_semantic_case(*_tower_rows("MATCH"))
+    by_id = {value["node_id"]: value for value in result["requirements"]}
+    assert by_id["stone_again"]["exclusion_reason"] == "exact_duplicate"
+    assert by_id["relation"]["effective_score"] == 1.0
+    assert result["score"] == 1.0
+
+
+def test_a_scored_child_that_fails_still_caps_its_parent():
+    result = score_semantic_case(*_tower_rows("MISMATCH"))
+    by_id = {value["node_id"]: value for value in result["requirements"]}
+    assert by_id["relation"]["effective_score"] == 0.0
+    assert by_id["relation"]["parent_constrained"] is True

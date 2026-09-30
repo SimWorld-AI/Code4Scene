@@ -2,25 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/dungeon-hall/GT",
   "source_level": "/Game/Code4SceneGT/dungeon-hall/GT",
   "gt_id": "indoor-atomic-v1-041",
-  "schema_version": "code4scene.gt_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "reflection"
-    ],
-    "authored_operations": [
-      {
-        "type": "rotation",
-        "label": "SM_Torch8",
-        "rotation_rpy_deg": [
-          12.820112228393555,
-          0.0,
-          -179.9998016357422
-        ]
-      }
-    ],
-    "category": "symmetry_pattern",
-    "target_labels": [
-      "SM_Torch8"
-    ]
-  }
+  "schema_version": "code4scene.gt_repair_label.v1"
 }

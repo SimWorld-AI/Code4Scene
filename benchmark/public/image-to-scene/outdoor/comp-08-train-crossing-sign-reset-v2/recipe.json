@@ -47,44 +47,6 @@
       ]
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "replacement",
-      "translation",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "asset": "/Game/TrainStation/Meshes/SM_StreetSigns_NoEntry.SM_StreetSigns_NoEntry",
-        "label": "SM_StreetSigns_Crossing",
-        "type": "replacement"
-      },
-      {
-        "delta_cm": [
-          320.0,
-          -240.0,
-          0.0
-        ],
-        "label": "SM_StreetSigns_Crossing",
-        "type": "translation"
-      },
-      {
-        "label": "SM_StreetSigns_Crossing",
-        "type": "rotation",
-        "yaw_deg": 70.0
-      },
-      {
-        "factor": 1.55,
-        "label": "SM_StreetSigns_Crossing",
-        "type": "scaling"
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SM_StreetSigns_Crossing"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/train-station/gt.fingerprint.json"
 }

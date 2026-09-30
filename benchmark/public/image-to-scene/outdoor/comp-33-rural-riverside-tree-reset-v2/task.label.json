@@ -2,31 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/rural-australia/GT",
   "source_level": "/Game/Code4SceneGT/rural-australia/GT",
   "gt_id": "comp-33-rural-riverside-tree-reset-v2",
-  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "translation",
-        "label": "SM_GrassTree_163",
-        "delta_cm": [
-          280.0,
-          -190.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "SM_GrassTree_163",
-        "yaw_deg": 55.0
-      }
-    ],
-    "category": "geometric_transformation",
-    "target_labels": [
-      "SM_GrassTree_163"
-    ]
-  }
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1"
 }

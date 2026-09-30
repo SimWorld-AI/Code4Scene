@@ -1,0 +1,17 @@
+# Unreal package redirects that some of the benchmark's content packs need.
+# The dataset builder adds them to <Project>/Config/DefaultEngine.ini under [CoreRedirects].
++PackageRedirects=(OldName="/Game/Environments/Foliage/Grass/FieldGrass/SM_FieldGrass_01",NewName="/Game/Hangar/vegetation/FieldGrass/SM_FieldGrass_01")
++PackageRedirects=(OldName="/Game/MSPresets/MSTextures/Albedo",NewName="/Game/StarterContent/MSPresets/MSTextures/Albedo")
++PackageRedirects=(OldName="/Game/MSPresets/MSTextures/Normal",NewName="/Game/StarterContent/MSPresets/MSTextures/Normal")
++PackageRedirects=(OldName="/Game/MSPresets/MSTextures/Roughness",NewName="/Game/StarterContent/MSPresets/MSTextures/Roughness")
++PackageRedirects=(OldName="/Game/MSPresets/MSTextures/whiteAlpha_BC4",NewName="/Game/StarterContent/MSPresets/MSTextures/whiteAlpha_BC4")
++PackageRedirects=(OldName="/Game/MSPresets/MSTextures/whiteMask",NewName="/Game/StarterContent/MSPresets/MSTextures/whiteMask")
++PackageRedirects=(OldName="/Game/Modular_house/Blueprints/BP_Crosshair_01",NewName="/Game/Modular_house/Blueprints/Miscellaneous/Widgets/BP_Crosshair_01")
++PackageRedirects=(OldName="/Game/PersianBazaar_Meshingun/MISC/Environment/Asset/Effects/Texture/Noise/T_TilingNoise16",NewName="/Game/Bazaar_Meshingun/Environment/Assets/Effects2/Textures/Noise/T_TilingNoise16")
++PackageRedirects=(OldName="/Game/Dinner/Textures/ModularDinner/tiimdggg_4K_Albedo",NewName="/Game/Diner/Textures/TX_Floor01_BC")
++PackageRedirects=(OldName="/Game/Dinner/Textures/ModularDinner/tiimdggg_4K_Normal",NewName="/Game/Diner/Textures/TX_Floor01_Normal")
++PackageRedirects=(OldName="/Game/Dinner/Textures/ModularDinner/tiimdggg_4K_AORM",NewName="/Game/Diner/Textures/TX_Floor01_AORM")
++PackageRedirects=(OldName="/Game/Dinner/Textures/tjzjeaaaw_4K_Albedo",NewName="/Game/Diner/Textures/TX_Metal01_BC")
++PackageRedirects=(OldName="/Game/Dinner/Textures/tjzjeaaaw_4K_Normal",NewName="/Game/Diner/Textures/TX_Metal01_Normal")
++PackageRedirects=(OldName="/Game/Dinner/Textures/tjzjeaaaw_4K_AORM",NewName="/Game/Diner/Textures/TX_Metal01_AORM")
++PackageRedirects=(OldName="/Game/Developers/jordanwalker/RenderStyle/Blueprints/ToolAssets/SM_GodRay_Plane",NewName="/Game/VictorianRoom/Blueprints/Lightshaft/SM_GodRay_Plane")

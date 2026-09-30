@@ -306,11 +306,7 @@ def verify(context: Context) -> dict[str, Any]:
     )
     base = {
         **contracts.base("semantic_requirements", context.ids),
-        "score": (
-            semantic_score
-            if decided and not result.get("visual_error")
-            else None
-        ),
+        "score": semantic_score if decided else None,
         "metrics": {
             "checks": checks,
             "check_count": len(checks),
@@ -500,7 +496,9 @@ def verify(context: Context) -> dict[str, Any]:
             ),
         }
     unresolved = [*errors, *not_evaluated]
-    if result.get("visual_error"):
+    # A failed judgement costs only the requirements it failed; the report
+    # is an error only when nothing could be decided.
+    if result.get("visual_error") and not decided:
         return {
             **base,
             "status": contracts.ERROR,

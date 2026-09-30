@@ -52,45 +52,6 @@
       }
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "removal",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "duplication",
-        "label": "StaticMeshActor_565",
-        "new_label": "StaticMeshActor_565_CorruptDuplicate",
-        "delta_cm": [
-          -300.0,
-          220.0,
-          0.0
-        ],
-        "yaw_deg": -28.0,
-        "factor": 0.82
-      },
-      {
-        "type": "rotation",
-        "label": "StaticMeshActor_565",
-        "yaw_deg": 46.0
-      },
-      {
-        "type": "scaling",
-        "label": "StaticMeshActor_565",
-        "factor": [
-          1.28,
-          1.28,
-          1.18
-        ]
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "StaticMeshActor_565"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/suburban-night/gt.fingerprint.json"
 }

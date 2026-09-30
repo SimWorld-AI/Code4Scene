@@ -19,26 +19,6 @@
       ]
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "translation"
-    ],
-    "authored_operations": [
-      {
-        "type": "translation",
-        "label": "SM_Chair9",
-        "delta_cm": [
-          0.0,
-          -45.0,
-          0.0
-        ]
-      }
-    ],
-    "category": "geometric_transformation",
-    "target_labels": [
-      "SM_Chair9"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/laboratory-loft/gt.fingerprint.json"
 }

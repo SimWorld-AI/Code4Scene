@@ -2,45 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/suburban-night/GT",
   "source_level": "/Game/Code4SceneGT/suburban-night/GT",
   "gt_id": "comp-24-suburban-patio-set-repair-v3",
-  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "removal",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "duplication",
-        "label": "StaticMeshActor_591",
-        "new_label": "PatioUmbrella_CorruptDuplicate",
-        "delta_cm": [
-          420.0,
-          0.0,
-          0.0
-        ],
-        "yaw_deg": 37.0,
-        "factor": 1.18
-      },
-      {
-        "type": "translation",
-        "label": "StaticMeshActor_532",
-        "delta_cm": [
-          -300.0,
-          250.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "StaticMeshActor_532",
-        "yaw_deg": 46.0
-      }
-    ],
-    "category": "layout_rearrangement",
-    "target_labels": [
-      "StaticMeshActor_532",
-      "StaticMeshActor_591"
-    ]
-  }
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1"
 }

@@ -2,44 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/rosies-diner/GT",
   "source_level": "/Game/Code4SceneGT/rosies-diner/GT",
   "gt_id": "comp-69-rosies-north-bin-pair-repair-v2",
-  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "removal",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "duplication",
-        "label": "SM_Trashcan5",
-        "new_label": "SM_Trashcan5_CorruptDuplicate",
-        "delta_cm": [
-          190.0,
-          150.0,
-          0.0
-        ],
-        "yaw_deg": 32.0,
-        "factor": 1.15
-      },
-      {
-        "type": "rotation",
-        "label": "SM_Trashcan5",
-        "yaw_deg": -48.0
-      },
-      {
-        "type": "scaling",
-        "label": "SM_Trashcan5",
-        "factor": [
-          1.3,
-          0.82,
-          1.2
-        ]
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SM_Trashcan5"
-    ]
-  }
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1"
 }

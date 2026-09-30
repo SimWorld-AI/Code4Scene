@@ -2,45 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/rosies-diner/GT",
   "source_level": "/Game/Code4SceneGT/rosies-diner/GT",
   "gt_id": "comp-20-rosies-crate-bin-layout-v2",
-  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "removal",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "duplication",
-        "label": "SM_Box001",
-        "new_label": "SM_Box001_CorruptDuplicate",
-        "delta_cm": [
-          220.0,
-          170.0,
-          0.0
-        ],
-        "yaw_deg": 32.0,
-        "factor": 1.25
-      },
-      {
-        "type": "translation",
-        "label": "SM_Trashcan01",
-        "delta_cm": [
-          -260.0,
-          -210.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "SM_Trashcan01",
-        "yaw_deg": 48.0
-      }
-    ],
-    "category": "layout_rearrangement",
-    "target_labels": [
-      "SM_Box001",
-      "SM_Trashcan01"
-    ]
-  }
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1"
 }

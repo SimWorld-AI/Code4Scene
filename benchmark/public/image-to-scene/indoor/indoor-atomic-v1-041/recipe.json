@@ -19,26 +19,6 @@
       ]
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "reflection"
-    ],
-    "authored_operations": [
-      {
-        "type": "rotation",
-        "label": "SM_Torch8",
-        "rotation_rpy_deg": [
-          12.820112228393555,
-          0.0,
-          -179.9998016357422
-        ]
-      }
-    ],
-    "category": "symmetry_pattern",
-    "target_labels": [
-      "SM_Torch8"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/dungeon-hall/gt.fingerprint.json"
 }
