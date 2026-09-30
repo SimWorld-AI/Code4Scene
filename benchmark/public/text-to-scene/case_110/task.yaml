@@ -1,0 +1,81 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_110
+kind: scene_generation
+inputs:
+  prompt: "Scene:\n  Type: Bleak, misty industrial settlement\n  Setting: Dark, uneven rocky plateau\n\
+    \  Sky: Dim blue-gray, faintly starry\nSettlement organization:\n  Structures: Roughly eight to ten;\
+    \ rusted metal\n  Pattern: A loose, organic oval of structures arranged around a broad empty central\
+    \ yard\n  Density: Moderately dense perimeter; irregular gaps and open center rather than streets\
+    \ or rows\n  Anchor complex:\n    Scale: Largest\n    Form: Tiered furnace\n    Position: One end\
+    \ of the settlement\n  Other sides: Several smaller cylindrical workshops, squat drum-like buildings,\
+    \ and tall chimney towers wrapping around the other sides\nBuilding specification:\n  Bases: Heavy\
+    \ circular\n  Massing: Stacked bands; domed or flat roofs\n  Details: Narrow catwalk rails, pipes,\
+    \ cables, round openings\n  Lighting: Occasional warm orange light leaking from seams and doorways\n\
+    \  Smokestacks: Several emitting thin pale smoke\nPlateau surface:\n  Ground: Mottled, damp-looking\
+    \ charcoal-green earth\n  Features: Shallow ruts, patches of mist, scattered puddle-like marks, isolated\
+    \ pale boulders\n  Larger rocks: Rough arc along part of the settlement\nSmaller elements:\n  Awnings:\
+    \ A few small triangular sheet-metal\n  Cables: Linking buildings\n  Outskirts: Sparse post-like objects\n\
+    Outer terrain:\n  Several edges: Sharp drops into bright fog-filled ravines\n  Beyond: Barren rolling\
+    \ ridges\n\n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is\
+    \ not available\nin this run, so this list is your entire library. Format:\n\n  id | name | category\
+    \ | width x depth x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path\
+    \ is what reaches UE.\nYou decide which to use, how many of each, and where they go — reuse entries\n\
+    freely.\n\n- fence | Fence | architecture | 1.11x1.54x0.9 m | /Game/Scrapopolis/Meshes/Architecture/SM_Fence.SM_Fence\n\
+    - house_back | House Back | architecture | 5.05x10.34x5.1 m | /Game/Scrapopolis/Meshes/Architecture/SM_House_Back.SM_House_Back\n\
+    - house_door | House Door | architecture | 5.16x10.34x5.1 m | /Game/Scrapopolis/Meshes/Architecture/SM_House_Door.SM_House_Door\n\
+    - pipe_1 | Pipe 1 | architecture | 8.94x8.94x8.22 m | /Game/Scrapopolis/Meshes/Architecture/SM_Pipe_1.SM_Pipe_1\n\
+    - pipe_2 | Pipe 2 | architecture | 3.4x3.4x14.5 m | /Game/Scrapopolis/Meshes/Architecture/SM_Pipe_2.SM_Pipe_2\n\
+    - pipe_3 | Pipe 3 | architecture | 5.83x5.83x4.13 m | /Game/Scrapopolis/Meshes/Architecture/SM_Pipe_3.SM_Pipe_3\n\
+    - pipe_4 | Pipe 4 | architecture | 1.29x4.42x9.08 m | /Game/Scrapopolis/Meshes/Architecture/SM_Pipe_4.SM_Pipe_4\n\
+    - pipe_5 | Pipe 5 | architecture | 3.11x2.69x4.2 m | /Game/Scrapopolis/Meshes/Architecture/SM_Pipe_5.SM_Pipe_5\n\
+    - stairs | stairs | architecture | 4.36x5.24x3.64 m | /Game/Scrapopolis/Meshes/Architecture/SM_stairs.SM_stairs\n\
+    - support_1 | Support 1 | architecture | 15.35x15.35x0.96 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_1.SM_Support_1\n\
+    - support_10 | Support 10 | architecture | 8.73x8.73x1.57 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_10.SM_Support_10\n\
+    - support_2 | Support 2 | architecture | 5.39x5.39x0.31 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_2.SM_Support_2\n\
+    - support_3 | Support 3 | architecture | 9.26x9.26x1.95 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_3.SM_Support_3\n\
+    - support_4 | Support 4 | architecture | 16.57x16.57x0.67 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_4.SM_Support_4\n\
+    - support_5 | Support 5 | architecture | 9.1x9.1x0.9 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_5.SM_Support_5\n\
+    - support_6 | Support 6 | architecture | 3.66x3.66x0.8 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_6.SM_Support_6\n\
+    - support_7 | Support 7 | architecture | 8.93x8.87x1.0 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_7.SM_Support_7\n\
+    - support_8 | Support 8 | architecture | 9.73x9.73x0.86 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_8.SM_Support_8\n\
+    - support_9 | Support 9 | architecture | 7.15x7.14x1.16 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_9.SM_Support_9\n\
+    - wires_1 | wires 1 | architecture | 10.98x19.62x7.23 m | /Game/Scrapopolis/Meshes/Architecture/SM_wires_1.SM_wires_1\n\
+    - wires_2 | wires 2 | architecture | 14.08x9.72x3.59 m | /Game/Scrapopolis/Meshes/Architecture/SM_wires_2.SM_wires_2\n\
+    - wires_3 | wires 3 | architecture | 1.48x0.56x5.96 m | /Game/Scrapopolis/Meshes/Architecture/SM_wires_3.SM_wires_3\n\
+    - cube | Cube | basicshapes | 111.88x91.75x2.44 m | /Engine/BasicShapes/Cube.Cube\n- plane | Plane\
+    \ | basicshapes | 107.83x61.53x36.32 m | /Engine/BasicShapes/Plane.Plane\n- bench | bench | props\
+    \ | 2.5x1.99x1.0 m | /Game/Scrapopolis/Meshes/Props/SM_bench.SM_bench\n- box_1 | box 1 | props | 1.15x1.61x0.92\
+    \ m | /Game/Scrapopolis/Meshes/Props/SM_box_1.SM_box_1\n- box_2 | box 2 | props | 1.35x1.39x0.72 m\
+    \ | /Game/Scrapopolis/Meshes/Props/SM_box_2.SM_box_2\n- camp_fire | Camp Fire | props | 0.99x1.12x0.83\
+    \ m | /Game/Scrapopolis/Meshes/Props/SM_CampFire.SM_CampFire\n- candel | candel | props | 0.1x0.1x0.26\
+    \ m | /Game/Scrapopolis/Meshes/Props/SM_candel.SM_candel\n- cloth | cloth | props | 12.29x12.74x6.18\
+    \ m | /Game/Scrapopolis/Meshes/Props/SM_cloth.SM_cloth\n- debris_gear_4 | Debris gear 4 | props |\
+    \ 0.5x0.51x0.21 m | /Game/Scrapopolis/Meshes/Props/SM_Debris_gear_4.SM_Debris_gear_4\n- debris_gear_simulation\
+    \ | Debris gear Simulation | props | 6.49x6.47x2.05 m | /Game/Scrapopolis/Meshes/Props/SM_Debris_gear_Simulation.SM_Debris_gear_Simulation\n\
+    - debris_rock_1 | Debris rock 1 | props | 2.36x2.21x2.06 m | /Game/Scrapopolis/Meshes/Props/SM_Debris_rock_1.SM_Debris_rock_1\n\
+    - debris_rock_2 | Debris rock 2 | props | 4.37x3.25x4.39 m | /Game/Scrapopolis/Meshes/Props/SM_Debris_rock_2.SM_Debris_rock_2\n\
+    - debris_rock_3 | Debris rock 3 | props | 2.65x2.28x2.58 m | /Game/Scrapopolis/Meshes/Props/SM_Debris_rock_3.SM_Debris_rock_3\n\
+    - debris_rock_5 | Debris rock 5 | props | 4.27x3.71x0.57 m | /Game/Scrapopolis/Meshes/Props/SM_Debris_rock_5.SM_Debris_rock_5\n\
+    - flue | flue | props | 1.94x1.55x1.21 m | /Game/Scrapopolis/Meshes/Props/SM_flue.SM_flue\n- table\
+    \ | table | props | 2.8x2.35x1.07 m | /Game/Scrapopolis/Meshes/Props/SM_table.SM_table\n\n=== THE\
+    \ TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\nand arrangement\
+    \ the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result reports\
+    \ how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide for yourself\
+    \ when the scene\nmatches the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_110.bundle.json
+- name: overview_prompt_alignment
+assets:
+  packs:
+  - Scrapopolis

@@ -72,7 +72,7 @@ def _package(tmp_path, case_ids):
 
 
 def test_package_writes_agent_and_scorer_trees(tmp_path):
-    ids = ["a20-s01-extra-chair-removal", "comp-02-new-york-bench-reset-v2", "bazaar"]
+    ids = ["a20-s01-extra-chair-removal", "comp-02-new-york-bench-reset-v2", "case_001"]
     cases = _package(tmp_path, ids)
     for case in cases:
         agent = build.agent_dir(tmp_path, case)
@@ -114,3 +114,13 @@ def test_render_publishes_reference_views_into_the_agent_tree(tmp_path, monkeypa
         assert (build.agent_dir(tmp_path, case) / view["publish"]["file"]).is_file()
         assert (build.raw_render_dir(tmp_path, case) / f"{view['name']}.png").is_file()
     assert not (tmp_path / "scorer").exists()
+
+
+@pytest.mark.parametrize("path", sorted(PUBLIC.glob("text-to-scene/*/task.yaml")), ids=lambda p: p.parent.name)
+def test_each_requirement_bundle_was_built_from_its_own_prompt(path):
+    from code4scene.evaluation.offline_overview_prompt_alignment import _prompt_for_overview
+    task = yaml.safe_load(path.read_text(encoding="utf-8"))
+    bundle = json.loads((path.parent / "requirements" / f"{task['id']}.bundle.json").read_text(encoding="utf-8"))
+    assert " ".join(_prompt_for_overview(bundle["graph"]["prompt"]).split()) == \
+        " ".join(_prompt_for_overview(task["inputs"]["prompt"]).split())
+

@@ -1,0 +1,39 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_043
+kind: scene_generation
+inputs:
+  prompt: 'Create a construction site organized around a tower crane and scaffolding, with stacked building
+    materials, portable site cabins, fences, barriers, machinery, and debris. Let the crane provide the
+    main vertical landmark while the scaffolding defines the active construction area below and around
+    it. Group the building materials into recognizable stacks near the work area, keeping their placement
+    deliberate rather than scattering every item evenly across the site. Position the portable cabins
+    together beside an accessible part of the site so they read as a distinct support area. Use fences
+    to define the site perimeter and barriers to separate material storage and machinery from the spaces
+    between these groups. Place machinery near the active work and material-handling areas, with enough
+    separation for each major piece to remain visible. Concentrate debris around the construction activity
+    and beside stored materials, leaving some clearer gaps between the working area, cabin group, and
+    storage stacks. Maintain a coherent construction-site layout in which the crane, scaffolding, cabins,
+    materials, and machinery are all identifiable, with fences, barriers, and debris providing the smaller-scale
+    context.
+
+    '
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 130
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+assets:
+  packs:
+  - FactoryEnvironment
+  - ContainerYard
+  - AbandonedBuilding
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_043.bundle.json
+- name: overview_prompt_alignment

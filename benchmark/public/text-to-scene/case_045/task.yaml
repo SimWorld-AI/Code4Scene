@@ -1,0 +1,38 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_045
+kind: scene_generation
+inputs:
+  prompt: "Scene:\n  identity: coherent construction site\n  organizing elements: tower crane and scaffolding\n\
+    \  recognition: crane, scaffolding, cabins, materials, and machinery individually identifiable\n \
+    \ smaller scale context: fences, barriers, debris\nActive work:\n  crane: main vertical landmark\n\
+    \  scaffolding: defines active construction area below and around crane\n  relationship: work area\
+    \ organized around crane and scaffolding\nMaterials:\n  arrangement: recognizable stacks near work\
+    \ area\n  placement: deliberate grouping rather than every item scattered evenly across site\nCabins:\n\
+    \  type: portable site cabins\n  grouping: together\n  placement: beside accessible part of site\n\
+    \  role: distinct support area\nBoundaries:\n  fences: define site perimeter\n  barriers: separate\
+    \ material storage and machinery from spaces between these groups\nMachinery:\n  location: near active\
+    \ work and material-handling areas\n  spacing: enough separation for each major piece to remain visible\n\
+    Debris:\n  concentration: around construction activity and beside stored materials\n  intervening\
+    \ space: some clearer gaps between working area, cabin group, storage stacks\nOverall layout:\n  organization:\
+    \ coherent relationships among working area, cabin support group, and material storage\n  context\
+    \ elements: fences, barriers, machinery, stacked building materials, debris\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 130
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+assets:
+  packs:
+  - FactoryEnvironment
+  - ContainerYard
+  - AbandonedBuilding
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_045.bundle.json
+- name: overview_prompt_alignment

@@ -1,0 +1,196 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_102
+kind: scene_generation
+inputs:
+  prompt: "Create a dense central Paris district under quiet overcast light, with roughly twenty tightly\
+    \ packed perimeter blocks following narrow angled streets and wider avenues. Use irregular polygonal\
+    \ footprints, wedge corners, and enclosed courtyards, some with unfinished blank off-white walls.\
+    \ Make buildings predominantly six to seven stories, with pale weathered stone, tall windows, iron\
+    \ balconies, mansard roofs, dormers, and chimneys. Add asphalt roads, broad stone sidewalks, crossings,\
+    \ lane markings, and traffic islands. Place bollards, railings, traffic lights, a no-entry sign, and\
+    \ bicycles beside a corner bistro, with sparse trees and cafe furniture. Keep people and vehicles\
+    \ almost absent and terminate the flat district with abruptly cut blocks and plain courtyard shells.\n\
+    \n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\n\
+    in this run, so this list is your entire library. Format:\n\n  id | name | category | width x depth\
+    \ x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches\
+    \ UE.\nYou decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n-\
+    \ pr_awning_01 | PR Awning 01 | awning | 4.31x3.68x1.48 m | /Game/CityCore_Paris/Models/BuildingProps/Awning/SM_PR_Awning_01.SM_PR_Awning_01\n\
+    - pr_awning_01_end | PR Awning 01 End | awning | 1.29x1.66x1.62 m | /Game/CityCore_Paris/Models/BuildingProps/Awning/SM_PR_Awning_01_End.SM_PR_Awning_01_End\n\
+    - pr_awning_01_modular | PR Awning 01 Modular | awning | 4.66x3.57x1.53 m | /Game/CityCore_Paris/Models/BuildingProps/Awning/SM_PR_Awning_01_Modular.SM_PR_Awning_01_Modular\n\
+    - pr_awning_01_over | PR Awning 01 Over | awning | 2.25x0.57x1.65 m | /Game/CityCore_Paris/Models/BuildingProps/Awning/SM_PR_Awning_01_Over.SM_PR_Awning_01_Over\n\
+    - pr_awning_01_over_corner_60_d | PR Awning 01 Over Corner 60 D | awning | 2.49x2.73x1.54 m | /Game/CityCore_Paris/Models/BuildingProps/Awning/SM_PR_Awning_01_OverCorner_60D.SM_PR_Awning_01_OverCorner_60D\n\
+    - pr_awning_large | PR Awning Large | awning | 2.2x2.52x1.0 m | /Game/CityCore_Paris/Models/BuildingProps/Awning/SM_PR_AwningLarge.SM_PR_AwningLarge\n\
+    - cube | Cube | basicshapes | 500.0x500.0x5.0 m | /Engine/BasicShapes/Cube.Cube\n- procedural_building\
+    \ | Procedural Building | blueprints | 26.32x27.26x31.21 m | /Game/CityCore_Paris/Blueprints/BP_ProceduralBuilding.BP_ProceduralBuilding_C\n\
+    - spline_road | Spline Road | blueprints | 24.89x25.31x2.56 m | /Game/CityCore_Paris/Blueprints/BP_SplineRoad.BP_SplineRoad_C\n\
+    - spline_sidewalk | Spline Sidewalk | blueprints | 114.2x83.49x2.56 m | /Game/CityCore_Paris/Blueprints/BP_SplineSidewalk.BP_SplineSidewalk_C\n\
+    - brand_sign_text_bistrot | Brand Sign Text Bistrot | brandsigns | 0.47x0.75x0.22 m | /Game/CityCore_Paris/Models/BuildingProps/BrandSigns/SM_BrandSignText_Bistrot.SM_BrandSignText_Bistrot\n\
+    - brand_sign_text_boulange | Brand Sign Text Boulange | brandsigns | 1.7x1.02x0.36 m | /Game/CityCore_Paris/Models/BuildingProps/BrandSigns/SM_BrandSignText_Boulange.SM_BrandSignText_Boulange\n\
+    - brand_sign_text_coffee_shop_02 | Brand Sign Text Coffee Shop 02 | brandsigns | 2.65x1.63x0.39 m\
+    \ | /Game/CityCore_Paris/Models/BuildingProps/BrandSigns/SM_BrandSignText_CoffeeShop_02.SM_BrandSignText_CoffeeShop_02\n\
+    - brand_sign_text_librairie | Brand Sign Text Librairie | brandsigns | 1.03x0.68x0.27 m | /Game/CityCore_Paris/Models/BuildingProps/BrandSigns/SM_BrandSignText_Librairie.SM_BrandSignText_Librairie\n\
+    - brand_sign_text_patisserie | Brand Sign Text Patisserie | brandsigns | 1.53x0.92x0.31 m | /Game/CityCore_Paris/Models/BuildingProps/BrandSigns/SM_BrandSignText_Patisserie.SM_BrandSignText_Patisserie\n\
+    - brand_sign_text_pharmacie | Brand Sign Text Pharmacie | brandsigns | 1.92x1.09x0.36 m | /Game/CityCore_Paris/Models/BuildingProps/BrandSigns/SM_BrandSignText_Pharmacie.SM_BrandSignText_Pharmacie\n\
+    - brand_sign_text_vitamines | Brand Sign Text Vitamines | brandsigns | 1.76x1.04x0.35 m | /Game/CityCore_Paris/Models/BuildingProps/BrandSigns/SM_BrandSignText_Vitamines.SM_BrandSignText_Vitamines\n\
+    - antena_01 | Antena 01 | buildingprops | 2.93x2.88x2.2 m | /Game/CityCore_Paris/Models/BuildingProps/SM_Antena_01.SM_Antena_01\n\
+    - antena_02 | Antena 02 | buildingprops | 1.9x2.47x1.92 m | /Game/CityCore_Paris/Models/BuildingProps/SM_Antena_02.SM_Antena_02\n\
+    - balcony_divider_01 | Balcony Divider 01 | buildingprops | 1.14x0.06x2.08 m | /Game/CityCore_Paris/Models/BuildingProps/SM_BalconyDivider_01.SM_BalconyDivider_01\n\
+    - brand_flag_02 | Brand Flag 02 | buildingprops | 0.37x0.54x1.65 m | /Game/CityCore_Paris/Models/BuildingProps/SM_BrandFlag_02.SM_BrandFlag_02\n\
+    - brand_flag_03 | Brand Flag 03 | buildingprops | 0.39x0.53x1.65 m | /Game/CityCore_Paris/Models/BuildingProps/SM_BrandFlag_03.SM_BrandFlag_03\n\
+    - brand_sign_bank | Brand Sign Bank | buildingprops | 0.17x3.34x0.88 m | /Game/CityCore_Paris/Models/BuildingProps/SM_BrandSign_Bank.SM_BrandSign_Bank\n\
+    - brand_sign_candy_shop | Brand Sign Candy Shop | buildingprops | 0.17x3.91x0.95 m | /Game/CityCore_Paris/Models/BuildingProps/SM_BrandSign_CandyShop.SM_BrandSign_CandyShop\n\
+    - brand_sign_coffee | Brand Sign Coffee | buildingprops | 1.64x2.7x0.71 m | /Game/CityCore_Paris/Models/BuildingProps/SM_BrandSign_Coffee.SM_BrandSign_Coffee\n\
+    - brand_sign_fashion | Brand Sign Fashion | buildingprops | 1.84x3.04x0.78 m | /Game/CityCore_Paris/Models/BuildingProps/SM_BrandSign_Fashion.SM_BrandSign_Fashion\n\
+    - chiminey_01 | Chiminey 01 | buildingprops | 3.2x1.05x5.82 m | /Game/CityCore_Paris/Models/BuildingProps/SM_Chiminey_01.SM_Chiminey_01\n\
+    - chiminey_02 | Chiminey 02 | buildingprops | 4.22x1.09x5.96 m | /Game/CityCore_Paris/Models/BuildingProps/SM_Chiminey_02.SM_Chiminey_02\n\
+    - chiminey_03 | Chiminey 03 | buildingprops | 4.81x1.65x5.96 m | /Game/CityCore_Paris/Models/BuildingProps/SM_Chiminey_03.SM_Chiminey_03\n\
+    - chiminey_04 | Chiminey 04 | buildingprops | 3.97x5.17x7.04 m | /Game/CityCore_Paris/Models/BuildingProps/SM_Chiminey_04.SM_Chiminey_04\n\
+    - chiminey_05 | Chiminey 05 | buildingprops | 6.63x1.7x6.19 m | /Game/CityCore_Paris/Models/BuildingProps/SM_Chiminey_05.SM_Chiminey_05\n\
+    - ornament8 | Ornament8 | buildingprops | 0.1x1.53x0.43 m | /Game/CityCore_Paris/Models/BuildingProps/SM_Ornament8.SM_Ornament8\n\
+    - pr_bank_sign_01 | PR Bank Sign 01 | buildingprops | 0.49x1.09x1.12 m | /Game/CityCore_Paris/Models/BuildingProps/SM_PR_BankSign_01.SM_PR_BankSign_01\n\
+    - pr_boulangerie_01 | PR Boulangerie 01 | buildingprops | 1.08x0.76x0.69 m | /Game/CityCore_Paris/Models/BuildingProps/SM_PR_Boulangerie_01.SM_PR_Boulangerie_01\n\
+    - pr_coffee_sign_01 | PR Coffee Sign 01 | buildingprops | 1.06x0.27x0.74 m | /Game/CityCore_Paris/Models/BuildingProps/SM_PR_CoffeeSign_01.SM_PR_CoffeeSign_01\n\
+    - pr_hotel_sign_01 | PR Hotel Sign 01 | buildingprops | 0.84x1.23x2.6 m | /Game/CityCore_Paris/Models/BuildingProps/SM_PR_HotelSign_01.SM_PR_HotelSign_01\n\
+    - pr_hotel_sign_02 | PR Hotel Sign 02 | buildingprops | 1.22x0.88x2.6 m | /Game/CityCore_Paris/Models/BuildingProps/SM_PR_HotelSign_02.SM_PR_HotelSign_02\n\
+    - pr_hotel_sign_03 | PR Hotel Sign 03 | buildingprops | 0.47x1.13x2.33 m | /Game/CityCore_Paris/Models/BuildingProps/SM_PR_HotelSign_03.SM_PR_HotelSign_03\n\
+    - pr_hotel_sign_04 | PR Hotel Sign 04 | buildingprops | 1.47x0.27x2.6 m | /Game/CityCore_Paris/Models/BuildingProps/SM_PR_HotelSign_04.SM_PR_HotelSign_04\n\
+    - pr_street_sign_01 | PR Street Sign 01 | buildingprops | 0.01x0.53x0.48 m | /Game/CityCore_Paris/Models/BuildingProps/SM_PR_StreetSign_01.SM_PR_StreetSign_01\n\
+    - pr_street_sign_02 | PR Street Sign 02 | buildingprops | 0.47x0.27x0.48 m | /Game/CityCore_Paris/Models/BuildingProps/SM_PR_StreetSign_02.SM_PR_StreetSign_02\n\
+    - pr_street_sign_03 | PR Street Sign 03 | buildingprops | 0.47x0.28x0.44 m | /Game/CityCore_Paris/Models/BuildingProps/SM_PR_StreetSign_03.SM_PR_StreetSign_03\n\
+    - pr_street_sign_04 | PR Street Sign 04 | buildingprops | 0.47x0.28x0.44 m | /Game/CityCore_Paris/Models/BuildingProps/SM_PR_StreetSign_04.SM_PR_StreetSign_04\n\
+    - pr_wall_lamp_01 | PR Wall Lamp 01 | buildingprops | 2.72x2.56x2.56 m | /Game/CityCore_Paris/Models/BuildingProps/SM_PR_WallLamp_01.SM_PR_WallLamp_01\n\
+    - roll_up_door | Roll Up Door | buildingprops | 1.19x1.74x3.02 m | /Game/CityCore_Paris/Models/BuildingProps/SM_RollUpDoor.SM_RollUpDoor\n\
+    - wall_brand_sign_clothing | Wall Brand Sign Clothing | buildingprops | 1.32x0.86x1.03 m | /Game/CityCore_Paris/Models/BuildingProps/SM_WallBrandSign_Clothing.SM_WallBrandSign_Clothing\n\
+    - wall_brand_sign_coffee_shop | Wall Brand Sign Coffee Shop | buildingprops | 0.81x1.34x1.03 m | /Game/CityCore_Paris/Models/BuildingProps/SM_WallBrandSign_CoffeeShop.SM_WallBrandSign_CoffeeShop\n\
+    - wall_brand_sign_restaurant | Wall Brand Sign Restaurant | buildingprops | 0.86x1.32x1.03 m | /Game/CityCore_Paris/Models/BuildingProps/SM_WallBrandSign_Restaurant.SM_WallBrandSign_Restaurant\n\
+    - intersection_03 | Intersection 03 | custommeshes | 8.61x14.28x2.56 m | /Game/CityCore_Paris/Models/CustomMeshes/SM_Intersection_03.SM_Intersection_03\n\
+    - intersection_09 | Intersection 09 | custommeshes | 16.86x21.51x0.1 m | /Game/CityCore_Paris/Models/CustomMeshes/SM_Intersection_09.SM_Intersection_09\n\
+    - intersection_10 | Intersection 10 | custommeshes | 6.91x15.82x2.56 m | /Game/CityCore_Paris/Models/CustomMeshes/SM_Intersection_10.SM_Intersection_10\n\
+    - intersection_11 | Intersection 11 | custommeshes | 20.15x20.88x2.56 m | /Game/CityCore_Paris/Models/CustomMeshes/SM_Intersection_11.SM_Intersection_11\n\
+    - intersection_12 | Intersection 12 | custommeshes | 32.93x43.65x0.1 m | /Game/CityCore_Paris/Models/CustomMeshes/SM_Intersection_12.SM_Intersection_12\n\
+    - intersection_16 | Intersection 16 | custommeshes | 23.5x18.48x2.56 m | /Game/CityCore_Paris/Models/CustomMeshes/SM_Intersection_16.SM_Intersection_16\n\
+    - intersection_17 | Intersection 17 | custommeshes | 24.28x30.19x2.56 m | /Game/CityCore_Paris/Models/CustomMeshes/SM_Intersection_17.SM_Intersection_17\n\
+    - pr_drain_pipe_top | PR Drain Pipe Top | drainpipes | 2.56x16.16x2.56 m | /Game/CityCore_Paris/Models/BuildingProps/DrainPipes/SM_PR_DrainPipeTop.SM_PR_DrainPipeTop\n\
+    - pr_drain_pipes_01 | PR Drain Pipes 01 | drainpipes | 2.56x2.56x22.49 m | /Game/CityCore_Paris/Models/BuildingProps/DrainPipes/BP_PR_DrainPipes_01.BP_PR_DrainPipes_01_C\n\
+    - pr_drain_pipes_02 | PR Drain Pipes 02 | drainpipes | 2.56x2.56x22.58 m | /Game/CityCore_Paris/Models/BuildingProps/DrainPipes/BP_PR_DrainPipes_02.BP_PR_DrainPipes_02_C\n\
+    - pr_drain_pipes_03 | PR Drain Pipes 03 | drainpipes | 2.56x2.56x18.49 m | /Game/CityCore_Paris/Models/BuildingProps/DrainPipes/BP_PR_DrainPipes_03.BP_PR_DrainPipes_03_C\n\
+    - fence | Fence | fence | 2.56x2.56x2.56 m | /Game/CityCore_Paris/Blueprints/Fence/BP_Fence.BP_Fence_C\n\
+    - final_prefab | Final Prefab | finalprefab | 2.56x6.22x2.56 m | /Game/CityCore_Paris/Blueprints/FinalPrefab/BP_FinalPrefab.BP_FinalPrefab_C\n\
+    - tree_01 | Tree 01 | foliage | 8.28x8.25x8.24 m | /Game/CityCore_Paris/Models/Props/Foliage/SM_Tree_01.SM_Tree_01\n\
+    - garbage_02_merged | Garbage 02 Merged | merged | 0.9x0.9x0.33 m | /Game/CityCore_Paris/Models/Props/StreetProps/Merged/SM_Garbage_02_Merged.SM_Garbage_02_Merged\n\
+    - garbage_04_merged | Garbage 04 Merged | merged | 1.43x1.88x0.74 m | /Game/CityCore_Paris/Models/Props/StreetProps/Merged/SM_Garbage_04_Merged.SM_Garbage_04_Merged\n\
+    - trash_bags_01_merged | Trash Bags 01 Merged | merged | 2.56x2.56x2.56 m | /Game/CityCore_Paris/Models/Props/StreetProps/Merged/SM_TrashBags_01_Merged.SM_TrashBags_01_Merged\n\
+    - trash_bags_02_merged | Trash Bags 02 Merged | merged | 1.06x1.07x0.78 m | /Game/CityCore_Paris/Models/Props/StreetProps/Merged/SM_TrashBags_02_Merged.SM_TrashBags_02_Merged\n\
+    - cube_2 | Cube | other | 137.14x159.51x11.28 m | /Game/CityCore_Paris/Models/Other/SM_Cube.SM_Cube\n\
+    - moulding | Moulding | otherblueprints | 9.18x14.49x2.56 m | /Game/CityCore_Paris/Blueprints/ProceduralBuilding/OtherBlueprints/BP_Moulding.BP_Moulding_C\n\
+    - spline_road_line_marking | Spline Road Line Marking | otherblueprints | 2.56x11.22x2.56 m | /Game/CityCore_Paris/Blueprints/SidewalkRoad/OtherBlueprints/BP_SplineRoadLineMarking.BP_SplineRoadLineMarking_C\n\
+    - pr_bike_racks_02 | PR Bike Racks 02 | packed | 3.75x2.56x2.56 m | /Game/CityCore_Paris/Models/Props/StreetProps/Packed/BP_PR_BikeRacks_02.BP_PR_BikeRacks_02_C\n\
+    - street_pot_02_b | Street Pot 02 B | packed | 2.56x2.56x2.56 m | /Game/CityCore_Paris/Models/Props/StreetProps/Packed/BP_StreetPot_02_B.BP_StreetPot_02_B_C\n\
+    - balcony_pot_01 | Balcony Pot 01 | props | 0.37x0.85x0.38 m | /Game/CityCore_Paris/Models/Props/SM_BalconyPot_01.SM_BalconyPot_01\n\
+    - balcony_pot_01_b | Balcony Pot 01 B | props | 1.62x0.96x0.72 m | /Game/CityCore_Paris/Models/Props/SM_BalconyPot_01_B.SM_BalconyPot_01_B\n\
+    - balcony_pot_02 | Balcony Pot 02 | props | 0.5x0.81x0.43 m | /Game/CityCore_Paris/Models/Props/SM_BalconyPot_02.SM_BalconyPot_02\n\
+    - balcony_pot_02_b | Balcony Pot 02 B | props | 0.5x0.8x0.44 m | /Game/CityCore_Paris/Models/Props/SM_BalconyPot_02_B.SM_BalconyPot_02_B\n\
+    - balcony_pot_03 | Balcony Pot 03 | props | 0.39x0.77x0.41 m | /Game/CityCore_Paris/Models/Props/SM_BalconyPot_03.SM_BalconyPot_03\n\
+    - balcony_pot_03_b | Balcony Pot 03 B | props | 0.4x0.77x0.4 m | /Game/CityCore_Paris/Models/Props/SM_BalconyPot_03_B.SM_BalconyPot_03_B\n\
+    - balcony_pot_04 | Balcony Pot 04 | props | 0.45x0.77x0.43 m | /Game/CityCore_Paris/Models/Props/SM_BalconyPot_04.SM_BalconyPot_04\n\
+    - balcony_pot_05 | Balcony Pot 05 | props | 0.36x0.81x0.46 m | /Game/CityCore_Paris/Models/Props/SM_BalconyPot_05.SM_BalconyPot_05\n\
+    - balcony_pot_06 | Balcony Pot 06 | props | 0.47x0.94x0.54 m | /Game/CityCore_Paris/Models/Props/SM_BalconyPot_06.SM_BalconyPot_06\n\
+    - balcony_pot_07 | Balcony Pot 07 | props | 0.47x0.94x0.54 m | /Game/CityCore_Paris/Models/Props/SM_BalconyPot_07.SM_BalconyPot_07\n\
+    - balcony_pot_08 | Balcony Pot 08 | props | 1.94x1.36x0.82 m | /Game/CityCore_Paris/Models/Props/SM_BalconyPot_08.SM_BalconyPot_08\n\
+    - balcony_pot_round_01_a | Balcony Pot Round 01 A | props | 0.14x0.18x0.25 m | /Game/CityCore_Paris/Models/Props/SM_BalconyPot_Round_01_A.SM_BalconyPot_Round_01_A\n\
+    - balcony_pot_round_big_01 | Balcony Pot Round Big 01 | props | 0.44x0.43x0.74 m | /Game/CityCore_Paris/Models/Props/SM_BalconyPot_RoundBig_01_C.SM_BalconyPot_RoundBig_01_C\n\
+    - balcony_pot_round_big_01_a | Balcony Pot Round Big 01 A | props | 0.84x0.84x1.19 m | /Game/CityCore_Paris/Models/Props/SM_BalconyPot_RoundBig_01_A.SM_BalconyPot_RoundBig_01_A\n\
+    - balcony_pot_round_big_01_b | Balcony Pot Round Big 01 B | props | 0.62x0.63x0.96 m | /Game/CityCore_Paris/Models/Props/SM_BalconyPot_RoundBig_01_B.SM_BalconyPot_RoundBig_01_B\n\
+    - road_10m | Road 10m | road | 10.65x8.47x2.56 m | /Game/CityCore_Paris/Models/Road/SM_Road_10m.SM_Road_10m\n\
+    - bike_arrows | Bike Arrows | roadmarkings | 1.31x1.26x0.0 m | /Game/CityCore_Paris/Models/RoadMarkings/SM_BikeArrows.SM_BikeArrows\n\
+    - bike_marking | Bike Marking | roadmarkings | 1.25x1.35x0.0 m | /Game/CityCore_Paris/Models/RoadMarkings/SM_BikeMarking.SM_BikeMarking\n\
+    - bus_marking | Bus Marking | roadmarkings | 2.4x2.56x0.0 m | /Game/CityCore_Paris/Models/RoadMarkings/SM_BusMarking.SM_BusMarking\n\
+    - crossswalk_03 | Crossswalk 03 | roadmarkings | 5.44x6.05x0.0 m | /Game/CityCore_Paris/Models/RoadMarkings/SM_Crossswalk_03.SM_Crossswalk_03\n\
+    - pr_crossswalk_01 | PR Crossswalk 01 | roadmarkings | 3.24x6.07x0.0 m | /Game/CityCore_Paris/Models/RoadMarkings/SM_PR_Crossswalk_01.SM_PR_Crossswalk_01\n\
+    - pr_crossswalk_bike_01 | PR Crossswalk Bike 01 | roadmarkings | 2.7x3.28x0.0 m | /Game/CityCore_Paris/Models/RoadMarkings/SM_PR_CrossswalkBike_01.SM_PR_CrossswalkBike_01\n\
+    - pr_crossswalk_bike_diagonal_01 | PR Crossswalk Bike Diagonal 01 | roadmarkings | 2.7x4.1x0.0 m |\
+    \ /Game/CityCore_Paris/Models/RoadMarkings/SM_PR_CrossswalkBike_Diagonal_01.SM_PR_CrossswalkBike_Diagonal_01\n\
+    - pr_crossswalk_diagonal | PR Crossswalk Diagonal | roadmarkings | 5.95x5.02x0.0 m | /Game/CityCore_Paris/Models/RoadMarkings/SM_PR_Crossswalk_Diagonal.SM_PR_Crossswalk_Diagonal\n\
+    - pr_crossswalk_diagonal_02 | PR Crossswalk Diagonal 02 | roadmarkings | 8.43x7.99x0.0 m | /Game/CityCore_Paris/Models/RoadMarkings/SM_PR_Crossswalk_Diagonal_02.SM_PR_Crossswalk_Diagonal_02\n\
+    - pr_manhole_01 | PR Manhole 01 | roadmarkings | 1.9x1.9x0.02 m | /Game/CityCore_Paris/Models/RoadMarkings/SM_PR_Manhole_01.SM_PR_Manhole_01\n\
+    - pr_manhole_02 | PR Manhole 02 | roadmarkings | 0.97x0.96x0.01 m | /Game/CityCore_Paris/Models/RoadMarkings/SM_PR_Manhole_02.SM_PR_Manhole_02\n\
+    - pr_manhole_03 | PR Manhole 03 | roadmarkings | 0.45x0.29x0.0 m | /Game/CityCore_Paris/Models/RoadMarkings/SM_PR_Manhole_03.SM_PR_Manhole_03\n\
+    - pr_manhole_04 | PR Manhole 04 | roadmarkings | 1.13x1.04x0.04 m | /Game/CityCore_Paris/Models/RoadMarkings/SM_PR_Manhole_04.SM_PR_Manhole_04\n\
+    - pr_manholes_01 | PR Manholes 01 | roadmarkings | 3.39x2.97x0.03 m | /Game/CityCore_Paris/Models/RoadMarkings/SM_PR_Manholes_01.SM_PR_Manholes_01\n\
+    - road_marking2_broken_line_03 | Road Marking2 Broken Line 03 | roadmarkings | 4.07x73.88x2.56 m |\
+    \ /Game/CityCore_Paris/Models/RoadMarkings/SM_RoadMarking2_BrokenLine_03.SM_RoadMarking2_BrokenLine_03\n\
+    - road_marking_broken_line_01 | Road Marking Broken Line 01 | roadmarkings | 33.18x19.95x2.56 m |\
+    \ /Game/CityCore_Paris/Models/RoadMarkings/SM_RoadMarking_BrokenLine_01.SM_RoadMarking_BrokenLine_01\n\
+    - road_marking_no_parking | Road Marking No Parking | roadmarkings | 2.03x4.17x0.0 m | /Game/CityCore_Paris/Models/RoadMarkings/SM_RoadMarking_NoParking.SM_RoadMarking_NoParking\n\
+    - road_marking_no_parking_end | Road Marking No Parking End | roadmarkings | 1.91x2.13x0.0 m | /Game/CityCore_Paris/Models/RoadMarkings/SM_RoadMarking_NoParking_End.SM_RoadMarking_NoParking_End\n\
+    - road_marking_no_parking_x_01 | Road Marking No Parking X 01 | roadmarkings | 1.92x4.8x0.0 m | /Game/CityCore_Paris/Models/RoadMarkings/SM_RoadMarking_NoParkingX_01.SM_RoadMarking_NoParkingX_01\n\
+    - road_marking_solid_line | Road Marking Solid Line | roadmarkings | 2.56x11.58x2.56 m | /Game/CityCore_Paris/Models/RoadMarkings/SM_RoadMarking_SolidLine.SM_RoadMarking_SolidLine\n\
+    - pr_sidewalk_edge_separation | PR Sidewalk Edge Separation | sidewalk | 0.29x3.73x0.31 m | /Game/CityCore_Paris/Models/Sidewalk/SM_PR_SidewalkEdgeSeparation.SM_PR_SidewalkEdgeSeparation\n\
+    - pr_sidewalk_edge_separation_02 | PR Sidewalk Edge Separation 02 | sidewalk | 51.83x52.24x2.56 m\
+    \ | /Game/CityCore_Paris/Models/Sidewalk/SM_PR_SidewalkEdgeSeparation_02.SM_PR_SidewalkEdgeSeparation_02\n\
+    - pr_sidewalk_edge_separation_end | PR Sidewalk Edge Separation End | sidewalk | 0.29x3.73x0.42 m\
+    \ | /Game/CityCore_Paris/Models/Sidewalk/SM_PR_SidewalkEdgeSeparationEnd.SM_PR_SidewalkEdgeSeparationEnd\n\
+    - pr_sidewalk_island_01 | PR Sidewalk Island 01 | sidewalk | 1.98x4.0x0.31 m | /Game/CityCore_Paris/Models/Sidewalk/SM_PR_SidewalkIsland_01.SM_PR_SidewalkIsland_01\n\
+    - pr_sidewalk_island_02 | PR Sidewalk Island 02 | sidewalk | 1.98x4.51x0.33 m | /Game/CityCore_Paris/Models/Sidewalk/SM_PR_SidewalkIsland_02.SM_PR_SidewalkIsland_02\n\
+    - pr_sidewalk_island_03 | PR Sidewalk Island 03 | sidewalk | 2.4x3.12x0.31 m | /Game/CityCore_Paris/Models/Sidewalk/SM_PR_SidewalkIsland_03.SM_PR_SidewalkIsland_03\n\
+    - pr_sidewalk_island_circle_01 | PR Sidewalk Island Circle 01 | sidewalk | 2.73x2.88x0.31 m | /Game/CityCore_Paris/Models/Sidewalk/SM_PR_SidewalkIslandCircle_01.SM_PR_SidewalkIslandCircle_01\n\
+    - pr_sidewalk_island_end_01 | PR Sidewalk Island End 01 | sidewalk | 1.96x1.41x0.31 m | /Game/CityCore_Paris/Models/Sidewalk/SM_PR_SidewalkIslandEnd_01.SM_PR_SidewalkIslandEnd_01\n\
+    - pr_sidewalk_island_end_02 | PR Sidewalk Island End 02 | sidewalk | 1.96x3.35x0.31 m | /Game/CityCore_Paris/Models/Sidewalk/SM_PR_SidewalkIslandEnd_02.SM_PR_SidewalkIslandEnd_02\n\
+    - pr_sidewalk_island_end_03 | PR Sidewalk Island End 03 | sidewalk | 1.96x4.01x0.32 m | /Game/CityCore_Paris/Models/Sidewalk/SM_PR_SidewalkIslandEnd_03.SM_PR_SidewalkIslandEnd_03\n\
+    - pr_sidewalk_island_end_diagonal_01 | PR Sidewalk Island End Diagonal 01 | sidewalk | 1.95x1.92x0.31\
+    \ m | /Game/CityCore_Paris/Models/Sidewalk/SM_PR_SidewalkIslandEndDiagonal_01.SM_PR_SidewalkIslandEndDiagonal_01\n\
+    - pr_truncated_domes | PR Truncated Domes | sidewalk | 0.99x0.98x0.01 m | /Game/CityCore_Paris/Models/Sidewalk/SM_PR_TruncatedDomes.SM_PR_TruncatedDomes\n\
+    - bike | Bike | streetprops | 0.95x1.91x1.25 m | /Game/CityCore_Paris/Models/Props/StreetProps/SM_Bike.SM_Bike\n\
+    - frame_chalkboard | Frame Chalkboard | streetprops | 0.58x0.63x0.81 m | /Game/CityCore_Paris/Models/Props/StreetProps/SM_FrameChalkboard.SM_FrameChalkboard\n\
+    - plant_pot_01 | Plant Pot 01 | streetprops | 0.5x0.5x1.64 m | /Game/CityCore_Paris/Models/Props/StreetProps/SM_PlantPot_01.SM_PlantPot_01\n\
+    - pr_advertisment_stand | PR Advertisment Stand | streetprops | 2.31x2.33x5.31 m | /Game/CityCore_Paris/Models/Props/StreetProps/SM_PR_AdvertismentStand.SM_PR_AdvertismentStand\n\
+    - pr_fence_01 | PR Fence 01 | streetprops | 0.77x1.17x0.87 m | /Game/CityCore_Paris/Models/Props/StreetProps/SM_PR_Fence_01.SM_PR_Fence_01\n\
+    - pr_mailbox | PR Mailbox | streetprops | 0.68x0.72x1.42 m | /Game/CityCore_Paris/Models/Props/StreetProps/SM_PR_Mailbox.SM_PR_Mailbox\n\
+    - pr_pole_01 | PR Pole 01 | streetprops | 0.08x0.08x1.06 m | /Game/CityCore_Paris/Models/Props/StreetProps/SM_PR_Pole_01.SM_PR_Pole_01\n\
+    - pr_pole_02 | PR Pole 02 | streetprops | 0.11x0.11x1.04 m | /Game/CityCore_Paris/Models/Props/StreetProps/SM_PR_Pole_02.SM_PR_Pole_02\n\
+    - pr_trash_bin | PR Trash Bin | streetprops | 0.5x0.5x0.97 m | /Game/CityCore_Paris/Models/Props/StreetProps/SM_PR_TrashBin.SM_PR_TrashBin\n\
+    - pr_trash_bin_02 | PR Trash Bin 02 | streetprops | 0.7x0.7x0.97 m | /Game/CityCore_Paris/Models/Props/StreetProps/SM_PR_TrashBin_02.SM_PR_TrashBin_02\n\
+    - pr_tree_grill_01 | PR Tree Grill 01 | streetprops | 2.19x2.19x0.53 m | /Game/CityCore_Paris/Models/Props/StreetProps/SM_PR_TreeGrill_01.SM_PR_TreeGrill_01\n\
+    - pr_wheelie_bin_01 | PR Wheelie Bin 01 | streetprops | 0.72x0.52x1.06 m | /Game/CityCore_Paris/Models/Props/StreetProps/SM_PR_WheelieBin_01.SM_PR_WheelieBin_01\n\
+    - pr_wheelie_bin_01_opened | PR Wheelie Bin 01 Opened | streetprops | 0.55x0.79x1.03 m | /Game/CityCore_Paris/Models/Props/StreetProps/SM_PR_WheelieBin_01_Opened.SM_PR_WheelieBin_01_Opened\n\
+    - pr_wheelie_bin_01_opened_with_trash | PR Wheelie Bin 01 Opened With Trash | streetprops | 0.89x0.88x1.14\
+    \ m | /Game/CityCore_Paris/Models/Props/StreetProps/SM_PR_WheelieBin_01_OpenedWithTrash.SM_PR_WheelieBin_01_OpenedWithTrash\n\
+    - sidewalk_billboard | Sidewalk Billboard | streetprops | 1.69x1.14x3.26 m | /Game/CityCore_Paris/Models/Props/StreetProps/SM_SidewalkBillboard.SM_SidewalkBillboard\n\
+    - pr_restaurant_chair_01 | PR Restaurant Chair 01 | tableprops | 0.81x0.77x1.17 m | /Game/CityCore_Paris/Models/Props/TableProps/SM_PR_RestaurantChair_01.SM_PR_RestaurantChair_01\n\
+    - pr_restaurant_chair_02 | PR Restaurant Chair 02 | tableprops | 0.45x0.55x0.96 m | /Game/CityCore_Paris/Models/Props/TableProps/SM_PR_RestaurantChair_02.SM_PR_RestaurantChair_02\n\
+    - pr_table_restaurant_01 | PR Table Restaurant 01 | tableprops | 0.89x0.89x0.85 m | /Game/CityCore_Paris/Models/Props/TableProps/SM_PR_TableRestaurant_01.SM_PR_TableRestaurant_01\n\
+    - pr_table_restaurant_02 | PR Table Restaurant 02 | tableprops | 0.47x0.47x0.69 m | /Game/CityCore_Paris/Models/Props/TableProps/SM_PR_TableRestaurant_02.SM_PR_TableRestaurant_02\n\
+    - pr_table_restaurant_02_round | PR Table Restaurant 02 Round | tableprops | 0.64x0.64x0.76 m | /Game/CityCore_Paris/Models/Props/TableProps/SM_PR_TableRestaurant_02_Round.SM_PR_TableRestaurant_02_Round\n\
+    - pr_traffic_pole_small | PR Traffic Pole Small | trafficpoles | 0.37x0.37x1.37 m | /Game/CityCore_Paris/Models/TrafficPoles/SM_PR_TrafficPoleSmall.SM_PR_TrafficPoleSmall\n\
+    - bottle_scattered | Bottle Scattered | trash | 0.31x0.16x0.05 m | /Game/CityCore_Paris/Models/Trash/SM_BottleScattered.SM_BottleScattered\n\
+    - cable_01 | Cable 01 | trash | 0.95x0.67x0.02 m | /Game/CityCore_Paris/Models/Trash/SM_Cable_01.SM_Cable_01\n\
+    - cable_02 | Cable 02 | trash | 1.1x1.03x0.02 m | /Game/CityCore_Paris/Models/Trash/SM_Cable_02.SM_Cable_02\n\
+    - cardboard_box_opened_01 | Cardboard Box Opened 01 | trash | 0.62x0.57x0.29 m | /Game/CityCore_Paris/Models/Trash/SM_CardboardBoxOpened_01.SM_CardboardBoxOpened_01\n\
+    - cardboard_box_opened_02 | Cardboard Box Opened 02 | trash | 0.49x0.57x0.43 m | /Game/CityCore_Paris/Models/Trash/SM_CardboardBoxOpened_02.SM_CardboardBoxOpened_02\n\
+    - cardboard_box_part | Cardboard Box Part | trash | 0.39x0.29x0.01 m | /Game/CityCore_Paris/Models/Trash/SM_CardboardBoxPart.SM_CardboardBoxPart\n\
+    - scattered_glass_01 | Scattered Glass 01 | trash | 0.96x0.95x0.03 m | /Game/CityCore_Paris/Models/Trash/SM_ScatteredGlass_01.SM_ScatteredGlass_01\n\
+    - scattered_glass_02 | Scattered Glass 02 | trash | 0.89x0.98x0.04 m | /Game/CityCore_Paris/Models/Trash/SM_ScatteredGlass_02.SM_ScatteredGlass_02\n\
+    - scattered_glass_03 | Scattered Glass 03 | trash | 1.56x1.69x0.03 m | /Game/CityCore_Paris/Models/Trash/SM_ScatteredGlass_03.SM_ScatteredGlass_03\n\
+    - trash_bag_01 | Trash Bag 01 | trash | 0.51x0.58x0.57 m | /Game/CityCore_Paris/Models/Trash/SM_TrashBag_01.SM_TrashBag_01\n\
+    - trash_bag_02 | Trash Bag 02 | trash | 0.67x0.64x0.76 m | /Game/CityCore_Paris/Models/Trash/SM_TrashBag_02.SM_TrashBag_02\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
+    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
+    \ for yourself when the scene\nmatches the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_102.bundle.json
+- name: overview_prompt_alignment
+assets:
+  packs:
+  - CityCore_Paris

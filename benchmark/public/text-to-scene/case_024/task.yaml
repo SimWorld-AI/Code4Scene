@@ -1,0 +1,302 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_024
+kind: scene_generation
+inputs:
+  prompt: "Create a dense ruined Greco-Roman sanctuary enclosing a sunken courtyard with a massive twisted\
+    \ dead tree. Surround it with roofless colonnades, monumental temples, stairs, and raised passages.\
+    \ Use aged sandstone, cracked paving, rubble, and moss; decorate the tree with chains and offerings,\
+    \ lit by amber and turquoise glows.\n\n    === GROUND ===\n    Build the FLOOR FIRST, before placing\
+    \ anything else. Call the benchmark\n    tool `ground_pass` as your first build action: it carpets\
+    \ the whole 200 m\n    plate deterministically from a tile chosen for this scene. If you skip it,\n\
+    \    and do not tile a floor yourself, the scene renders as objects floating\n    over empty space\
+    \ -- which is a failed reconstruction no matter how good\n    the massing is. These palette entries\
+    \ are also flat surfaces you can tile\n    by hand if you prefer:\n\n      - SM_Circle_floor_01 |\
+    \ 8.4x8.3x0.36 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Circle_floor_01.SM_Circle_floor_01\n \
+    \     - SM_Tile_floor_plane_8x8_01 | 8.0x8.0x0.00 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_floor_plane_8x8_01.SM_Tile_floor_plane_8x8_01\n\
+    \      - SM_Tile_floor_plane_3x8_02 | 8.0x3.0x0.00 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_floor_plane_3x8_02.SM_Tile_floor_plane_3x8_02\n\
+    \      - SM_Tile_floor_plane_3x8_01 | 3.0x8.0x0.00 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_floor_plane_3x8_01.SM_Tile_floor_plane_3x8_01\n\
+    \n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\n\
+    in this run, so this list is your entire library. Format:\n\n  id | name | category | width x depth\
+    \ x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches\
+    \ UE.\nYou decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n-\
+    \ amphora_01 | Amphora 01 | amphoras | 0.88x0.88x1.56 m | /Game/AncientRuins/Meshes/Amphoras/SM_Amphora_01.SM_Amphora_01\n\
+    - amphora_01_dmg_01 | Amphora 01 dmg 01 | amphoras | 0.88x0.86x1.56 m | /Game/AncientRuins/Meshes/Amphoras/SM_Amphora_01_dmg_01.SM_Amphora_01_dmg_01\n\
+    - amphora_02 | Amphora 02 | amphoras | 0.62x0.64x1.32 m | /Game/AncientRuins/Meshes/Amphoras/SM_Amphora_02.SM_Amphora_02\n\
+    - amphora_03 | Amphora 03 | amphoras | 0.62x0.6x1.0 m | /Game/AncientRuins/Meshes/Amphoras/SM_Amphora_03.SM_Amphora_03\n\
+    - amphora_04 | Amphora 04 | amphoras | 0.64x0.64x0.5 m | /Game/AncientRuins/Meshes/Amphoras/SM_Amphora_04.SM_Amphora_04\n\
+    - amphora_05 | Amphora 05 | amphoras | 0.3x0.3x0.77 m | /Game/AncientRuins/Meshes/Amphoras/SM_Amphora_05.SM_Amphora_05\n\
+    - amphora_06 | Amphora 06 | amphoras | 0.47x0.47x0.62 m | /Game/AncientRuins/Meshes/Amphoras/SM_Amphora_06.SM_Amphora_06\n\
+    - amphora_07 | Amphora 07 | amphoras | 0.62x0.58x0.77 m | /Game/AncientRuins/Meshes/Amphoras/SM_Amphora_07.SM_Amphora_07\n\
+    - amphoras_set_01 | Amphoras set 01 | amphoras | 2.56x2.56x2.6 m | /Game/AncientRuins/Blueprints/SM_Prefabs/Amphoras/BP_Amphoras_set_01.BP_Amphoras_set_01_C\n\
+    - amphoras_set_02 | Amphoras set 02 | amphoras | 2.57x2.56x2.56 m | /Game/AncientRuins/Blueprints/SM_Prefabs/Amphoras/BP_Amphoras_set_02.BP_Amphoras_set_02_C\n\
+    - arch_01 | Arch 01 | arch | 17.91x16.08x29.79 m | /Game/AncientRuins/Meshes/Arch/SM_Arch_01.SM_Arch_01\n\
+    - arch_02 | Arch 02 | arch | 22.94x11.43x21.18 m | /Game/AncientRuins/Meshes/Arch/SM_Arch_02.SM_Arch_02\n\
+    - arch_03 | Arch 03 | arch | 15.94x13.24x20.05 m | /Game/AncientRuins/Meshes/Arch/SM_Arch_03.SM_Arch_03\n\
+    - arch_04 | Arch 04 | arch | 31.4x22.5x21.46 m | /Game/AncientRuins/Meshes/Arch/SM_Arch_04.SM_Arch_04\n\
+    - baluster_01 | Baluster 01 | arch | 0.24x0.23x0.5 m | /Game/AncientRuins/Meshes/Arch/SM_Baluster_01.SM_Baluster_01\n\
+    - deco_stone_01 | Deco stone 01 | arch | 0.67x0.48x1.33 m | /Game/AncientRuins/Meshes/Arch/SM_Deco_stone_01.SM_Deco_stone_01\n\
+    - deco_stone_02 | Deco stone 02 | arch | 0.68x0.48x1.25 m | /Game/AncientRuins/Meshes/Arch/SM_Deco_stone_02.SM_Deco_stone_02\n\
+    - deco_stone_03 | Deco stone 03 | arch | 0.67x0.48x1.33 m | /Game/AncientRuins/Meshes/Arch/SM_Deco_stone_03.SM_Deco_stone_03\n\
+    - deco_stone_04 | Deco stone 04 | arch | 0.67x0.48x1.3 m | /Game/AncientRuins/Meshes/Arch/SM_Deco_stone_04.SM_Deco_stone_04\n\
+    - fence_01 | Fence 01 | arch | 3.28x0.58x1.04 m | /Game/AncientRuins/Meshes/Arch/SM_Fence_01.SM_Fence_01\n\
+    - fence_01_dmg_01 | Fence 01 dmg 01 | arch | 0.81x2.37x1.3 m | /Game/AncientRuins/Meshes/Arch/SM_Fence_01_dmg_01.SM_Fence_01_dmg_01\n\
+    - fence_01_dmg_02 | Fence 01 dmg 02 | arch | 1.18x2.59x1.04 m | /Game/AncientRuins/Meshes/Arch/SM_Fence_01_dmg_02.SM_Fence_01_dmg_02\n\
+    - fence_02 | Fence 02 | arch | 0.58x2.93x1.04 m | /Game/AncientRuins/Meshes/Arch/SM_Fence_02.SM_Fence_02\n\
+    - fence_trim_down_01 | Fence trim down 01 | arch | 0.7x1.71x0.19 m | /Game/AncientRuins/Meshes/Arch/SM_Fence_trim_down_01.SM_Fence_trim_down_01\n\
+    - fence_trim_down_02 | Fence trim down 02 | arch | 0.58x1.66x0.18 m | /Game/AncientRuins/Meshes/Arch/SM_Fence_trim_down_02.SM_Fence_trim_down_02\n\
+    - fence_trim_down_03 | Fence trim down 03 | arch | 0.58x1.12x0.18 m | /Game/AncientRuins/Meshes/Arch/SM_Fence_trim_down_03.SM_Fence_trim_down_03\n\
+    - pedestal_01 | Pedestal 01 | arch | 3.59x7.89x3.04 m | /Game/AncientRuins/Meshes/Arch/SM_Pedestal_01.SM_Pedestal_01\n\
+    - pedestal_02 | Pedestal 02 | arch | 5.48x8.47x3.77 m | /Game/AncientRuins/Meshes/Arch/SM_Pedestal_02.SM_Pedestal_02\n\
+    - pedestal_small_01 | Pedestal small 01 | arch | 0.89x0.89x1.4 m | /Game/AncientRuins/Meshes/Arch/SM_Pedestal_small_01.SM_Pedestal_small_01\n\
+    - pedestal_small_02 | Pedestal small 02 | arch | 0.89x0.89x1.4 m | /Game/AncientRuins/Meshes/Arch/SM_Pedestal_small_02.SM_Pedestal_small_02\n\
+    - statue_01 | Statue 01 | arch | 3.95x2.99x9.78 m | /Game/AncientRuins/Meshes/Arch/SM_Statue_01.SM_Statue_01\n\
+    - statue_01_body_01 | Statue 01 body 01 | arch | 3.61x2.97x2.75 m | /Game/AncientRuins/Meshes/Arch/SM_Statue_01_body_01.SM_Statue_01_body_01\n\
+    - statue_01_dmg_01 | Statue 01 dmg 01 | arch | 2.9x2.24x4.88 m | /Game/AncientRuins/Meshes/Arch/SM_Statue_01_dmg_01.SM_Statue_01_dmg_01\n\
+    - statue_01_dmg_02 | Statue 01 dmg 02 | arch | 4.63x3.23x8.55 m | /Game/AncientRuins/Meshes/Arch/SM_Statue_01_dmg_02.SM_Statue_01_dmg_02\n\
+    - statue_01_dmg_03 | Statue 01 dmg 03 | arch | 2.34x2.08x6.04 m | /Game/AncientRuins/Meshes/Arch/SM_Statue_01_dmg_03.SM_Statue_01_dmg_03\n\
+    - statue_01_head_01 | Statue 01 head 01 | arch | 0.99x0.99x0.62 m | /Game/AncientRuins/Meshes/Arch/SM_Statue_01_head_01.SM_Statue_01_head_01\n\
+    - wall_separator_01_part_01 | Wall separator 01 part 01 | arch | 0.39x0.59x1.48 m | /Game/AncientRuins/Meshes/Arch/SM_Wall_separator_01_part_01.SM_Wall_separator_01_part_01\n\
+    - wall_separator_01_part_02 | Wall separator 01 part 02 | arch | 0.4x0.59x1.55 m | /Game/AncientRuins/Meshes/Arch/SM_Wall_separator_01_part_02.SM_Wall_separator_01_part_02\n\
+    - wall_separator_01_part_03 | Wall separator 01 part 03 | arch | 0.39x0.59x1.48 m | /Game/AncientRuins/Meshes/Arch/SM_Wall_separator_01_part_03.SM_Wall_separator_01_part_03\n\
+    - board_01_01 | Board 01 01 | boards | 2.17x1.81x0.23 m | /Game/AncientRuins/Meshes/Boards/SM_Board_01_01.SM_Board_01_01\n\
+    - board_01_02 | Board 01 02 | boards | 6.31x5.91x1.02 m | /Game/AncientRuins/Meshes/Boards/SM_Board_01_02.SM_Board_01_02\n\
+    - board_01_03 | Board 01 03 | boards | 1.73x1.71x0.13 m | /Game/AncientRuins/Meshes/Boards/SM_Board_01_03.SM_Board_01_03\n\
+    - board_01_04 | Board 01 04 | boards | 1.76x1.39x1.05 m | /Game/AncientRuins/Meshes/Boards/SM_Board_01_04.SM_Board_01_04\n\
+    - board_01_05 | Board 01 05 | boards | 2.25x1.87x0.16 m | /Game/AncientRuins/Meshes/Boards/SM_Board_01_05.SM_Board_01_05\n\
+    - board_01_06 | Board 01 06 | boards | 2.51x0.82x0.21 m | /Game/AncientRuins/Meshes/Boards/SM_Board_01_06.SM_Board_01_06\n\
+    - boards_01 | Boards 01 | boards | 2.33x2.79x1.35 m | /Game/AncientRuins/Meshes/Boards/SM_Boards_01.SM_Boards_01\n\
+    - boards_02_01 | Boards 02 01 | boards | 1.11x0.84x1.46 m | /Game/AncientRuins/Meshes/Boards/SM_Boards_02_01.SM_Boards_02_01\n\
+    - boards_02_02 | Boards 02 02 | boards | 0.3x5.36x0.36 m | /Game/AncientRuins/Meshes/Boards/SM_Boards_02_02.SM_Boards_02_02\n\
+    - boards_02_03 | Boards 02 03 | boards | 2.3x1.86x3.0 m | /Game/AncientRuins/Meshes/Boards/SM_Boards_02_03.SM_Boards_02_03\n\
+    - boards_02_04 | Boards 02 04 | boards | 0.34x6.99x0.35 m | /Game/AncientRuins/Meshes/Boards/SM_Boards_02_04.SM_Boards_02_04\n\
+    - bone_01 | Bone 01 | bones | 0.5x0.38x0.09 m | /Game/AncientRuins/Meshes/Bones/SM_Bone_01.SM_Bone_01\n\
+    - bone_02 | Bone 02 | bones | 0.49x0.24x0.09 m | /Game/AncientRuins/Meshes/Bones/SM_Bone_02.SM_Bone_02\n\
+    - bones_pile_01 | Bones pile 01 | bones | 4.08x4.14x2.88 m | /Game/AncientRuins/Meshes/Bones/SM_Bones_pile_01.SM_Bones_pile_01\n\
+    - bones_pile_02 | Bones pile 02 | bones | 4.21x4.21x0.77 m | /Game/AncientRuins/Meshes/Bones/SM_Bones_pile_02.SM_Bones_pile_02\n\
+    - bones_pile_03 | Bones pile 03 | bones | 1.58x1.65x0.67 m | /Game/AncientRuins/Meshes/Bones/SM_Bones_pile_03.SM_Bones_pile_03\n\
+    - bones_pile_04 | Bones pile 04 | bones | 1.39x1.13x0.55 m | /Game/AncientRuins/Meshes/Bones/SM_Bones_pile_04.SM_Bones_pile_04\n\
+    - bones_pile_05 | Bones pile 05 | bones | 1.51x1.51x0.51 m | /Game/AncientRuins/Meshes/Bones/SM_Bones_pile_05.SM_Bones_pile_05\n\
+    - skull_01 | Skull 01 | bones | 0.36x0.37x0.38 m | /Game/AncientRuins/Meshes/Bones/SM_Skull_01.SM_Skull_01\n\
+    - skull_01_dmg_02 | Skull 01 dmg 02 | bones | 0.35x0.23x0.34 m | /Game/AncientRuins/Meshes/Bones/SM_Skull_01_dmg_02.SM_Skull_01_dmg_02\n\
+    - skull_01_part_01 | Skull 01 part 01 | bones | 0.2x0.2x0.18 m | /Game/AncientRuins/Meshes/Bones/SM_Skull_01_part_01.SM_Skull_01_part_01\n\
+    - skull_01_part_02 | Skull 01 part 02 | bones | 0.36x0.36x0.23 m | /Game/AncientRuins/Meshes/Bones/SM_Skull_01_part_02.SM_Skull_01_part_02\n\
+    - skull_02 | Skull 02 | bones | 0.4x0.39x0.25 m | /Game/AncientRuins/Meshes/Bones/SM_Skull_02.SM_Skull_02\n\
+    - skull_rope_01 | Skull rope 01 | bones | 0.31x0.31x1.26 m | /Game/AncientRuins/Meshes/Bones/SM_Skull_rope_01.SM_Skull_rope_01\n\
+    - skull_rope_02 | Skull rope 02 | bones | 0.44x0.44x0.48 m | /Game/AncientRuins/Meshes/Bones/SM_Skull_rope_02.SM_Skull_rope_02\n\
+    - skull_rope_03 | Skull rope 03 | bones | 0.42x0.42x0.4 m | /Game/AncientRuins/Meshes/Bones/SM_Skull_rope_03.SM_Skull_rope_03\n\
+    - candle_01 | Candle 01 | candles | 2.56x2.56x2.56 m | /Game/AncientRuins/Blueprints/SM_Prefabs/Candles/BP_Candle_01.BP_Candle_01_C\n\
+    - candle_01_2 | Candle 01 | candles | 0.13x0.12x0.24 m | /Game/AncientRuins/Meshes/Candles/SM_Candle_01.SM_Candle_01\n\
+    - candle_02 | Candle 02 | candles | 2.56x2.56x2.56 m | /Game/AncientRuins/Blueprints/SM_Prefabs/Candles/BP_Candle_02.BP_Candle_02_C\n\
+    - candle_02_2 | Candle 02 | candles | 0.12x0.12x0.29 m | /Game/AncientRuins/Meshes/Candles/SM_Candle_02.SM_Candle_02\n\
+    - candle_03 | Candle 03 | candles | 2.56x2.56x2.56 m | /Game/AncientRuins/Blueprints/SM_Prefabs/Candles/BP_Candle_03.BP_Candle_03_C\n\
+    - candle_03_2 | Candle 03 | candles | 0.14x0.14x0.17 m | /Game/AncientRuins/Meshes/Candles/SM_Candle_03.SM_Candle_03\n\
+    - candle_04 | Candle 04 | candles | 2.56x2.56x2.56 m | /Game/AncientRuins/Blueprints/SM_Prefabs/Candles/BP_Candle_04.BP_Candle_04_C\n\
+    - candle_04_2 | Candle 04 | candles | 0.09x0.08x0.17 m | /Game/AncientRuins/Meshes/Candles/SM_Candle_04.SM_Candle_04\n\
+    - candle_05 | Candle 05 | candles | 2.56x2.56x2.56 m | /Game/AncientRuins/Blueprints/SM_Prefabs/Candles/BP_Candle_05.BP_Candle_05_C\n\
+    - candle_05_2 | Candle 05 | candles | 0.1x0.1x0.11 m | /Game/AncientRuins/Meshes/Candles/SM_Candle_05.SM_Candle_05\n\
+    - candle_06 | Candle 06 | candles | 2.56x2.56x2.56 m | /Game/AncientRuins/Blueprints/SM_Prefabs/Candles/BP_Candle_06.BP_Candle_06_C\n\
+    - candle_07 | Candle 07 | candles | 2.56x2.56x2.56 m | /Game/AncientRuins/Blueprints/SM_Prefabs/Candles/BP_Candle_07.BP_Candle_07_C\n\
+    - candle_07_2 | Candle 07 | candles | 0.2x0.21x0.05 m | /Game/AncientRuins/Meshes/Candles/SM_Candle_07.SM_Candle_07\n\
+    - candle_08 | Candle 08 | candles | 2.56x2.56x2.56 m | /Game/AncientRuins/Blueprints/SM_Prefabs/Candles/BP_Candle_08.BP_Candle_08_C\n\
+    - candle_08_2 | Candle 08 | candles | 0.17x0.15x0.13 m | /Game/AncientRuins/Meshes/Candles/SM_Candle_08.SM_Candle_08\n\
+    - candle_wax_01 | Candle wax 01 | candles | 0.67x0.98x0.07 m | /Game/AncientRuins/Meshes/Candles/SM_Candle_wax_01.SM_Candle_wax_01\n\
+    - candles_grp_01 | Candles grp 01 | candles | 2.56x2.56x2.56 m | /Game/AncientRuins/Blueprints/SM_Prefabs/Candles/BP_Candles_grp_01.BP_Candles_grp_01_C\n\
+    - candles_grp_02 | Candles grp 02 | candles | 2.56x2.56x2.56 m | /Game/AncientRuins/Blueprints/SM_Prefabs/Candles/BP_Candles_grp_02.BP_Candles_grp_02_C\n\
+    - cliff_01 | Cliff 01 | cliffs | 23.77x23.07x20.37 m | /Game/AncientRuins/Meshes/Cliffs/SM_Cliff_01.SM_Cliff_01\n\
+    - cliff_02 | Cliff 02 | cliffs | 42.66x22.31x34.73 m | /Game/AncientRuins/Meshes/Cliffs/SM_Cliff_02.SM_Cliff_02\n\
+    - cliff_03 | Cliff 03 | cliffs | 41.96x39.59x34.94 m | /Game/AncientRuins/Meshes/Cliffs/SM_Cliff_03.SM_Cliff_03\n\
+    - antablement_01 | Antablement 01 | columns | 2.81x11.79x3.52 m | /Game/AncientRuins/Meshes/Columns/SM_Antablement_01.SM_Antablement_01\n\
+    - antablement_02 | Antablement 02 | columns | 2.71x11.94x3.42 m | /Game/AncientRuins/Meshes/Columns/SM_Antablement_02.SM_Antablement_02\n\
+    - antablement_05 | Antablement 05 | columns | 5.02x2.58x3.44 m | /Game/AncientRuins/Meshes/Columns/SM_Antablement_05.SM_Antablement_05\n\
+    - capital_01 | Capital 01 | columns | 3.18x3.27x2.88 m | /Game/AncientRuins/Meshes/Columns/SM_Capital_01.SM_Capital_01\n\
+    - capital_01_part_01 | Capital 01 part 01 | columns | 4.09x4.09x0.94 m | /Game/AncientRuins/Meshes/Columns/SM_Capital_01_part_01.SM_Capital_01_part_01\n\
+    - capital_01_part_02 | Capital 01 part 02 | columns | 2.18x2.18x0.43 m | /Game/AncientRuins/Meshes/Columns/SM_Capital_01_part_02.SM_Capital_01_part_02\n\
+    - colonnade_01 | Colonnade 01 | columns | 12.78x2.81x15.39 m | /Game/AncientRuins/Meshes/Columns/SM_Colonnade_01.SM_Colonnade_01\n\
+    - colonnade_02 | Colonnade 02 | columns | 2.78x12.46x15.46 m | /Game/AncientRuins/Meshes/Columns/SM_Colonnade_02.SM_Colonnade_02\n\
+    - colonnade_03 | Colonnade 03 | columns | 2.74x11.94x15.3 m | /Game/AncientRuins/Meshes/Columns/SM_Colonnade_03.SM_Colonnade_03\n\
+    - colonnade_04 | Colonnade 04 | columns | 2.8x8.02x15.29 m | /Game/AncientRuins/Meshes/Columns/SM_Colonnade_04.SM_Colonnade_04\n\
+    - colonnade_05 | Colonnade 05 | columns | 2.82x10.18x15.37 m | /Game/AncientRuins/Meshes/Columns/SM_Colonnade_05.SM_Colonnade_05\n\
+    - column_01_01 | Column 01 01 | columns | 2.73x2.73x11.91 m | /Game/AncientRuins/Meshes/Columns/SM_Column_01_01.SM_Column_01_01\n\
+    - column_01_02 | Column 01 02 | columns | 2.73x2.73x11.91 m | /Game/AncientRuins/Meshes/Columns/SM_Column_01_02.SM_Column_01_02\n\
+    - column_01_dmg_01 | Column 01 dmg 01 | columns | 2.73x2.73x2.0 m | /Game/AncientRuins/Meshes/Columns/SM_Column_01_dmg_01.SM_Column_01_dmg_01\n\
+    - column_01_dmg_02 | Column 01 dmg 02 | columns | 2.73x2.73x4.0 m | /Game/AncientRuins/Meshes/Columns/SM_Column_01_dmg_02.SM_Column_01_dmg_02\n\
+    - column_01_dmg_03 | Column 01 dmg 03 | columns | 2.73x2.73x5.01 m | /Game/AncientRuins/Meshes/Columns/SM_Column_01_dmg_03.SM_Column_01_dmg_03\n\
+    - column_01_dmg_04 | Column 01 dmg 04 | columns | 2.73x2.73x8.07 m | /Game/AncientRuins/Meshes/Columns/SM_Column_01_dmg_04.SM_Column_01_dmg_04\n\
+    - column_01_dmg_05 | Column 01 dmg 05 | columns | 2.73x2.73x8.86 m | /Game/AncientRuins/Meshes/Columns/SM_Column_01_dmg_05.SM_Column_01_dmg_05\n\
+    - column_01_dmg_06 | Column 01 dmg 06 | columns | 5.57x4.4x3.5 m | /Game/AncientRuins/Meshes/Columns/SM_Column_01_dmg_06.SM_Column_01_dmg_06\n\
+    - column_01_dmg_07 | Column 01 dmg 07 | columns | 11.98x9.52x4.47 m | /Game/AncientRuins/Meshes/Columns/SM_Column_01_dmg_07.SM_Column_01_dmg_07\n\
+    - column_01_dmg_08 | Column 01 dmg 08 | columns | 7.31x7.33x3.35 m | /Game/AncientRuins/Meshes/Columns/SM_Column_01_dmg_08.SM_Column_01_dmg_08\n\
+    - column_02_sec_03 | Column 02 sec 03 | columns | 0.6x0.6x2.08 m | /Game/AncientRuins/Meshes/Columns/SM_Column_02_sec_03.SM_Column_02_sec_03\n\
+    - column_base_01 | Column base 01 | columns | 1.83x1.83x0.84 m | /Game/AncientRuins/Meshes/Columns/SM_Column_base_01.SM_Column_base_01\n\
+    - column_base_01_part_01 | Column base 01 part 01 | columns | 2.73x2.73x0.51 m | /Game/AncientRuins/Meshes/Columns/SM_Column_base_01_part_01.SM_Column_base_01_part_01\n\
+    - column_sections_01_dmg_01_sec_01 | Column sections 01 dmg 01 sec 01 | columns | 1.98x2.41x2.67 m\
+    \ | /Game/AncientRuins/Meshes/Columns/SM_Column_sections_01_dmg_01_sec_01.SM_Column_sections_01_dmg_01_sec_01\n\
+    - column_sections_01_dmg_01_sec_02 | Column sections 01 dmg 01 sec 02 | columns | 2.91x3.11x3.0 m\
+    \ | /Game/AncientRuins/Meshes/Columns/SM_Column_sections_01_dmg_01_sec_02.SM_Column_sections_01_dmg_01_sec_02\n\
+    - column_sections_01_dmg_01_sec_03 | Column sections 01 dmg 01 sec 03 | columns | 2.28x2.28x1.0 m\
+    \ | /Game/AncientRuins/Meshes/Columns/SM_Column_sections_01_dmg_01_sec_03.SM_Column_sections_01_dmg_01_sec_03\n\
+    - column_sections_01_dmg_01_sec_04 | Column sections 01 dmg 01 sec 04 | columns | 1.64x1.92x1.86 m\
+    \ | /Game/AncientRuins/Meshes/Columns/SM_Column_sections_01_dmg_01_sec_04.SM_Column_sections_01_dmg_01_sec_04\n\
+    - column_sections_01_dmg_01_sec_05 | Column sections 01 dmg 01 sec 05 | columns | 1.67x1.86x1.57 m\
+    \ | /Game/AncientRuins/Meshes/Columns/SM_Column_sections_01_dmg_01_sec_05.SM_Column_sections_01_dmg_01_sec_05\n\
+    - column_sections_01_dmg_01_sec_06 | Column sections 01 dmg 01 sec 06 | columns | 2.56x2.66x1.51 m\
+    \ | /Game/AncientRuins/Meshes/Columns/SM_Column_sections_01_dmg_01_sec_06.SM_Column_sections_01_dmg_01_sec_06\n\
+    - column_sections_01_dmg_01_sec_07 | Column sections 01 dmg 01 sec 07 | columns | 1.7x1.69x1.0 m |\
+    \ /Game/AncientRuins/Meshes/Columns/SM_Column_sections_01_dmg_01_sec_07.SM_Column_sections_01_dmg_01_sec_07\n\
+    - column_sections_01_dmg_01_sec_09 | Column sections 01 dmg 01 sec 09 | columns | 2.84x2.44x2.47 m\
+    \ | /Game/AncientRuins/Meshes/Columns/SM_Column_sections_01_dmg_01_sec_09.SM_Column_sections_01_dmg_01_sec_09\n\
+    - column_sections_01_dmg_01_sec_10 | Column sections 01 dmg 01 sec 10 | columns | 1.24x1.37x0.94 m\
+    \ | /Game/AncientRuins/Meshes/Columns/SM_Column_sections_01_dmg_01_sec_10.SM_Column_sections_01_dmg_01_sec_10\n\
+    - column_sections_01_sec_02 | Column sections 01 sec 02 | columns | 1.69x2.04x1.8 m | /Game/AncientRuins/Meshes/Columns/SM_Column_sections_01_sec_02.SM_Column_sections_01_sec_02\n\
+    - column_sections_01_sec_03 | Column sections 01 sec 03 | columns | 2.65x2.75x1.53 m | /Game/AncientRuins/Meshes/Columns/SM_Column_sections_01_sec_03.SM_Column_sections_01_sec_03\n\
+    - column_sections_01_sec_04 | Column sections 01 sec 04 | columns | 2.26x2.2x2.36 m | /Game/AncientRuins/Meshes/Columns/SM_Column_sections_01_sec_04.SM_Column_sections_01_sec_04\n\
+    - sky_sphere | Sky Sphere | enginesky | 32768.0x32768.0x32768.0 m | /Engine/EngineSky/SM_SkySphere.SM_SkySphere\n\
+    - debris_01 | Debris 01 | heaps | 2.48x2.48x0.35 m | /Game/AncientRuins/Meshes/Heaps/SM_Debris_01.SM_Debris_01\n\
+    - heap_01 | Heap 01 | heaps | 5.82x6.76x3.66 m | /Game/AncientRuins/Meshes/Heaps/SM_Heap_01.SM_Heap_01\n\
+    - heap_small_01 | Heap small 01 | heaps | 4.17x4.98x1.96 m | /Game/AncientRuins/Meshes/Heaps/SM_Heap_small_01.SM_Heap_small_01\n\
+    - heap_small_02 | Heap small 02 | heaps | 3.23x2.75x1.86 m | /Game/AncientRuins/Meshes/Heaps/SM_Heap_small_02.SM_Heap_small_02\n\
+    - ladder_01 | Ladder 01 | ladder_parts | 4.05x3.02x1.44 m | /Game/AncientRuins/Meshes/Ladder_parts/SM_Ladder_01.SM_Ladder_01\n\
+    - ladder_02 | Ladder 02 | ladder_parts | 8.16x4.64x2.52 m | /Game/AncientRuins/Meshes/Ladder_parts/SM_Ladder_02.SM_Ladder_02\n\
+    - ladder_03 | Ladder 03 | ladder_parts | 5.35x2.38x1.11 m | /Game/AncientRuins/Meshes/Ladder_parts/SM_Ladder_03.SM_Ladder_03\n\
+    - ladder_04 | Ladder 04 | ladder_parts | 3.23x2.14x0.97 m | /Game/AncientRuins/Meshes/Ladder_parts/SM_Ladder_04.SM_Ladder_04\n\
+    - ladder_05 | Ladder 05 | ladder_parts | 4.29x3.15x1.37 m | /Game/AncientRuins/Meshes/Ladder_parts/SM_Ladder_05.SM_Ladder_05\n\
+    - ladder_06 | Ladder 06 | ladder_parts | 3.22x1.1x0.59 m | /Game/AncientRuins/Meshes/Ladder_parts/SM_Ladder_06.SM_Ladder_06\n\
+    - ladder_corner_01 | Ladder corner 01 | ladder_parts | 5.06x4.67x1.61 m | /Game/AncientRuins/Meshes/Ladder_parts/SM_Ladder_corner_01.SM_Ladder_corner_01\n\
+    - ladder_step_02 | Ladder step 02 | ladder_parts | 1.78x1.16x0.85 m | /Game/AncientRuins/Meshes/Ladder_parts/SM_Ladder_step_02.SM_Ladder_step_02\n\
+    - ladder_step_04 | Ladder step 04 | ladder_parts | 2.22x0.54x0.26 m | /Game/AncientRuins/Meshes/Ladder_parts/SM_Ladder_step_04.SM_Ladder_step_04\n\
+    - branch_02 | Branch 02 | plants | 4.59x2.25x4.58 m | /Game/AncientRuins/Meshes/Plants/SM_Branch_02.SM_Branch_02\n\
+    - bush_01 | Bush 01 | plants | 4.58x4.13x1.86 m | /Game/AncientRuins/Meshes/Plants/SM_Bush_01.SM_Bush_01\n\
+    - bush_02 | Bush 02 | plants | 2.28x2.86x2.62 m | /Game/AncientRuins/Meshes/Plants/SM_Bush_02.SM_Bush_02\n\
+    - ivy_01 | Ivy 01 | plants | 0.0x5.22x6.11 m | /Game/AncientRuins/Meshes/Plants/SM_Ivy_01.SM_Ivy_01\n\
+    - ivy_01_bend_01 | Ivy 01 bend 01 | plants | 1.7x1.61x5.34 m | /Game/AncientRuins/Meshes/Plants/SM_Ivy_01_bend_01.SM_Ivy_01_bend_01\n\
+    - ivy_02 | Ivy 02 | plants | 0.0x5.28x8.94 m | /Game/AncientRuins/Meshes/Plants/SM_Ivy_02.SM_Ivy_02\n\
+    - ivy_02_bend_01 | Ivy 02 bend 01 | plants | 2.5x2.46x5.89 m | /Game/AncientRuins/Meshes/Plants/SM_Ivy_02_bend_01.SM_Ivy_02_bend_01\n\
+    - ivy_leaves_01 | Ivy Leaves 01 | plants | 0.48x6.81x5.02 m | /Game/AncientRuins/Meshes/Plants/SM_Ivy_Leaves_01.SM_Ivy_Leaves_01\n\
+    - ivy_leaves_01_bend_01 | Ivy Leaves 01 bend 01 | plants | 2.36x2.37x2.92 m | /Game/AncientRuins/Meshes/Plants/SM_Ivy_Leaves_01_bend_01.SM_Ivy_Leaves_01_bend_01\n\
+    - ivy_leaves_02 | Ivy Leaves 02 | plants | 0.39x3.87x6.66 m | /Game/AncientRuins/Meshes/Plants/SM_Ivy_Leaves_02.SM_Ivy_Leaves_02\n\
+    - ivy_leaves_02_bend_01 | Ivy Leaves 02 bend 01 | plants | 2.13x2.06x5.38 m | /Game/AncientRuins/Meshes/Plants/SM_Ivy_Leaves_02_bend_01.SM_Ivy_Leaves_02_bend_01\n\
+    - ivy_leaves_03 | Ivy Leaves 03 | plants | 0.46x7.1x4.53 m | /Game/AncientRuins/Meshes/Plants/SM_Ivy_Leaves_03.SM_Ivy_Leaves_03\n\
+    - ivy_leaves_03_bend_01 | Ivy Leaves 03 bend 01 | plants | 2.67x2.27x4.53 m | /Game/AncientRuins/Meshes/Plants/SM_Ivy_Leaves_03_bend_01.SM_Ivy_Leaves_03_bend_01\n\
+    - barrel_01 | Barrel 01 | props | 1.57x1.53x1.88 m | /Game/AncientRuins/Meshes/Props/SM_Barrel_01.SM_Barrel_01\n\
+    - barrel_01_dmg_01 | Barrel 01 dmg 01 | props | 2.83x2.77x2.15 m | /Game/AncientRuins/Meshes/Props/SM_Barrel_01_dmg_01.SM_Barrel_01_dmg_01\n\
+    - barrel_01_dmg_02 | Barrel 01 dmg 02 | props | 1.57x1.56x1.88 m | /Game/AncientRuins/Meshes/Props/SM_Barrel_01_dmg_02.SM_Barrel_01_dmg_02\n\
+    - barrel_01_part_01 | Barrel 01 part 01 | props | 2.06x2.28x0.5 m | /Game/AncientRuins/Meshes/Props/SM_Barrel_01_part_01.SM_Barrel_01_part_01\n\
+    - barrel_01_part_02 | Barrel 01 part 02 | props | 1.51x1.56x0.22 m | /Game/AncientRuins/Meshes/Props/SM_Barrel_01_part_02.SM_Barrel_01_part_02\n\
+    - barrel_01_part_03 | Barrel 01 part 03 | props | 1.47x1.38x0.37 m | /Game/AncientRuins/Meshes/Props/SM_Barrel_01_part_03.SM_Barrel_01_part_03\n\
+    - bench_01 | Bench 01 | props | 2.25x0.85x0.85 m | /Game/AncientRuins/Meshes/Props/SM_Bench_01.SM_Bench_01\n\
+    - bucket_01 | Bucket 01 | props | 1.02x1.04x0.61 m | /Game/AncientRuins/Meshes/Props/SM_Bucket_01.SM_Bucket_01\n\
+    - bucket_02 | Bucket 02 | props | 0.78x0.76x0.8 m | /Game/AncientRuins/Meshes/Props/SM_Bucket_02.SM_Bucket_02\n\
+    - bucket_03 | Bucket 03 | props | 0.71x0.61x0.6 m | /Game/AncientRuins/Meshes/Props/SM_Bucket_03.SM_Bucket_03\n\
+    - chain_01 | Chain 01 | props | 0.36x0.58x4.17 m | /Game/AncientRuins/Meshes/Props/SM_Chain_01.SM_Chain_01\n\
+    - chain_02 | Chain 02 | props | 0.36x0.58x5.42 m | /Game/AncientRuins/Meshes/Props/SM_Chain_02.SM_Chain_02\n\
+    - chain_03 | Chain 03 | props | 0.3x0.49x1.75 m | /Game/AncientRuins/Meshes/Props/SM_Chain_03.SM_Chain_03\n\
+    - chain_04 | Chain 04 | props | 0.37x4.56x2.73 m | /Game/AncientRuins/Meshes/Props/SM_Chain_04.SM_Chain_04\n\
+    - chain_05 | Chain 05 | props | 4.58x0.69x1.94 m | /Game/AncientRuins/Meshes/Props/SM_Chain_05.SM_Chain_05\n\
+    - fireplace_01 | Fireplace 01 | props | 1.43x1.5x0.94 m | /Game/AncientRuins/Meshes/Props/SM_Fireplace_01.SM_Fireplace_01\n\
+    - fireplace_02 | Fireplace 02 | props | 2.01x2.04x1.25 m | /Game/AncientRuins/Meshes/Props/SM_Fireplace_02.SM_Fireplace_02\n\
+    - met_ring_01 | Met ring 01 | props | 0.17x0.39x0.53 m | /Game/AncientRuins/Meshes/Props/SM_Met_ring_01.SM_Met_ring_01\n\
+    - met_ring_02 | Met ring 02 | props | 0.72x0.49x0.16 m | /Game/AncientRuins/Meshes/Props/SM_Met_ring_02.SM_Met_ring_02\n\
+    - thurible_02 | Thurible 02 | props | 0.82x0.81x3.33 m | /Game/AncientRuins/Meshes/Props/SM_Thurible_02.SM_Thurible_02\n\
+    - torch_01 | Torch 01 | props | 0.67x0.67x3.4 m | /Game/AncientRuins/Meshes/Props/SM_Torch_01.SM_Torch_01\n\
+    - torch_02 | Torch 02 | props | 0.6x0.73x2.56 m | /Game/AncientRuins/Meshes/Props/SM_Torch_02.SM_Torch_02\n\
+    - torch_03 | Torch 03 | props | 0.56x0.68x1.55 m | /Game/AncientRuins/Meshes/Props/SM_Torch_03.SM_Torch_03\n\
+    - vase_01 | Vase 01 | props | 0.78x0.78x1.1 m | /Game/AncientRuins/Meshes/Props/SM_Vase_01.SM_Vase_01\n\
+    - vase_01_body_01 | Vase 01 body 01 | props | 1.69x1.64x1.33 m | /Game/AncientRuins/Meshes/Props/SM_Vase_01_body_01.SM_Vase_01_body_01\n\
+    - wood_pillar_01 | Wood Pillar 01 | props | 0.91x6.24x7.92 m | /Game/AncientRuins/Meshes/Props/SM_Wood_Pillar_01.SM_Wood_Pillar_01\n\
+    - wood_support_01 | Wood Support 01 | props | 2.21x0.4x1.84 m | /Game/AncientRuins/Meshes/Props/SM_Wood_Support_01.SM_Wood_Support_01\n\
+    - wood_support_02 | Wood Support 02 | props | 1.34x1.64x1.45 m | /Game/AncientRuins/Meshes/Props/SM_Wood_Support_02.SM_Wood_Support_02\n\
+    - rope_01 | Rope 01 | ropes | 1.5x3.13x6.9 m | /Game/AncientRuins/Meshes/Ropes/SM_Rope_01.SM_Rope_01\n\
+    - rope_02 | Rope 02 | ropes | 0.05x0.05x3.7 m | /Game/AncientRuins/Meshes/Ropes/SM_Rope_02.SM_Rope_02\n\
+    - rope_03 | Rope 03 | ropes | 3.28x1.78x6.13 m | /Game/AncientRuins/Meshes/Ropes/SM_Rope_03.SM_Rope_03\n\
+    - rope_04 | Rope 04 | ropes | 9.77x20.0x8.46 m | /Game/AncientRuins/Meshes/Ropes/SM_Rope_04.SM_Rope_04\n\
+    - rope_05 | Rope 05 | ropes | 32.92x21.58x2.84 m | /Game/AncientRuins/Meshes/Ropes/SM_Rope_05.SM_Rope_05\n\
+    - rope_loop_01 | Rope loop 01 | ropes | 1.17x1.32x1.58 m | /Game/AncientRuins/Meshes/Ropes/SM_Rope_loop_01.SM_Rope_loop_01\n\
+    - rope_loop_02 | Rope loop 02 | ropes | 0.68x0.9x1.03 m | /Game/AncientRuins/Meshes/Ropes/SM_Rope_loop_02.SM_Rope_loop_02\n\
+    - rope_loop_03 | Rope loop 03 | ropes | 0.86x0.76x0.82 m | /Game/AncientRuins/Meshes/Ropes/SM_Rope_loop_03.SM_Rope_loop_03\n\
+    - rope_loop_04 | Rope loop 04 | ropes | 0.61x0.76x1.09 m | /Game/AncientRuins/Meshes/Ropes/SM_Rope_loop_04.SM_Rope_loop_04\n\
+    - fronton_01_part_02 | Fronton 01 part 02 | stone_blocks | 1.93x2.04x0.4 m | /Game/AncientRuins/Meshes/Stone_blocks/SM_Fronton_01_part_02.SM_Fronton_01_part_02\n\
+    - fronton_01_part_03 | Fronton 01 part 03 | stone_blocks | 2.35x2.46x0.48 m | /Game/AncientRuins/Meshes/Stone_blocks/SM_Fronton_01_part_03.SM_Fronton_01_part_03\n\
+    - stone_blocks_01_stone_02 | Stone blocks 01 stone 02 | stone_blocks | 2.9x3.27x1.58 m | /Game/AncientRuins/Meshes/Stone_blocks/SM_Stone_blocks_01_stone_02.SM_Stone_blocks_01_stone_02\n\
+    - stone_blocks_01_stone_04 | Stone blocks 01 stone 04 | stone_blocks | 3.13x3.16x1.63 m | /Game/AncientRuins/Meshes/Stone_blocks/SM_Stone_blocks_01_stone_04.SM_Stone_blocks_01_stone_04\n\
+    - stone_blocks_03_block_01 | Stone blocks 03 block 01 | stone_blocks | 1.17x3.58x0.82 m | /Game/AncientRuins/Meshes/Stone_blocks/SM_Stone_blocks_03_block_01.SM_Stone_blocks_03_block_01\n\
+    - stone_blocks_03_block_02 | Stone blocks 03 block 02 | stone_blocks | 1.32x4.17x1.95 m | /Game/AncientRuins/Meshes/Stone_blocks/SM_Stone_blocks_03_block_02.SM_Stone_blocks_03_block_02\n\
+    - stone_blocks_03_block_03 | Stone blocks 03 block 03 | stone_blocks | 1.31x2.08x1.95 m | /Game/AncientRuins/Meshes/Stone_blocks/SM_Stone_blocks_03_block_03.SM_Stone_blocks_03_block_03\n\
+    - stone_blocks_04_block_05 | Stone blocks 04 block 05 | stone_blocks | 2.02x4.41x1.93 m | /Game/AncientRuins/Meshes/Stone_blocks/SM_Stone_blocks_04_block_05.SM_Stone_blocks_04_block_05\n\
+    - stone_blocks_05_04 | Stone blocks 05 04 | stone_blocks | 1.8x0.91x0.28 m | /Game/AncientRuins/Meshes/Stone_blocks/SM_Stone_blocks_05_04.SM_Stone_blocks_05_04\n\
+    - stone_circle_01 | Stone circle 01 | stone_blocks | 2.38x2.38x0.75 m | /Game/AncientRuins/Meshes/Stone_blocks/SM_Stone_circle_01.SM_Stone_circle_01\n\
+    - stone_circle_02 | Stone circle 02 | stone_blocks | 3.04x2.89x1.06 m | /Game/AncientRuins/Meshes/Stone_blocks/SM_Stone_circle_02.SM_Stone_circle_02\n\
+    - stone_circle_03 | Stone circle 03 | stone_blocks | 2.94x3.32x0.74 m | /Game/AncientRuins/Meshes/Stone_blocks/SM_Stone_circle_03.SM_Stone_circle_03\n\
+    - stone_circle_04 | Stone circle 04 | stone_blocks | 3.64x3.52x0.57 m | /Game/AncientRuins/Meshes/Stone_blocks/SM_Stone_circle_04.SM_Stone_circle_04\n\
+    - thurible_01_rotate_01 | Thurible 01 Rotate 01 | thuribles | 2.56x2.56x5.35 m | /Game/AncientRuins/Blueprints/SM_Prefabs/Thuribles/BP_Thurible_01_Rotate_01.BP_Thurible_01_Rotate_01_C\n\
+    - thurible_01_rotate_02 | Thurible 01 Rotate 02 | thuribles | 2.56x2.56x5.35 m | /Game/AncientRuins/Blueprints/SM_Prefabs/Thuribles/BP_Thurible_01_Rotate_02.BP_Thurible_01_Rotate_02_C\n\
+    - thurible_02_rotate_01 | Thurible 02 Rotate 01 | thuribles | 2.56x2.56x3.35 m | /Game/AncientRuins/Blueprints/SM_Prefabs/Thuribles/BP_Thurible_02_Rotate_01.BP_Thurible_02_Rotate_01_C\n\
+    - circle_floor_01 | Circle floor 01 | tiles_floor | 8.37x8.35x0.36 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Circle_floor_01.SM_Circle_floor_01\n\
+    - tile_floor_01 | Tile floor 01 | tiles_floor | 7.02x6.02x0.24 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_floor_01.SM_Tile_floor_01\n\
+    - tile_floor_02 | Tile floor 02 | tiles_floor | 3.02x5.0x0.23 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_floor_02.SM_Tile_floor_02\n\
+    - tile_floor_03 | Tile floor 03 | tiles_floor | 2.02x3.02x0.56 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_floor_03.SM_Tile_floor_03\n\
+    - tile_floor_04 | Tile floor 04 | tiles_floor | 1.02x1.0x0.14 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_floor_04.SM_Tile_floor_04\n\
+    - tile_floor_05 | Tile floor 05 | tiles_floor | 1.07x3.02x0.19 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_floor_05.SM_Tile_floor_05\n\
+    - tile_floor_06 | Tile floor 06 | tiles_floor | 4.02x4.03x0.21 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_floor_06.SM_Tile_floor_06\n\
+    - tile_floor_07 | Tile floor 07 | tiles_floor | 2.02x2.02x0.25 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_floor_07.SM_Tile_floor_07\n\
+    - tile_floor_08 | Tile floor 08 | tiles_floor | 2.01x2.01x0.19 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_floor_08.SM_Tile_floor_08\n\
+    - tile_floor_plane_3x3_01 | Tile floor plane 3x3 01 | tiles_floor | 3.0x3.0x0.0 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_floor_plane_3x3_01.SM_Tile_floor_plane_3x3_01\n\
+    - tile_floor_plane_3x4_01 | Tile floor plane 3x4 01 | tiles_floor | 4.0x3.0x0.0 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_floor_plane_3x4_01.SM_Tile_floor_plane_3x4_01\n\
+    - tile_floor_plane_3x8_01 | Tile floor plane 3x8 01 | tiles_floor | 3.0x8.0x0.0 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_floor_plane_3x8_01.SM_Tile_floor_plane_3x8_01\n\
+    - tile_floor_plane_3x8_02 | Tile floor plane 3x8 02 | tiles_floor | 8.0x3.0x0.0 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_floor_plane_3x8_02.SM_Tile_floor_plane_3x8_02\n\
+    - tile_floor_plane_8x8_01 | Tile floor plane 8x8 01 | tiles_floor | 8.0x8.0x0.0 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_floor_plane_8x8_01.SM_Tile_floor_plane_8x8_01\n\
+    - tile_part_01 | Tile part 01 | tiles_floor | 1.0x1.0x0.17 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_part_01.SM_Tile_part_01\n\
+    - tile_part_02 | Tile part 02 | tiles_floor | 1.03x1.02x0.39 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_part_02.SM_Tile_part_02\n\
+    - tile_part_03 | Tile part 03 | tiles_floor | 1.1x1.0x1.0 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_part_03.SM_Tile_part_03\n\
+    - tile_pattern_01 | Tile Pattern 01 | tiles_floor | 3.72x3.84x0.58 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_Pattern_01.SM_Tile_Pattern_01\n\
+    - tile_pattern_02 | Tile Pattern 02 | tiles_floor | 3.07x3.07x0.32 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_Pattern_02.SM_Tile_Pattern_02\n\
+    - tile_pattern_1x4_01 | Tile Pattern 1x4 01 | tiles_floor | 4.06x1.16x0.49 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_Pattern_1x4_01.SM_Tile_Pattern_1x4_01\n\
+    - tile_pattern_2x2_01 | Tile Pattern 2x2 01 | tiles_floor | 1.82x1.8x0.19 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_Pattern_2x2_01.SM_Tile_Pattern_2x2_01\n\
+    - tile_pattern_4x4_01 | Tile Pattern 4x4 01 | tiles_floor | 3.51x3.54x0.28 m | /Game/AncientRuins/Meshes/Tiles_floor/SM_Tile_Pattern_4x4_01.SM_Tile_Pattern_4x4_01\n\
+    - tree_common_01 | Tree common 01 | trees | 15.23x12.69x20.9 m | /Game/AncientRuins/Meshes/Trees/SM_Tree_common_01.SM_Tree_common_01\n\
+    - tree_dry_01 | Tree dry 01 | trees | 12.97x17.53x26.31 m | /Game/AncientRuins/Meshes/Trees/SM_Tree_dry_01.SM_Tree_dry_01\n\
+    - tree_leaves_01 | Tree leaves 01 | trees | 35.43x34.63x33.79 m | /Game/AncientRuins/Meshes/Trees/SM_Tree_leaves_01.SM_Tree_leaves_01\n\
+    - stone_trim_02 | Stone trim 02 | trims | 13.85x2.72x1.17 m | /Game/AncientRuins/Meshes/Trims/SM_Stone_trim_02.SM_Stone_trim_02\n\
+    - stone_trim_03 | Stone trim 03 | trims | 13.03x2.68x1.08 m | /Game/AncientRuins/Meshes/Trims/SM_Stone_trim_03.SM_Stone_trim_03\n\
+    - stone_trim_04 | Stone trim 04 | trims | 9.3x2.68x1.04 m | /Game/AncientRuins/Meshes/Trims/SM_Stone_trim_04.SM_Stone_trim_04\n\
+    - stone_trim_05 | Stone trim 05 | trims | 2.11x9.94x0.53 m | /Game/AncientRuins/Meshes/Trims/SM_Stone_trim_05.SM_Stone_trim_05\n\
+    - stone_trim_06 | Stone trim 06 | trims | 2.31x8.42x0.63 m | /Game/AncientRuins/Meshes/Trims/SM_Stone_trim_06.SM_Stone_trim_06\n\
+    - stone_trim_small_01 | Stone trim small 01 | trims | 4.1x0.51x0.48 m | /Game/AncientRuins/Meshes/Trims/SM_Stone_trim_small_01.SM_Stone_trim_small_01\n\
+    - stone_trim_small_02 | Stone trim small 02 | trims | 4.2x1.05x0.36 m | /Game/AncientRuins/Meshes/Trims/SM_Stone_trim_small_02.SM_Stone_trim_small_02\n\
+    - stone_trim_small_03 | Stone trim small 03 | trims | 5.19x0.66x0.25 m | /Game/AncientRuins/Meshes/Trims/SM_Stone_trim_small_03.SM_Stone_trim_small_03\n\
+    - wall_trim_01 | Wall trim 01 | trims | 0.48x3.49x0.38 m | /Game/AncientRuins/Meshes/Trims/SM_Wall_trim_01.SM_Wall_trim_01\n\
+    - wall_trim_02 | Wall trim 02 | trims | 6.5x0.82x0.29 m | /Game/AncientRuins/Meshes/Trims/SM_Wall_trim_02.SM_Wall_trim_02\n\
+    - wall_trim_03_part_01 | Wall trim 03 part 01 | trims | 0.34x1.5x0.43 m | /Game/AncientRuins/Meshes/Trims/SM_Wall_trim_03_part_01.SM_Wall_trim_03_part_01\n\
+    - wall_trim_03_part_02 | Wall trim 03 part 02 | trims | 0.34x1.0x0.43 m | /Game/AncientRuins/Meshes/Trims/SM_Wall_trim_03_part_02.SM_Wall_trim_03_part_02\n\
+    - wall_trim_03_part_03 | Wall trim 03 part 03 | trims | 0.34x1.41x0.43 m | /Game/AncientRuins/Meshes/Trims/SM_Wall_trim_03_part_03.SM_Wall_trim_03_part_03\n\
+    - wall_trim_03_part_04 | Wall trim 03 part 04 | trims | 0.84x0.84x0.43 m | /Game/AncientRuins/Meshes/Trims/SM_Wall_trim_03_part_04.SM_Wall_trim_03_part_04\n\
+    - stone_arc_01 | Stone Arc 01 | wall_sections | 2.27x11.83x4.75 m | /Game/AncientRuins/Meshes/Wall_sections/SM_Stone_Arc_01.SM_Stone_Arc_01\n\
+    - stone_arc_02 | Stone Arc 02 | wall_sections | 2.14x8.93x4.49 m | /Game/AncientRuins/Meshes/Wall_sections/SM_Stone_Arc_02.SM_Stone_Arc_02\n\
+    - wall_section_01 | Wall section 01 | wall_sections | 2.08x10.86x8.94 m | /Game/AncientRuins/Meshes/Wall_sections/SM_Wall_section_01.SM_Wall_section_01\n\
+    - wall_section_02 | Wall section 02 | wall_sections | 3.2x7.44x8.06 m | /Game/AncientRuins/Meshes/Wall_sections/SM_Wall_section_02.SM_Wall_section_02\n\
+    - wall_section_03 | Wall section 03 | wall_sections | 9.3x2.15x4.1 m | /Game/AncientRuins/Meshes/Wall_sections/SM_Wall_section_03.SM_Wall_section_03\n\
+    - wood_canopy_01 | Wood canopy 01 | wood_canopy | 2.85x2.09x4.14 m | /Game/AncientRuins/Meshes/Wood_canopy/SM_Wood_canopy_01.SM_Wood_canopy_01\n\
+    - wood_canopy_02 | Wood canopy 02 | wood_canopy | 5.27x3.08x6.73 m | /Game/AncientRuins/Meshes/Wood_canopy/SM_Wood_canopy_02.SM_Wood_canopy_02\n\
+    - wood_canopy_03 | Wood canopy 03 | wood_canopy | 2.29x3.27x3.94 m | /Game/AncientRuins/Meshes/Wood_canopy/SM_Wood_canopy_03.SM_Wood_canopy_03\n\
+    - wood_canopy_04 | Wood canopy 04 | wood_canopy | 2.5x4.37x1.65 m | /Game/AncientRuins/Meshes/Wood_canopy/SM_Wood_canopy_04.SM_Wood_canopy_04\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
+    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
+    \ for yourself when the scene\nmatches the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+assets:
+  packs:
+  - AncientRuins
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_024.bundle.json
+- name: overview_prompt_alignment
