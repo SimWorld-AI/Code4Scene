@@ -1,11 +1,10 @@
-"""Directories two uids must agree on (F1, 2026-08-17 hardware round).
+"""Directories two users must agree on.
 
-The harness creates directories on the shared volumes and the editor — uid
-10001 in the pod topology, not in the harness's group — writes the files. A
-directory created at the umask's 775 is a hand-off the editor loses with a
-bare PermissionError, which is exactly the cross-uid trap shared volumes
-set for operators; on one shared cluster it was papered over with a default ACL.
-The code that creates the directory is the side that has to open it.
+The scorer creates directories on the shared volumes and the editor, which may
+run as a different user outside the scorer's group, writes the files. A
+directory created at the umask's 775 would refuse that write with a bare
+PermissionError, so the code that creates the directory is the side that has
+to open it.
 """
 
 from __future__ import annotations
@@ -43,7 +42,7 @@ def test_created_directories_are_open_to_the_other_uid(tmp_path, strict_umask):
 
 
 def test_an_existing_parent_is_not_widened(tmp_path, strict_umask):
-    """The mount root belongs to the operator; only what THIS call created is
+    """The mount root keeps its own mode; only what THIS call created is
     opened up."""
     mount = tmp_path / "measure"
     mount.mkdir(mode=0o750)
@@ -68,16 +67,16 @@ def test_idempotent_over_an_existing_target(tmp_path, strict_umask):
 
 def test_the_editor_written_render_directory_is_writable_cross_uid(
         tmp_path, strict_umask):
-    """The capture path end to end: the harness asks for a screenshot, the
-    fake editor (any other uid, in the pod topology) writes the file into a
-    directory the harness created a moment earlier."""
+    """The capture path end to end: the scorer asks for a screenshot, and the
+    fake editor (any other user) writes the file into a directory the scorer
+    created a moment earlier."""
     from code4scene.evaluation import render as render_eval
 
     written = {}
 
     class Bridge:
         def command(self, name, params, timeout=0):
-            # The real editor would now open() this path as uid 10001; the
+            # The real editor would now open() this path as another user; the
             # directory's mode is the whole question.
             target = Path(params["filepath"])
             written["dir_mode"] = _mode(target.parent)
@@ -113,7 +112,7 @@ def test_the_editor_written_evidence_directory_is_writable_cross_uid(
         def exec_python_result(self, script, key, timeout=0):
             assert _mode(output.parent) == 0o777, (
                 "the editor's uid cannot write into a 775 directory the "
-                "harness just created")
+                "scorer just created")
             output.write_text('{"status": "success"}')
             return {"finished": True}
 

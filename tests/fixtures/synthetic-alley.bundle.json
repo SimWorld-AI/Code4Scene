@@ -1,5 +1,5 @@
 {
- "bundle_id": "semantic_synthetic-alley_00a68bd49ec7",
+ "bundle_id": "semantic_synthetic-alley_cd6571d0252f",
  "evaluations": [
   {
    "binding_id": "evaluation_atomic_predicate_port_town_night_alley_scene",
@@ -1822,7 +1822,7 @@
    ],
    "world_assumption": "open_world"
   },
-  "prompt_sha256": "00a68bd49ec727c7f8cb527d44724ef8bffef411c53b662ea2e7b486587c2aad",
+  "prompt_sha256": "cd6571d0252f4c2815f728d01757499a0d026d7b764cc46693928f99c96b22d2",
   "semantic_prompt_view": {
    "kind": "full_task_prompt",
    "source_span": [

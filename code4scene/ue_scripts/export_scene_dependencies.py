@@ -6,21 +6,19 @@ renders perfectly in the editor that built it can open to nothing in the next
 one — and the run record, which holds the map and a screenshot, says the scene
 was fine.
 
-Three real ways that happens, all observed on the grid:
+Three ways that happens:
 
 * the agent CREATED an asset and never saved it. It lives in the editor's
-  memory for the rest of the episode, the screenshot is correct, and the
-  package never reaches disk. Sixteen materials went that way in one run,
-  including the one under the whole square.
+  memory for the rest of the run, the screenshot is correct, and the package
+  never reaches disk.
 * the two environments mounted DIFFERENT content. The path resolved when the
   scene was built and does not resolve when it is scored, and nothing in the
   record distinguishes that from an agent inventing a path.
 * the pack itself is incomplete — a material instance that ships without the
   texture it samples. Present in both environments, missing in both.
 
-The first is the agent's failure, the second is ours, and the third is the
-content store's. They are indistinguishable from a low score, which is why
-this probe records the dependency set rather than leaving it implied.
+The three are indistinguishable from a low score, which is why this probe
+records the dependency set rather than leaving it implied.
 
 Written to ``SCENE_DEPENDENCIES_OUTPUT`` as JSON. ``SCENE_DEPENDENCIES_MAP``
 names the package to walk; empty means the level currently open.

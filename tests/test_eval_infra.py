@@ -1,7 +1,7 @@
 """The seams an image-comparison eval plugs into.
 
-No verifier here, and no metric: those are being written elsewhere. What is
-tested is that the harness can HAND one what it needs — a clean editor, the
+No verifier here, and no metric. What is tested is that the scorer can HAND
+one what it needs — a clean editor, the
 same cameras across scenes, renders addressable pairwise, and a place for
 artifacts to meet.
 """
@@ -16,10 +16,8 @@ from code4scene.evaluation import render, verifiers
 # ── a clean editor the agent never drove ──────────────────────────────────
 
 def test_a_verifier_can_be_given_a_second_editor():
-    """The canonical scene cannot live in the agent's instance: measured on the
-    cluster, a path guard on `execute_python_script` fell to concatenation, to
-    chr(), to base64, and to list_assets('/Game', True, True) — which
-    enumerates the answers without naming a path. So the boundary is a
+    """The canonical scene cannot live in the agent's instance: arbitrary code
+    in the agent's editor gets past any path filter. So the boundary is a
     different instance, and a verifier has to be able to reach it."""
     seen = {}
 

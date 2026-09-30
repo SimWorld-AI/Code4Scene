@@ -84,7 +84,7 @@ def _measured(frames):
         "frames": [dict(value) for value in frames],
         "model": {"name": "fake"},
         "calls": {"count": 2},
-        "computed_at": "2026-08-29T00:00:00+00:00",
+        "computed_at": "2000-01-01T00:00:00+00:00",
     }
 
 

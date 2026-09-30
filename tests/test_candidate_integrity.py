@@ -1,9 +1,7 @@
 """The gate every other verifier assumes has already been passed.
 
-The execution-failure half of `candidate_integrity` had no behaviour test,
-which is how it silently failed: the gate checked ``exit_reason == "timeout"``
-while the harness has only ever written ``time_cap``, so the stated policy
-that a timed-out run is an execution failure never fired for anyone.
+Behaviour tests for the execution-failure half of `candidate_integrity`: a run
+record whose ``exit_reason`` is ``time_cap`` is an execution failure.
 """
 
 from __future__ import annotations
@@ -33,9 +31,7 @@ def test_a_clean_completed_run_passes_the_gate(tmp_path):
 
 
 def test_a_run_the_wall_clock_killed_is_an_execution_failure(tmp_path):
-    """`time_cap` is the value the harness actually writes — see the exit
-    classification in the harness. The gate used to look for "timeout",
-    which nothing produces, so this policy was dead on arrival."""
+    """`time_cap` is the exit reason of a run killed at the wall clock."""
     report = _report(tmp_path, exit_reason="time_cap")
 
     assert report["status"] == contracts.INVALID and report["score"] is None
@@ -140,9 +136,8 @@ def test_contradictory_checkpoint_provenance_is_invalid(tmp_path):
 
 
 def test_a_recorded_infra_error_is_withheld_from_model_scoring(tmp_path):
-    """`infra_error` is the one failure FIELD the harness writes; the fields
-    this gate once also read (agent_error, compile_error, runtime_error) have
-    no producer anywhere and were removed rather than left looking live."""
+    """`infra_error` is the run record's failure field; a recorded
+    infrastructure error withholds the run from model scoring."""
     report = _report(tmp_path, exit_reason="completed",
                      infra_error="editor died mid-round")
 

@@ -5,10 +5,8 @@ frame. The RGB path used to check for that file the instant the bridge replied,
 so a heavy scene — where the write takes longest — was the one most likely to
 be recorded as having produced nothing.
 
-It cost a whole verifier on a real run: a 736-actor winter village, one
-overview shot covering seven requirements, the frame on disk at 08:01:46 and
-`no viewpoint produced an image` written at 08:01:59. The message names the
-directory the image is sitting in.
+One missed overview shot leaves every requirement it covers without an image.
+The message names the directory the image is sitting in.
 """
 
 from __future__ import annotations

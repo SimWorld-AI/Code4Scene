@@ -16,7 +16,7 @@ CATALOG = {
     "_meta": {"id": "test-palette-v1"},
     "market_goods": {"description": "stalls and their wares",
                      "items": ["/Game/Props/SM_MarketStall.SM_MarketStall"]},
-    "trees": ["/Game/CityDatabase/blueprints/BP_Tree1.BP_Tree1"],
+    "trees": ["/Game/ExampleCity/blueprints/BP_Tree1.BP_Tree1"],
     "static_meshes": {"items": ["/Engine/BasicShapes/Cube.Cube"]},
 }
 
@@ -29,7 +29,7 @@ def test_a_blueprint_class_path_is_the_same_asset_as_its_object_path():
     """The export writes `..._C`; the catalog writes the object. One asset."""
     catalog = asset_catalog.load(CATALOG)
     assert catalog.category_for(
-        "/Game/CityDatabase/blueprints/BP_Tree1.BP_Tree1_C") == "trees"
+        "/Game/ExampleCity/blueprints/BP_Tree1.BP_Tree1_C") == "trees"
 
 
 def test_the_catalog_id_travels_so_two_scores_can_be_compared():

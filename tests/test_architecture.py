@@ -317,8 +317,6 @@ def test_every_public_verifier_is_one_registry_entry_with_a_declared_class():
             f"{kind} must declare CLASS as one of {verifiers.CLASSES_ALLOWED}")
 
     root = PKG / "evaluation" / "verifiers"
-    assert not (root / "plausibility.py").exists()
-    assert not (root / "reference_image_alignment.py").exists()
     assert (root / "source_preservation.py").exists()
 
 

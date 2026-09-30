@@ -648,7 +648,7 @@ def _validate_physics_chunk(
 
 
 def _wait_for_editor_recovery(bridge: Any, timeout: float) -> bool:
-    """Wait for the supervisor to replace an explicitly abandoned UE job."""
+    """Wait until the editor answers again after an abandoned UE job."""
     deadline = time.monotonic() + max(0.0, timeout)
     while time.monotonic() < deadline:
         try:
@@ -945,8 +945,8 @@ def _input_scene(
     can see it.
 
     It arrives as a configured artifact rather than a second editor load: the
-    input level is what the harness staged, so it can be exported once when
-    the episode is provisioned instead of re-opened per verifier.
+    input level is fixed by the task, so it can be exported once before
+    scoring instead of re-opened per verifier.
     """
     configured = context.spec.get("input_scene")
     if configured is None:

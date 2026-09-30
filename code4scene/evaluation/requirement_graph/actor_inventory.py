@@ -1,7 +1,7 @@
 """Serializable UE actor inventory contracts for Stage 1 evaluation.
 
 This module deliberately stops at describing actors.  It does not inspect a
-live SPEAR wrapper and it does not decide whether a prompt entity exists.  A
+live editor and it does not decide whether a prompt entity exists.  A
 runtime adapter may use :func:`descriptor_from_mapping` to remove engine
 objects at the boundary; Stage 1 can then operate on deterministic, JSON-safe
 metadata only.

@@ -176,7 +176,7 @@ def test_cli_rescore_reads_a_saved_verifier_result(tmp_path):
                         ("candidate", candidate)):
         (evidence / f"{role}.scene.json").write_text(json.dumps(scene))
     result = {
-        "schema_version": "scenebenchmark-artifact-score.v1",
+        "schema_version": "artifact-score.v1",
         "task_id": "synthetic-repair", "benchmark_track": "image_to_scene_outdoor",
         "scene_environment": "outdoor", "batch_status": "complete", "authoritative": True,
         "reports": [

@@ -1,8 +1,7 @@
 """Photographing the finished scene.
 
-The judge package scores images and the harness never made any, so a task
-declaring `kind: judge` could only report that it had not run. What matters
-here is that the framing is fixed — two runs' verdicts are comparable only if
+The judge scores images of the finished scene. What matters here is that the
+framing is fixed — two runs' verdicts are comparable only if
 what varies between them is the scene and not the camera.
 """
 
