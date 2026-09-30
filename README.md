@@ -11,7 +11,9 @@
   <a href="https://huggingface.co/spaces/SimWorld-AI/Code4Scene">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Space-SimWorld--AI%2FCode4Scene-ffcc4d" alt="Hugging Face Space" />
   </a>
-  <img src="https://img.shields.io/badge/Paper-coming%20soon-lightgrey" alt="Paper: coming soon" />
+  <a href="https://arxiv.org/abs/2609.36777">
+    <img src="https://img.shields.io/badge/arXiv-2609.36777-b31b1b.svg" alt="arXiv" />
+  </a>
   <a href="https://join.slack.com/t/simworld-ai/shared_invite/zt-3v3xsbroz-ELkLT3rOK1rCStDxRKUYKw">
     <img src="https://img.shields.io/badge/Slack-SimWorld-4A154B?logo=slack&logoColor=white" alt="Slack" />
   </a>
@@ -42,6 +44,7 @@
 </p>
 
 <p align="center">
+  <a href="https://arxiv.org/abs/2609.36777">Paper</a> ·
   <a href="https://simworld-ai-code4scene.static.hf.space/#leaderboard">Leaderboard</a> ·
   <a href="https://simworld-ai-code4scene.static.hf.space/cases.html">Cases in 3D</a> ·
   <a href="#quick-start">Quick Start</a> ·
@@ -119,7 +122,7 @@ next to the evaluator's scores.
 
 ## What's in this repository
 
-This repository accompanies the paper. It contains:
+This repository accompanies the [paper](https://arxiv.org/abs/2609.36777). It contains:
 
 | | |
 |---|---|
@@ -207,10 +210,14 @@ own Fab licenses.
 ## Citation
 
 ```bibtex
-@article{code4scene2026,
-  title   = {Code4Scene: Benchmarking Coding Agents for Constructing and Editing 3D Scenes},
-  author  = {Ye, Xiaokang and Mantri, Siddhant Hitesh and Chen, Zimeng and Zhang, Edward and Zheng, Zhaoxu and Li, Yuanheng and Chen, Yizhao and Huang, Tianyang and Qin, Lianhui},
-  year    = {2026}
+@misc{ye2026code4scene,
+  title         = {Code4Scene: Benchmarking Coding Agents for Constructing and Editing 3D Scenes},
+  author        = {Xiaokang Ye and Siddhant Hitesh Mantri and Zimeng Chen and Edward Zhang and Zhaoxu Zheng and Yuanheng Li and Yizhao Chen and Tianyang Huang and Lianhui Qin},
+  year          = {2026},
+  eprint        = {2609.36777},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  url           = {https://arxiv.org/abs/2609.36777},
 }
 ```
 

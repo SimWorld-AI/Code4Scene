@@ -22,6 +22,11 @@ dev = ["pytest>=8", "ruff>=0.6"]
 [project.scripts]
 code4scene = "code4scene.cli:main"
 
+[project.urls]
+Homepage = "https://simworld-ai-code4scene.static.hf.space"
+Paper = "https://arxiv.org/abs/2609.36777"
+Repository = "https://github.com/SimWorld-AI/Code4Scene"
+
 [tool.setuptools.packages.find]
 include = ["code4scene*"]
 
