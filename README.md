@@ -25,10 +25,6 @@
 </p>
 
 <p align="center">
-  <strong>Score the scene, not the code.</strong>
-</p>
-
-<p align="center">
   Expanding to 160 text-to-scene tasks and 160 image-to-scene tasks in Unreal Engine. Coding agents write and run code that builds a scene
   from text, or repairs one from reference images, and Code4Scene scores the engine-native scene they save.
 </p>
