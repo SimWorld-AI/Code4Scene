@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 
 import pytest
+import yaml
 
 from code4scene.core import inventory
 
@@ -119,4 +120,14 @@ def test_a_failed_dependency_export_is_not_recorded_as_a_clean_manifest(monkeypa
     failed = {"status": "error", "error": "RuntimeError: asset registry unavailable", "unresolved": []}
     record, _ = _score(monkeypatch, tmp_path, _Editor(gt_present=False), export=failed)
     assert record["scene_dependencies"] is None
+
+
+@pytest.mark.parametrize("own", ["input", "answer"])
+def test_the_tasks_own_levels_are_refused(monkeypatch, tmp_path, own):
+    tool = _tool()
+    task = yaml.safe_load(TASK.read_text(encoding="utf-8"))
+    level = task["inputs"]["init_map"] if own == "input" else GT
+    monkeypatch.setattr(tool.Bridge, "unix", classmethod(lambda cls, path: pytest.fail("the editor was contacted")))
+    with pytest.raises(SystemExit):
+        tool.main(["--task", str(TASK), "--candidate-map", level, "--bridge", "sock", "--out", str(tmp_path)])
 

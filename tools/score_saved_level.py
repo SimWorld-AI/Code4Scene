@@ -92,6 +92,13 @@ def main(argv=None) -> int:
     environment = str(getattr(task, "scene_environment", "") or "")
     if getattr(task, "case_type", "") != "image_to_scene" or environment not in ("indoor", "outdoor"):
         parser.error("this helper scores image-to-scene tasks only")
+    candidate = args.candidate_map.split(".", 1)[0]
+    # Scoring the task's own levels compares a level with itself: saved over the
+    # Input, every repair looks like a no-op; saved as the GT, any edit is a match.
+    own = {str(task.init_map).split(".", 1)[0]: "input", str(task.ground_truth_map or "").split(".", 1)[0]: "answer"}
+    if candidate in own:
+        parser.error(f"{args.candidate_map} is the task's own {own[candidate]} level; save the agent's scene "
+                     f"under a path of its own and score that")
     out = args.out.resolve()
     out.mkdir(parents=True, exist_ok=True)
     bridge = Bridge.unix(args.bridge)
@@ -112,7 +119,6 @@ def main(argv=None) -> int:
     # The evaluation boundary comes from the answer scene, never the candidate.
     # Without an openable GT there is no boundary, and gt_repair reports the
     # missing GT itself.
-    candidate = args.candidate_map.split(".", 1)[0]
     gt_map = task.ground_truth_map
     boundary, edge, scored_map = None, None, candidate
     if gt_map and _open(bridge, gt_map).get("loaded"):

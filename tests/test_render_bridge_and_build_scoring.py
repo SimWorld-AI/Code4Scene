@@ -300,3 +300,11 @@ def test_a_failed_dependency_export_is_not_recorded_as_a_clean_manifest(monkeypa
     _score(monkeypatch, tmp_path, MEASURED, export=failed, seen=seen)
     assert seen["record"]["scene_dependencies"] is None
 
+
+def test_the_tasks_own_start_level_is_refused(monkeypatch, tmp_path):
+    tool = _tool()
+    start = yaml.safe_load(TASK.read_text(encoding="utf-8"))["inputs"]["init_map"]
+    monkeypatch.setattr(tool.Bridge, "unix", classmethod(lambda cls, path: pytest.fail("the editor was contacted")))
+    with pytest.raises(SystemExit):
+        tool.main(["--task", str(TASK), "--candidate-map", start, "--bridge", "sock", "--out", str(tmp_path)])
+

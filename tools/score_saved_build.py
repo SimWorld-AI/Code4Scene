@@ -94,6 +94,10 @@ def main(argv=None) -> int:
         parser.error("this helper scores text-to-scene tasks only")
     if task.half_extent_m is None:
         parser.error("the task declares no plate (inputs.size_m)")
+    candidate = args.candidate_map.split(".", 1)[0]
+    if candidate == str(task.init_map).split(".", 1)[0]:
+        parser.error(f"{args.candidate_map} is the task's own start level; save the agent's scene "
+                     f"under a path of its own and score that")
     out = args.out.resolve()
     out.mkdir(parents=True, exist_ok=True)
     bridge = Bridge.unix(args.bridge)
@@ -111,7 +115,6 @@ def main(argv=None) -> int:
         # Integrity reports an error and the score is withheld.
         print(f"dependency export failed: {dependencies.get('error') or dependencies.get('status')}")
         dependencies = None
-    candidate = args.candidate_map.split(".", 1)[0]
     loaded = _open(bridge, candidate)
     if not loaded.get("loaded"):
         raise SystemExit(f"scoring editor did not open {args.candidate_map}: {loaded}")
