@@ -17,13 +17,6 @@ source:
   schema_version: scenebench.outdoor_compositional_repair.v1
   pack: middle_eastern_river_town
   scene: Middle Eastern River Town
-  category: repair_completion
-  intrinsic_tier_prior: easy
-  mechanics:
-  - insertion
-  - translation
-  - rotation
-  - scaling
   reference_views:
   - references/reference.jpg
   content_fingerprints:

@@ -28,38 +28,6 @@
       "target": "sca_source_b3a595e08b0f5ee9a89c3bfd25aa83d0"
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "insertion",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "StaticMeshActor_14"
-      },
-      {
-        "type": "translation",
-        "label": "StaticMeshActor_21",
-        "delta_cm": [
-          220.0,
-          -160.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "StaticMeshActor_21",
-        "yaw_deg": 52.0
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "StaticMeshActor_14",
-      "StaticMeshActor_21"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/suburban-night/gt.fingerprint.json"
 }

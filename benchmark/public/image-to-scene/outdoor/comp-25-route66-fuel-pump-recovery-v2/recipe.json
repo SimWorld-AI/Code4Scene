@@ -14,23 +14,6 @@
       "target": "sca_source_941c95db75ea539e9cd715b81230db75"
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "insertion",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "Vintage_American_Gas___Oil_Pumps"
-      }
-    ],
-    "category": "repair_completion",
-    "target_labels": [
-      "Vintage_American_Gas___Oil_Pumps"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/route66-gas-station/gt.fingerprint.json"
 }

@@ -2,25 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/cyberpunk-toilet/GT",
   "source_level": "/Game/Code4SceneGT/cyberpunk-toilet/GT",
   "gt_id": "indoor-atomic-v1-060",
-  "schema_version": "code4scene.gt_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "replacement"
-    ],
-    "authored_operations": [
-      {
-        "type": "replacement",
-        "label": "SM_HandDryer2",
-        "asset": "/Game/CyberpunkWC/Meshes/SM_HandDryer01.SM_HandDryer01",
-        "component_name": "StaticMeshComponent0",
-        "material_paths": [
-          "/Game/CyberpunkWC/Materials/MI_AirconAndProps.MI_AirconAndProps"
-        ]
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SM_HandDryer2"
-    ]
-  }
+  "schema_version": "code4scene.gt_repair_label.v1"
 }

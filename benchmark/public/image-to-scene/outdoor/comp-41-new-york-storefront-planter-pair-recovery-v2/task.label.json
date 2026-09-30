@@ -2,43 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/new-york-street/GT",
   "source_level": "/Game/Code4SceneGT/new-york-street/GT",
   "gt_id": "comp-41-new-york-storefront-planter-pair-recovery-v2",
-  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "duplication",
-      "translation",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "Flower_Pot_34"
-      },
-      {
-        "type": "translation",
-        "label": "Flower_Pot_35",
-        "delta_cm": [
-          180.0,
-          130.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "Flower_Pot_35",
-        "yaw_deg": 60.0
-      },
-      {
-        "type": "scaling",
-        "label": "Flower_Pot_35",
-        "factor": 1.5
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "Flower_Pot_34",
-      "Flower_Pot_35"
-    ]
-  }
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1"
 }

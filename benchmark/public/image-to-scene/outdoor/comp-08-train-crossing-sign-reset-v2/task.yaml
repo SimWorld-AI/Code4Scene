@@ -17,13 +17,6 @@ source:
   schema_version: scenebench.outdoor_compositional_repair.v1
   pack: Train Station
   scene: Train Station
-  category: object_lifecycle
-  intrinsic_tier_prior: medium
-  mechanics:
-  - replacement
-  - translation
-  - rotation
-  - scaling
   reference_views:
   - references/reference.jpg
   content_fingerprints:

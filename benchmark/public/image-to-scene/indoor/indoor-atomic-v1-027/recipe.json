@@ -19,22 +19,6 @@
       ]
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "scaling",
-        "label": "SM_Sink2",
-        "factor": 0.78
-      }
-    ],
-    "category": "geometric_transformation",
-    "target_labels": [
-      "SM_Sink2"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/cyberpunk-toilet/gt.fingerprint.json"
 }

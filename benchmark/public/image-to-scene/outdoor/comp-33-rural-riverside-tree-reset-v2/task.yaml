@@ -17,11 +17,6 @@ source:
   schema_version: scenebench.outdoor_compositional_repair.v1
   pack: RuralAustralia
   scene: Rural Australia
-  category: geometric_transformation
-  intrinsic_tier_prior: easy
-  mechanics:
-  - translation
-  - rotation
   reference_views:
   - references/reference.jpg
   content_fingerprints:

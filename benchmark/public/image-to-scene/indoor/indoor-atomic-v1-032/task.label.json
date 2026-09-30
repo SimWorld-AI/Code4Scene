@@ -2,36 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/medieval-forge/GT",
   "source_level": "/Game/Code4SceneGT/medieval-forge/GT",
   "gt_id": "indoor-atomic-v1-032",
-  "schema_version": "code4scene.gt_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "removal"
-    ],
-    "authored_operations": [
-      {
-        "type": "insertion",
-        "label": "SB_ATOMIC80_EXTRA__a80-s06-extra-crate-removal__00",
-        "asset": "/Game/MedievalForgePack/Props/SM_WoodBox.SM_WoodBox",
-        "location_cm": [
-          -500.0,
-          300.0,
-          0.0
-        ],
-        "rotation_rpy_deg": [
-          0.0,
-          0.0,
-          -25.0
-        ],
-        "scale_xyz": [
-          0.707092,
-          0.707092,
-          0.707092
-        ]
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SB_ATOMIC80_EXTRA__a80-s06-extra-crate-removal__00"
-    ]
-  }
+  "schema_version": "code4scene.gt_repair_label.v1"
 }

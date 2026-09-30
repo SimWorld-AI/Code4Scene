@@ -17,14 +17,6 @@ source:
   schema_version: scenebench.outdoor_compositional_repair.v1
   pack: New York Street
   scene: New York Street
-  category: layout_rearrangement
-  intrinsic_tier_prior: hard
-  mechanics:
-  - removal
-  - reflection
-  - translation
-  - rotation
-  - scaling
   reference_views:
   - references/reference.jpg
   content_fingerprints:

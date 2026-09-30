@@ -52,46 +52,6 @@
       }
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "removal",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "duplication",
-        "label": "SM_Box001",
-        "new_label": "SM_Box001_CorruptDuplicate",
-        "delta_cm": [
-          220.0,
-          170.0,
-          0.0
-        ],
-        "yaw_deg": 32.0,
-        "factor": 1.25
-      },
-      {
-        "type": "translation",
-        "label": "SM_Trashcan01",
-        "delta_cm": [
-          -260.0,
-          -210.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "SM_Trashcan01",
-        "yaw_deg": 48.0
-      }
-    ],
-    "category": "layout_rearrangement",
-    "target_labels": [
-      "SM_Box001",
-      "SM_Trashcan01"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/rosies-diner/gt.fingerprint.json"
 }

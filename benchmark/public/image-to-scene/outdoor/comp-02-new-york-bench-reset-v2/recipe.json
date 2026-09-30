@@ -47,44 +47,6 @@
       ]
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "replacement",
-      "translation",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "asset": "/Game/Street_NY/Models/Props/SM_Chair_01.SM_Chair_01",
-        "label": "Bench_4",
-        "type": "replacement"
-      },
-      {
-        "delta_cm": [
-          0.0,
-          -280.0,
-          0.0
-        ],
-        "label": "Bench_4",
-        "type": "translation"
-      },
-      {
-        "label": "Bench_4",
-        "type": "rotation",
-        "yaw_deg": 55.0
-      },
-      {
-        "factor": 1.45,
-        "label": "Bench_4",
-        "type": "scaling"
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "Bench_4"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/new-york-street/gt.fingerprint.json"
 }

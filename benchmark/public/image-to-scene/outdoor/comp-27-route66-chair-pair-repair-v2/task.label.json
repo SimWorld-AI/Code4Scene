@@ -2,45 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/route66-gas-station/GT",
   "source_level": "/Game/Code4SceneGT/route66-gas-station/GT",
   "gt_id": "comp-27-route66-chair-pair-repair-v2",
-  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "removal",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "duplication",
-        "label": "Props_Chair3",
-        "new_label": "Props_Chair3_CorruptDuplicate",
-        "delta_cm": [
-          180.0,
-          180.0,
-          0.0
-        ],
-        "yaw_deg": 35.0,
-        "factor": 1.2
-      },
-      {
-        "type": "translation",
-        "label": "Props_Chair4",
-        "delta_cm": [
-          -240.0,
-          200.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "Props_Chair4",
-        "yaw_deg": 62.0
-      }
-    ],
-    "category": "layout_rearrangement",
-    "target_labels": [
-      "Props_Chair3",
-      "Props_Chair4"
-    ]
-  }
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1"
 }

@@ -2,22 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/route66-gas-station/GT",
   "source_level": "/Game/Code4SceneGT/route66-gas-station/GT",
   "gt_id": "comp-25-route66-fuel-pump-recovery-v2",
-  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "insertion",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "Vintage_American_Gas___Oil_Pumps"
-      }
-    ],
-    "category": "repair_completion",
-    "target_labels": [
-      "Vintage_American_Gas___Oil_Pumps"
-    ]
-  }
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1"
 }

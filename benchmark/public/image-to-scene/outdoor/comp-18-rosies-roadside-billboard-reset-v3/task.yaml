@@ -17,12 +17,6 @@ source:
   schema_version: scenebench.outdoor_compositional_repair.v1
   pack: Rosie's Diner
   scene: Rosie's Diner
-  category: geometric_transformation
-  intrinsic_tier_prior: medium
-  mechanics:
-  - translation
-  - rotation
-  - scaling
   reference_views:
   - references/reference.jpg
   content_fingerprints:

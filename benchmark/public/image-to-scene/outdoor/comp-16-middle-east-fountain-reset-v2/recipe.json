@@ -37,38 +37,6 @@
       ]
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "translation",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "translation",
-        "label": "SM_WaterFountain_LOD0_01",
-        "delta_cm": [
-          380.0,
-          260.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "SM_WaterFountain_LOD0_01",
-        "yaw_deg": 58.0
-      },
-      {
-        "type": "scaling",
-        "label": "SM_WaterFountain_LOD0_01",
-        "factor": 1.4
-      }
-    ],
-    "category": "geometric_transformation",
-    "target_labels": [
-      "SM_WaterFountain_LOD0_01"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/middle-east-river/gt.fingerprint.json"
 }

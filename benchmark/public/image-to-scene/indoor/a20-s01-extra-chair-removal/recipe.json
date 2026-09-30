@@ -38,37 +38,6 @@
       }
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "removal"
-    ],
-    "authored_operations": [
-      {
-        "type": "insertion",
-        "label": "SB_ATOMIC20_EXTRA__a20-s01-extra-chair-removal__00",
-        "asset": "/Game/ArchVizInteriorVol2/Meshes/SM_Chair.SM_Chair",
-        "location_cm": [
-          30.0,
-          -110.0,
-          0.0
-        ],
-        "rotation_rpy_deg": [
-          0.0,
-          0.0,
-          -45.0
-        ],
-        "scale_xyz": [
-          1.0,
-          1.0,
-          1.0
-        ]
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SB_ATOMIC20_EXTRA__a20-s01-extra-chair-removal__00"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/archviz-apartment/gt.fingerprint.json"
 }

@@ -2,25 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/medieval-forge/GT",
   "source_level": "/Game/Code4SceneGT/medieval-forge/GT",
   "gt_id": "a20-s06-crate-replacement",
-  "schema_version": "code4scene.gt_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "replacement"
-    ],
-    "authored_operations": [
-      {
-        "type": "replacement",
-        "label": "SM_WoodBox13",
-        "asset": "/Game/MedievalForgePack/Props/SM_Barrel.SM_Barrel",
-        "component_name": "StaticMeshComponent0",
-        "material_paths": [
-          "/Game/MedievalForgePack/Materials/M_AssetsPack1.M_AssetsPack1"
-        ]
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SM_WoodBox13"
-    ]
-  }
+  "schema_version": "code4scene.gt_repair_label.v1"
 }

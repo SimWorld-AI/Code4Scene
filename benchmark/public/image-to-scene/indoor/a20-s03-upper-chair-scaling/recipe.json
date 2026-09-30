@@ -19,22 +19,6 @@
       ]
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "scaling",
-        "label": "Sm_Chair34",
-        "factor": 0.78
-      }
-    ],
-    "category": "geometric_transformation",
-    "target_labels": [
-      "Sm_Chair34"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/downtown-office/gt.fingerprint.json"
 }

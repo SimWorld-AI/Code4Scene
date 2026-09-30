@@ -47,44 +47,6 @@
       ]
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "replacement",
-      "translation",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "replacement",
-        "label": "SM_TrashCan11",
-        "asset": "/Game/TrainStation/Meshes/SM_RubbishBin.SM_RubbishBin"
-      },
-      {
-        "type": "translation",
-        "label": "SM_TrashCan11",
-        "delta_cm": [
-          240.0,
-          -170.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "SM_TrashCan11",
-        "yaw_deg": 58.0
-      },
-      {
-        "type": "scaling",
-        "label": "SM_TrashCan11",
-        "factor": 1.45
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SM_TrashCan11"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/train-station/gt.fingerprint.json"
 }

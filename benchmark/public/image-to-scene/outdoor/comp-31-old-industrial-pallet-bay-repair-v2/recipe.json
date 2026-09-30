@@ -52,45 +52,6 @@
       }
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "removal",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "duplication",
-        "label": "Pallets_Stacked_65",
-        "new_label": "Pallets_Stacked_65_CorruptDuplicate",
-        "delta_cm": [
-          -230.0,
-          160.0,
-          0.0
-        ],
-        "yaw_deg": -28.0,
-        "factor": 1.15
-      },
-      {
-        "type": "translation",
-        "label": "Pallets_Stacked_65",
-        "delta_cm": [
-          160.0,
-          -120.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "Pallets_Stacked_65",
-        "yaw_deg": 35.0
-      }
-    ],
-    "category": "layout_rearrangement",
-    "target_labels": [
-      "Pallets_Stacked_65"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/old-building/gt.fingerprint.json"
 }

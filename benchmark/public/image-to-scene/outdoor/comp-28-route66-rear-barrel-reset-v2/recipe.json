@@ -29,38 +29,6 @@
       ]
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "translation",
-      "rotation",
-      "scaling"
-    ],
-    "authored_operations": [
-      {
-        "type": "translation",
-        "label": "Props_Barrel_Trash2",
-        "delta_cm": [
-          280.0,
-          210.0,
-          0.0
-        ]
-      },
-      {
-        "type": "rotation",
-        "label": "Props_Barrel_Trash2",
-        "yaw_deg": 64.0
-      },
-      {
-        "type": "scaling",
-        "label": "Props_Barrel_Trash2",
-        "factor": 1.5
-      }
-    ],
-    "category": "geometric_transformation",
-    "target_labels": [
-      "Props_Barrel_Trash2"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/route66-gas-station/gt.fingerprint.json"
 }

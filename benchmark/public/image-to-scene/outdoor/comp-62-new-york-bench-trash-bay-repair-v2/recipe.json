@@ -42,36 +42,6 @@
       }
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "insertion",
-      "removal",
-      "translation"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "Bench_3"
-      },
-      {
-        "type": "duplication",
-        "label": "Trash_5",
-        "new_label": "Trash_5_CorruptDuplicate",
-        "delta_cm": [
-          170.0,
-          -140.0,
-          0.0
-        ],
-        "yaw_deg": 30.0,
-        "factor": 1.2
-      }
-    ],
-    "category": "layout_rearrangement",
-    "target_labels": [
-      "Bench_3",
-      "Trash_5"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/new-york-street/gt.fingerprint.json"
 }

@@ -14,21 +14,6 @@
       "target": "sca_source_be96c119f6f25acb835896b3f3789839"
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "duplication"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "SM_Bed_Lamp2"
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SM_Bed_Lamp2"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/archviz-apartment/gt.fingerprint.json"
 }

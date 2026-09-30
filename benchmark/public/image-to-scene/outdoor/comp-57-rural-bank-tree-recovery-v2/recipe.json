@@ -14,23 +14,6 @@
       "target": "sca_source_20d0c9c0cb7d57e49c6dcd0c9a758518"
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "insertion",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "SM_GrassTree_28"
-      }
-    ],
-    "category": "repair_completion",
-    "target_labels": [
-      "SM_GrassTree_28"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/rural-australia/gt.fingerprint.json"
 }

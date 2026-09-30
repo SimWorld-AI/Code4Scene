@@ -17,12 +17,6 @@ source:
   schema_version: scenebench.outdoor_compositional_repair.v1
   pack: Rosie's Diner
   scene: Rosie's Diner
-  category: repair_completion
-  intrinsic_tier_prior: easy
-  mechanics:
-  - insertion
-  - translation
-  - rotation
   reference_views:
   - references/reference.jpg
   content_fingerprints:

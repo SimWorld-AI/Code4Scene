@@ -14,23 +14,6 @@
       "target": "sca_source_6f24ce0ac76f5f1fb05b67379d341d2c"
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "insertion",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "AirTanks_Cluster_330"
-      }
-    ],
-    "category": "repair_completion",
-    "target_labels": [
-      "AirTanks_Cluster_330"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/old-building/gt.fingerprint.json"
 }

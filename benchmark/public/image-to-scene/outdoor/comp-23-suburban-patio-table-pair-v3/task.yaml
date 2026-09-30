@@ -17,12 +17,6 @@ source:
   schema_version: scenebench.outdoor_compositional_repair.v1
   pack: Suburban Night
   scene: Suburban Night
-  category: object_lifecycle
-  intrinsic_tier_prior: medium
-  mechanics:
-  - insertion
-  - translation
-  - rotation
   reference_views:
   - references/reference.jpg
   content_fingerprints:

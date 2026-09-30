@@ -14,23 +14,6 @@
       "target": "sca_source_a4b993b39772504d8bed2941e523f50a"
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "insertion",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "Pallets_Stacked_65"
-      }
-    ],
-    "category": "repair_completion",
-    "target_labels": [
-      "Pallets_Stacked_65"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/old-building/gt.fingerprint.json"
 }

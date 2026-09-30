@@ -2,35 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/new-york-street/GT",
   "source_level": "/Game/Code4SceneGT/new-york-street/GT",
   "gt_id": "comp-62-new-york-bench-trash-bay-repair-v2",
-  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "insertion",
-      "removal",
-      "translation"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "Bench_3"
-      },
-      {
-        "type": "duplication",
-        "label": "Trash_5",
-        "new_label": "Trash_5_CorruptDuplicate",
-        "delta_cm": [
-          170.0,
-          -140.0,
-          0.0
-        ],
-        "yaw_deg": 30.0,
-        "factor": 1.2
-      }
-    ],
-    "category": "layout_rearrangement",
-    "target_labels": [
-      "Bench_3",
-      "Trash_5"
-    ]
-  }
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1"
 }

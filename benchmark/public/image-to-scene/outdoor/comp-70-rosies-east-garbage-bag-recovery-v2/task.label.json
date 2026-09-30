@@ -2,22 +2,5 @@
   "canonical_map": "/Game/Code4SceneGT/rosies-diner/GT",
   "source_level": "/Game/Code4SceneGT/rosies-diner/GT",
   "gt_id": "comp-70-rosies-east-garbage-bag-recovery-v2",
-  "schema_version": "scenebench.outdoor_compositional_repair_label.v1",
-  "corruption_contract": {
-    "atomic_operations": [
-      "insertion",
-      "translation",
-      "rotation"
-    ],
-    "authored_operations": [
-      {
-        "type": "removal",
-        "label": "SM_Garbage6"
-      }
-    ],
-    "category": "repair_completion",
-    "target_labels": [
-      "SM_Garbage6"
-    ]
-  }
+  "schema_version": "scenebench.outdoor_compositional_repair_label.v1"
 }

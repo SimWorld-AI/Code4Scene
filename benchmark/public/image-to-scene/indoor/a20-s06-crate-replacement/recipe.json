@@ -28,26 +28,6 @@
       }
     }
   ],
-  "authored_corruption": {
-    "atomic_operations": [
-      "replacement"
-    ],
-    "authored_operations": [
-      {
-        "type": "replacement",
-        "label": "SM_WoodBox13",
-        "asset": "/Game/MedievalForgePack/Props/SM_Barrel.SM_Barrel",
-        "component_name": "StaticMeshComponent0",
-        "material_paths": [
-          "/Game/MedievalForgePack/Materials/M_AssetsPack1.M_AssetsPack1"
-        ]
-      }
-    ],
-    "category": "object_lifecycle",
-    "target_labels": [
-      "SM_WoodBox13"
-    ]
-  },
   "expected_input_fingerprint": "input.fingerprint.json",
   "expected_ground_truth_fingerprint": "../../../scenes/medieval-forge/gt.fingerprint.json"
 }
