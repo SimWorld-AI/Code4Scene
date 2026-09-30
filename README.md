@@ -107,7 +107,7 @@ next to the evaluator's scores.
 ## Key Findings
 
 - 🧭 **Construction and editing probe different capabilities**: scene-level spatial reasoning and precise control of scene state. Despite
-  identical overall scores, Astra is stronger at construction and Gemini at editing.
+  nearly identical overall scores, Astra is stronger at construction and Gemini at editing.
 - 🧩 **Spatial Composition remains the weakest requirement family for all 14 agents.** Errors persist even when the required objects are
   present: generating the right objects does not ensure that their relationships satisfy the specification.
 - 🔧 **Editing ability varies substantially across repair types.** Astra performs best on Transform repairs, while Gemini is stronger on
