@@ -864,21 +864,6 @@ def _find_entity(
     )
 
 
-def _stage2_visual_finding(entity: EntityNode) -> _EntityFinding:
-    """Compatibility helper for callers constructing a route-only finding."""
-
-    return _EntityFinding(
-        entity=entity,
-        canonical_category=_canonical_category_text(entity.name),
-        matches=(),
-        grounding_matches=(),
-        assembly_matches=(),
-        uncertain_actor_ids=(),
-        uncertain_assembly_ids=(),
-        category_closed=False,
-    )
-
-
 def _verdict_for(
     finding: _EntityFinding,
     polarity: Polarity,

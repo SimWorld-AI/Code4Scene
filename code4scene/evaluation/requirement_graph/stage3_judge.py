@@ -329,20 +329,6 @@ def _sha256(value: bytes) -> str:
     return hashlib.sha256(value).hexdigest()
 
 
-def _json_key_paths(value: Any, path: str = "") -> list[str]:
-    paths: list[str] = []
-    if isinstance(value, Mapping):
-        for key in sorted(value):
-            escaped = str(key).replace("~", "~0").replace("/", "~1")
-            child = f"{path}/{escaped}"
-            paths.append(child)
-            paths.extend(_json_key_paths(value[key], child))
-    elif isinstance(value, list):
-        for index, item in enumerate(value):
-            paths.extend(_json_key_paths(item, f"{path}/{index}"))
-    return paths
-
-
 def _json_safe(value: Any) -> Any:
     if value is None or isinstance(value, (str, int, float, bool)):
         if isinstance(value, str) and "data:image" in value.casefold():

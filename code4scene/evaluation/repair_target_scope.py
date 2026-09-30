@@ -39,20 +39,6 @@ def _actors(scene: Mapping[str, Any], name: str) -> tuple[Mapping[str, Any], ...
     return tuple(values)
 
 
-def _stable_ids(value: Mapping[str, Any]) -> frozenset[str]:
-    actor_id = str(value.get("stable_actor_id") or "").strip()
-    return frozenset({actor_id}) if actor_id else frozenset()
-
-
-def _summary_stable_ids(value: Any) -> frozenset[str]:
-    if not isinstance(value, Mapping):
-        return frozenset()
-    values = value.get("stable_actor_ids") or ()
-    return frozenset(
-        str(item).strip() for item in values if str(item).strip()
-    )
-
-
 def _number(value: Any) -> float | None:
     if isinstance(value, bool) or not isinstance(value, (int, float)):
         return None

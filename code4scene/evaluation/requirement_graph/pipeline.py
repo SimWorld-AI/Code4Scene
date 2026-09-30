@@ -386,14 +386,6 @@ def _atomic_score(value: Mapping[str, Any]) -> float | None:
     return 1.0 if verdict is ClaimVerdict.MATCH else 0.0
 
 
-def _apply_binary_semantic_policy(
-    atomic: dict[str, dict[str, Any]],
-) -> None:
-    """Deprecated no-op: only an RGB-cited VLM decision may close UNKNOWN."""
-
-    del atomic
-
-
 def _retrieval_options(context: Context) -> tuple[Any | None, int]:
     """Build the configured locator-only backend without changing the rubric."""
 
