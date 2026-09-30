@@ -40,6 +40,7 @@ from . import catalog
 from . import verify as verify_mod
 
 UE_DIR = Path(__file__).resolve().parent / "ue"
+PACKAGE_REDIRECTS = catalog.BENCHMARK / "package_redirects.txt"
 ALL_STEPS = ("init-project", "check", "blank", "gt", "inputs", "verify", "package", "render")
 REQUIRED_PLUGINS = ("PythonScriptPlugin", "EditorScriptingUtilities")
 
@@ -390,6 +391,39 @@ def step_package(args, cases):
         f"scorer-only files under {args.dataset / 'scorer'}")
 
 
+def ensure_package_redirects(project: Path, dry_run: bool = False) -> int:
+    """Add the package redirects the content packs need to the project's DefaultEngine.ini."""
+
+    wanted = [line.strip() for line in PACKAGE_REDIRECTS.read_text(encoding="utf-8").splitlines()
+              if line.strip() and not line.lstrip().startswith(("#", ";"))]
+    ini = project.parent / "Config" / "DefaultEngine.ini"
+    raw = ini.read_bytes() if ini.exists() else b""
+    encoding = "utf-16" if raw.startswith((b"\xff\xfe", b"\xfe\xff")) else "utf-8"
+    text = raw.decode("utf-16" if encoding == "utf-16" else "utf-8-sig")
+    present = {line.strip() for line in text.splitlines()}
+    missing = [line for line in wanted if line not in present]
+    if not missing:
+        return 0
+    if dry_run:
+        log(f"package redirects: {len(missing)} line(s) would be added to {ini}")
+        return len(missing)
+    newline = "\r\n" if "\r\n" in text else "\n"
+    lines = text.splitlines()
+    header = next((i for i, line in enumerate(lines) if line.strip() == "[CoreRedirects]"), None)
+    if header is None:
+        if lines and lines[-1].strip():
+            lines.append("")
+        lines += ["[CoreRedirects]", *missing]
+    else:
+        lines[header + 1:header + 1] = missing
+    if ini.exists():
+        shutil.copy2(ini, ini.with_name(ini.name + ".bak"))
+    ini.parent.mkdir(parents=True, exist_ok=True)
+    ini.write_bytes((newline.join(lines) + newline).encode(encoding))
+    log(f"package redirects: added {len(missing)} line(s) to {ini}")
+    return len(missing)
+
+
 def step_init_project(args):
     data = json.loads(args.project.read_text())
     plugins = data.setdefault("Plugins", [])
@@ -409,6 +443,7 @@ def step_init_project(args):
         log(f"init-project: enabled {', '.join(REQUIRED_PLUGINS)} (backup: {backup.name})")
     else:
         log("init-project: required plugins already enabled")
+    ensure_package_redirects(args.project)
 
 
 def main(argv=None) -> int:
@@ -470,6 +505,8 @@ def main(argv=None) -> int:
         if blocked and needs_editor and not args.allow_missing_packs:
             log("some packs are missing; install them or pass --allow-missing-packs")
             return 2
+    if needs_editor:
+        ensure_package_redirects(args.project, args.dry_run)
     if "blank" in steps:
         step_blank(args, cases)
     if "gt" in steps:

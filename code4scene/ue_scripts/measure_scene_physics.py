@@ -86,18 +86,20 @@ def _stable_actor_id(actor):
 
 
 def _semantic_text(actor):
-    values = [_actor_label(actor), _actor_path(actor)] + _actor_tags(actor)
-    try:
-        values.append(str(actor.get_class().get_path_name()))
-    except Exception:
-        pass
+    # The actor's own names only: level and folder names say nothing about it.
+    values = [_actor_label(actor)] + _actor_tags(actor)
+    for name_of in (lambda: actor.get_name(), lambda: actor.get_class().get_name()):
+        try:
+            values.append(str(name_of()))
+        except Exception:
+            pass
     try:
         for component in actor.get_components_by_class(unreal.ActorComponent):
             for property_name in ("static_mesh", "skeletal_mesh_asset", "skeletal_mesh"):
                 try:
                     asset = component.get_editor_property(property_name)
                     if asset:
-                        values.append(str(asset.get_path_name()))
+                        values.append(str(asset.get_name()))
                 except Exception:
                     pass
     except Exception:
