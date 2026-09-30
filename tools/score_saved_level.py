@@ -44,12 +44,37 @@ DEPENDENCY_SCRIPT = (
     Path(ue_evidence.__file__).resolve().parents[1] / "ue_scripts" / "export_scene_dependencies.py"
 )
 WORKING_COPY_SUFFIX = "__c4s_scoring"
+SCENES = Path(__file__).resolve().parents[1] / "benchmark" / "public" / "scenes"
+ALLOWANCE_MODE = "shared_baseline_missing_dependencies.v2"
 
 
 def _open(bridge: Bridge, package: str) -> dict:
     """Open a level in the scoring editor; report whether it is the one open now."""
     bridge.exec_python("globals().pop('_SB_LOADED', None)", timeout=60.0)
     return bridge.exec_python_result(core_scene.load_script(package), "_SB_LOADED", timeout=900.0)
+
+
+def _baseline_allowance(task) -> dict | None:
+    """The packages the case's own Input and GT reference but no pack ships.
+
+    Listed per scene in scenes/<scene>/scene.json. As in the paper's scorer
+    they do not count against the Candidate; a package missing only from the
+    Candidate still fails content parity.
+    """
+    task_scenes = Path(task.path).resolve().parents[3] / "scenes"
+    for path in sorted({*task_scenes.glob("*/scene.json"), *SCENES.glob("*/scene.json")}):
+        scene = json.loads(path.read_text())
+        if scene.get("ground_truth_map") != task.ground_truth_map:
+            continue
+        known = sorted({str(value) for value in scene.get("known_unresolved_dependencies") or ()})
+        if not known:
+            return None
+        return {"mode": ALLOWANCE_MODE, "calibration_only": False, "authoritative": True,
+                "allowed_unresolved": known,
+                "guards": {"source": f"{path.parent.name}/scene.json known_unresolved_dependencies",
+                           "candidate_only_unresolved_remains_fatal": True},
+                "reason": "the frozen Input and GT reference these packages and no pack ships them"}
+    return None
 
 
 def main(argv=None) -> int:
@@ -78,6 +103,12 @@ def main(argv=None) -> int:
                f"SCENE_DEPENDENCIES_MAP = {args.candidate_map!r}")
     dependencies = ue_evidence._run_editor_export(
         bridge, DEPENDENCY_SCRIPT, prelude, deps_path, "_C4S_DEPENDENCIES", 900.0)
+    if dependencies.get("status") != "success":
+        # A failed export lists no unresolved packages; recorded as it is, that
+        # would read as "everything resolved". Without a manifest Candidate
+        # Integrity reports an error and the score is withheld.
+        print(f"dependency export failed: {dependencies.get('error') or dependencies.get('status')}")
+        dependencies = None
     # The evaluation boundary comes from the answer scene, never the candidate.
     # Without an openable GT there is no boundary, and gt_repair reports the
     # missing GT itself.
@@ -104,7 +135,8 @@ def main(argv=None) -> int:
                         "passes": [edge]} if edge is not None else None)
     record = {"scene_map": scored_map, "official": {"level": scored_map},
               "scene_dependencies": dependencies, "evaluation_bounds": boundary,
-              "edge_discipline": edge_discipline}
+              "edge_discipline": edge_discipline,
+              "dependency_integrity_allowance": _baseline_allowance(task)}
     ids = {"task_bundle_id": task.id, "episode_id": args.episode_id}
     # `scoring` marks the editor as the independent scoring editor; gt_repair and
     # physical_safety refuse to capture runtime scenes from any other editor.

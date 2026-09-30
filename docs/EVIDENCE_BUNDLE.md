@@ -130,7 +130,10 @@ Rules enforced by `code4scene validate-bundle` and on every load:
      requests from the startup script itself.
    * **The candidate level open in that editor**, copied into the scoring
      project under the `/Game/...` path it was saved at (the package name is
-     stored in the `.umap`).
+     stored in the `.umap`), together with any assets the agent saved for it
+     (its own materials, textures or blueprints) at their `/Game/...` paths:
+     a package the level references that the scoring project lacks fails
+     Candidate Integrity.
    * **`record`**: at least `scene_map` (the candidate's `/Game/...` package)
      and `scene_dependencies` (the JSON written by
      `ue_scripts/export_scene_dependencies.py` for that level). Without the

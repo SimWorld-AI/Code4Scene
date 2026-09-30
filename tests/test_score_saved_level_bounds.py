@@ -1,4 +1,4 @@
-"""The saved-level scorer enforces the answer scene's footprint on a working copy."""
+"""The saved-level scorer: the answer scene's footprint, the frozen baseline's missing packages, a failed export."""
 
 from __future__ import annotations
 
@@ -12,6 +12,7 @@ from code4scene.core import inventory
 
 REPO = Path(__file__).resolve().parents[1]
 TASK = REPO / "benchmark/public/image-to-scene/indoor/indoor-atomic-v1-013/task.yaml"
+DUNGEON_TASK = REPO / "benchmark/public/image-to-scene/indoor/indoor-atomic-v1-041/task.yaml"
 GT = "/Game/Code4SceneGT/archviz-apartment/GT"
 CANDIDATE = "/Game/SavedScenes/run_013"
 WORKING = CANDIDATE + "__c4s_scoring"
@@ -41,9 +42,9 @@ class _Editor:
         if key == "_SB_LOADED":
             level = script.split("_p = ", 1)[1].split("\n", 1)[0].strip("'")
             self.opened.append(level)
-            return {"loaded": level != GT or self.gt_present, "level": level}
+            return {"loaded": not level.startswith("/Game/Code4SceneGT/") or self.gt_present, "level": level}
         if key == inventory.INVENTORY_KEY:
-            assert self.opened[-1] == GT  # the boundary is measured on the answer scene
+            assert self.opened[-1].startswith("/Game/Code4SceneGT/")  # measured on the answer scene
             return {"actors": [{"label": "SM_Floor", "loc": [0, 0, 0], "extent": [1000, 800, 5]},
                                {"label": "SkySphere", "loc": [0, 0, 0], "extent": [90000, 90000, 90000]}]}
         if key == "_SB_BOUNDS":
@@ -55,14 +56,15 @@ class _Editor:
         raise AssertionError(key)
 
 
-def _score(monkeypatch, tmp_path, editor):
+def _score(monkeypatch, tmp_path, editor, task=TASK, export=None):
     tool = _tool()
     seen = {}
     monkeypatch.setattr(tool.Bridge, "unix", classmethod(lambda cls, path: editor))
-    monkeypatch.setattr(tool.ue_evidence, "_run_editor_export", lambda *a, **k: {"status": "pass"})
+    monkeypatch.setattr(tool.ue_evidence, "_run_editor_export",
+                        lambda *a, **k: export or {"status": "success", "unresolved": []})
     monkeypatch.setattr(tool.verifiers, "run", lambda task, record, ids, **k: seen.setdefault("record", record) and [])
     monkeypatch.setattr(tool.primary_score, "apply_to_result", lambda result: result)
-    assert tool.main(["--task", str(TASK), "--candidate-map", CANDIDATE, "--bridge", "sock",
+    assert tool.main(["--task", str(task), "--candidate-map", CANDIDATE, "--bridge", "sock",
                       "--out", str(tmp_path)]) == 0
     return seen["record"], json.loads((tmp_path / "result.json").read_text())
 
@@ -102,3 +104,19 @@ def test_a_candidate_the_editor_cannot_open_stops_the_run(monkeypatch, tmp_path)
     with pytest.raises(SystemExit):
         _score(monkeypatch, tmp_path, editor)
     assert editor.saved == []
+
+
+def test_the_scenes_missing_packages_are_allowed_for_its_cases_only(monkeypatch, tmp_path):
+    record, _ = _score(monkeypatch, tmp_path, _Editor(gt_present=False), task=DUNGEON_TASK)
+    allowance = record["dependency_integrity_allowance"]
+    assert allowance["mode"] == "shared_baseline_missing_dependencies.v2"
+    assert allowance["allowed_unresolved"] == ["/Game/Mannequin/Character/Mesh/SK_Mannequin_Female"]
+    other, _ = _score(monkeypatch, tmp_path / "other", _Editor(gt_present=False))
+    assert other["dependency_integrity_allowance"] is None
+
+
+def test_a_failed_dependency_export_is_not_recorded_as_a_clean_manifest(monkeypatch, tmp_path):
+    failed = {"status": "error", "error": "RuntimeError: asset registry unavailable", "unresolved": []}
+    record, _ = _score(monkeypatch, tmp_path, _Editor(gt_present=False), export=failed)
+    assert record["scene_dependencies"] is None
+
