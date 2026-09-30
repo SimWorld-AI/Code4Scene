@@ -25,7 +25,7 @@
 </p>
 
 <p align="center">
-  Expanding to 160 text-to-scene tasks and 160 image-to-scene tasks in Unreal Engine. Coding agents write and run code that builds a scene
+  160 text-to-scene tasks and 160 image-to-scene tasks in Unreal Engine. Coding agents write and run code that builds a scene
   from text, or repairs one from reference images, and Code4Scene scores the engine-native scene they save.
 </p>
 
@@ -50,35 +50,18 @@ compares edits against withheld ground truth.
   <img src="docs/assets/pipeline.png" alt="Input, coding agent, code in the engine, engine-native scene, evaluator" width="100%" />
 </p>
 
-| Setting | The agent gets | The agent must | Case score | Currently included tasks |
+| Setting | The agent gets | The agent must | Case score | Benchmark tasks |
 |:--|:--|:--|:--|:-:|
-| **Text-to-Scene** · construction | An empty level, an open-ended scene description and the pack's asset catalog | Build the scene the prompt describes. Many realizations are valid. | 0.2 · Detailed Alignment + 0.6 · Overview Alignment + 0.2 · Physical Safety | 20 |
-| **Image-to-Scene** · editing | A corrupted copy of a human-assembled scene and reference views of the original | Restore every target actor (within 5 cm · 5° · 5%) and change nothing else | 0.8 · Repair F1 + 0.2 · Physical Safety | 75 |
+| **Text-to-Scene** · construction | An empty level, an open-ended scene description and the pack's asset catalog | Build the scene the prompt describes. Many realizations are valid. | 0.2 · Detailed Alignment + 0.6 · Overview Alignment + 0.2 · Physical Safety | 160 |
+| **Image-to-Scene** · editing | A corrupted copy of a human-assembled scene and reference views of the original | Restore every target actor (within 5 cm · 5° · 5%) and change nothing else | 0.8 · Repair F1 + 0.2 · Physical Safety | 160 |
 
 The model score is `0.5 · S_T2S + 0.5 · S_I2S`. [docs/SCORING.md](docs/SCORING.md) gives every verifier, formula and zero rule.
-
-### Expanded release status
-
-The expanded benchmark is planned to contain **320 cases: 160 Text-to-Scene and 160 Image-to-Scene**. The first release targets
-**291 cases (139 + 152)**; the remaining **29 cases (21 + 8)** are preparing for a later update.
-
-| Scope | Text-to-Scene | Image-to-Scene | Total |
-|:--|--:|--:|--:|
-| Planned expanded benchmark | 160 | 160 | 320 |
-| First-release target | 139 | 152 | 291 |
-| Preparing for a later update | 21 | 8 | 29 |
-| Task definitions currently in this repository | 20 | 75 | 95 |
-
-The first-release Image-to-Scene target comprises 72 indoor and 80 outdoor tasks. **The 291-case target is not yet fully included in
-this checkout.** The current task lists and builder still use the earlier 95-case subset; the expanded task selection and its preparing
-case exclusions have not yet been applied. The counts above describe the release plan, not an already downloadable 291-case dataset.
-
-The paper evaluated the original **190 cases (30 Text-to-Scene + 160 Image-to-Scene)**. Its 95-case public subset contains 20
-Text-to-Scene and 75 Image-to-Scene cases. The results below refer to that original evaluation, not the expanded release.
 
 ---
 
 ## Leaderboard
+
+The paper evaluated 190 cases (30 Text-to-Scene + 160 Image-to-Scene). The results below are from that evaluation.
 
 14 coding-agent configurations on the paper's original 95-case public subset (Table 2). 🔓 marks open weights. The
 [interactive leaderboard](https://simworld-ai-code4scene.static.hf.space/#leaderboard) adds the sub-scores, cost per case and a
@@ -126,16 +109,17 @@ next to the evaluator's scores.
 
 ## What's in this repository
 
-This repository accompanies the paper. It contains:
+This repository currently includes **20 Text-to-Scene and 75 Image-to-Scene task definitions**. The release target is **139 + 152**;
+the remaining **21 + 8** benchmark tasks are in preparation.
 
 | | |
 |---|---|
 | `code4scene/` | The verifiers and the paper's scoring protocol, as a Python package with a `code4scene` CLI. |
-| `benchmark/public/` | Task definitions for the **original 95-case public subset**: prompts, requirement bundles, edit recipes, reference-view cameras and content fingerprints. |
+| `benchmark/public/` | Task definitions: prompts, requirement bundles, edit recipes, reference-view cameras and content fingerprints. |
 | `benchmark/packs.yaml`, `docs/PACKS.md` | Where to get each Unreal Engine content pack the public set uses (Fab links). |
 | `dataset_builder/`, `docs/BUILD_DATASET.md` | A builder that recreates the public dataset from those packs on a stock Unreal Engine 5.8 editor, then verifies it against the fingerprints. |
 
-The paper's private set is not included. See [Expanded release status](#expanded-release-status) for the planned task coverage.
+The paper's private set is not included.
 
 ### No third-party content is distributed
 
@@ -162,8 +146,6 @@ code4scene --help
 ```
 
 ### 2. Build the public dataset
-
-These commands build the currently included 95-case subset. They do not yet build the expanded first-release target.
 
 1. Create an empty UE 5.8 project.
 2. Install the packs listed in [docs/PACKS.md](docs/PACKS.md).
