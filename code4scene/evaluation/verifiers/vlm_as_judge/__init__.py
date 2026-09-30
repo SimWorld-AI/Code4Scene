@@ -32,8 +32,8 @@ def backend_from_env() -> Backend:
 
     RequirementGraph's per-leaf visual path and the continuous paired-scene
     equivalence metric use this adapter. The model and sampling parameters are
-    packaged; the batch launcher may select a losslessly identical serving
-    instance and records that transport endpoint in provenance.
+    packaged; the environment may select an identical serving endpoint, and
+    that endpoint is recorded in provenance.
     """
     from .openai_compat import OpenAICompatJudge
 

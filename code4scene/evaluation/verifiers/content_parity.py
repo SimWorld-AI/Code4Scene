@@ -7,24 +7,22 @@ one — while the run record, holding that map and a screenshot taken before it
 moved, says the scene was fine.
 
 Three different causes produce that same empty scene, and a score cannot tell
-them apart. All three were observed on one grid:
+them apart:
 
-* **the agent's failure.** It created sixteen materials, including the one
-  under the whole square, and never saved them. They lived in the editor's
-  memory for the rest of the episode; the screenshot was correct; the packages
-  never reached disk. Only a second editor can see this — measure in the
-  agent's own and the scene looks finished.
-* **ours.** The path resolved when the scene was built and does not resolve
-  when it is scored, because the two environments mounted different content.
-  Nothing in the record distinguished that from an agent inventing a path, so
-  it was charged to the model.
-* **the content store's.** A material instance shipped without the texture it
+* **the agent's failure.** It created an asset, such as a material, and never
+  saved it. The asset lives in the editor's memory for the rest of the run and
+  the screenshot is correct, but the package never reaches disk. Only a second
+  editor can see this.
+* **different content.** The path resolved when the scene was built and does
+  not resolve when it is scored, because the two environments mounted
+  different content.
+* **incomplete content.** A material instance shipped without the texture it
   samples — present in both environments, missing in both.
 
 This verifier separates them, and refuses rather than scoring: a scene nobody
 could open is not a badly built scene. What it reports is which packages did
 not resolve, and whether the two environments agree on the content release
-they were provisioned from.
+they were installed from.
 
 It is deliberately NOT a rate. "Nine of four hundred references are missing"
 is not nine per cent of a scene — the nine may be the ground and the sky.
@@ -93,7 +91,7 @@ def _blocked_verifiers(packages: list[str], *, block_all: bool = False) -> list[
 
 
 def _scoring_release(context: Context) -> str | None:
-    """The release the SCORING environment was provisioned from."""
+    """The content release the scoring environment was installed from."""
     scoring = context.scoring
     saved = getattr(scoring, "saved_scenes_dir", None) if scoring else None
     if saved is None:

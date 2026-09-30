@@ -1,11 +1,8 @@
-"""Harness-side scene saving.
+"""Saving, opening and creating levels in the editor.
 
-The scored artifact must be the scored state. The agent's own save happens
-before the harness's final plate enforcement, so a scene saved by the agent
-cannot reproduce the recorded metrics — and official scoring reloads the saved
-level in a separate, agent-inaccessible instance. The harness therefore saves
-the level itself, after the final bounds pass and immediately before the final
-measurement.
+The scored artifact must be the scored state, so the level is saved after the
+final bounds pass and immediately before the final measurement, and scoring
+reloads that saved level in a separate editor the agent cannot reach.
 """
 
 from __future__ import annotations
@@ -21,19 +18,14 @@ MARK = "SCENE_SAVED"
 LOAD_MARK = "SCENE_LOADED"
 DEFAULT_ROOT = "/Game/SavedScenes"
 
-#: A genuinely-empty base level. The retired ``/Game/Maps/empty`` had a
-#: procedural city (846 actors) baked into it, which every generation run then
-#: silently measured; NOTHING may assume that name again. A generation task
-#: names this base as its ``init_map`` to mean "start blank" — the harness then
-#: gives the run its OWN fresh level (see :func:`new_canvas`) rather than
-#: sharing this one.
+#: An empty base level. A generation task names it as its ``init_map`` to mean
+#: "start blank", and the run then builds in a fresh level of its own (see
+#: :func:`new_canvas`) rather than in this one.
 BLANK_STAGE = "/Game/SceneBench/BlankStage"
 
-#: `/Game` roots an instance owns rather than mounts: provisioning makes the
-#: first three and the editor makes the last two. They are never content, so a
-#: task cannot declare them and a level a generator wrote into one is not a
-#: level from a pack. Kept here because both the task loader and provisioning
-#: need the same answer, and they live in different layers.
+#: `/Game` roots that hold run output or editor state rather than content: the
+#: first three are made for a run and the last two by the editor. A task cannot
+#: declare them, and a level written into one is not a level from a pack.
 INSTANCE_OWNED_ROOTS = ("SavedScenes", "_Runs", "Generated",
                         "Collections", "Developers")
 
@@ -46,9 +38,7 @@ class SceneError(Exception):
 #: elsewhere in this file are the proof -- so a name bound to a UWorld by one
 #: script is still bound when the next one runs. UE refuses to tear down a
 #: world something still references and calls it "World Memory Leaks", which
-#: is a fatal, not a warning: the editor dies mid-script, and because it died
-#: mid-script the supervisor's liveness probe reads the capture file it never
-#: renamed as work still in flight, and so never restarts it.
+#: is a fatal, not a warning: the editor dies mid-script.
 #:
 #: Dropped immediately BEFORE a level swap rather than after each bind. Where
 #: a reference is released does not matter; what matters is that nothing
@@ -86,7 +76,7 @@ def payload_script(package_path: str) -> str:
         f"_p = {package_path!r}",
         "unreal.EditorLoadingAndSavingUtils.save_map(_w, _p)",
         f"print('{MARK} ' + _p)",
-        # The print is for a human reading the editor log. The harness reads
+        # The print is for a human reading the editor log. The caller reads
         # this instead: a marker printed after the save cannot be relied on
         # (see Bridge.exec_python_result).
         "globals()['_SB_SAVED'] = {'saved': True, 'package': _p}",
@@ -165,10 +155,7 @@ def new_canvas(bridge: Bridge, package_path: str,
                timeout: float = 300.0) -> dict:
     """Create a fresh, run-private, empty level at ``package_path`` and open it.
 
-    This replaces opening a shared ``/Game/Maps/empty`` canvas. That map was a
-    global mutable resource every generation run built into and every
-    measurement implicitly read — and a procedural city got baked into it, so
-    every run scored the city. Each run now builds in its own level.
+    Each run builds in its own level, so no run measures what another left.
     """
     try:
         bridge.exec_python("globals().pop('_SB_CANVAS', None)", timeout=timeout)
@@ -180,12 +167,8 @@ def new_canvas(bridge: Bridge, package_path: str,
         raise SceneError(
             f"the editor did not open a fresh canvas at {package_path}; "
             f"it is on {result.get('actual')!r}")
-    # EMPTY is the other half of the contract, and the half that was taken on
-    # trust. `/Game/Maps/empty` was named for being empty right up until a
-    # procedural city was baked into it, and every generation run afterwards
-    # measured the city — the canvas reported "created" the whole time. A
-    # generation score is a count of what the AGENT put there, so a canvas
-    # that starts with anything in it is not a canvas, whatever it is called.
+    # A generation score counts what the agent put in the level, so the fresh
+    # level must start with no actors.
     actors = result.get("actors")
     if not isinstance(actors, int) or actors > 0:
         raise SceneError(

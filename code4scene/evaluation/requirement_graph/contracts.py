@@ -167,7 +167,7 @@ class CameraPose(JsonSerializable):
         return (self.pitch, self.yaw, self.roll)
 
     def to_world_camera_source(self, camera_id: str) -> dict[str, Any]:
-        """Return the source object accepted by SPEAR world-camera capture."""
+        """Return the source object accepted by world-camera capture."""
 
         if not camera_id or not camera_id.strip():
             raise ValueError("camera_id must be non-empty")

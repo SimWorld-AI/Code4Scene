@@ -945,36 +945,25 @@ def _capture_rgb_batch(
     }
 
 
-#: Below this mean luma (0-255) a frame shows a viewer nothing at all. It is not
-#: "dark": the black frames this was written for measure exactly 0.0 across every
-#: pixel of all four viewpoints, while the darkest frame anyone could still read
-#: content in measured 2.4.
+#: Below this mean luma (0-255) a frame is treated as black and re-shot.
 BLACK_LUMA = 3.0
 
 #: The view mode a black frame would ideally be re-shot in — base colour with
 #: the lighting term dropped, which answers "what is in this scene" when "how
 #: does this scene look" has no answer.
 #:
-#: It does not work here, and that is measured rather than assumed: on the lab
-#: editor `viewmode unlit` leaves all four frames at 0.0. `viewmode` is a
-#: VIEWPORT console command and the screenshot tool does not photograph the
-#: viewport. The real unlit channel is `_capture_deferred`'s SCS_BASE_COLOR
-#: pass above — implemented since the multichannel work — and the judge's
-#: frozen policy requires it precisely so scoring never depends on lighting.
-#: This fallback remains for the RGB channel alone.
+#: It has no effect on a screenshot: `viewmode` is a VIEWPORT console command
+#: and the screenshot tool does not photograph the viewport. The unlit channel
+#: is `_capture_deferred`'s SCS_BASE_COLOR pass above, and this fallback is for
+#: the RGB channel alone.
 UNLIT_MODE = "unlit"
 
 #: So the fallback lights the scene for the photograph instead, with a rig of
 #: its own that is removed afterwards. Labels are prefixed so the cleanup can
 #: find them even if this process dies between the two.
 #:
-#: What made this necessary: `setup_environment` aims the sun it creates with
-#: `unreal.Rotator(-45, 30, 0)` intending pitch -45 and yaw 30 — but that
-#: constructor takes (roll, pitch, yaw) positionally, so the sun ends up rolled
-#: 45 degrees and pitched THIRTY UP, shining into the sky. The level has a sun,
-#: it is visible, it affects the world, and it lights nothing. Twenty of the
-#: first sixty frames are black for that reason and no other, so charging the
-#: agent's evidence for it would be scoring the tool's bug as the model's work.
+#: This covers a level whose sun exists but lights nothing, for example a
+#: directional light pointed above the horizon.
 RELIT_PREFIX = "_SbRelight_"
 
 

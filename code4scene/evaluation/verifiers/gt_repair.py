@@ -199,71 +199,6 @@ def _apply_weighted_leaf_policy(
     return report
 
 
-def _apply_direct_leaf_policy(
-    report: dict[str, Any],
-    leaf_id: str,
-    *,
-    policy_id: str,
-) -> dict[str, Any]:
-    """Publish one measured leaf directly as the composite score."""
-
-    metrics = report.get("metrics")
-    if not isinstance(metrics, dict):
-        raise ValueError(f"{policy_id}: composite report has no metrics")
-    leaves = metrics.get("leaf_results")
-    if not isinstance(leaves, list):
-        raise ValueError(f"{policy_id}: composite report has no leaf_results")
-    matches = [
-        value
-        for value in leaves
-        if isinstance(value, Mapping) and value.get("leaf_id") == leaf_id
-    ]
-    if len(matches) != 1:
-        raise ValueError(
-            f"{policy_id}: expected exactly one {leaf_id!r} leaf, found {len(matches)}"
-        )
-    leaf = matches[0]
-    score = (
-        _unit(leaf.get("score"))
-        if leaf.get("status") in {contracts.MEASURED, contracts.PASS, contracts.FAIL}
-        else None
-    )
-    effective = {leaf_id: 1.0} if score is not None else {}
-    contributions = {leaf_id: score} if score is not None else {}
-    metrics.update(
-        {
-            "score_aggregation": "direct_measured_leaf_score",
-            "score_weight_policy_id": policy_id,
-            "configured_score_weights": {leaf_id: 1.0},
-            "effective_score_weights": effective,
-            "weighted_score_contributions": contributions,
-            "weighted_quality_mix": score,
-            "direct_score_leaf_id": leaf_id,
-            "prerequisite_leaf_ids": [],
-            "prerequisite_values": {},
-            "prerequisite_gate": 1.0,
-        }
-    )
-    evidence = report.setdefault("evidence", {})
-    if isinstance(evidence, dict):
-        evidence.update(
-            {
-                "score_weight_policy_id": policy_id,
-                "configured_score_weights": {leaf_id: 1.0},
-                "unavailable_leaf_policy": "direct_leaf_must_be_measured",
-                "score_formula": leaf_id,
-                "prerequisite_gate_formula": None,
-            }
-        )
-    if report.get("status") in {
-        contracts.MEASURED,
-        contracts.PASS,
-        contracts.FAIL,
-    }:
-        report["score"] = score
-    return report
-
-
 def _nonnegative_count(value: Any) -> int | None:
     if isinstance(value, bool) or not isinstance(value, int) or value < 0:
         return None
@@ -1065,6 +1000,27 @@ def verify(context: Context) -> dict[str, Any]:
         comparison_spec["canonical_scene"] = {"runtime_task_ground_truth_map": True}
     working = replace(context, spec=comparison_spec)
     comparison = run_leaf(working, gt_geometry.verify, spec=comparison_spec)
+    # The repair-target, whole-scene and locality reports are diagnostics; the
+    # score is Actor Repair F1. A failure in the diagnostics is reported, and
+    # the F1 is still measured and scored.
+    try:
+        report, local, global_report = _diagnostic_reports(context, policy, comparison_spec, working, comparison)
+    except Exception as exc:  # noqa: BLE001 - reported beside the F1
+        return _diagnostics_failed(context, exc, _actor_repair_f1(working))
+    f1 = _actor_repair_f1(working)
+    report["metrics"][repair_score.PUBLISHED_SCORE] = f1
+    try:
+        return finalize_report(report, local, global_report)
+    except Exception as exc:  # noqa: BLE001 - reported beside the F1
+        return _diagnostics_failed(context, exc, f1)
+
+
+def _diagnostic_reports(
+    context: Context, policy: Any, comparison_spec: Mapping[str, Any], working: Context,
+    comparison: Mapping[str, Any],
+) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
+    """The repair-target, whole-scene and locality diagnostics as one composite."""
+
     local = _repair_target_report(working, comparison)
     local["leaf_id"] = "repair_target_diff"
     global_spec = _global_scene_diff_spec(context.task, comparison_spec)
@@ -1131,8 +1087,21 @@ def verify(context: Context) -> dict[str, Any]:
         },
     )
     report["metrics"]["target_visual_coverage"] = target_visual_coverage
-    report["metrics"][repair_score.PUBLISHED_SCORE] = _actor_repair_f1(working)
-    return finalize_report(report, local, global_report)
+    return report, local, global_report
+
+
+def _diagnostics_failed(context: Context, exc: Exception, f1: Mapping[str, Any]) -> dict[str, Any]:
+    """A gt_repair report whose diagnostics failed: the error is kept and the F1 is the score."""
+
+    reason = f"the repair diagnostics failed: {type(exc).__name__}: {exc}"
+    diagnostics = {**error("gt_repair.diagnostics", context, reason), "leaf_id": "diagnostics",
+                   "contributes_to_aggregate": False, "score_role": "report_only"}
+    report = error("gt_repair", context, reason)
+    report["evidence"] = {"public_interface": "gt_repair",
+                          "report_schema_version": "gt-repair-public.v1",
+                          "diagnostics_error": reason}
+    report["metrics"] = {"leaf_results": [diagnostics], repair_score.PUBLISHED_SCORE: f1}
+    return repair_score.publish_actor_f1(report)
 
 
 __all__ = [

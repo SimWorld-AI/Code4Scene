@@ -28,7 +28,7 @@ class VerifierError(Exception):
 class Context:
     """Everything a verifier may look at."""
 
-    record: dict[str, Any]              # the harness's run record
+    record: dict[str, Any]              # the run record
     task: Any                           # code4scene.tasks.task.Task
     ids: dict[str, str]                 # task_bundle_id / episode_id
     bridge: Any = None                  # live editor, when there is one
@@ -36,11 +36,8 @@ class Context:
     #: scene may be opened. Verifiers that compare a candidate against the
     #: scene it was cut from need one: the canonical maps cannot be in the
     #: agent's instance, because `execute_python_script` is arbitrary code and
-    #: no path filter survives it — measured, a guard that blocked the literal
-    #: path fell to string concatenation, to chr(), to base64, and to
-    #: `list_assets('/Game', True, True)`, which enumerates the answers without
-    #: naming a path at all. None means no such environment was provided, and a
-    #: verifier that needs one must report that it did not run.
+    #: no path filter survives it. None means no such environment was provided,
+    #: and a verifier that needs one must report that it did not run.
     scoring: Any = None
     #: Renders of the finished scene. The judge scores images; without these
     #: it can only decline.
@@ -62,7 +59,7 @@ class Context:
     render_evidence: dict[str, Any] = field(default_factory=dict)
     #: Where artifacts that must travel between environments are written. Both
     #: roles mount the same volume there; per-instance storage is invisible to
-    #: the other pod.
+    #: the other environment.
     artifacts_dir: Any = None
     out_dir: Any = None                 # where this episode's artifacts live
     judge_verdict: dict[str, Any] | None = None

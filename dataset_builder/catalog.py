@@ -62,7 +62,7 @@ def _packs_from_task(text: str) -> list[str]:
 
 def case_ids(setting_short: str) -> list[str]:
     path = BENCHMARK / f"public-{setting_short}-cases.txt"
-    return [line.strip() for line in path.read_text().splitlines() if line.strip()]
+    return [line.strip() for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
 def load_case(setting: str, case_id: str) -> Case:
@@ -70,12 +70,12 @@ def load_case(setting: str, case_id: str) -> Case:
     task = directory / "task.yaml"
     if not task.exists():
         raise FileNotFoundError(f"no task definition for {case_id} ({task})")
-    text = task.read_text()
+    text = task.read_text(encoding="utf-8")
     case = Case(case_id=case_id, setting=setting, directory=directory, task_text=text,
                 packs=_packs_from_task(text))
     if (directory / "recipe.json").exists():
-        case.recipe = json.loads((directory / "recipe.json").read_text())
-        case.cameras = json.loads((directory / "cameras.json").read_text())
+        case.recipe = json.loads((directory / "recipe.json").read_text(encoding="utf-8"))
+        case.cameras = json.loads((directory / "cameras.json").read_text(encoding="utf-8"))
     return case
 
 
@@ -97,15 +97,15 @@ def load_cases(selected: list[str] | None = None, settings: list[str] | None = N
 
 
 def load_scene(scene_id: str) -> dict[str, Any]:
-    return json.loads((PUBLIC / "scenes" / scene_id / "scene.json").read_text())
+    return json.loads((PUBLIC / "scenes" / scene_id / "scene.json").read_text(encoding="utf-8"))
 
 
 def load_expected_gt(scene_id: str) -> dict[str, Any]:
-    return json.loads((PUBLIC / "scenes" / scene_id / "gt.fingerprint.json").read_text())
+    return json.loads((PUBLIC / "scenes" / scene_id / "gt.fingerprint.json").read_text(encoding="utf-8"))
 
 
 def load_input_delta(case: Case) -> dict[str, Any]:
-    return json.loads((case.directory / "input.fingerprint.json").read_text())
+    return json.loads((case.directory / "input.fingerprint.json").read_text(encoding="utf-8"))
 
 
 def palette_assets(case: Case) -> list[str]:
@@ -136,7 +136,7 @@ def pack_listing() -> dict[str, dict]:
     except ImportError:
         return {}
     try:
-        data = yaml.safe_load(path.read_text()) or {}
+        data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
     except Exception:
         return {}
     listing = {}

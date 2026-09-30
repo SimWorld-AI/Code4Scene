@@ -269,7 +269,10 @@ def test_the_package_carries_everything_it_reads_at_run_time():
     ``configs`` directory: the repository layout, not the installed one. They
     are package data now and resolved through importlib.resources.
     """
-    import tomllib
+    try:
+        import tomllib
+    except ModuleNotFoundError:  # Python 3.10
+        tomllib = pytest.importorskip("tomli")
 
     from code4scene.resources import config_file
 
@@ -317,8 +320,6 @@ def test_every_public_verifier_is_one_registry_entry_with_a_declared_class():
             f"{kind} must declare CLASS as one of {verifiers.CLASSES_ALLOWED}")
 
     root = PKG / "evaluation" / "verifiers"
-    assert not (root / "plausibility.py").exists()
-    assert not (root / "reference_image_alignment.py").exists()
     assert (root / "source_preservation.py").exists()
 
 

@@ -19,7 +19,7 @@ Environment:
 ``CODE4SCENE_VLM_MODEL``
     Served model name. Defaults to ``Qwen/Qwen3.8-27B``.
 ``CODE4SCENE_VLM_API_KEY``
-    Optional bearer token; ``OPENAI_API_KEY`` is used when it is unset.
+    Optional bearer token for the judge and embedding endpoints.
 ``CODE4SCENE_EMBED_BASE_URL`` / ``CODE4SCENE_EMBED_MODEL``
     OpenAI-compatible embedding endpoint used only by the report-only GT
     caption-similarity diagnostic.
@@ -33,7 +33,6 @@ BACKEND = "openai_compat"
 BASE_URL_ENV = "CODE4SCENE_VLM_BASE_URL"
 MODEL_ENV = "CODE4SCENE_VLM_MODEL"
 API_KEY_ENV = "CODE4SCENE_VLM_API_KEY"
-FALLBACK_API_KEY_ENV = "OPENAI_API_KEY"
 EMBED_BASE_URL_ENV = "CODE4SCENE_EMBED_BASE_URL"
 EMBED_MODEL_ENV = "CODE4SCENE_EMBED_MODEL"
 
@@ -67,7 +66,7 @@ def model() -> str:
 def api_key() -> str:
     """Optional secret; never part of provenance."""
 
-    return os.environ.get(API_KEY_ENV) or os.environ.get(FALLBACK_API_KEY_ENV, "")
+    return os.environ.get(API_KEY_ENV, "")
 
 
 def embed_base_url() -> str:
@@ -101,6 +100,19 @@ TEMPERATURE = 0.0
 SEED = 0
 ENABLE_THINKING = False
 
+#: The judge behind every paper result: model and decoding parameters.
+PAPER_JUDGE = {"model": DEFAULT_MODEL, "structured_output": True, "max_tokens": 16000,
+               "temperature": 0.0, "seed": 0, "enable_thinking": False}
+
+
+def judge_differences() -> list[str]:
+    """The settings of the configured judge that differ from the paper's."""
+
+    current = {"model": model(), "structured_output": STRUCTURED_OUTPUT,
+               "max_tokens": MAX_TOKENS, "temperature": TEMPERATURE, "seed": SEED,
+               "enable_thinking": ENABLE_THINKING}
+    return [key for key, value in PAPER_JUDGE.items() if current[key] != value]
+
 
 __all__ = [
     "API_KEY_ENV",
@@ -117,6 +129,7 @@ __all__ = [
     "MAX_TOKENS",
     "MODEL",
     "MODEL_ENV",
+    "PAPER_JUDGE",
     "SEED",
     "STRUCTURED_OUTPUT",
     "TEMPERATURE",
@@ -125,6 +138,7 @@ __all__ = [
     "base_url",
     "embed_base_url",
     "embed_model",
+    "judge_differences",
     "model",
     "require_base_url",
 ]

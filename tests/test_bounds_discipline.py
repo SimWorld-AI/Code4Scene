@@ -16,7 +16,7 @@ IDS = {"task_bundle_id": "bundle-1", "episode_id": "ep-1"}
 
 def record(**overrides):
     base = {
-        "task": "t-village", "agent": "codex", "model": "m-1", "mode": "contracts",
+        "task": "t-village", "agent": "example-agent", "model": "m-1", "mode": "contracts",
         "exit_reason": "completed", "tool_calls": 90, "wall_minutes": 12.0,
         "infra_error": None, "rounds": [{"round": 1, "parser_stalled": False}],
         "usage": {"input_tokens": 1200, "output_tokens": 340},

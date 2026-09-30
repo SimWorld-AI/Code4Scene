@@ -1,17 +1,12 @@
-"""Directories that two uids must agree on.
+"""Directories that two users must agree on.
 
-The harness, the editor and the agent meet on shared volumes (``/measure``,
-``/artifacts``): the harness names a path, the editor — a different uid in the
-pod topology, 10001 against the operator's own — writes the file. A directory
-the harness ``mkdir``s arrives at 775 under the default umask, and the editor
-is not in the harness's group, so every hand-off dies with a bare
-``PermissionError`` on the editor's side of the mount. Operators used to
-``chmod 777`` such directories by hand; this is the code doing it to the
-directories it creates itself, so the hand-off stops being a trap.
+The scorer and the editor meet on shared volumes (``/measure``,
+``/artifacts``): the scorer names a path and the editor, which may run as a
+different user outside the scorer's group, writes the file. A directory made
+under the default umask arrives at 775 and would refuse that write, so the
+directories created here are opened to 0o777.
 
-In ``core`` because both ``evaluation`` (renders, editor exports) and
-``infra`` (the episode) create such directories, and neither may import the
-other.
+In ``core`` so that any layer that creates such directories can use it.
 """
 
 from __future__ import annotations
@@ -23,12 +18,12 @@ def mkdir_shared(path: Path) -> Path:
     """``mkdir -p``, then open every directory THIS CALL created to 0o777.
 
     Only the components created here are widened: a mount root or an existing
-    parent keeps whatever the operator set on it — widening somebody else's
+    parent keeps whatever mode it already has — widening somebody else's
     directory is not this function's call to make.
 
     The chmod comes after the mkdir because ``mkdir(mode=...)`` is filtered by
-    the umask, which is exactly the mechanism that produced the 775 traps this
-    exists to close.
+    the umask, which is what produces the 775 directories this exists to
+    avoid.
     """
     path = Path(path)
     missing: list[Path] = []

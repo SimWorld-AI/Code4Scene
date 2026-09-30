@@ -10,9 +10,9 @@ from code4scene.evaluation import vlm_concurrency
 @pytest.fixture(autouse=True)
 def reset_runtime(monkeypatch: pytest.MonkeyPatch):
     for name in (
-        "SCENEBENCH_VLM_MAX_CONCURRENCY",
-        "SCENEBENCH_VLM_MAX_RETRIES",
-        "SCENEBENCH_VLM_ADAPTIVE_CONCURRENCY",
+        "CODE4SCENE_VLM_MAX_CONCURRENCY",
+        "CODE4SCENE_VLM_MAX_RETRIES",
+        "CODE4SCENE_VLM_ADAPTIVE_CONCURRENCY",
     ):
         monkeypatch.delenv(name, raising=False)
     vlm_concurrency._reset_for_tests()

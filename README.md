@@ -140,7 +140,7 @@ not.
 ### 1. Install
 
 ```bash
-pip install -e .            # Python ≥ 3.10; add [dev] for the test suite
+pip install -e .            # Python ≥ 3.10; add [dev] for the test suite, [depth] for depth images
 code4scene --help
 ```
 
@@ -152,10 +152,16 @@ code4scene --help
 
 ```bash
 export UE_EDITOR=/path/to/UE_5.8/Engine/Binaries/Linux/UnrealEditor-Cmd   # or pass --editor
+python -m dataset_builder.build --project /path/Code4SceneData/Code4SceneData.uproject --steps init-project
 python -m dataset_builder.build --project /path/Code4SceneData/Code4SceneData.uproject \
-    --dataset ./code4scene-dataset --steps check blank gt inputs verify package
-python -m dataset_builder.build --project ... --dataset ./code4scene-dataset --steps render   # reference views, needs a GPU
+    --dataset ./code4scene-dataset --steps check blank gt inputs verify package --allow-missing-packs
+python -m dataset_builder.build --project ... --dataset ./code4scene-dataset --steps render --allow-missing-packs   # reference views, needs a GPU
 ```
+
+`init-project` enables the two editor scripting plugins the builder needs. `--allow-missing-packs` builds the cases
+whose packs are installed and skips the others; without it the builder stops if any pack is missing. The
+`TrainStation` pack has no Fab listing yet, so its 5 outdoor cases are always skipped (see
+[docs/PACKS.md](docs/PACKS.md)).
 
 [docs/BUILD_DATASET.md](docs/BUILD_DATASET.md) covers disk and time estimates, the verification report, and scene-specific notes.
 

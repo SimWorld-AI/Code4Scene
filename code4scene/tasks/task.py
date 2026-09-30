@@ -28,10 +28,7 @@ from .verifier_schema import (
 #: ``assets`` is required for the same reason ``init_map`` is, one step
 #: further out. A task is not only the level it starts on but the content it is
 #: built out of, and an environment holding different content is not running
-#: the same task. It is also what makes the pairing CHECKABLE before an
-#: episode: a task asking for shipping containers, on an instance provisioned
-#: without any, used to be indistinguishable from an agent that could not
-#: build — same zero, same clean record, forty-three minutes later.
+#: the same task. Declaring it lets a missing pack be caught before a run.
 REQUIRED_TOP = ("id", "kind", "inputs", "verifiers", "assets")
 #: ``init_map`` is required, not optional. A task does not have to start from
 #: an empty world — some start part-way through one — so the level an episode

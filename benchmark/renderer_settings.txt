@@ -1,0 +1,21 @@
+# Renderer settings of the benchmark's scoring projects: the [/Script/Engine.RendererSettings]
+# section of Config/DefaultEngine.ini that text-to-scene pictures were rendered with.
+# dataset_builder init-project writes them (see docs/BUILD_DATASET.md).
+r.DefaultFeature.AutoExposure.ExtendDefaultLuminanceRange=True
+r.AllowStaticLighting=False
+r.Shadow.Virtual.Enable=1
+r.GenerateMeshDistanceFields=True
+r.DynamicGlobalIlluminationMethod=1
+r.ReflectionMethod=1
+r.DefaultFeature.LocalExposure.HighlightContrastScale=0.8
+r.DefaultFeature.LocalExposure.ShadowContrastScale=0.8
+r.VirtualTextures=True
+r.GPUSkin.Support16BitBoneIndex=True
+r.GPUSkin.UnlimitedBoneInfluences=True
+r.SkinCache.CompileShaders=True
+r.SkinCache.DefaultBehavior=0
+SkeletalMesh.UseExperimentalChunking=1
+r.RayTracing=False
+r.Lumen.HardwareRayTracing=False
+bEnableVirtualTexturePostProcessing=False
+r.VirtualTexturedLightmaps=False

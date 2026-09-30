@@ -95,10 +95,9 @@ def _verify_snapshot(context: Context) -> dict[str, Any]:
     failures = []
     model_reason_codes: list[str] = []
     infrastructure_reason_codes: list[str] = []
-    # A normal episode killed at the wall clock remains invalid. An
-    # independently exported diagnostic checkpoint is different: the launcher
-    # already proved byte identity to the saved diagnostic UMAP and preserves
-    # the incomplete outcome below instead of relabeling it completed.
+    # A normal run killed at the wall clock remains invalid. An independently
+    # exported diagnostic checkpoint is different: its incomplete outcome is
+    # preserved below instead of relabelled completed.
     if record.get("exit_reason") == "time_cap" and not checkpoint:
         failures.append("exit_reason: time_cap (the agent ran out of wall clock)")
         model_reason_codes.append("generation_time_cap")

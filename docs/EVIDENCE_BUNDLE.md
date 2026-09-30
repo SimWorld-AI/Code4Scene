@@ -127,7 +127,10 @@ Rules enforced by `code4scene validate-bundle` and on every load:
      `C4S_BRIDGE_SOCK=<socket>`). `UnrealEditor-Cmd` closes the editor when
      that script returns, and the editor's embedded Python does not run
      background threads while the editor is idle, so the server answers
-     requests from the startup script itself.
+     requests from the startup script itself. The bridge runs any Python it
+     is sent: put the socket in a directory only you can open (for example
+     `$(mktemp -d)/c4s.sock`), and start the scoring editor after the agent
+     has exited.
    * **The candidate level open in that editor**, copied into the scoring
      project under the `/Game/...` path it was saved at (the package name is
      stored in the `.umap`), together with any assets the agent saved for it
@@ -144,7 +147,9 @@ Rules enforced by `code4scene validate-bundle` and on every load:
      `physical_safety` refuse to capture ("runtime repair scene capture
      requires the independent scoring editor"). Pass `bridge=None`.
 
-   `tools/score_saved_level.py` does all of this for an image-to-scene case.
+   `tools/score_saved_level.py` does all of this for an image-to-scene case,
+   and `tools/score_saved_build.py` for a text-to-scene case, whose pictures
+   need a scoring editor that renders (`tools/c4s_render_bridge.py`).
 3. Pack it:
 
    ```bash

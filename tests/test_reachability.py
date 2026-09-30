@@ -40,10 +40,10 @@ def actor_record(
     }
 
 
-#: `abl_p01_medieval-market_v4`, 2026-08-23. Left: the pass whose union-find
-#: was charged against a 6000-PAIR cap and truncated — 56 components at a 0.475
-#: largest share. Right: the same scene measured without truncation, 52 at
-#: 0.495, inside the 49-52 / 0.495-0.535 band three live rebuilds recorded.
+#: One scene measured twice. Left: a pass whose union-find was charged against
+#: a 6000-PAIR cap and truncated — 56 components at a 0.475 largest share.
+#: Right: the same scene measured without truncation, 52 at 0.495, inside the
+#: 49-52 / 0.495-0.535 band that repeated measurements give.
 TRUNCATED_SIZES = (95,) + (2,) * 50 + (1,) * 5
 RECORDED_SIZES = (99,) + (2,) * 50 + (1,)
 
@@ -109,7 +109,7 @@ def payload(
             },
         },
         "samples": {
-            "seed": 20260817,
+            "seed": 1234,
             "requested_count": 200,
             "accepted_count": sample_count,
             "projection_attempts": 240,
@@ -394,7 +394,7 @@ def test_a_payload_from_before_the_fast_path_reads_as_the_conservative_one():
 # ── the query budget, and the truncation it used to allow ─────────────────
 
 def test_the_query_budget_is_denominated_in_batches_and_not_in_pairs():
-    """The regression. `abl_p01_medieval-market_v4`, 2026-08-23 run 1 pass 2.
+    """A truncated union-find is a different answer, not a slower one.
 
     A batch of path queries has no early exit — a sample is tested against
     every component even after one answers yes — so the PAIRS it spends run
@@ -402,8 +402,8 @@ def test_the_query_budget_is_denominated_in_batches_and_not_in_pairs():
     Charged against the 6000-pair cap that was right when a pair WAS a round
     trip, the loop stopped partway through the samples and manufactured
     components out of the ones it never tested: 56 components at a 0.475
-    largest share, against the 49-52 at 0.495-0.535 that three live rebuilds
-    recorded. Truncation is not a slower answer, it is a different one, so the
+    largest share, against the 49-52 at 0.495-0.535 that repeated measurements
+    give. Truncation is not a slower answer, it is a different one, so the
     score goes with it.
 
     Budgeting batches instead — one per sample — makes truncation structurally

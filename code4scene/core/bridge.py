@@ -1,4 +1,4 @@
-"""Client for the SimWorld UE python bridge, over TCP or a unix socket.
+"""Client for the UE python bridge, over TCP or a unix socket.
 
 Protocol: one JSON object per request, newline-terminated, over a fresh
 connection per call. The bridge replies with a single JSON object; the byte
@@ -7,19 +7,16 @@ stream may arrive fragmented, so the reader accumulates until it parses.
 A unix socket is the better default where both ends share a host, for two
 reasons that are not about performance:
 
-* **It is the only isolation that holds.** The agent under test has arbitrary
-  shell and shares the host network — enroot's ``--net`` is loopback-only and
-  would also cut the agent CLI off from its model provider, so nothing stops
-  it reaching a bridge on ``127.0.0.1`` if it looks. A socket is a filesystem
-  object: leave it out of the agent's mounts and the bridge is unreachable,
-  with no firewall rule and no network namespace.
+* **It is the isolation that holds.** An agent with a shell on the same host
+  can reach a bridge on ``127.0.0.1``. A socket is a filesystem object: leave
+  it out of the agent's mounts and the bridge is unreachable, with no firewall
+  rule and no network namespace.
 * **It removes a collision surface.** Several environments on one host each
   need their own bridge port, and on a shared host network a taken port is a
   real failure. Paths do not collide.
 
-Unlike the historical JS client — which resolved ``null`` on any failure and
-let scoring passes continue on empty data — every failure here raises
-:class:`BridgeError`. Callers decide explicitly how to degrade.
+Every failure raises :class:`BridgeError`, so no scoring pass continues on
+empty data. Callers decide explicitly how to degrade.
 """
 
 from __future__ import annotations
@@ -96,8 +93,12 @@ class Bridge:
     def _connect(self, timeout: float) -> socket.socket:
         if self.path:
             sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-            sock.settimeout(timeout)
-            sock.connect(self.path)
+            try:
+                sock.settimeout(timeout)
+                sock.connect(self.path)
+            except BaseException:
+                sock.close()
+                raise
             return sock
         return socket.create_connection((self.host, self.port), timeout=timeout)
 
@@ -121,6 +122,10 @@ class Bridge:
                     if not chunk:
                         break
                     buf += chunk
+                    # A complete reply ends its object here; parsing only then
+                    # keeps a large reply from being re-parsed on every chunk.
+                    if not buf.rstrip().endswith((b"}", b"]")):
+                        continue
                     try:
                         return json.loads(buf)
                     except json.JSONDecodeError:
@@ -162,9 +167,7 @@ class Bridge:
         UE runs python on the game thread and its command queue is serial, so
         anything that asks the editor a question waits behind whatever the
         editor is doing. A health check built that way cannot tell a busy
-        editor from a dead one — and on the cluster it did not: two long
-        payloads in a row failed the liveness probe three times and the pod was
-        restarted in the middle of working.
+        editor from a dead one.
 
         This reads the evidence the job model already writes down instead: a
         capture file that has been opened and not yet renamed means a script is

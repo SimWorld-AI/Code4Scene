@@ -24,16 +24,16 @@ def image_to_scene(tmp_path: Path, environment: str, *, task_id: str | None = No
         "inputs": {
             "prompt": "Repair the current scene so it matches the provided reference "
                       "images. Make only the minimum changes needed.",
-            "init_map": f"/Game/_SceneRepairInputs/synthetic/{task_id}/input_v1",
+            "init_map": f"/Game/Code4SceneInputs/synthetic/{task_id}/input_v1",
             "budget": {"tool_calls": 80, "wall_minutes": 20},
         },
         "verifiers": [{
             "name": "gt_repair",
-            "ground_truth": f"/Game/_SceneRepairGT/synthetic/{task_id}/gt_v1",
+            "ground_truth": f"/Game/Code4SceneGT/synthetic/{task_id}/gt_v1",
             "visual_semantic_diff": {"caption_diff": True, "paired_visual": True},
         }],
         "source": {"pack": "Synthetic Pack"},
-        "assets": {"packs": ["SyntheticPack", "_SceneRepairInputs"]},
+        "assets": {"packs": ["SyntheticPack", "Code4SceneInputs"]},
         "status": "ready",
     }
     path = tmp_path / environment / f"{task_id}.yaml"

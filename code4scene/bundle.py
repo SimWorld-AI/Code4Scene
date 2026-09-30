@@ -86,6 +86,10 @@ INTEGRITY_LEAVES = (
 )
 _TOP_KEYS = {"schema_version", "task", "run", "candidate_integrity", "scenes", "physics",
              "semantic", "overview", "renders", "files", "notes"}
+_OBJECT_KEYS = ("run", "candidate_integrity", "scenes", "physics", "semantic", "overview")
+#: A scene snapshot is tens of megabytes; a compressed file that expands past
+#: this is not one.
+MAX_JSON_BYTES = 1 << 30
 
 
 class BundleError(ValueError):
@@ -111,10 +115,25 @@ def _relative(value: Any, field: str) -> str:
 
 
 def read_json(path: Path) -> Any:
-    raw = path.read_bytes()
     if path.name.endswith(".gz"):
-        raw = gzip.decompress(raw)
-    return json.loads(raw)
+        with gzip.open(path, "rb") as handle:
+            raw = handle.read(MAX_JSON_BYTES + 1)
+        if len(raw) > MAX_JSON_BYTES:
+            raise BundleError(f"{path.name} expands past {MAX_JSON_BYTES} bytes")
+    else:
+        raw = path.read_bytes()
+    try:
+        return json.loads(raw)
+    except RecursionError as exc:
+        raise BundleError(f"{path.name} is nested too deeply to read") from exc
+
+
+def _object(value: Any, what: str) -> Any:
+    """A JSON document that must be an object, or None when it is absent."""
+
+    if value is not None and not isinstance(value, Mapping):
+        raise BundleError(f"{what} must be a JSON object")
+    return value
 
 
 @dataclass(frozen=True)
@@ -150,23 +169,26 @@ class Bundle:
         return self.json((self.manifest.get("scenes") or {}).get(role))
 
     def physics_report(self) -> dict[str, Any] | None:
-        return self.json((self.manifest.get("physics") or {}).get("report"))
+        return _object(self.json((self.manifest.get("physics") or {}).get("report")),
+                       "physics.report")
 
     def decisions_document(self) -> dict[str, Any] | None:
         value = self.json((self.manifest.get("semantic") or {}).get("decisions"))
         if isinstance(value, list):
             return {"report_status": "measured", "decisions": value}
-        return value
+        return _object(value, "semantic.decisions")
 
     def decisions(self) -> list[dict[str, Any]] | None:
         document = self.decisions_document()
         return None if document is None else list(document.get("decisions") or [])
 
     def stage3_plan(self) -> dict[str, Any] | None:
-        return self.json((self.manifest.get("semantic") or {}).get("stage3_plan"))
+        return _object(self.json((self.manifest.get("semantic") or {}).get("stage3_plan")),
+                       "semantic.stage3_plan")
 
     def overview_judgement(self) -> dict[str, Any] | None:
-        return self.json((self.manifest.get("overview") or {}).get("judgement"))
+        return _object(self.json((self.manifest.get("overview") or {}).get("judgement")),
+                       "overview.judgement")
 
     def overview_views(self) -> list[Path]:
         return [self.path(p) for p in (self.manifest.get("overview") or {}).get("views") or ()]
@@ -188,6 +210,16 @@ def validate_manifest(manifest: Any) -> dict[str, Any]:
     unknown = sorted(set(manifest) - _TOP_KEYS)
     if unknown:
         raise BundleError(f"unknown bundle.json keys: {unknown}")
+    for key in _OBJECT_KEYS:
+        if manifest.get(key) and not isinstance(manifest[key], Mapping):
+            raise BundleError(f"{key} must be a JSON object")
+    renders = manifest.get("renders")
+    if renders and (not isinstance(renders, list)
+                    or not all(isinstance(r, Mapping) for r in renders)):
+        raise BundleError("renders must be a list of objects")
+    views = (manifest.get("overview") or {}).get("views")
+    if views and not isinstance(views, list):
+        raise BundleError("overview.views must be a list of paths")
     task = manifest.get("task")
     if not isinstance(task, Mapping) or not task.get("id"):
         raise BundleError("task.id is required")
@@ -263,7 +295,24 @@ def load(root: str | Path, *, verify: bool = True) -> Bundle:
             raise BundleError(f"missing bundle file: {rel}")
         if verify and sha256_file(path) != digest:
             raise BundleError(f"bundle file changed since it was packed: {rel}")
+    for rel in _stage3_frame_paths(root, manifest):
+        if rel not in manifest["files"]:
+            raise BundleError(f"{rel} is used by the Stage 3 plan but not listed in files")
     return Bundle(root=root, manifest=manifest)
+
+
+def _stage3_frame_paths(root: Path, manifest: Mapping[str, Any]) -> list[str]:
+    """The frames a recorded Stage 3 plan replays, which the manifest must hash too."""
+
+    relative = (manifest.get("semantic") or {}).get("stage3_plan")
+    if not relative:
+        return []
+    plan = _object(read_json(root / _relative(relative, "semantic.stage3_plan")),
+                   "semantic.stage3_plan")
+    frames = _object((plan or {}).get("frames"), "stage3_plan.frames") or {}
+    return [_relative((_object(spec, f"stage3_plan.frames[{key!r}]") or {}).get("path"),
+                      f"stage3_plan.frames[{key!r}].path")
+            for key, spec in frames.items()]
 
 
 # ---------------------------------------------------------------------------

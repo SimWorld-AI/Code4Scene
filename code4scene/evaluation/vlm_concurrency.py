@@ -65,7 +65,7 @@ def _env_bool(name: str, default: bool) -> bool:
 
 @dataclass(frozen=True)
 class VLMConcurrencyConfig:
-    """Frozen operational policy supplied by the manifest launcher."""
+    """Frozen operational policy, read once from the environment."""
 
     policy_id: str = _POLICY_ID
     max_concurrency: int = DEFAULT_MAX_CONCURRENCY
@@ -94,7 +94,7 @@ class VLMConcurrencyConfig:
 
 
 def runtime_config() -> VLMConcurrencyConfig:
-    """Read the launcher-frozen runtime environment."""
+    """Read the concurrency settings from the environment."""
 
     return VLMConcurrencyConfig(
         max_concurrency=_bounded_env_int(

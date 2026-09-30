@@ -48,8 +48,9 @@ content requires attribution: credit "Korea Heritage Service".
 26 listings do not (yet) name UE 5.8 as a supported version. For these, either:
 
 - tick **Show all projects** in the launcher's *Add to Project* dialog, pick
-  your 5.8 project, and select the newest version the listing offers; or
-- add the pack to a project on the newest engine version it supports, then use
+  your 5.8 project, and select the build listed under "Build differences"
+  below if the pack is there, otherwise the newest version the listing offers; or
+- add the pack to a project on that engine version, then use
   *Asset Actions > Migrate* to copy the `<Folder>` directory into your 5.8
   project's `Content/` directory.
 
@@ -159,8 +160,15 @@ The last column lists settings with case counts. T2S = text-to-scene, I2S-in = i
   `khs-house-of-baeryeom` is historical), `Office` (*DownTown Office*), `Diner`
   (*Rosie's Restaurant/Diner*), `Gas_Station` (*Route 66 Gas Station*),
   `Modular_house` (*Suburban Modular House Pack*).
-- **Build differences.** Some sellers now ship reworked builds for newer
-  engines, for example `Laboratory_in_Loft_Style` (Lumen rework for 5.1+). An asset
-  that a task names may then be missing or look different. If a
+- **Build differences.** The benchmark was made from specific builds of some
+  packs, recorded in each pack's `notes` in `packs.yaml`. Install these builds
+  where the listing still offers them:
+  `Laboratory_in_Loft_Style` (UE4 build; the 5.1+ build was reworked for
+  Lumen), `Gas_Station` (UE 4.22), `OldBuilding` (UE 4.24), `Big_Town`
+  (UE 5.1), `Modular_house` (UE 5.6). `Street_NY` and
+  `Abandoned_Psychiatric_Hospital` were also older builds with fewer
+  textures than the current listings. With another build, an asset that a
+  task names may be missing or look different, and `verify` can report a
+  mismatch for the image-to-scene scenes built from that pack. If a
   `/Game/<Folder>/...` asset is reported missing, check which build of the pack
   you installed.

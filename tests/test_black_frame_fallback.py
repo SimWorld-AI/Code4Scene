@@ -1,27 +1,12 @@
 """A scene whose lighting does not work photographs as pure black.
 
-Fifteen real episodes produced sixty evaluation frames and a third of them
-measured a mean luma of exactly 0.0 — every pixel black, at every one of the
-four viewpoints. Those frames are not evidence of anything: a judge shown four
-of them is being asked to score an empty room, and a person opening the gallery
-sees a broken page.
-
-The obvious explanations are all wrong, which is why the fallback keys on the
-symptom rather than the cause. Scenes containing no lights at all photographed
-bright (mean luma 149.9 with zero light Actors); scenes containing two dozen
-point lights photographed black; and two models sent byte-identical
-`setup_environment` arguments and got opposite results.
-
-The cause turned out to be a rotator: `setup_environment` aims the sun it
-creates with `unreal.Rotator(-45, 30, 0)` meaning pitch -45 and yaw 30, but that
-constructor takes (roll, pitch, yaw) positionally — so the sun is rolled 45
-degrees and pitched thirty UP, into the sky. The level has a sun, it is visible,
-it affects the world, and it lights nothing.
-
-So: shoot, look at what came back, and re-shoot the black ones under a rig of
-our own that is removed afterwards. `viewmode unlit` was tried first and does
-nothing here — the screenshot tool does not photograph the viewport, measured
-on the live editor.
+A black frame is not evidence of anything: a judge shown one is being asked to
+score an empty image. Whether a frame comes out black does not follow from the
+lights a level contains (a sun pointed above the horizon lights nothing), so
+the fallback keys on the symptom rather than the cause: shoot, look at what
+came back, and re-shoot the black ones under a temporary rig that is removed
+afterwards. `viewmode unlit` does not help, because the screenshot tool does
+not photograph the viewport.
 """
 
 from __future__ import annotations

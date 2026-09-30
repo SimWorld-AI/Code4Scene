@@ -618,6 +618,7 @@ def score_semantic_case(
                 "predicate_weight": row["predicate_weight"],
                 "evaluation_status": row["evaluation_status"],
                 "effective_score": _round4(effective_value),
+                "unrounded_effective_score": effective_value,
                 "score_known": effective_known,
                 "included": included,
                 "exclusion_reason": exclusion_reasons.get(index),

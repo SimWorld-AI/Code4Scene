@@ -1,16 +1,8 @@
-"""The pixel metrics were unreachable, and said so in the wrong words.
+"""Paired renders reach the pixel metrics, and a missing pair says what is missing.
 
-`RenderSet` — renders addressed by scene and camera — was constructed nowhere
-in the package. The episode captured the candidate's four views into a flat
-list, passed that list as `images=`, and never passed `renders=` at all. So
-every verifier in `visual.paired_render_metrics`, plus
-`repair.visual_semantic_equivalence`, refused every run that has ever been
-recorded.
-
-They refused with "no renders were captured", on episodes that had captured
-four. That sentence is what makes this worth a test file of its own: the
-absence was real and the reason named the wrong half of the pipeline, so the
-search went to the render path and the mounts, which were fine.
+`RenderSet` addresses renders by scene and camera, and the paired pixel metrics
+need one. When it is absent, empty, or holds only one side of a pair, the
+refusal names that case rather than claiming that no renders were captured.
 """
 
 from __future__ import annotations

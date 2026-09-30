@@ -1,8 +1,7 @@
 """The OpenAI-compatible judge backend.
 
 No network: what is worth checking here is the request shape and the failure
-attribution, both of which the harness cannot check for itself. The live
-behaviour was verified separately against a real endpoint.
+attribution.
 """
 
 from __future__ import annotations
@@ -146,8 +145,8 @@ def test_structured_output_can_be_turned_off_for_models_that_reject_it(request_)
 
 
 def test_a_ceiling_reason_carries_no_yaml_line_break():
-    """Reasons render straight into a verdict; a folded YAML block leaves a
-    trailing newline that showed up in a real run's output."""
+    """Reasons render straight into a verdict; a folded YAML block would leave
+    a trailing newline in it."""
     rubric = load_rubric(_RUBRIC)
     _, reasons = rubric.ceiling_for(
         {"structural_collision_rate": 0.45, "floating_rate": 0.40, "oob_rate": 0.2}

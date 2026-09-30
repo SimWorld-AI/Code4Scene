@@ -39,7 +39,7 @@ def actor(
         "actor_guid": guid,
         "stable_actor_id": stable_id,
         "class": "/Script/Engine.StaticMeshActor",
-        "asset_path": asset or f"/Game/WildWest/{label}.{label}",
+        "asset_path": asset or f"/Game/ExamplePack/{label}.{label}",
         "logical_object_id": logical_id,
         "transform": {
             "location_cm": [x, y, 0.0],
@@ -238,7 +238,7 @@ def test_scale_log_rmse_is_root_mean_square_not_mean_of_actor_errors():
 
 
 def test_connected_floor_parts_are_penalized_then_compared_as_one_object():
-    floor_asset = "/Game/WildWest/SM_Floor.SM_Floor"
+    floor_asset = "/Game/ExamplePack/SM_Floor.SM_Floor"
     canonical = [
         actor("Floor_A", -50.0, extent=(50.0, 100.0, 1.0), asset=floor_asset),
         actor("Floor_B", 50.0, extent=(50.0, 100.0, 1.0), asset=floor_asset),
@@ -267,7 +267,7 @@ def test_connected_floor_parts_are_penalized_then_compared_as_one_object():
 
 
 def test_large_modular_parts_use_scale_aware_connectivity():
-    rock_asset = "/Game/WildWest/SM_Mountain.SM_Mountain"
+    rock_asset = "/Game/ExamplePack/SM_Mountain.SM_Mountain"
     perimeter = [
         actor("Mountain_A", 0.0, extent=(500.0, 400.0, 150.0), asset=rock_asset),
         actor(
@@ -285,7 +285,7 @@ def test_large_modular_parts_use_scale_aware_connectivity():
 
 
 def test_connected_compact_props_remain_distinct_logical_objects():
-    barrel_asset = "/Game/WildWest/SM_Barrel.SM_Barrel"
+    barrel_asset = "/Game/ExamplePack/SM_Barrel.SM_Barrel"
     canonical = [
         actor("Barrel_A", 0.0, extent=(50.0, 50.0, 50.0), asset=barrel_asset),
         actor("Barrel_B", 100.0, extent=(50.0, 50.0, 50.0), asset=barrel_asset),
@@ -299,7 +299,7 @@ def test_connected_compact_props_remain_distinct_logical_objects():
 
 
 def test_vertical_props_remain_distinct_logical_objects():
-    lamp_asset = "/Game/WildWest/SM_Lamp.SM_Lamp"
+    lamp_asset = "/Game/ExamplePack/SM_Lamp.SM_Lamp"
     canonical = [
         actor("Lamp_A", 0.0, extent=(30.0, 30.0, 300.0), asset=lamp_asset),
         actor("Lamp_B", 100.0, extent=(30.0, 30.0, 300.0), asset=lamp_asset),
@@ -312,7 +312,7 @@ def test_vertical_props_remain_distinct_logical_objects():
 
 
 def test_mixed_asset_groups_only_its_modular_subset():
-    shared_asset = "/Game/WildWest/SM_Mixed.SM_Mixed"
+    shared_asset = "/Game/ExamplePack/SM_Mixed.SM_Mixed"
     canonical = [
         actor("Floor_A", -50.0, extent=(50.0, 100.0, 1.0), asset=shared_asset),
         actor("Floor_B", 50.0, extent=(50.0, 100.0, 1.0), asset=shared_asset),
@@ -562,7 +562,7 @@ def test_gt_pairwise_retrieval_reuses_configured_vlm_client(monkeypatch):
 
 
 def test_repeated_exact_assets_are_split_into_spatial_assignment_blocks():
-    shared_asset = "/Game/WildWest/SM_Barrel.SM_Barrel"
+    shared_asset = "/Game/ExamplePack/SM_Barrel.SM_Barrel"
     canonical = [
         actor(f"Barrel_{index}", index * 10000.0, asset=shared_asset)
         for index in range(4)
@@ -585,7 +585,7 @@ def test_repeated_exact_assets_are_split_into_spatial_assignment_blocks():
 
 
 def test_size_incompatible_exact_asset_is_not_forced_into_a_match():
-    shared_asset = "/Game/WildWest/SM_Block.SM_Block"
+    shared_asset = "/Game/ExamplePack/SM_Block.SM_Block"
     canonical = [
         actor(
             "Canonical_Block",

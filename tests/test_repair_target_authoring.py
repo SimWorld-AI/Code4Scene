@@ -975,7 +975,7 @@ def test_input_only_capture_camera_does_not_create_remove_requirement():
     )
     camera = _actor(
         "capture-camera",
-        "_SceneBenchOutdoorArcCamera_spatial_context",
+        "_OutdoorArcCamera_spatial_context",
         "MatineeCam_SM",
     )
     camera["class"] = "/Script/Engine.CameraActor"

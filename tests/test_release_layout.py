@@ -72,7 +72,8 @@ def _package(tmp_path, case_ids):
 
 
 def test_package_writes_agent_and_scorer_trees(tmp_path):
-    ids = ["a20-s01-extra-chair-removal", "comp-02-new-york-bench-reset-v2", "case_001"]
+    t2s = (REPO / "benchmark" / "public-t2s-cases.txt").read_text(encoding="utf-8").split()[0]
+    ids = ["a20-s01-extra-chair-removal", "comp-02-new-york-bench-reset-v2", t2s]
     cases = _package(tmp_path, ids)
     for case in cases:
         agent = build.agent_dir(tmp_path, case)

@@ -40,7 +40,16 @@ EXPLANATIONS = {
 
 
 def _load(path: Path) -> dict[str, Any] | None:
-    return json.loads(path.read_text()) if path.exists() else None
+    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
+
+
+def _reasons(entry: dict[str, Any]) -> list[str]:
+    return entry.get("reasons") or ([entry["reason"]] if entry.get("reason") else [])
+
+
+def _error(exception: Exception) -> dict[str, Any]:
+    """A level the comparison could not handle; reported, and the other levels still are."""
+    return {"status": "error", "reason": f"{type(exception).__name__}: {exception}"}
 
 
 def _summarize(result: dict[str, Any]) -> dict[str, Any]:
@@ -89,24 +98,35 @@ def verify(dataset: Path, cases: list[catalog.Case]) -> dict[str, Any]:
                 report["scenes"][scene_id] = {"status": "not_built"}
             else:
                 local_gt[scene_id] = local
-                report["scenes"][scene_id] = _summarize(fp.compare(local, expected))
+                try:
+                    report["scenes"][scene_id] = _summarize(fp.compare(local, expected))
+                except (ValueError, KeyError, TypeError) as exception:
+                    report["scenes"][scene_id] = _error(exception)
         entry: dict[str, Any] = {"scene_id": scene_id}
         local_input = _load(snapshots / "input" / f"{case.case_id}.scene.json")
         if local_input is None:
             entry["input"] = {"status": "not_built"}
         else:
-            expected_input = fp.expand_delta(expected_gt[scene_id], catalog.load_input_delta(case))
-            entry["input"] = _summarize(fp.compare(local_input, expected_input))
+            try:
+                expected_input = fp.expand_delta(expected_gt[scene_id], catalog.load_input_delta(case))
+                entry["input"] = _summarize(fp.compare(local_input, expected_input))
+            except (ValueError, KeyError, TypeError) as exception:
+                entry["input"] = _error(exception)
             if scene_id in local_gt:
-                predicted = rc.apply_offline(local_gt[scene_id], case.recipe,
-                                             sublevel_rename=sublevel_rename(case.recipe))
-                consistency = fp.compare(local_input, fp.fingerprint_snapshot(predicted))
-                entry["recipe_consistency"] = {
-                    "status": "match" if consistency["match"] else "mismatch",
-                    "mismatched_facets": fp.summarize_facets(consistency["mismatched"]),
-                    "missing": consistency["missing"][:20],
-                    "extra": consistency["extra"][:20],
-                }
+                # A recipe target missing from the local GT (a different pack build)
+                # raises here; that is a finding for this case, not a failed run.
+                try:
+                    predicted = rc.apply_offline(local_gt[scene_id], case.recipe,
+                                                 sublevel_rename=sublevel_rename(case.recipe))
+                    consistency = fp.compare(local_input, fp.fingerprint_snapshot(predicted))
+                    entry["recipe_consistency"] = {
+                        "status": "match" if consistency["match"] else "mismatch",
+                        "mismatched_facets": fp.summarize_facets(consistency["mismatched"]),
+                        "missing": consistency["missing"][:20],
+                        "extra": consistency["extra"][:20],
+                    }
+                except (ValueError, KeyError, TypeError) as exception:
+                    entry["recipe_consistency"] = _error(exception)
         report["cases"][case.case_id] = entry
     report["summary"] = {
         "scenes_matching": sum(1 for v in report["scenes"].values() if v.get("status") == "match"),
@@ -128,14 +148,16 @@ def render_text(report: dict[str, Any]) -> str:
     lines.append("")
     for scene_id, entry in sorted(report["scenes"].items()):
         lines.append(f"[GT] {scene_id}: {entry['status'].upper()}")
-        for reason in entry.get("reasons") or []:
+        for reason in _reasons(entry):
             lines.append(f"      - {reason}")
     for case_id, entry in sorted(report["cases"].items()):
         status = entry["input"]["status"].upper()
-        consistent = (entry.get("recipe_consistency") or {}).get("status", "n/a")
-        lines.append(f"[Input] {case_id}: {status} (recipe consistency: {consistent})")
-        for reason in entry["input"].get("reasons") or []:
+        consistency = entry.get("recipe_consistency") or {}
+        lines.append(f"[Input] {case_id}: {status} (recipe consistency: {consistency.get('status', 'n/a')})")
+        for reason in _reasons(entry["input"]):
             lines.append(f"      - {reason}")
+        if consistency.get("reason"):
+            lines.append(f"      - recipe consistency: {consistency['reason']}")
     lines.append("")
     lines.append("A GT mismatch makes every Input of that scene mismatch as well. Scores obtained on a")
     lines.append("mismatching level are not comparable with the published leaderboard.")

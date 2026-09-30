@@ -54,14 +54,7 @@ WITHHELD_STATUSES = (
 )
 
 #: Exit reasons whose record must never be scored, ranked or published.
-#:
-#: ``tampered`` was in the record and in nothing else: the harness detected a
-#: rewound budget counter, wrote the reason, and every consumer went on asking
-#: only whether the reason was ``infra_error``. So the one run the benchmark
-#: had caught cheating was stored as done, scored, and averaged into the
-#: leaderboard — the opposite of the thing detecting it was for. It is a single
-#: predicate now precisely because four call sites each deciding this
-#: separately is how the fifth one gets it wrong.
+#: Every caller asks the one predicate below, so no call site decides it alone.
 UNPUBLISHABLE_EXIT_REASONS = ("infra_error", "tampered")
 
 
@@ -72,8 +65,8 @@ def unpublishable(record: dict[str, Any]) -> str | None:
 
 
 #: What the caller must supply, because the shared schema identifies a report
-#: by the bundle and episode it belongs to and the harness's record does not
-#: carry those ids.
+#: by the bundle and episode it belongs to and the run record does not carry
+#: those ids.
 _REQUIRED_IDS = ("task_bundle_id", "episode_id")
 
 
