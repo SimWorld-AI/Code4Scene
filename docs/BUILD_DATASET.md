@@ -23,7 +23,7 @@ Under `benchmark/public/`:
 | `text-to-scene/<case>/task.yaml` | prompt, packs, budget, verifiers |
 | `text-to-scene/<case>/requirements/<case>.bundle.json` | frozen requirement graph used by the semantic verifier |
 | `image-to-scene/{indoor,outdoor}/<case>/task.yaml` | prompt, packs, budget, verifiers, expected fingerprint roots |
-| `.../<case>/task.label.json` | GT map path for the scorer, and the authored corruption summary |
+| `.../<case>/task.label.json` | GT map path and case id for the scorer |
 | `.../<case>/recipe.json` | the ordered edit operations that turn the GT level into the Input level |
 | `.../<case>/cameras.json` | reference-view poses, lighting, capture and output settings |
 | `.../<case>/input.fingerprint.json` | expected Input fingerprint, stored as a delta over the GT fingerprint |
@@ -132,7 +132,9 @@ What each step does:
   `snapshots/input/<case>.scene.json`.
 * `verify` compares the snapshots with the shipped fingerprints and writes
   `reports/verify.txt` and `reports/verify.json`.
-* `package` copies the task files into the dataset directory.
+* `package` writes the dataset as two trees: `agent/` with what an agent may
+  see (the task prompt, the case facts and, after `render`, the reference
+  views) and `scorer/` with everything else (see section 8).
 
 Existing levels are kept; pass `--force` to rebuild them. `--dry-run` writes
 the job files under `code4scene-dataset/jobs/` and prints the editor commands
@@ -151,10 +153,11 @@ python -m dataset_builder.build --project ... --dataset ./code4scene-dataset --s
 For every image-to-scene case the GT level is opened, a temporary
 SceneCapture2D is placed at each view in `cameras.json` (with the recorded
 field of view, fill and top lights and exposure bias), and the capture is
-written to `<case>/references/raw/`. The images are then resized to the
-published size (`references/view-01.png`, `view-02.png` for indoor cases,
-1280x720 or 1920x1080 as recorded; `references/reference.jpg` at 1600x900
-for outdoor cases, encoded with `ffmpeg -q:v 3` when ffmpeg is available). The
+written to `work/references_raw/<setting>/<case>/`. The images are then resized
+to the published size and written into the agent tree,
+`agent/<setting>/<case>/references/` (`view-01.png`, `view-02.png` for indoor
+cases, 1280x720 or 1920x1080 as recorded; `reference.jpg` at 1600x900 for
+outdoor cases, encoded with `ffmpeg -q:v 3` when ffmpeg is available). The
 level is never saved during rendering.
 
 Each GT level is rendered in its own editor process, and only after the editor
@@ -194,15 +197,29 @@ well, so they do not affect comparability.
 
 ## 8. Using the built dataset
 
-Each task directory in the dataset contains `task.yaml`, `task.label.json` and,
-after rendering, the reference views next to it. The paths inside `task.yaml`
-refer to the levels you built (`/Game/Code4SceneInputs/...` for the agent's
-start level, `/Game/Code4SceneGT/...` for the scorer's ground truth).
+The dataset directory is split so that an agent under test can be given what
+it needs without the answers:
+
+| Path | Who may see it | Contents |
+|---|---|---|
+| `agent/<setting>/<case>/prompt.txt` | the agent | the task prompt from `task.yaml` (a harness adds its own instructions around it) |
+| `agent/<setting>/<case>/case.json` | the agent | case id, setting, start level, budget, packs, reference-view list (and the plate size for text-to-scene) |
+| `agent/<setting>/<case>/references/` | the agent | the rendered reference views (image-to-scene) |
+| `scorer/<setting>/<case>/` | scorer only | `task.yaml`, `task.label.json`, `recipe.json`, `cameras.json`, `input.fingerprint.json`, and the requirement bundle for text-to-scene |
+| `snapshots/`, `reports/`, `jobs/`, `work/` | scorer only | builder outputs: exported GT and Input snapshots, verification reports, editor job files, raw renders |
+
+The recipe, the fingerprints, the cameras and the GT snapshots are enough to
+reconstruct the ground truth. **Never expose `scorer/`, `snapshots/`, `jobs/`,
+`work/`, this repository's `benchmark/` directory or the `Code4SceneGT` content
+to an agent under test**, including through a shell, a file tool or a shared
+volume. The paths inside `task.yaml` refer to the levels you built
+(`/Game/Code4SceneInputs/...` for the agent's start level,
+`/Game/Code4SceneGT/...` for the scorer's ground truth).
 
 `Code4SceneGT` is scorer-only content. When you run agents, give the agent an
 editor instance whose project contains the packs and `Code4SceneInputs` but
-not `Code4SceneGT` (the evaluation harness provisions instances this way from
-`assets.packs`; the GT root is mounted only for scoring).
+not `Code4SceneGT` (`case.json` lists exactly the packs to mount; the GT root
+is mounted only for scoring).
 
 ## How the levels are identified
 

@@ -15,8 +15,11 @@ Steps (run in this order by ``all``):
   inputs        build each Input level from the local GT and its recipe and
                 export a scene snapshot
   verify        compare the exported snapshots with the shipped fingerprints
-  package       copy the task files into the dataset directory
-  render        render the reference views (needs a GPU; not headless-NullRHI)
+  package       write the dataset as two trees: agent/ (what an agent may see:
+                prompt, case facts, reference views) and scorer/ (task files,
+                labels, recipes, cameras, fingerprints; never shown to agents)
+  render        render the reference views into agent/ (needs a GPU; not
+                headless-NullRHI)
 
 Editor jobs are launched once per step with all selected cases. Use
 ``--dry-run`` to write the job files and print the commands without running.
@@ -43,6 +46,21 @@ REQUIRED_PLUGINS = ("PythonScriptPlugin", "EditorScriptingUtilities")
 
 def log(message: str) -> None:
     print(f"[code4scene] {message}", flush=True)
+
+
+# The dataset directory holds two trees (docs/BUILD_DATASET.md, "Using the built dataset"):
+#   agent/<setting>/<case>/   the only files an agent under test may see
+#   scorer/<setting>/<case>/  task files, labels, recipes, cameras and fingerprints
+def agent_dir(dataset: Path, case) -> Path:
+    return dataset / "agent" / case.setting / case.case_id
+
+
+def scorer_dir(dataset: Path, case) -> Path:
+    return dataset / "scorer" / case.setting / case.case_id
+
+
+def raw_render_dir(dataset: Path, case) -> Path:
+    return dataset / "work" / "references_raw" / case.setting / case.case_id
 
 
 # ---------------------------------------------------------------------------
@@ -281,7 +299,7 @@ def step_render(args, cases, ready):
     for case in cases:
         if not case.is_i2s or not case.cameras or not ready.get(case.case_id, True):
             continue
-        raw_dir = args.dataset / case.setting / case.case_id / "references" / "raw"
+        raw_dir = raw_render_dir(args.dataset, case)
         tasks.append({"kind": "render", "id": case.case_id, "map": case.recipe["ground_truth_map"],
                       "cameras": case.cameras, "output_dir": str(raw_dir)})
     if not tasks:
@@ -297,9 +315,9 @@ def step_render(args, cases, ready):
     for case in cases:
         if not case.cameras:
             continue
-        case_dir = args.dataset / case.setting / case.case_id
+        case_dir = agent_dir(args.dataset, case)
         for view in case.cameras["views"]:
-            raw = case_dir / "references" / "raw" / f"{view['name']}.png"
+            raw = raw_render_dir(args.dataset, case) / f"{view['name']}.png"
             if raw.exists():
                 how = _publish(raw, view["publish"], case_dir / view["publish"]["file"])
                 log(f"render: {case.case_id}/{view['publish']['file']} ({how})")
@@ -311,22 +329,65 @@ def step_render(args, cases, ready):
                 log(f"render: {case.case_id}/{view['name']} missing")
 
 
+def _agent_case(case, task: dict) -> dict:
+    """Case facts a harness may pass to the agent, besides the prompt and the reference views."""
+
+    inputs = task.get("inputs") or {}
+    source = task.get("source") or {}
+    facts = {"schema_version": "code4scene.agent_case.v1", "id": case.case_id, "setting": case.setting,
+             "init_map": inputs.get("init_map"), "budget": inputs.get("budget"),
+             "packs": list((task.get("assets") or {}).get("packs") or [])}
+    if "size_m" in inputs:
+        facts["size_m"] = inputs["size_m"]
+    if source.get("reference_views"):
+        facts["reference_views"] = list(source["reference_views"])
+    return facts
+
+
 def step_package(args, cases):
+    """Write the task files as two trees.
+
+    ``agent/<setting>/<case>/`` holds what an agent under test may see: the task prompt
+    (``prompt.txt``), the case facts (``case.json``) and, after ``render``, the reference
+    views. ``scorer/<setting>/<case>/`` holds everything else: ``task.yaml``, the label, the
+    edit recipe, the reference cameras, the fingerprints and, for text-to-scene, the
+    requirement bundle. Only the agent tree may be exposed to an agent.
+    """
+
+    try:
+        import yaml  # type: ignore
+    except ImportError:
+        raise SystemExit("package needs PyYAML to read the task prompts: pip install pyyaml") from None
+    packaged = []
     for case in cases:
         if not case.task_text:
             continue
-        target = args.dataset / case.setting / case.case_id
-        target.mkdir(parents=True, exist_ok=True)
+        scorer = scorer_dir(args.dataset, case)
+        scorer.mkdir(parents=True, exist_ok=True)
         for item in case.directory.iterdir():
-            destination = target / item.name
+            destination = scorer / item.name
             if item.is_dir():
                 shutil.copytree(item, destination, dirs_exist_ok=True)
             else:
                 shutil.copy2(item, destination)
-    manifest = {"schema_version": "code4scene.dataset_manifest.v1",
-                "cases": [{"id": c.case_id, "setting": c.setting} for c in cases if c.task_text]}
+        task = yaml.safe_load(case.task_text) or {}
+        agent = agent_dir(args.dataset, case)
+        agent.mkdir(parents=True, exist_ok=True)
+        prompt = str((task.get("inputs") or {}).get("prompt") or "")
+        (agent / "prompt.txt").write_text(prompt, encoding="utf-8")
+        (agent / "case.json").write_text(json.dumps(_agent_case(case, task), indent=1) + "\n",
+                                         encoding="utf-8")
+        old = args.dataset / case.setting / case.case_id
+        if old.is_dir():
+            log(f"package: WARNING {old} is from the old layout, which put scorer files next to "
+                f"the reference views; delete it (agents may only see {args.dataset / 'agent'})")
+        packaged.append(case)
+    manifest = {"schema_version": "code4scene.dataset_manifest.v2",
+                "layout": {"agent": "agent/<setting>/<case>", "scorer": "scorer/<setting>/<case>"},
+                "cases": [{"id": c.case_id, "setting": c.setting} for c in packaged]}
     (args.dataset / "manifest.json").write_text(json.dumps(manifest, indent=1))
-    log(f"package: {len(manifest['cases'])} task directories under {args.dataset}")
+    log(f"package: {len(packaged)} cases; agent-visible files under {args.dataset / 'agent'}, "
+        f"scorer-only files under {args.dataset / 'scorer'}")
 
 
 def step_init_project(args):

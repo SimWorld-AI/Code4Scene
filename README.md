@@ -169,6 +169,10 @@ python -m dataset_builder.build --project ... --dataset ./code4scene-dataset --s
 
 [docs/BUILD_DATASET.md](docs/BUILD_DATASET.md) covers disk and time estimates, the verification report, and scene-specific notes.
 
+> **Keep the answers away from agents.** An agent under test may only see `code4scene-dataset/agent/` (task prompts,
+> case facts and reference views). Never give it this repository's `benchmark/` directory, `code4scene-dataset/scorer/`,
+> `snapshots/` or the `Code4SceneGT` content, including through a shell or file tool: they contain the answers.
+
 ### 3. Score a scene
 
 The verifiers read an **evidence bundle**: scene snapshots, physics measurements and renders, exported from the saved level by the editor
