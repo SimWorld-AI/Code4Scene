@@ -39,8 +39,9 @@ asset paths and give absolute transforms only for the few actors a case edits.
 * Unreal Engine **5.8** (the benchmark levels were exported from 5.8.0; later
   5.8.x releases are expected to work, and the verification step tells you if
   they do not). Windows or Linux. macOS is untested.
-* Python 3.9 or newer on the host. Optional: `PyYAML` (nicer pack hints),
-  `Pillow` and/or `ffmpeg` (resizing and encoding the reference views).
+* Python 3.9 or newer on the host. Optional: `PyYAML` (nicer pack hints).
+  The `render` step needs `Pillow` or `ffmpeg` to resize and encode the
+  reference views.
 * Disk: about 125 GB for the installed packs of the whole public set (about
   80 GB for the image-to-scene packs alone, one pack is 34 GB), plus about
   5 GB for the built levels, about 0.5 GB for the exported snapshots, and the
@@ -73,7 +74,12 @@ For each pack:
 1. Open the Fab listing, add it to your library, and use *Add to Project* in
    the Epic Games Launcher (or Fab in the editor) with your project as target.
    If the launcher hides the project because the pack does not list 5.8, tick
-   *Show all projects* and pick the closest listed engine version.
+   *Show all projects*.
+   Where a pack's `notes` in `packs.yaml` name the build the benchmark was
+   made from (for example the UE 4.19 build of `DetectiveOffice`), install
+   that build rather than the newest one: some packs were reworked in later
+   builds, and with a different build `verify` can report a mismatch (see
+   [PACKS.md](PACKS.md), "Build differences").
 2. Check that the pack landed in exactly `Content/<folder>` as listed. Do not
    rename, move, re-save or "fix up redirectors" in pack folders: the
    benchmark's identities are derived from the demo maps' actor names and a
@@ -87,7 +93,11 @@ You can install only the packs of the cases you want and pass `--cases` or
 Run every `python -m dataset_builder.build` command below from the root of this
 repository: `pip install -e .` installs only the `code4scene` package, so
 `dataset_builder` is importable from the repository root only. Relative
-`--dataset` paths are resolved against the current directory.
+`--dataset` paths are resolved against the current directory. The editor
+reads its job script from the repository, so the repository path must not
+contain `.py` anywhere before `dataset_builder/ue/c4s_job.py` (for example a
+directory named `my.pyprojects`), and for `render` no comma or apostrophe;
+the builder refuses such a path.
 
 ## 3. Enable the editor scripting plugins
 
@@ -116,8 +126,15 @@ the Fab listing for every missing folder.
 ```bash
 export UE_EDITOR=/path/to/UE_5.8/Engine/Binaries/Linux/UnrealEditor-Cmd    # Win64: UnrealEditor-Cmd.exe
 python -m dataset_builder.build --project /path/Code4SceneData/Code4SceneData.uproject \
-    --dataset ./code4scene-dataset --steps check blank gt inputs verify package
+    --dataset ./code4scene-dataset --steps check blank gt inputs verify package --allow-missing-packs
 ```
+
+If any pack of the selected cases is missing, the builder stops before the
+`gt`, `inputs` and `render` steps unless `--allow-missing-packs` is given;
+with it, the cases whose packs are installed are built and the others are
+skipped. The `TrainStation` pack has no Fab listing yet, so its 5 outdoor
+cases are skipped in every build. The builder also stops before starting the
+editor if the `.uproject` does not enable the plugins of step 3.
 
 What each step does:
 
@@ -139,15 +156,19 @@ What each step does:
 Existing levels are kept; pass `--force` to rebuild them. `--dry-run` writes
 the job files under `code4scene-dataset/jobs/` and prints the editor commands
 without running them (to run one by hand, set `C4S_JOB` to its
-`jobs/<step>.job.json` and `C4S_UE_DIR` to `dataset_builder/ue`, as printed). Each editor job logs to `jobs/<step>.log` and records a
-per-task result in `jobs/<step>.result.json`. If the editor cannot run a
-level-editing script under `-ExecutePythonScript` on your platform, try
-`--mode commandlet` (uses `-run=pythonscript`).
+`jobs/<step>.job.json` and `C4S_UE_DIR` to `dataset_builder/ue`, as printed);
+it does not change the `.uproject` and writes no levels, reports or packaged
+files. Each editor job logs to `jobs/<step>.log` and records a
+per-task result in `jobs/<step>.result.json`. The builder exits with a
+non-zero status if an editor job produced no result, a task failed or a
+reference view is missing, and lists those problems at the end. If the editor
+cannot run a level-editing script under `-ExecutePythonScript` on your
+platform, try `--mode commandlet` (uses `-run=pythonscript`).
 
 ## 6. Render the reference views (GPU)
 
 ```bash
-python -m dataset_builder.build --project ... --dataset ./code4scene-dataset --steps render
+python -m dataset_builder.build --project ... --dataset ./code4scene-dataset --steps render --allow-missing-packs
 ```
 
 For every image-to-scene case the GT level is opened, a temporary
@@ -164,7 +185,8 @@ Each GT level is rendered in its own editor process, and only after the editor
 has drawn `--render-settle-ticks` frames (default 400, and at least
 `--render-settle-seconds`, default 20) so that shaders compile and textures
 stream in. A capture taken before the editor has ticked is black. A nearly
-black frame is reported as a `WARNING`; render again with a larger value.
+black frame is reported as a `WARNING`; render again with a larger value. If
+one level's editor fails, the other levels are still rendered and published.
 
 Rendered pixels will not be bit-identical to the images the benchmark agents
 saw (GPU, driver and texture streaming differ). The pose, lens, lighting and
