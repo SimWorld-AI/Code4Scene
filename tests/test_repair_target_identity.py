@@ -8,7 +8,7 @@ from code4scene.evaluation.requirement_graph.repair_target_authoring import deri
 from code4scene.protocol import actor_f1
 
 
-def _actor(stable_id, label, asset, location=(0.0, 0.0, 100.0), rotation=(0.0, 0.0, 0.0)):
+def _actor(stable_id, label, asset, location=(0.0, 0.0, 100.0), rotation=(0.0, 0.0, 0.0), scale=(1.0, 1.0, 1.0)):
     return {
         "stable_actor_id": stable_id,
         "actor_path": f"/Game/Test.Test:PersistentLevel.{label}",
@@ -22,7 +22,7 @@ def _actor(stable_id, label, asset, location=(0.0, 0.0, 100.0), rotation=(0.0, 0
         "component_material_slots": [],
         "material_paths": [],
         "properties": {},
-        "transform": {"location_cm": list(location), "rotation_deg": list(rotation), "scale": [1.0, 1.0, 1.0]},
+        "transform": {"location_cm": list(location), "rotation_deg": list(rotation), "scale": list(scale)},
         "bounds": {"origin_cm": list(location), "extent_cm": [50.0, 20.0, 80.0]},
     }
 
@@ -70,3 +70,34 @@ def test_an_exact_repair_scores_full_marks_despite_identifier_changes():
     gt = _scene(wall, bench_gt)
     counts, _ = actor_f1.measure(inp, gt, gt)
     assert (counts["true_positive"], counts["false_positive"], counts["false_negative"]) == (1, 0, 0)
+
+
+def _pair_case():
+    """The original moved, turned and rescaled; an injected copy keeps the correct turn and scale."""
+    original_gt = _actor("bench", "Bench", "SM_Bench", location=(0.0, 0.0, 0.0))
+    original_moved = _actor("bench", "Bench", "SM_Bench", location=(-400.0, 150.0, 0.0),
+                            rotation=(0.0, 40.0, 0.0), scale=(1.3, 1.3, 1.3))
+    copy_ = _actor("bench-copy", "Bench_Copy", "SM_Bench", location=(260.0, 40.0, 0.0))
+    other = _actor("table", "Table", "SM_Table", location=(900.0, 0.0, 0.0))
+    return _scene(original_moved, copy_, other), _scene(original_gt, other), original_gt, copy_, other
+
+
+def _counts(inp, gt, cand):
+    c, _ = actor_f1.measure(inp, gt, cand)
+    return c["true_positive"], c["false_positive"], c["false_negative"]
+
+
+def test_an_exact_repair_with_a_nearby_copy_scores_full_marks():
+    inp, gt, *_ = _pair_case()
+    assert _counts(inp, gt, gt) == (2, 0, 0)
+
+
+def test_leaving_the_copy_in_place_is_still_a_missed_removal():
+    inp, gt, original_gt, copy_, other = _pair_case()
+    assert _counts(inp, gt, _scene(original_gt, copy_, other)) == (1, 0, 1)
+
+
+def test_deleting_the_original_and_keeping_the_copy_is_not_a_repair():
+    inp, gt, _, copy_, other = _pair_case()
+    tp, _, fn = _counts(inp, gt, _scene(copy_, other))
+    assert tp == 0 and fn == 2
