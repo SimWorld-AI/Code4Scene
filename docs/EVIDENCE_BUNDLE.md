@@ -144,7 +144,9 @@ Rules enforced by `code4scene validate-bundle` and on every load:
      `physical_safety` refuse to capture ("runtime repair scene capture
      requires the independent scoring editor"). Pass `bridge=None`.
 
-   `tools/score_saved_level.py` does all of this for an image-to-scene case.
+   `tools/score_saved_level.py` does all of this for an image-to-scene case,
+   and `tools/score_saved_build.py` for a text-to-scene case, whose pictures
+   need a scoring editor that renders (`tools/c4s_render_bridge.py`).
 3. Pack it:
 
    ```bash
