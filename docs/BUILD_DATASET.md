@@ -109,6 +109,10 @@ to the `.uproject` (a backup is written):
 python -m dataset_builder.build --project /path/Code4SceneData/Code4SceneData.uproject --steps init-project
 ```
 
+The same step writes the package redirects the packs need and the renderer
+settings the benchmark renders with (`benchmark/renderer_settings.txt`) into
+`Config/DefaultEngine.ini`, keeping a backup of the original file.
+
 ## 4. Check the packs (no editor needed)
 
 ```bash

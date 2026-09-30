@@ -42,6 +42,8 @@ from . import verify as verify_mod
 
 UE_DIR = Path(__file__).resolve().parent / "ue"
 PACKAGE_REDIRECTS = catalog.BENCHMARK / "package_redirects.txt"
+RENDERER_SETTINGS = catalog.BENCHMARK / "renderer_settings.txt"
+RENDERER_SECTION = "[/Script/Engine.RendererSettings]"
 ALL_STEPS = ("init-project", "check", "blank", "gt", "inputs", "verify", "package", "render")
 REQUIRED_PLUGINS = ("PythonScriptPlugin", "EditorScriptingUtilities")
 
@@ -459,6 +461,63 @@ def ensure_package_redirects(project: Path, dry_run: bool = False) -> int:
     return len(missing)
 
 
+def ensure_renderer_settings(project: Path, dry_run: bool = False) -> int:
+    """Set the benchmark's renderer settings in the project's DefaultEngine.ini.
+
+    Values already set to something else are replaced; everything else in the
+    file is kept. Returns how many settings were added or changed.
+    """
+
+    wanted = {}
+    for line in RENDERER_SETTINGS.read_text(encoding="utf-8").splitlines():
+        if line.strip() and not line.lstrip().startswith(("#", ";")):
+            key, value = line.strip().split("=", 1)
+            wanted[key] = value
+    ini = project.parent / "Config" / "DefaultEngine.ini"
+    raw = ini.read_bytes() if ini.exists() else b""
+    encoding = "utf-16" if raw.startswith((b"\xff\xfe", b"\xfe\xff")) else "utf-8"
+    text = raw.decode("utf-16" if encoding == "utf-16" else "utf-8-sig")
+    newline = "\r\n" if "\r\n" in text else "\n"
+    lines = text.splitlines()
+    header = next((i for i, line in enumerate(lines) if line.strip() == RENDERER_SECTION), None)
+    end = len(lines)
+    if header is not None:
+        end = next((i for i in range(header + 1, len(lines)) if lines[i].strip().startswith("[")), len(lines))
+    present = {}
+    if header is not None:
+        for i in range(header + 1, end):
+            key = lines[i].split("=", 1)[0].strip()
+            if "=" in lines[i] and key in wanted:
+                present.setdefault(key, []).append(i)
+    changed = [key for key, value in wanted.items()
+               if [lines[i].split("=", 1)[1].strip() for i in present.get(key, [])] != [value]]
+    if not changed:
+        return 0
+    if dry_run:
+        log(f"renderer settings: {len(changed)} would be set in {ini}")
+        return len(changed)
+    drop = {i for key in changed for i in present.get(key, [])}
+    section = [f"{key}={wanted[key]}" for key in changed]
+    if header is None:
+        kept = lines
+        if kept and kept[-1].strip():
+            kept.append("")
+        kept += [RENDERER_SECTION, *section]
+    else:
+        body = [line for i, line in enumerate(lines[header + 1:end], start=header + 1) if i not in drop]
+        while body and not body[-1].strip():
+            body.pop()
+        tail = lines[end:]
+        kept = lines[:header + 1] + body + section + ([""] if tail else []) + tail
+    backup = ini.with_name(ini.name + ".bak")
+    if ini.exists() and not backup.exists():
+        shutil.copy2(ini, backup)
+    ini.parent.mkdir(parents=True, exist_ok=True)
+    ini.write_bytes((newline.join(kept) + newline).encode(encoding))
+    log(f"renderer settings: set {len(changed)} in {ini}")
+    return len(changed)
+
+
 def missing_plugins(project: Path) -> list[str]:
     """Required editor plugins the .uproject does not enable (neither is on by default)."""
 
@@ -507,6 +566,7 @@ def step_init_project(args):
     else:
         log("init-project: required plugins already enabled")
     ensure_package_redirects(args.project, args.dry_run)
+    ensure_renderer_settings(args.project, args.dry_run)
 
 
 def main(argv=None) -> int:
@@ -597,6 +657,7 @@ def main(argv=None) -> int:
             log("some packs are missing; a real run needs them installed or --allow-missing-packs")
     if needs_editor:
         ensure_package_redirects(args.project, args.dry_run)
+        ensure_renderer_settings(args.project, args.dry_run)
     if "blank" in steps:
         step_blank(args, cases)
     if "gt" in steps:
