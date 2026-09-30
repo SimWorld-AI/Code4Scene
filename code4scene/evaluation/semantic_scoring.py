@@ -471,6 +471,8 @@ def score_semantic_case(
     active = [row for row in rows if row["index"] not in exclusion_reasons]
     if not active:
         raise ValueError("no active semantic requirement maps to a declared family")
+    # Only requirements that are themselves scored can cap a conjunction.
+    active_children = _direct_children(active)
 
     score_cache: dict[int, tuple[float, bool]] = {}
 
@@ -480,7 +482,7 @@ def score_semantic_case(
         row = by_index[index]
         score = float(row["base_score"])
         known = bool(row["score_known"])
-        children = child_map[index]
+        children = active_children.get(index, [])
         if children and row["predicate_type"] in CONJUNCTIVE_TYPES:
             values = [(score, known), *(effective_score(child) for child in children)]
             score = min(value for value, _ in values)
