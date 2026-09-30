@@ -222,7 +222,7 @@ def compact_scene_graph_script() -> str:
         "        raise RuntimeError('candidate Actor has no stable identity')",
         "    if _stable_id in _stable_id_owners:",
         "        raise RuntimeError(",
-        "            'duplicate stable_actor_id {} on Actors {} and {}'.format(",
+        "            'duplicate stable_actor_id {} on Actors {} and {}: copying a tagged Actor copies its simcodearena.stable_actor_id tag, so remove or change the tag on the copy and save again'.format(",
         "                _stable_id, _stable_id_owners[_stable_id],",
         "                _item.get('label')))",
         "    _stable_id_owners[_stable_id] = _item.get('label')",

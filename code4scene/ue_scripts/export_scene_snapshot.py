@@ -45,6 +45,12 @@ GENERATED_STABLE_ID_PREFIX = "sca_generated_"
 _MATERIAL_PARAMETER_CATALOG = {}
 
 
+
+DUPLICATE_ID_HINT = (
+    "copying a tagged Actor copies its simcodearena.stable_actor_id"
+    " tag, so remove or change the tag on the copy and save again"
+)
+
 def _object_path(value):
     if value is None:
         return None
@@ -241,8 +247,8 @@ def _validate_stable_actor_ids(actors):
         previous = owners.get(stable_id)
         if previous is not None:
             raise RuntimeError(
-                "duplicate stable_actor_id {} on Actors {} and {}".format(
-                    stable_id, previous, actor.get("name")
+                "duplicate stable_actor_id {} on Actors {} and {}: {}".format(
+                    stable_id, previous, actor.get("name"), DUPLICATE_ID_HINT
                 )
             )
         owners[stable_id] = actor.get("name")
