@@ -44,8 +44,8 @@ def normalize_base_color(source: Path, target: Path, *, policy: str) -> dict[str
         from PIL import Image
     except ImportError as error:               # pragma: no cover - environment
         raise JudgeError(
-            "Base Color normalization needs the optional imaging extra: "
-            "pip install code4scene"
+            "Base Color normalization needs Pillow: "
+            "pip install -e . from the repository"
         ) from error
     try:
         with Image.open(source) as image:
@@ -88,9 +88,9 @@ def visualize_depth(source: Path, target: Path, *, near_cm: float,
         from PIL import Image
     except ImportError as error:               # pragma: no cover - environment
         raise JudgeError(
-            "three-channel visual judging needs the optional imaging extra "
-            "to convert Scene Depth EXR to PNG: pip install "
-            "'scenebench[images]'") from error
+            "three-channel visual judging needs NumPy, Pillow and OpenEXR "
+            "to convert Scene Depth EXR to PNG: pip install -e \".[depth]\" "
+            "from the repository") from error
 
     try:
         depth = image_metrics.load_depth(source)[:, :, 0]

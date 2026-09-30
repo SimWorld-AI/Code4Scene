@@ -11,12 +11,13 @@ license = "Apache-2.0"
 license-files = ["LICENSE"]
 requires-python = ">=3.10"
 # NumPy is imported by the RequirementGraph contracts reached from the eager
-# verifier registry. Pillow and OpenEXR are needed by the image metrics and by
-# the multi-channel visual evidence path. All three are base dependencies so a
-# clean install matches the supported scoring surface.
-dependencies = ["PyYAML>=6", "numpy>=1.24", "pillow>=10", "OpenEXR>=3.2"]
+# verifier registry, and Pillow by the image metrics. OpenEXR is only needed to
+# read Scene Depth images for the report-only visual evidence, so it is the
+# optional `depth` extra.
+dependencies = ["PyYAML>=6", "numpy>=1.24", "pillow>=10"]
 
 [project.optional-dependencies]
+depth = ["OpenEXR>=3.2"]
 dev = ["pytest>=8", "ruff>=0.6"]
 
 [project.scripts]

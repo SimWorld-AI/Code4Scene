@@ -5,8 +5,8 @@ taken from the identical viewpoint in two scenes. That last condition is the
 whole basis: these numbers mean nothing between two different framings, so a
 caller that cannot prove the cameras match has no business calling this.
 
-The imaging stack is an OPTIONAL dependency (`pip install scenebench[images]`).
-A harness that only runs the deterministic geometry pass should not have to
+NumPy and Pillow come with the package; OpenEXR, for Scene Depth images, is the
+optional `depth` extra (`pip install -e ".[depth]"` from the repository). A harness that only runs the deterministic geometry pass should not have to
 carry NumPy and Pillow, so its absence is a reported refusal rather than an
 import error at start-up — `available()` says whether the arithmetic can run,
 and every verifier that uses it checks first.
@@ -90,8 +90,8 @@ def load(path: str | Path) -> Any:
         from PIL import Image
     except ImportError as e:                       # pragma: no cover - env
         raise ImageError(
-            "comparing renders needs the optional imaging extra: "
-            "pip install code4scene") from e
+            "comparing renders needs NumPy and Pillow: "
+            "pip install -e . from the repository") from e
     try:
         with Image.open(path) as handle:
             return np.asarray(handle.convert("RGB"), dtype="float64")
@@ -107,8 +107,8 @@ def load_depth(path: str | Path) -> Any:
         import OpenEXR
     except ImportError as error:                   # pragma: no cover - env
         raise ImageError(
-            "reading scene_depth needs the optional imaging extra, including "
-            "OpenEXR (pip install code4scene)") from error
+            "reading scene_depth needs OpenEXR: "
+            "pip install -e \".[depth]\" from the repository") from error
     try:
         handle = OpenEXR.InputFile(str(path))
         header = handle.header()

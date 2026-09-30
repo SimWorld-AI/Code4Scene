@@ -140,7 +140,7 @@ not.
 ### 1. Install
 
 ```bash
-pip install -e .            # Python ≥ 3.10; add [dev] for the test suite
+pip install -e .            # Python ≥ 3.10; add [dev] for the test suite, [depth] for depth images
 code4scene --help
 ```
 

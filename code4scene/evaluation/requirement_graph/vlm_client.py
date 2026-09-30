@@ -88,8 +88,8 @@ def _image_payload(value: Any) -> tuple[bytes, str]:
         from PIL import Image
     except ImportError as error:
         raise ValueError(
-            "array-backed VLM frames need the optional imaging extra: "
-            "pip install code4scene"
+            "array-backed VLM frames need NumPy and Pillow: "
+            "pip install -e . from the repository"
         ) from error
     if isinstance(value, Image.Image):
         image = value.convert("RGB")
