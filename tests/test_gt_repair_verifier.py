@@ -1201,3 +1201,34 @@ def test_runtime_map_capture_restores_candidate_after_export_failure(
         )
 
     assert loaded == ["/Game/GT", "/Game/Candidate"]
+
+
+def _raise(exc):
+    def fail(*_args, **_kwargs):
+        raise exc
+    return fail
+
+
+@pytest.mark.parametrize("where", ["scene_diff", "aggregation"])
+def test_a_failed_diagnostic_keeps_the_actor_repair_f1(monkeypatch: pytest.MonkeyPatch, tmp_path: Path, where):
+    monkeypatch.setattr(gt_repair, "load_evaluation_policy", lambda _task: _Policy())
+    monkeypatch.setattr(gt_repair.gt_geometry, "verify", lambda _context: _comparison())
+    monkeypatch.setattr(gt_repair, "_locality_audit", lambda _context, _comparison: _measured_report(
+        "gt_repair.locality_audit", 0.5))
+    monkeypatch.setattr(gt_repair, "_actor_repair_f1", lambda _context: {
+        "policy": "actor-repair-f1", "status": contracts.MEASURED, "f1": 0.75})
+    if where == "scene_diff":
+        monkeypatch.setattr(gt_repair.scene_diff, "_report_from_comparison", _raise(KeyError("missing slot")))
+    else:
+        monkeypatch.setattr(gt_repair.scene_diff, "_report_from_comparison",
+                            lambda _context, _comparison: _measured_report("scene_diff", 0.8))
+        monkeypatch.setattr(gt_repair.repair_score, "apply", _raise(ValueError("bad weights")))
+
+    report = gt_repair.verify(Context(record={}, task=_task(tmp_path), ids=IDS,
+                                      spec={"name": "gt_repair", "ground_truth": "/Game/GT"}))
+
+    assert report["status"] == contracts.MEASURED and report["score"] == 0.75
+    assert report["metrics"]["actor_repair_f1"]["f1"] == 0.75
+    (diagnostics,) = report["metrics"]["leaf_results"]
+    assert diagnostics["leaf_id"] == "diagnostics" and diagnostics["status"] == contracts.ERROR
+    assert ("KeyError" if where == "scene_diff" else "ValueError") in diagnostics["failure_reason"]

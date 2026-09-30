@@ -1000,6 +1000,27 @@ def verify(context: Context) -> dict[str, Any]:
         comparison_spec["canonical_scene"] = {"runtime_task_ground_truth_map": True}
     working = replace(context, spec=comparison_spec)
     comparison = run_leaf(working, gt_geometry.verify, spec=comparison_spec)
+    # The repair-target, whole-scene and locality reports are diagnostics; the
+    # score is Actor Repair F1. A failure in the diagnostics is reported, and
+    # the F1 is still measured and scored.
+    try:
+        report, local, global_report = _diagnostic_reports(context, policy, comparison_spec, working, comparison)
+    except Exception as exc:  # noqa: BLE001 - reported beside the F1
+        return _diagnostics_failed(context, exc, _actor_repair_f1(working))
+    f1 = _actor_repair_f1(working)
+    report["metrics"][repair_score.PUBLISHED_SCORE] = f1
+    try:
+        return finalize_report(report, local, global_report)
+    except Exception as exc:  # noqa: BLE001 - reported beside the F1
+        return _diagnostics_failed(context, exc, f1)
+
+
+def _diagnostic_reports(
+    context: Context, policy: Any, comparison_spec: Mapping[str, Any], working: Context,
+    comparison: Mapping[str, Any],
+) -> tuple[dict[str, Any], dict[str, Any], dict[str, Any]]:
+    """The repair-target, whole-scene and locality diagnostics as one composite."""
+
     local = _repair_target_report(working, comparison)
     local["leaf_id"] = "repair_target_diff"
     global_spec = _global_scene_diff_spec(context.task, comparison_spec)
@@ -1066,8 +1087,21 @@ def verify(context: Context) -> dict[str, Any]:
         },
     )
     report["metrics"]["target_visual_coverage"] = target_visual_coverage
-    report["metrics"][repair_score.PUBLISHED_SCORE] = _actor_repair_f1(working)
-    return finalize_report(report, local, global_report)
+    return report, local, global_report
+
+
+def _diagnostics_failed(context: Context, exc: Exception, f1: Mapping[str, Any]) -> dict[str, Any]:
+    """A gt_repair report whose diagnostics failed: the error is kept and the F1 is the score."""
+
+    reason = f"the repair diagnostics failed: {type(exc).__name__}: {exc}"
+    diagnostics = {**error("gt_repair.diagnostics", context, reason), "leaf_id": "diagnostics",
+                   "contributes_to_aggregate": False, "score_role": "report_only"}
+    report = error("gt_repair", context, reason)
+    report["evidence"] = {"public_interface": "gt_repair",
+                          "report_schema_version": "gt-repair-public.v1",
+                          "diagnostics_error": reason}
+    report["metrics"] = {"leaf_results": [diagnostics], repair_score.PUBLISHED_SCORE: f1}
+    return repair_score.publish_actor_f1(report)
 
 
 __all__ = [
