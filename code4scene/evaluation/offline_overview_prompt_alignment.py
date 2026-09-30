@@ -892,7 +892,7 @@ def evaluate_overview_frames(
             "severe_requires_issue_text_and_category": True,
         },
         "score_policy": SCORE_POLICY,
-        "calibration_status": "not_human_calibrated",
+        "calibration_status": "component_weight_fitted_to_human_preferences",
         "explanation_protocol": EXPLANATION_PROTOCOL,
         "alignment_protocol": ALIGNMENT_PROTOCOL,
         "structural_integrity_protocol": STRUCTURAL_INTEGRITY_PROTOCOL,
