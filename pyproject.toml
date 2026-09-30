@@ -18,7 +18,7 @@ dependencies = ["PyYAML>=6", "numpy>=1.24", "pillow>=10"]
 
 [project.optional-dependencies]
 depth = ["OpenEXR>=3.2"]
-dev = ["pytest>=8", "ruff>=0.6"]
+dev = ["pytest>=8", "ruff>=0.13"]
 
 [project.scripts]
 code4scene = "code4scene.cli:main"

@@ -366,7 +366,7 @@ def _tick(_delta):
         while server is not None:
             try:
                 conn, _ = server.accept()
-            except (BlockingIOError, InterruptedError, socket.timeout):
+            except (BlockingIOError, InterruptedError, TimeoutError):
                 break
             STATE["last"] = time.time()
             try:

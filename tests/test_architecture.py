@@ -269,7 +269,10 @@ def test_the_package_carries_everything_it_reads_at_run_time():
     ``configs`` directory: the repository layout, not the installed one. They
     are package data now and resolved through importlib.resources.
     """
-    import tomllib
+    try:
+        import tomllib
+    except ModuleNotFoundError:  # Python 3.10
+        tomllib = pytest.importorskip("tomli")
 
     from code4scene.resources import config_file
 
