@@ -7,7 +7,7 @@ name = "code4scene"
 version = "1.0.0"
 description = "Verifiers and the scoring protocol of Code4Scene, a benchmark for coding agents that construct and edit Unreal Engine scenes."
 readme = "README.md"
-license = "MIT"
+license = "Apache-2.0"
 license-files = ["LICENSE"]
 requires-python = ">=3.10"
 # NumPy is imported by the RequirementGraph contracts reached from the eager

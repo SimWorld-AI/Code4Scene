@@ -18,7 +18,7 @@
   <br />
   <img src="https://img.shields.io/badge/Unreal%20Engine-5.8-0E1128?logo=unrealengine&logoColor=white" alt="Unreal Engine 5.8" />
   <img src="https://img.shields.io/badge/python-%E2%89%A5%203.10-3776AB?logo=python&logoColor=white" alt="Python 3.10+" />
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2ea44f" alt="MIT License" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-2ea44f" alt="Apache 2.0 License" /></a>
   <a href="https://github.com/SimWorld-AI/Code4Scene/stargazers">
     <img src="https://img.shields.io/github/stars/SimWorld-AI/Code4Scene?style=flat&logo=github&color=181717&logoColor=white&label=Stars" alt="GitHub stars" />
   </a>
@@ -199,7 +199,7 @@ The suite runs fully offline.
 
 ## License
 
-The code is released under the MIT License ([LICENSE](LICENSE)). The content packs are not part of this repository and remain under their
+The code is released under the Apache License 2.0 ([LICENSE](LICENSE)). The content packs are not part of this repository and remain under their
 own Fab licenses.
 
 ---
