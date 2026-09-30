@@ -18,6 +18,9 @@ from dataset_builder import build, catalog  # noqa: E402
 from dataset_builder import recipe as rc  # noqa: E402
 from dataset_builder import verify as verify_mod  # noqa: E402
 
+# Any text-to-scene case: the steps these tests run do not depend on which one.
+T2S_CASE = (REPO / "benchmark" / "public-t2s-cases.txt").read_text(encoding="utf-8").split()[0]
+
 FAKE_EDITOR = """#!{python}
 import json, os, sys
 calls = os.environ.get("FAKE_CALLS")
@@ -63,15 +66,15 @@ def test_commandlet_mode_keeps_the_extra_editor_arguments():
 def test_a_failed_task_makes_the_run_fail(tmp_path, monkeypatch):
     project = _project(tmp_path)
     editor, _ = _editor(tmp_path, monkeypatch, status="error")
-    assert _run(project, editor, tmp_path / "ds", "--steps", "blank", "--cases", "case_002") == 1
+    assert _run(project, editor, tmp_path / "ds", "--steps", "blank", "--cases", T2S_CASE) == 1
     editor, _ = _editor(tmp_path, monkeypatch, status="ok")
-    assert _run(project, editor, tmp_path / "ds", "--steps", "blank", "--cases", "case_002") == 0
+    assert _run(project, editor, tmp_path / "ds", "--steps", "blank", "--cases", T2S_CASE) == 0
 
 
 def test_missing_packs_block_only_the_steps_that_use_them(tmp_path, monkeypatch):
     project = _project(tmp_path)  # no pack installed
     editor, calls = _editor(tmp_path, monkeypatch)
-    assert _run(project, editor, tmp_path / "ds", "--steps", "blank", "--cases", "case_002") == 0
+    assert _run(project, editor, tmp_path / "ds", "--steps", "blank", "--cases", T2S_CASE) == 0
     assert _run(project, editor, tmp_path / "ds", "--steps", "gt",
                 "--cases", "a20-s01-extra-chair-removal") == 2
     assert len(calls.read_text().splitlines()) == 1
@@ -80,9 +83,9 @@ def test_missing_packs_block_only_the_steps_that_use_them(tmp_path, monkeypatch)
 def test_the_editor_is_not_started_without_the_scripting_plugins(tmp_path, monkeypatch):
     project = _project(tmp_path, plugins=[])
     editor, calls = _editor(tmp_path, monkeypatch)
-    assert _run(project, editor, tmp_path / "ds", "--steps", "blank", "--cases", "case_002") == 2
+    assert _run(project, editor, tmp_path / "ds", "--steps", "blank", "--cases", T2S_CASE) == 2
     assert not calls.exists()
-    assert _run(project, editor, tmp_path / "ds", "--steps", "init-project", "blank", "--cases", "case_002") == 0
+    assert _run(project, editor, tmp_path / "ds", "--steps", "init-project", "blank", "--cases", T2S_CASE) == 0
     assert calls.exists()
 
 
@@ -90,7 +93,7 @@ def test_a_dry_run_changes_nothing(tmp_path):
     project = _project(tmp_path, plugins=[])
     before = project.read_text()
     dataset = tmp_path / "ds"
-    assert build.main(["--project", str(project), "--dataset", str(dataset), "--dry-run", "--cases", "case_002",
+    assert build.main(["--project", str(project), "--dataset", str(dataset), "--dry-run", "--cases", T2S_CASE,
                        "--steps", "init-project", "check", "blank", "verify", "package"]) == 0
     assert project.read_text() == before and not project.with_suffix(".uproject.bak").exists()
     assert not (project.parent / "Config").exists()

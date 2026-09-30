@@ -10,6 +10,7 @@ import types
 from pathlib import Path
 
 import pytest
+import yaml
 
 from code4scene.core import inventory
 from code4scene.core import scene as core_scene
@@ -17,8 +18,9 @@ from code4scene.evaluation import case_outcome
 
 REPO = Path(__file__).resolve().parents[1]
 BRIDGE = REPO / "tools" / "c4s_render_bridge.py"
-TASK = REPO / "benchmark/public/text-to-scene/case_014/task.yaml"
-CANDIDATE = "/Game/SavedScenes/run_bazaar"
+TASK = sorted((REPO / "benchmark/public/text-to-scene").glob("*/task.yaml"))[0]
+HALF_CM = float(yaml.safe_load(TASK.read_text(encoding="utf-8"))["inputs"]["size_m"]) * 50.0
+CANDIDATE = "/Game/SavedScenes/run_build"
 WORKING = CANDIDATE + "__c4s_scoring"
 
 
@@ -260,7 +262,7 @@ def test_the_plate_is_enforced_on_a_working_copy_before_rendering(monkeypatch, t
     steps = [call[0] for call in editor.calls]
     assert steps == ["open", "bounds", "save", "open", "begin_rendering", "capture", "verify"]
     assert editor.calls[0] == ("open", CANDIDATE) and editor.calls[2] == ("save", WORKING)
-    assert "MINX=-6500.0; MAXX=6500.0" in editor.calls[1][1]  # case_014: size_m 130
+    assert f"MINX={-HALF_CM!r}; MAXX={HALF_CM!r}" in editor.calls[1][1]
     result = json.loads((tmp_path / "result.json").read_text())
     assert result["scored_map"] == WORKING and result["edge_discipline"]["total_deleted"] == 2
 
