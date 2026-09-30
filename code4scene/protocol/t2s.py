@@ -83,6 +83,18 @@ def _unit(value: Any) -> float | None:
 # ---------------------------------------------------------------------------
 
 
+def _row_score(row: Mapping[str, Any]) -> float:
+    """A decision's score, at full precision when the row records it.
+
+    Rows store ``effective_score`` at four decimals; newer rows also keep the
+    unrounded value, which is used only while it still rounds to the stored one.
+    """
+
+    rounded = _unit(row.get("effective_score")) or 0.0
+    exact = _unit(row.get("unrounded_effective_score"))
+    return exact if exact is not None and round(exact, 4) == rounded else rounded
+
+
 def detailed_from_decisions(
     decisions: Iterable[Mapping[str, Any]],
     *,
@@ -114,7 +126,7 @@ def detailed_from_decisions(
             group = [r for r in members if r.get("clause_index") == clause]
             denominator = sum(float(r.get("predicate_weight", 1.0)) for r in group)
             value = sum(
-                float(r.get("predicate_weight", 1.0)) * (_unit(r.get("effective_score")) or 0.0)
+                float(r.get("predicate_weight", 1.0)) * _row_score(r)
                 for r in group) / denominator
             known = sum(
                 float(r.get("predicate_weight", 1.0)) for r in group

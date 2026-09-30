@@ -137,8 +137,18 @@ def _drop_visual(decisions: list[dict[str, Any]]) -> list[dict[str, Any]]:
         if _vlm_dependent(row):
             row.update(evaluation_status="NOT_EVALUATED", effective_score=0.0,
                        score_known=False, not_evaluated_reason="needs_vlm_judge")
+            row.pop("unrounded_effective_score", None)
         out.append(row)
     return out
+
+
+def _require_judge(client_factory: Callable[[], Any] | None) -> None:
+    """Fail before the first call when the configured judge has no endpoint."""
+
+    if client_factory is None:
+        from .evaluation import vlm_model_config
+
+        vlm_model_config.require_base_url()
 
 
 def _replay_stage3(bundle: bundle_mod.Bundle, plan: Mapping[str, Any],
@@ -148,6 +158,7 @@ def _replay_stage3(bundle: bundle_mod.Bundle, plan: Mapping[str, Any],
     from .evaluation import semantic_repeatability as replay
     from .evaluation.requirement_graph.vlm_client import tool_client_from_env
 
+    _require_judge(client_factory)
     plan = copy.deepcopy(dict(plan))
     for spec in plan["frames"].values():
         spec["path"] = str(bundle.path(spec["path"]))
@@ -158,7 +169,9 @@ def _replay_stage3(bundle: bundle_mod.Bundle, plan: Mapping[str, Any],
     factory = client_factory or tool_client_from_env
     outcomes = [replay.replay_claim(plan, claim, frames, factory) for claim in plan["claims"]]
     scored = replay.score_replayed(plan, outcomes)
-    return list(scored["requirements"])
+    # Replayed rows carry the re-judged score only at the recorded precision.
+    return [{k: v for k, v in row.items() if k != "unrounded_effective_score"}
+            for row in scored["requirements"]]
 
 
 def _overview(bundle: bundle_mod.Bundle, task: Any, judge: str,
@@ -185,6 +198,7 @@ def _overview(bundle: bundle_mod.Bundle, task: Any, judge: str,
     prompt = getattr(task, "prompt", None)
     if not prompt:
         raise ScoringError("live Overview Alignment needs the task prompt (--task)")
+    _require_judge(client_factory)
     measured = overview.evaluate_overview_frames(
         prompt, [{"path": str(p), "frame_id": f"overview_{i + 1}"} for i, p in enumerate(views)],
         model_label=str(bundle.run.get("model") or "candidate"),
@@ -295,6 +309,12 @@ def score_bundle(
 
         record["judge"] = {"model": vlm_model_config.model(),
                            "base_url_configured": bool(vlm_model_config.base_url())}
+        differs = vlm_model_config.judge_differences()
+        if differs:
+            record["judge"]["differs_from_paper"] = differs
+            if bundle.is_t2s:
+                # The judge scores text-to-scene cases: another judge is another protocol.
+                record["comparable_to_paper"] = False
     if include_audit and scored.get("audit"):
         record["audit"] = scored["audit"]
     return record

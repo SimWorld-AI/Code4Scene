@@ -14,7 +14,7 @@ the scoring editor has to render:
    (docs/SCORING.md, "The VLM judge"):
 
        python tools/score_saved_build.py --task benchmark/public/text-to-scene/<case>/task.yaml \\
-           --candidate-map /Game/<candidate map> --bridge /tmp/c4s.sock --out runs/<case>
+           --candidate-map /Game/<candidate map> --bridge "$C4S_BRIDGE_SOCK" --out runs/<case>
 
 As in the paper's scorer, the task plate is enforced first: the bounds pass
 (code4scene/evaluation/bounds.py) deletes actors wholly outside the size_m

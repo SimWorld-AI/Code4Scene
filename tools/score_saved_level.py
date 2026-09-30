@@ -6,7 +6,8 @@ This is the "Recommended" route of docs/EVIDENCE_BUNDLE.md made concrete:
    Code4SceneInputs/Code4SceneGT levels and the candidate .umap (copied to the
    /Game path it was saved under), running tools/c4s_editor_bridge.py:
 
-       C4S_BRIDGE_SOCK=/tmp/c4s.sock C4S_START_MAP=/Game/<candidate map> \\
+       export C4S_BRIDGE_SOCK=$(mktemp -d)/c4s.sock
+       C4S_START_MAP=/Game/<candidate map> \\
        UnrealEditor-Cmd <Project>.uproject \\
            -ExecutePythonScript=<repo>/tools/c4s_editor_bridge.py \\
            -unattended -nosplash -nop4 -nosound -NullRHI
@@ -14,7 +15,7 @@ This is the "Recommended" route of docs/EVIDENCE_BUNDLE.md made concrete:
 2. run this script against that socket:
 
        python tools/score_saved_level.py --task benchmark/public/.../task.yaml \\
-           --candidate-map /Game/<candidate map> --bridge /tmp/c4s.sock --out runs/<case>
+           --candidate-map /Game/<candidate map> --bridge "$C4S_BRIDGE_SOCK" --out runs/<case>
 
 It writes <out>/result.json (overall_score = the paper case score) and the
 scene evidence under <out>/scene_evidence/, ready for `code4scene make-bundle`.

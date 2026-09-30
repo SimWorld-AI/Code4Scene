@@ -312,6 +312,27 @@ def test_continuous_measured_scores_are_preserved():
     assert result["score"] == 0.25
 
 
+def test_rows_keep_the_unrounded_requirement_score():
+    prompt = "A partially correct relation."
+    result = score_semantic_case(
+        prompt,
+        [
+            _requirement(
+                "partial",
+                "partially correct relation",
+                _span(prompt, "partially correct relation"),
+                "spatial_relation",
+                "MISMATCH",
+                score=1 / 3,
+            )
+        ],
+    )
+
+    (row,) = result["requirements"]
+    assert row["effective_score"] == 0.3333
+    assert row["unrounded_effective_score"] == 1 / 3
+
+
 def test_same_source_sentence_with_different_predicates_is_not_a_duplicate():
     prompt = "Add three red chairs."
     requirements = [

@@ -208,3 +208,38 @@ def test_verify_reads_snapshots_as_utf8(tmp_path):
     path.write_bytes(json.dumps({"actors": [{"label": "Café"}]}, ensure_ascii=False).encode("utf-8"))
     assert verify_mod._load(path)["actors"][0]["label"] == "Café"
     assert os.path.exists(path)
+
+
+def test_every_shipped_case_asks_only_for_what_the_builder_allows():
+    cases = catalog.load_cases()
+    found = []
+    for case in cases:
+        if case.is_i2s and case.recipe:
+            found += build._level_problems(build._recipe_levels(case.recipe))
+        if case.is_i2s and case.cameras:
+            found += build._camera_problems(case.cameras)
+    for scene_id in build.selected_scenes(cases):
+        found += build._level_problems(build._scene_levels(catalog.load_scene(scene_id)))
+    assert found == []
+
+
+def test_a_camera_file_cannot_run_code_or_write_outside_its_case():
+    cameras = {"capture": {"console": ["r.ScreenPercentage 100", "viewmode lit", "py import os",
+                                       "r.ScreenPercentage 100 | py import os"]},
+               "views": [{"name": "../view", "publish": {"file": "/tmp/view.png"}},
+                         {"name": "view-01", "publish": {"file": "references/view-01.png"}}]}
+    found = build._camera_problems(cameras)
+    assert len(found) == 4
+    assert all("view-01" not in problem for problem in found)
+
+
+def test_a_recipe_that_names_a_level_outside_the_builders_roots_is_not_built(tmp_path, monkeypatch):
+    from types import SimpleNamespace
+
+    dispatched = []
+    monkeypatch.setattr(build, "run_job", lambda args, name, tasks, **k: dispatched.append(tasks))
+    args = Namespace(dataset=tmp_path, force=True, problems=[])
+    foreign = SimpleNamespace(case_id="foreign", is_i2s=True,
+                              recipe={"input_map": "/Game/StarterContent/Maps/Minimal"})
+    build.step_inputs(args, [foreign], {})
+    assert dispatched == [] and "/Game/StarterContent/Maps/Minimal" in args.problems[0]

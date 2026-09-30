@@ -93,8 +93,12 @@ class Bridge:
     def _connect(self, timeout: float) -> socket.socket:
         if self.path:
             sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-            sock.settimeout(timeout)
-            sock.connect(self.path)
+            try:
+                sock.settimeout(timeout)
+                sock.connect(self.path)
+            except BaseException:
+                sock.close()
+                raise
             return sock
         return socket.create_connection((self.host, self.port), timeout=timeout)
 
@@ -118,6 +122,10 @@ class Bridge:
                     if not chunk:
                         break
                     buf += chunk
+                    # A complete reply ends its object here; parsing only then
+                    # keeps a large reply from being re-parsed on every chunk.
+                    if not buf.rstrip().endswith((b"}", b"]")):
+                        continue
                     try:
                         return json.loads(buf)
                     except json.JSONDecodeError:

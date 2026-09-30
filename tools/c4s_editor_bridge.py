@@ -2,9 +2,13 @@
 
 Run inside the scoring editor:
 
-    C4S_BRIDGE_SOCK=/tmp/c4s.sock [C4S_START_MAP=/Game/...] \
+    export C4S_BRIDGE_SOCK=$(mktemp -d)/c4s.sock
+    [C4S_START_MAP=/Game/...] \
     UnrealEditor-Cmd <Project>.uproject -ExecutePythonScript=<repo>/tools/c4s_editor_bridge.py \
         -unattended -nosplash -nop4 -nosound -NullRHI
+
+The bridge runs any Python it is sent: keep the socket in a directory only you
+can open (as above), and start the scoring editor after the agent has exited.
 
 Protocol (see code4scene/core/bridge.py): one JSON request per connection,
 {"type": ..., "params": {...}} plus a newline; one JSON object back.
@@ -23,6 +27,8 @@ import io
 import json
 import os
 import socket
+import stat
+import struct
 import time
 import traceback
 
@@ -31,6 +37,7 @@ import unreal
 SOCK = os.environ["C4S_BRIDGE_SOCK"]
 START_MAP = os.environ.get("C4S_START_MAP", "")
 IDLE_LIMIT_S = 1800.0
+MAX_REQUEST_BYTES = 64 << 20  # a script, not a data upload
 NS = {"__name__": "__c4s_bridge__"}
 
 
@@ -55,14 +62,36 @@ def _read_request(conn):
         if not chunk:
             break
         buf += chunk
+        if len(buf) > MAX_REQUEST_BYTES:
+            raise ValueError(f"request larger than {MAX_REQUEST_BYTES} bytes")
     return json.loads(buf.decode() or "{}")
 
 
-def serve_forever():
-    if os.path.exists(SOCK):
-        os.unlink(SOCK)
+def _bind(path):
+    """A listening unix socket that only the user running the editor can use."""
+    if os.path.lexists(path):
+        if not stat.S_ISSOCK(os.lstat(path).st_mode):
+            raise RuntimeError(f"C4S_BRIDGE_SOCK {path} exists and is not a socket")
+        os.unlink(path)
     server = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-    server.bind(SOCK)
+    previous = os.umask(0o077)
+    try:
+        server.bind(path)
+    finally:
+        os.umask(previous)
+    return server
+
+
+def _same_user(conn):
+    """The bridge runs any Python it is sent, so it serves only its own user."""
+    if not hasattr(socket, "SO_PEERCRED"):
+        return True
+    creds = conn.getsockopt(socket.SOL_SOCKET, socket.SO_PEERCRED, struct.calcsize("3i"))
+    return struct.unpack("3i", creds)[1] == os.getuid()
+
+
+def serve_forever():
+    server = _bind(SOCK)
     server.listen(8)
     server.settimeout(1.0)
     unreal.log("C4S_BRIDGE_READY " + SOCK)
@@ -72,20 +101,22 @@ def serve_forever():
             conn, _ = server.accept()
         except TimeoutError:
             continue
-        last = time.time()
         stop = False
         try:
-            req = _read_request(conn)
-            kind = req.get("type")
-            params = req.get("params") or {}
-            if kind == "execute_python_script":
-                resp = _execute(params.get("script") or "")
-            elif kind in ("editor_status", "abandon_job"):
-                resp = {"status": "ok", "result": {"busy": False}}
-            elif kind == "shutdown":
-                resp, stop = {"status": "ok"}, True
+            if not _same_user(conn):
+                resp = {"status": "error", "error": "the bridge serves only the user running the editor"}
             else:
-                resp = {"status": "error", "error": f"unsupported command {kind!r}"}
+                req = _read_request(conn)
+                kind = req.get("type")
+                params = req.get("params") or {}
+                if kind == "execute_python_script":
+                    resp = _execute(params.get("script") or "")
+                elif kind in ("editor_status", "abandon_job"):
+                    resp = {"status": "ok", "result": {"busy": False}}
+                elif kind == "shutdown":
+                    resp, stop = {"status": "ok"}, True
+                else:
+                    resp = {"status": "error", "error": f"unsupported command {kind!r}"}
             conn.sendall(json.dumps(resp, default=str).encode())
         except Exception:
             unreal.log_error("c4s bridge: " + traceback.format_exc())
@@ -94,6 +125,7 @@ def serve_forever():
                 conn.close()
             except Exception:
                 pass
+            last = time.time()
         if stop:
             break
     server.close()

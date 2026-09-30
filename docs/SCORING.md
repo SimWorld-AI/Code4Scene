@@ -275,7 +275,7 @@ package: supply it with a flag or the environment.
 |---|---|
 | `CODE4SCENE_VLM_BASE_URL` | OpenAI-compatible base URL, e.g. `http://localhost:8000/v1` |
 | `CODE4SCENE_VLM_MODEL` | served model name (default `Qwen/Qwen3.8-27B`) |
-| `CODE4SCENE_VLM_API_KEY` | optional bearer token (falls back to `OPENAI_API_KEY`) |
+| `CODE4SCENE_VLM_API_KEY` | optional bearer token for the judge and embedding endpoints |
 | `CODE4SCENE_EMBED_BASE_URL` | embedding endpoint for the report-only caption diagnostic |
 
 Everything else, including Repair F1, Physical Safety, Candidate Integrity

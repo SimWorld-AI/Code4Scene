@@ -154,10 +154,9 @@ def test_cli_score_rescore_and_aggregate(tmp_path, capsys):
         assert cli.main(["score", str(b.root), "--no-vlm", "--out",
                          str(out_dir / f"{model}.json")]) == 0
     capsys.readouterr()
-    schedule = tmp_path / "schedule"
-    schedule.mkdir()
-    (schedule / "public-outdoor-cases.txt").write_text("synthetic-repair\nsynthetic-other\n")
-    assert cli.main(["aggregate", str(out_dir), "--schedule", str(schedule),
+    outdoor = tmp_path / "outdoor-cases.txt"
+    outdoor.write_text("synthetic-repair\nsynthetic-other\n")
+    assert cli.main(["aggregate", str(out_dir), "--outdoor-cases", str(outdoor),
                      "--format", "csv", "--out", str(tmp_path / "models.csv")]) == 0
     rows = {r["model"]: r for r in csv.DictReader((tmp_path / "models.csv").open())}
     a = json.loads((out_dir / "model-a.json").read_text())["score"]

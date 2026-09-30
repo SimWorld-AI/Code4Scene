@@ -7,9 +7,13 @@ later frame, so this editor has to render: start it on a GPU, without -NullRHI,
 and with -ExecCmds (unlike -ExecutePythonScript it keeps the editor running
 after the script returns):
 
-    C4S_BRIDGE_SOCK=/tmp/c4s.sock [C4S_START_MAP=/Game/...] \\
+    export C4S_BRIDGE_SOCK=$(mktemp -d)/c4s.sock
+    [C4S_START_MAP=/Game/...] \\
     UnrealEditor-Cmd <Project>.uproject "-ExecCmds=py <repo>/tools/c4s_render_bridge.py" \\
         -RenderOffscreen -unattended -nosplash -nop4 -nosound [-graphicsadapter=<gpu index>]
+
+The bridge runs any Python it is sent: keep the socket in a directory only you
+can open (as above), and start the scoring editor after the agent has exited.
 
 Requests are first served from this script, where levels can still be opened.
 ``begin_rendering`` (or the first screenshot request) moves serving to a Slate
@@ -33,6 +37,8 @@ import json
 import math
 import os
 import socket
+import stat
+import struct
 import time
 import traceback
 
@@ -41,6 +47,7 @@ import unreal
 SOCK = os.environ["C4S_BRIDGE_SOCK"]
 START_MAP = os.environ.get("C4S_START_MAP", "")
 IDLE_LIMIT_S = 1800.0
+MAX_REQUEST_BYTES = 64 << 20  # a script, not a data upload
 SHOT_TIMEOUT_S = 25.0  # per picture, as in the benchmark's bridge
 SETTLE_TICKS = 10  # frames between the warm-up picture and the first real one
 CAMERA_LABEL = "_SwShotCam"
@@ -93,7 +100,32 @@ def _read_request(conn):
         if not chunk:
             break
         buf += chunk
+        if len(buf) > MAX_REQUEST_BYTES:
+            raise ValueError(f"request larger than {MAX_REQUEST_BYTES} bytes")
     return json.loads(buf.decode() or "{}")
+
+
+def _bind(path):
+    """A listening unix socket that only the user running the editor can use."""
+    if os.path.lexists(path):
+        if not stat.S_ISSOCK(os.lstat(path).st_mode):
+            raise RuntimeError(f"C4S_BRIDGE_SOCK {path} exists and is not a socket")
+        os.unlink(path)
+    server = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
+    previous = os.umask(0o077)
+    try:
+        server.bind(path)
+    finally:
+        os.umask(previous)
+    return server
+
+
+def _same_user(conn):
+    """The bridge runs any Python it is sent, so it serves only its own user."""
+    if not hasattr(socket, "SO_PEERCRED"):
+        return True
+    creds = conn.getsockopt(socket.SOL_SOCKET, socket.SO_PEERCRED, struct.calcsize("3i"))
+    return struct.unpack("3i", creds)[1] == os.getuid()
 
 
 def _send(conn, resp):
@@ -369,6 +401,9 @@ def _tick(_delta):
             except (BlockingIOError, InterruptedError, TimeoutError):
                 break
             STATE["last"] = time.time()
+            if not _same_user(conn):
+                _send(conn, {"status": "error", "error": "the bridge serves only the user running the editor"})
+                continue
             try:
                 if not _serve_tick(conn):
                     return
@@ -389,10 +424,7 @@ def _begin_rendering():
 
 def serve():
     """Serve from the startup script until rendering begins."""
-    if os.path.exists(SOCK):
-        os.unlink(SOCK)
-    server = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
-    server.bind(SOCK)
+    server = _bind(SOCK)
     server.listen(8)
     server.settimeout(1.0)
     STATE["server"] = server
@@ -404,6 +436,9 @@ def serve():
         except TimeoutError:
             continue
         last = time.time()
+        if not _same_user(conn):
+            _send(conn, {"status": "error", "error": "the bridge serves only the user running the editor"})
+            continue
         try:
             req = _read_request(conn)
             kind = req.get("type")

@@ -172,12 +172,26 @@ def cmd_validate_bundle(args: argparse.Namespace) -> int:
 # ---------------------------------------------------------------------------
 
 
-def _rows_from_file(path: Path) -> list[dict[str, Any]]:
+#: What a case row needs besides a model label (which --model may supply).
+ROW_FIELDS = ("setting", "case_id", "score")
+RESULT_SUFFIXES = (".json", ".jsonl", ".csv")
+
+
+def _rows_from_file(path: Path, *, in_directory: bool = False) -> list[dict[str, Any]]:
+    """Case rows from one file; a file in a results folder that holds none is skipped."""
+
     from . import scoring
 
     text = path.read_text()
     if path.suffix == ".csv":
-        return [dict(r) for r in csv.DictReader(text.splitlines())]
+        reader = csv.DictReader(text.splitlines())
+        missing = [f for f in ROW_FIELDS if f not in (reader.fieldnames or ())]
+        if missing and in_directory:
+            print(f"note: skipped {path}: not a case score table", file=sys.stderr)
+            return []
+        if missing:
+            raise ValueError(f"{path}: CSV lacks the column(s) {', '.join(missing)}")
+        return [dict(r) for r in reader]
     if path.suffix == ".jsonl":
         values = [json.loads(line) for line in text.splitlines() if line.strip()]
     else:
@@ -185,10 +199,16 @@ def _rows_from_file(path: Path) -> list[dict[str, Any]]:
         values = value if isinstance(value, list) else [value]
     rows = []
     for value in values:
-        if value.get("schema_version") == scoring.SCHEMA_VERSION:
+        if isinstance(value, dict) and value.get("schema_version") == scoring.SCHEMA_VERSION:
             rows.append(scoring.case_row(value))
-        else:
+        elif isinstance(value, dict) and all(f in value for f in ROW_FIELDS):
             rows.append(value)
+        elif in_directory:
+            print(f"note: skipped {path}: not a case score", file=sys.stderr)
+            return []
+        else:
+            raise ValueError(f"{path}: not a case score (a code4scene score record or a row "
+                             f"with {', '.join(ROW_FIELDS)})")
     return rows
 
 
@@ -196,9 +216,11 @@ def _schedule(args: argparse.Namespace) -> dict[str, list[str]] | None:
     schedule: dict[str, list[str]] = {}
     if args.schedule:
         root = Path(args.schedule)
+        missing = [name for name in SCHEDULE_FILES.values() if not (root / name).is_file()]
+        if missing:
+            raise ValueError(f"--schedule {root} lacks {', '.join(missing)}")
         for setting, name in SCHEDULE_FILES.items():
-            if (root / name).is_file():
-                schedule[setting] = (root / name).read_text().split()
+            schedule[setting] = (root / name).read_text().split()
     for setting, value in (("text-to-scene", args.t2s_cases),
                            ("image-to-scene/indoor", args.indoor_cases),
                            ("image-to-scene/outdoor", args.outdoor_cases)):
@@ -213,12 +235,28 @@ def cmd_aggregate(args: argparse.Namespace) -> int:
     rows: list[dict[str, Any]] = []
     for item in args.results:
         path = Path(item)
-        files = sorted(path.rglob("*.json")) if path.is_dir() else [path]
-        for file in files:
-            rows.extend(_rows_from_file(file))
+        if path.is_dir():
+            for file in sorted(p for p in path.rglob("*") if p.suffix in RESULT_SUFFIXES):
+                rows.extend(_rows_from_file(file, in_directory=True))
+        else:
+            rows.extend(_rows_from_file(path))
+    if not rows:
+        raise ValueError(f"no case scores found in {', '.join(args.results)}")
     if args.model:
         rows = [dict(r, model=args.model) for r in rows]
-    models = agg.aggregate(rows, schedule=_schedule(args),
+    if any(not r.get("model") for r in rows):
+        raise ValueError("a case row has no model label; pass --model")
+    schedule = _schedule(args)
+    if schedule is None:
+        print("note: no case lists given; each setting is averaged over the cases present, "
+              "which is not the paper's schedule", file=sys.stderr)
+    else:
+        listed = {agg.normalize_setting(s) for s in schedule}
+        unlisted = sorted({agg.normalize_setting(r["setting"]) for r in rows} - listed)
+        if unlisted:
+            raise ValueError(f"rows for {', '.join(unlisted)} but no case list for them; "
+                             "pass --schedule or the matching --*-cases file")
+    models = agg.aggregate(rows, schedule=schedule,
                            missing_as_zero=not args.no_missing_as_zero)
     if args.format == "csv":
         stream = open(args.out, "w", newline="") if args.out else sys.stdout
@@ -315,6 +353,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         return int(args.func(args) or 0)
     except (ValueError, OSError) as exc:
         print(f"code4scene {args.command}: error: {exc}", file=sys.stderr)
+        return 2
+    except Exception as exc:  # noqa: BLE001 - the command line reports; it does not dump a traceback
+        print(f"code4scene {args.command}: error: {type(exc).__name__}: {exc}", file=sys.stderr)
         return 2
 
 

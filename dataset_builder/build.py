@@ -76,6 +76,59 @@ def raw_render_dir(dataset: Path, case) -> Path:
 
 
 # ---------------------------------------------------------------------------
+# What a task file may make the editor do
+# ---------------------------------------------------------------------------
+
+#: The only /Game roots the builder saves levels under. With --force it replaces
+#: the levels it builds, so a task file may not name a level anywhere else.
+OWNED_ROOTS = ("/Game/Code4SceneGT/", "/Game/Code4SceneInputs/", catalog.BLANK_STAGE.rsplit("/", 1)[0] + "/")
+
+
+def _level_problems(levels) -> list:
+    return [f"refusing to save {level!r}: the builder saves levels only under "
+            + ", ".join(OWNED_ROOTS)
+            for level in levels
+            if not str(level or "").startswith(OWNED_ROOTS) or ".." in str(level).split("/")]
+
+
+def _scene_levels(scene: dict) -> list:
+    """The levels that canonicalizing a scene saves."""
+    return [scene.get("ground_truth_map")] + [
+        op.get("level") for op in scene.get("patches") or () if op.get("op") == "add_streaming_level"]
+
+
+def _recipe_levels(recipe: dict) -> list:
+    """The levels that materializing a recipe saves."""
+    return [recipe.get("input_map")] + [
+        op.get("to") for op in recipe.get("level_structure") or () if op.get("copy_package")]
+
+
+def _console_allowed(command) -> bool:
+    """Renderer and scalability settings and the view mode; nothing that runs code."""
+    text = str(command)
+    head = text.split(" ", 1)[0]
+    return (head == "viewmode" or head.startswith(("r.", "sg."))) and not any(c in text for c in ";|\r\n")
+
+
+def _inside(name) -> bool:
+    """A relative file name that stays inside the directory it is joined to."""
+    text = str(name or "").replace("\\", "/")
+    return bool(text) and not text.startswith("/") and ":" not in text and ".." not in text.split("/")
+
+
+def _camera_problems(cameras: dict) -> list:
+    found = [f"console command {command!r} is not a renderer setting or view mode"
+             for command in (cameras.get("capture") or {}).get("console") or ()
+             if not _console_allowed(command)]
+    for view in cameras.get("views") or ():
+        for what, name in (("view name", view.get("name")),
+                           ("output file", (view.get("publish") or {}).get("file"))):
+            if not _inside(name):
+                found.append(f"{what} {name!r} would leave the case directory")
+    return found
+
+
+# ---------------------------------------------------------------------------
 # Host-side pack check
 # ---------------------------------------------------------------------------
 
@@ -239,7 +292,12 @@ def step_gt(args, cases, ready):
         if not any(ready.get(c, True) for c in scene_cases):
             log(f"gt: skipping {scene_id} (packs missing)")
             continue
-        tasks.append({"kind": "canonicalize", "id": scene_id, "scene": catalog.load_scene(scene_id),
+        scene = catalog.load_scene(scene_id)
+        refused = _level_problems(_scene_levels(scene))
+        if refused:
+            problem(args, f"gt: {scene_id}: " + "; ".join(refused))
+            continue
+        tasks.append({"kind": "canonicalize", "id": scene_id, "scene": scene,
                       "force": args.force,
                       "export": str(args.dataset / "snapshots" / "gt" / f"{scene_id}.scene.json")})
     if tasks:
@@ -250,6 +308,10 @@ def step_inputs(args, cases, ready):
     tasks = []
     for case in cases:
         if not case.is_i2s or not case.recipe or not ready.get(case.case_id, True):
+            continue
+        refused = _level_problems(_recipe_levels(case.recipe))
+        if refused:
+            problem(args, f"inputs: {case.case_id}: " + "; ".join(refused))
             continue
         tasks.append({"kind": "materialize", "id": case.case_id, "recipe": case.recipe, "force": args.force,
                       "export": str(args.dataset / "snapshots" / "input" / f"{case.case_id}.scene.json")})
@@ -325,6 +387,10 @@ def step_render(args, cases, ready):
     tasks = []
     for case in cases:
         if not case.is_i2s or not case.cameras or not ready.get(case.case_id, True):
+            continue
+        refused = _camera_problems(case.cameras)
+        if refused:
+            problem(args, f"render: {case.case_id}: " + "; ".join(refused))
             continue
         raw_dir = raw_render_dir(args.dataset, case)
         tasks.append({"kind": "render", "id": case.case_id, "map": case.recipe["ground_truth_map"],
