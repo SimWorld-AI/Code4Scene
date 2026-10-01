@@ -1,0 +1,71 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_145
+kind: scene_generation
+inputs:
+  prompt: "Create a sparse Wild West town of roughly eight wooden buildings in two rows along a dirt street,\
+    \ including a church with a bell tower. Enclose three sides with sandstone cliffs. Bring a railway\
+    \ and steam locomotive from the open side toward the church, with picket fencing and sparse period\
+    \ props.\n\n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is\
+    \ not available\nin this run, so this list is your entire library. Format:\n\n  id | name | category\
+    \ | width x depth x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path\
+    \ is what reaches UE.\nYou decide which to use, how many of each, and where they go — reuse entries\n\
+    freely.\n\n- bomber | Bomber | cars | 1.99x4.66x1.93 m | /Game/Wild_West_Race/Props/Cars/Bomber/SK_Bomber.SK_Bomber\n\
+    - crazy | Crazy | cars | 3.47x5.34x2.1 m | /Game/Wild_West_Race/Props/Cars/Crazy/SK_Crazy.SK_Crazy\n\
+    - fast | Fast | cars | 2.08x5.88x2.68 m | /Game/Wild_West_Race/Props/Cars/Fast/SK_Fast.SK_Fast\n-\
+    \ killer | Killer | cars | 2.16x4.31x2.54 m | /Game/Wild_West_Race/Props/Cars/Killer/SK_Killer.SK_Killer\n\
+    - mad | Mad | cars | 1.69x4.13x1.07 m | /Game/Wild_West_Race/Props/Cars/Mad/SK_Mad.SK_Mad\n- ratrod\
+    \ | Ratrod | cars | 3.09x4.24x1.96 m | /Game/Wild_West_Race/Props/Cars/Ratrod/SK_Ratrod.SK_Ratrod\n\
+    - shooter | Shooter | cars | 2.55x4.73x2.54 m | /Game/Wild_West_Race/Props/Cars/Shooter/SK_Shooter.SK_Shooter\n\
+    - tank | Tank | cars | 2.9x5.12x2.91 m | /Game/Wild_West_Race/Props/Cars/Tank/SK_Tank.SK_Tank\n- thorn\
+    \ | Thorn | cars | 2.4x6.14x2.58 m | /Game/Wild_West_Race/Props/Cars/Thorn/SK_Thorn.SK_Thorn\n- van\
+    \ | Van | cars | 2.31x5.87x3.32 m | /Game/Wild_West_Race/Props/Cars/Van/SK_Van.SK_Van\n- bank | Bank\
+    \ | combined meshes | 15.87x16.09x8.73 m | /Game/Wild_West_Race/Props/Combined_Meshes/SM_Bank_Combined.SM_Bank_Combined\n\
+    - church | Church | combined meshes | 20.45x14.24x28.92 m | /Game/Wild_West_Race/Props/Combined_Meshes/SM_Church_Combined.SM_Church_Combined\n\
+    - groceries | Groceries | combined meshes | 10.11x8.39x10 m | /Game/Wild_West_Race/Props/Combined_Meshes/SM_Groceries_Combined.SM_Groceries_Combined\n\
+    - hotel_palace | Hotel Palace | combined meshes | 11.63x11.28x15.42 m | /Game/Wild_West_Race/Props/Combined_Meshes/SM_Hotel_Palace_Combined.SM_Hotel_Palace_Combined\n\
+    - hotel_western | Hotel Western | combined meshes | 9.38x9.1x6.39 m | /Game/Wild_West_Race/Props/Combined_Meshes/SM_Hotel_Western_Combined.SM_Hotel_Western_Combined\n\
+    - hotel_wild_west | Hotel Wild West | combined meshes | 14.9x12.31x9.09 m | /Game/Wild_West_Race/Props/Combined_Meshes/SM_Hotel_Wild_West_Combined.SM_Hotel_Wild_West_Combined\n\
+    - law_office | Law Office | combined meshes | 12.72x10x14.25 m | /Game/Wild_West_Race/Props/Combined_Meshes/SM_Law_Office_Combined.SM_Law_Office_Combined\n\
+    - saloon | Saloon | combined meshes | 11.18x9.2x6.39 m | /Game/Wild_West_Race/Props/Combined_Meshes/SM_Saloon_Combined.SM_Saloon_Combined\n\
+    - floor | Floor | floor | 50x100x0 m | /Game/Wild_West_Race/Props/Floor/SM_Floor.SM_Floor\n- mountain\
+    \ | Mountain | mountain | 13.17x25.38x16.95 m | /Game/Wild_West_Race/Props/Mountain/SM_Mountain.SM_Mountain\n\
+    - railroad | Railroad | railroad | 3.63x14.2x0.2 m | /Game/Wild_West_Race/Props/Railroad/SM_Railroad.SM_Railroad\n\
+    - town_elements_barrel | Town Elements Barrel | town elements | 1.01x1.06x1.19 m | /Game/Wild_West_Race/Props/Town_Elements/SM_Town_Elements_Barrel.SM_Town_Elements_Barrel\n\
+    - town_elements_bigchest | Town Elements BigChest | town elements | 0.59x0.58x0.83 m | /Game/Wild_West_Race/Props/Town_Elements/SM_Town_Elements_BigChest.SM_Town_Elements_BigChest\n\
+    - town_elements_bucket | Town Elements Bucket | town elements | 0.44x0.39x0.37 m | /Game/Wild_West_Race/Props/Town_Elements/SM_Town_Elements_Bucket.SM_Town_Elements_Bucket\n\
+    - town_elements_fence | Town Elements Fence | town elements | 2.4x0.17x1.51 m | /Game/Wild_West_Race/Props/Town_Elements/SM_Town_Elements_Fence.SM_Town_Elements_Fence\n\
+    - town_elements_hack | Town Elements Hack | town elements | 4.14x3.19x1.28 m | /Game/Wild_West_Race/Props/Town_Elements/SM_Town_Elements_Hack.SM_Town_Elements_Hack\n\
+    - town_elements_horsereid | Town Elements HorseReid | town elements | 0.45x2.14x0.96 m | /Game/Wild_West_Race/Props/Town_Elements/SM_Town_Elements_HorseReid.SM_Town_Elements_HorseReid\n\
+    - town_elements_jug | Town Elements Jug | town elements | 0.38x0.49x0.68 m | /Game/Wild_West_Race/Props/Town_Elements/SM_Town_Elements_Jug.SM_Town_Elements_Jug\n\
+    - town_elements_lamppost | Town Elements Lamppost | town elements | 1.32x12.16x5.82 m | /Game/Wild_West_Race/Props/Town_Elements/SM_Town_Elements_Lamppost.SM_Town_Elements_Lamppost\n\
+    - town_elements_log | Town Elements Log | town elements | 2.91x3.1x0.52 m | /Game/Wild_West_Race/Props/Town_Elements/SM_Town_Elements_Log.SM_Town_Elements_Log\n\
+    - town_elements_smallchest | Town Elements SmallChest | town elements | 0.49x0.42x0.38 m | /Game/Wild_West_Race/Props/Town_Elements/SM_Town_Elements_SmallChest.SM_Town_Elements_SmallChest\n\
+    - town_elements_stairs | Town Elements Stairs | town elements | 0.62x0.84x4.24 m | /Game/Wild_West_Race/Props/Town_Elements/SM_Town_Elements_Stairs.SM_Town_Elements_Stairs\n\
+    - town_elements_streetlamp | Town Elements StreetLamp | town elements | 1.77x0.31x3.73 m | /Game/Wild_West_Race/Props/Town_Elements/SM_Town_Elements_StreetLamp.SM_Town_Elements_StreetLamp\n\
+    - town_elements_table | Town Elements Table | town elements | 8.41x0.48x6.91 m | /Game/Wild_West_Race/Props/Town_Elements/SM_Town_Elements_Table.SM_Town_Elements_Table\n\
+    - town_elements_trough | Town Elements Trough | town elements | 0.6x1.36x0.36 m | /Game/Wild_West_Race/Props/Town_Elements/SM_Town_Elements_Trough.SM_Town_Elements_Trough\n\
+    - town_elements_well | Town Elements Well | town elements | 2.08x2.13x2.27 m | /Game/Wild_West_Race/Props/Town_Elements/SM_Town_Elements_Well.SM_Town_Elements_Well\n\
+    - town_elements_wheels | Town Elements Wheels | town elements | 0.66x0.91x0.76 m | /Game/Wild_West_Race/Props/Town_Elements/SM_Town_Elements_Wheels.SM_Town_Elements_Wheels\n\
+    - town_elements_windmill | Town Elements Windmill | town elements | 4.63x4.92x13.25 m | /Game/Wild_West_Race/Props/Town_Elements/SM_Town_Elements_Windmill.SM_Town_Elements_Windmill\n\
+    - train | Train | train | 3.44x24.5x5.49 m | /Game/Wild_West_Race/Props/Train/SM_Train.SM_Train\n\n\
+    === THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\nand\
+    \ arrangement the description calls for. Budget is 800 tool calls and 180\nminutes — you are not expected\
+    \ to use all of it, but clean collision and\nfloating numbers are not on their own evidence that the\
+    \ scene is finished.\nTake screenshots, look at them, and judge the result against the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_145.bundle.json
+- name: overview_prompt_alignment
+assets:
+  packs:
+  - Wild_West_Race

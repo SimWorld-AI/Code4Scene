@@ -3,30 +3,44 @@
 id: case_037
 kind: scene_generation
 inputs:
-  prompt: "Create an isolated ruined castle on a rocky rise beside a broad muddy river. Extend a long\
-    \ arched stone bridge from the fortress to a small roofed gateway across the water. Add broken wooden\
-    \ platforms and piles near the castle, sparse shoreline vegetation, and pale surrounding mountains\
-    \ under warm low sunlight.\n\n    === GROUND ===\n    Build the FLOOR FIRST, before placing anything\
-    \ else. Call the benchmark\n    tool `ground_pass` as your first build action: it carpets the whole\
-    \ 200 m\n    plate deterministically from a tile chosen for this scene. If you skip it,\n    and do\
-    \ not tile a floor yourself, the scene renders as objects floating\n    over empty space -- which\
-    \ is a failed reconstruction no matter how good\n    the massing is. These palette entries are also\
-    \ flat surfaces you can tile\n    by hand if you prefer:\n\n      - SM_Floor02 | 8.5x8.5x0.50 m |\
-    \ /Game/CastleRiver/Meshes/SM_Floor02.SM_Floor02\n      - SM_Floor03 | 6.4x6.4x0.50 m | /Game/CastleRiver/Meshes/SM_Floor03.SM_Floor03\n\
-    \      - SM_Floor01 | 6.0x6.0x0.50 m | /Game/CastleRiver/Meshes/SM_Floor01.SM_Floor01\n      - SM_FloorStones01\
-    \ | 5.3x4.1x0.07 m | /Game/CastleRiver/Meshes/SM_FloorStones01.SM_FloorStones01\n\n=== ASSET PALETTE\
-    \ ===\nBuild this scene using ONLY the assets below — asset search is not available\nin this run,\
-    \ so this list is your entire library. Format:\n\n  id | name | category | width x depth x height\
-    \ (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches UE.\n\
-    You decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n- bridge01\
-    \ | Bridge01 | meshes | 18.09x14.45x20.38 m | /Game/CastleRiver/Meshes/SM_Bridge01.SM_Bridge01\n-\
-    \ bridge02 | Bridge02 | meshes | 18.09x14.45x19.12 m | /Game/CastleRiver/Meshes/SM_Bridge02.SM_Bridge02\n\
-    - bridge03 | Bridge03 | meshes | 18.61x14.57x19.12 m | /Game/CastleRiver/Meshes/SM_Bridge03.SM_Bridge03\n\
-    - cannon01 | Cannon01 | meshes | 1.39x3.8x1.52 m | /Game/CastleRiver/Meshes/SM_Cannon01.SM_Cannon01\n\
-    - cannon02 | Cannon02 | meshes | 2.58x1.83x0.47 m | /Game/CastleRiver/Meshes/SM_Cannon02.SM_Cannon02\n\
-    - cannon03 | Cannon03 | meshes | 1.81x2.75x1.41 m | /Game/CastleRiver/Meshes/SM_Cannon03.SM_Cannon03\n\
-    - cannon04 | Cannon04 | meshes | 1.43x1.32x0.56 m | /Game/CastleRiver/Meshes/SM_Cannon04.SM_Cannon04\n\
-    - entrance_large_pillar01 | Entrance Large Pillar01 | meshes | 6.0x6.0x20.0 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar01.SM_EntranceLargePillar01\n\
+  prompt: "Warm low sunlight stretches long shadows beneath a partly cloudy sky. A broad, shallow, muddy\
+    \ river or flooded plain opens between rolling green-and-tan terrain and steep, pale, heavily eroded\
+    \ mountains. Broad undulating slopes, exposed cream-colored ridges, shallow channels, and distant\
+    \ water edges give the ground a strongly rippled surface.\n\nAt one end beside the water, a rocky\
+    \ rise carries one large ruined stone castle: a compact knot of adjoining structures around a tall\
+    \ rectangular gatehouse or keep with a pointed-arched opening. Several lower round and square towers,\
+    \ crenellated curtain walls, roofless interior chambers, and broken wall sections share scattered\
+    \ red banners and small red-tiled or conical roofs. Pale boulders gather at the foundations.\n\nFrom\
+    \ the castle, a long, straight fortified stone bridge or causeway reaches across the water. Low battlements\
+    \ line its length; a repeated sequence of broad masonry arches supports it, and a small roofed gateway-like\
+    \ section closes the far end. Beside the castle end, a damaged wooden ramp, stairs, platforms, and\
+    \ braces meet numerous irregular vertical piles emerging from the water, some leaning or broken. A\
+    \ few isolated posts and debris scatter across the flooded area, keeping the composition largely open\
+    \ and uncluttered.\n\nPatches of vivid low vegetation follow the shoreline, with one or two dense\
+    \ dark-green tree clusters near the bridge’s outer side. Fortress and bridge remain the only major\
+    \ built elements. Generous empty space holds them apart in a sparse, atmospheric medieval mountain\
+    \ setting, emphasizing their isolation, ruined condition, and dramatic scale.\n\n    === GROUND ===\n\
+    \    Build the FLOOR FIRST, before placing anything else. Call the benchmark\n    tool `ground_pass`\
+    \ as your first build action: it carpets the whole 200 m\n    plate deterministically from a tile\
+    \ chosen for this scene. If you skip it,\n    and do not tile a floor yourself, the scene renders\
+    \ as objects floating\n    over empty space -- which is a failed reconstruction no matter how good\n\
+    \    the massing is. These palette entries are also flat surfaces you can tile\n    by hand if you\
+    \ prefer:\n\n      - SM_Floor02 | 8.5x8.5x0.50 m | /Game/CastleRiver/Meshes/SM_Floor02.SM_Floor02\n\
+    \      - SM_Floor03 | 6.4x6.4x0.50 m | /Game/CastleRiver/Meshes/SM_Floor03.SM_Floor03\n      - SM_Floor01\
+    \ | 6.0x6.0x0.50 m | /Game/CastleRiver/Meshes/SM_Floor01.SM_Floor01\n      - SM_FloorStones01 | 5.3x4.1x0.07\
+    \ m | /Game/CastleRiver/Meshes/SM_FloorStones01.SM_FloorStones01\n\n=== ASSET PALETTE ===\nBuild this\
+    \ scene using ONLY the assets below — asset search is not available\nin this run, so this list is\
+    \ your entire library. Format:\n\n  id | name | category | width x depth x height (m) | spawn path\n\
+    \nThe id is what a scene graph refers to; the spawn path is what reaches UE.\nYou decide which to\
+    \ use, how many of each, and where they go — reuse entries\nfreely.\n\n- bridge01 | Bridge01 | meshes\
+    \ | 18.09x14.45x20.38 m | /Game/CastleRiver/Meshes/SM_Bridge01.SM_Bridge01\n- bridge02 | Bridge02\
+    \ | meshes | 18.09x14.45x19.12 m | /Game/CastleRiver/Meshes/SM_Bridge02.SM_Bridge02\n- bridge03 |\
+    \ Bridge03 | meshes | 18.61x14.57x19.12 m | /Game/CastleRiver/Meshes/SM_Bridge03.SM_Bridge03\n- cannon01\
+    \ | Cannon01 | meshes | 1.39x3.8x1.52 m | /Game/CastleRiver/Meshes/SM_Cannon01.SM_Cannon01\n- cannon02\
+    \ | Cannon02 | meshes | 2.58x1.83x0.47 m | /Game/CastleRiver/Meshes/SM_Cannon02.SM_Cannon02\n- cannon03\
+    \ | Cannon03 | meshes | 1.81x2.75x1.41 m | /Game/CastleRiver/Meshes/SM_Cannon03.SM_Cannon03\n- cannon04\
+    \ | Cannon04 | meshes | 1.43x1.32x0.56 m | /Game/CastleRiver/Meshes/SM_Cannon04.SM_Cannon04\n- entrance_large_pillar01\
+    \ | Entrance Large Pillar01 | meshes | 6.0x6.0x20.0 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar01.SM_EntranceLargePillar01\n\
     - entrance_large_pillar02 | Entrance Large Pillar02 | meshes | 10.77x10.48x20.16 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar02.SM_EntranceLargePillar02\n\
     - entrance_large_pillar03 | Entrance Large Pillar03 | meshes | 7.58x7.55x20.64 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar03.SM_EntranceLargePillar03\n\
     - entrance_large_pillar04 | Entrance Large Pillar04 | meshes | 8.86x8.9x21.24 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar04.SM_EntranceLargePillar04\n\

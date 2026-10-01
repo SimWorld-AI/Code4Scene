@@ -3,59 +3,222 @@
 id: case_058
 kind: scene_generation
 inputs:
-  prompt: "scene:\n  identity: Isolated Egyptian temple ruin\n  terrain: Vast, softly rolling orange desert\n\
-    main temple:\n  count: One dominant compact rectangular temple\n  walls: Massive pale sandstone; slightly\
-    \ battered; shallow projecting sections\n  decoration: Engraved panels, faded figures, hieroglyphic\
-    \ bands, thin gold accents\n  painted friezes: Turquoise, yellow, red, blue\n  roof: Flat, nearly\
-    \ complete slab; enclosed by uneven pale stone coping\nentrance:\n  orientation: Decorated façade\
-    \ toward an open forecourt\n  opening: Broad, shadowed, central\n  columns: Several closely spaced\
-    \ papyrus-style columns; colorful flared capitals\n  supports: Shorter, square\n  railings: Low, painted\n\
-    \  views: Dark columned interior; faintly illuminated passage beyond\nother elevations:\n  count:\
-    \ Three\n  character: Mostly solid, monumental\n  articulation: Repeated rectangular relief panels;\
-    \ horizontal ornamental courses\ndetached colonnade:\n  location: In front and slightly to one side\n\
-    \  condition: Remains; obvious gaps and broken continuity\n  columns:\n    count: Four\n    form:\
-    \ Tall, slender and painted\n    arrangement: Set in a loose line\n  lintels:\n    count: Two\n  \
-    \  material: Sandstone\n    condition: Incomplete and offset\n    location: Above the columns\nground\
-    \ fragments:\n  inventory: Cracked paving slabs and small fragments\n  distribution: Irregular trail\
-    \ around column bases; partly swallowed by sand\n\n    === GROUND ===\n    Build the FLOOR FIRST,\
-    \ before placing anything else. Call the benchmark\n    tool `ground_pass` as your first build action:\
-    \ it carpets the whole 200 m\n    plate deterministically from a tile chosen for this scene. If you\
-    \ skip it,\n    and do not tile a floor yourself, the scene renders as objects floating\n    over\
-    \ empty space -- which is a failed reconstruction no matter how good\n    the massing is. These palette\
-    \ entries are also flat surfaces you can tile\n    by hand if you prefer:\n\n      - SM_Temple_Floor\
-    \ | 10.0x10.0x0.50 m | /Game/EgyptianTemple/Meshes/SM_Temple_Floor.SM_Temple_Floor\n\n=== ASSET PALETTE\
-    \ ===\nBuild this scene using ONLY the assets below — asset search is not available\nin this run,\
-    \ so this list is your entire library. Format:\n\n  id | name | category | width x depth x height\
-    \ (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches UE.\n\
-    You decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n- ceiling_block\
-    \ | Ceiling Block | meshes | 1.2x6.0x2.0 m | /Game/EgyptianTemple/Meshes/SM_Ceiling_Block.SM_Ceiling_Block\n\
-    - ceiling_block_corner | Ceiling Block Corner | meshes | 5.6x5.6x2.0 m | /Game/EgyptianTemple/Meshes/SM_Ceiling_BlockCorner.SM_Ceiling_BlockCorner\n\
-    - ceiling_edge | Ceiling Edge | meshes | 2.15x5.01x1.7 m | /Game/EgyptianTemple/Meshes/SM_Ceiling_Edge.SM_Ceiling_Edge\n\
-    - ceiling_edge_corner | Ceiling Edge Corner | meshes | 6.55x6.59x1.7 m | /Game/EgyptianTemple/Meshes/SM_Ceiling_Edge_Corner.SM_Ceiling_Edge_Corner\n\
-    - chest_base | Chest Base | meshes | 0.78x0.78x0.71 m | /Game/EgyptianTemple/Meshes/SM_Chest_Base.SM_Chest_Base\n\
-    - chest_lid | Chest Lid | meshes | 0.68x0.68x0.07 m | /Game/EgyptianTemple/Meshes/SM_Chest_Lid.SM_Chest_Lid\n\
-    - cup | Cup | meshes | 0.18x0.18x0.16 m | /Game/EgyptianTemple/Meshes/SM_Cup.SM_Cup\n- emblem | Emblem\
-    \ | meshes | 3.97x0.25x0.59 m | /Game/EgyptianTemple/Meshes/SM_Emblem.SM_Emblem\n- front_ceiling_block\
-    \ | Front Ceiling Block | meshes | 5.0x1.2x2.0 m | /Game/EgyptianTemple/Meshes/SM_Front_Ceiling_Block.SM_Front_Ceiling_Block\n\
-    - platter_01 | Platter 01 | meshes | 0.43x0.43x0.02 m | /Game/EgyptianTemple/Meshes/SM_Platter_01.SM_Platter_01\n\
-    - platter_02 | Platter 02 | meshes | 0.44x0.44x0.1 m | /Game/EgyptianTemple/Meshes/SM_Platter_02.SM_Platter_02\n\
-    - pyre_empty | Pyre Empty | meshes | 0.6x0.65x0.88 m | /Game/EgyptianTemple/Meshes/SM_Pyre_Empty.SM_Pyre_Empty\n\
-    - pyre_fire | Pyre Fire | meshes | 0.6x0.66x0.98 m | /Game/EgyptianTemple/Meshes/SM_Pyre_Fire.SM_Pyre_Fire\n\
-    - round_pillar | Round Pillar | meshes | 3.45x3.45x9.07 m | /Game/EgyptianTemple/Meshes/SM_Round_Pillar.SM_Round_Pillar\n\
-    - sarc | Sarc | meshes | 0.89x2.52x0.88 m | /Game/EgyptianTemple/Meshes/SM_Sarc.SM_Sarc\n- sarc_stand\
-    \ | Sarc Stand | meshes | 4.0x4.0x1.03 m | /Game/EgyptianTemple/Meshes/SM_Sarc_Stand.SM_Sarc_Stand\n\
-    - small_wall_2 | Small Wall 2 | meshes | 1.12x5.0x4.94 m | /Game/EgyptianTemple/Meshes/SM_Small_Wall_2.SM_Small_Wall_2\n\
-    - square_pillar | Square Pillar | meshes | 1.32x2.19x5.0 m | /Game/EgyptianTemple/Meshes/SM_Square_Pillar.SM_Square_Pillar\n\
-    - statue | Statue | meshes | 0.97x1.48x3.12 m | /Game/EgyptianTemple/Meshes/SM_Statue.SM_Statue\n\
-    - stone_wedge | Stone Wedge | meshes | 1.43x2.53x0.15 m | /Game/EgyptianTemple/Meshes/SM_Stone_Wedge.SM_Stone_Wedge\n\
-    - table | Table | meshes | 0.86x0.91x1.2 m | /Game/EgyptianTemple/Meshes/SM_Table.SM_Table\n- temple_floor\
-    \ | Temple Floor | meshes | 10.0x10.0x0.5 m | /Game/EgyptianTemple/Meshes/SM_Temple_Floor.SM_Temple_Floor\n\
-    - temple_wall_corner | Temple Wall Corner | meshes | 6.68x6.68x9.2 m | /Game/EgyptianTemple/Meshes/SM_Temple_WallCorner.SM_Temple_WallCorner\n\
-    - temple_wall_doorway | Temple Wall Doorway | meshes | 5.96x10.12x9.24 m | /Game/EgyptianTemple/Meshes/SM_Temple_Wall_Doorway.SM_Temple_Wall_Doorway\n\
-    - temple_wall_middle | Temple Wall Middle | meshes | 3.27x5.12x9.2 m | /Game/EgyptianTemple/Meshes/SM_Temple_Wall_Middle.SM_Temple_Wall_Middle\n\
-    - vase_01 | Vase 01 | meshes | 0.65x0.76x1.07 m | /Game/EgyptianTemple/Meshes/SM_Vase_01.SM_Vase_01\n\
-    - vase_02 | Vase 02 | meshes | 0.41x0.41x0.49 m | /Game/EgyptianTemple/Meshes/SM_Vase_02.SM_Vase_02\n\
-    - vase_03 | Vase 03 | meshes | 0.35x0.35x0.34 m | /Game/EgyptianTemple/Meshes/SM_Vase_03.SM_Vase_03\n\
+  prompt: "Create a dense futuristic city block on a rectangular platform above a deep-blue void in strong\
+    \ daylight. Pack roughly six buildings around a dominant square office tower with red-brown glass\
+    \ bands, pale concrete mid-rises, and a weathered service building. Wrap an elevated concrete road\
+    \ around two sides in a right-angle curve, supported by heavy piers descending into the void. Beneath\
+    \ it, enclose a narrow service strip with noise barriers, retaining walls, columns, and dark doorways.\
+    \ Crowd the central rooftops with vents, tanks, ducts, antennas, and cables. Surround the block closely\
+    \ with much taller cylindrical, glass, rounded, and angular towers, leaving narrow void-filled gaps\
+    \ between their foundations.\n\n    === GROUND ===\n    The scene needs a floor before anything stands\
+    \ on it. These palette\n    entries are flat surfaces you can tile edge to edge to make one:\n\n \
+    \     - SM_concrete_slab | 16.0x8.0x1.20 m | /Game/CyberPunk_street/meshes/kitbash/SM_concrete_slab.SM_concrete_slab\n\
+    \      - SM_concrete_slab_half | 8.0x8.0x1.20 m | /Game/CyberPunk_street/meshes/kitbash/SM_concrete_slab_half.SM_concrete_slab_half\n\
+    \      - SM__sideWalk_plane2 | 8.0x4.0x0.00 m | /Game/CyberPunk_street/meshes/sideWalk/SM__sideWalk_plane2.SM__sideWalk_plane2\n\
+    \      - SM__sideWalk_med | 8.0x2.5x0.25 m | /Game/CyberPunk_street/meshes/sideWalk/SM__sideWalk_med.SM__sideWalk_med\n\
+    \n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\n\
+    in this run, so this list is your entire library. Format:\n\n  id | name | category | width x depth\
+    \ x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches\
+    \ UE.\nYou decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n-\
+    \ car | car | auto | 5.21x5.21x1.34 m | /Game/CyberPunk_street/meshes/auto/SM_car.SM_car\n- truck\
+    \ | truck | auto | 7.35x3.14x3.73 m | /Game/CyberPunk_street/meshes/auto/SM_truck.SM_truck\n- van_01\
+    \ | van 01 | auto | 5.86x2.67x2.36 m | /Game/CyberPunk_street/meshes/auto/SM_van_01.SM_van_01\n- banner01\
+    \ | banner01 | banners | 1.3x0.2x2.0 m | /Game/CyberPunk_street/meshes/banners/SM_banner01.SM_banner01\n\
+    - banner02 | banner02 | banners | 0.2x0.8x2.0 m | /Game/CyberPunk_street/meshes/banners/SM_banner02.SM_banner02\n\
+    - banner03 | banner03 | banners | 0.25x1.66x5.09 m | /Game/CyberPunk_street/meshes/banners/SM_banner03.SM_banner03\n\
+    - banner04 | banner04 | banners | 3.73x0.08x1.95 m | /Game/CyberPunk_street/meshes/banners/SM_banner04.SM_banner04\n\
+    - banner05 | banner05 | banners | 3.57x1.22x1.22 m | /Game/CyberPunk_street/meshes/banners/SM_banner05.SM_banner05\n\
+    - banner07 | banner07 | banners | 1.69x1.69x3.53 m | /Game/CyberPunk_street/meshes/banners/SM_banner07.SM_banner07\n\
+    - banner08 | banner08 | banners | 1.74x0.17x3.5 m | /Game/CyberPunk_street/meshes/banners/SM_banner08.SM_banner08\n\
+    - plane | Plane | basicshapes | 64.0x64.0x0.0 m | /Engine/BasicShapes/Plane.Plane\n- first_person_character\
+    \ | First Person Character | blueprints | 20.2x20.2x20.2 m | /Game/CyberPunk_street/FirstPersonBP/Blueprints/FirstPersonCharacter.FirstPersonCharacter_C\n\
+    - city_h5 | city h5 | city | 34.85x74.77x47.5 m | /Game/CyberPunk_street/meshes/city/SM_city_h5.SM_city_h5\n\
+    - bracket_01 | bracket 01 | conditioner | 2.0x0.29x0.2 m | /Game/CyberPunk_street/meshes/conditioner/SM_bracket_01.SM_bracket_01\n\
+    - bracket_02 | bracket 02 | conditioner | 0.29x0.85x0.2 m | /Game/CyberPunk_street/meshes/conditioner/SM_bracket_02.SM_bracket_02\n\
+    - conditioner_01 | conditioner 01 | conditioner | 2.13x4.0x1.0 m | /Game/CyberPunk_street/meshes/conditioner/SM_conditioner_01.SM_conditioner_01\n\
+    - conditioner_02 | conditioner 02 | conditioner | 1.42x2.3x0.7 m | /Game/CyberPunk_street/meshes/conditioner/SM_conditioner_02.SM_conditioner_02\n\
+    - conditioner_03 | conditioner 03 | conditioner | 1.0x1.4x1.0 m | /Game/CyberPunk_street/meshes/conditioner/SM_conditioner_03.SM_conditioner_03\n\
+    - conditioner_04 | conditioner 04 | conditioner | 1.0x2.0x1.0 m | /Game/CyberPunk_street/meshes/conditioner/SM_conditioner_04.SM_conditioner_04\n\
+    - conditioner_05 | conditioner 05 | conditioner | 2.0x1.0x1.0 m | /Game/CyberPunk_street/meshes/conditioner/SM_conditioner_05.SM_conditioner_05\n\
+    - conditioner_06 | conditioner 06 | conditioner | 1.0x1.4x1.0 m | /Game/CyberPunk_street/meshes/conditioner/SM_conditioner_06.SM_conditioner_06\n\
+    - pipe_01 | Pipe 01 | conditioner | 0.4x0.4x2.0 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_01.SM_Pipe_01\n\
+    - pipe_02 | Pipe 02 | conditioner | 0.4x0.4x4.0 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_02.SM_Pipe_02\n\
+    - pipe_03 | Pipe 03 | conditioner | 0.4x1.2x1.2 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_03.SM_Pipe_03\n\
+    - pipe_04 | Pipe 04 | conditioner | 0.4x1.4x1.5 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_04.SM_Pipe_04\n\
+    - pipe_11 | Pipe 11 | conditioner | 0.44x0.44x2.0 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_11.SM_Pipe_11\n\
+    - pipe_12 | Pipe 12 | conditioner | 4.0x0.44x0.44 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_12.SM_Pipe_12\n\
+    - pipe_13 | Pipe 13 | conditioner | 1.23x0.46x1.23 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_13.SM_Pipe_13\n\
+    - pipe_14 | Pipe 14 | conditioner | 1.5x1.47x0.48 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_14.SM_Pipe_14\n\
+    - pipe_21 | Pipe 21 | conditioner | 1.0x0.8x0.8 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_21.SM_Pipe_21\n\
+    - pipe_22 | Pipe 22 | conditioner | 0.8x2.0x0.8 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_22.SM_Pipe_22\n\
+    - pipe_23 | Pipe 23 | conditioner | 0.8x4.0x0.8 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_23.SM_Pipe_23\n\
+    - pipe_24 | Pipe 24 | conditioner | 0.8x8.0x0.8 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_24.SM_Pipe_24\n\
+    - pipe_25 | Pipe 25 | conditioner | 0.9x0.9x0.8 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_25.SM_Pipe_25\n\
+    - pipe_26 | Pipe 26 | conditioner | 0.8x0.9x0.67 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_26.SM_Pipe_26\n\
+    - pipe_31 | Pipe 31 | conditioner | 1.0x0.85x0.85 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_31.SM_Pipe_31\n\
+    - pipe_32 | Pipe 32 | conditioner | 2.01x2.01x0.85 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_32.SM_Pipe_32\n\
+    - pipe_33 | Pipe 33 | conditioner | 0.85x4.0x0.85 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_33.SM_Pipe_33\n\
+    - pipe_34 | Pipe 34 | conditioner | 8.0x0.83x0.83 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_34.SM_Pipe_34\n\
+    - pipe_35 | Pipe 35 | conditioner | 0.92x0.91x0.85 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_35.SM_Pipe_35\n\
+    - pipe_36 | Pipe 36 | conditioner | 0.91x0.67x0.86 m | /Game/CyberPunk_street/meshes/conditioner/SM_Pipe_36.SM_Pipe_36\n\
+    - antenna_01 | antenna 01 | electrokit | 0.5x0.56x2.51 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_antenna_01.SM_antenna_01\n\
+    - antenna_02 | antenna 02 | electrokit | 0.15x0.09x2.64 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_antenna_02.SM_antenna_02\n\
+    - antenna_03 | antenna 03 | electrokit | 1.58x2.01x1.9 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_antenna_03.SM_antenna_03\n\
+    - antenna_04 | antenna 04 | electrokit | 1.99x1.48x2.0 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_antenna_04.SM_antenna_04\n\
+    - antenna_box | antenna box | electrokit | 0.97x1.13x1.0 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_antenna_box.SM_antenna_box\n\
+    - cable_01 | Cable 01 | electrokit | 13.17x22.1x5.69 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_Cable_01.SM_Cable_01\n\
+    - cable_02 | Cable 02 | electrokit | 2.56x5.46x17.37 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_Cable_02.SM_Cable_02\n\
+    - cable_03 | Cable 03 | electrokit | 2.56x5.13x17.39 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_Cable_03.SM_Cable_03\n\
+    - cable_04 | Cable 04 | electrokit | 2.56x8.14x3.22 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_Cable_04.SM_Cable_04\n\
+    - cable_05 | Cable 05 | electrokit | 15.51x6.49x2.56 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_Cable_05.SM_Cable_05\n\
+    - cable_06 | Cable 06 | electrokit | 16.82x6.42x2.56 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_Cable_06.SM_Cable_06\n\
+    - cable_07 | Cable 07 | electrokit | 13.54x5.2x8.31 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_Cable_07.SM_Cable_07\n\
+    - cable_08 | Cable 08 | electrokit | 2.56x6.84x4.28 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_Cable_08.SM_Cable_08\n\
+    - cable_09 | Cable 09 | electrokit | 2.56x17.94x2.56 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_Cable_09.SM_Cable_09\n\
+    - cable_10 | Cable 10 | electrokit | 15.39x14.69x3.93 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_Cable_10.SM_Cable_10\n\
+    - cable_11 | Cable 11 | electrokit | 15.47x14.22x4.54 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_Cable_11.SM_Cable_11\n\
+    - cable_12 | Cable 12 | electrokit | 12.98x21.56x6.13 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_Cable_12.SM_Cable_12\n\
+    - cable_13 | Cable 13 | electrokit | 15.61x14.65x4.87 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_Cable_13.SM_Cable_13\n\
+    - cable_14 | Cable 14 | electrokit | 0.0x0.69x7.49 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_Cable_14.SM_Cable_14\n\
+    - cable_15 | Cable 15 | electrokit | 0.79x2.22x2.36 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_Cable_15.SM_Cable_15\n\
+    - electro_kit_1 | Electro Kit 1 | electrokit | 2.87x1.38x2.95 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_1.SM_ElectroKit_1\n\
+    - electro_kit_10 | Electro Kit 10 | electrokit | 0.5x1.54x1.54 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_10.SM_ElectroKit_10\n\
+    - electro_kit_11 | Electro Kit 11 | electrokit | 0.5x1.54x1.54 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_11.SM_ElectroKit_11\n\
+    - electro_kit_12 | Electro Kit 12 | electrokit | 1.54x1.54x2.28 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_12.SM_ElectroKit_12\n\
+    - electro_kit_13 | Electro Kit 13 | electrokit | 1.88x1.5x0.75 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_13.SM_ElectroKit_13\n\
+    - electro_kit_14 | Electro Kit 14 | electrokit | 4.0x4.0x3.0 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_14.SM_ElectroKit_14\n\
+    - electro_kit_15 | Electro Kit 15 | electrokit | 4.0x4.0x5.0 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_15.SM_ElectroKit_15\n\
+    - electro_kit_16 | Electro Kit 16 | electrokit | 1.51x2.99x1.5 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_16.SM_ElectroKit_16\n\
+    - electro_kit_17 | Electro Kit 17 | electrokit | 0.86x0.85x0.85 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_17.SM_ElectroKit_17\n\
+    - electro_kit_18 | Electro Kit 18 | electrokit | 2.0x2.01x2.0 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_18.SM_ElectroKit_18\n\
+    - electro_kit_19 | Electro Kit 19 | electrokit | 4.0x4.0x4.0 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_19.SM_ElectroKit_19\n\
+    - electro_kit_2 | Electro Kit 2 | electrokit | 1.54x1.54x1.54 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_2.SM_ElectroKit_2\n\
+    - electro_kit_3 | Electro Kit 3 | electrokit | 1.54x1.54x3.72 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_3.SM_ElectroKit_3\n\
+    - electro_kit_4 | Electro Kit 4 | electrokit | 0.5x1.54x1.54 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_4.SM_ElectroKit_4\n\
+    - electro_kit_5 | Electro Kit 5 | electrokit | 0.04x1.0x2.0 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_5.SM_ElectroKit_5\n\
+    - electro_kit_6 | Electro Kit 6 | electrokit | 0.04x4.0x1.0 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_6.SM_ElectroKit_6\n\
+    - electro_kit_7 | Electro Kit 7 | electrokit | 0.04x1.0x1.0 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_7.SM_ElectroKit_7\n\
+    - electro_kit_8 | Electro Kit 8 | electrokit | 1.54x1.54x0.9 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_8.SM_ElectroKit_8\n\
+    - electro_kit_9 | Electro Kit 9 | electrokit | 0.5x1.54x1.54 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_ElectroKit_9.SM_ElectroKit_9\n\
+    - pillar_long | pillar long | electrokit | 1.13x1.25x15.25 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_pillar_long.SM_pillar_long\n\
+    - sm_steelwork_base | SM-steelwork base | electrokit | 1.0x1.0x2.19 m | /Game/CyberPunk_street/meshes/ElectroKit/SM-steelwork_base.SM-steelwork_base\n\
+    - steelwork_1 | steelwork 1 | electrokit | 0.13x2.79x0.55 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_steelwork_1.SM_steelwork_1\n\
+    - steelwork_4 | steelwork 4 | electrokit | 0.63x0.63x4.0 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_steelwork_4.SM_steelwork_4\n\
+    - steelwork_4a | steelwork 4a | electrokit | 4.0x0.63x1.4 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_steelwork_4a.SM_steelwork_4a\n\
+    - steelwork_8 | steelwork 8 | electrokit | 0.63x0.63x8.0 m | /Game/CyberPunk_street/meshes/ElectroKit/SM_steelwork_8.SM_steelwork_8\n\
+    - barrier | barrier | fence | 1.98x0.76x1.23 m | /Game/CyberPunk_street/meshes/fence/SM_barrier.SM_barrier\n\
+    - fence | fence | fence | 0.53x1.92x8.0 m | /Game/CyberPunk_street/meshes/fence/SM_fence.SM_fence\n\
+    - fence_2 | fence 2 | fence | 3.21x3.21x8.0 m | /Game/CyberPunk_street/meshes/fence/SM_fence_2.SM_fence_2\n\
+    - fence_4 | fence 4 | fence | 0.53x9.0x8.0 m | /Game/CyberPunk_street/meshes/fence/SM_fence_4.SM_fence_4\n\
+    - fence_net | fence Net | fence | 0.2x4.0x4.0 m | /Game/CyberPunk_street/meshes/fence/SM_fenceNet.SM_fenceNet\n\
+    - fence_net_door | fence Net Door | fence | 0.21x1.99x4.0 m | /Game/CyberPunk_street/meshes/fence/SM_fenceNetDoor.SM_fenceNetDoor\n\
+    - hatch_01 | hatch 01 | hatches | 2.8x3.6x0.03 m | /Game/CyberPunk_street/meshes/hatches/SM_hatch_01.SM_hatch_01\n\
+    - hatch_02 | hatch 02 | hatches | 3.6x2.8x0.03 m | /Game/CyberPunk_street/meshes/hatches/SM_hatch_02.SM_hatch_02\n\
+    - hatch_03 | hatch 03 | hatches | 2.5x0.05x1.3 m | /Game/CyberPunk_street/meshes/hatches/SM_hatch_03.SM_hatch_03\n\
+    - hatch_04 | hatch 04 | hatches | 2.5x1.3x0.05 m | /Game/CyberPunk_street/meshes/hatches/SM_hatch_04.SM_hatch_04\n\
+    - hatch_05 | hatch 05 | hatches | 2.5x1.3x0.05 m | /Game/CyberPunk_street/meshes/hatches/SM_hatch_05.SM_hatch_05\n\
+    - hatch_06 | hatch 06 | hatches | 2.5x5.3x0.05 m | /Game/CyberPunk_street/meshes/hatches/SM_hatch_06.SM_hatch_06\n\
+    - 4x2x1 | 4x2x1 | kitbash | 1.0x2.0x4.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_4x2x1.SM_4x2x1\n\
+    - 4x4x1 | 4x4x1 | kitbash | 4.0x4.0x1.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_4x4x1.SM_4x4x1\n\
+    - 4x4x1a | 4x4x1a | kitbash | 1.0x4.0x4.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_4x4x1a.SM_4x4x1a\n\
+    - 4x4x4 | 4x4x4 | kitbash | 4.0x4.0x4.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_4x4x4.SM_4x4x4\n\
+    - 8x2x1 | 8x2x1 | kitbash | 1.0x2.0x8.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_8x2x1.SM_8x2x1\n\
+    - 8x8x1 | 8x8x1 | kitbash | 8.0x8.0x1.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_8x8x1.SM_8x8x1\n\
+    - 8x8x8 | 8x8x8 | kitbash | 8.0x8.0x8.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_8x8x8.SM_8x8x8\n\
+    - beam_16 | beam 16 | kitbash | 16.0x1.2x4.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_beam_16.SM_beam_16\n\
+    - beam_8 | beam 8 | kitbash | 1.2x8.0x4.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_beam_8.SM_beam_8\n\
+    - bridge_base | Bridge base | kitbash | 9.4x4.6x2.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_Bridge_base.SM_Bridge_base\n\
+    - bridge_pillar | Bridge pillar | kitbash | 8.83x4.0x16.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_Bridge_pillar.SM_Bridge_pillar\n\
+    - canopy_01 | Canopy 01 | kitbash | 0.9x4.0x0.44 m | /Game/CyberPunk_street/meshes/kitbash/SM_Canopy_01.SM_Canopy_01\n\
+    - concrete_slab | concrete slab | kitbash | 16.0x8.0x1.2 m | /Game/CyberPunk_street/meshes/kitbash/SM_concrete_slab.SM_concrete_slab\n\
+    - concrete_slab_half | concrete slab half | kitbash | 8.0x8.0x1.2 m | /Game/CyberPunk_street/meshes/kitbash/SM_concrete_slab_half.SM_concrete_slab_half\n\
+    - doors_02 | Doors 02 | kitbash | 0.1x1.4x2.8 m | /Game/CyberPunk_street/meshes/kitbash/SM_Doors_02.SM_Doors_02\n\
+    - doors_02_1 | Doors 02 1 | kitbash | 0.1x2.8x2.8 m | /Game/CyberPunk_street/meshes/kitbash/SM_Doors_02_1.SM_Doors_02_1\n\
+    - gate_01 | gate 01 | kitbash | 0.14x8.0x4.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_gate_01.SM_gate_01\n\
+    - gate_02 | gate 02 | kitbash | 0.14x4.0x4.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_gate_02.SM_gate_02\n\
+    - ladder_01 | Ladder 01 | kitbash | 2.0x3.9x2.14 m | /Game/CyberPunk_street/meshes/kitbash/SM_Ladder_01.SM_Ladder_01\n\
+    - ladder_01a | Ladder 01a | kitbash | 4.0x3.0x0.4 m | /Game/CyberPunk_street/meshes/kitbash/SM_Ladder_01a.SM_Ladder_01a\n\
+    - ladder_02 | Ladder 02 | kitbash | 0.8x1.43x8.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_Ladder_02.SM_Ladder_02\n\
+    - lattice_01 | lattice 01 | kitbash | 0.14x2.0x4.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_lattice_01.SM_lattice_01\n\
+    - lattice_02 | lattice 02 | kitbash | 0.14x1.03x1.37 m | /Game/CyberPunk_street/meshes/kitbash/SM_lattice_02.SM_lattice_02\n\
+    - metal_door | metal Door | kitbash | 0.03x1.4x2.7 m | /Game/CyberPunk_street/meshes/kitbash/SM_metalDoor.SM_metalDoor\n\
+    - row_01 | Row 01 | kitbash | 0.1x1.91x0.68 m | /Game/CyberPunk_street/meshes/kitbash/SM_Row_01.SM_Row_01\n\
+    - row_02 | Row 02 | kitbash | 3.91x0.1x0.68 m | /Game/CyberPunk_street/meshes/kitbash/SM_Row_02.SM_Row_02\n\
+    - steel_beam_01 | Steel Beam 01 | kitbash | 0.4x1.0x16.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_SteelBeam_01.SM_SteelBeam_01\n\
+    - steel_beam_02 | Steel Beam 02 | kitbash | 0.4x4.0x1.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_SteelBeam_02.SM_SteelBeam_02\n\
+    - steel_beam_03 | Steel Beam 03 | kitbash | 8.0x0.4x1.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_SteelBeam_03.SM_SteelBeam_03\n\
+    - steel_beam_04 | Steel Beam 04 | kitbash | 0.4x0.4x16.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_SteelBeam_04.SM_SteelBeam_04\n\
+    - steel_beam_05 | Steel Beam 05 | kitbash | 0.4x0.4x4.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_SteelBeam_05.SM_SteelBeam_05\n\
+    - steel_beam_06 | Steel Beam 06 | kitbash | 0.4x0.4x8.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_SteelBeam_06.SM_SteelBeam_06\n\
+    - wall_and_window | wall And Window | kitbash | 4.0x1.0x4.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_wallAndWindow.SM_wallAndWindow\n\
+    - window_01 | Window 01 | kitbash | 2.0x0.14x3.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_Window_01.SM_Window_01\n\
+    - window_02 | Window 02 | kitbash | 0.14x2.0x3.0 m | /Game/CyberPunk_street/meshes/kitbash/SM_Window_02.SM_Window_02\n\
+    - window_03 | Window 03 | kitbash | 0.11x3.0x1.5 m | /Game/CyberPunk_street/meshes/kitbash/SM_Window_03.SM_Window_03\n\
+    - lamp2 | lamp2 | lights | 0.4x2.0x2.0 m | /Game/CyberPunk_street/meshes/lights/SM_lamp2.SM_lamp2\n\
+    - lamp_01 | lamp 01 | lights | 0.71x0.24x0.31 m | /Game/CyberPunk_street/meshes/lights/SM_lamp_01.SM_lamp_01\n\
+    - pile_pile | pile pile | lights | 0.42x0.42x0.9 m | /Game/CyberPunk_street/meshes/lights/SM_pile_pile.SM_pile_pile\n\
+    - canopy | canopy | office_building | 1.97x4.0x0.41 m | /Game/CyberPunk_street/meshes/office_building/SM_canopy.SM_canopy\n\
+    - column | column | office_building | 1.0x2.0x4.0 m | /Game/CyberPunk_street/meshes/office_building/SM_column.SM_column\n\
+    - door_01 | door 01 | office_building | 0.1x1.5x3.0 m | /Game/CyberPunk_street/meshes/office_building/SM_door_01.SM_door_01\n\
+    - door_02 | door 02 | office_building | 3.0x0.1x3.0 m | /Game/CyberPunk_street/meshes/office_building/SM_door_02.SM_door_02\n\
+    - door_glass | door glass | office_building | 1.5x0.1x3.0 m | /Game/CyberPunk_street/meshes/office_building/SM_door_glass.SM_door_glass\n\
+    - floor_01 | floor 01 | office_building | 4.0x4.0x0.4 m | /Game/CyberPunk_street/meshes/office_building/SM_floor_01.SM_floor_01\n\
+    - floor_02 | floor 02 | office_building | 2.0x2.0x0.4 m | /Game/CyberPunk_street/meshes/office_building/SM_floor_02.SM_floor_02\n\
+    - floor_03 | floor 03 | office_building | 1.0x1.0x0.4 m | /Game/CyberPunk_street/meshes/office_building/SM_floor_03.SM_floor_03\n\
+    - floor_04 | floor 04 | office_building | 1.0x1.0x0.4 m | /Game/CyberPunk_street/meshes/office_building/SM_floor_04.SM_floor_04\n\
+    - lattice_01_2 | lattice 01 | office_building | 3.0x0.1x1.5 m | /Game/CyberPunk_street/meshes/office_building/SM_lattice_01.SM_lattice_01\n\
+    - lattice_02_2 | lattice 02 | office_building | 3.0x0.1x1.5 m | /Game/CyberPunk_street/meshes/office_building/SM_lattice_02.SM_lattice_02\n\
+    - office_block_01 | office Block 01 | office_building | 32.0x32.02x40.0 m | /Game/CyberPunk_street/meshes/office_building/SM_officeBlock_01.SM_officeBlock_01\n\
+    - office_block_02 | office Block 02 | office_building | 32.0x32.02x40.0 m | /Game/CyberPunk_street/meshes/office_building/SM_officeBlock_02.SM_officeBlock_02\n\
+    - parapet_01 | parapet 01 | office_building | 1.0x4.0x2.02 m | /Game/CyberPunk_street/meshes/office_building/SM_parapet_01.SM_parapet_01\n\
+    - parapet_corner_in | parapet corner in | office_building | 2.4x2.4x2.02 m | /Game/CyberPunk_street/meshes/office_building/SM_parapet_corner_in.SM_parapet_corner_in\n\
+    - parapet_corner_out | parapet corner out | office_building | 2.6x2.6x2.02 m | /Game/CyberPunk_street/meshes/office_building/SM_parapet_corner_out.SM_parapet_corner_out\n\
+    - shop_window | shop Window | office_building | 0.1x3.3x3.56 m | /Game/CyberPunk_street/meshes/office_building/SM_shopWindow.SM_shopWindow\n\
+    - step_01 | step 01 | office_building | 0.5x4.0x0.4 m | /Game/CyberPunk_street/meshes/office_building/SM_step_01.SM_step_01\n\
+    - step_02 | step 02 | office_building | 0.5x2.0x0.4 m | /Game/CyberPunk_street/meshes/office_building/SM_step_02.SM_step_02\n\
+    - step_corner_45 | step corner 45 | office_building | 0.6x0.6x0.4 m | /Game/CyberPunk_street/meshes/office_building/SM_step_corner_45.SM_step_corner_45\n\
+    - step_corner_out | step corner out | office_building | 0.5x0.5x0.4 m | /Game/CyberPunk_street/meshes/office_building/SM_step_corner_out.SM_step_corner_out\n\
+    - step_diagonal | step diagonal | office_building | 1.35x1.35x0.4 m | /Game/CyberPunk_street/meshes/office_building/SM_step_diagonal.SM_step_diagonal\n\
+    - wall_01 | wall 01 | office_building | 4.0x0.4x4.0 m | /Game/CyberPunk_street/meshes/office_building/SM_wall_01.SM_wall_01\n\
+    - wall_01_corner_in | wall 01 corner in | office_building | 2.4x2.4x4.0 m | /Game/CyberPunk_street/meshes/office_building/SM_wall_01_corner_in.SM_wall_01_corner_in\n\
+    - wall_01_corner_out | wall 01 corner out | office_building | 2.0x2.0x4.0 m | /Game/CyberPunk_street/meshes/office_building/SM_wall_01_corner_out.SM_wall_01_corner_out\n\
+    - wall_02 | wall 02 | office_building | 0.4x4.0x4.0 m | /Game/CyberPunk_street/meshes/office_building/SM_wall_02.SM_wall_02\n\
+    - wall_02_corner_in | wall 02 corner in | office_building | 2.4x2.4x4.0 m | /Game/CyberPunk_street/meshes/office_building/SM_wall_02_corner_in.SM_wall_02_corner_in\n\
+    - wall_02_corner_out | wall 02 corner out | office_building | 2.0x2.0x4.0 m | /Game/CyberPunk_street/meshes/office_building/SM_wall_02_corner_out.SM_wall_02_corner_out\n\
+    - wall_glass | wall glass | office_building | 1.5x0.1x3.0 m | /Game/CyberPunk_street/meshes/office_building/SM_wall_glass.SM_wall_glass\n\
+    - window_01_2 | window 01 | office_building | 0.1x3.0x1.5 m | /Game/CyberPunk_street/meshes/office_building/SM_window_01.SM_window_01\n\
+    - screens_cube | screens Cube | screens | 0.21x1.0x1.0 m | /Game/CyberPunk_street/meshes/Screens/SM_screens_Cube.SM_screens_Cube\n\
+    - screens_cube_001 | screens Cube 001 | screens | 0.7x0.2x1.0 m | /Game/CyberPunk_street/meshes/Screens/SM_screens_Cube_001.SM_screens_Cube_001\n\
+    - screens_cube_002 | screens Cube 002 | screens | 0.09x0.77x0.23 m | /Game/CyberPunk_street/meshes/Screens/SM_screens_Cube_002.SM_screens_Cube_002\n\
+    - screens_cube_003 | screens Cube 003 | screens | 0.12x1.0x0.3 m | /Game/CyberPunk_street/meshes/Screens/SM_screens_Cube_003.SM_screens_Cube_003\n\
+    - screens_cube_004 | screens Cube 004 | screens | 0.53x0.53x0.84 m | /Game/CyberPunk_street/meshes/Screens/SM_screens_Cube_004.SM_screens_Cube_004\n\
+    - screens_cube_005 | screens Cube 005 | screens | 1.0x0.21x1.0 m | /Game/CyberPunk_street/meshes/Screens/SM_screens_Cube_005.SM_screens_Cube_005\n\
+    - row | row | sidewalk | 0.24x4.0x0.75 m | /Game/CyberPunk_street/meshes/sideWalk/SM__row.SM__row\n\
+    - row_1 | row 1 | sidewalk | 3.96x2.15x0.75 m | /Game/CyberPunk_street/meshes/sideWalk/SM__row_1.SM__row_1\n\
+    - row_2 | row 2 | sidewalk | 2.15x3.96x0.75 m | /Game/CyberPunk_street/meshes/sideWalk/SM__row_2.SM__row_2\n\
+    - row_5 | row 5 | sidewalk | 2.25x4.2x0.75 m | /Game/CyberPunk_street/meshes/sideWalk/SM__row_5.SM__row_5\n\
+    - row_6 | row 6 | sidewalk | 1.95x1.95x0.75 m | /Game/CyberPunk_street/meshes/sideWalk/SM__row_6.SM__row_6\n\
+    - row_7 | row 7 | sidewalk | 2.29x2.29x0.75 m | /Game/CyberPunk_street/meshes/sideWalk/SM__row_7.SM__row_7\n\
+    - side_walk_001 | side Walk 001 | sidewalk | 4.0x2.5x0.25 m | /Game/CyberPunk_street/meshes/sideWalk/SM__sideWalk_001.SM__sideWalk_001\n\
+    - side_walk_1 | side Walk 1 | sidewalk | 4.0x4.35x0.25 m | /Game/CyberPunk_street/meshes/sideWalk/SM__sideWalk_1.SM__sideWalk_1\n\
+    - side_walk_2 | side Walk 2 | sidewalk | 4.35x4.0x0.25 m | /Game/CyberPunk_street/meshes/sideWalk/SM__sideWalk_2.SM__sideWalk_2\n\
+    - side_walk_3 | side Walk 3 | sidewalk | 4.35x4.35x0.25 m | /Game/CyberPunk_street/meshes/sideWalk/SM__sideWalk_3.SM__sideWalk_3\n\
+    - side_walk_4 | side Walk 4 | sidewalk | 4.35x2.5x0.25 m | /Game/CyberPunk_street/meshes/sideWalk/SM__sideWalk_4.SM__sideWalk_4\n\
+    - side_walk_5 | side Walk 5 | sidewalk | 2.5x4.35x0.25 m | /Game/CyberPunk_street/meshes/sideWalk/SM__sideWalk_5.SM__sideWalk_5\n\
+    - side_walk_6 | side Walk 6 | sidewalk | 4.0x4.0x0.25 m | /Game/CyberPunk_street/meshes/sideWalk/SM__sideWalk_6.SM__sideWalk_6\n\
+    - side_walk_7 | side Walk 7 | sidewalk | 2.5x2.5x0.25 m | /Game/CyberPunk_street/meshes/sideWalk/SM__sideWalk_7.SM__sideWalk_7\n\
+    - side_walk_long | side Walk long | sidewalk | 2.5x16.0x0.25 m | /Game/CyberPunk_street/meshes/sideWalk/SM__sideWalk_long.SM__sideWalk_long\n\
+    - side_walk_med | side Walk med | sidewalk | 8.0x2.5x0.25 m | /Game/CyberPunk_street/meshes/sideWalk/SM__sideWalk_med.SM__sideWalk_med\n\
+    - side_walk_plane | side Walk plane | sidewalk | 4.0x4.0x0.0 m | /Game/CyberPunk_street/meshes/sideWalk/SM__sideWalk_plane.SM__sideWalk_plane\n\
+    - side_walk_plane2 | side Walk plane2 | sidewalk | 8.0x4.0x0.0 m | /Game/CyberPunk_street/meshes/sideWalk/SM__sideWalk_plane2.SM__sideWalk_plane2\n\
+    - side_walk_plane3 | side Walk plane3 | sidewalk | 4.0x16.0x0.0 m | /Game/CyberPunk_street/meshes/sideWalk/SM__sideWalk_plane3.SM__sideWalk_plane3\n\
+    - cafe | cafe | signboard | 13.74x0.1x2.65 m | /Game/CyberPunk_street/meshes/signboard/SM_cafe.SM_cafe\n\
+    - gibson_str | gibson Str | signboard | 0.17x1.55x0.41 m | /Game/CyberPunk_street/meshes/signboard/SM_gibsonStr.SM_gibsonStr\n\
+    - hardware | hardware | signboard | 0.06x5.17x0.62 m | /Game/CyberPunk_street/meshes/signboard/SM_hardware.SM_hardware\n\
+    - number | number | signboard | 0.17x0.41x0.41 m | /Game/CyberPunk_street/meshes/signboard/SM_number.SM_number\n\
+    - trashcan1_cube | trashcan1 Cube | trashcan | 0.74x0.86x1.34 m | /Game/CyberPunk_street/meshes/trashcan/SM_trashcan1_Cube.SM_trashcan1_Cube\n\
+    - trashcan2 | trashcan2 | trashcan | 2.0x2.0x1.84 m | /Game/CyberPunk_street/meshes/trashcan/SM_trashcan2.SM_trashcan2\n\
+    - vending | vending | vendingmachine | 1.14x1.62x2.43 m | /Game/CyberPunk_street/meshes/VendingMachine/SM_vending.SM_vending\n\
     \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
     and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
     \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
@@ -68,7 +231,7 @@ inputs:
   skills: contracts
 assets:
   packs:
-  - EgyptianTemple
+  - CyberPunk_street
   note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
 verifiers:
 - name: semantic_requirements

@@ -3,70 +3,116 @@
 id: case_032
 kind: scene_generation
 inputs:
-  prompt: "Create a sunlit Chefchaouen-style street with fifteen to twenty adjoining low-to-mid-rise buildings\
-    \ along a broad straight road. Use weathered blue and pastel stucco, arches, terraces, and tiled roofs.\
-    \ Feature a tall blue tower house with a projecting timber room, plus palms, vines, lanterns, and\
-    \ worn paving with puddles.\n\n    === GROUND ===\n    Build the FLOOR FIRST, before placing anything\
-    \ else. Call the benchmark\n    tool `ground_pass` as your first build action: it carpets the whole\
-    \ 200 m\n    plate deterministically from a tile chosen for this scene. If you skip it,\n    and do\
-    \ not tile a floor yourself, the scene renders as objects floating\n    over empty space -- which\
-    \ is a failed reconstruction no matter how good\n    the massing is. These palette entries are also\
-    \ flat surfaces you can tile\n    by hand if you prefer:\n\n      - BP_Chwn_Grass_02 | 2.9x4.5x0.60\
-    \ m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_Grass_02.BP_Chwn_Grass_02_C\n      -\
-    \ BP_Chwn_SideWalk_01 | 4.4x4.1x0.28 m | /Game/Chefchaouen_Village/Blueprints/Street_Assets/BP_Chwn_SideWalk_01.BP_Chwn_SideWalk_01_C\n\
-    \      - SM_Sidewalk_01 | 4.0x4.0x0.15 m | /Game/Chefchaouen_Village/Assets/SM_Sidewalk_01.SM_Sidewalk_01\n\
-    \      - SM_Ground_01 | 4.0x4.0x0.00 m | /Game/Chefchaouen_Village/Assets/SM_Ground_01.SM_Ground_01\n\
-    \n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\n\
-    in this run, so this list is your entire library. Format:\n\n  id | name | category | width x depth\
-    \ x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches\
-    \ UE.\nYou decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n-\
-    \ chwn_arch_01 | Chwn Arch 01 | assets | 1.32x4.83x4.79 m | /Game/Chefchaouen_Village/Assets/SM_Chwn_Arch_01.SM_Chwn_Arch_01\n\
-    - chwn_arch_wall_01 | Chwn Arch Wall 01 | assets | 4.2x0.87x2.85 m | /Game/Chefchaouen_Village/Assets/SM_Chwn_ArchWall_01.SM_Chwn_ArchWall_01\n\
-    - chwn_bench_01 | Chwn Bench 01 | assets | 0.86x1.98x1.28 m | /Game/Chefchaouen_Village/Assets/SM_Chwn_Bench_01.SM_Chwn_Bench_01\n\
-    - chwn_stairs | Chwn Stairs | assets | 4.7x3.36x3.0 m | /Game/Chefchaouen_Village/Assets/SM_Chwn_Stairs.SM_Chwn_Stairs\n\
-    - ground_01 | Ground 01 | assets | 4.0x4.0x0.0 m | /Game/Chefchaouen_Village/Assets/SM_Ground_01.SM_Ground_01\n\
-    - sidewalk_01 | Sidewalk 01 | assets | 4.0x4.0x0.15 m | /Game/Chefchaouen_Village/Assets/SM_Sidewalk_01.SM_Sidewalk_01\n\
-    - wall_4_m_01 | Wall 4 M 01 | assets | 0.25x4.0x4.0 m | /Game/Chefchaouen_Village/Assets/SM_Wall_4M_01.SM_Wall_4M_01\n\
-    - arch_01_ivy | Arch 01 Ivy | buildings | 1.49x12.87x4.88 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Arch_01_Ivy.BP_Arch_01_Ivy_C\n\
-    - arch_03_no_ivy | Arch 03 No Ivy | buildings | 12.81x1.41x4.85 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Arch_03_NoIvy.BP_Arch_03_NoIvy_C\n\
-    - chwn_house_02 | Chwn House 02 | buildings | 8.49x8.33x17.15 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_02.BP_Chwn_House_02_C\n\
-    - chwn_house_02_no_ivy | Chwn House 02 No Ivy | buildings | 8.49x8.33x17.15 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_02_NoIvy.BP_Chwn_House_02_NoIvy_C\n\
-    - chwn_house_03 | Chwn House 03 | buildings | 8.33x8.49x17.85 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_03.BP_Chwn_House_03_C\n\
-    - chwn_house_04_ivy | Chwn House 04 Ivy | buildings | 13.16x13.16x22.45 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_04_Ivy.BP_Chwn_House_04_Ivy_C\n\
-    - chwn_house_04_no_ivy | Chwn House 04 No Ivy | buildings | 8.49x15.29x22.45 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_04_NoIvy.BP_Chwn_House_04_NoIvy_C\n\
-    - chwn_house_05_ivy | Chwn House 05 Ivy | buildings | 7.91x7.82x12.66 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_05_Ivy.BP_Chwn_House_05_Ivy_C\n\
-    - chwn_house_05_ivy_no_door | Chwn House 05 Ivy No Door | buildings | 7.82x7.59x12.66 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_05_IvyNoDoor.BP_Chwn_House_05_IvyNoDoor_C\n\
-    - chwn_house_05_ivy_no_door_2 | Chwn House 05 Ivy No Door | buildings | 7.82x7.59x12.66 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_05_Ivy_NoDoor.BP_Chwn_House_05_Ivy_NoDoor_C\n\
-    - chwn_house_05_no_ivy | Chwn House 05 No Ivy | buildings | 7.82x7.91x12.66 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_05_NoIvy.BP_Chwn_House_05_NoIvy_C\n\
-    - chwn_house_06_ivy | Chwn House 06 Ivy | buildings | 8.33x8.49x17.15 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_06_Ivy.BP_Chwn_House_06_Ivy_C\n\
-    - chwn_house_06_no_ivy | Chwn House 06 No Ivy | buildings | 8.33x8.49x17.15 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_06_NoIvy.BP_Chwn_House_06_NoIvy_C\n\
-    - chwn_house_07_ivy | Chwn House 07 Ivy | buildings | 7.82x7.81x12.66 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_07_Ivy.BP_Chwn_House_07_Ivy_C\n\
-    - chwn_house_07_no_ivy | Chwn House 07 No Ivy | buildings | 7.91x7.82x12.66 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_07_NoIvy.BP_Chwn_House_07_NoIvy_C\n\
-    - chwn_house_07_no_ivy_no_doors | Chwn House 07 No Ivy No Doors | buildings | 7.82x7.59x12.66 m |\
-    \ /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_07_NoIvy_NoDoors.BP_Chwn_House_07_NoIvy_NoDoors_C\n\
-    - chwn_house_08_ivy | Chwn House 08 Ivy | buildings | 11.9x8.06x15.79 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_08_Ivy.BP_Chwn_House_08_Ivy_C\n\
-    - chwn_house_08_no_ivy | Chwn House 08 No Ivy | buildings | 11.9x8.06x15.79 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_08_NoIvy.BP_Chwn_House_08_NoIvy_C\n\
-    - chwn_house_09_ivy | Chwn House 09 Ivy | buildings | 8.45x8.12x16.27 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_09_Ivy.BP_Chwn_House_09_Ivy_C\n\
-    - chwn_house_10_ivy | Chwn House 10 Ivy | buildings | 8.45x8.12x16.27 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_House_10_Ivy.BP_Chwn_House_10_Ivy_C\n\
-    - chwn_house_extension_01_no_ivy | Chwn House Extension 01 No Ivy | buildings | 6.08x5.79x11.39 m\
-    \ | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_HouseExtension_01_NoIvy.BP_Chwn_HouseExtension_01_NoIvy_C\n\
-    - chwn_house_hotel_02_ivy | Chwn House Hotel 02 Ivy | buildings | 14.81x25.83x20.74 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_HouseHotel_02_Ivy.BP_Chwn_HouseHotel_02_Ivy_C\n\
-    - chwn_house_hotel_02_no_ivy | Chwn House Hotel 02 No Ivy | buildings | 25.83x14.81x20.74 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_HouseHotel_02_NoIvy.BP_Chwn_HouseHotel_02_NoIvy_C\n\
-    - chwn_house_hotel_03_ivy | Chwn House Hotel 03 Ivy | buildings | 25.83x14.81x20.74 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_HouseHotel_03_Ivy.BP_Chwn_HouseHotel_03_Ivy_C\n\
-    - chwn_house_hotel_03_no_ivy | Chwn House Hotel 03 No Ivy | buildings | 25.83x14.81x20.74 m | /Game/Chefchaouen_Village/Blueprints/Buildings/BP_Chwn_HouseHotel_03_NoIvy.BP_Chwn_HouseHotel_03_NoIvy_C\n\
-    - chwn_side_walk_01 | Chwn Side Walk 01 | street_assets | 4.4x4.07x0.28 m | /Game/Chefchaouen_Village/Blueprints/Street_Assets/BP_Chwn_SideWalk_01.BP_Chwn_SideWalk_01_C\n\
-    - chwn_sidwwalk_02 | Chwn Sidwwalk 02 | street_assets | 4.44x4.1x0.28 m | /Game/Chefchaouen_Village/Blueprints/Street_Assets/BP_Chwn_Sidwwalk_02.BP_Chwn_Sidwwalk_02_C\n\
-    - chwn_sidwwalk_03 | Chwn Sidwwalk 03 | street_assets | 4.07x4.39x0.28 m | /Game/Chefchaouen_Village/Blueprints/Street_Assets/BP_Chwn_Sidwwalk_03.BP_Chwn_Sidwwalk_03_C\n\
-    - chwn_street_lamp_02 | Chwn Street Lamp 02 | street_assets | 4.14x2.56x7.81 m | /Game/Chefchaouen_Village/Blueprints/Street_Assets/BP_Chwn_StreetLamp_02.BP_Chwn_StreetLamp_02_C\n\
-    - chwn_grass_02 | Chwn Grass 02 | vegetation | 2.85x4.46x0.6 m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_Grass_02.BP_Chwn_Grass_02_C\n\
-    - chwn_ivy_red_02 | Chwn Ivy RED 02 | vegetation | 2.55x0.42x3.91 m | /Game/Chefchaouen_Village/Vegetation/SM_Chwn_Ivy_RED_02.SM_Chwn_Ivy_RED_02\n\
-    - chwn_vegetation_kit_01 | Chwn Vegetation Kit 01 | vegetation | 5.3x5.39x11.21 m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_VegetationKit_01.BP_Chwn_VegetationKit_01_C\n\
-    - chwn_vegetation_kit_02 | Chwn Vegetation Kit 02 | vegetation | 6.18x6.18x8.49 m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_VegetationKit_02.BP_Chwn_VegetationKit_02_C\n\
-    - chwn_vegetation_kit_04 | Chwn Vegetation Kit 04 | vegetation | 4.31x4.43x8.63 m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_VegetationKit_04.BP_Chwn_VegetationKit_04_C\n\
-    - chwn_vegetation_kit_05 | Chwn Vegetation Kit 05 | vegetation | 5.39x5.3x11.21 m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_VegetationKit_05.BP_Chwn_VegetationKit_05_C\n\
-    - chwn_vegetation_kit_06 | Chwn Vegetation Kit 06 | vegetation | 5.62x2.87x1.95 m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_VegetationKit_06.BP_Chwn_VegetationKit_06_C\n\
-    - chwn_vegetation_kit_07 | Chwn Vegetation Kit 07 | vegetation | 12.63x12.75x26.43 m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_VegetationKit_07.BP_Chwn_VegetationKit_07_C\n\
-    - chwn_vegetation_kit_08 | Chwn Vegetation Kit 08 | vegetation | 3.03x2.85x1.95 m | /Game/Chefchaouen_Village/Blueprints/Vegetation/BP_Chwn_VegetationKit_08.BP_Chwn_VegetationKit_08_C\n\
+  prompt: "Create a cold-blue battleground with several dozen low concrete buildings clustered on a square\
+    \ gravel-covered platform. Make the damaged center dense and maze-like, thinning toward open edges.\
+    \ Scatter slender concrete towers within and beyond the town. Exclude marked roads, pavements, vegetation,\
+    \ vehicles, and people; use harsh low sunlight.\n\n=== ASSET PALETTE ===\nBuild this scene using ONLY\
+    \ the assets below — asset search is not available\nin this run, so this list is your entire library.\
+    \ Format:\n\n  id | name | category | width x depth x height (m) | spawn path\n\nThe id is what a\
+    \ scene graph refers to; the spawn path is what reaches UE.\nYou decide which to use, how many of\
+    \ each, and where they go — reuse entries\nfreely.\n\n- aircon01 | Aircon01 | meshes | 0.5x0.83x0.8\
+    \ m | /Game/BattlegroundKit/Meshes/SM_Aircon01.SM_Aircon01\n- aircon02 | Aircon02 | meshes | 0.37x0.58x0.83\
+    \ m | /Game/BattlegroundKit/Meshes/SM_Aircon02.SM_Aircon02\n- aircon03 | Aircon03 | meshes | 0.5x0.05x0.49\
+    \ m | /Game/BattlegroundKit/Meshes/SM_Aircon03.SM_Aircon03\n- antena01 | Antena01 | meshes | 1.62x0.46x1.72\
+    \ m | /Game/BattlegroundKit/Meshes/SM_Antena01.SM_Antena01\n- antena02 | Antena02 | meshes | 1.62x0.63x2.12\
+    \ m | /Game/BattlegroundKit/Meshes/SM_Antena02.SM_Antena02\n- background_building01 | Background Building01\
+    \ | meshes | 10.11x7.65x9.7 m | /Game/BattlegroundKit/Meshes/SM_BackgroundBuilding01.SM_BackgroundBuilding01\n\
+    - barrel01 | Barrel01 | meshes | 0.52x0.52x0.79 m | /Game/BattlegroundKit/Meshes/SM_Barrel01.SM_Barrel01\n\
+    - barrel02 | Barrel02 | meshes | 1.08x1.09x0.79 m | /Game/BattlegroundKit/Meshes/SM_Barrel02.SM_Barrel02\n\
+    - base_floor3m | Base Floor3m | meshes | 3.0x3.0x0.2 m | /Game/BattlegroundKit/Meshes/SM_BaseFloor3m.SM_BaseFloor3m\n\
+    - border_wall01 | Border Wall01 | meshes | 0.65x4.0x0.89 m | /Game/BattlegroundKit/Meshes/SM_BorderWall01.SM_BorderWall01\n\
+    - border_wall_brick01 | Border Wall Brick01 | meshes | 0.43x0.73x0.17 m | /Game/BattlegroundKit/Meshes/SM_BorderWallBrick01.SM_BorderWallBrick01\n\
+    - border_wall_brick02 | Border Wall Brick02 | meshes | 0.45x0.43x0.26 m | /Game/BattlegroundKit/Meshes/SM_BorderWallBrick02.SM_BorderWallBrick02\n\
+    - burned_car01 | Burned Car01 | meshes | 5.94x7.54x2.08 m | /Game/BattlegroundKit/Meshes/SM_BurnedCar01.SM_BurnedCar01\n\
+    - burned_car05 | Burned Car05 | meshes | 2.08x2.71x0.72 m | /Game/BattlegroundKit/Meshes/SM_BurnedCar05.SM_BurnedCar05\n\
+    - cable01 | Cable01 | meshes | 14.07x9.62x2.84 m | /Game/BattlegroundKit/Meshes/SM_Cable01.SM_Cable01\n\
+    - cable02 | Cable02 | meshes | 14.13x9.7x3.33 m | /Game/BattlegroundKit/Meshes/SM_Cable02.SM_Cable02\n\
+    - cable03 | Cable03 | meshes | 2.26x1.3x2.72 m | /Game/BattlegroundKit/Meshes/SM_Cable03.SM_Cable03\n\
+    - concrete_stairs01 | Concrete Stairs01 | meshes | 3.01x2.0x1.53 m | /Game/BattlegroundKit/Meshes/SM_ConcreteStairs01.SM_ConcreteStairs01\n\
+    - concrete_wall_tiles01 | Concrete Wall Tiles01 | meshes | 3.03x0.27x3.01 m | /Game/BattlegroundKit/Meshes/SM_ConcreteWallTiles01.SM_ConcreteWallTiles01\n\
+    - concrete_wall_tiles02 | Concrete Wall Tiles02 | meshes | 3.03x0.28x3.01 m | /Game/BattlegroundKit/Meshes/SM_ConcreteWallTiles02.SM_ConcreteWallTiles02\n\
+    - debris01 | Debris01 | meshes | 2.02x1.31x0.26 m | /Game/BattlegroundKit/Meshes/SM_Debris01.SM_Debris01\n\
+    - debris_pile01 | Debris Pile01 | meshes | 6.31x4.46x0.76 m | /Game/BattlegroundKit/Meshes/SM_DebrisPile01.SM_DebrisPile01\n\
+    - debris_pile02 | Debris Pile02 | meshes | 2.39x2.22x0.24 m | /Game/BattlegroundKit/Meshes/SM_DebrisPile02.SM_DebrisPile02\n\
+    - debris_pile03 | Debris Pile03 | meshes | 2.19x1.84x0.19 m | /Game/BattlegroundKit/Meshes/SM_DebrisPile03.SM_DebrisPile03\n\
+    - debris_pile04 | Debris Pile04 | meshes | 0.14x0.3x0.09 m | /Game/BattlegroundKit/Meshes/SM_DebrisPile04.SM_DebrisPile04\n\
+    - debris_pile05 | Debris Pile05 | meshes | 0.1x0.2x0.08 m | /Game/BattlegroundKit/Meshes/SM_DebrisPile05.SM_DebrisPile05\n\
+    - debris_pile07 | Debris Pile07 | meshes | 0.55x0.54x0.02 m | /Game/BattlegroundKit/Meshes/SM_DebrisPile07.SM_DebrisPile07\n\
+    - debris_pile08 | Debris Pile08 | meshes | 2.0x1.28x0.12 m | /Game/BattlegroundKit/Meshes/SM_DebrisPile08.SM_DebrisPile08\n\
+    - door_frame | Door Frame | meshes | 0.25x3.0x3.0 m | /Game/BattlegroundKit/Meshes/SM_DoorFrame.SM_DoorFrame\n\
+    - door_frame03 | Door Frame03 | meshes | 0.13x1.41x2.16 m | /Game/BattlegroundKit/Meshes/SM_DoorFrame03.SM_DoorFrame03\n\
+    - fabric01 | Fabric01 | meshes | 0.34x1.56x1.83 m | /Game/BattlegroundKit/Meshes/SM_Fabric01.SM_Fabric01\n\
+    - fabric02 | Fabric02 | meshes | 1.19x1.17x0.64 m | /Game/BattlegroundKit/Meshes/SM_Fabric02.SM_Fabric02\n\
+    - fabric03 | Fabric03 | meshes | 1.29x1.23x0.81 m | /Game/BattlegroundKit/Meshes/SM_Fabric03.SM_Fabric03\n\
+    - fabric_carpet01 | Fabric Carpet01 | meshes | 4.39x5.5x0.1 m | /Game/BattlegroundKit/Meshes/SM_FabricCarpet01.SM_FabricCarpet01\n\
+    - floor01 | FLoor01 | meshes | 3.0x3.0x0.21 m | /Game/BattlegroundKit/Meshes/SM_FLoor01.SM_FLoor01\n\
+    - floor_cable01 | Floor Cable01 | meshes | 3.02x1.66x0.08 m | /Game/BattlegroundKit/Meshes/SM_FloorCable01.SM_FloorCable01\n\
+    - floor_cable02 | Floor Cable02 | meshes | 3.66x1.03x0.08 m | /Game/BattlegroundKit/Meshes/SM_FloorCable02.SM_FloorCable02\n\
+    - floor_cable03 | Floor Cable03 | meshes | 2.68x1.7x0.06 m | /Game/BattlegroundKit/Meshes/SM_FloorCable03.SM_FloorCable03\n\
+    - furniture01 | Furniture01 | meshes | 0.7x0.7x1.19 m | /Game/BattlegroundKit/Meshes/SM_Furniture01.SM_Furniture01\n\
+    - furniture02 | Furniture02 | meshes | 0.48x0.48x0.12 m | /Game/BattlegroundKit/Meshes/SM_Furniture02.SM_Furniture02\n\
+    - furniture03 | Furniture03 | meshes | 0.5x0.5x0.97 m | /Game/BattlegroundKit/Meshes/SM_Furniture03.SM_Furniture03\n\
+    - furniture04 | Furniture04 | meshes | 0.58x0.58x0.06 m | /Game/BattlegroundKit/Meshes/SM_Furniture04.SM_Furniture04\n\
+    - furniture05 | Furniture05 | meshes | 1.22x1.22x0.21 m | /Game/BattlegroundKit/Meshes/SM_Furniture05.SM_Furniture05\n\
+    - furniture06 | Furniture06 | meshes | 0.64x0.64x0.13 m | /Game/BattlegroundKit/Meshes/SM_Furniture06.SM_Furniture06\n\
+    - fusebox01 | Fusebox01 | meshes | 0.13x0.37x0.38 m | /Game/BattlegroundKit/Meshes/SM_Fusebox01.SM_Fusebox01\n\
+    - fusebox02 | Fusebox02 | meshes | 0.1x0.22x0.23 m | /Game/BattlegroundKit/Meshes/SM_Fusebox02.SM_Fusebox02\n\
+    - gate01 | Gate01 | meshes | 3.11x0.85x3.78 m | /Game/BattlegroundKit/Meshes/SM_Gate01.SM_Gate01\n\
+    - gate02 | Gate02 | meshes | 1.3x3.22x3.48 m | /Game/BattlegroundKit/Meshes/SM_Gate02.SM_Gate02\n\
+    - gate03 | Gate03 | meshes | 0.38x3.01x0.95 m | /Game/BattlegroundKit/Meshes/SM_Gate03.SM_Gate03\n\
+    - ground_tiles01 | Ground Tiles01 | meshes | 3.0x3.0x0.1 m | /Game/BattlegroundKit/Meshes/SM_GroundTiles01.SM_GroundTiles01\n\
+    - ground_tiles02 | Ground Tiles02 | meshes | 3.0x3.0x0.1 m | /Game/BattlegroundKit/Meshes/SM_GroundTiles02.SM_GroundTiles02\n\
+    - ground_tiles03 | Ground Tiles03 | meshes | 3.33x3.32x0.22 m | /Game/BattlegroundKit/Meshes/SM_GroundTiles03.SM_GroundTiles03\n\
+    - light_bulb01 | Light Bulb01 | meshes | 0.39x0.64x0.42 m | /Game/BattlegroundKit/Meshes/SM_LightBulb01.SM_LightBulb01\n\
+    - light_bulb02 | Light Bulb02 | meshes | 0.17x0.17x0.28 m | /Game/BattlegroundKit/Meshes/SM_LightBulb02.SM_LightBulb02\n\
+    - light_post01 | Light Post01 | meshes | 3.39x1.99x9.97 m | /Game/BattlegroundKit/Meshes/SM_LightPost01.SM_LightPost01\n\
+    - light_post03 | Light Post03 | meshes | 3.16x2.26x9.88 m | /Game/BattlegroundKit/Meshes/SM_LightPost03.SM_LightPost03\n\
+    - ornament_wall01 | Ornament Wall01 | meshes | 0.02x1.55x1.27 m | /Game/BattlegroundKit/Meshes/SM_OrnamentWall01.SM_OrnamentWall01\n\
+    - pallette01 | Pallette01 | meshes | 0.88x1.0x0.16 m | /Game/BattlegroundKit/Meshes/SM_Pallette01.SM_Pallette01\n\
+    - pallette02 | Pallette02 | meshes | 0.82x0.88x0.82 m | /Game/BattlegroundKit/Meshes/SM_Pallette02.SM_Pallette02\n\
+    - pallette03 | Pallette03 | meshes | 0.82x0.88x0.82 m | /Game/BattlegroundKit/Meshes/SM_Pallette03.SM_Pallette03\n\
+    - pavement_border01 | Pavement Border01 | meshes | 0.37x4.0x0.15 m | /Game/BattlegroundKit/Meshes/SM_PavementBorder01.SM_PavementBorder01\n\
+    - pavement_border02 | Pavement Border02 | meshes | 0.32x2.0x0.15 m | /Game/BattlegroundKit/Meshes/SM_PavementBorder02.SM_PavementBorder02\n\
+    - pavement_border03 | Pavement Border03 | meshes | 0.46x2.02x0.25 m | /Game/BattlegroundKit/Meshes/SM_PavementBorder03.SM_PavementBorder03\n\
+    - pillar01 | Pillar01 | meshes | 0.97x0.91x4.0 m | /Game/BattlegroundKit/Meshes/SM_Pillar01.SM_Pillar01\n\
+    - pillar02 | Pillar02 | meshes | 0.76x0.66x3.33 m | /Game/BattlegroundKit/Meshes/SM_Pillar02.SM_Pillar02\n\
+    - pillar03 | Pillar03 | meshes | 1.26x1.26x4.81 m | /Game/BattlegroundKit/Meshes/SM_Pillar03.SM_Pillar03\n\
+    - sandbags01 | Sandbags01 | meshes | 1.0x4.94x1.61 m | /Game/BattlegroundKit/Meshes/SM_Sandbags01.SM_Sandbags01\n\
+    - sandbags02 | Sandbags02 | meshes | 2.7x2.75x1.43 m | /Game/BattlegroundKit/Meshes/SM_Sandbags02.SM_Sandbags02\n\
+    - sandbags03 | Sandbags03 | meshes | 1.47x1.15x0.26 m | /Game/BattlegroundKit/Meshes/SM_Sandbags03.SM_Sandbags03\n\
+    - sandbags04 | Sandbags04 | meshes | 1.53x0.85x0.2 m | /Game/BattlegroundKit/Meshes/SM_Sandbags04.SM_Sandbags04\n\
+    - shopfront01 | Shopfront01 | meshes | 0.79x1.4x1.46 m | /Game/BattlegroundKit/Meshes/SM_Shopfront01.SM_Shopfront01\n\
+    - shopfront02 | Shopfront02 | meshes | 1.36x0.54x1.69 m | /Game/BattlegroundKit/Meshes/SM_Shopfront02.SM_Shopfront02\n\
+    - shopfront03 | Shopfront03 | meshes | 0.32x2.6x0.86 m | /Game/BattlegroundKit/Meshes/SM_Shopfront03.SM_Shopfront03\n\
+    - tower01 | Tower01 | meshes | 4.07x4.07x15.28 m | /Game/BattlegroundKit/Meshes/SM_Tower01.SM_Tower01\n\
+    - tower02 | Tower02 | meshes | 3.61x3.61x4.2 m | /Game/BattlegroundKit/Meshes/SM_Tower02.SM_Tower02\n\
+    - tower03 | Tower03 | meshes | 2.44x2.44x6.65 m | /Game/BattlegroundKit/Meshes/SM_Tower03.SM_Tower03\n\
+    - wall_bricks01 | Wall Bricks01 | meshes | 0.21x2.01x0.98 m | /Game/BattlegroundKit/Meshes/SM_WallBricks01.SM_WallBricks01\n\
+    - wall_cable01 | Wall Cable01 | meshes | 0.06x0.14x2.0 m | /Game/BattlegroundKit/Meshes/SM_WallCable01.SM_WallCable01\n\
+    - wall_cable02 | Wall Cable02 | meshes | 0.06x1.0x1.0 m | /Game/BattlegroundKit/Meshes/SM_WallCable02.SM_WallCable02\n\
+    - wall_decal01 | Wall Decal01 | meshes | 2.7x0.01x3.15 m | /Game/BattlegroundKit/Meshes/SM_WallDecal01.SM_WallDecal01\n\
+    - wall_decal02 | Wall Decal02 | meshes | 0.0x2.11x2.54 m | /Game/BattlegroundKit/Meshes/SM_WallDecal02.SM_WallDecal02\n\
+    - wall_decal03 | Wall Decal03 | meshes | 0.0x2.26x1.78 m | /Game/BattlegroundKit/Meshes/SM_WallDecal03.SM_WallDecal03\n\
+    - wall_decal04 | Wall Decal04 | meshes | 1.62x0.0x1.97 m | /Game/BattlegroundKit/Meshes/SM_WallDecal04.SM_WallDecal04\n\
+    - wall_decal_corner01 | Wall Decal Corner01 | meshes | 0.34x0.26x2.89 m | /Game/BattlegroundKit/Meshes/SM_WallDecalCorner01.SM_WallDecalCorner01\n\
+    - wall_decal_corner02 | Wall Decal Corner02 | meshes | 0.27x0.26x2.93 m | /Game/BattlegroundKit/Meshes/SM_WallDecalCorner02.SM_WallDecalCorner02\n\
+    - wall_decal_corner03 | Wall Decal Corner03 | meshes | 0.22x0.07x2.89 m | /Game/BattlegroundKit/Meshes/SM_WallDecalCorner03.SM_WallDecalCorner03\n\
+    - wall_decal_corner04 | Wall Decal Corner04 | meshes | 0.45x0.32x2.89 m | /Game/BattlegroundKit/Meshes/SM_WallDecalCorner04.SM_WallDecalCorner04\n\
+    - wall_tiles01 | Wall Tiles01 | meshes | 0.03x1.0x1.0 m | /Game/BattlegroundKit/Meshes/SM_WallTiles01.SM_WallTiles01\n\
+    - wall_tiles02 | Wall Tiles02 | meshes | 0.03x1.0x1.0 m | /Game/BattlegroundKit/Meshes/SM_WallTiles02.SM_WallTiles02\n\
+    - wall_tiles03 | Wall Tiles03 | meshes | 0.15x1.64x0.52 m | /Game/BattlegroundKit/Meshes/SM_WallTiles03.SM_WallTiles03\n\
+    - window_shuttered01 | Window Shuttered01 | meshes | 0.07x1.14x1.43 m | /Game/BattlegroundKit/Meshes/SM_WindowShuttered01.SM_WindowShuttered01\n\
+    - window_wall | Window Wall | meshes | 3.0x0.26x3.0 m | /Game/BattlegroundKit/Meshes/SM_WindowWall.SM_WindowWall\n\
+    - windows01 | Windows01 | meshes | 0.33x2.73x3.3 m | /Game/BattlegroundKit/Meshes/SM_Windows01.SM_Windows01\n\
+    - windows_rail01 | Windows Rail01 | meshes | 0.19x2.64x0.77 m | /Game/BattlegroundKit/Meshes/SM_WindowsRail01.SM_WindowsRail01\n\
+    - wood01 | Wood01 | meshes | 1.21x0.96x2.01 m | /Game/BattlegroundKit/Meshes/SM_Wood01.SM_Wood01\n\
+    - wood02 | Wood02 | meshes | 0.14x2.55x0.08 m | /Game/BattlegroundKit/Meshes/SM_Wood02.SM_Wood02\n\
+    - wood03 | Wood03 | meshes | 2.07x1.34x0.04 m | /Game/BattlegroundKit/Meshes/SM_Wood03.SM_Wood03\n\
+    - wood04 | Wood04 | meshes | 0.29x0.31x2.27 m | /Game/BattlegroundKit/Meshes/SM_Wood04.SM_Wood04\n\
+    - wood05 | Wood05 | meshes | 2.29x0.35x2.91 m | /Game/BattlegroundKit/Meshes/SM_Wood05.SM_Wood05\n\
+    - wooden_crate01 | Wooden Crate01 | meshes | 1.0x1.01x1.0 m | /Game/BattlegroundKit/Meshes/SM_WoodenCrate01.SM_WoodenCrate01\n\
+    - wooden_crate02 | Wooden Crate02 | meshes | 1.0x1.01x1.0 m | /Game/BattlegroundKit/Meshes/SM_WoodenCrate02.SM_WoodenCrate02\n\
+    - wooden_door01 | Wooden Door01 | meshes | 0.11x1.32x1.91 m | /Game/BattlegroundKit/Meshes/SM_WoodenDoor01.SM_WoodenDoor01\n\
     \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
     and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
     \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
@@ -77,10 +123,6 @@ inputs:
     tool_calls: 800
     wall_minutes: 180
   skills: contracts
-assets:
-  packs:
-  - Chefchaouen_Village
-  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
 verifiers:
 - name: semantic_requirements
   semantic_retrieval:
@@ -88,3 +130,6 @@ verifiers:
     top_k: 5
   verification_bundle: requirements/case_032.bundle.json
 - name: overview_prompt_alignment
+assets:
+  packs:
+  - BattlegroundKit

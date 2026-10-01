@@ -3,15 +3,29 @@
 id: case_051
 kind: scene_generation
 inputs:
-  prompt: "Create a night-time cyberpunk city with a dense cross-shaped mid-rise core and a loose ring\
-    \ of roughly twenty detached towers. Add neon storefronts and a hovering red-orange vehicle above\
-    \ a courtyard. Keep broad pale-blue gaps around the core, with no roads, curbs, vegetation, or terrain\
-    \ detail, beneath a navy sky.\n\n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below\
-    \ — asset search is not available\nin this run, so this list is your entire library. Format:\n\n \
-    \ id | name | category | width x depth x height (m) | spawn path\n\nThe id is what a scene graph refers\
-    \ to; the spawn path is what reaches UE.\nYou decide which to use, how many of each, and where they\
-    \ go — reuse entries\nfreely.\n\n- deco_lorean | Deco Lorean | auto | 2.23x4.75x2.69 m | /Game/CyberPunk_City_VR_Mobile/Models/Auto/SM_DecoLorean.SM_DecoLorean\n\
-    - garbage_truck | Garbage truck | auto | 9.14x3.95x5.41 m | /Game/CyberPunk_City_VR_Mobile/Models/Auto/SM_Garbage_truck.SM_Garbage_truck\n\
+  prompt: "Against a deep navy night sky, a stylized cyberpunk city gathers around a crowded heart. An\
+    \ uninterrupted flat pale-blue ground plane carries it, with no roads, curbs, vegetation, or terrain\
+    \ detail. Broad empty blue gaps separate the inner neighborhood from roughly twenty detached high-rise\
+    \ towers in a much looser, uneven inward-facing ring.\n\nAt the center, roughly a dozen connected\
+    \ mid-rise blocks form a dense, irregular cross, packed around narrow alleys and small open courts.\
+    \ Dark brick, gray stucco, and muted red façades carry projecting window bays, balconies, exterior\
+    \ stairs, awnings, rooftop sheds, vents, air-conditioning units, railings, and rows of small glowing\
+    \ windows. Compact storefronts, glass doors, illuminated display windows, and vertical or horizontal\
+    \ East Asian neon signs line the ground floors. Above one courtyard, beside an open concrete frame,\
+    \ a chunky red-orange futuristic vehicle hangs suspended.\n\nMost outer towers are simple rectangular\
+    \ residential slabs: repetitive bands or grids of bright white-blue windows, varied heights, and dark\
+    \ mechanical rooftop boxes. Among these stand several landmarks—cyan-lit glass towers crowned with\
+    \ vivid hot-pink geometry, a tall pink-edged tower wrapped in diagonal lattice braces and topped with\
+    \ antenna fins, and a few extremely tall, nearly black monolithic slabs at the outer edges, some leaning\
+    \ into or cropping out of view.\n\nOutside the core, the composition becomes deliberately sparse and\
+    \ surreal. No continuous street network joins it together; isolated buildings and oversized dark slabs\
+    \ make hard boundaries for this floating city fragment.\n\n=== ASSET PALETTE ===\nBuild this scene\
+    \ using ONLY the assets below — asset search is not available\nin this run, so this list is your entire\
+    \ library. Format:\n\n  id | name | category | width x depth x height (m) | spawn path\n\nThe id is\
+    \ what a scene graph refers to; the spawn path is what reaches UE.\nYou decide which to use, how many\
+    \ of each, and where they go — reuse entries\nfreely.\n\n- deco_lorean | Deco Lorean | auto | 2.23x4.75x2.69\
+    \ m | /Game/CyberPunk_City_VR_Mobile/Models/Auto/SM_DecoLorean.SM_DecoLorean\n- garbage_truck | Garbage\
+    \ truck | auto | 9.14x3.95x5.41 m | /Game/CyberPunk_City_VR_Mobile/Models/Auto/SM_Garbage_truck.SM_Garbage_truck\n\
     - microbus | Microbus | auto | 3.21x5.52x2.47 m | /Game/CyberPunk_City_VR_Mobile/Models/Auto/SM_Microbus.SM_Microbus\n\
     - police_car | Police Car | auto | 5.44x5.64x3.22 m | /Game/CyberPunk_City_VR_Mobile/Models/Auto/SM_Police_Car.SM_Police_Car\n\
     - sedan | Sedan | auto | 2.82x4.67x1.83 m | /Game/CyberPunk_City_VR_Mobile/Models/Auto/SM_Sedan.SM_Sedan\n\

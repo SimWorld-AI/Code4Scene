@@ -3,22 +3,31 @@
 id: case_060
 kind: scene_generation
 inputs:
-  prompt: "Create a compact sandstone Egyptian temple isolated in orange desert, with a flat roof and\
-    \ a decorated columned entrance facing an open forecourt. Place four painted columns beneath two broken\
-    \ offset lintels in front and to one side. Add hieroglyphic bands, colored friezes, and paving fragments\
-    \ partly buried in sand.\n\n    === GROUND ===\n    Build the FLOOR FIRST, before placing anything\
-    \ else. Call the benchmark\n    tool `ground_pass` as your first build action: it carpets the whole\
-    \ 200 m\n    plate deterministically from a tile chosen for this scene. If you skip it,\n    and do\
-    \ not tile a floor yourself, the scene renders as objects floating\n    over empty space -- which\
-    \ is a failed reconstruction no matter how good\n    the massing is. These palette entries are also\
-    \ flat surfaces you can tile\n    by hand if you prefer:\n\n      - SM_Temple_Floor | 10.0x10.0x0.50\
-    \ m | /Game/EgyptianTemple/Meshes/SM_Temple_Floor.SM_Temple_Floor\n\n=== ASSET PALETTE ===\nBuild\
-    \ this scene using ONLY the assets below — asset search is not available\nin this run, so this list\
-    \ is your entire library. Format:\n\n  id | name | category | width x depth x height (m) | spawn path\n\
-    \nThe id is what a scene graph refers to; the spawn path is what reaches UE.\nYou decide which to\
-    \ use, how many of each, and where they go — reuse entries\nfreely.\n\n- ceiling_block | Ceiling Block\
-    \ | meshes | 1.2x6.0x2.0 m | /Game/EgyptianTemple/Meshes/SM_Ceiling_Block.SM_Ceiling_Block\n- ceiling_block_corner\
-    \ | Ceiling Block Corner | meshes | 5.6x5.6x2.0 m | /Game/EgyptianTemple/Meshes/SM_Ceiling_BlockCorner.SM_Ceiling_BlockCorner\n\
+  prompt: "Softly rolling orange desert extends around one compact rectangular Egyptian temple ruin. Massive\
+    \ pale sandstone walls rise as its dominant mass, slightly battered and broken into shallow projecting\
+    \ sections. Engraved panels, faded figures, hieroglyphic bands, thin gold accents, and turquoise,\
+    \ yellow, red, and blue painted friezes articulate the stone. Above, uneven pale stone coping encloses\
+    \ a flat, nearly complete slab roof.\n\nThe decorated entrance opens toward an open forecourt. A broad\
+    \ shadowed central opening, several closely spaced papyrus-style columns with colorful flared capitals,\
+    \ shorter square supports, and low painted railings reveal a dark columned interior and a faintly\
+    \ illuminated passage beyond. The other three elevations remain mostly solid and monumental, their\
+    \ surfaces repeating rectangular relief panels and horizontal ornamental courses.\n\nIn front and\
+    \ slightly to one side, four tall, slender painted columns preserve the remains of a detached colonnade.\
+    \ Two incomplete, offset sandstone lintel beams rest above their loose line, with obvious gaps and\
+    \ broken continuity. Around their bases, an irregular trail of cracked paving slabs and small fragments\
+    \ disappears partly into the sand, reinforcing the temple’s isolation in the vast desert.\n\n    ===\
+    \ GROUND ===\n    Build the FLOOR FIRST, before placing anything else. Call the benchmark\n    tool\
+    \ `ground_pass` as your first build action: it carpets the whole 200 m\n    plate deterministically\
+    \ from a tile chosen for this scene. If you skip it,\n    and do not tile a floor yourself, the scene\
+    \ renders as objects floating\n    over empty space -- which is a failed reconstruction no matter\
+    \ how good\n    the massing is. These palette entries are also flat surfaces you can tile\n    by\
+    \ hand if you prefer:\n\n      - SM_Temple_Floor | 10.0x10.0x0.50 m | /Game/EgyptianTemple/Meshes/SM_Temple_Floor.SM_Temple_Floor\n\
+    \n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\n\
+    in this run, so this list is your entire library. Format:\n\n  id | name | category | width x depth\
+    \ x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches\
+    \ UE.\nYou decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n-\
+    \ ceiling_block | Ceiling Block | meshes | 1.2x6.0x2.0 m | /Game/EgyptianTemple/Meshes/SM_Ceiling_Block.SM_Ceiling_Block\n\
+    - ceiling_block_corner | Ceiling Block Corner | meshes | 5.6x5.6x2.0 m | /Game/EgyptianTemple/Meshes/SM_Ceiling_BlockCorner.SM_Ceiling_BlockCorner\n\
     - ceiling_edge | Ceiling Edge | meshes | 2.15x5.01x1.7 m | /Game/EgyptianTemple/Meshes/SM_Ceiling_Edge.SM_Ceiling_Edge\n\
     - ceiling_edge_corner | Ceiling Edge Corner | meshes | 6.55x6.59x1.7 m | /Game/EgyptianTemple/Meshes/SM_Ceiling_Edge_Corner.SM_Ceiling_Edge_Corner\n\
     - chest_base | Chest Base | meshes | 0.78x0.78x0.71 m | /Game/EgyptianTemple/Meshes/SM_Chest_Base.SM_Chest_Base\n\

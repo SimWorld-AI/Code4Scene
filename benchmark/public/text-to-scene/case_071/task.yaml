@@ -3,353 +3,62 @@
 id: case_071
 kind: scene_generation
 inputs:
-  prompt: "scene:\n  identity: Compact, sunlit Hong Kong neighborhood fragment\n  backdrop: Open blue\
-    \ sky; empty pale-blue void below\n  state: Suspended against this open backdrop\nlayout:\n  footprint:\
-    \ Irregular L- or cross-shaped urban island\n  streets: Two narrow streets meeting at a small offset\
-    \ intersection\n  buildings: Roughly twenty tightly packed mid-rise residential and mixed-use buildings;\
-    \ organic arrangement along the two streets\n  terrain: None surrounding\n  boundary: Sidewalks, roads,\
-    \ buildings end abruptly at sheer vertical cuts; exposed plain building backs\n  perimeter: Uneven,\
-    \ stark termination in simple wall masses\narchitecture:\n  apartment blocks:\n    height: Mostly\
-    \ six to ten stories\n    material: Concrete\n  roofs: Flat\n  façade finishes:\n    materials: Stucco\
-    \ or tile\n    palette: Muted pink, cream, gray, brown, and green\n  spacing: Narrow gaps; varied\
-    \ setbacks; occasional rounded street corners\n  inward: Detailed façades facing toward the roads\n\
-    \  outward: Tall, largely blank walls\ninner streets:\n  markings: Yellow curb lines, white lane markings,\
-    \ yellow zebra crossings\n  inventory: Small traffic islands, railings, bollards, signs, lamps, hydrants,\
-    \ bins, utility boxes, manholes\n  roadwork area:\n    color: Orange\n    enclosure: Fencing\n   \
-    \ details: Barriers and cones\nstreet level:\n  pattern: Continuous, cluttered ground-floor strip\n\
-    \  inventory: Shuttered storefronts, recessed doors, awnings, Chinese and English signs, graffiti,\
-    \ lanterns, hanging pennant flags\nupper façades:\n  inventory: Gridded metal-framed windows, enclosed\
-    \ balconies, projecting air-conditioning units, drainpipes, cables, laundry racks, colorful clothes\n\
-    rooftops:\n  density: Crowded\n  inventory: Corrugated extensions, water or utility housings, railings,\
-    \ antenna frames, satellite dishes, ducts, small mechanical boxes\ncore:\n  character: Richly detailed,\
-    \ convincingly dense\n\n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset\
-    \ search is not available\nin this run, so this list is your entire library. Format:\n\n  id | name\
-    \ | category | width x depth x height (m) | spawn path\n\nThe id is what a scene graph refers to;\
-    \ the spawn path is what reaches UE.\nYou decide which to use, how many of each, and where they go\
-    \ — reuse entries\nfreely.\n\n- house_01 | House 01 | assembled_houses | 14.02x20.01x19.9 m | /Game/Hong_Kong_Street/Models/Assembled_Houses/SM_House_01.SM_House_01\n\
-    - house_02 | House 02 | assembled_houses | 8.1x12.11x16.0 m | /Game/Hong_Kong_Street/Models/Assembled_Houses/SM_House_02.SM_House_02\n\
-    - house_03 | House 03 | assembled_houses | 10.08x18.06x13.0 m | /Game/Hong_Kong_Street/Models/Assembled_Houses/SM_House_03.SM_House_03\n\
-    - house_04 | House 04 | assembled_houses | 10.05x12.0x18.0 m | /Game/Hong_Kong_Street/Models/Assembled_Houses/SM_House_04.SM_House_04\n\
-    - house_05 | House 05 | assembled_houses | 18.02x7.08x16.02 m | /Game/Hong_Kong_Street/Models/Assembled_Houses/SM_House_05.SM_House_05\n\
-    - house_06 | House 06 | assembled_houses | 8.08x12.01x16.01 m | /Game/Hong_Kong_Street/Models/Assembled_Houses/SM_House_06.SM_House_06\n\
-    - house_07 | House 07 | assembled_houses | 12.01x12.0x15.25 m | /Game/Hong_Kong_Street/Models/Assembled_Houses/SM_House_07.SM_House_07\n\
-    - house_08 | House 08 | assembled_houses | 9.0x12.0x15.0 m | /Game/Hong_Kong_Street/Models/Assembled_Houses/SM_House_08.SM_House_08\n\
-    - house_09 | House 09 | assembled_houses | 12.0x9.1x15.0 m | /Game/Hong_Kong_Street/Models/Assembled_Houses/SM_House_09.SM_House_09\n\
-    - house_10 | House 10 | assembled_houses | 8.1x16.08x12.34 m | /Game/Hong_Kong_Street/Models/Assembled_Houses/SM_House_10.SM_House_10\n\
-    - house_11 | House 11 | assembled_houses | 12.0x6.0x15.0 m | /Game/Hong_Kong_Street/Models/Assembled_Houses/SM_House_11.SM_House_11\n\
-    - house_12 | House 12 | assembled_houses | 9.08x12.0x15.0 m | /Game/Hong_Kong_Street/Models/Assembled_Houses/SM_House_12.SM_House_12\n\
-    - house_13 | House 13 | assembled_houses | 12.12x12.12x15.01 m | /Game/Hong_Kong_Street/Models/Assembled_Houses/SM_House_13.SM_House_13\n\
-    - house_14 | House 14 | assembled_houses | 8.0x8.0x18.0 m | /Game/Hong_Kong_Street/Models/Assembled_Houses/SM_House_14.SM_House_14\n\
-    - house_15 | House 15 | assembled_houses | 12.03x12.03x15.01 m | /Game/Hong_Kong_Street/Models/Assembled_Houses/SM_House_15.SM_House_15\n\
-    - container | Container | blueprints | 2.06x3.97x1.63 m | /Game/Hong_Kong_Street/Models/Blueprints/BP_Container.BP_Container_C\n\
-    - entrance_house_01 | Entrance House 01 | blueprints | 1.06x2.0x4.0 m | /Game/Hong_Kong_Street/Models/Blueprints/BP_Entrance_House_01.BP_Entrance_House_01_C\n\
-    - entrance_house_02 | Entrance House 02 | blueprints | 3.68x2.0x4.62 m | /Game/Hong_Kong_Street/Models/Blueprints/BP_Entrance_House_02.BP_Entrance_House_02_C\n\
-    - entrance_house_03 | Entrance House 03 | blueprints | 2.0x1.03x4.0 m | /Game/Hong_Kong_Street/Models/Blueprints/BP_Entrance_House_03.BP_Entrance_House_03_C\n\
-    - entrance_house_04 | Entrance House 04 | blueprints | 1.02x2.0x4.0 m | /Game/Hong_Kong_Street/Models/Blueprints/BP_Entrance_House_04.BP_Entrance_House_04_C\n\
-    - decals_02 | Decals 02 | decals | 0.0x4.0x0.64 m | /Game/Hong_Kong_Street/Models/Decals/SM_Decals_02.SM_Decals_02\n\
-    - decals_wall_01 | Decals Wall 01 | decals | 0.0x4.0x2.0 m | /Game/Hong_Kong_Street/Models/Decals/SM_Decals_Wall_01.SM_Decals_Wall_01\n\
-    - decals_wall_06 | Decals Wall 06 | decals | 0.0x1.1x2.05 m | /Game/Hong_Kong_Street/Models/Decals/SM_Decals_Wall_06.SM_Decals_Wall_06\n\
-    - decals_wall_07 | Decals Wall 07 | decals | 0.0x1.3x2.23 m | /Game/Hong_Kong_Street/Models/Decals/SM_Decals_Wall_07.SM_Decals_Wall_07\n\
-    - decals_wall_08 | Decals Wall 08 | decals | 0.0x0.76x0.65 m | /Game/Hong_Kong_Street/Models/Decals/SM_Decals_Wall_08.SM_Decals_Wall_08\n\
-    - decals_wall_09 | Decals Wall 09 | decals | 2.13x0.0x1.42 m | /Game/Hong_Kong_Street/Models/Decals/SM_Decals_Wall_09.SM_Decals_Wall_09\n\
-    - decals_wall_10 | Decals Wall 10 | decals | 0.0x3.3x0.97 m | /Game/Hong_Kong_Street/Models/Decals/SM_Decals_Wall_10.SM_Decals_Wall_10\n\
-    - decals_wall_11 | Decals Wall 11 | decals | 3.41x0.0x2.01 m | /Game/Hong_Kong_Street/Models/Decals/SM_Decals_Wall_11.SM_Decals_Wall_11\n\
-    - decals_wall_12 | Decals Wall 12 | decals | 0.0x3.5x1.46 m | /Game/Hong_Kong_Street/Models/Decals/SM_Decals_Wall_12.SM_Decals_Wall_12\n\
-    - decals_wall_13 | Decals Wall 13 | decals | 0.0x2.06x1.38 m | /Game/Hong_Kong_Street/Models/Decals/SM_Decals_Wall_13.SM_Decals_Wall_13\n\
-    - edge_decals_01 | Edge Decals 01 | decals | 4.0x0.24x0.24 m | /Game/Hong_Kong_Street/Models/Decals/SM_Edge_Decals_01.SM_Edge_Decals_01\n\
-    - edge_decals_02 | Edge Decals 02 | decals | 0.24x0.24x4.0 m | /Game/Hong_Kong_Street/Models/Decals/SM_Edge_Decals_02.SM_Edge_Decals_02\n\
-    - edge_decals_03 | Edge Decals 03 | decals | 0.24x0.24x4.0 m | /Game/Hong_Kong_Street/Models/Decals/SM_Edge_Decals_03.SM_Edge_Decals_03\n\
-    - edge_decals_04 | Edge Decals 04 | decals | 0.24x0.24x4.0 m | /Game/Hong_Kong_Street/Models/Decals/SM_Edge_Decals_04.SM_Edge_Decals_04\n\
-    - advertising_signboard_01 | Advertising Signboard 01 | facade_props | 3.23x0.45x0.88 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Advertising_Signboard_01.SM_Advertising_Signboard_01\n\
-    - advertising_signboard_02 | Advertising Signboard 02 | facade_props | 0.21x3.57x0.95 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Advertising_Signboard_02.SM_Advertising_Signboard_02\n\
-    - advertising_signboard_03 | Advertising Signboard 03 | facade_props | 0.91x0.17x2.92 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Advertising_Signboard_03.SM_Advertising_Signboard_03\n\
-    - advertising_signboard_04 | Advertising Signboard 04 | facade_props | 4.36x0.15x0.92 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Advertising_Signboard_04.SM_Advertising_Signboard_04\n\
-    - advertising_signboard_05 | Advertising Signboard 05 | facade_props | 1.92x0.2x1.4 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Advertising_Signboard_05.SM_Advertising_Signboard_05\n\
-    - advertising_signboard_06 | Advertising Signboard 06 | facade_props | 3.07x0.2x1.68 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Advertising_Signboard_06.SM_Advertising_Signboard_06\n\
-    - antenna_01 | Antenna 01 | facade_props | 0.73x0.43x1.44 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Antenna_01.SM_Antenna_01\n\
-    - antenna_02 | Antenna 02 | facade_props | 1.03x0.73x3.07 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Antenna_02.SM_Antenna_02\n\
-    - antenna_03 | Antenna 03 | facade_props | 0.63x0.5x2.69 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Antenna_03.SM_Antenna_03\n\
-    - antenna_04 | Antenna 04 | facade_props | 0.6x0.76x0.14 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Antenna_04.SM_Antenna_04\n\
-    - bracing_conditioner | Bracing Conditioner | facade_props | 0.55x1.2x1.16 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Bracing_Conditioner.SM_Bracing_Conditioner\n\
-    - chinese_lantern_01 | Chinese Lantern 01 | facade_props | 0.32x0.32x1.01 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Chinese_Lantern_01.SM_Chinese_Lantern_01\n\
-    - chinese_lantern_02 | Chinese Lantern 02 | facade_props | 0.6x0.59x0.89 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Chinese_Lantern_02.SM_Chinese_Lantern_02\n\
-    - clothes_01 | Clothes 01 | facade_props | 0.37x1.42x0.75 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Clothes_01.SM_Clothes_01\n\
-    - clothes_02 | Clothes 02 | facade_props | 0.61x2.43x1.03 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Clothes_02.SM_Clothes_02\n\
-    - clothes_03 | Clothes 03 | facade_props | 0.51x1.91x1.09 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Clothes_03.SM_Clothes_03\n\
-    - clothes_04 | Clothes 04 | facade_props | 0.44x1.38x0.49 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Clothes_04.SM_Clothes_04\n\
-    - clothes_05 | Clothes 05 | facade_props | 0.49x0.78x0.96 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Clothes_05.SM_Clothes_05\n\
-    - clothes_06 | Clothes 06 | facade_props | 0.36x1.5x0.75 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Clothes_06.SM_Clothes_06\n\
-    - clothes_07 | Clothes 07 | facade_props | 1.15x0.42x1.01 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Clothes_07.SM_Clothes_07\n\
-    - clothes_hanger_01 | Clothes Hanger 01 | facade_props | 0.64x3.41x0.4 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Clothes_Hanger_01.SM_Clothes_Hanger_01\n\
-    - clothes_hanger_02 | Clothes Hanger 02 | facade_props | 0.79x1.25x0.3 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Clothes_Hanger_02.SM_Clothes_Hanger_02\n\
-    - clothes_hanger_03 | Clothes Hanger 03 | facade_props | 0.79x2.51x0.3 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Clothes_Hanger_03.SM_Clothes_Hanger_03\n\
-    - clothes_hanger_04 | Clothes Hanger 04 | facade_props | 2.18x1.11x0.46 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Clothes_Hanger_04.SM_Clothes_Hanger_04\n\
-    - conditioner_01 | Conditioner 01 | facade_props | 0.42x0.89x1.13 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Conditioner_01.SM_Conditioner_01\n\
-    - conditioner_02 | Conditioner 02 | facade_props | 0.36x1.2x0.91 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Conditioner_02.SM_Conditioner_02\n\
-    - conditioner_03 | Conditioner 03 | facade_props | 0.4x0.87x0.77 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Conditioner_03.SM_Conditioner_03\n\
-    - conditioner_04 | Conditioner 04 | facade_props | 0.35x0.64x0.83 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Conditioner_04.SM_Conditioner_04\n\
-    - conditioner_05 | Conditioner 05 | facade_props | 0.59x1.04x0.9 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Conditioner_05.SM_Conditioner_05\n\
-    - conditioner_06 | Conditioner 06 | facade_props | 0.47x0.7x0.89 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Conditioner_06.SM_Conditioner_06\n\
-    - conditioner_07 | Conditioner 07 | facade_props | 0.54x1.1x1.17 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Conditioner_07.SM_Conditioner_07\n\
-    - electricity_meter_01 | Electricity Meter 01 | facade_props | 0.13x0.22x0.28 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Electricity_Meter_01.SM_Electricity_Meter_01\n\
-    - electricity_meter_02 | Electricity Meter 02 | facade_props | 0.16x0.2x0.47 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Electricity_Meter_02.SM_Electricity_Meter_02\n\
-    - electricity_meter_03 | Electricity Meter 03 | facade_props | 0.23x0.14x0.26 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Electricity_Meter_03.SM_Electricity_Meter_03\n\
-    - electricity_meter_04 | Electricity Meter 04 | facade_props | 0.11x0.45x0.44 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Electricity_Meter_04.SM_Electricity_Meter_04\n\
-    - flashlight_01 | Flashlight 01 | facade_props | 0.22x0.2x0.23 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Flashlight_01.SM_Flashlight_01\n\
-    - flashlight_02 | Flashlight 02 | facade_props | 2.56x2.56x2.56 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Flashlight_02.SM_Flashlight_02\n\
-    - flashlight_03 | Flashlight 03 | facade_props | 0.27x0.37x0.26 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Flashlight_03.SM_Flashlight_03\n\
-    - flashlight_04 | Flashlight 04 | facade_props | 2.56x2.56x2.56 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Flashlight_04.SM_Flashlight_04\n\
-    - flashlight_05 | Flashlight 05 | facade_props | 2.56x2.56x2.56 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Flashlight_05.SM_Flashlight_05\n\
-    - flashlight_06 | Flashlight 06 | facade_props | 0.27x0.36x0.32 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Flashlight_06.SM_Flashlight_06\n\
-    - gas_meter_01 | Gas Meter 01 | facade_props | 0.49x0.27x0.78 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Gas_Meter_01.SM_Gas_Meter_01\n\
-    - pipes_01 | Pipes 01 | facade_props | 0.15x0.13x3.0 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_01.SM_Pipes_01\n\
-    - pipes_02 | Pipes 02 | facade_props | 0.16x0.58x0.58 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_02.SM_Pipes_02\n\
-    - pipes_03 | Pipes 03 | facade_props | 0.13x0.63x0.5 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_03.SM_Pipes_03\n\
-    - pipes_04 | Pipes 04 | facade_props | 0.21x0.27x0.39 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_04.SM_Pipes_04\n\
-    - pipes_05 | Pipes 05 | facade_props | 0.18x0.21x0.27 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_05.SM_Pipes_05\n\
-    - pipes_06 | Pipes 06 | facade_props | 0.28x0.28x0.16 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_06.SM_Pipes_06\n\
-    - pipes_07 | Pipes 07 | facade_props | 0.22x0.39x0.45 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_07.SM_Pipes_07\n\
-    - pipes_08 | Pipes 08 | facade_props | 0.15x0.13x3.0 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_08.SM_Pipes_08\n\
-    - pipes_09 | Pipes 09 | facade_props | 0.13x0.63x0.5 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_09.SM_Pipes_09\n\
-    - pipes_10 | Pipes 10 | facade_props | 0.22x0.45x0.45 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_10.SM_Pipes_10\n\
-    - pipes_11 | Pipes 11 | facade_props | 0.58x0.16x0.58 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_11.SM_Pipes_11\n\
-    - pipes_12 | Pipes 12 | facade_props | 0.18x0.21x0.27 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_12.SM_Pipes_12\n\
-    - pipes_13 | Pipes 13 | facade_props | 0.33x0.56x0.27 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_13.SM_Pipes_13\n\
-    - pipes_14 | Pipes 14 | facade_props | 0.14x0.15x3.0 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_14.SM_Pipes_14\n\
-    - pipes_15 | Pipes 15 | facade_props | 0.15x0.2x3.0 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_15.SM_Pipes_15\n\
-    - pipes_16 | Pipes 16 | facade_props | 0.24x0.12x0.43 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_16.SM_Pipes_16\n\
-    - pipes_17 | Pipes 17 | facade_props | 0.93x0.14x0.42 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_17.SM_Pipes_17\n\
-    - pipes_18 | Pipes 18 | facade_props | 0.16x0.17x3.0 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_18.SM_Pipes_18\n\
-    - pipes_19 | Pipes 19 | facade_props | 0.36x0.36x0.16 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_19.SM_Pipes_19\n\
-    - pipes_21 | Pipes 21 | facade_props | 0.14x0.15x3.0 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_21.SM_Pipes_21\n\
-    - pipes_22 | Pipes 22 | facade_props | 0.14x0.61x3.0 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_22.SM_Pipes_22\n\
-    - pipes_23 | Pipes 23 | facade_props | 0.13x0.15x1.0 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_23.SM_Pipes_23\n\
-    - pipes_24 | Pipes 24 | facade_props | 0.13x0.13x1.0 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_24.SM_Pipes_24\n\
-    - pipes_27 | Pipes 27 | facade_props | 0.33x2.32x0.68 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Pipes_27.SM_Pipes_27\n\
-    - rope_with_flags_01 | Rope With Flags 01 | facade_props | 0.15x5.31x1.04 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Rope_With_Flags_01.SM_Rope_With_Flags_01\n\
-    - rope_with_flags_02 | Rope With Flags 02 | facade_props | 0.75x0.54x4.01 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Rope_With_Flags_02.SM_Rope_With_Flags_02\n\
-    - sign_facade_01 | Sign Facade 01 | facade_props | 0.19x2.77x1.02 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Sign_Facade_01.SM_Sign_Facade_01\n\
-    - sign_facade_02 | Sign Facade 02 | facade_props | 0.19x0.29x3.28 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Sign_Facade_02.SM_Sign_Facade_02\n\
-    - sign_facade_03 | Sign Facade 03 | facade_props | 0.19x0.29x3.28 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Sign_Facade_03.SM_Sign_Facade_03\n\
-    - sign_facade_04 | Sign Facade 04 | facade_props | 3.32x0.18x0.77 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Sign_Facade_04.SM_Sign_Facade_04\n\
-    - sign_facade_05 | Sign Facade 05 | facade_props | 0.1x1.45x0.96 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Sign_Facade_05.SM_Sign_Facade_05\n\
-    - sign_facade_06 | Sign Facade 06 | facade_props | 0.12x3.25x0.88 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Sign_Facade_06.SM_Sign_Facade_06\n\
-    - sign_facade_07 | Sign Facade 07 | facade_props | 0.1x3.32x0.6 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Sign_Facade_07.SM_Sign_Facade_07\n\
-    - ventilation_system_01 | Ventilation System 01 | facade_props | 2.0x0.84x0.6 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Ventilation_System_01.SM_Ventilation_System_01\n\
-    - ventilation_system_03 | Ventilation System 03 | facade_props | 1.29x1.3x0.84 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Ventilation_System_03.SM_Ventilation_System_03\n\
-    - ventilation_system_05 | Ventilation System 05 | facade_props | 0.02x0.51x0.51 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Ventilation_System_05.SM_Ventilation_System_05\n\
-    - ventilation_system_06 | Ventilation System 06 | facade_props | 2.0x0.84x0.92 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Ventilation_System_06.SM_Ventilation_System_06\n\
-    - ventilation_system_07 | Ventilation System 07 | facade_props | 1.06x2.0x0.6 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Ventilation_System_07.SM_Ventilation_System_07\n\
-    - ventilation_system_09 | Ventilation System 09 | facade_props | 0.4x0.23x0.3 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Ventilation_System_09.SM_Ventilation_System_09\n\
-    - ventilation_system_10_ventilation_system_01 | Ventilation System 10 Ventilation System 01 | facade_props\
-    \ | 0.4x0.43x0.53 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Ventilation_System_10_Ventilation_System_01.SM_Ventilation_System_10_Ventilation_System_01\n\
-    - visor_01 | Visor 01 | facade_props | 0.42x3.84x0.17 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Visor_01.SM_Visor_01\n\
-    - visor_02 | Visor 02 | facade_props | 0.53x4.0x0.26 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Visor_02.SM_Visor_02\n\
-    - visor_03 | Visor 03 | facade_props | 2.24x2.24x0.07 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Visor_03.SM_Visor_03\n\
-    - visor_04 | Visor 04 | facade_props | 0.3x4.0x0.07 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Visor_04.SM_Visor_04\n\
-    - visor_05 | Visor 05 | facade_props | 2.0x0.42x0.17 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Visor_05.SM_Visor_05\n\
-    - visor_06 | Visor 06 | facade_props | 2.0x0.53x0.26 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Visor_06.SM_Visor_06\n\
-    - visor_07 | Visor 07 | facade_props | 4.53x4.53x0.26 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Visor_07.SM_Visor_07\n\
-    - visor_08 | Visor 08 | facade_props | 4.41x4.42x0.17 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Visor_08.SM_Visor_08\n\
-    - water_meter_01 | Water Meter 01 | facade_props | 0.29x0.5x0.91 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Water_Meter_01.SM_Water_Meter_01\n\
-    - wires_01 | Wires 01 | facade_props | 0.16x4.24x0.81 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Wires_01.SM_Wires_01\n\
-    - wires_02 | Wires 02 | facade_props | 0.49x5.19x0.9 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Wires_02.SM_Wires_02\n\
-    - wires_03 | Wires 03 | facade_props | 0.19x1.48x4.47 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Wires_03.SM_Wires_03\n\
-    - wires_04 | Wires 04 | facade_props | 0.49x7.1x0.61 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Wires_04.SM_Wires_04\n\
-    - wires_05 | Wires 05 | facade_props | 16.03x0.76x1.51 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Wires_05.SM_Wires_05\n\
-    - wires_06 | Wires 06 | facade_props | 12.02x0.79x0.53 m | /Game/Hong_Kong_Street/Models/Facade_Props/SM_Wires_06.SM_Wires_06\n\
-    - balcony_01 | Balcony 01 | modules | 12.0x4.05x2.1 m | /Game/Hong_Kong_Street/Models/Modules/SM_Balcony_01.SM_Balcony_01\n\
-    - balcony_04 | Balcony 04 | modules | 2.01x2.01x1.31 m | /Game/Hong_Kong_Street/Models/Modules/SM_Balcony_04.SM_Balcony_04\n\
-    - balcony_05 | Balcony 05 | modules | 2.0x2.0x0.44 m | /Game/Hong_Kong_Street/Models/Modules/SM_Balcony_05.SM_Balcony_05\n\
-    - diner | Diner | modules | 1.65x4.0x3.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Diner.SM_Diner\n\
-    - fish_shop | Fish Shop | modules | 3.53x4.0x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Fish_Shop.SM_Fish_Shop\n\
-    - input_stub | Input Stub | modules | 2.03x1.5x3.0 m | /Game/Hong_Kong_Street/Models/Modules/Input_Stub.Input_Stub\n\
-    - large_transformer | Large Transformer | modules | 2.48x1.69x1.99 m | /Game/Hong_Kong_Street/Models/Modules/SM_Large_Transformer.SM_Large_Transformer\n\
-    - loft_01 | Loft 01 | modules | 4.02x8.02x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Loft_01.SM_Loft_01\n\
-    - loft_02 | Loft 02 | modules | 8.08x4.05x5.23 m | /Game/Hong_Kong_Street/Models/Modules/SM_Loft_02.SM_Loft_02\n\
-    - loft_03 | Loft 03 | modules | 4.02x8.02x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Loft_03.SM_Loft_03\n\
-    - parapet_2_0_m | Parapet 2 0 m | modules | 2.0x0.25x1.26 m | /Game/Hong_Kong_Street/Models/Modules/SM_Parapet_2_0_m.SM_Parapet_2_0_m\n\
-    - parapet_4_0_m | Parapet 4 0 m | modules | 4.0x0.25x1.26 m | /Game/Hong_Kong_Street/Models/Modules/SM_Parapet_4_0_m.SM_Parapet_4_0_m\n\
-    - parapet_angle | Parapet Angle | modules | 1.0x1.0x1.26 m | /Game/Hong_Kong_Street/Models/Modules/SM_Parapet_Angle.SM_Parapet_Angle\n\
-    - roof_guardrail | Roof Guardrail | modules | 3.91x0.08x1.23 m | /Game/Hong_Kong_Street/Models/Modules/SM_Roof_Guardrail.SM_Roof_Guardrail\n\
-    - satellite_antenna_01 | Satellite Antenna 01 | modules | 2.32x2.09x2.37 m | /Game/Hong_Kong_Street/Models/Modules/SM_Satellite_Antenna_01.SM_Satellite_Antenna_01\n\
-    - satellite_antenna_02 | Satellite Antenna 02 | modules | 1.27x0.96x3.34 m | /Game/Hong_Kong_Street/Models/Modules/SM_Satellite_Antenna_02.SM_Satellite_Antenna_02\n\
-    - showcase_01 | Showcase 01 | modules | 0.21x6.0x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Showcase_01.SM_Showcase_01\n\
-    - showcase_02 | Showcase 02 | modules | 6.0x0.58x4.01 m | /Game/Hong_Kong_Street/Models/Modules/SM_Showcase_02.SM_Showcase_02\n\
-    - showcase_03 | Showcase 03 | modules | 6.0x0.11x4.01 m | /Game/Hong_Kong_Street/Models/Modules/SM_Showcase_03.SM_Showcase_03\n\
-    - showcase_04 | Showcase 04 | modules | 5.0x0.29x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Showcase_04.SM_Showcase_04\n\
-    - showcase_05 | Showcase 05 | modules | 4.16x0.69x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Showcase_05.SM_Showcase_05\n\
-    - showcase_06 | Showcase 06 | modules | 0.37x4.0x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Showcase_06.SM_Showcase_06\n\
-    - showcase_07 | Showcase 07 | modules | 0.05x2.0x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Showcase_07.SM_Showcase_07\n\
-    - showcase_08 | Showcase 08 | modules | 1.41x2.08x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Showcase_08.SM_Showcase_08\n\
-    - showcase_09 | Showcase 09 | modules | 0.37x5.0x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Showcase_09.SM_Showcase_09\n\
-    - showcase_10 | Showcase 10 | modules | 4.21x2.11x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Showcase_10.SM_Showcase_10\n\
-    - showcase_11 | Showcase 11 | modules | 0.16x2.0x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Showcase_11.SM_Showcase_11\n\
-    - showcase_12 | Showcase 12 | modules | 0.22x4.0x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Showcase_12.SM_Showcase_12\n\
-    - showcase_13 | Showcase 13 | modules | 0.3x4.0x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Showcase_13.SM_Showcase_13\n\
-    - showcase_14 | Showcase 14 | modules | 0.25x2.0x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Showcase_14.SM_Showcase_14\n\
-    - showcase_15 | Showcase 15 | modules | 0.1x4.16x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Showcase_15.SM_Showcase_15\n\
-    - showcase_16 | Showcase 16 | modules | 4.0x0.03x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Showcase_16.SM_Showcase_16\n\
-    - showcase_17 | Showcase 17 | modules | 4.0x0.19x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Showcase_17.SM_Showcase_17\n\
-    - wall_1x4_m | Wall 1x4 m | modules | 1.0x0.0x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Wall_1x4_m.SM_Wall_1x4_m\n\
-    - wall_2x3_m | Wall 2x3 m | modules | 0.0x2.0x3.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Wall_2x3_m.SM_Wall_2x3_m\n\
-    - wall_2x4_m | Wall 2x4 m | modules | 0.0x2.0x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Wall_2x4_m.SM_Wall_2x4_m\n\
-    - wall_4x1_m | Wall 4x1 m | modules | 0.0x4.0x1.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Wall_4x1_m.SM_Wall_4x1_m\n\
-    - wall_4x4_m | Wall 4x4 m | modules | 0.0x4.0x4.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Wall_4x4_m.SM_Wall_4x4_m\n\
-    - wall_windows_2_0m_01 | Wall Windows 2 0m 01 | modules | 0.11x2.0x3.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Wall_Windows_2_0m_01.SM_Wall_Windows_2_0m_01\n\
-    - wall_windows_4_0m_02 | Wall Windows 4 0m 02 | modules | 4.0x0.08x3.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Wall_Windows_4_0m_02.SM_Wall_Windows_4_0m_02\n\
-    - wall_windows_4_0m_14 | Wall Windows 4 0m 14 | modules | 4.0x0.07x1.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Wall_Windows_4_0m_14.SM_Wall_Windows_4_0m_14\n\
-    - wall_windows_4_0m_21 | Wall Windows 4 0m 21 | modules | 4.0x0.29x3.0 m | /Game/Hong_Kong_Street/Models/Modules/SM_Wall_Windows_4_0m_21.SM_Wall_Windows_4_0m_21\n\
-    - bicycle_01 | Bicycle 01 | props | 0.64x1.99x1.34 m | /Game/Hong_Kong_Street/Models/Props/SM_Bicycle_01.SM_Bicycle_01\n\
-    - bicycle_02 | Bicycle 02 | props | 0.59x1.85x1.28 m | /Game/Hong_Kong_Street/Models/Props/SM_Bicycle_02.SM_Bicycle_02\n\
-    - bicycle_03 | Bicycle 03 | props | 1.83x1.99x1.33 m | /Game/Hong_Kong_Street/Models/Props/SM_Bicycle_03.SM_Bicycle_03\n\
-    - bottle | Bottle | props | 0.09x0.09x0.24 m | /Game/Hong_Kong_Street/Models/Props/SM_Bottle.SM_Bottle\n\
-    - box_01 | Box 01 | props | 0.24x0.3x0.19 m | /Game/Hong_Kong_Street/Models/Props/SM_Box_01.SM_Box_01\n\
-    - box_02 | Box 02 | props | 0.62x0.49x0.31 m | /Game/Hong_Kong_Street/Models/Props/SM_Box_02.SM_Box_02\n\
-    - box_03 | Box 03 | props | 0.42x0.43x0.33 m | /Game/Hong_Kong_Street/Models/Props/SM_Box_03.SM_Box_03\n\
-    - box_04 | Box 04 | props | 0.83x0.84x0.33 m | /Game/Hong_Kong_Street/Models/Props/SM_Box_04.SM_Box_04\n\
-    - box_05 | Box 05 | props | 0.56x0.4x0.25 m | /Game/Hong_Kong_Street/Models/Props/SM_Box_05.SM_Box_05\n\
-    - box_06 | Box 06 | props | 0.37x0.34x0.61 m | /Game/Hong_Kong_Street/Models/Props/SM_Box_06.SM_Box_06\n\
-    - bucket | Bucket | props | 0.34x0.36x0.35 m | /Game/Hong_Kong_Street/Models/Props/SM_Bucket.SM_Bucket\n\
-    - building_material_01 | Building Material 01 | props | 2.87x1.69x0.61 m | /Game/Hong_Kong_Street/Models/Props/SM_Building_Material_01.SM_Building_Material_01\n\
-    - building_material_02 | Building Material 02 | props | 1.01x0.94x0.31 m | /Game/Hong_Kong_Street/Models/Props/SM_Building_Material_02.SM_Building_Material_02\n\
-    - building_material_03 | Building Material 03 | props | 0.93x2.46x0.26 m | /Game/Hong_Kong_Street/Models/Props/SM_Building_Material_03.SM_Building_Material_03\n\
-    - bus_sign | Bus Sign | props | 0.48x0.48x2.15 m | /Game/Hong_Kong_Street/Models/Props/SM_Bus_Sign.SM_Bus_Sign\n\
-    - canned_food_01 | Canned Food 01 | props | 0.09x0.09x0.15 m | /Game/Hong_Kong_Street/Models/Props/SM_Canned_Food_01.SM_Canned_Food_01\n\
-    - canned_food_02 | Canned Food 02 | props | 0.13x0.13x0.11 m | /Game/Hong_Kong_Street/Models/Props/SM_Canned_Food_02.SM_Canned_Food_02\n\
-    - carts_01 | Carts 01 | props | 0.8x1.2x0.94 m | /Game/Hong_Kong_Street/Models/Props/SM_Carts_01.SM_Carts_01\n\
-    - carts_02 | Carts 02 | props | 0.8x1.2x0.94 m | /Game/Hong_Kong_Street/Models/Props/SM_Carts_02.SM_Carts_02\n\
-    - carts_03 | Carts 03 | props | 0.58x1.06x0.86 m | /Game/Hong_Kong_Street/Models/Props/SM_Carts_03.SM_Carts_03\n\
-    - carts_04 | Carts 04 | props | 0.53x1.15x1.02 m | /Game/Hong_Kong_Street/Models/Props/SM_Carts_04.SM_Carts_04\n\
-    - carts_05 | Carts 05 | props | 0.53x1.16x1.02 m | /Game/Hong_Kong_Street/Models/Props/SM_Carts_05.SM_Carts_05\n\
-    - carts_06 | Carts 06 | props | 1.26x0.63x1.19 m | /Game/Hong_Kong_Street/Models/Props/SM_Carts_06.SM_Carts_06\n\
-    - carts_07 | Carts 07 | props | 0.61x1.01x0.79 m | /Game/Hong_Kong_Street/Models/Props/SM_Carts_07.SM_Carts_07\n\
-    - carts_08 | Carts 08 | props | 0.83x0.63x1.18 m | /Game/Hong_Kong_Street/Models/Props/SM_Carts_08.SM_Carts_08\n\
-    - cereal_box | Cereal Box | props | 0.19x0.07x0.26 m | /Game/Hong_Kong_Street/Models/Props/SM_Cereal_Box.SM_Cereal_Box\n\
-    - chair_diner_01 | Chair Diner 01 | props | 0.43x0.42x0.51 m | /Game/Hong_Kong_Street/Models/Props/SM_Chair_Diner_01.SM_Chair_Diner_01\n\
-    - chair_diner_02 | Chair Diner 02 | props | 0.43x0.42x0.51 m | /Game/Hong_Kong_Street/Models/Props/SM_Chair_Diner_02.SM_Chair_Diner_02\n\
-    - coffee | Coffee | props | 0.07x0.07x0.14 m | /Game/Hong_Kong_Street/Models/Props/SM_Coffee.SM_Coffee\n\
-    - connector | Connector | props | 0.46x0.34x1.02 m | /Game/Hong_Kong_Street/Models/Props/SM_Connector.SM_Connector\n\
-    - construction_scaffolding | Construction Scaffolding | props | 1.72x9.26x5.28 m | /Game/Hong_Kong_Street/Models/Props/SM_Construction_Scaffolding.SM_Construction_Scaffolding\n\
-    - construction_scaffolding_02 | Construction Scaffolding 02 | props | 2.28x9.26x9.11 m | /Game/Hong_Kong_Street/Models/Props/SM_Construction_Scaffolding_02.SM_Construction_Scaffolding_02\n\
-    - cutting_board | Cutting Board | props | 0.27x0.37x0.01 m | /Game/Hong_Kong_Street/Models/Props/SM_Cutting_Board.SM_Cutting_Board\n\
-    - dumpster | Dumpster | props | 0.95x1.31x1.17 m | /Game/Hong_Kong_Street/Models/Props/SM_Dumpster.SM_Dumpster\n\
-    - electric_box | Electric Box | props | 0.49x1.2x1.03 m | /Game/Hong_Kong_Street/Models/Props/SM_Electric_Box.SM_Electric_Box\n\
-    - electric_transformer | Electric Transformer | props | 0.78x1.35x1.91 m | /Game/Hong_Kong_Street/Models/Props/SM_Electric_Transformer.SM_Electric_Transformer\n\
-    - fish_01 | Fish 01 | props | 0.23x0.62x0.07 m | /Game/Hong_Kong_Street/Models/Props/SM_Fish_01.SM_Fish_01\n\
-    - fish_02 | Fish 02 | props | 0.85x0.57x0.05 m | /Game/Hong_Kong_Street/Models/Props/SM_Fish_02.SM_Fish_02\n\
-    - fish_03 | Fish 03 | props | 0.13x0.23x0.55 m | /Game/Hong_Kong_Street/Models/Props/SM_Fish_03.SM_Fish_03\n\
-    - fish_04 | Fish 04 | props | 0.22x0.57x0.08 m | /Game/Hong_Kong_Street/Models/Props/SM_Fish_04.SM_Fish_04\n\
-    - fish_05 | Fish 05 | props | 0.64x0.62x0.09 m | /Game/Hong_Kong_Street/Models/Props/SM_Fish_05.SM_Fish_05\n\
-    - fish_06 | Fish 06 | props | 0.24x0.42x0.03 m | /Game/Hong_Kong_Street/Models/Props/SM_Fish_06.SM_Fish_06\n\
-    - fish_07 | Fish 07 | props | 0.04x0.44x0.59 m | /Game/Hong_Kong_Street/Models/Props/SM_Fish_07.SM_Fish_07\n\
-    - fish_08 | Fish 08 | props | 0.05x0.61x0.9 m | /Game/Hong_Kong_Street/Models/Props/SM_Fish_08.SM_Fish_08\n\
-    - fish_group | Fish Group | props | 0.78x1.92x0.17 m | /Game/Hong_Kong_Street/Models/Props/SM_Fish_Group.SM_Fish_Group\n\
-    - fridge | Fridge | props | 0.59x0.97x1.87 m | /Game/Hong_Kong_Street/Models/Props/SM_Fridge.SM_Fridge\n\
-    - gas_cylinder | Gas Cylinder | props | 0.34x0.34x0.68 m | /Game/Hong_Kong_Street/Models/Props/SM_Gas_Cylinder.SM_Gas_Cylinder\n\
-    - gas_cylinder_02 | Gas Cylinder 02 | props | 0.47x0.47x0.68 m | /Game/Hong_Kong_Street/Models/Props/SM_Gas_Cylinder_02.SM_Gas_Cylinder_02\n\
-    - ice | Ice | props | 0.84x0.68x0.06 m | /Game/Hong_Kong_Street/Models/Props/SM_Ice.SM_Ice\n- knife\
-    \ | Knife | props | 0.09x0.24x0.02 m | /Game/Hong_Kong_Street/Models/Props/SM_Knife.SM_Knife\n- liquid_chocolate\
-    \ | Liquid Chocolate | props | 0.26x0.19x0.07 m | /Game/Hong_Kong_Street/Models/Props/SM_Liquid_Chocolate.SM_Liquid_Chocolate\n\
-    - mailbox | Mailbox | props | 0.57x0.88x1.79 m | /Game/Hong_Kong_Street/Models/Props/SM_Mailbox.SM_Mailbox\n\
-    - pack_cigarettes_01 | Pack Cigarettes 01 | props | 0.13x0.15x0.03 m | /Game/Hong_Kong_Street/Models/Props/SM_Pack_Cigarettes_01.SM_Pack_Cigarettes_01\n\
-    - pack_cigarettes_02 | Pack Cigarettes 02 | props | 0.12x0.08x0.03 m | /Game/Hong_Kong_Street/Models/Props/SM_Pack_Cigarettes_02.SM_Pack_Cigarettes_02\n\
-    - pallet_truck | Pallet Truck | props | 0.73x2.21x1.3 m | /Game/Hong_Kong_Street/Models/Props/SM_Pallet_Truck.SM_Pallet_Truck\n\
-    - pelvis | Pelvis | props | 0.52x0.77x0.23 m | /Game/Hong_Kong_Street/Models/Props/SM_Pelvis.SM_Pelvis\n\
-    - piece_fish_01 | Piece Fish 01 | props | 0.11x0.22x0.02 m | /Game/Hong_Kong_Street/Models/Props/SM_Piece_Fish_01.SM_Piece_Fish_01\n\
-    - piece_fish_02 | Piece Fish 02 | props | 0.21x0.24x0.02 m | /Game/Hong_Kong_Street/Models/Props/SM_Piece_Fish_02.SM_Piece_Fish_02\n\
-    - plastic_container_01 | Plastic Container 01 | props | 0.42x0.65x0.23 m | /Game/Hong_Kong_Street/Models/Props/SM_Plastic_Container_01.SM_Plastic_Container_01\n\
-    - plastic_container_02 | Plastic Container 02 | props | 0.45x0.64x0.25 m | /Game/Hong_Kong_Street/Models/Props/SM_Plastic_Container_02.SM_Plastic_Container_02\n\
-    - plastic_container_03 | Plastic Container 03 | props | 0.42x0.7x0.26 m | /Game/Hong_Kong_Street/Models/Props/SM_Plastic_Container_03.SM_Plastic_Container_03\n\
-    - plastic_container_04 | Plastic Container 04 | props | 0.55x0.72x0.31 m | /Game/Hong_Kong_Street/Models/Props/SM_Plastic_Container_04.SM_Plastic_Container_04\n\
-    - road_barrier_01 | Road Barrier 01 | props | 1.6x0.43x1.23 m | /Game/Hong_Kong_Street/Models/Props/SM_Road_Barrier_01.SM_Road_Barrier_01\n\
-    - road_barrier_02 | Road Barrier 02 | props | 1.34x1.51x1.23 m | /Game/Hong_Kong_Street/Models/Props/SM_Road_Barrier_02.SM_Road_Barrier_02\n\
-    - road_barrier_03 | Road Barrier 03 | props | 0.35x2.0x1.07 m | /Game/Hong_Kong_Street/Models/Props/SM_Road_Barrier_03.SM_Road_Barrier_03\n\
-    - scales | Scales | props | 0.3x0.34x0.34 m | /Game/Hong_Kong_Street/Models/Props/SM_Scales.SM_Scales\n\
-    - soda | Soda | props | 0.07x0.07x0.16 m | /Game/Hong_Kong_Street/Models/Props/SM_Soda.SM_Soda\n-\
-    \ spices_diner | Spices Diner | props | 0.12x0.21x0.16 m | /Game/Hong_Kong_Street/Models/Props/SM_Spices_Diner.SM_Spices_Diner\n\
-    - styrofoam_box | Styrofoam Box | props | 0.3x0.37x0.17 m | /Game/Hong_Kong_Street/Models/Props/SM_Styrofoam_Box.SM_Styrofoam_Box\n\
-    - table | Table | props | 1.26x2.99x0.97 m | /Game/Hong_Kong_Street/Models/Props/SM_Table.SM_Table\n\
-    - table_diner | Table Diner | props | 1.22x0.77x0.69 m | /Game/Hong_Kong_Street/Models/Props/SM_Table_Diner.SM_Table_Diner\n\
-    - telephone_booth | Telephone Booth | props | 1.0x1.0x2.57 m | /Game/Hong_Kong_Street/Models/Props/SM_Telephone_Booth.SM_Telephone_Booth\n\
-    - trash_cans_01 | Trash Cans 01 | props | 0.38x0.38x0.61 m | /Game/Hong_Kong_Street/Models/Props/SM_Trash_Cans_01.SM_Trash_Cans_01\n\
-    - trash_cans_02 | Trash Cans 02 | props | 0.41x0.41x0.58 m | /Game/Hong_Kong_Street/Models/Props/SM_Trash_Cans_02.SM_Trash_Cans_02\n\
-    - curbstone_01 | Curbstone 01 | street | 0.11x3.0x0.14 m | /Game/Hong_Kong_Street/Models/Street/SM_Curbstone_01.SM_Curbstone_01\n\
-    - curbstone_02 | Curbstone 02 | street | 0.11x1.0x0.14 m | /Game/Hong_Kong_Street/Models/Street/SM_Curbstone_02.SM_Curbstone_02\n\
-    - fence_01 | Fence 01 | street | 0.16x2.05x0.95 m | /Game/Hong_Kong_Street/Models/Street/SM_Fence_01.SM_Fence_01\n\
-    - fence_02 | Fence 02 | street | 1.29x1.79x0.95 m | /Game/Hong_Kong_Street/Models/Street/SM_Fence_02.SM_Fence_02\n\
-    - fence_03 | Fence 03 | street | 0.17x0.46x0.95 m | /Game/Hong_Kong_Street/Models/Street/SM_Fence_03.SM_Fence_03\n\
-    - fence_04 | Fence 04 | street | 0.4x0.47x0.95 m | /Game/Hong_Kong_Street/Models/Street/SM_Fence_04.SM_Fence_04\n\
-    - fence_05 | Fence 05 | street | 1.77x1.73x0.95 m | /Game/Hong_Kong_Street/Models/Street/SM_Fence_05.SM_Fence_05\n\
-    - hatchway_02 | Hatchway 02 | street | 0.69x0.69x0.04 m | /Game/Hong_Kong_Street/Models/Street/SM_Hatchway_02.SM_Hatchway_02\n\
-    - hatchway_03 | Hatchway 03 | street | 1.39x0.79x0.02 m | /Game/Hong_Kong_Street/Models/Street/SM_Hatchway_03.SM_Hatchway_03\n\
-    - hatchway_04 | Hatchway 04 | street | 0.61x0.36x0.03 m | /Game/Hong_Kong_Street/Models/Street/SM_Hatchway_04.SM_Hatchway_04\n\
-    - hatchway_05 | Hatchway 05 | street | 0.99x0.99x0.03 m | /Game/Hong_Kong_Street/Models/Street/SM_Hatchway_05.SM_Hatchway_05\n\
-    - hatchway_06 | Hatchway 06 | street | 0.99x2.0x0.03 m | /Game/Hong_Kong_Street/Models/Street/SM_Hatchway_06.SM_Hatchway_06\n\
-    - hatchway_07 | Hatchway 07 | street | 1.77x0.97x0.01 m | /Game/Hong_Kong_Street/Models/Street/SM_Hatchway_07.SM_Hatchway_07\n\
-    - hydrant | Hydrant | street | 0.42x0.53x0.62 m | /Game/Hong_Kong_Street/Models/Street/SM_Hydrant.SM_Hydrant\n\
-    - lamppost | Lamppost | street | 1.79x0.31x5.94 m | /Game/Hong_Kong_Street/Models/Street/SM_Lamppost.SM_Lamppost\n\
-    - look_left | Look Left | street | 2.37x0.91x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Look_Left.SM_Look_Left\n\
-    - look_right | Look Right | street | 2.25x0.86x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Look_Right.SM_Look_Right\n\
-    - newspapers_01 | Newspapers 01 | street | 0.41x0.46x0.06 m | /Game/Hong_Kong_Street/Models/Street/SM_Newspapers_01.SM_Newspapers_01\n\
-    - newspapers_02 | Newspapers 02 | street | 0.31x0.26x0.03 m | /Game/Hong_Kong_Street/Models/Street/SM_Newspapers_02.SM_Newspapers_02\n\
-    - newspapers_03 | Newspapers 03 | street | 0.4x0.45x0.02 m | /Game/Hong_Kong_Street/Models/Street/SM_Newspapers_03.SM_Newspapers_03\n\
-    - newspapers_04 | Newspapers 04 | street | 0.67x0.38x0.02 m | /Game/Hong_Kong_Street/Models/Street/SM_Newspapers_04.SM_Newspapers_04\n\
-    - newspapers_05 | Newspapers 05 | street | 0.39x0.49x0.02 m | /Game/Hong_Kong_Street/Models/Street/SM_Newspapers_05.SM_Newspapers_05\n\
-    - newspapers_06 | Newspapers 06 | street | 0.43x0.68x0.08 m | /Game/Hong_Kong_Street/Models/Street/SM_Newspapers_06.SM_Newspapers_06\n\
-    - newspapers_07 | Newspapers 07 | street | 0.37x0.37x0.1 m | /Game/Hong_Kong_Street/Models/Street/SM_Newspapers_07.SM_Newspapers_07\n\
-    - newspapers_08 | Newspapers 08 | street | 0.28x0.23x0.03 m | /Game/Hong_Kong_Street/Models/Street/SM_Newspapers_08.SM_Newspapers_08\n\
-    - oil_decal_02 | Oil Decal 02 | street | 2.04x1.87x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Oil_Decal_02.SM_Oil_Decal_02\n\
-    - oil_decal_03 | Oil Decal 03 | street | 2.62x2.72x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Oil_Decal_03.SM_Oil_Decal_03\n\
-    - oil_decal_04 | Oil Decal 04 | street | 1.39x1.96x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Oil_Decal_04.SM_Oil_Decal_04\n\
-    - parking_area_01 | Parking Area 01 | street | 2.64x4.0x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Parking_Area_01.SM_Parking_Area_01\n\
-    - parking_area_02 | Parking Area 02 | street | 2.66x2.7x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Parking_Area_02.SM_Parking_Area_02\n\
-    - parking_area_03 | Parking Area 03 | street | 2.66x2.7x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Parking_Area_03.SM_Parking_Area_03\n\
-    - parking_area_04 | Parking Area 04 | street | 2.47x11.07x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Parking_Area_04.SM_Parking_Area_04\n\
-    - parking_meter | Parking Meter | street | 0.16x0.2x1.44 m | /Game/Hong_Kong_Street/Models/Street/SM_Parking_Meter.SM_Parking_Meter\n\
-    - pedestrian_crossing | Pedestrian Crossing | street | 5.63x4.52x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Pedestrian_Crossing.SM_Pedestrian_Crossing\n\
-    - road_angle_01 | Road Angle 01 | street | 5.0x5.0x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Angle_01.SM_Road_Angle_01\n\
-    - road_damage_01 | Road Damage 01 | street | 1.73x2.37x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Damage_01.SM_Road_Damage_01\n\
-    - road_damage_02 | Road Damage 02 | street | 2.42x3.35x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Damage_02.SM_Road_Damage_02\n\
-    - road_damage_03 | Road Damage 03 | street | 1.73x1.14x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Damage_03.SM_Road_Damage_03\n\
-    - road_damage_04 | Road Damage 04 | street | 3.96x1.49x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Damage_04.SM_Road_Damage_04\n\
-    - road_damage_05 | Road Damage 05 | street | 0.85x5.0x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Damage_05.SM_Road_Damage_05\n\
-    - road_hatches_01 | Road Hatches 01 | street | 0.7x0.7x0.02 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Hatches_01.SM_Road_Hatches_01\n\
-    - road_hatches_02 | Road Hatches 02 | street | 0.55x0.55x0.03 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Hatches_02.SM_Road_Hatches_02\n\
-    - road_hatches_03 | Road Hatches 03 | street | 0.92x0.92x0.03 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Hatches_03.SM_Road_Hatches_03\n\
-    - road_hatches_04 | Road Hatches 04 | street | 0.43x0.44x0.02 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Hatches_04.SM_Road_Hatches_04\n\
-    - road_hatches_05 | Road Hatches 05 | street | 0.48x0.58x0.16 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Hatches_05.SM_Road_Hatches_05\n\
-    - road_markings_angle | Road Markings Angle | street | 2.66x2.33x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Markings_Angle.SM_Road_Markings_Angle\n\
-    - road_markings_band_01 | Road Markings Band 01 | street | 0.21x5.0x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Markings_Band_01.SM_Road_Markings_Band_01\n\
-    - road_markings_band_02 | Road Markings Band 02 | street | 0.15x5.0x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Markings_Band_02.SM_Road_Markings_Band_02\n\
-    - road_markings_intermittent | Road Markings Intermittent | street | 5.0x0.28x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Markings_Intermittent.SM_Road_Markings_Intermittent\n\
-    - road_markings_intermittent_02 | Road Markings Intermittent 02 | street | 0.18x5.0x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Markings_Intermittent_02.SM_Road_Markings_Intermittent_02\n\
-    - road_markings_triangle | Road Markings Triangle | street | 2.01x2.11x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Markings_Triangle.SM_Road_Markings_Triangle\n\
-    - road_sign_01 | Road Sign 01 | street | 0.55x0.08x2.6 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Sign_01.SM_Road_Sign_01\n\
-    - road_sign_02 | Road Sign 02 | street | 0.09x0.94x2.58 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Sign_02.SM_Road_Sign_02\n\
-    - road_sign_03 | Road Sign 03 | street | 0.57x0.08x2.57 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Sign_03.SM_Road_Sign_03\n\
-    - road_sign_04 | Road Sign 04 | street | 0.66x0.22x2.59 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Sign_04.SM_Road_Sign_04\n\
-    - road_sign_05 | Road Sign 05 | street | 0.22x0.55x2.66 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Sign_05.SM_Road_Sign_05\n\
-    - road_sign_06 | Road Sign 06 | street | 1.11x0.09x2.59 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Sign_06.SM_Road_Sign_06\n\
-    - road_sign_07 | Road Sign 07 | street | 0.22x1.11x2.59 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Sign_07.SM_Road_Sign_07\n\
-    - road_sign_08 | Road Sign 08 | street | 0.54x0.08x2.59 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Sign_08.SM_Road_Sign_08\n\
-    - road_sign_09 | Road Sign 09 | street | 0.57x0.08x2.59 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Sign_09.SM_Road_Sign_09\n\
-    - road_sign_10 | Road Sign 10 | street | 0.3x0.22x2.59 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Sign_10.SM_Road_Sign_10\n\
-    - road_sign_11 | Road Sign 11 | street | 0.56x0.45x0.6 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Sign_11.SM_Road_Sign_11\n\
-    - road_sign_12 | Road Sign 12 | street | 0.22x0.54x2.59 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Sign_12.SM_Road_Sign_12\n\
-    - road_track | Road Track | street | 5.0x5.0x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Road_Track.SM_Road_Track\n\
-    - sidewalk_01 | Sidewalk 01 | street | 4.0x3.0x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Sidewalk_01.SM_Sidewalk_01\n\
-    - sidewalk_02 | Sidewalk 02 | street | 3.0x4.0x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Sidewalk_02.SM_Sidewalk_02\n\
-    - sidewalk_03 | Sidewalk 03 | street | 2.0x3.0x0.0 m | /Game/Hong_Kong_Street/Models/Street/SM_Sidewalk_03.SM_Sidewalk_03\n\
-    - sidewalk_angle_01 | Sidewalk Angle 01 | street | 9.1x9.13x0.26 m | /Game/Hong_Kong_Street/Models/Street/SM_Sidewalk_Angle_01.SM_Sidewalk_Angle_01\n\
-    - sidewalk_angle_02 | Sidewalk Angle 02 | street | 9.13x9.1x0.26 m | /Game/Hong_Kong_Street/Models/Street/SM_Sidewalk_Angle_02.SM_Sidewalk_Angle_02\n\
-    - tactile_coating_01 | Tactile Coating 01 | street | 0.5x0.5x0.04 m | /Game/Hong_Kong_Street/Models/Street/SM_Tactile_Coating_01.SM_Tactile_Coating_01\n\
-    - tactile_coating_02 | Tactile Coating 02 | street | 0.5x0.5x0.04 m | /Game/Hong_Kong_Street/Models/Street/SM_Tactile_Coating_02.SM_Tactile_Coating_02\n\
-    - traffic_cone | Traffic Cone | street | 0.25x0.25x0.49 m | /Game/Hong_Kong_Street/Models/Street/SM_Traffic_Cone.SM_Traffic_Cone\n\
+  prompt: "Build a sunlit, roofless factory workshop with a rectangular concrete floor, rear and side\
+    \ walls, and an open front leading to a loading yard. Arrange two parallel conveyor assembly lines\
+    \ with robotic arms and control desks at their ends, separated by a clear central aisle extending\
+    \ into the yard. Group a boiler, powder-storage unit, electrical cabinets, and pipes at the rear,\
+    \ beside a raised platform with railings and an access stair. Place shelving, boxes, pallets, and\
+    \ barrels along one side, with a forklift nearby and a pallet cart near the entrance. Use worn industrial\
+    \ surfaces and keep the production, utility, storage, and circulation areas distinct.\n\n=== ASSET\
+    \ PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\nin this\
+    \ run, so this list is your entire library. Format:\n\n  id | name | category | width x depth x height\
+    \ (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches UE.\n\
+    You decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n- factory_floor_large01\
+    \ | Factory Floor Large01 | floor_and_structure | 16.0x16.0x0.1 m | /Game/FactoryEnvironment/Meshes/SM_FactoryFloorLarge01.SM_FactoryFloorLarge01\n\
+    - concrete_floor_01 | Concrete Floor 01 | floor_and_structure | 6.0x6.0x0.096 m | /Game/FactoryEnvironment/Meshes/SM_ConcreteFloor_01.SM_ConcreteFloor_01\n\
+    - concrete_wall | Concrete Wall | floor_and_structure | 4.025x0.435x2.0 m | /Game/FactoryEnvironment/Meshes/SM_ConcreteWall.SM_ConcreteWall\n\
+    - concrete_pillar01 | Concrete Pillar01 | floor_and_structure | 1.5x1.5x7.0 m | /Game/FactoryEnvironment/Meshes/SM_ConcretePillar01.SM_ConcretePillar01\n\
+    - heavy_arch01 | Heavy Arch01 | floor_and_structure | 4.0x1.198x6.0 m | /Game/FactoryEnvironment/Meshes/SM_HeavyArch01.SM_HeavyArch01\n\
+    - assembly_line01 | Assembly Line01 | production | 2.4x0.897x1.232 m | /Game/FactoryEnvironment/Meshes/SM_AssemblyLine01.SM_AssemblyLine01\n\
+    - assembly_line02 | Assembly Line02 | production | 2.4x0.897x1.232 m | /Game/FactoryEnvironment/Meshes/SM_AssemblyLine02.SM_AssemblyLine02\n\
+    - assembly_line_table01 | Assembly Line Table01 | production | 1.166x0.872x1.055 m | /Game/FactoryEnvironment/Meshes/SM_AssemblyLineTable01.SM_AssemblyLineTable01\n\
+    - assembly_line_control01 | Assembly Line Control01 | production | 0.498x0.615x1.653 m | /Game/FactoryEnvironment/Meshes/SM_AssemblyLineControl01.SM_AssemblyLineControl01\n\
+    - industrial_robot01_01 | Industrial Robot01 01 | production | 3.428x2.096x4.12 m | /Game/FactoryEnvironment/Meshes/SM_IndustrialRobot01_01.SM_IndustrialRobot01_01\n\
+    - industrialrobot01_02 | industrialrobot01 02 | production | 4.01x2.096x4.215 m | /Game/FactoryEnvironment/Meshes/SM_industrialrobot01_02.SM_industrialrobot01_02\n\
+    - recycling_machine01 | Recycling Machine01 | production | 1.082x0.924x2.2 m | /Game/FactoryEnvironment/Meshes/SM_RecyclingMachine01.SM_RecyclingMachine01\n\
+    - boiler_01 | Boiler 01 | process_equipment | 4.643x6.348x5.337 m | /Game/FactoryEnvironment/Meshes/SM_Boiler_01.SM_Boiler_01\n\
+    - powder_storage_01 | Powder Storage 01 | process_equipment | 3.739x6.562x5.508 m | /Game/FactoryEnvironment/Meshes/SM_PowderStorage_01.SM_PowderStorage_01\n\
+    - pipe_round_long | Pipe round long | process_equipment | 0.42x2.0x0.42 m | /Game/FactoryEnvironment/Meshes/SM_Pipe_round_long.SM_Pipe_round_long\n\
+    - pipe_round_short | Pipe round short | process_equipment | 0.42x0.25x0.42 m | /Game/FactoryEnvironment/Meshes/SM_Pipe_round_short.SM_Pipe_round_short\n\
+    - pipe_round_corner1 | Pipe round corner1 | process_equipment | 0.42x1.0x1.0 m | /Game/FactoryEnvironment/Meshes/SM_Pipe_round_corner1.SM_Pipe_round_corner1\n\
+    - pipe_round_tee_transition1 | Pipe round tee transition1 | process_equipment | 0.42x0.8x0.608 m |\
+    \ /Game/FactoryEnvironment/Meshes/SM_Pipe_round_tee_transition1.SM_Pipe_round_tee_transition1\n- electrical_supply_group01\
+    \ | Electrical Supply Group01 | process_equipment | 0.055x0.03x4.0 m | /Game/FactoryEnvironment/Meshes/SM_ElectricalSupply_Group01.SM_ElectricalSupply_Group01\n\
+    - electrical_panel_01 | Electrical Panel 01 | process_equipment | 1.058x0.551x1.588 m | /Game/FactoryEnvironment/Meshes/SM_ElectricalPanel_01.SM_ElectricalPanel_01\n\
+    - storage_shelves_group01 | Storage Shelves group01 | storage | 3.0x1.721x6.2 m | /Game/FactoryEnvironment/Meshes/SM_StorageShelves_group01.SM_StorageShelves_group01\n\
+    - storage_shelves_group02 | Storage Shelves group02 | storage | 3.01x1.721x6.2 m | /Game/FactoryEnvironment/Meshes/SM_StorageShelves_group02.SM_StorageShelves_group02\n\
+    - pallet01 | Pallet01 | storage | 1.204x1.602x0.15 m | /Game/FactoryEnvironment/Meshes/SM_Pallet01.SM_Pallet01\n\
+    - plastic_pallet01 | Plastic Pallet01 | storage | 1.5x1.5x0.2 m | /Game/FactoryEnvironment/Meshes/SM_PlasticPallet01.SM_PlasticPallet01\n\
+    - boxes_group_01 | Boxes group 01 | storage | 2.475x1.639x1.49 m | /Game/FactoryEnvironment/Meshes/SM_Boxes_group_01.SM_Boxes_group_01\n\
+    - boxes_group_05 | Boxes group 05 | storage | 2.445x1.6x1.405 m | /Game/FactoryEnvironment/Meshes/SM_Boxes_group_05.SM_Boxes_group_05\n\
+    - barrel01 | Barrel01 | storage | 0.523x0.523x0.8 m | /Game/FactoryEnvironment/Meshes/SM_Barrel01.SM_Barrel01\n\
+    - barrel02 | Barrel02 | storage | 0.524x0.524x0.8 m | /Game/FactoryEnvironment/Meshes/SM_Barrel02.SM_Barrel02\n\
+    - barrels01_merged | Barrels01 Merged | storage | 3.882x4.702x1.603 m | /Game/FactoryEnvironment/Meshes/SM_Barrels01_Merged.SM_Barrels01_Merged\n\
+    - fork_lift | Fork Lift | storage | 1.334x3.755x3.456 m | /Game/FactoryEnvironment/Meshes/SM_ForkLift.SM_ForkLift\n\
+    - pallet_cart | Pallet Cart | storage | 1.798x1.805x1.269 m | /Game/FactoryEnvironment/Meshes/SM_PalletCart.SM_PalletCart\n\
+    - industrial_platform01 | Industrial Platform01 | access_and_details | 7.0x3.0x0.715 m | /Game/FactoryEnvironment/Meshes/SM_IndustrialPlatform01.SM_IndustrialPlatform01\n\
+    - platform_railing_01 | Platform Railing 01 | access_and_details | 0.076x3.521x1.27 m | /Game/FactoryEnvironment/Meshes/SM_PlatformRailing_01.SM_PlatformRailing_01\n\
+    - stair_01 | Stair 01 | access_and_details | 5.259x2.116x4.551 m | /Game/FactoryEnvironment/Meshes/SM_Stair_01.SM_Stair_01\n\
+    - fence07 | Fence07 | access_and_details | 1.428x0.166x1.751 m | /Game/FactoryEnvironment/Meshes/SM_Fence07.SM_Fence07\n\
+    - fence_01 | Fence 01 | access_and_details | 1.282x0.045x1.008 m | /Game/FactoryEnvironment/Meshes/SM_Fence_01.SM_Fence_01\n\
+    - sign01 | Sign01 | access_and_details | 2.073x0.136x0.684 m | /Game/FactoryEnvironment/Meshes/SM_Sign01.SM_Sign01\n\
+    - sign02 | Sign02 | access_and_details | 2.073x0.136x0.684 m | /Game/FactoryEnvironment/Meshes/SM_Sign02.SM_Sign02\n\
+    - lamp01 | Lamp01 | access_and_details | 0.169x0.169x0.191 m | /Game/FactoryEnvironment/Meshes/SM_Lamp01.SM_Lamp01\n\
+    - lamp_arch01 | Lamp Arch01 | access_and_details | 1.21x7.88x5.88 m | /Game/FactoryEnvironment/Meshes/SM_LampArch01.SM_LampArch01\n\
     \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
-    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
-    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
-    \ for yourself when the scene\nmatches the description.\n"
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes — you are not\
+    \ expected to use all of it, but clean collision and\nfloating numbers are not on their own evidence\
+    \ that the scene is finished.\nTake screenshots, look at them, and judge the result against the description.\n"
   init_map: /Game/SceneBench/BlankStage
   size_m: 200
   budget:
@@ -365,4 +74,4 @@ verifiers:
 - name: overview_prompt_alignment
 assets:
   packs:
-  - Hong_Kong_Street
+  - FactoryEnvironment

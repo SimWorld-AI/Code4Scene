@@ -1,0 +1,76 @@
+# Code4Scene public task. The level to start from is an empty map the dataset
+# builder creates; the listed packs must be installed from Fab.
+id: case_134
+kind: scene_generation
+inputs:
+  prompt: "Create a stylized elven courtyard in a rocky valley filled with woodland, organized around\
+    \ a circular stone plaza. Light the scene with soft daylight. On opposing sides of the central plaza,\
+    \ set two round elven homes with domed roofs, decorative roof ornaments, and arched entryways. Position\
+    \ a stone altar in the middle of the plaza and place a group of blue crystals on the altar. Provide\
+    \ a broad stone staircase at the front of the plaza, with an ornamental arch surrounding the staircase\
+    \ entrance. Run railings beside the staircase and around the plaza's outer edges, keeping the approach\
+    \ open. Place benches around the plaza and lanterns alongside the approach. Enclose the courtyard\
+    \ with groups of large trees and uneven rocks behind the homes. Around the tree bases, distribute\
+    \ smaller rocks, grass, flowers, and mushrooms. Let ivy cover selected building walls. Preserve a\
+    \ clear passage between the staircase and the altar, and surround the pale stone architecture with\
+    \ lush green plants.\n\n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset\
+    \ search is not available\nin this run, so this list is your entire library. Format:\n\n  id | name\
+    \ | category | width x depth x height (m) | spawn path\n\nThe id is what a scene graph refers to;\
+    \ the spawn path is what reaches UE.\nYou decide which to use, how many of each, and where they go\
+    \ — reuse entries\nfreely.\n\n- ground | Ground | courtyard | 120.61x60.914x1.737 m | /Game/Elven_Valley/Meshes/Buildings/Pack_1/SM_Ground.SM_Ground\n\
+    - ground_2 | Ground 2 | courtyard | 60.0x30.0x1.0 m | /Game/Elven_Valley/Meshes/Buildings/Pack_1/SM_Ground_2.SM_Ground_2\n\
+    - round_ground | Round Ground | courtyard | 26.111x25.494x0.0 m | /Game/Elven_Valley/Meshes/Buildings/Pack_1/SM_Round_Ground.SM_Round_Ground\n\
+    - midtile | Mid Tile | courtyard | 9.02x9.02x0.077 m | /Game/Elven_Valley/Meshes/Buildings/Pack_1/SM_MidTile.SM_MidTile\n\
+    - railing | Railing | courtyard | 19.359x4.59x2.0 m | /Game/Elven_Valley/Meshes/Buildings/Pack_1/SM_Railing.SM_Railing\n\
+    - railing_2 | Railing 2 | courtyard | 58.727x15.307x2.0 m | /Game/Elven_Valley/Meshes/Buildings/Pack_1/SM_Railing_2.SM_Railing_2\n\
+    - railing_3 | Railing 3 | courtyard | 115.701x28.111x2.0 m | /Game/Elven_Valley/Meshes/Buildings/Pack_1/SM_Railing_3.SM_Railing_3\n\
+    - stairs2 | Stairs2 | courtyard | 19.493x5.0x1.5 m | /Game/Elven_Valley/Meshes/Buildings/Pack_2/SM_Stairs2.SM_Stairs2\n\
+    - stairs_railing | Stairs Railing | courtyard | 1.0x7.0x2.998 m | /Game/Elven_Valley/Meshes/Buildings/Pack_2/SM_Stairs_Railing.SM_Stairs_Railing\n\
+    - stair_b | Stair b | courtyard | 5.873x5.838x2.512 m | /Game/Elven_Valley/Meshes/Buildings/Pack_2/SM_Stair_b.SM_Stair_b\n\
+    - round_building | Round Building | architecture | 38.361x38.361x16.533 m | /Game/Elven_Valley/Meshes/Buildings/Pack_1/SM_Round_Building.SM_Round_Building\n\
+    - round_home_1 | Round home 1 | architecture | 15.0x15.0x15.0 m | /Game/Elven_Valley/Meshes/Buildings/Pack_1/SM_Round_home_1.SM_Round_home_1\n\
+    - round_home_2 | Round home 2 | architecture | 17.0x17.0x12.0 m | /Game/Elven_Valley/Meshes/Buildings/Pack_1/SM_Round_home_2.SM_Round_home_2\n\
+    - circular_entrance | Circular Entrance | architecture | 19.67x11.942x9.009 m | /Game/Elven_Valley/Meshes/Buildings/Pack_1/SM_Circular_Entrance.SM_Circular_Entrance\n\
+    - circular_columns | Circular Columns | architecture | 17.298x15.4x13.0 m | /Game/Elven_Valley/Meshes/Buildings/Pack_1/SM_Circular_Columns.SM_Circular_Columns\n\
+    - ark_1 | Ark 1 | architecture | 6.5x3.0x5.003 m | /Game/Elven_Valley/Meshes/Buildings/Pack_2/SM_Ark_1.SM_Ark_1\n\
+    - column_1 | Column 1 | architecture | 3.75x2.228x13.499 m | /Game/Elven_Valley/Meshes/Buildings/Pack_2/SM_Column_1.SM_Column_1\n\
+    - roof_dome | Roof Dome | architecture | 38.361x38.361x6.387 m | /Game/Elven_Valley/Meshes/Buildings/Pack_4/SM_Roof_Dome.SM_Roof_Dome\n\
+    - roof_ornament | Roof Ornament | architecture | 0.999x2.0x3.0 m | /Game/Elven_Valley/Meshes/Buildings/Pack_4/SM_Roof_Ornament.SM_Roof_Ornament\n\
+    - rock_big_1 | Rock Big 1 | landscape | 9.814x10.689x6.522 m | /Game/Elven_Valley/Meshes/Rocks/SM_Rock_Big_1.SM_Rock_Big_1\n\
+    - rock_big_2 | Rock Big 2 | landscape | 7.885x11.22x5.238 m | /Game/Elven_Valley/Meshes/Rocks/SM_Rock_Big_2.SM_Rock_Big_2\n\
+    - rock_mid_1_a | Rock Mid 1 a | landscape | 4.907x5.345x3.261 m | /Game/Elven_Valley/Meshes/Rocks/SM_Rock_Mid_1_a.SM_Rock_Mid_1_a\n\
+    - stonearray_a | Stone Array a | landscape | 11.711x11.54x4.513 m | /Game/Elven_Valley/Meshes/Rocks/SM_StoneArray_a.SM_StoneArray_a\n\
+    - bigtree_01 | Big Tree 01 | landscape | 53.014x47.846x89.27 m | /Game/Elven_Valley/Meshes/Folliage/SM_BigTree_01.SM_BigTree_01\n\
+    - bigtree2 | Big Tree2 | landscape | 57.576x51.949x61.217 m | /Game/Elven_Valley/Meshes/Folliage/SM_BigTree2.SM_BigTree2\n\
+    - grass | Grass | landscape | 0.113x0.076x0.114 m | /Game/Elven_Valley/Meshes/Folliage/SM_Grass.SM_Grass\n\
+    - flowers_a | Flowers a | landscape | 0.395x0.385x0.206 m | /Game/Elven_Valley/Meshes/Folliage/SM_Flowers_a.SM_Flowers_a\n\
+    - flower_b | Flower b | landscape | 0.363x0.395x0.224 m | /Game/Elven_Valley/Meshes/Folliage/SM_Flower_b.SM_Flower_b\n\
+    - ivy01 | Ivy01 | landscape | 3.239x1.451x0.35 m | /Game/Elven_Valley/Meshes/Folliage/SM_Ivy01.SM_Ivy01\n\
+    - smallmushrooms_a | Small Mushrooms a | landscape | 0.34x0.382x0.511 m | /Game/Elven_Valley/Meshes/Folliage/SM_SmallMushrooms_a.SM_SmallMushrooms_a\n\
+    - bench | Bench | furnishings | 2.5x0.709x0.7 m | /Game/Elven_Valley/Meshes/Interior/SM_Bench.SM_Bench\n\
+    - table | Table | furnishings | 1.583x1.055x1.265 m | /Game/Elven_Valley/Meshes/Interior/SM_Table.SM_Table\n\
+    - chair | Chair | furnishings | 1.503x1.011x2.332 m | /Game/Elven_Valley/Meshes/Interior/SM_Chair.SM_Chair\n\
+    - lantern | Lantern | furnishings | 0.777x0.932x2.527 m | /Game/Elven_Valley/Meshes/Interior/SM_Lantern.SM_Lantern\n\
+    - altar | Altar | furnishings | 2.574x0.945x4.433 m | /Game/Elven_Valley/Meshes/Interior/SM_Altar.SM_Altar\n\
+    - crystal_blue_c | Crystal Blue c | furnishings | 1.055x0.773x1.107 m | /Game/Elven_Valley/Meshes/Interior/SM_Crystal_Blue_c.SM_Crystal_Blue_c\n\
+    - vase2 | Vase2 | furnishings | 1.145x0.853x0.677 m | /Game/Elven_Valley/Meshes/Interior/SM_Vase2.SM_Vase2\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes — you are not\
+    \ expected to use all of it, but clean collision and\nfloating numbers are not on their own evidence\
+    \ that the scene is finished.\nTake screenshots, look at them, and judge the result against the description.\n"
+  init_map: /Game/SceneBench/BlankStage
+  size_m: 200
+  budget:
+    tool_calls: 800
+    wall_minutes: 180
+  skills: contracts
+verifiers:
+- name: semantic_requirements
+  semantic_retrieval:
+    mode: llm
+    top_k: 5
+  verification_bundle: requirements/case_134.bundle.json
+- name: overview_prompt_alignment
+assets:
+  packs:
+  - Elven_Valley
