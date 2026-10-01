@@ -1,0 +1,24 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "indoor-atomic-v2-053",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "high-school-classroom",
+  "scene_spec": "../../../scenes/high-school-classroom/scene.json",
+  "source_map": "/Game/HighSchoolClassroom/Maps/Demonstration",
+  "ground_truth_map": "/Game/Code4SceneGT/high-school-classroom/GT",
+  "input_map": "/Game/Code4SceneInputs/indoor-atomic-v2-053/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_fe0ae75f607e5d3a8c216eda0c825784",
+      "scale": [
+        0.6761203885078431,
+        0.6761203885078431,
+        0.6761203885078431
+      ]
+    }
+  ],
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/high-school-classroom/gt.fingerprint.json"
+}

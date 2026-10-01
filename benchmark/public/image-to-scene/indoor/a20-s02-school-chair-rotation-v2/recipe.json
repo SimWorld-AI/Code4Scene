@@ -1,0 +1,24 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "a20-s02-school-chair-rotation-v2",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "high-school-classroom",
+  "scene_spec": "../../../scenes/high-school-classroom/scene.json",
+  "source_map": "/Game/HighSchoolClassroom/Maps/Demonstration",
+  "ground_truth_map": "/Game/Code4SceneGT/high-school-classroom/GT",
+  "input_map": "/Game/Code4SceneInputs/a20-s02-school-chair-rotation-v2/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_transform",
+      "target": "sca_source_329aeb820bf65a71a51838094bf317cc",
+      "rotation_deg": [
+        0.0,
+        -55.57605743408203,
+        0.0
+      ]
+    }
+  ],
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/high-school-classroom/gt.fingerprint.json"
+}

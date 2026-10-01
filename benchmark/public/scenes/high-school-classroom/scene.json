@@ -1,0 +1,101 @@
+{
+  "schema_version": "code4scene.scene.v1",
+  "scene_id": "high-school-classroom",
+  "environment": "indoor",
+  "source_pack": "High School Classroom",
+  "content_roots": [
+    "HighSchoolClassroom"
+  ],
+  "source_map": "/Game/HighSchoolClassroom/Maps/Demonstration",
+  "ground_truth_map": "/Game/Code4SceneGT/high-school-classroom/GT",
+  "identity": {
+    "scheme": "uuid5-source-v1",
+    "gt_id": "gt-55eeecb9d19b",
+    "namespace_url": "https://simworld.ai/SimCodeArena/stable-actor-id/v1",
+    "tag_actor_origin": "source",
+    "rule": "stable_id = 'sca_source_' + uuid5(uuid5(NAMESPACE_URL, namespace_url), 'v1|source|' + gt_id + '|' + source_map + '|' + actor_path_in_source_map + '|' + class_path).hex; written as tags 'simcodearena.stable_actor_id=<id>' and 'simcodearena.actor_origin=source' on every persistent-level actor of the source map that is not a child actor."
+  },
+  "patches": [
+    {
+      "op": "remove_actor",
+      "target": "sca_source_e8d0ca3b521e5c6bb7673e2a6efa8c01",
+      "note": "the stock clock Blueprint references a curve asset the pack does not ship"
+    },
+    {
+      "op": "spawn_actor",
+      "stable_id": "sca_generated_37f0037f30cb8df4f4f66dc9b26e42f8",
+      "identity_tag": true,
+      "object_name": "Clock_Static_Normalized",
+      "label": "Clock_Static_Normalized",
+      "from": {
+        "static_mesh": "/Game/HighSchoolClassroom/Meshes/Clock.Clock"
+      },
+      "location_cm": [
+        86.11788940429688,
+        29.999954223632812,
+        268.4915771484375
+      ],
+      "rotation_deg": [
+        0.0,
+        179.9999237060547,
+        -0.0
+      ],
+      "scale": [
+        1.0,
+        1.5,
+        1.0
+      ],
+      "note": "the clock mesh as a static actor at the Blueprint clock's transform"
+    },
+    {
+      "op": "set_transform",
+      "target": "sca_source_cf27ec0341035bf09e69086526fb0067",
+      "location_cm": [
+        -120.0,
+        -529.0,
+        10.0
+      ],
+      "rotation_deg": [
+        0.0,
+        -78.0,
+        0.0
+      ]
+    },
+    {
+      "op": "set_transform",
+      "target": "sca_source_169ee5191b6657beb65b71a8dfcc1e89",
+      "location_cm": [
+        -318.0,
+        -529.0,
+        10.0
+      ],
+      "rotation_deg": [
+        0.0,
+        -102.0,
+        0.0
+      ]
+    }
+  ],
+  "key_assets": [
+    "/Game/HighSchoolClassroom/Maps/Demonstration",
+    "/Game/HighSchoolClassroom/Meshes/Chair_School.Chair_School",
+    "/Game/HighSchoolClassroom/Meshes/Armchair.Armchair",
+    "/Game/HighSchoolClassroom/Meshes/Bin_01.Bin_01",
+    "/Game/HighSchoolClassroom/Meshes/Clock.Clock"
+  ],
+  "known_unresolved_dependencies": [
+    "/Game/ArchVis/Mesh/Test/Round_Table",
+    "/Game/Luminous_Sign_Pack/Meshes/LasVegas_Sign"
+  ],
+  "expected_fingerprint": {
+    "file": "gt.fingerprint.json",
+    "algorithm": "c4s-fp-1",
+    "root": "d41f1a8c69111478fae5805c3a5f1ad8392822a3dc1faa3d0f5b9a2def74fef3",
+    "actor_count": 233
+  },
+  "cases": [
+    "a20-s02-school-chair-rotation-v2",
+    "indoor-atomic-v2-053",
+    "indoor-atomic-v2-054"
+  ]
+}
