@@ -25,8 +25,8 @@
 </p>
 
 <p align="center">
-  160 text-to-scene tasks in Unreal Engine. Coding agents write and run code that builds a scene from an open-ended
-  description, and Code4Scene scores the engine-native scene they save.
+  160 text-to-scene tasks in Unreal Engine, with a 20-scene Research Track. Coding agents write and run code that builds a
+  scene from an open-ended description, and Code4Scene scores the engine-native scene they save.
 </p>
 
 <p align="center">
@@ -50,17 +50,28 @@ the agent builds the scene the prompt describes. Code4Scene does not score the c
   <img src="docs/assets/pipeline.png" alt="Prompt, coding agent, code in the engine, engine-native scene, evaluator" width="100%" />
 </p>
 
-| The agent gets | The agent must | Case score | Benchmark tasks |
-|:--|:--|:--|:-:|
-| An empty level, an open-ended scene description and the pack's asset catalog | Build the scene the prompt describes. Many realizations are valid. | 0.2 · Detailed Alignment + 0.6 · Overview Alignment + 0.2 · Physical Safety | 160 |
+| The agent gets | The agent must | Case score |
+|:--|:--|:--|
+| An empty level, an open-ended scene description and the pack's asset catalog | Build the scene the prompt describes. Many realizations are valid. | 0.2 · Detailed Alignment + 0.6 · Overview Alignment + 0.2 · Physical Safety |
 
 A model's score is the mean of its case scores. [docs/SCORING.md](docs/SCORING.md) gives every verifier, formula and zero rule.
+
+### Evaluation tracks
+
+| Track | Scenes | For |
+|:--|:-:|:--|
+| **Research Track** | 20 | Affordable, reproducible evaluation for academic and model-development use |
+| **Full Benchmark** | 160 | Comprehensive evaluation for leaderboard and final reporting |
+
+Text-to-scene generation with frontier models is a long-horizon agentic task with substantial inference cost and runtime, which makes
+repeated full-scale evaluation difficult for many research groups. The Research Track supports affordable, reproducible experimentation;
+the Full Benchmark provides the more comprehensive evaluation for final model comparison and leaderboard reporting.
 
 ---
 
 ## Leaderboard
 
-14 coding-agent configurations on the paper's original 20 public Text-to-Scene cases (Table 2). 🔓 marks open weights. The
+**Research Track** (20 scenes): 14 coding-agent configurations, from the paper's Table 2. 🔓 marks open weights. The
 [interactive leaderboard](https://simworld-ai-code4scene.static.hf.space/#leaderboard) adds the sub-scores and a score-against-cost
 chart; the [cases page](https://simworld-ai-code4scene.static.hf.space/cases.html) shows each agent's saved scene in 3D next to the
 evaluator's scores.
