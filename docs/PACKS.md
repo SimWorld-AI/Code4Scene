@@ -97,7 +97,7 @@ The last column lists settings with case counts. T2S = text-to-scene, I2S-in = i
 | `Abandoned_Psychiatric_Hospital` | [Abandoned Psychiatric Hospital](https://www.fab.com/listings/414199b4-773b-4fd1-9c58-6676d8af06d5) | ART EQUILIBRIUM | Standard License | $44.99 | Yes | 4.25-5.6 | asset pack | T2S (5) |
 | `AbandonedBuilding` | [Abandoned Building](https://www.fab.com/listings/8dfc1bcd-c652-4fc8-8b2f-88df9155725b) | DevTon Studio | — | — | Yes | — | — | T2S (4) |
 | `AfricanLocation` | [African desert 4x4 km2 open world location](https://www.fab.com/listings/75c21d61-c868-4cd5-aec9-e3e310cdcbce) | 3dlocatons | Standard License | $10.99 | Yes | 4.27, 5.0-5.4 | asset pack | I2S-out (4) |
-| `AncientRuins` | [Modular Ancient Ruins](https://www.fab.com/listings/45c37ee1-b508-43e7-8839-c212f7041e6f) | Darchall | — | — | Yes | — | — | T2S (4) |
+| `AncientRuins` | [Modular Ancient Ruins](https://www.fab.com/listings/be34078b-d989-4a06-b956-17072740dc4f) | archafizov | — | — | Yes | — | — | T2S (4) |
 | `ArchVizInteriorVol2` | [Archviz Interior vol.2](https://www.fab.com/listings/cb492691-2363-4ff9-a16b-87d6b3fb081e) | Next Level 3D | Standard License | $24.99 | Yes | 5.2-5.7 | complete project | I2S-in (6) |
 | `BattlegroundKit` | [Military Battlefield Kit and Middle East Set](https://www.fab.com/listings/ea809594-f461-49c9-9dd1-32db3eb9def3) | Denys Rutkovskyi | — | — | Yes | — | — | T2S (4) |
 | `Big_Town` | [Medieval Big Farm Town](https://www.fab.com/listings/b93a9f61-9220-4342-83d0-361aee394e77) | SliderOK | Standard License | $55.99 | Yes | 4.27, 5.1-5.4 | asset pack | T2S (5) |
@@ -107,7 +107,7 @@ The last column lists settings with case counts. T2S = text-to-scene, I2S-in = i
 | `CityCore_Paris` | [City Core - Paris](https://www.fab.com/listings/9155a337-2c74-4c5b-bff1-43adae672618) | PolySphere Studio | Standard License | $219.99 | Yes | 5.2-5.8 | asset pack | T2S (5) |
 | `ContainerYard` | [Container Yard Environment Set](https://www.fab.com/listings/3a882c55-de05-4790-8d03-b1adc99da4bc) | Denys Rutkovskyi | — | — | Yes | — | — | T2S (9) |
 | `CyberPunk_City_VR_Mobile` | [CyberPunk City Mobile and VR](https://www.fab.com/listings/73e1dd8c-a755-415e-89f6-b011a4bd7503) | Egor Ilin | UE Marketplace | $8.99 | Yes | 4.20-5.4 | asset pack | T2S (6) |
-| `CyberPunk_street` | [Cyberpunk Kyiv Street Environment ( Cyberpunk Kyiv Street Street Ukraine Slav )](https://www.fab.com/listings/0b982fb2-2262-47b9-9bab-d4d0fb6bb55f) | Leartes Studios | — | — | Yes | — | — | T2S (4) |
+| `CyberPunk_street` | [Cyberpunk street assets](https://www.fab.com/listings/1f41a126-aff1-4251-bd45-e4197b6a098e) | AlexeyKuleshov | — | — | Yes | — | — | T2S (4) |
 | `CyberpunkWC` | [Cyberpunk Toilet Environment Kit](https://www.fab.com/listings/19c5a0db-b413-4a27-ab0d-6036a7b842fe) | Denys Rutkovskyi | Standard License | $39.99 | Yes | 4.21-5.6 | asset pack | I2S-in (2) |
 | `Diner` | [Rosie's Restaurant/Diner](https://www.fab.com/listings/dccbefcf-1f53-45c3-aae1-105bb836683f) | SoloMode | UE Marketplace | $29.99 | Yes | 4.23-5.3 | asset pack | I2S-out (6) |
 | `Dungeon` | [Dungeon Environment / 135+ Assets](https://www.fab.com/listings/bb39bae4-7f7a-4127-b07e-151cf52db0f6) | PackDev | Standard License | Free | Yes | 4.26-5.4 | asset pack | I2S-in (2) |
@@ -141,7 +141,7 @@ The last column lists settings with case counts. T2S = text-to-scene, I2S-in = i
 | `TrainStation` | **Not yet identified** (see below) | ? | ? | ? | Yes | ? | ? | I2S-out (5) |
 | `UrbanDecay` | [Post-Industrial Environment](https://www.fab.com/listings/060b1fea-0ed5-4172-b59d-165ea89ae606) | Joshua Giles | UE Marketplace | $49.99 | Yes | 4.25-5.1 | asset pack | T2S (5) |
 | `VictorianRoom` | [Victorian Dining Room](https://www.fab.com/listings/39fb2fee-f389-49bf-a90a-408d0481dc63) | Infuse Studio | UE Marketplace | $24.99 | Yes | 4.13-4.24 | asset pack | I2S-in (1) |
-| `Wild_West_Race` | [Stylized Wild West ( Stylized Stylised Wild West Cowboy Wild West Cowboy Sand )](https://www.fab.com/listings/2ffbbbf9-752a-478b-b630-02a78825c498) | StylArts | — | — | Yes | — | — | T2S (4) |
+| `Wild_West_Race` | [Wild West Racing Town](https://www.fab.com/listings/c6d14a6f-a7d7-4d14-b757-35dfa31e05af) | Sonicbrostudio | — | — | Yes | — | — | T2S (4) |
 | `WinterTown` | [Russian Winter Town](https://www.fab.com/listings/5bd7045e-b0ae-45a4-ab00-72b2060ab4c5) | GeorgeShachnev | Standard License | $1.99 | Yes | 4.19-5.8 | asset pack | T2S (6), I2S-out (3) |
 
 ## Known caveats
