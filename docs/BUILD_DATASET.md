@@ -1,6 +1,6 @@
 # Building the Code4Scene public dataset
 
-The public set is 222 cases: 150 text-to-scene construction, 22 indoor
+The public set is 225 cases: 150 text-to-scene construction, 25 indoor
 image-to-scene editing and 50 outdoor image-to-scene editing. Its levels are built from
 third-party Unreal Engine content packs, which this repository does not
 redistribute. You download the packs from Fab yourself, then run the dataset
@@ -320,6 +320,10 @@ shipped expectation is the later version.
   IDs in GT and Input; this reproduces the benchmark exactly.
 * `laboratory-loft`: the GT differs from the stock demo map in one actor label
   and one light property on two lamps; `scene.json` applies both.
+* `high-school-classroom`: the GT differs from the stock demo map in two places,
+  both applied by `scene.json`: the clock Blueprint, which references a curve
+  asset the pack does not ship, is replaced by the clock mesh as a static actor
+  at the same transform, and two rear chairs are set to a mirror-symmetric pose.
 * Some indoor Input levels contain an extra actor whose label begins with
   `SB_ATOMIC20_EXTRA__` or `SB_ATOMIC80_EXTRA__`; that is the label the
   benchmark's Input levels used and it is reproduced as is.

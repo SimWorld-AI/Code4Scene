@@ -1,0 +1,40 @@
+{
+  "schema_version": "code4scene.recipe.v1",
+  "case_id": "indoor-atomic-v2-054",
+  "setting": "image-to-scene/indoor",
+  "scene_id": "high-school-classroom",
+  "scene_spec": "../../../scenes/high-school-classroom/scene.json",
+  "source_map": "/Game/HighSchoolClassroom/Maps/Demonstration",
+  "ground_truth_map": "/Game/Code4SceneGT/high-school-classroom/GT",
+  "input_map": "/Game/Code4SceneInputs/indoor-atomic-v2-054/Input",
+  "level_structure": [],
+  "operations": [
+    {
+      "op": "set_static_mesh",
+      "target": "sca_source_3cab32576c1d56a68e8a609ef8b61a79",
+      "component": "StaticMeshComponent0",
+      "static_mesh": "/Game/HighSchoolClassroom/Meshes/Bin_01.Bin_01",
+      "replaces": "/Game/HighSchoolClassroom/Meshes/CardboardBox_02.CardboardBox_02",
+      "expect": {
+        "material_slots": [
+          {
+            "component_identity": "StaticMeshComponent0|/Script/Engine.StaticMeshComponent",
+            "is_dynamic": false,
+            "material_class_path": "/Script/Engine.MaterialInstanceConstant",
+            "material_path": "/Game/HighSchoolClassroom/Materials/Instance/Inst_Bin_01.Inst_Bin_01",
+            "slot_index": 0
+          },
+          {
+            "component_identity": "StaticMeshComponent0|/Script/Engine.StaticMeshComponent",
+            "is_dynamic": false,
+            "material_class_path": "/Script/Engine.MaterialInstanceConstant",
+            "material_path": "/Game/HighSchoolClassroom/Materials/Instance/Inst_BinGrid_01.Inst_BinGrid_01",
+            "slot_index": 1
+          }
+        ]
+      }
+    }
+  ],
+  "expected_input_fingerprint": "input.fingerprint.json",
+  "expected_ground_truth_fingerprint": "../../../scenes/high-school-classroom/gt.fingerprint.json"
+}

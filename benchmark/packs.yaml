@@ -26,8 +26,8 @@ match_confidence_levels:
   title_only: Only the title matches.
   unresolved: No Fab listing could be identified.
 totals:
-  third_party_packs: 47
-  packs_with_listing: 46
+  third_party_packs: 48
+  packs_with_listing: 47
   list_price_usd_resolved_packs: 1310.72
 packs:
 - folder: Abandoned_Psychiatric_Hospital
@@ -566,6 +566,23 @@ packs:
     - case_086
   match_confidence: title_seller
   notes: Text-to-scene pack; the AI-use status follows the lab content store record.
+- folder: HighSchoolClassroom
+  title: HighSchool Classroom
+  seller: ZhenyaChistovsky
+  fab_url: https://www.fab.com/listings/10012851-05ef-46b9-b4a2-45d8f97695e2
+  fab_uid: 10012851-05ef-46b9-b4a2-45d8f97695e2
+  ai_usage: allowed
+  used_by:
+    counts:
+      image_to_scene_indoor: 3
+    image_to_scene_indoor:
+    - a20-s02-school-chair-rotation-v2
+    - indoor-atomic-v2-053
+    - indoor-atomic-v2-054
+  demo_maps_used:
+  - /Game/HighSchoolClassroom/Maps/Demonstration
+  match_confidence: title_only
+  notes: Image-to-scene pack; the AI-use status follows the lab content store record.
 - folder: Hong_Kong_Street
   title: Hong Kong Street
   seller: ART EQUILIBRIUM
@@ -1039,7 +1056,7 @@ packs:
   fab_uid: null
   license: null
   price_usd_at_check: null
-  ai_usage: unknown
+  ai_usage: allowed
   engine_versions: []
   lists_ue_5_8: false
   distribution: null
@@ -1060,7 +1077,7 @@ packs:
     overhead-wire splines), originally saved with UE 4.20, six maps (TrainStation, TrainStation_Optimised,
     Demonstration, Overview, Cinematography_Level, Sound_Level), about 540 meshes. It does NOT match "Victorian
     Train Station and Railroad Modular Set" (Denys Rutkovskyi, 112 meshes) or "Modular Train Station Environment"
-    (Vojtech Vejtasa, 127 meshes, UE 5.2+).
+    (Vojtech Vejtasa, 127 meshes, UE 5.2+). The AI-use status follows the lab content store record.
 - folder: UrbanDecay
   title: Post-Industrial Environment
   seller: Joshua Giles

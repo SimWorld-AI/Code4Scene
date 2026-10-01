@@ -1,0 +1,40 @@
+# Code4Scene public task. Build the Input/GT levels and reference views with
+# dataset_builder (see docs/BUILD_DATASET.md) before running it.
+id: a20-s02-school-chair-rotation-v2
+kind: scene_repair
+case_type: image_to_scene
+scene_environment: indoor
+inputs:
+  prompt: Repair the current indoor scene so it matches the two provided reference images and the canonical
+    scene. Make only the minimum changes needed, and preserve all unrelated actors and properties.
+  init_map: /Game/Code4SceneInputs/a20-s02-school-chair-rotation-v2/Input
+  budget:
+    tool_calls: 120
+    wall_minutes: 40
+  skills: contracts
+source:
+  schema_version: scenebench.gt_repair_task.v1
+  task_id: a20-s02-school-chair-rotation-v2
+  pack: High School Classroom
+  reference_views:
+  - references/view-01.png
+  - references/view-02.png
+  content_fingerprints:
+    algorithm: c4s-fp-1
+    ground_truth:
+      root: d41f1a8c69111478fae5805c3a5f1ad8392822a3dc1faa3d0f5b9a2def74fef3
+      actor_count: 233
+    input:
+      root: 296de472daccaddceaa8d3e0d50e3a035cf7ac67dedaebd63c86c1a7c40ed5f7
+      actor_count: 233
+verifiers:
+- name: gt_repair
+  ground_truth: /Game/Code4SceneGT/high-school-classroom/GT
+  visual_semantic_diff:
+    caption_diff: true
+    paired_visual: true
+assets:
+  packs:
+  - HighSchoolClassroom
+  - Code4SceneInputs
+status: ready

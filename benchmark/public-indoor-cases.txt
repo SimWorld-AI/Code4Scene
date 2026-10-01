@@ -1,4 +1,5 @@
 a20-s01-extra-chair-removal
+a20-s02-school-chair-rotation-v2
 a20-s03-extra-upper-chair-removal
 a20-s03-upper-chair-scaling
 a20-s06-crate-replacement
@@ -20,3 +21,5 @@ indoor-atomic-v1-072
 indoor-atomic-v1-073
 indoor-atomic-v1-076
 indoor-atomic-v1-077
+indoor-atomic-v2-053
+indoor-atomic-v2-054
