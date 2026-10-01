@@ -99,9 +99,9 @@ packs:
   notes: Title and seller match ("3dlocatons" is the seller's own spelling).
 - folder: AncientRuins
   title: Modular Ancient Ruins
-  seller: Darchall
-  fab_url: https://www.fab.com/listings/45c37ee1-b508-43e7-8839-c212f7041e6f
-  fab_uid: 45c37ee1-b508-43e7-8839-c212f7041e6f
+  seller: archafizov
+  fab_url: https://www.fab.com/listings/be34078b-d989-4a06-b956-17072740dc4f
+  fab_uid: be34078b-d989-4a06-b956-17072740dc4f
   ai_usage: allowed
   used_by:
     counts:
@@ -111,8 +111,8 @@ packs:
     - case_026
     - case_027
     - case_028
-  match_confidence: title_seller
-  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
+  match_confidence: title_only
+  notes: Text-to-scene pack; the listing and the AI-use status follow the lab content store record for this content.
 - folder: ArchVizInteriorVol2
   title: Archviz Interior vol.2
   seller: Next Level 3D
@@ -335,10 +335,10 @@ packs:
   match_confidence: exact_uid_confirmed
   notes: Mesh, material and texture counts (168/30/37) match exactly.
 - folder: CyberPunk_street
-  title: Cyberpunk Kyiv Street Environment ( Cyberpunk Kyiv Street Street Ukraine Slav )
-  seller: Leartes Studios
-  fab_url: https://www.fab.com/listings/0b982fb2-2262-47b9-9bab-d4d0fb6bb55f
-  fab_uid: 0b982fb2-2262-47b9-9bab-d4d0fb6bb55f
+  title: Cyberpunk street assets
+  seller: AlexeyKuleshov
+  fab_url: https://www.fab.com/listings/1f41a126-aff1-4251-bd45-e4197b6a098e
+  fab_uid: 1f41a126-aff1-4251-bd45-e4197b6a098e
   ai_usage: allowed
   used_by:
     counts:
@@ -348,8 +348,8 @@ packs:
     - case_057
     - case_058
     - case_059
-  match_confidence: title_seller
-  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
+  match_confidence: title_only
+  notes: Text-to-scene pack; the listing and the AI-use status follow the lab content store record for this content.
 - folder: CyberpunkWC
   title: Cyberpunk Toilet Environment Kit
   seller: Denys Rutkovskyi
@@ -1126,10 +1126,10 @@ packs:
     Build name "VictorianRoom" matches the folder. UE4-only listing (4.13-4.24): install into a 4.24 project
     and migrate, or use the launcher "Show all projects" option.
 - folder: Wild_West_Race
-  title: Stylized Wild West ( Stylized Stylised Wild West Cowboy Wild West Cowboy Sand )
-  seller: StylArts
-  fab_url: https://www.fab.com/listings/2ffbbbf9-752a-478b-b630-02a78825c498
-  fab_uid: 2ffbbbf9-752a-478b-b630-02a78825c498
+  title: Wild West Racing Town
+  seller: Sonicbrostudio
+  fab_url: https://www.fab.com/listings/c6d14a6f-a7d7-4d14-b757-35dfa31e05af
+  fab_uid: c6d14a6f-a7d7-4d14-b757-35dfa31e05af
   ai_usage: allowed
   used_by:
     counts:
@@ -1139,8 +1139,8 @@ packs:
     - case_143
     - case_144
     - case_145
-  match_confidence: title_seller
-  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
+  match_confidence: title_only
+  notes: Text-to-scene pack; the listing and the AI-use status follow the lab content store record for this content.
 - folder: WinterTown
   title: Russian Winter Town
   seller: GeorgeShachnev
