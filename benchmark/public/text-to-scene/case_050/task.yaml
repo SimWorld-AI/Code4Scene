@@ -3,123 +3,27 @@
 id: case_050
 kind: scene_generation
 inputs:
-  prompt: "Create a stylized cyberpunk city at night on a flat pale-blue ground plane without roads, curbs,\
-    \ vegetation, or terrain detail. Form a dense irregular cross-shaped core of roughly a dozen connected\
-    \ mid-rise blocks, with narrow alleys, small courts, storefronts, East Asian neon signs, balconies,\
-    \ and rooftop equipment. Suspend a red-orange futuristic vehicle above one courtyard beside an open\
-    \ concrete frame. Arrange roughly twenty detached high-rise towers in a loose inward-facing ring,\
-    \ leaving broad empty gaps around the core. Mix window-banded residential slabs with cyan glass towers\
-    \ bearing pink crowns, a pink-edged braced landmark, and oversized dark outer monoliths against a\
-    \ deep navy sky.\n\n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search\
-    \ is not available\nin this run, so this list is your entire library. Format:\n\n  id | name | category\
-    \ | width x depth x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path\
-    \ is what reaches UE.\nYou decide which to use, how many of each, and where they go — reuse entries\n\
-    freely.\n\n- deco_lorean | Deco Lorean | auto | 2.23x4.75x2.69 m | /Game/CyberPunk_City_VR_Mobile/Models/Auto/SM_DecoLorean.SM_DecoLorean\n\
-    - garbage_truck | Garbage truck | auto | 9.14x3.95x5.41 m | /Game/CyberPunk_City_VR_Mobile/Models/Auto/SM_Garbage_truck.SM_Garbage_truck\n\
-    - microbus | Microbus | auto | 3.21x5.52x2.47 m | /Game/CyberPunk_City_VR_Mobile/Models/Auto/SM_Microbus.SM_Microbus\n\
-    - police_car | Police Car | auto | 5.44x5.64x3.22 m | /Game/CyberPunk_City_VR_Mobile/Models/Auto/SM_Police_Car.SM_Police_Car\n\
-    - sedan | Sedan | auto | 2.82x4.67x1.83 m | /Game/CyberPunk_City_VR_Mobile/Models/Auto/SM_Sedan.SM_Sedan\n\
-    - sports_car | Sports car | auto | 5.28x4.74x2.98 m | /Game/CyberPunk_City_VR_Mobile/Models/Auto/SM_Sports_car.SM_Sports_car\n\
-    - house_10_united_homes | House 10 United Homes | house | 23.65x23.88x12.44 m | /Game/CyberPunk_City_VR_Mobile/Models/House/SM_House_10_United_Homes.SM_House_10_United_Homes\n\
-    - house_11_united_homes | House 11 United Homes | house | 19.86x30.74x12.0 m | /Game/CyberPunk_City_VR_Mobile/Models/House/SM_House_11_United_Homes.SM_House_11_United_Homes\n\
-    - house_12_united_homes | House 12 United Homes | house | 18.68x13.47x18.06 m | /Game/CyberPunk_City_VR_Mobile/Models/House/SM_House_12_United_Homes.SM_House_12_United_Homes\n\
-    - house_13_united_homes | House 13 United Homes | house | 19.48x42.8x24.38 m | /Game/CyberPunk_City_VR_Mobile/Models/House/SM_House_13_United_Homes.SM_House_13_United_Homes\n\
-    - house_2_united_homes | House 2 United Homes | house | 21.42x20.69x18.27 m | /Game/CyberPunk_City_VR_Mobile/Models/House/SM_House_2_United_Homes.SM_House_2_United_Homes\n\
-    - house_3_united_homes | House 3 United Homes | house | 19.86x28.42x12.26 m | /Game/CyberPunk_City_VR_Mobile/Models/House/SM_House_3_United_Homes.SM_House_3_United_Homes\n\
-    - house_4_united_homes | House 4 United Homes | house | 15.8x23.65x18.0 m | /Game/CyberPunk_City_VR_Mobile/Models/House/SM_House_4_United_Homes.SM_House_4_United_Homes\n\
-    - house_5_united_homes | House 5 United Homes | house | 22.1x21.42x15.33 m | /Game/CyberPunk_City_VR_Mobile/Models/House/SM_House_5_United_Homes.SM_House_5_United_Homes\n\
-    - house_7_united_homes | House 7 United Homes | house | 20.69x21.35x15.26 m | /Game/CyberPunk_City_VR_Mobile/Models/House/SM_House_7_United_Homes.SM_House_7_United_Homes\n\
-    - house_8_united_homes | House 8 United Homes | house | 19.86x28.42x12.2 m | /Game/CyberPunk_City_VR_Mobile/Models/House/SM_House_8_United_Homes.SM_House_8_United_Homes\n\
-    - house_9_united_homes | House 9 United Homes | house | 19.63x27.89x15.33 m | /Game/CyberPunk_City_VR_Mobile/Models/House/SM_House_9_United_Homes.SM_House_9_United_Homes\n\
-    - signboard_1 | Signboard 1 | signboard | 0.9x0.13x2.08 m | /Game/CyberPunk_City_VR_Mobile/Models/Signboard/SM_Signboard_1.SM_Signboard_1\n\
-    - signboard_10 | Signboard 10 | signboard | 0.86x0.13x1.79 m | /Game/CyberPunk_City_VR_Mobile/Models/Signboard/SM_Signboard_10.SM_Signboard_10\n\
-    - signboard_11 | Signboard 11 | signboard | 2.57x0.06x0.73 m | /Game/CyberPunk_City_VR_Mobile/Models/Signboard/SM_Signboard_11.SM_Signboard_11\n\
-    - signboard_13 | Signboard 13 | signboard | 1.25x0.06x1.25 m | /Game/CyberPunk_City_VR_Mobile/Models/Signboard/SM_Signboard_13.SM_Signboard_13\n\
-    - signboard_16 | Signboard 16 | signboard | 0.11x1.68x1.43 m | /Game/CyberPunk_City_VR_Mobile/Models/Signboard/SM_Signboard_16.SM_Signboard_16\n\
-    - signboard_17 | Signboard 17 | signboard | 0.06x1.25x0.77 m | /Game/CyberPunk_City_VR_Mobile/Models/Signboard/SM_Signboard_17.SM_Signboard_17\n\
-    - signboard_18 | Signboard 18 | signboard | 3.95x0.06x0.81 m | /Game/CyberPunk_City_VR_Mobile/Models/Signboard/SM_Signboard_18.SM_Signboard_18\n\
-    - signboard_19 | Signboard 19 | signboard | 2.57x0.1x1.99 m | /Game/CyberPunk_City_VR_Mobile/Models/Signboard/SM_Signboard_19.SM_Signboard_19\n\
-    - signboard_2 | Signboard 2 | signboard | 0.88x0.13x1.79 m | /Game/CyberPunk_City_VR_Mobile/Models/Signboard/SM_Signboard_2.SM_Signboard_2\n\
-    - signboard_4 | Signboard 4 | signboard | 1.3x0.13x2.91 m | /Game/CyberPunk_City_VR_Mobile/Models/Signboard/SM_Signboard_4.SM_Signboard_4\n\
-    - signboard_5 | Signboard 5 | signboard | 0.87x0.13x2.52 m | /Game/CyberPunk_City_VR_Mobile/Models/Signboard/SM_Signboard_5.SM_Signboard_5\n\
-    - signboard_6 | Signboard 6 | signboard | 4.65x0.18x1.35 m | /Game/CyberPunk_City_VR_Mobile/Models/Signboard/SM_Signboard_6.SM_Signboard_6\n\
-    - signboard_7 | Signboard 7 | signboard | 4.65x0.06x0.81 m | /Game/CyberPunk_City_VR_Mobile/Models/Signboard/SM_Signboard_7.SM_Signboard_7\n\
-    - signboard_8 | Signboard 8 | signboard | 4.84x0.06x1.27 m | /Game/CyberPunk_City_VR_Mobile/Models/Signboard/SM_Signboard_8.SM_Signboard_8\n\
-    - signboard_9 | Signboard 9 | signboard | 4.53x0.11x1.03 m | /Game/CyberPunk_City_VR_Mobile/Models/Signboard/SM_Signboard_9.SM_Signboard_9\n\
-    - skyscrapers | Skyscrapers | skyscrapers | 16.97x15.09x52.54 m | /Game/CyberPunk_City_VR_Mobile/Models/Skyscrapers/SM_Skyscrapers.SM_Skyscrapers\n\
-    - skyscrapers_2 | Skyscrapers 2 | skyscrapers | 20.69x20.69x50.94 m | /Game/CyberPunk_City_VR_Mobile/Models/Skyscrapers/SM_Skyscrapers_2.SM_Skyscrapers_2\n\
-    - skyscrapers_4 | Skyscrapers 4 | skyscrapers | 30.41x29.33x122.44 m | /Game/CyberPunk_City_VR_Mobile/Models/Skyscrapers/SM_Skyscrapers_4.SM_Skyscrapers_4\n\
-    - skyscrapers_5 | Skyscrapers 5 | skyscrapers | 39.3x28.78x164.83 m | /Game/CyberPunk_City_VR_Mobile/Models/Skyscrapers/SM_Skyscrapers_5.SM_Skyscrapers_5\n\
-    - air_conditioning_02 | Air conditioning 02 | street | 0.47x0.74x0.46 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Air_conditioning_02.SM_Air_conditioning_02\n\
-    - bench | Bench | street | 0.53x2.09x0.53 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Bench.SM_Bench\n\
-    - block | Block | street | 1.53x2.3x0.83 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Block.SM_Block\n\
-    - border | Border | street | 0.08x2.5x0.11 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Border.SM_Border\n\
-    - border_angle | Border Angle | street | 1.54x1.54x0.11 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Border_Angle.SM_Border_Angle\n\
-    - column | Column | street | 0.14x0.15x0.64 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Column.SM_Column\n\
-    - luke | Luke | street | 0.67x0.68x0.04 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Luke.SM_Luke\n\
-    - newspaper_01 | Newspaper 01 | street | 0.67x0.78x0.0 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Newspaper_01.SM_Newspaper_01\n\
-    - road | Road | street | 5.0x2.5x0.0 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Road.SM_Road\n\
-    - sidewalk | Sidewalk | street | 1.5x2.5x0.0 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Sidewalk.SM_Sidewalk\n\
-    - sidewalk_02 | Sidewalk 02 | street | 0.47x0.79x0.02 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Sidewalk_02.SM_Sidewalk_02\n\
-    - sidewalk_angle_sidewalk_angle | Sidewalk Angle Sidewalk angle | street | 1.5x1.5x0.0 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Sidewalk_Angle_Sidewalk_angle.SM_Sidewalk_Angle_Sidewalk_angle\n\
-    - sign_2 | Sign 2 | street | 0.63x0.04x2.09 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Sign_2.SM_Sign_2\n\
-    - sign_3 | Sign 3 | street | 0.54x0.04x2.01 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Sign_3.SM_Sign_3\n\
-    - sign_4 | Sign 4 | street | 0.47x0.04x1.96 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Sign_4.SM_Sign_4\n\
-    - speed_bump | Speed bump | street | 4.98x0.43x0.05 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Speed_bump.SM_Speed_bump\n\
-    - street_light | Street light | street | 1.52x0.19x5.6 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Street_light.SM_Street_light\n\
-    - urn | Urn | street | 0.48x0.48x0.56 m | /Game/CyberPunk_City_VR_Mobile/Models/Street/SM_Urn.SM_Urn\n\
-    - barrel | Barrel | street_element | 0.57x0.6x1.06 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Barrel.SM_Barrel\n\
-    - bench_1 | Bench 1 | street_element | 0.96x2.15x0.52 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Bench_1.SM_Bench_1\n\
-    - bench_2 | Bench 2 | street_element | 2.15x0.96x0.9 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Bench_2.SM_Bench_2\n\
-    - box | Box | street_element | 0.79x0.79x0.79 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Box.SM_Box\n\
-    - bus_stop | Bus stop | street_element | 1.14x4.31x2.36 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Bus_stop.SM_Bus_stop\n\
-    - canister | Canister | street_element | 0.2x0.46x0.61 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Canister.SM_Canister\n\
-    - canopy | Canopy | street_element | 1.09x3.15x2.9 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Canopy.SM_Canopy\n\
-    - cardboard_box_1 | Cardboard box 1 | street_element | 0.61x0.59x0.56 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Cardboard_box_1.SM_Cardboard_box_1\n\
-    - cardboard_box_2 | Cardboard box 2 | street_element | 1.38x1.14x0.69 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Cardboard_box_2.SM_Cardboard_box_2\n\
-    - channel | Channel | street_element | 5.73x0.29x3.89 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Channel.SM_Channel\n\
-    - channel_2 | Channel 2 | street_element | 5.8x0.29x3.89 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Channel_2.SM_Channel_2\n\
-    - channel_3 | Channel 3 | street_element | 0.15x5.21x0.43 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Channel_3.SM_Channel_3\n\
-    - channel_4 | Channel 4 | street_element | 1.62x0.21x1.51 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Channel_4.SM_Channel_4\n\
-    - coil | Coil | street_element | 2.0x1.13x1.95 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Coil.SM_Coil\n\
-    - constructions_01 | Constructions 01 | street_element | 1.64x2.18x2.73 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Constructions_01.SM_Constructions_01\n\
-    - container_01 | Container 01 | street_element | 1.34x1.97x1.05 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Container_01.SM_Container_01\n\
-    - container_02 | Container 02 | street_element | 2.56x5.81x2.91 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Container_02.SM_Container_02\n\
-    - converter | Converter | street_element | 0.44x0.96x0.56 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Converter.SM_Converter\n\
-    - counter | Counter | street_element | 2.52x2.73x3.02 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Counter.SM_Counter\n\
-    - facade_element_01 | Facade element 01 | street_element | 0.21x1.02x0.6 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Facade_element_01.SM_Facade_element_01\n\
-    - fence_1 | Fence 1 | street_element | 0.06x2.04x1.18 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Fence_1.SM_Fence_1\n\
-    - fence_3 | Fence 3 | street_element | 0.04x2.04x1.18 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Fence_3.SM_Fence_3\n\
-    - fence_4 | Fence 4 | street_element | 0.16x2.01x1.05 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Fence_4.SM_Fence_4\n\
-    - garbage_container | Garbage container | street_element | 1.13x1.68x1.35 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Garbage_container.SM_Garbage_container\n\
-    - garbage_container_2 | Garbage container 2 | street_element | 1.47x1.47x1.22 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Garbage_container_2.SM_Garbage_container_2\n\
-    - hydrant | Hydrant | street_element | 0.32x0.38x0.85 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Hydrant.SM_Hydrant\n\
-    - neon_items | Neon Items | street_element | 6.23x0.05x0.27 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Neon_Items.SM_Neon_Items\n\
-    - neon_items_2 | Neon Items 2 | street_element | 0.09x0.22x2.9 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Neon_Items_2.SM_Neon_Items_2\n\
-    - neon_items_3 | Neon Items 3 | street_element | 9.33x0.23x0.91 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Neon_Items_3.SM_Neon_Items_3\n\
-    - neon_lamp | Neon lamp | street_element | 0.16x0.53x0.05 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Neon_lamp.SM_Neon_lamp\n\
-    - regulator | Regulator | street_element | 0.32x0.32x1.57 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Regulator.SM_Regulator\n\
-    - switch | Switch | street_element | 1.16x1.48x2.06 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Switch.SM_Switch\n\
-    - traffic_light | Traffic light | street_element | 0.21x0.21x1.37 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Traffic_light.SM_Traffic_light\n\
-    - transition | Transition | street_element | 2.0x2.0x1.67 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Transition.SM_Transition\n\
-    - tubing | Tubing | street_element | 0.62x0.08x1.0 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Tubing.SM_Tubing\n\
-    - wheel_spool | Wheel spool | street_element | 0.35x2.0x1.94 m | /Game/CyberPunk_City_VR_Mobile/Models/Street_Element/SM_Wheel_spool.SM_Wheel_spool\n\
-    - colon_2 | Colon 2 | wall | 0.47x0.44x3.0 m | /Game/CyberPunk_City_VR_Mobile/Models/Wall/SM_Colon_2.SM_Colon_2\n\
-    - jumper | Jumper | wall | 0.32x0.18x6.03 m | /Game/CyberPunk_City_VR_Mobile/Models/Wall/SM_Jumper.SM_Jumper\n\
-    - showcase_11 | Showcase 11 | wall | 5.0x0.06x3.0 m | /Game/CyberPunk_City_VR_Mobile/Models/Wall/SM_Showcase_11.SM_Showcase_11\n\
-    - showcase_8 | Showcase 8 | wall | 5.0x0.17x3.0 m | /Game/CyberPunk_City_VR_Mobile/Models/Wall/SM_Showcase_8.SM_Showcase_8\n\
-    - wall_10 | Wall 10 | wall | 5.0x0.0x3.0 m | /Game/CyberPunk_City_VR_Mobile/Models/Wall/SM_Wall_10.SM_Wall_10\n\
-    - wall_18 | Wall 18 | wall | 0.0x5.0x3.0 m | /Game/CyberPunk_City_VR_Mobile/Models/Wall/SM_Wall_18.SM_Wall_18\n\
-    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
-    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
-    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
-    \ for yourself when the scene\nmatches the description.\n"
+  prompt: 'Create a construction site centered on a tower crane and an active work area with scaffolding.
+    Arrange stacked building materials near the work area and group portable site cabins along an accessible
+    edge. Define the site with fences, using barriers to separate machinery and material storage from
+    the clearer gaps between work zones. Position machinery near the scaffolding and material stacks,
+    and concentrate debris around construction activity rather than distributing it uniformly. Keep the
+    crane as the main vertical landmark and make the cabins, storage stacks, scaffolding, and machinery
+    easy to distinguish within a coherent working site.
+
+    '
   init_map: /Game/SceneBench/BlankStage
-  size_m: 200
+  size_m: 130
   budget:
     tool_calls: 800
     wall_minutes: 180
   skills: contracts
+assets:
+  packs:
+  - FactoryEnvironment
+  - ContainerYard
+  - AbandonedBuilding
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
 verifiers:
 - name: semantic_requirements
   semantic_retrieval:
@@ -127,6 +31,3 @@ verifiers:
     top_k: 5
   verification_bundle: requirements/case_050.bundle.json
 - name: overview_prompt_alignment
-assets:
-  packs:
-  - CyberPunk_City_VR_Mobile

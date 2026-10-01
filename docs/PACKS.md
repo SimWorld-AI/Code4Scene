@@ -6,7 +6,7 @@ any pack content.** To build the public dataset you get each pack from its Fab
 listing yourself, install it into an Unreal Engine 5.8 project, and then run
 the dataset builder (see [BUILD_DATASET.md](BUILD_DATASET.md)).
 
-The public set (201 cases) needs **44 third-party packs** and Epic's
+The public set (222 cases) needs **47 third-party packs** and Epic's
 **Starter Content**, which ships with the engine. The machine-readable list is
 [`benchmark/packs.yaml`](../benchmark/packs.yaml). It records, for each pack, the
 listing, the public cases that use it, the seller demo levels that image-to-scene
@@ -75,14 +75,14 @@ You only need the packs for the settings you plan to build.
 
 | Setting | Public cases | Packs | List price of those packs at check |
 |---|---|---|---|
-| Text-to-scene | 129 | 28 | $736.85 + 12 packs without a recorded price |
+| Text-to-scene | 150 | 31 | $736.85 + 15 packs without a recorded price |
 | Image-to-scene, indoor | 22 | 8 + Starter Content | $224.93 |
 | Image-to-scene, outdoor | 50 | 10 | $385.92 + `TrainStation` (not yet identified) |
-| All public cases | 201 | 44 + Starter Content | $1,310.72 + `TrainStation` and 12 text-to-scene packs without a recorded price |
+| All public cases | 222 | 47 + Starter Content | $1,310.72 + `TrainStation` and 15 text-to-scene packs without a recorded price |
 
 Prices are Personal-tier list prices in USD, without discounts or taxes. Street New York and Russian Winter Town are used by both text-to-scene and outdoor cases, so they are counted once in the total.
 
-- **Text-to-scene:** `Abandoned_Psychiatric_Hospital`, `AbandonedBuilding`, `AncientRuins`, `BattlegroundKit`, `Big_Town`, `bugchonmunhwa`, `CastleRiver`, `Chefchaouen_Village`, `CityCore_Paris`, `ContainerYard`, `CyberPunk_City_VR_Mobile`, `CyberPunk_street`, `EgyptianTemple`, `EuropeanStreet`, `FactoryEnvironment`, `Hangar`, `Hong_Kong_Street`, `MedievalBuildings01`, `MedievalScandinavianVillage`, `Modular_Gardens`, `ModularGothicFantasyEnvironment`, `NordicHarbour`, `Ruins`, `Scrapopolis`, `Street_NY`, `UrbanDecay`, `Wild_West_Race`, `WinterTown`.
+- **Text-to-scene:** `Abandoned_Psychiatric_Hospital`, `AbandonedBuilding`, `AncientRuins`, `BattlegroundKit`, `Big_Town`, `bugchonmunhwa`, `CastleRiver`, `Chefchaouen_Village`, `CityCore_Paris`, `ContainerYard`, `CyberPunk_City_VR_Mobile`, `CyberPunk_street`, `EgyptianTemple`, `Elven_Valley`, `EuropeanStreet`, `FactoryEnvironment`, `Hangar`, `Hong_Kong_Street`, `MedievalBuildings01`, `MedievalScandinavianVillage`, `Modular_Gardens`, `ModularGothicFantasyEnvironment`, `NordicHarbour`, `Offworld`, `PostApocalypticMarket`, `Ruins`, `Scrapopolis`, `Street_NY`, `UrbanDecay`, `Wild_West_Race`, `WinterTown`.
 - **Image-to-scene, indoor:** `ArchVizInteriorVol2`, `CyberpunkWC`, `Dungeon`, `HorrorEnviroment`, `Laboratory_in_Loft_Style`, `MedievalForgePack`, `Office`, `StarterContent`, `VictorianRoom`.
 - **Image-to-scene, outdoor:** `AfricanLocation`, `Diner`, `Gas_Station`, `MiddleEasternTown`, `Modular_house`, `OldBuilding`, `RuralAustralia`, `Street_NY`, `TrainStation`, `WinterTown`.
 
@@ -112,8 +112,9 @@ The last column lists settings with case counts. T2S = text-to-scene, I2S-in = i
 | `Diner` | [Rosie's Restaurant/Diner](https://www.fab.com/listings/dccbefcf-1f53-45c3-aae1-105bb836683f) | SoloMode | UE Marketplace | $29.99 | Yes | 4.23-5.3 | asset pack | I2S-out (6) |
 | `Dungeon` | [Dungeon Environment / 135+ Assets](https://www.fab.com/listings/bb39bae4-7f7a-4127-b07e-151cf52db0f6) | PackDev | Standard License | Free | Yes | 4.26-5.4 | asset pack | I2S-in (2) |
 | `EgyptianTemple` | [Egyptian Temple](https://www.fab.com/listings/e7c415c9-9e0d-4d2c-ba3f-f1c5ae537e91) | Infuse Studio | UE Marketplace | $29.99 | Yes | 4.18-4.24 | asset pack | T2S (6) |
+| `Elven_Valley` | [Stylized Elven Valley](https://www.fab.com/listings/46205dbb-cfb9-45ba-814f-d12ea606b4bb) | StylArts | — | — | Yes | — | — | T2S (6) |
 | `EuropeanStreet` | [European Street 3d Scene](https://www.fab.com/listings/89fe67c8-718c-4b91-84b7-3e863c3dc4e5) | 3D Happy | Standard License | $24.99 | Yes | 5.6-5.7 | complete project | T2S (5) |
-| `FactoryEnvironment` | [Factory Environment Collection](https://www.fab.com/listings/2ee66462-8c2b-4303-892c-83f7fc0d9b3e) | Denys Rutkovskyi | — | — | Yes | — | — | T2S (9) |
+| `FactoryEnvironment` | [Factory Environment Collection](https://www.fab.com/listings/2ee66462-8c2b-4303-892c-83f7fc0d9b3e) | Denys Rutkovskyi | — | — | Yes | — | — | T2S (14) |
 | `Gas_Station` | [Route 66 Gas Station / Modular Environment](https://www.fab.com/listings/421cef13-0000-4b2c-9814-974bfea2790f) | PackDev | Standard License | $29.99 | Yes | 4.22-5.7 | asset pack | I2S-out (6) |
 | `Hangar` | [Hangar](https://www.fab.com/listings/26114680-5785-4ba4-88d6-bd0961a485aa) | MGX Studio | — | — | Yes | — | — | T2S (5) |
 | `Hong_Kong_Street` | [Hong Kong Street](https://www.fab.com/listings/8cce67d3-acf7-4e1d-bf14-2c2186bf439f) | ART EQUILIBRIUM | Standard License | $34.99 | Yes | 4.25-5.8 | asset pack | T2S (6) |
@@ -128,7 +129,9 @@ The last column lists settings with case counts. T2S = text-to-scene, I2S-in = i
 | `ModularGothicFantasyEnvironment` | [Modular Gothic/Fantasy Environment](https://www.fab.com/listings/92987f7a-6ff7-4884-962b-4c41dddd4cc1) | Stormcrow Studios | — | — | Yes | — | — | T2S (4) |
 | `NordicHarbour` | [Nordic Harbour - Modular City Building Kit](https://www.fab.com/listings/5b9be947-566c-4a65-9fe7-ec2eeb7701bd) | Wester Games | Standard License | $49.99 | Yes | 4.22-5.6 | asset pack | T2S (5) |
 | `Office` | [DownTown Office](https://www.fab.com/listings/0c920ed7-64f9-4010-a099-5374b4f79bfb) | Replex | Standard License | $79.99 | Yes | 5.0-5.8 | asset pack | I2S-in (3) |
+| `Offworld` | [SciFi Environment — 'Offworld'](https://www.fab.com/listings/eb927166-57e6-4f19-9137-f072e819c93a) | Ryan Honey | — | — | Yes | — | — | T2S (5) |
 | `OldBuilding` | [Old Building](https://www.fab.com/listings/bd8353ec-6997-43eb-bc3d-aa5a8902173c) | Paradox Studio | UE Marketplace | $7.99 | Yes | 4.24-5.4 | asset pack | I2S-out (6) |
+| `PostApocalypticMarket` | [Post Apocalyptic Stylized Market](https://www.fab.com/listings/d60e8b48-c2e4-462a-b0bb-9f2430a932ba) | SilverSet Studios | — | — | Yes | — | — | T2S (5) |
 | `Ruins` | [Ruins](https://www.fab.com/listings/e108cf47-d633-4584-a392-0eef0caaf484) | Anil Isbilir | Standard License | $49.99 | Yes | 4.20-4.27, 5.0-5.8 | complete project | T2S (6) |
 | `RuralAustralia` | [Rural Australia](https://www.fab.com/listings/1c1467ce-a2f5-4be1-8988-9069f90a8571) | Andrew Svanberg Hamilton | UE Marketplace | Free | Yes | 4.26-4.27, 5.0-5.4 | asset pack | I2S-out (3) |
 | `Scrapopolis` | [Scrapopolis - Steampunk village](https://www.fab.com/listings/fa19fa3a-62e4-4528-82dc-19bc66521f3b) | ARK.KRA | — | — | Yes | — | — | T2S (4) |

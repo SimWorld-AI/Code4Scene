@@ -3,17 +3,31 @@
 id: case_042
 kind: scene_generation
 inputs:
-  prompt: "Create a serene classical garden on irregular islands, with low peach-and-cream arcades, terraces,\
-    \ lawns, and turquoise canals crossed by bridges. Combine a dense orderly core with curved outer gardens\
-    \ and detached circular gazebo islands. Add formal planting, reflective water, and small spillways\
-    \ beneath a soft sky and hazy mountains.\n\n    === GROUND ===\n    Build the FLOOR FIRST, before\
-    \ placing anything else. Call the benchmark\n    tool `ground_pass` as your first build action: it\
-    \ carpets the whole 200 m\n    plate deterministically from a tile chosen for this scene. If you skip\
-    \ it,\n    and do not tile a floor yourself, the scene renders as objects floating\n    over empty\
-    \ space -- which is a failed reconstruction no matter how good\n    the massing is. These palette\
-    \ entries are also flat surfaces you can tile\n    by hand if you prefer:\n\n      - floor_large_inverse_SM\
-    \ | 20.5x20.5x0.00 m | /Game/Modular_Gardens/Meshes/classical/floor_large_inverse_SM.floor_large_inverse_SM\n\
-    \      - floor_small_inverse_SM | 10.2x10.2x0.00 m | /Game/Modular_Gardens/Meshes/classical/floor_small_inverse_SM.floor_small_inverse_SM\n\
+  prompt: "Calm blue water holds an expansive classical garden floating as a dreamlike group of irregular\
+    \ islands. A soft pink-blue sky meets a hazy mountainous horizon. Glossy reflections, bright sunlit\
+    \ masonry, lush saturated grass, and occasional elevated trellises give the place its serene, ornate,\
+    \ slightly fantastical atmosphere.\n\nThe tightly woven, rectilinear core opens into broad, organically\
+    \ curved lawns at the perimeter. Between them, pale stone walkways, courtyards, canals, ponds, bridges,\
+    \ terraces, and low interconnected garden structures form a dense but orderly network. Peach and cream\
+    \ stucco carries pink stone trim and decorative bands, with fluted columns, brick-lined arches, balustrades,\
+    \ and occasional pergolas draped in vines and hanging purple flowers. Most structures remain low walls,\
+    \ arcades, gateways, covered passages, and rounded pavilions rather than enclosed multistory buildings,\
+    \ clustered along waterways and facing gardens or pools.\n\nNarrow turquoise canals and rounded lily\
+    \ ponds thread throughout the complex, passing beneath small bridges, raised archways, and open colonnades;\
+    \ several short waterfalls or spillways link levels. Wide pale cobbled promenades and curving retaining\
+    \ walls trace the main landmass, leaving water-filled inlets between projecting garden lobes. Offshore,\
+    \ several detached circular pavilion islands rise in concentric grassy terraces, arched perimeter\
+    \ walls enclosing a small domed open gazebo at each crown.\n\nClipped hedges, flower beds, topiary,\
+    \ tall slender trees, willows, flowering trees, shrubs, urn planters, and scattered circular planting\
+    \ beds fill the lawns. Their planting is formal yet varied, lending order to the gardens while retaining\
+    \ their variety.\n\n    === GROUND ===\n    Build the FLOOR FIRST, before placing anything else. Call\
+    \ the benchmark\n    tool `ground_pass` as your first build action: it carpets the whole 200 m\n \
+    \   plate deterministically from a tile chosen for this scene. If you skip it,\n    and do not tile\
+    \ a floor yourself, the scene renders as objects floating\n    over empty space -- which is a failed\
+    \ reconstruction no matter how good\n    the massing is. These palette entries are also flat surfaces\
+    \ you can tile\n    by hand if you prefer:\n\n      - floor_large_inverse_SM | 20.5x20.5x0.00 m |\
+    \ /Game/Modular_Gardens/Meshes/classical/floor_large_inverse_SM.floor_large_inverse_SM\n      - floor_small_inverse_SM\
+    \ | 10.2x10.2x0.00 m | /Game/Modular_Gardens/Meshes/classical/floor_small_inverse_SM.floor_small_inverse_SM\n\
     \      - grass_edge_3_sides_BP | 10.2x10.2x1.30 m | /Game/Modular_Gardens/Meshes/gardens/BPs/grass_edge_3_sides_BP.grass_edge_3_sides_BP_C\n\
     \      - grass_edge_2_sides_BP | 10.2x10.2x1.30 m | /Game/Modular_Gardens/Meshes/gardens/BPs/grass_edge_2_sides_BP.grass_edge_2_sides_BP_C\n\
     \n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\n\

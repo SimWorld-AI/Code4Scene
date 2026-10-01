@@ -26,8 +26,8 @@ match_confidence_levels:
   title_only: Only the title matches.
   unresolved: No Fab listing could be identified.
 totals:
-  third_party_packs: 44
-  packs_with_listing: 43
+  third_party_packs: 47
+  packs_with_listing: 46
   list_price_usd_resolved_packs: 1310.72
 packs:
 - folder: Abandoned_Psychiatric_Hospital
@@ -47,10 +47,10 @@ packs:
       text_to_scene: 5
     text_to_scene:
     - case_001
-    - case_017
-    - case_018
-    - case_019
-    - case_020
+    - case_021
+    - case_022
+    - case_023
+    - case_024
   demo_maps_used: []
   match_confidence: title_seller
   notes: >-
@@ -66,10 +66,10 @@ packs:
     counts:
       text_to_scene: 4
     text_to_scene:
-    - case_043
-    - case_044
-    - case_045
-    - case_046
+    - case_047
+    - case_048
+    - case_049
+    - case_050
   match_confidence: title_seller
   notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: AfricanLocation
@@ -107,10 +107,10 @@ packs:
     counts:
       text_to_scene: 4
     text_to_scene:
-    - case_021
-    - case_022
-    - case_023
-    - case_024
+    - case_025
+    - case_026
+    - case_027
+    - case_028
   match_confidence: title_seller
   notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: ArchVizInteriorVol2
@@ -151,10 +151,10 @@ packs:
     counts:
       text_to_scene: 4
     text_to_scene:
-    - case_025
-    - case_026
-    - case_027
-    - case_028
+    - case_029
+    - case_030
+    - case_031
+    - case_032
   match_confidence: title_seller
   notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: Big_Town
@@ -175,10 +175,10 @@ packs:
       text_to_scene: 5
     text_to_scene:
     - case_009
-    - case_083
-    - case_084
-    - case_085
-    - case_086
+    - case_091
+    - case_092
+    - case_093
+    - case_094
   demo_maps_used: []
   match_confidence: title_seller
   notes: Title and seller match; reference copy is the UE 5.1 build.
@@ -199,10 +199,10 @@ packs:
       text_to_scene: 5
     text_to_scene:
     - case_008
-    - case_079
-    - case_080
-    - case_081
-    - case_082
+    - case_087
+    - case_088
+    - case_089
+    - case_090
   demo_maps_used: []
   match_confidence: exact_uid_confirmed
   notes: >-
@@ -227,11 +227,11 @@ packs:
       text_to_scene: 6
     text_to_scene:
     - case_003
-    - case_033
-    - case_034
-    - case_035
-    - case_036
     - case_037
+    - case_038
+    - case_039
+    - case_040
+    - case_041
   demo_maps_used: []
   match_confidence: exact_uid_confirmed
   notes: >-
@@ -254,10 +254,10 @@ packs:
       text_to_scene: 5
     text_to_scene:
     - case_002
-    - case_029
-    - case_030
-    - case_031
-    - case_032
+    - case_033
+    - case_034
+    - case_035
+    - case_036
   demo_maps_used: []
   match_confidence: exact_uid_confirmed
   notes: >-
@@ -281,10 +281,10 @@ packs:
       text_to_scene: 5
     text_to_scene:
     - case_012
-    - case_100
-    - case_101
-    - case_102
-    - case_103
+    - case_108
+    - case_109
+    - case_110
+    - case_111
   demo_maps_used: []
   match_confidence: title_seller
   notes: Title and seller match.
@@ -298,15 +298,15 @@ packs:
     counts:
       text_to_scene: 9
     text_to_scene:
-    - case_043
-    - case_044
-    - case_045
-    - case_046
-    - case_074
-    - case_075
-    - case_076
-    - case_077
-    - case_078
+    - case_047
+    - case_048
+    - case_049
+    - case_050
+    - case_082
+    - case_083
+    - case_084
+    - case_085
+    - case_086
   match_confidence: title_seller
   notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: CyberPunk_City_VR_Mobile
@@ -326,11 +326,11 @@ packs:
       text_to_scene: 6
     text_to_scene:
     - case_004
-    - case_047
-    - case_048
-    - case_049
-    - case_050
     - case_051
+    - case_052
+    - case_053
+    - case_054
+    - case_055
   demo_maps_used: []
   match_confidence: exact_uid_confirmed
   notes: Mesh, material and texture counts (168/30/37) match exactly.
@@ -344,10 +344,10 @@ packs:
     counts:
       text_to_scene: 4
     text_to_scene:
-    - case_052
-    - case_053
-    - case_054
-    - case_055
+    - case_056
+    - case_057
+    - case_058
+    - case_059
   match_confidence: title_seller
   notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: CyberpunkWC
@@ -441,17 +441,35 @@ packs:
       text_to_scene: 6
     text_to_scene:
     - case_005
-    - case_056
-    - case_057
-    - case_058
-    - case_059
     - case_060
+    - case_061
+    - case_062
+    - case_063
+    - case_064
   demo_maps_used: []
   match_confidence: exact_uid_confirmed
   notes: >-
     Build artifact id matches the reference copy exactly; counts match (29 meshes, 95 textures). UE4-only
     listing (4.18-4.24): install into a 4.24 project and migrate, or add to a newer project via the launcher
     "Show all projects" option.
+- folder: Elven_Valley
+  title: Stylized Elven Valley
+  seller: StylArts
+  fab_url: https://www.fab.com/listings/46205dbb-cfb9-45ba-814f-d12ea606b4bb
+  fab_uid: 46205dbb-cfb9-45ba-814f-d12ea606b4bb
+  ai_usage: allowed
+  used_by:
+    counts:
+      text_to_scene: 6
+    text_to_scene:
+    - case_020
+    - case_133
+    - case_134
+    - case_135
+    - case_136
+    - case_137
+  match_confidence: title_only
+  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: EuropeanStreet
   title: European Street 3d Scene
   seller: 3D Happy
@@ -469,10 +487,10 @@ packs:
       text_to_scene: 5
     text_to_scene:
     - case_006
-    - case_061
-    - case_062
-    - case_063
-    - case_064
+    - case_065
+    - case_066
+    - case_067
+    - case_068
   demo_maps_used: []
   match_confidence: title_seller
   notes: >-
@@ -486,17 +504,22 @@ packs:
   ai_usage: allowed
   used_by:
     counts:
-      text_to_scene: 9
+      text_to_scene: 14
     text_to_scene:
-    - case_043
-    - case_044
-    - case_045
-    - case_046
-    - case_074
-    - case_075
-    - case_076
-    - case_077
-    - case_078
+    - case_017
+    - case_047
+    - case_048
+    - case_049
+    - case_050
+    - case_069
+    - case_070
+    - case_071
+    - case_072
+    - case_082
+    - case_083
+    - case_084
+    - case_085
+    - case_086
   match_confidence: title_seller
   notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: Gas_Station
@@ -536,11 +559,11 @@ packs:
     counts:
       text_to_scene: 5
     text_to_scene:
-    - case_074
-    - case_075
-    - case_076
-    - case_077
-    - case_078
+    - case_082
+    - case_083
+    - case_084
+    - case_085
+    - case_086
   match_confidence: title_seller
   notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: Hong_Kong_Street
@@ -560,11 +583,11 @@ packs:
       text_to_scene: 6
     text_to_scene:
     - case_007
-    - case_069
-    - case_070
-    - case_071
-    - case_072
-    - case_073
+    - case_077
+    - case_078
+    - case_079
+    - case_080
+    - case_081
   demo_maps_used: []
   match_confidence: title_seller
   notes: Title and seller match; material and texture counts close to the listing.
@@ -634,10 +657,10 @@ packs:
       text_to_scene: 5
     text_to_scene:
     - case_010
-    - case_087
-    - case_088
-    - case_089
-    - case_090
+    - case_095
+    - case_096
+    - case_097
+    - case_098
   demo_maps_used: []
   match_confidence: exact_uid_confirmed
   notes: Mesh and texture counts match (548/1101 listed vs 560/1133 in the reference copy).
@@ -675,11 +698,11 @@ packs:
     counts:
       text_to_scene: 5
     text_to_scene:
-    - case_091
-    - case_092
-    - case_093
-    - case_094
-    - case_095
+    - case_099
+    - case_100
+    - case_101
+    - case_102
+    - case_103
   match_confidence: title_seller
   notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: MiddleEasternTown
@@ -722,11 +745,11 @@ packs:
     counts:
       text_to_scene: 5
     text_to_scene:
-    - case_038
-    - case_039
-    - case_040
-    - case_041
     - case_042
+    - case_043
+    - case_044
+    - case_045
+    - case_046
   match_confidence: title_seller
   notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: Modular_house
@@ -768,10 +791,10 @@ packs:
     counts:
       text_to_scene: 4
     text_to_scene:
-    - case_065
-    - case_066
-    - case_067
-    - case_068
+    - case_073
+    - case_074
+    - case_075
+    - case_076
   match_confidence: title_seller
   notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: NordicHarbour
@@ -791,10 +814,10 @@ packs:
       text_to_scene: 5
     text_to_scene:
     - case_011
-    - case_096
-    - case_097
-    - case_098
-    - case_099
+    - case_104
+    - case_105
+    - case_106
+    - case_107
   demo_maps_used: []
   match_confidence: exact_uid_confirmed
   notes: Mesh, material and texture counts match (126/140/275).
@@ -822,6 +845,23 @@ packs:
   match_confidence: exact_uid_confirmed
   notes: >-
     Counts match (183 meshes, 96 materials, 171 textures). Discounted to $39.99 on the check date.
+- folder: Offworld
+  title: SciFi Environment — 'Offworld'
+  seller: Ryan Honey
+  fab_url: https://www.fab.com/listings/eb927166-57e6-4f19-9137-f072e819c93a
+  fab_uid: eb927166-57e6-4f19-9137-f072e819c93a
+  ai_usage: allowed
+  used_by:
+    counts:
+      text_to_scene: 5
+    text_to_scene:
+    - case_019
+    - case_121
+    - case_122
+    - case_123
+    - case_124
+  match_confidence: title_only
+  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: OldBuilding
   title: Old Building
   seller: Paradox Studio
@@ -848,6 +888,23 @@ packs:
   - /Game/OldBuilding/Maps/OldBuilding
   match_confidence: title_seller
   notes: Not the "Old Building" listing by MeikWModels. Title, seller and UE 4.24 build match.
+- folder: PostApocalypticMarket
+  title: Post Apocalyptic Stylized Market
+  seller: SilverSet Studios
+  fab_url: https://www.fab.com/listings/d60e8b48-c2e4-462a-b0bb-9f2430a932ba
+  fab_uid: d60e8b48-c2e4-462a-b0bb-9f2430a932ba
+  ai_usage: allowed
+  used_by:
+    counts:
+      text_to_scene: 5
+    text_to_scene:
+    - case_018
+    - case_112
+    - case_113
+    - case_114
+    - case_115
+  match_confidence: title_only
+  notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: Ruins
   title: Ruins
   seller: Anil Isbilir
@@ -866,11 +923,11 @@ packs:
       text_to_scene: 6
     text_to_scene:
     - case_013
-    - case_104
-    - case_105
-    - case_106
-    - case_107
-    - case_108
+    - case_116
+    - case_117
+    - case_118
+    - case_119
+    - case_120
   demo_maps_used: []
   match_confidence: exact_uid_confirmed
   notes: >-
@@ -911,10 +968,10 @@ packs:
     counts:
       text_to_scene: 4
     text_to_scene:
-    - case_109
-    - case_110
-    - case_111
-    - case_112
+    - case_125
+    - case_126
+    - case_127
+    - case_128
   match_confidence: title_seller
   notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: StarterContent
@@ -959,10 +1016,10 @@ packs:
       image_to_scene_outdoor: 5
     text_to_scene:
     - case_014
-    - case_113
-    - case_114
-    - case_115
-    - case_116
+    - case_129
+    - case_130
+    - case_131
+    - case_132
     image_to_scene_outdoor:
     - comp-02-new-york-bench-reset-v2
     - comp-41-new-york-storefront-planter-pair-recovery-v2
@@ -1021,10 +1078,10 @@ packs:
       text_to_scene: 5
     text_to_scene:
     - case_015
-    - case_117
-    - case_118
-    - case_119
-    - case_120
+    - case_138
+    - case_139
+    - case_140
+    - case_141
   demo_maps_used: []
   match_confidence: exact_uid_confirmed
   notes: Material and texture counts match (127/276).
@@ -1061,10 +1118,10 @@ packs:
     counts:
       text_to_scene: 4
     text_to_scene:
-    - case_121
-    - case_122
-    - case_123
-    - case_124
+    - case_142
+    - case_143
+    - case_144
+    - case_145
   match_confidence: title_seller
   notes: Text-to-scene pack; the AI-use status follows the lab content store record.
 - folder: WinterTown
@@ -1085,11 +1142,11 @@ packs:
       image_to_scene_outdoor: 3
     text_to_scene:
     - case_016
-    - case_125
-    - case_126
-    - case_127
-    - case_128
-    - case_129
+    - case_146
+    - case_147
+    - case_148
+    - case_149
+    - case_150
     image_to_scene_outdoor:
     - comp-09-winter-square-bench-recovery-v2
     - comp-46-winter-entry-lamppost-pair-repair-v2

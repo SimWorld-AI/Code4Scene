@@ -3,156 +3,125 @@
 id: case_039
 kind: scene_generation
 inputs:
-  prompt: "Create a sprawling classical garden complex with a dreamlike character, floating as a group\
-    \ of irregular islands in calm blue water beneath a soft pink-blue sky and encircled by a hazy mountainous\
-    \ horizon. Make its central network more rectilinear and tightly interwoven, then open it outward\
-    \ into broad, organically curved lawns around the perimeter. Throughout, densely but orderly interconnect\
-    \ pale stone walkways, lawns, courtyards, canals, ponds, bridges, terraces, and low garden structures.\n\
-    \nCluster architecture beside waterways, oriented toward gardens or pools. Make most structures low\
-    \ walls, arcades, gateways, covered passages, and rounded pavilions rather than enclosed multistory\
-    \ buildings. Finish peach and cream stucco with pink stone trim, decorative bands, fluted columns,\
-    \ brick-lined arches, and balustrades; include occasional pergolas carrying vines and hanging purple\
-    \ flowers. Run narrow turquoise canals and rounded lily ponds throughout, beneath small bridges, raised\
-    \ archways, and open colonnades. Link different levels with several short waterfalls or spillways.\
-    \ Border the main landmass with wide, pale cobbled promenades and curving retaining walls; keep water-filled\
-    \ inlets between its projecting garden lobes.\n\nSet several separate circular pavilion islands offshore.\
-    \ Build each from concentric grassy terraces and arched perimeter walls, crowned by a small, domed\
-    \ open gazebo. Plant the lawns formally but with variety: clipped hedges, flower beds, topiary, tall\
-    \ slender trees, willows, flowering trees, shrubs, urn planters, and scattered circular planting beds.\
-    \ Combine occasional elevated trellises, lush saturated grass, sunlit bright masonry, and glossy reflective\
-    \ water to produce a serene, ornate, slightly fantastical atmosphere.\n\n    === GROUND ===\n    Build\
-    \ the FLOOR FIRST, before placing anything else. Call the benchmark\n    tool `ground_pass` as your\
-    \ first build action: it carpets the whole 200 m\n    plate deterministically from a tile chosen for\
-    \ this scene. If you skip it,\n    and do not tile a floor yourself, the scene renders as objects\
-    \ floating\n    over empty space -- which is a failed reconstruction no matter how good\n    the massing\
-    \ is. These palette entries are also flat surfaces you can tile\n    by hand if you prefer:\n\n  \
-    \    - floor_large_inverse_SM | 20.5x20.5x0.00 m | /Game/Modular_Gardens/Meshes/classical/floor_large_inverse_SM.floor_large_inverse_SM\n\
-    \      - floor_small_inverse_SM | 10.2x10.2x0.00 m | /Game/Modular_Gardens/Meshes/classical/floor_small_inverse_SM.floor_small_inverse_SM\n\
-    \      - grass_edge_3_sides_BP | 10.2x10.2x1.30 m | /Game/Modular_Gardens/Meshes/gardens/BPs/grass_edge_3_sides_BP.grass_edge_3_sides_BP_C\n\
-    \      - grass_edge_2_sides_BP | 10.2x10.2x1.30 m | /Game/Modular_Gardens/Meshes/gardens/BPs/grass_edge_2_sides_BP.grass_edge_2_sides_BP_C\n\
-    \n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\n\
-    in this run, so this list is your entire library. Format:\n\n  id | name | category | width x depth\
-    \ x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches\
-    \ UE.\nYou decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n-\
-    \ third_person_character | Third Person Character | blueprints | 20.2x20.2x20.2 m | /Game/Modular_Gardens/Demo/ThirdPersonBP/Blueprints/ThirdPersonCharacter.ThirdPersonCharacter_C\n\
-    - alcove_corner_banister_bp | alcove corner banister BP | bps | 11.52x16.1x7.03 m | /Game/Modular_Gardens/Meshes/classical/BPs/alcove_corner_banister_BP.alcove_corner_banister_BP_C\n\
-    - alcove_corner_gardens_bp | alcove corner gardens BP | bps | 12.4x11.31x6.83 m | /Game/Modular_Gardens/Meshes/gardens/BPs/alcove_corner_gardens_BP.alcove_corner_gardens_BP_C\n\
-    - alcove_corner_large_garden_bp | alcove corner large garden BP | bps | 21.8x21.54x6.83 m | /Game/Modular_Gardens/Meshes/gardens/BPs/alcove_corner_large_garden_BP.alcove_corner_large_garden_BP_C\n\
-    - alcove_corner_large_inverse_garden_bp | alcove corner large inverse garden BP | bps | 22.53x23.72x6.83\
-    \ m | /Game/Modular_Gardens/Meshes/gardens/BPs/alcove_corner_large_inverse_garden_BP.alcove_corner_large_inverse_garden_BP_C\n\
-    - alcove_corner_small_banister_bp | alcove corner small banister BP | bps | 12.0x11.31x9.66 m | /Game/Modular_Gardens/Meshes/classical/BPs/alcove_corner_small_banister_BP.alcove_corner_small_banister_BP_C\n\
-    - alcove_corner_small_bp | alcove corner small BP | bps | 15.46x11.56x7.52 m | /Game/Modular_Gardens/Meshes/classical/BPs/alcove_corner_small_BP.alcove_corner_small_BP_C\n\
-    - alcove_corner_small_garden_bp | alcove corner small garden BP | bps | 11.96x11.31x6.9 m | /Game/Modular_Gardens/Meshes/gardens/BPs/alcove_corner_small_garden_BP.alcove_corner_small_garden_BP_C\n\
-    - alcove_corner_small_inverse_bp | alcove corner small inverse BP | bps | 11.97x12.56x5.94 m | /Game/Modular_Gardens/Meshes/classical/BPs/alcove_corner_small_inverse_BP.alcove_corner_small_inverse_BP_C\n\
-    - alcove_corner_small_inverse_garden_bp | alcove corner small inverse garden BP | bps | 12.31x17.02x6.83\
-    \ m | /Game/Modular_Gardens/Meshes/gardens/BPs/alcove_corner_small_inverse_garden_BP.alcove_corner_small_inverse_garden_BP_C\n\
-    - alcove_wall_banister_bp | alcove wall banister BP | bps | 11.35x15.02x7.03 m | /Game/Modular_Gardens/Meshes/classical/BPs/alcove_wall_banister_BP.alcove_wall_banister_BP_C\n\
-    - alcove_wall_bp | alcove wall BP | bps | 11.6x2.67x6.24 m | /Game/Modular_Gardens/Meshes/classical/BPs/alcove_wall_BP.alcove_wall_BP_C\n\
-    - alcove_wall_garden_bp | alcove wall garden BP | bps | 14.94x11.56x8.26 m | /Game/Modular_Gardens/Meshes/gardens/BPs/alcove_wall_garden_BP.alcove_wall_garden_BP_C\n\
-    - banister_end_bp | banister end BP | bps | 1.28x1.28x1.83 m | /Game/Modular_Gardens/Meshes/classical/BPs/banister_end_BP.banister_end_BP_C\n\
-    - banister_end_pillar_bp | banister end pillar BP | bps | 1.37x1.37x6.7 m | /Game/Modular_Gardens/Meshes/classical/BPs/banister_end_pillar_BP.banister_end_pillar_BP_C\n\
-    - bay_tree01_bp | bay tree01 BP | bps | 1.56x1.56x3.24 m | /Game/Modular_Gardens/Meshes/gardens/BPs/bay_tree01_BP.bay_tree01_BP_C\n\
-    - bridge_double_arch_bp | bridge double arch BP | bps | 12.34x11.04x9.12 m | /Game/Modular_Gardens/Meshes/classical/BPs/bridge_double_arch_BP.bridge_double_arch_BP_C\n\
-    - dead_leaves_bp | dead leaves BP | bps | 9.93x10.35x2.56 m | /Game/Modular_Gardens/Meshes/gardens/BPs/dead_leaves_BP.dead_leaves_BP_C\n\
-    - flower_bed_long_01_bp | flower bed long 01 BP | bps | 5.49x16.22x1.79 m | /Game/Modular_Gardens/Meshes/gardens/BPs/flower_bed_long_01_BP.flower_bed_long_01_BP_C\n\
-    - flower_bed_long_half_bp | flower bed long half BP | bps | 5.43x16.28x1.66 m | /Game/Modular_Gardens/Meshes/gardens/BPs/flower_bed_long_half_BP.flower_bed_long_half_BP_C\n\
-    - flower_bed_short_01_bp | flower bed short 01 BP | bps | 5.41x5.28x1.55 m | /Game/Modular_Gardens/Meshes/gardens/BPs/flower_bed_short_01_BP.flower_bed_short_01_BP_C\n\
-    - flower_bed_short_02_bp | flower bed short 02 BP | bps | 7.6x7.33x2.22 m | /Game/Modular_Gardens/Meshes/gardens/BPs/flower_bed_short_02_BP.flower_bed_short_02_BP_C\n\
-    - flower_bowl_01_bp | flower bowl 01 BP | bps | 2.59x2.43x1.93 m | /Game/Modular_Gardens/Meshes/gardens/BPs/flower_bowl_01_BP.flower_bowl_01_BP_C\n\
-    - flower_bowl_02_bp | flower bowl 02 BP | bps | 2.81x2.83x2.77 m | /Game/Modular_Gardens/Meshes/gardens/BPs/flower_bowl_02_BP.flower_bowl_02_BP_C\n\
-    - flower_pot_long_half_bp | flower pot long half BP | bps | 16.41x5.53x2.65 m | /Game/Modular_Gardens/Meshes/gardens/BPs/flower_pot_long_half_BP.flower_pot_long_half_BP_C\n\
-    - grass_corner_large_bp | grass corner large BP | bps | 20.48x20.51x1.3 m | /Game/Modular_Gardens/Meshes/gardens/BPs/grass_corner_large_BP.grass_corner_large_BP_C\n\
-    - grass_corner_large_inverse_bp | grass corner large inverse BP | bps | 22.46x22.46x1.3 m | /Game/Modular_Gardens/Meshes/gardens/BPs/grass_corner_large_inverse_BP.grass_corner_large_inverse_BP_C\n\
-    - grass_corner_small_bp | grass corner small BP | bps | 10.24x10.24x1.37 m | /Game/Modular_Gardens/Meshes/gardens/BPs/grass_corner_small_BP.grass_corner_small_BP_C\n\
-    - grass_corner_small_inverse_bp | grass corner small inverse BP | bps | 12.23x12.26x1.3 m | /Game/Modular_Gardens/Meshes/gardens/BPs/grass_corner_small_inverse_BP.grass_corner_small_inverse_BP_C\n\
-    - grass_edge_1_side_bp | grass edge 1 side BP | bps | 10.24x10.24x1.3 m | /Game/Modular_Gardens/Meshes/gardens/BPs/grass_edge_1_side_BP.grass_edge_1_side_BP_C\n\
-    - grass_edge_2_sides_bp | grass edge 2 sides BP | bps | 10.24x10.24x1.3 m | /Game/Modular_Gardens/Meshes/gardens/BPs/grass_edge_2_sides_BP.grass_edge_2_sides_BP_C\n\
-    - grass_edge_3_sides_bp | grass edge 3 sides BP | bps | 10.24x10.24x1.3 m | /Game/Modular_Gardens/Meshes/gardens/BPs/grass_edge_3_sides_BP.grass_edge_3_sides_BP_C\n\
-    - grass_edge_corner_bp | grass edge corner BP | bps | 10.24x10.24x1.3 m | /Game/Modular_Gardens/Meshes/gardens/BPs/grass_edge_corner_BP.grass_edge_corner_BP_C\n\
-    - hanging_basket_post_bp | hanging basket post BP | bps | 2.01x1.89x4.42 m | /Game/Modular_Gardens/Meshes/gardens/BPs/hanging_basket_post_BP.hanging_basket_post_BP_C\n\
-    - hanging_basket_pot_bp | hanging basket pot BP | bps | 1.9x2.37x4.73 m | /Game/Modular_Gardens/Meshes/gardens/BPs/hanging_basket_pot_BP.hanging_basket_pot_BP_C\n\
-    - hosta_10_bp | hosta 10 BP | bps | 16.66x10.34x3.65 m | /Game/Modular_Gardens/Meshes/gardens/BPs/hosta_10_BP.hosta_10_BP_C\n\
-    - hydrangea_large_bp | hydrangea large BP | bps | 20.52x9.93x3.49 m | /Game/Modular_Gardens/Meshes/gardens/BPs/hydrangea_large_BP.hydrangea_large_BP_C\n\
-    - hydrangea_large_corner_bp | hydrangea large corner BP | bps | 11.22x10.91x4.36 m | /Game/Modular_Gardens/Meshes/gardens/BPs/hydrangea_large_corner_BP.hydrangea_large_corner_BP_C\n\
-    - large_bowl_01_bp | large bowl 01 BP | bps | 3.32x3.51x3.26 m | /Game/Modular_Gardens/Meshes/gardens/BPs/large_bowl_01_BP.large_bowl_01_BP_C\n\
-    - large_rose_bed_bp | large rose bed BP | bps | 5.7x16.38x3.08 m | /Game/Modular_Gardens/Meshes/gardens/BPs/large_rose_bed_BP.large_rose_bed_BP_C\n\
-    - large_rose_bed_half_bp | large rose bed half BP | bps | 5.7x16.38x3.08 m | /Game/Modular_Gardens/Meshes/gardens/BPs/large_rose_bed_half_BP.large_rose_bed_half_BP_C\n\
-    - large_wall_bowl_01_bp | large wall bowl 01 BP | bps | 2.84x3.02x3.33 m | /Game/Modular_Gardens/Meshes/gardens/BPs/large_wall_bowl_01_BP.large_wall_bowl_01_BP_C\n\
-    - large_wall_bowl_03_bp | large wall bowl 03 BP | bps | 2.43x2.64x2.69 m | /Game/Modular_Gardens/Meshes/gardens/BPs/large_wall_bowl_03_BP.large_wall_bowl_03_BP_C\n\
-    - lilly_pads_bp | Lilly pads BP | bps | 8.38x6.17x2.56 m | /Game/Modular_Gardens/Meshes/water/BPs/Lilly_pads_BP.Lilly_pads_BP_C\n\
-    - magnolia_01_bp | magnolia 01 BP | bps | 8.16x8.6x7.82 m | /Game/Modular_Gardens/Meshes/gardens/BPs/magnolia_01_BP.magnolia_01_BP_C\n\
-    - path_small_curve_bp | path small curve BP | bps | 20.92x20.93x2.56 m | /Game/Modular_Gardens/Meshes/classical/BPs/path_small_curve_BP.path_small_curve_BP_C\n\
-    - path_straight_bp | path straight BP | bps | 10.24x11.11x2.56 m | /Game/Modular_Gardens/Meshes/classical/BPs/path_straight_BP.path_straight_BP_C\n\
-    - pennisetum_large2_blueprint_bp | pennisetum large2 Blueprint BP | bps | 5.66x5.99x2.86 m | /Game/Modular_Gardens/Meshes/gardens/BPs/pennisetum_large2_Blueprint_BP.pennisetum_large2_Blueprint_BP_C\n\
-    - plain_corner_large_garden_bp | plain corner large garden BP | bps | 25.63x21.85x9.46 m | /Game/Modular_Gardens/Meshes/gardens/BPs/plain_corner_large_garden_BP.plain_corner_large_garden_BP_C\n\
-    - plain_wall_banister_bp | plain wall banister BP | bps | 11.56x11.31x9.66 m | /Game/Modular_Gardens/Meshes/classical/BPs/plain_wall_banister_BP.plain_wall_banister_BP_C\n\
-    - plain_wall_banister_corner_bp | plain wall banister corner BP | bps | 12.2x11.31x6.97 m | /Game/Modular_Gardens/Meshes/classical/BPs/plain_wall_banister_corner_BP.plain_wall_banister_corner_BP_C\n\
-    - plain_wall_bp | plain wall BP | bps | 1.37x10.92x5.61 m | /Game/Modular_Gardens/Meshes/classical/BPs/plain_wall_BP.plain_wall_BP_C\n\
-    - plain_wall_corner_bp | plain wall corner BP | bps | 13.26x11.56x7.7 m | /Game/Modular_Gardens/Meshes/classical/BPs/plain_wall_corner_BP.plain_wall_corner_BP_C\n\
-    - plain_wall_corner_large_bp | plain wall corner large BP | bps | 21.85x26.27x7.67 m | /Game/Modular_Gardens/Meshes/classical/BPs/plain_wall_corner_large_BP.plain_wall_corner_large_BP_C\n\
-    - plain_wall_corner_large_inverse_bp | plain wall corner large inverse BP | bps | 21.27x22.24x8.8\
-    \ m | /Game/Modular_Gardens/Meshes/classical/BPs/plain_wall_corner_large_inverse_BP.plain_wall_corner_large_inverse_BP_C\n\
-    - plain_wall_corner_small_banister_bp | plain wall corner small banister BP | bps | 11.36x10.93x6.7\
-    \ m | /Game/Modular_Gardens/Meshes/classical/BPs/plain_wall_corner_small_banister_BP.plain_wall_corner_small_banister_BP_C\n\
-    - plain_wall_corner_small_bp | plain wall corner small BP | bps | 11.56x15.38x8.8 m | /Game/Modular_Gardens/Meshes/classical/BPs/plain_wall_corner_small_BP.plain_wall_corner_small_BP_C\n\
-    - plain_wall_corner_small_inverse_banister_bp | plain wall corner small inverse banister BP | bps\
-    \ | 11.0x15.46x6.7 m | /Game/Modular_Gardens/Meshes/classical/BPs/plain_wall_corner_small_inverse_banister_BP.plain_wall_corner_small_inverse_banister_BP_C\n\
-    - plain_wall_corner_small_inverse_bp | plain wall corner small inverse BP | bps | 15.37x11.0x7.37\
-    \ m | /Game/Modular_Gardens/Meshes/classical/BPs/plain_wall_corner_small_inverse_BP.plain_wall_corner_small_inverse_BP_C\n\
-    - plain_wall_garden_bp | plain wall garden BP | bps | 11.56x14.94x8.26 m | /Game/Modular_Gardens/Meshes/gardens/BPs/plain_wall_garden_BP.plain_wall_garden_BP_C\n\
-    - poplar_bp | poplar BP | bps | 11.1x10.98x24.07 m | /Game/Modular_Gardens/Meshes/gardens/BPs/poplar_BP.poplar_BP_C\n\
-    - rose_beds_bp | rose beds BP | bps | 2.44x5.12x2.02 m | /Game/Modular_Gardens/Meshes/gardens/BPs/rose_beds_BP.rose_beds_BP_C\n\
-    - shallow_bridge_bp | shallow bridge BP | bps | 11.4x11.52x3.19 m | /Game/Modular_Gardens/Meshes/classical/BPs/shallow_bridge_BP.shallow_bridge_BP_C\n\
-    - small_wall_bowl_01_bp | small wall bowl 01 BP | bps | 2.16x2.09x1.79 m | /Game/Modular_Gardens/Meshes/gardens/BPs/small_wall_bowl_01_BP.small_wall_bowl_01_BP_C\n\
-    - trim_bp | trim BP | bps | 10.88x1.28x1.16 m | /Game/Modular_Gardens/Meshes/classical/BPs/trim_BP.trim_BP_C\n\
-    - water_1_side_bp | water 1 side BP | bps | 10.88x10.88x3.84 m | /Game/Modular_Gardens/Meshes/water/BPs/water_1_side_BP.water_1_side_BP_C\n\
-    - water_2_side_bp | water 2 side BP | bps | 11.52x10.88x3.84 m | /Game/Modular_Gardens/Meshes/water/BPs/water_2_side_BP.water_2_side_BP_C\n\
-    - water_3_side_bp | water 3 side BP | bps | 11.52x10.88x3.84 m | /Game/Modular_Gardens/Meshes/water/BPs/water_3_side_BP.water_3_side_BP_C\n\
-    - water_4_corner_bp | water 4 corner BP | bps | 11.52x10.88x3.84 m | /Game/Modular_Gardens/Meshes/water/BPs/water_4_corner_BP.water_4_corner_BP_C\n\
-    - water_large_bp | water large BP | bps | 22.21x22.22x3.88 m | /Game/Modular_Gardens/Meshes/water/BPs/water_large_BP.water_large_BP_C\n\
-    - water_large_inverse_bp | water large inverse BP | bps | 20.94x20.92x3.85 m | /Game/Modular_Gardens/Meshes/water/BPs/water_large_inverse_BP.water_large_inverse_BP_C\n\
-    - water_small_bp | water small BP | bps | 11.96x11.95x3.84 m | /Game/Modular_Gardens/Meshes/water/BPs/water_small_BP.water_small_BP_C\n\
-    - water_small_inverse_bp | water small inverse BP | bps | 11.32x10.89x3.84 m | /Game/Modular_Gardens/Meshes/water/BPs/water_small_inverse_BP.water_small_inverse_BP_C\n\
-    - waterfall_narrow_bp | waterfall narrow BP | bps | 30.93x33.89x30.79 m | /Game/Modular_Gardens/Meshes/water/BPs/waterfall_narrow_BP.waterfall_narrow_BP_C\n\
-    - waterfall_open_bp | waterfall open BP | bps | 33.89x30.93x30.79 m | /Game/Modular_Gardens/Meshes/water/BPs/waterfall_open_BP.waterfall_open_BP_C\n\
-    - willow_bp | willow BP | bps | 20.67x19.9x12.63 m | /Game/Modular_Gardens/Meshes/gardens/BPs/willow_BP.willow_BP_C\n\
-    - wisteria_trellis_bp | wisteria trellis BP | bps | 10.45x12.64x6.09 m | /Game/Modular_Gardens/Meshes/gardens/BPs/wisteria_trellis_BP.wisteria_trellis_BP_C\n\
-    - banister_end_sm | banister end SM | classical | 1.03x1.03x1.1 m | /Game/Modular_Gardens/Meshes/classical/banister_end_SM.banister_end_SM\n\
-    - banister_sm | banister SM | classical | 10.24x0.57x0.83 m | /Game/Modular_Gardens/Meshes/classical/banister_SM.banister_SM\n\
-    - bench_sm | bench SM | classical | 0.96x1.92x0.72 m | /Game/Modular_Gardens/Meshes/classical/bench_SM.bench_SM\n\
-    - floor_corner_small_sm | floor corner small SM | classical | 10.24x10.24x0.0 m | /Game/Modular_Gardens/Meshes/classical/floor_corner_small_SM.floor_corner_small_SM\n\
-    - floor_large_inverse_sm | floor large inverse SM | classical | 20.5x20.5x0.0 m | /Game/Modular_Gardens/Meshes/classical/floor_large_inverse_SM.floor_large_inverse_SM\n\
-    - floor_small_inverse_sm | floor small inverse SM | classical | 10.24x10.25x0.0 m | /Game/Modular_Gardens/Meshes/classical/floor_small_inverse_SM.floor_small_inverse_SM\n\
-    - floor_tile_1x1_sm | floor tile 1x1 SM | classical | 10.24x10.24x0.0 m | /Game/Modular_Gardens/Meshes/classical/floor_tile_1x1_SM.floor_tile_1x1_SM\n\
-    - lion_fountain_sm | lion fountain SM | classical | 1.94x3.94x3.98 m | /Game/Modular_Gardens/Meshes/classical/lion_fountain_SM.lion_fountain_SM\n\
-    - lion_high_poly_sm | lion high poly SM | classical | 1.39x0.71x1.66 m | /Game/Modular_Gardens/Meshes/classical/lion_high_poly_SM.lion_high_poly_SM\n\
-    - lion_low_poly_sm | lion low poly SM | classical | 0.49x0.27x0.58 m | /Game/Modular_Gardens/Meshes/classical/lion_low_poly_SM.lion_low_poly_SM\n\
-    - pavilion_sm | pavilion SM | classical | 10.08x10.08x13.23 m | /Game/Modular_Gardens/Meshes/classical/pavilion_SM.pavilion_SM\n\
-    - square_pillar_sm | square pillar SM | classical | 1.37x1.37x4.91 m | /Game/Modular_Gardens/Meshes/classical/square_pillar_SM.square_pillar_SM\n\
-    - stairs_1x0_5_sm | stairs 1x0 5 SM | classical | 10.94x13.07x6.24 m | /Game/Modular_Gardens/Meshes/classical/stairs_1x0_5_SM.stairs_1x0_5_SM\n\
-    - trim_crown_end | trim crown end | classical | 1.28x1.28x0.75 m | /Game/Modular_Gardens/Meshes/classical/trim_crown_end.trim_crown_end\n\
-    - trim_crown_sm | trim crown SM | classical | 0.87x10.24x1.0 m | /Game/Modular_Gardens/Meshes/classical/trim_crown_SM.trim_crown_SM\n\
-    - beehive_sm | beehive SM | gardens | 1.3x1.72x1.85 m | /Game/Modular_Gardens/Meshes/gardens/beehive_SM.beehive_SM\n\
-    - elderberry_large_sm | elderberry large SM | gardens | 5.31x5.63x3.49 m | /Game/Modular_Gardens/Meshes/gardens/elderberry_large_SM.elderberry_large_SM\n\
-    - elderberry_small_sm | elderberry small SM | gardens | 3.24x3.58x2.11 m | /Game/Modular_Gardens/Meshes/gardens/elderberry_small_SM.elderberry_small_SM\n\
-    - flower_bed_small_circle_sm | flower bed small circle SM | gardens | 5.16x5.11x0.15 m | /Game/Modular_Gardens/Meshes/gardens/flower_bed_small_circle_SM.flower_bed_small_circle_SM\n\
-    - hedge_straight_sm | hedge straight SM | gardens | 7.32x1.23x1.3 m | /Game/Modular_Gardens/Meshes/gardens/hedge_straight_SM.hedge_straight_SM\n\
-    - hydrangea_large_corner_sm | hydrangea large corner SM | gardens | 5.96x5.0x4.25 m | /Game/Modular_Gardens/Meshes/gardens/hydrangea_large_corner_SM.hydrangea_large_corner_SM\n\
-    - hydrangea_large_sm | hydrangea large SM | gardens | 8.94x9.04x3.49 m | /Game/Modular_Gardens/Meshes/gardens/hydrangea_large_SM.hydrangea_large_SM\n\
-    - hydrangea_large_wall_sm | hydrangea large wall SM | gardens | 4.54x7.86x4.16 m | /Game/Modular_Gardens/Meshes/gardens/hydrangea_large_wall_SM.hydrangea_large_wall_SM\n\
-    - hydrangea_sm | hydrangea SM | gardens | 3.93x3.18x2.23 m | /Game/Modular_Gardens/Meshes/gardens/hydrangea_SM.hydrangea_SM\n\
-    - hydrangea_wall_sm | hydrangea wall SM | gardens | 3.34x5.27x2.96 m | /Game/Modular_Gardens/Meshes/gardens/hydrangea_wall_SM.hydrangea_wall_SM\n\
-    - magnolia_01_sm | magnolia 01 SM | gardens | 8.19x8.01x6.78 m | /Game/Modular_Gardens/Meshes/gardens/magnolia_01_SM.magnolia_01_SM\n\
-    - trellace_sm | trellace SM | gardens | 10.83x9.97x5.03 m | /Game/Modular_Gardens/Meshes/gardens/trellace_SM.trellace_SM\n\
-    - wysteria_big_sm | wysteria big SM | gardens | 8.21x7.2x3.59 m | /Game/Modular_Gardens/Meshes/gardens/wysteria_big_SM.wysteria_big_SM\n\
-    - wysteria_corner_01_sm | wysteria corner 01 SM | gardens | 3.38x2.56x4.41 m | /Game/Modular_Gardens/Meshes/gardens/wysteria_corner_01_SM.wysteria_corner_01_SM\n\
-    - wysteria_corner_02_sm | wysteria corner 02 SM | gardens | 3.52x2.82x4.79 m | /Game/Modular_Gardens/Meshes/gardens/wysteria_corner_02_SM.wysteria_corner_02_SM\n\
-    - wysteria_small_sm | wysteria small SM | gardens | 7.05x5.86x3.25 m | /Game/Modular_Gardens/Meshes/gardens/wysteria_small_SM.wysteria_small_SM\n\
-    - terrain_sphere_bp | terrain sphere BP | skybox | 2000.0x2034.49x750.0 m | /Game/Modular_Gardens/Meshes/skybox/terrain_sphere_BP.terrain_sphere_BP_C\n\
-    - fountain_sm | fountain SM | water | 7.32x9.87x29.96 m | /Game/Modular_Gardens/Meshes/water/fountain_SM.fountain_SM\n\
-    - stepping_stones_curved_sm | stepping stones curved SM | water | 4.62x10.06x2.58 m | /Game/Modular_Gardens/Meshes/water/stepping_stones_curved_SM.stepping_stones_curved_SM\n\
-    - water_corner_inverse_sm | water corner inverse SM | water | 4.16x4.16x2.61 m | /Game/Modular_Gardens/Meshes/water/water_corner_inverse_SM.water_corner_inverse_SM\n\
-    - water_trim_sm | water trim SM | water | 10.24x0.87x0.28 m | /Game/Modular_Gardens/Meshes/water/water_trim_SM.water_trim_SM\n\
+  prompt: "Scene:\n  identity: sparse, atmospheric medieval mountain fortress\n  setting: fortress occupying\
+    \ a rocky rise beside a broad, shallow, muddy river or flooded plain\n  surroundings: rolling green-and-tan\
+    \ terrain, steep pale heavily eroded mountains\n  major built elements: fortress and bridge only\n\
+    \  composition: largely open, uncluttered, generous empty space\n  emphasis: isolation, ruined condition,\
+    \ dramatic scale\nCastle:\n  count: one large ruined stone castle\n  position: at one end of the scene\n\
+    \  massing: compact cluster of adjoining structures\n  dominant: tall rectangular gatehouse or keep,\
+    \ pointed-arched opening\n  towers: several lower round and square towers\n  walls: crenellated curtain\
+    \ walls, broken sections\n  interiors: roofless chambers\n  accents: scattered red banners, small\
+    \ red-tiled or conical roofs\nBridge:\n  form: long straight fortified stone bridge or causeway\n\
+    \  course: extending outward from the castle across the water\n  edges: low battlements\n  support:\
+    \ repeated broad masonry arches\n  far termination: small roofed gateway-like section at the far end\n\
+    Timberwork:\n  location: beside the castle end of the bridge\n  elements: damaged wooden ramp, stairs,\
+    \ platforms, braces\n  piles: numerous irregular vertical piles emerging from water, some leaning\
+    \ or broken\nFlooded area:\n  objects: a few isolated posts and debris scattered across water\n  foundations:\
+    \ pale boulders around castle foundations\n  shoreline: patches of vivid low vegetation along the\
+    \ shoreline\n  trees: one or two dense dark-green tree clusters near the bridge’s outer side\nTerrain:\n\
+    \  features: broad undulating slopes, exposed cream-colored ridges, shallow channels, distant water\
+    \ edges\n  texture: strongly rippled surfaces\nLighting:\n  sun: warm, low\n  shadows: long\n  sky:\
+    \ partly cloudy\n\n    === GROUND ===\n    Build the FLOOR FIRST, before placing anything else. Call\
+    \ the benchmark\n    tool `ground_pass` as your first build action: it carpets the whole 200 m\n \
+    \   plate deterministically from a tile chosen for this scene. If you skip it,\n    and do not tile\
+    \ a floor yourself, the scene renders as objects floating\n    over empty space -- which is a failed\
+    \ reconstruction no matter how good\n    the massing is. These palette entries are also flat surfaces\
+    \ you can tile\n    by hand if you prefer:\n\n      - SM_Floor02 | 8.5x8.5x0.50 m | /Game/CastleRiver/Meshes/SM_Floor02.SM_Floor02\n\
+    \      - SM_Floor03 | 6.4x6.4x0.50 m | /Game/CastleRiver/Meshes/SM_Floor03.SM_Floor03\n      - SM_Floor01\
+    \ | 6.0x6.0x0.50 m | /Game/CastleRiver/Meshes/SM_Floor01.SM_Floor01\n      - SM_FloorStones01 | 5.3x4.1x0.07\
+    \ m | /Game/CastleRiver/Meshes/SM_FloorStones01.SM_FloorStones01\n\n=== ASSET PALETTE ===\nBuild this\
+    \ scene using ONLY the assets below — asset search is not available\nin this run, so this list is\
+    \ your entire library. Format:\n\n  id | name | category | width x depth x height (m) | spawn path\n\
+    \nThe id is what a scene graph refers to; the spawn path is what reaches UE.\nYou decide which to\
+    \ use, how many of each, and where they go — reuse entries\nfreely.\n\n- bridge01 | Bridge01 | meshes\
+    \ | 18.09x14.45x20.38 m | /Game/CastleRiver/Meshes/SM_Bridge01.SM_Bridge01\n- bridge02 | Bridge02\
+    \ | meshes | 18.09x14.45x19.12 m | /Game/CastleRiver/Meshes/SM_Bridge02.SM_Bridge02\n- bridge03 |\
+    \ Bridge03 | meshes | 18.61x14.57x19.12 m | /Game/CastleRiver/Meshes/SM_Bridge03.SM_Bridge03\n- cannon01\
+    \ | Cannon01 | meshes | 1.39x3.8x1.52 m | /Game/CastleRiver/Meshes/SM_Cannon01.SM_Cannon01\n- cannon02\
+    \ | Cannon02 | meshes | 2.58x1.83x0.47 m | /Game/CastleRiver/Meshes/SM_Cannon02.SM_Cannon02\n- cannon03\
+    \ | Cannon03 | meshes | 1.81x2.75x1.41 m | /Game/CastleRiver/Meshes/SM_Cannon03.SM_Cannon03\n- cannon04\
+    \ | Cannon04 | meshes | 1.43x1.32x0.56 m | /Game/CastleRiver/Meshes/SM_Cannon04.SM_Cannon04\n- entrance_large_pillar01\
+    \ | Entrance Large Pillar01 | meshes | 6.0x6.0x20.0 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar01.SM_EntranceLargePillar01\n\
+    - entrance_large_pillar02 | Entrance Large Pillar02 | meshes | 10.77x10.48x20.16 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar02.SM_EntranceLargePillar02\n\
+    - entrance_large_pillar03 | Entrance Large Pillar03 | meshes | 7.58x7.55x20.64 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar03.SM_EntranceLargePillar03\n\
+    - entrance_large_pillar04 | Entrance Large Pillar04 | meshes | 8.86x8.9x21.24 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar04.SM_EntranceLargePillar04\n\
+    - entrance_large_pillar05 | Entrance Large Pillar05 | meshes | 8.86x8.9x20.65 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar05.SM_EntranceLargePillar05\n\
+    - entrance_large_pillar06 | Entrance Large Pillar06 | meshes | 12.32x12.31x20.58 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar06.SM_EntranceLargePillar06\n\
+    - entrance_large_pillar07 | Entrance Large Pillar07 | meshes | 12.31x12.32x20.58 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar07.SM_EntranceLargePillar07\n\
+    - entrance_large_pillar08 | Entrance Large Pillar08 | meshes | 12.12x12.14x20.65 m | /Game/CastleRiver/Meshes/SM_EntranceLargePillar08.SM_EntranceLargePillar08\n\
+    - fabric01 | Fabric01 | meshes | 8.05x3.51x7.41 m | /Game/CastleRiver/Meshes/SM_Fabric01.SM_Fabric01\n\
+    - fabric02 | Fabric02 | meshes | 4.29x2.44x5.2 m | /Game/CastleRiver/Meshes/SM_Fabric02.SM_Fabric02\n\
+    - fabric03 | Fabric03 | meshes | 5.87x6.61x1.61 m | /Game/CastleRiver/Meshes/SM_Fabric03.SM_Fabric03\n\
+    - flag01 | Flag01 | meshes | 4.14x4.65x8.6 m | /Game/CastleRiver/Meshes/SM_Flag01.SM_Flag01\n- flag02\
+    \ | Flag02 | meshes | 1.79x2.58x7.93 m | /Game/CastleRiver/Meshes/SM_Flag02.SM_Flag02\n- floor01 |\
+    \ Floor01 | meshes | 6.0x6.0x0.5 m | /Game/CastleRiver/Meshes/SM_Floor01.SM_Floor01\n- floor02 | Floor02\
+    \ | meshes | 8.49x8.49x0.5 m | /Game/CastleRiver/Meshes/SM_Floor02.SM_Floor02\n- floor03 | Floor03\
+    \ | meshes | 6.36x6.36x0.5 m | /Game/CastleRiver/Meshes/SM_Floor03.SM_Floor03\n- floor04 | Floor04\
+    \ | meshes | 4.24x4.24x0.5 m | /Game/CastleRiver/Meshes/SM_Floor04.SM_Floor04\n- floor_stones01 |\
+    \ Floor Stones01 | meshes | 5.3x4.14x0.07 m | /Game/CastleRiver/Meshes/SM_FloorStones01.SM_FloorStones01\n\
+    - ground_plate04 | Ground Plate04 | meshes | 3.02x3.02x0.52 m | /Game/CastleRiver/Meshes/SM_GroundPlate04.SM_GroundPlate04\n\
+    - ground_plate05 | Ground Plate05 | meshes | 3.01x3.02x0.11 m | /Game/CastleRiver/Meshes/SM_GroundPlate05.SM_GroundPlate05\n\
+    - metal_cage02 | Metal Cage02 | meshes | 1.36x1.37x3.31 m | /Game/CastleRiver/Meshes/SM_MetalCage02.SM_MetalCage02\n\
+    - metal_gate01 | Metal Gate01 | meshes | 0.23x5.15x10.08 m | /Game/CastleRiver/Meshes/SM_MetalGate01.SM_MetalGate01\n\
+    - metal_gate04 | Metal Gate04 | meshes | 3.08x0.14x8.46 m | /Game/CastleRiver/Meshes/SM_MetalGate04.SM_MetalGate04\n\
+    - rock01 | Rock01 | meshes | 8.89x15.85x10.19 m | /Game/CastleRiver/Meshes/SM_Rock01.SM_Rock01\n-\
+    \ rock02 | Rock02 | meshes | 12.26x22.57x20.1 m | /Game/CastleRiver/Meshes/SM_Rock02.SM_Rock02\n-\
+    \ rope01 | Rope01 | meshes | 3.77x4.85x0.07 m | /Game/CastleRiver/Meshes/SM_Rope01.SM_Rope01\n- round_stones\
+    \ | Round Stones | meshes | 3.09x3.07x3.98 m | /Game/CastleRiver/Meshes/SM_RoundStones.SM_RoundStones\n\
+    - showroom01 | Showroom01 | meshes | 100.0x100.0x0.0 m | /Game/CastleRiver/Meshes/SM_Showroom01.SM_Showroom01\n\
+    - stairs02 | Stairs02 | meshes | 2.02x5.97x0.82 m | /Game/CastleRiver/Meshes/SM_Stairs02.SM_Stairs02\n\
+    - stairs03 | Stairs03 | meshes | 4.07x11.94x1.63 m | /Game/CastleRiver/Meshes/SM_Stairs03.SM_Stairs03\n\
+    - stairs_box01 | Stairs Box01 | meshes | 3.28x4.72x3.13 m | /Game/CastleRiver/Meshes/SM_StairsBox01.SM_StairsBox01\n\
+    - stairs_box02 | Stairs Box02 | meshes | 4.75x3.29x3.15 m | /Game/CastleRiver/Meshes/SM_StairsBox02.SM_StairsBox02\n\
+    - stairs_box03 | Stairs Box03 | meshes | 3.27x3.29x3.13 m | /Game/CastleRiver/Meshes/SM_StairsBox03.SM_StairsBox03\n\
+    - stone01 | Stone01 | meshes | 7.97x7.95x5.14 m | /Game/CastleRiver/Meshes/SM_Stone01.SM_Stone01\n\
+    - stone03 | Stone03 | meshes | 2.56x2.56x1.65 m | /Game/CastleRiver/Meshes/SM_Stone03.SM_Stone03\n\
+    - stone04 | Stone04 | meshes | 1.9x1.77x0.83 m | /Game/CastleRiver/Meshes/SM_Stone04.SM_Stone04\n\
+    - stone11 | Stone11 | meshes | 3.41x3.92x3.44 m | /Game/CastleRiver/Meshes/SM_Stone11.SM_Stone11\n\
+    - stone14 | Stone14 | meshes | 4.82x2.63x0.94 m | /Game/CastleRiver/Meshes/SM_Stone14.SM_Stone14\n\
+    - stone15 | Stone15 | meshes | 3.83x3.28x1.15 m | /Game/CastleRiver/Meshes/SM_Stone15.SM_Stone15\n\
+    - stone_border01 | Stone Border01 | meshes | 9.09x2.25x0.95 m | /Game/CastleRiver/Meshes/SM_StoneBorder01.SM_StoneBorder01\n\
+    - stone_border02 | Stone Border02 | meshes | 9.0x0.93x0.55 m | /Game/CastleRiver/Meshes/SM_StoneBorder02.SM_StoneBorder02\n\
+    - tomb_stone01 | Tomb Stone01 | meshes | 0.5x1.24x1.41 m | /Game/CastleRiver/Meshes/SM_TombStone01.SM_TombStone01\n\
+    - tomb_stone02 | Tomb Stone02 | meshes | 0.36x1.0x1.62 m | /Game/CastleRiver/Meshes/SM_TombStone02.SM_TombStone02\n\
+    - tomb_stone03 | Tomb Stone03 | meshes | 0.34x1.0x1.4 m | /Game/CastleRiver/Meshes/SM_TombStone03.SM_TombStone03\n\
+    - tomb_stone04 | Tomb Stone04 | meshes | 0.36x1.0x1.42 m | /Game/CastleRiver/Meshes/SM_TombStone04.SM_TombStone04\n\
+    - tomb_stone05 | Tomb Stone05 | meshes | 0.34x0.99x2.03 m | /Game/CastleRiver/Meshes/SM_TombStone05.SM_TombStone05\n\
+    - tomb_stone06 | Tomb Stone06 | meshes | 0.67x1.1x2.59 m | /Game/CastleRiver/Meshes/SM_TombStone06.SM_TombStone06\n\
+    - tomb_stone07 | Tomb Stone07 | meshes | 0.66x1.05x2.38 m | /Game/CastleRiver/Meshes/SM_TombStone07.SM_TombStone07\n\
+    - tomb_stone08 | Tomb Stone08 | meshes | 0.33x0.99x1.41 m | /Game/CastleRiver/Meshes/SM_TombStone08.SM_TombStone08\n\
+    - tomb_stone09 | Tomb Stone09 | meshes | 0.32x0.99x2.1 m | /Game/CastleRiver/Meshes/SM_TombStone09.SM_TombStone09\n\
+    - tomb_stone10 | Tomb Stone10 | meshes | 0.33x0.99x1.97 m | /Game/CastleRiver/Meshes/SM_TombStone10.SM_TombStone10\n\
+    - torch02 | Torch02 | meshes | 0.43x0.65x1.04 m | /Game/CastleRiver/Meshes/SM_Torch02.SM_Torch02\n\
+    - wall01 | Wall01 | meshes | 1.5x6.02x10.0 m | /Game/CastleRiver/Meshes/SM_Wall01.SM_Wall01\n- wall02\
+    \ | Wall02 | meshes | 2.17x6.47x10.12 m | /Game/CastleRiver/Meshes/SM_Wall02.SM_Wall02\n- wall03 |\
+    \ Wall03 | meshes | 2.18x5.92x10.1 m | /Game/CastleRiver/Meshes/SM_Wall03.SM_Wall03\n- wall04 | Wall04\
+    \ | meshes | 2.15x7.81x3.95 m | /Game/CastleRiver/Meshes/SM_Wall04.SM_Wall04\n- wall05 | Wall05 |\
+    \ meshes | 6.34x2.15x2.97 m | /Game/CastleRiver/Meshes/SM_Wall05.SM_Wall05\n- wall06 | Wall06 | meshes\
+    \ | 2.18x6.42x10.2 m | /Game/CastleRiver/Meshes/SM_Wall06.SM_Wall06\n- wall07 | Wall07 | meshes |\
+    \ 2.84x6.92x10.33 m | /Game/CastleRiver/Meshes/SM_Wall07.SM_Wall07\n- wall08 | Wall08 | meshes | 2.87x6.73x10.32\
+    \ m | /Game/CastleRiver/Meshes/SM_Wall08.SM_Wall08\n- wall09 | Wall09 | meshes | 6.94x5.27x10.33 m\
+    \ | /Game/CastleRiver/Meshes/SM_Wall09.SM_Wall09\n- wall_arch01 | Wall Arch01 | meshes | 3.49x10.53x17.5\
+    \ m | /Game/CastleRiver/Meshes/SM_WallArch01.SM_WallArch01\n- wall_arch03 | Wall Arch03 | meshes |\
+    \ 2.4x12.03x20.0 m | /Game/CastleRiver/Meshes/SM_WallArch03.SM_WallArch03\n- wall_arch04 | Wall Arch04\
+    \ | meshes | 6.61x2.18x10.26 m | /Game/CastleRiver/Meshes/SM_WallArch04.SM_WallArch04\n- wall_arch05\
+    \ | Wall Arch05 | meshes | 6.49x2.18x10.23 m | /Game/CastleRiver/Meshes/SM_WallArch05.SM_WallArch05\n\
+    - wall_arch06 | Wall Arch06 | meshes | 1.8x2.33x7.99 m | /Game/CastleRiver/Meshes/SM_WallArch06.SM_WallArch06\n\
+    - wall_leaves01 | Wall Leaves01 | meshes | 0.44x1.78x2.44 m | /Game/CastleRiver/Meshes/SM_WallLeaves01.SM_WallLeaves01\n\
+    - wall_leaves02 | Wall Leaves02 | meshes | 0.47x1.85x3.12 m | /Game/CastleRiver/Meshes/SM_WallLeaves02.SM_WallLeaves02\n\
+    - wall_leaves03 | Wall Leaves03 | meshes | 1.49x1.26x2.94 m | /Game/CastleRiver/Meshes/SM_WallLeaves03.SM_WallLeaves03\n\
+    - wall_leaves04 | Wall Leaves04 | meshes | 0.29x3.26x4.51 m | /Game/CastleRiver/Meshes/SM_WallLeaves04.SM_WallLeaves04\n\
+    - wall_leaves05 | Wall Leaves05 | meshes | 0.29x1.62x1.05 m | /Game/CastleRiver/Meshes/SM_WallLeaves05.SM_WallLeaves05\n\
+    - wall_leaves06 | Wall Leaves06 | meshes | 0.29x0.87x2.71 m | /Game/CastleRiver/Meshes/SM_WallLeaves06.SM_WallLeaves06\n\
+    - wood_plank01 | Wood Plank01 | meshes | 0.29x0.42x5.0 m | /Game/CastleRiver/Meshes/SM_WoodPlank01.SM_WoodPlank01\n\
+    - wood_plank02 | Wood Plank02 | meshes | 0.33x3.71x10.0 m | /Game/CastleRiver/Meshes/SM_WoodPlank02.SM_WoodPlank02\n\
+    - wood_plank03 | Wood Plank03 | meshes | 1.61x1.56x8.89 m | /Game/CastleRiver/Meshes/SM_WoodPlank03.SM_WoodPlank03\n\
+    - wood_plank04 | Wood Plank04 | meshes | 5.0x1.5x0.08 m | /Game/CastleRiver/Meshes/SM_WoodPlank04.SM_WoodPlank04\n\
+    - wood_plank05 | Wood Plank05 | meshes | 6.28x0.33x3.71 m | /Game/CastleRiver/Meshes/SM_WoodPlank05.SM_WoodPlank05\n\
+    - wood_plank06 | Wood Plank06 | meshes | 5.28x2.22x0.08 m | /Game/CastleRiver/Meshes/SM_WoodPlank06.SM_WoodPlank06\n\
+    - wood_plank07 | Wood Plank07 | meshes | 6.11x2.79x0.13 m | /Game/CastleRiver/Meshes/SM_WoodPlank07.SM_WoodPlank07\n\
+    - wood_plank08 | Wood Plank08 | meshes | 6.07x2.14x0.13 m | /Game/CastleRiver/Meshes/SM_WoodPlank08.SM_WoodPlank08\n\
+    - wooden_pier01 | Wooden Pier01 | meshes | 5.69x4.4x1.46 m | /Game/CastleRiver/Meshes/SM_WoodenPier01.SM_WoodenPier01\n\
     \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
     and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
     \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
@@ -165,7 +134,7 @@ inputs:
   skills: contracts
 assets:
   packs:
-  - Modular_Gardens
+  - CastleRiver
   note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
 verifiers:
 - name: semantic_requirements

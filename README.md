@@ -109,7 +109,7 @@ next to the evaluator's scores.
 
 ## What's in this repository
 
-This repository currently includes **129 Text-to-Scene and 72 Image-to-Scene task definitions**; more tasks are in preparation.
+This repository currently includes **150 Text-to-Scene and 72 Image-to-Scene task definitions**; more tasks are in preparation.
 
 | | |
 |---|---|

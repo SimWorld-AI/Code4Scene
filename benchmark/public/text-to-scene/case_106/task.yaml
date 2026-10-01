@@ -3,86 +3,123 @@
 id: case_106
 kind: scene_generation
 inputs:
-  prompt: "Scene:\n  Type: Vast abandoned stone city in a rugged mountain valley\n  Atmosphere: Quiet,\
-    \ hazy, overgrown\n  Lighting: Soft daylight\nSettlement layout:\n  Buildings: Dozens upon dozens\
-    \ of roofless medieval buildings\n  Distribution: Dense ruined districts on both riverbanks; tightest\
-    \ beside the river, thinning toward surrounding slopes\n  Organization: Sprawling, tightly packed,\
-    \ distinctly unordered; architecture conforming to natural rock rather than a grid\n  Local arrangement:\
-    \ Organic, along narrow dirt lanes, irregular courtyards, stepped rocky ground\n  Bare spaces: A few\
-    \ broad bare courtyards amid denser blocks\nWater and crossing:\n  River: Pale turquoise, fast-flowing;\
-    \ winding through and dividing the settlement\n  Bridge: Narrow arched stone bridge connecting the\
-    \ banks\nArchitecture:\n  Material: Weathered gray masonry throughout\n  Building types: Squat rectangular\
-    \ houses, taller blocky halls, broken towers\n  Larger structures:\n    Quantity: Several\n    Style:\
-    \ Gothic\n    Features: Pointed and rounded arches, arcades, buttress-like wall sections, partially\
-    \ collapsed upper stories\n  Typical remains: Most retain only jagged exterior walls and exposed room\
-    \ divisions\n  Timber remnants: A few include decayed frames, beams, balconies, or skeletal roofs\n\
-    \  Scattered additions: Stairs, retaining walls, rubble piles, fallen logs, isolated masonry fragments\
-    \ among ruins\nTerrain:\n  Valley floor: Uneven brown earth; broad rock shelves, cliffs, large pale\
-    \ boulders, gullies\n  Enclosure: Steep ridges\n  Beyond city: Rocky, lightly forested mountains\n\
-    Vegetation and mist:\n  Placement: Open spaces and settlement edges\n  Growth: Irregular mature leafy\
-    \ tree clusters, sparse woodland, scrub, grasses, weeds, small wildflowers\n  Clouds: Low white clouds\
-    \ and mist threading between slopes and buildings\n\n=== ASSET PALETTE ===\nBuild this scene using\
-    \ ONLY the assets below — asset search is not available\nin this run, so this list is your entire\
-    \ library. Format:\n\n  id | name | category | width x depth x height (m) | spawn path\n\nThe id is\
-    \ what a scene graph refers to; the spawn path is what reaches UE.\nYou decide which to use, how many\
-    \ of each, and where they go — reuse entries\nfreely.\n\n- acacia | Acacia | meshes | 11.71x11.55x8.47\
-    \ m | /Game/Ruins/Meshes/SM_Acacia.SM_Acacia\n- cliff | Cliff | meshes | 9.85x12.75x4.32 m | /Game/Ruins/Meshes/SM_Cliff.SM_Cliff\n\
-    - cloud_a | Cloud A | meshes | 52.26x171.1x55.0 m | /Game/Ruins/Meshes/SM_CloudA.SM_CloudA\n- cloud_b\
-    \ | Cloud B | meshes | 106.44x235.72x80.26 m | /Game/Ruins/Meshes/SM_CloudB.SM_CloudB\n- log_b | Log\
-    \ B | meshes | 2.33x5.04x1.62 m | /Game/Ruins/Meshes/SM_LogB.SM_LogB\n- rock_a | Rock A | meshes |\
-    \ 1.42x1.23x1.36 m | /Game/Ruins/Meshes/SM_RockA.SM_RockA\n- rock_b | Rock B | meshes | 5.83x4.84x2.17\
-    \ m | /Game/Ruins/Meshes/SM_RockB.SM_RockB\n- rock_c | Rock C | meshes | 4.48x4.47x1.9 m | /Game/Ruins/Meshes/SM_RockC.SM_RockC\n\
-    - rock_d | Rock D | meshes | 8.51x10.68x6.2 m | /Game/Ruins/Meshes/SM_RockD.SM_RockD\n- rock_e | Rock\
-    \ E | meshes | 6.05x6.36x4.77 m | /Game/Ruins/Meshes/SM_RockE.SM_RockE\n- rock_f | Rock F | meshes\
-    \ | 7.28x7.2x3.57 m | /Game/Ruins/Meshes/SM_RockF.SM_RockF\n- rock_g | Rock G | meshes | 4.59x5.43x2.52\
-    \ m | /Game/Ruins/Meshes/SM_RockG.SM_RockG\n- rock_h | Rock H | meshes | 25.32x17.33x7.85 m | /Game/Ruins/Meshes/SM_RockH.SM_RockH\n\
-    - ruins_base_a | Ruins Base A | meshes | 4.2x4.23x1.86 m | /Game/Ruins/Meshes/SM_RuinsBaseA.SM_RuinsBaseA\n\
-    - ruins_base_b | Ruins Base B | meshes | 4.21x4.23x1.87 m | /Game/Ruins/Meshes/SM_RuinsBaseB.SM_RuinsBaseB\n\
-    - ruins_base_c | Ruins Base C | meshes | 4.23x4.2x1.85 m | /Game/Ruins/Meshes/SM_RuinsBaseC.SM_RuinsBaseC\n\
-    - ruins_cart | Ruins Cart | meshes | 4.2x3.02x1.65 m | /Game/Ruins/Meshes/SM_RuinsCart.SM_RuinsCart\n\
-    - ruins_column_a | Ruins Column A | meshes | 1.45x1.45x1.62 m | /Game/Ruins/Meshes/SM_RuinsColumnA.SM_RuinsColumnA\n\
-    - ruins_column_b | Ruins Column B | meshes | 1.85x1.85x5.0 m | /Game/Ruins/Meshes/SM_RuinsColumnB.SM_RuinsColumnB\n\
-    - ruins_column_c | Ruins Column C | meshes | 1.45x1.45x5.0 m | /Game/Ruins/Meshes/SM_RuinsColumnC.SM_RuinsColumnC\n\
-    - ruins_column_d | Ruins Column D | meshes | 1.87x1.85x3.8 m | /Game/Ruins/Meshes/SM_RuinsColumnD.SM_RuinsColumnD\n\
-    - ruins_fountain_a | Ruins Fountain A | meshes | 4.3x4.3x1.82 m | /Game/Ruins/Meshes/SM_RuinsFountainA.SM_RuinsFountainA\n\
-    - ruins_fountain_b | Ruins Fountain B | meshes | 4.3x4.3x1.5 m | /Game/Ruins/Meshes/SM_RuinsFountainB.SM_RuinsFountainB\n\
-    - ruins_furniture_a | Ruins Furniture A | meshes | 5.67x4.96x2.59 m | /Game/Ruins/Meshes/SM_RuinsFurnitureA.SM_RuinsFurnitureA\n\
-    - ruins_furniture_b | Ruins Furniture B | meshes | 4.12x4.2x2.37 m | /Game/Ruins/Meshes/SM_RuinsFurnitureB.SM_RuinsFurnitureB\n\
-    - ruins_gate_a | Ruins Gate A | meshes | 4.6x7.11x5.48 m | /Game/Ruins/Meshes/SM_RuinsGateA.SM_RuinsGateA\n\
-    - ruins_home_a | Ruins Home A | meshes | 26.17x25.81x11.66 m | /Game/Ruins/Meshes/SM_RuinsHomeA.SM_RuinsHomeA\n\
-    - ruins_home_b | Ruins Home B | meshes | 19.46x19.45x11.89 m | /Game/Ruins/Meshes/SM_RuinsHomeB.SM_RuinsHomeB\n\
-    - ruins_lamp_post | Ruins Lamp Post | meshes | 2.12x1.64x5.34 m | /Game/Ruins/Meshes/SM_RuinsLampPost.SM_RuinsLampPost\n\
-    - ruins_military_a | Ruins Military A | meshes | 14.53x14.85x11.87 m | /Game/Ruins/Meshes/SM_RuinsMilitaryA.SM_RuinsMilitaryA\n\
-    - ruins_military_b | Ruins Military B | meshes | 6.29x6.21x9.63 m | /Game/Ruins/Meshes/SM_RuinsMilitaryB.SM_RuinsMilitaryB\n\
-    - ruins_rubble_a | Ruins Rubble A | meshes | 6.91x6.79x2.03 m | /Game/Ruins/Meshes/SM_RuinsRubbleA.SM_RuinsRubbleA\n\
-    - ruins_rubble_b | Ruins Rubble B | meshes | 6.34x6.29x1.3 m | /Game/Ruins/Meshes/SM_RuinsRubbleB.SM_RuinsRubbleB\n\
-    - ruins_rubble_c | Ruins Rubble C | meshes | 6.4x6.7x2.68 m | /Game/Ruins/Meshes/SM_RuinsRubbleC.SM_RuinsRubbleC\n\
-    - ruins_shelter_a | Ruins Shelter A | meshes | 16.01x15.68x3.34 m | /Game/Ruins/Meshes/SM_RuinsShelterA.SM_RuinsShelterA\n\
-    - ruins_shelter_b | Ruins Shelter B | meshes | 17.53x17.88x3.97 m | /Game/Ruins/Meshes/SM_RuinsShelterB.SM_RuinsShelterB\n\
-    - ruins_stairs_large_a | Ruins Stairs Large A | meshes | 2.19x4.01x2.03 m | /Game/Ruins/Meshes/SM_RuinsStairsLargeA.SM_RuinsStairsLargeA\n\
-    - ruins_stairs_large_b | Ruins Stairs Large B | meshes | 2.19x4.49x2.03 m | /Game/Ruins/Meshes/SM_RuinsStairsLargeB.SM_RuinsStairsLargeB\n\
-    - ruins_villa_a | Ruins Villa A | meshes | 43.0x36.92x15.28 m | /Game/Ruins/Meshes/SM_RuinsVillaA.SM_RuinsVillaA\n\
-    - ruins_villa_b | Ruins Villa B | meshes | 45.11x45.15x10.43 m | /Game/Ruins/Meshes/SM_RuinsVillaB.SM_RuinsVillaB\n\
-    - ruins_wall_arc_a | Ruins Wall Arc A | meshes | 5.94x2.98x6.01 m | /Game/Ruins/Meshes/SM_RuinsWallArcA.SM_RuinsWallArcA\n\
-    - ruins_wall_arc_b | Ruins Wall Arc B | meshes | 7.6x1.11x5.04 m | /Game/Ruins/Meshes/SM_RuinsWallArcB.SM_RuinsWallArcB\n\
-    - ruins_wall_high_a | Ruins Wall High A | meshes | 0.69x4.21x8.34 m | /Game/Ruins/Meshes/SM_RuinsWallHighA.SM_RuinsWallHighA\n\
-    - ruins_wall_high_b | Ruins Wall High B | meshes | 4.31x4.21x8.38 m | /Game/Ruins/Meshes/SM_RuinsWallHighB.SM_RuinsWallHighB\n\
-    - ruins_wall_high_c | Ruins Wall High C | meshes | 0.69x4.14x8.34 m | /Game/Ruins/Meshes/SM_RuinsWallHighC.SM_RuinsWallHighC\n\
-    - ruins_wall_high_d | Ruins Wall High D | meshes | 0.69x4.13x5.62 m | /Game/Ruins/Meshes/SM_RuinsWallHighD.SM_RuinsWallHighD\n\
-    - ruins_wall_low_a | Ruins Wall Low A | meshes | 2.53x4.46x1.6 m | /Game/Ruins/Meshes/SM_RuinsWallLowA.SM_RuinsWallLowA\n\
-    - ruins_wall_low_b | Ruins Wall Low B | meshes | 4.12x2.14x1.68 m | /Game/Ruins/Meshes/SM_RuinsWallLowB.SM_RuinsWallLowB\n\
-    - ruins_well | Ruins Well | meshes | 2.87x3.2x2.25 m | /Game/Ruins/Meshes/SM_RuinsWell.SM_RuinsWell\n\
-    - stump | Stump | meshes | 0.46x0.51x0.57 m | /Game/Ruins/Meshes/SM_Stump.SM_Stump\n\n=== THE TASK\
-    \ ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\nand arrangement\
-    \ the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result reports\
-    \ how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide for yourself\
-    \ when the scene\nmatches the description.\n"
+  prompt: "Create a sunlit Copenhagen-style canal district with roughly thirty attached four- to six-story\
+    \ townhouses lining narrow cobbled streets and rectangular waterways. Use slender weathered facades\
+    \ in muted red, yellow, blue, gray, beige, and brick, with white-framed windows, arched doors, steep\
+    \ tiled roofs, dormers, and chimneys. Run a main waterfront street along a stone quay and connect\
+    \ smaller streets across canals with short arched bridges, including one opening onto a broad promenade\
+    \ with rounded landings. Edge the reflective water with stepped stone, timber retaining walls, and\
+    \ iron railings. Add regular trees, ornate lamps, bollards, benches, signs, crossings, puddles, and\
+    \ sparse weeds.\n\n    === GROUND ===\n    Build the FLOOR FIRST, before placing anything else. Call\
+    \ the benchmark\n    tool `ground_pass` as your first build action: it carpets the whole 200 m\n \
+    \   plate deterministically from a tile chosen for this scene. If you skip it,\n    and do not tile\
+    \ a floor yourself, the scene renders as objects floating\n    over empty space -- which is a failed\
+    \ reconstruction no matter how good\n    the massing is. These palette entries are also flat surfaces\
+    \ you can tile\n    by hand if you prefer:\n\n      - SM_RoadRound | 8.0x8.0x0.00 m | /Game/NordicHarbour/Props/StreetModules/SM_RoadRound.SM_RoadRound\n\
+    \      - SM_Road | 8.0x8.0x0.00 m | /Game/NordicHarbour/Props/StreetModules/SM_Road.SM_Road\n    \
+    \  - SM_DockFloor | 3.0x3.0x0.05 m | /Game/NordicHarbour/Props/StreetModules/SM_DockFloor.SM_DockFloor\n\
+    \n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\n\
+    in this run, so this list is your entire library. Format:\n\n  id | name | category | width x depth\
+    \ x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches\
+    \ UE.\nYou decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n-\
+    \ building10_6_m | Building10 6 M | blueprints | 12.05x10.22x16.01 m | /Game/NordicHarbour/Blueprints/BP_Building10_6M.BP_Building10_6M_C\n\
+    - building1_2_m | Building1 2 M | blueprints | 7.48x4.05x19.63 m | /Game/NordicHarbour/Blueprints/BP_Building1_2M.BP_Building1_2M_C\n\
+    - building2_5_m | Building2 5 M | blueprints | 12.04x10.05x21.41 m | /Game/NordicHarbour/Blueprints/BP_Building2_5M.BP_Building2_5M_C\n\
+    - building3_3_m | Building3 3 M | blueprints | 6.5x12.04x20.72 m | /Game/NordicHarbour/Blueprints/BP_Building3_3M.BP_Building3_3M_C\n\
+    - building4_4_m | Building4 4 M | blueprints | 12.04x8.05x18.41 m | /Game/NordicHarbour/Blueprints/BP_Building4_4M.BP_Building4_4M_C\n\
+    - building5_3_m | Building5 3 M | blueprints | 6.05x7.23x19.0 m | /Game/NordicHarbour/Blueprints/BP_Building5_3M.BP_Building5_3M_C\n\
+    - building6_3_m | Building6 3 M | blueprints | 6.05x7.02x17.97 m | /Game/NordicHarbour/Blueprints/BP_Building6_3M.BP_Building6_3M_C\n\
+    - building7_4_m | Building7 4 M | blueprints | 8.05x7.02x15.1 m | /Game/NordicHarbour/Blueprints/BP_Building7_4M.BP_Building7_4M_C\n\
+    - building8_6_m | Building8 6 M | blueprints | 12.05x6.98x14.97 m | /Game/NordicHarbour/Blueprints/BP_Building8_6M.BP_Building8_6M_C\n\
+    - building9_5_m | Building9 5 M | blueprints | 10.05x7.07x14.97 m | /Game/NordicHarbour/Blueprints/BP_Building9_5M.BP_Building9_5M_C\n\
+    - corner_building1 | Corner Building1 | blueprints | 13.23x13.23x17.04 m | /Game/NordicHarbour/Blueprints/BP_CornerBuilding1.BP_CornerBuilding1_C\n\
+    - corner_building2 | Corner Building2 | blueprints | 12.76x12.76x19.04 m | /Game/NordicHarbour/Blueprints/BP_CornerBuilding2.BP_CornerBuilding2_C\n\
+    - corner_building4 | Corner Building4 | blueprints | 8.76x8.76x16.66 m | /Game/NordicHarbour/Blueprints/BP_CornerBuilding4.BP_CornerBuilding4_C\n\
+    - corner_building5 | Corner Building5 | blueprints | 11.13x13.54x14.97 m | /Game/NordicHarbour/Blueprints/BP_CornerBuilding5.BP_CornerBuilding5_C\n\
+    - grass_cluster_type1 | Grass Cluster Type1 | grass | 0.46x0.58x0.18 m | /Game/NordicHarbour/Props/Grass/SM_GrassCluster_Type1.SM_GrassCluster_Type1\n\
+    - grass_cluster_type2 | Grass Cluster Type2 | grass | 0.7x0.7x0.3 m | /Game/NordicHarbour/Props/Grass/SM_GrassCluster_Type2.SM_GrassCluster_Type2\n\
+    - street_grass | Street Grass | grass | 0.65x0.24x0.31 m | /Game/NordicHarbour/Props/Grass/SM_StreetGrass.SM_StreetGrass\n\
+    - street_grass_small | Street Grass Small | grass | 0.35x0.1x0.17 m | /Game/NordicHarbour/Props/Grass/SM_StreetGrassSmall.SM_StreetGrassSmall\n\
+    - bench | Bench | streetfurniture | 2.06x1.14x1.42 m | /Game/NordicHarbour/Props/StreetFurniture/SM_Bench.SM_Bench\n\
+    - boat_rings | Boat Rings | streetfurniture | 1.0x1.0x0.26 m | /Game/NordicHarbour/Props/StreetFurniture/SM_BoatRings.SM_BoatRings\n\
+    - electricity_box_type_a | Electricity Box Type A | streetfurniture | 0.4x0.3x1.3 m | /Game/NordicHarbour/Props/StreetFurniture/SM_ElectricityBox_TypeA.SM_ElectricityBox_TypeA\n\
+    - electricity_box_type_b | Electricity Box Type B | streetfurniture | 0.32x0.78x0.86 m | /Game/NordicHarbour/Props/StreetFurniture/SM_ElectricityBox_TypeB.SM_ElectricityBox_TypeB\n\
+    - electricity_box_type_c | Electricity Box Type C | streetfurniture | 0.38x0.53x1.09 m | /Game/NordicHarbour/Props/StreetFurniture/SM_ElectricityBox_TypeC.SM_ElectricityBox_TypeC\n\
+    - pallet | Pallet | streetfurniture | 1.21x0.81x0.16 m | /Game/NordicHarbour/Props/StreetFurniture/SM_Pallet.SM_Pallet\n\
+    - pilar | Pilar | streetfurniture | 0.5x0.5x1.09 m | /Game/NordicHarbour/Props/StreetFurniture/SM_Pilar.SM_Pilar\n\
+    - pivot | Pivot | streetfurniture | 0.16x0.16x1.14 m | /Game/NordicHarbour/Props/StreetFurniture/SM_Pivot.SM_Pivot\n\
+    - pivot_fence | Pivot Fence | streetfurniture | 1.5x0.06x0.41 m | /Game/NordicHarbour/Props/StreetFurniture/SM_Pivot_Fence.SM_Pivot_Fence\n\
+    - small_trash | Small Trash | streetfurniture | 0.73x0.74x1.01 m | /Game/NordicHarbour/Props/StreetFurniture/SM_SmallTrash.SM_SmallTrash\n\
+    - street_light | Street Light | streetfurniture | 0.53x0.53x4.03 m | /Game/NordicHarbour/Props/StreetFurniture/SM_StreetLight.SM_StreetLight\n\
+    - traffic_cone | Traffic Cone | streetfurniture | 0.52x0.52x0.56 m | /Game/NordicHarbour/Props/StreetFurniture/SM_TrafficCone.SM_TrafficCone\n\
+    - traffic_light_car | Traffic Light Car | streetfurniture | 0.3x0.51x1.09 m | /Game/NordicHarbour/Props/StreetFurniture/SM_TrafficLight_Car.SM_TrafficLight_Car\n\
+    - traffic_light_pedestrian | Traffic Light Pedestrian | streetfurniture | 0.48x0.29x0.87 m | /Game/NordicHarbour/Props/StreetFurniture/SM_TrafficLight_Pedestrian.SM_TrafficLight_Pedestrian\n\
+    - traffic_light_pole | Traffic Light Pole | streetfurniture | 0.19x0.19x3.0 m | /Game/NordicHarbour/Props/StreetFurniture/SM_TrafficLight_Pole.SM_TrafficLight_Pole\n\
+    - trash_blue | Trash Blue | streetfurniture | 1.05x0.89x1.38 m | /Game/NordicHarbour/Props/StreetFurniture/SM_Trash_Blue.SM_Trash_Blue\n\
+    - trash_brown | Trash Brown | streetfurniture | 1.07x0.91x1.38 m | /Game/NordicHarbour/Props/StreetFurniture/SM_Trash_Brown.SM_Trash_Brown\n\
+    - trash_yellow | Trash Yellow | streetfurniture | 1.05x0.89x1.38 m | /Game/NordicHarbour/Props/StreetFurniture/SM_Trash_Yellow.SM_Trash_Yellow\n\
+    - tree_base | Tree Base | streetfurniture | 1.0x2.0x0.07 m | /Game/NordicHarbour/Props/StreetFurniture/SM_TreeBase.SM_TreeBase\n\
+    - water_pump | Water Pump | streetfurniture | 0.5x0.5x1.27 m | /Game/NordicHarbour/Props/StreetFurniture/SM_WaterPump.SM_WaterPump\n\
+    - bridge | Bridge | streetmodules | 21.08x9.3x3.83 m | /Game/NordicHarbour/Props/StreetModules/SM_Bridge.SM_Bridge\n\
+    - corner_pavement | Corner Pavement | streetmodules | 4.32x4.33x0.12 m | /Game/NordicHarbour/Props/StreetModules/SM_CornerPavement.SM_CornerPavement\n\
+    - dock_corner | Dock Corner | streetmodules | 0.8x0.8x2.31 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_Corner.SM_Dock_Corner\n\
+    - dock_floor | Dock Floor | streetmodules | 3.0x3.0x0.05 m | /Game/NordicHarbour/Props/StreetModules/SM_DockFloor.SM_DockFloor\n\
+    - dock_floor_corner | Dock Floor Corner | streetmodules | 1.0x1.0x0.05 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_FloorCorner.SM_Dock_FloorCorner\n\
+    - dock_large_stairs | Dock Large Stairs | streetmodules | 2.0x1.4x1.05 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_LargeStairs.SM_Dock_LargeStairs\n\
+    - dock_lower_wall | Dock Lower Wall | streetmodules | 0.0x1.0x1.1 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_LowerWall.SM_Dock_LowerWall\n\
+    - dock_lower_wall_corner | Dock Lower Wall Corner | streetmodules | 1.1x1.1x1.1 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_LowerWallCorner.SM_Dock_LowerWallCorner\n\
+    - dock_lower_wall_outer_corner | Dock Lower Wall Outer Corner | streetmodules | 0.9x0.9x1.1 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_LowerWallOuterCorner.SM_Dock_LowerWallOuterCorner\n\
+    - dock_short_stairs | Dock Short Stairs | streetmodules | 1.2x1.0x0.6 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_ShortStairs.SM_Dock_ShortStairs\n\
+    - dock_stick | Dock Stick | streetmodules | 0.23x0.23x2.0 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_Stick.SM_Dock_Stick\n\
+    - dock_wall | Dock Wall | streetmodules | 0.49x1.0x2.31 m | /Game/NordicHarbour/Props/StreetModules/SM_Dock_Wall.SM_Dock_Wall\n\
+    - harbour | Harbour | streetmodules | 0.55x2.15x2.6 m | /Game/NordicHarbour/Props/StreetModules/SM_Harbour.SM_Harbour\n\
+    - harbour_corner | Harbour Corner | streetmodules | 6.38x6.23x2.6 m | /Game/NordicHarbour/Props/StreetModules/SM_HarbourCorner.SM_HarbourCorner\n\
+    - pavement | Pavement | streetmodules | 2.08x2.0x0.12 m | /Game/NordicHarbour/Props/StreetModules/SM_Pavement.SM_Pavement\n\
+    - pavement_small_corner | Pavement Small Corner | streetmodules | 2.08x2.08x0.12 m | /Game/NordicHarbour/Props/StreetModules/SM_PavementSmallCorner.SM_PavementSmallCorner\n\
+    - road | Road | streetmodules | 8.0x8.0x0.0 m | /Game/NordicHarbour/Props/StreetModules/SM_Road.SM_Road\n\
+    - road_round | Road Round | streetmodules | 8.0x8.0x0.0 m | /Game/NordicHarbour/Props/StreetModules/SM_RoadRound.SM_RoadRound\n\
+    - water_plane | Water Plane | streetmodules | 24.0x24.0x0.0 m | /Game/NordicHarbour/Props/StreetModules/SM_WaterPlane.SM_WaterPlane\n\
+    - traffic_sign_20kph | Traffic Sign 20kph | trafficsigns | 0.54x0.08x0.55 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_20kph.SM_TrafficSign_20kph\n\
+    - traffic_sign_30kph | Traffic Sign 30kph | trafficsigns | 0.54x0.08x0.55 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_30kph.SM_TrafficSign_30kph\n\
+    - traffic_sign_50kph | Traffic Sign 50kph | trafficsigns | 0.08x0.54x0.55 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_50kph.SM_TrafficSign_50kph\n\
+    - traffic_sign_bridge_warning | Traffic Sign Bridge Warning | trafficsigns | 0.08x0.52x0.47 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_BridgeWarning.SM_TrafficSign_BridgeWarning\n\
+    - traffic_sign_forbidden | Traffic Sign Forbidden | trafficsigns | 0.54x0.08x0.55 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_Forbidden.SM_TrafficSign_Forbidden\n\
+    - traffic_sign_no_parking | Traffic Sign No Parking | trafficsigns | 0.08x0.54x0.55 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_NoParking.SM_TrafficSign_NoParking\n\
+    - traffic_sign_pole | Traffic Sign Pole | trafficsigns | 0.09x0.03x2.0 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_Pole.SM_TrafficSign_Pole\n\
+    - traffic_sign_set_b_arrow | Traffic Sign Set B Arrow | trafficsigns | 0.75x0.38x0.71 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_SetB_Arrow.SM_TrafficSign_SetB_Arrow\n\
+    - traffic_sign_set_b_bike_lane | Traffic Sign Set B Bike Lane | trafficsigns | 0.08x0.54x0.55 m |\
+    \ /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_SetB_BikeLane.SM_TrafficSign_SetB_BikeLane\n\
+    - traffic_sign_set_b_car_bikes_forbidden | Traffic Sign Set B Car Bikes Forbidden | trafficsigns |\
+    \ 0.08x0.54x0.55 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_SetB_CarBikesForbidden.SM_TrafficSign_SetB_CarBikesForbidden\n\
+    - traffic_sign_set_b_dead_end | Traffic Sign Set B Dead End | trafficsigns | 0.5x0.08x0.5 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_SetB_DeadEnd.SM_TrafficSign_SetB_DeadEnd\n\
+    - traffic_sign_set_b_forbidden_turn | Traffic Sign Set B Forbidden Turn | trafficsigns | 0.54x0.08x0.55\
+    \ m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_SetB_ForbiddenTurn.SM_TrafficSign_SetB_ForbiddenTurn\n\
+    - traffic_sign_set_b_parking_lot | Traffic Sign Set B Parking Lot | trafficsigns | 0.08x0.5x0.5 m\
+    \ | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_SetB_ParkingLot.SM_TrafficSign_SetB_ParkingLot\n\
+    - traffic_sign_set_b_stop | Traffic Sign Set B Stop | trafficsigns | 0.51x0.08x0.51 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_SetB_Stop.SM_TrafficSign_SetB_Stop\n\
+    - traffic_sign_set_b_zebra_crossing | Traffic Sign Set B Zebra Crossing | trafficsigns | 0.08x0.5x0.5\
+    \ m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_SetB_ZebraCrossing.SM_TrafficSign_SetB_ZebraCrossing\n\
+    - traffic_sign_water_warning | Traffic Sign Water Warning | trafficsigns | 0.08x0.52x0.47 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_WaterWarning.SM_TrafficSign_WaterWarning\n\
+    - traffic_sign_yield | Traffic Sign Yield | trafficsigns | 0.08x0.52x0.47 m | /Game/NordicHarbour/Props/TrafficSigns/SM_TrafficSign_Yield.SM_TrafficSign_Yield\n\
+    - european_tree_type1 | European Tree Type1 | trees | 10.15x10.73x14.01 m | /Game/NordicHarbour/Props/Trees/SM_EuropeanTree_Type1.SM_EuropeanTree_Type1\n\
+    - european_tree_type2 | European Tree Type2 | trees | 5.07x5.83x9.2 m | /Game/NordicHarbour/Props/Trees/SM_EuropeanTree_Type2.SM_EuropeanTree_Type2\n\
+    - european_tree_type3 | European Tree Type3 | trees | 11.06x11.06x11.18 m | /Game/NordicHarbour/Props/Trees/SM_EuropeanTree_Type3.SM_EuropeanTree_Type3\n\
+    - european_tree_type4 | European Tree Type4 | trees | 8.39x8.22x10.23 m | /Game/NordicHarbour/Props/Trees/SM_EuropeanTree_Type4.SM_EuropeanTree_Type4\n\
+    - window_type_d | Window Type D | windows | 0.63x0.15x0.93 m | /Game/NordicHarbour/Props/Windows/SM_Window_TypeD.SM_Window_TypeD\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
+    \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
+    \ for yourself when the scene\nmatches the description.\n"
   init_map: /Game/SceneBench/BlankStage
   size_m: 200
   budget:
     tool_calls: 800
     wall_minutes: 180
   skills: contracts
+assets:
+  packs:
+  - NordicHarbour
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
 verifiers:
 - name: semantic_requirements
   semantic_retrieval:
@@ -90,6 +127,3 @@ verifiers:
     top_k: 5
   verification_bundle: requirements/case_106.bundle.json
 - name: overview_prompt_alignment
-assets:
-  packs:
-  - Ruins

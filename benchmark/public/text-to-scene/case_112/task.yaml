@@ -3,55 +3,61 @@
 id: case_112
 kind: scene_generation
 inputs:
-  prompt: "Create a misty industrial settlement of eight to ten rusted structures in a loose oval around\
-    \ an empty yard. Anchor one end with a tiered furnace and surround the rest with cylindrical workshops\
-    \ and chimney towers. Add sparse cables, smoke, warm glows, and boulders on a dark plateau above fog-filled\
-    \ ravines.\n\n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is\
-    \ not available\nin this run, so this list is your entire library. Format:\n\n  id | name | category\
-    \ | width x depth x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path\
-    \ is what reaches UE.\nYou decide which to use, how many of each, and where they go — reuse entries\n\
-    freely.\n\n- fence | Fence | architecture | 1.11x1.54x0.9 m | /Game/Scrapopolis/Meshes/Architecture/SM_Fence.SM_Fence\n\
-    - house_back | House Back | architecture | 5.05x10.34x5.1 m | /Game/Scrapopolis/Meshes/Architecture/SM_House_Back.SM_House_Back\n\
-    - house_door | House Door | architecture | 5.16x10.34x5.1 m | /Game/Scrapopolis/Meshes/Architecture/SM_House_Door.SM_House_Door\n\
-    - pipe_1 | Pipe 1 | architecture | 8.94x8.94x8.22 m | /Game/Scrapopolis/Meshes/Architecture/SM_Pipe_1.SM_Pipe_1\n\
-    - pipe_2 | Pipe 2 | architecture | 3.4x3.4x14.5 m | /Game/Scrapopolis/Meshes/Architecture/SM_Pipe_2.SM_Pipe_2\n\
-    - pipe_3 | Pipe 3 | architecture | 5.83x5.83x4.13 m | /Game/Scrapopolis/Meshes/Architecture/SM_Pipe_3.SM_Pipe_3\n\
-    - pipe_4 | Pipe 4 | architecture | 1.29x4.42x9.08 m | /Game/Scrapopolis/Meshes/Architecture/SM_Pipe_4.SM_Pipe_4\n\
-    - pipe_5 | Pipe 5 | architecture | 3.11x2.69x4.2 m | /Game/Scrapopolis/Meshes/Architecture/SM_Pipe_5.SM_Pipe_5\n\
-    - stairs | stairs | architecture | 4.36x5.24x3.64 m | /Game/Scrapopolis/Meshes/Architecture/SM_stairs.SM_stairs\n\
-    - support_1 | Support 1 | architecture | 15.35x15.35x0.96 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_1.SM_Support_1\n\
-    - support_10 | Support 10 | architecture | 8.73x8.73x1.57 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_10.SM_Support_10\n\
-    - support_2 | Support 2 | architecture | 5.39x5.39x0.31 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_2.SM_Support_2\n\
-    - support_3 | Support 3 | architecture | 9.26x9.26x1.95 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_3.SM_Support_3\n\
-    - support_4 | Support 4 | architecture | 16.57x16.57x0.67 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_4.SM_Support_4\n\
-    - support_5 | Support 5 | architecture | 9.1x9.1x0.9 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_5.SM_Support_5\n\
-    - support_6 | Support 6 | architecture | 3.66x3.66x0.8 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_6.SM_Support_6\n\
-    - support_7 | Support 7 | architecture | 8.93x8.87x1.0 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_7.SM_Support_7\n\
-    - support_8 | Support 8 | architecture | 9.73x9.73x0.86 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_8.SM_Support_8\n\
-    - support_9 | Support 9 | architecture | 7.15x7.14x1.16 m | /Game/Scrapopolis/Meshes/Architecture/SM_Support_9.SM_Support_9\n\
-    - wires_1 | wires 1 | architecture | 10.98x19.62x7.23 m | /Game/Scrapopolis/Meshes/Architecture/SM_wires_1.SM_wires_1\n\
-    - wires_2 | wires 2 | architecture | 14.08x9.72x3.59 m | /Game/Scrapopolis/Meshes/Architecture/SM_wires_2.SM_wires_2\n\
-    - wires_3 | wires 3 | architecture | 1.48x0.56x5.96 m | /Game/Scrapopolis/Meshes/Architecture/SM_wires_3.SM_wires_3\n\
-    - cube | Cube | basicshapes | 111.88x91.75x2.44 m | /Engine/BasicShapes/Cube.Cube\n- plane | Plane\
-    \ | basicshapes | 107.83x61.53x36.32 m | /Engine/BasicShapes/Plane.Plane\n- bench | bench | props\
-    \ | 2.5x1.99x1.0 m | /Game/Scrapopolis/Meshes/Props/SM_bench.SM_bench\n- box_1 | box 1 | props | 1.15x1.61x0.92\
-    \ m | /Game/Scrapopolis/Meshes/Props/SM_box_1.SM_box_1\n- box_2 | box 2 | props | 1.35x1.39x0.72 m\
-    \ | /Game/Scrapopolis/Meshes/Props/SM_box_2.SM_box_2\n- camp_fire | Camp Fire | props | 0.99x1.12x0.83\
-    \ m | /Game/Scrapopolis/Meshes/Props/SM_CampFire.SM_CampFire\n- candel | candel | props | 0.1x0.1x0.26\
-    \ m | /Game/Scrapopolis/Meshes/Props/SM_candel.SM_candel\n- cloth | cloth | props | 12.29x12.74x6.18\
-    \ m | /Game/Scrapopolis/Meshes/Props/SM_cloth.SM_cloth\n- debris_gear_4 | Debris gear 4 | props |\
-    \ 0.5x0.51x0.21 m | /Game/Scrapopolis/Meshes/Props/SM_Debris_gear_4.SM_Debris_gear_4\n- debris_gear_simulation\
-    \ | Debris gear Simulation | props | 6.49x6.47x2.05 m | /Game/Scrapopolis/Meshes/Props/SM_Debris_gear_Simulation.SM_Debris_gear_Simulation\n\
-    - debris_rock_1 | Debris rock 1 | props | 2.36x2.21x2.06 m | /Game/Scrapopolis/Meshes/Props/SM_Debris_rock_1.SM_Debris_rock_1\n\
-    - debris_rock_2 | Debris rock 2 | props | 4.37x3.25x4.39 m | /Game/Scrapopolis/Meshes/Props/SM_Debris_rock_2.SM_Debris_rock_2\n\
-    - debris_rock_3 | Debris rock 3 | props | 2.65x2.28x2.58 m | /Game/Scrapopolis/Meshes/Props/SM_Debris_rock_3.SM_Debris_rock_3\n\
-    - debris_rock_5 | Debris rock 5 | props | 4.27x3.71x0.57 m | /Game/Scrapopolis/Meshes/Props/SM_Debris_rock_5.SM_Debris_rock_5\n\
-    - flue | flue | props | 1.94x1.55x1.21 m | /Game/Scrapopolis/Meshes/Props/SM_flue.SM_flue\n- table\
-    \ | table | props | 2.8x2.35x1.07 m | /Game/Scrapopolis/Meshes/Props/SM_table.SM_table\n\n=== THE\
-    \ TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\nand arrangement\
-    \ the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result reports\
-    \ how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide for yourself\
-    \ when the scene\nmatches the description.\n"
+  prompt: "Daylight fills this stylized post-apocalyptic scene, revealing a supermarket beyond an open\
+    \ forecourt. The shop appears as a roofless cutaway: a shop floor enclosed by walls, broken windows\
+    \ across the front, and an entrance facing the forecourt. Inside, two parallel rows of retail shelves\
+    \ frame a broad central aisle that connects the entrance to the rear of the shop. Checkout counters\
+    \ stand just inside the entrance, while beverage coolers and frozen-goods freezers line the rear wall.\
+    \ Some shelves stand bare. On the other shelves sits a sparse assortment of groceries: cans, milk\
+    \ bottles, pasta boxes, and food packages. Metal storage racks and stacked boxes occupy one rear corner.\
+    \ Abandoned shopping carts cluster near the entrance. A large market sign is mounted above the entrance.\
+    \ A freestanding market sign stands in the forecourt. Parking stops and traffic cones trace the forecourt\
+    \ edges. Small garbage piles, a trash bin, and discarded tires occupy the outer perimeter; grass and\
+    \ small trees grow along the outer edges of the site. Worn surfaces and muted colors characterize\
+    \ the scene. The shop is abandoned, the daylight is clear, and circulation routes remain open.\n\n\
+    === ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\n\
+    in this run, so this list is your entire library. Format:\n\n  id | name | category | width x depth\
+    \ x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches\
+    \ UE.\nYou decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n-\
+    \ broken_windows_broken_window_001 | Broken windows Broken window 001 | structure | 0.014x6.579x2.772\
+    \ m | /Game/PostApocalypticMarket/Meshes/Market_BASE/SM_MARKET_BASES/SM_Broken_windows_Broken_window_001.SM_Broken_windows_Broken_window_001\n\
+    - market_bases_floor | MARKET BASES Floor | structure | 9.771x13.719x0.0 m | /Game/PostApocalypticMarket/Meshes/Market_BASE/SM_MARKET_BASES/SM_MARKET_BASES_Floor.SM_MARKET_BASES_Floor\n\
+    - market_bases_mega_market | MARKET BASES MEGA MARKET | structure | 9.153x1.778x5.352 m | /Game/PostApocalypticMarket/Meshes/Market_BASE/SM_MARKET_BASES/SM_MARKET_BASES_MEGA_MARKET.SM_MARKET_BASES_MEGA_MARKET\n\
+    - market_bases_super_market_base_001 | MARKET BASES Super Market Base 001 | structure | 10.001x14.191x3.427\
+    \ m | /Game/PostApocalypticMarket/Meshes/Market_BASE/SM_MARKET_BASES/SM_MARKET_BASES_Super_Market_Base_001.SM_MARKET_BASES_Super_Market_Base_001\n\
+    - market_bases_ventilation | MARKET BASES Ventilation | structure | 5.564x4.27x0.817 m | /Game/PostApocalypticMarket/Meshes/Market_BASE/SM_MARKET_BASES/SM_MARKET_BASES_Ventilation.SM_MARKET_BASES_Ventilation\n\
+    - market_lamps_sm_market_lamps | Market Lamps SM Market lamps | structure | 7.376x4.25x0.117 m | /Game/PostApocalypticMarket/Meshes/Market_BASE/SM_MARKET_BASES/SM_Market_Lamps_SM_Market_lamps.SM_Market_Lamps_SM_Market_lamps\n\
+    - garbage_medium | Garbage medium | exterior | 1.049x0.768x0.909 m | /Game/PostApocalypticMarket/Meshes/Objects_Exterior/Garbage_medium/SM_Garbage_medium.SM_Garbage_medium\n\
+    - garbage_small | Garbage small | exterior | 0.565x0.425x0.657 m | /Game/PostApocalypticMarket/Meshes/Objects_Exterior/Garbage_small/SM_Garbage_small.SM_Garbage_small\n\
+    - car_stopper | Car Stopper | exterior | 2.952x0.249x0.545 m | /Game/PostApocalypticMarket/Meshes/Objects_Exterior/SM_Car_Stopper/SM_Car_Stopper.SM_Car_Stopper\n\
+    - grass | Grass | exterior | 0.848x0.03x0.849 m | /Game/PostApocalypticMarket/Meshes/Objects_Exterior/SM_GRASS/SM_Grass.SM_Grass\n\
+    - ground | Ground | exterior | 38.64x38.64x0.0 m | /Game/PostApocalypticMarket/Meshes/Objects_Exterior/SM_Ground/SM_Ground.SM_Ground\n\
+    - market_cart | Market Cart | exterior | 0.968x1.678x1.317 m | /Game/PostApocalypticMarket/Meshes/Objects_Exterior/SM_Market_Cart/SM_Market_Cart.SM_Market_Cart\n\
+    - market_sign | Market Sign | exterior | 3.248x0.5x8.072 m | /Game/PostApocalypticMarket/Meshes/Objects_Exterior/SM_Market_Sign_/SM_Market_Sign_.SM_Market_Sign_\n\
+    - road_repair | Road repair | exterior | 2.708x0.928x1.324 m | /Game/PostApocalypticMarket/Meshes/Objects_Exterior/SM_Road_repair/SM_Road_repair.SM_Road_repair\n\
+    - storage_door | Storage Door | exterior | 1.323x0.124x2.373 m | /Game/PostApocalypticMarket/Meshes/Objects_Exterior/SM_Storage_door/SM_Storage_Door.SM_Storage_Door\n\
+    - super_market_door | Super Market Door | exterior | 1.325x0.053x2.967 m | /Game/PostApocalypticMarket/Meshes/Objects_Exterior/SM_Super_Market_Door_/SM_Super_Market_Door_.SM_Super_Market_Door_\n\
+    - small_tree | SMALL TREE | exterior | 4.456x3.871x6.349 m | /Game/PostApocalypticMarket/Meshes/Objects_Exterior/SM_TREES/SM_SMALL_TREE.SM_SMALL_TREE\n\
+    - thrash_bin | Thrash Bin | exterior | 1.535x1.341x2.053 m | /Game/PostApocalypticMarket/Meshes/Objects_Exterior/SM_Thrash_Bin/SM_Thrash_Bin.SM_Thrash_Bin\n\
+    - tires | Tires | exterior | 1.718x1.022x1.148 m | /Game/PostApocalypticMarket/Meshes/Objects_Exterior/SM_Tires/SM_Tires.SM_Tires\n\
+    - traffic_cone | Traffic cone | exterior | 0.676x0.676x0.86 m | /Game/PostApocalypticMarket/Meshes/Objects_Exterior/SM_Traffic_cone/SM_Traffic_cone.SM_Traffic_cone\n\
+    - utility_pole | Utility pole | exterior | 25.117x3.585x11.014 m | /Game/PostApocalypticMarket/Meshes/Objects_Exterior/SM_Utility_pole/SM_Utility_pole.SM_Utility_pole\n\
+    - wine | Wine | groceries | 0.149x0.148x0.489 m | /Game/PostApocalypticMarket/Meshes/Objects_Foods/SM_Wine/SM_Wine.SM_Wine\n\
+    - canned_food | canned food | groceries | 0.149x0.149x0.068 m | /Game/PostApocalypticMarket/Meshes/Objects_Foods/SM_canned_foods/SM_canned_food.SM_canned_food\n\
+    - food_package | food package | groceries | 0.315x0.26x0.362 m | /Game/PostApocalypticMarket/Meshes/Objects_Foods/SM_food_package/SM_food_package.SM_food_package\n\
+    - milk | milk | groceries | 0.187x0.186x0.49 m | /Game/PostApocalypticMarket/Meshes/Objects_Foods/SM_milk/SM_milk.SM_milk\n\
+    - pasta_box | pasta box | groceries | 0.315x0.216x0.4 m | /Game/PostApocalypticMarket/Meshes/Objects_Foods/SM_pasta_box/SM_pasta_box.SM_pasta_box\n\
+    - beverage_cooler | Beverage Cooler | shop_fittings | 1.198x1.234x2.796 m | /Game/PostApocalypticMarket/Meshes/Objects_Interior/SM_Beverage_Cooler/SM_Beverage_Cooler.SM_Beverage_Cooler\n\
+    - large_shelf | Large Shelf | shop_fittings | 3.809x0.527x2.406 m | /Game/PostApocalypticMarket/Meshes/Objects_Interior/SM_Large_Shelf/SM_Large_Shelf.SM_Large_Shelf\n\
+    - metal_storage_shelf | Metal Storage Shelf | shop_fittings | 4.304x1.254x2.81 m | /Game/PostApocalypticMarket/Meshes/Objects_Interior/SM_Metal_Storage_Shelf/SM_Metal_Storage_Shelf.SM_Metal_Storage_Shelf\n\
+    - shelf | Shelf | shop_fittings | 2.348x0.527x2.406 m | /Game/PostApocalypticMarket/Meshes/Objects_Interior/SM_Shelf/SM_Shelf.SM_Shelf\n\
+    - storage_box | Storage box | shop_fittings | 0.935x0.935x0.802 m | /Game/PostApocalypticMarket/Meshes/Objects_Interior/SM_Storage_box/SM_Storage_box.SM_Storage_box\n\
+    - checkout_counter | checkout counter | shop_fittings | 2.448x1.55x1.649 m | /Game/PostApocalypticMarket/Meshes/Objects_Interior/SM_checkout_counter/SM_checkout_counter.SM_checkout_counter\n\
+    - frozen_goods_freezer | frozen goods freezer | shop_fittings | 2.775x1.229x1.224 m | /Game/PostApocalypticMarket/Meshes/Objects_Interior/SM_frozen_goods_freezer/SM_frozen_goods_freezer.SM_frozen_goods_freezer\n\
+    \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
+    and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes — you are not\
+    \ expected to use all of it, but clean collision and\nfloating numbers are not on their own evidence\
+    \ that the scene is finished.\nTake screenshots, look at them, and judge the result against the description.\n"
   init_map: /Game/SceneBench/BlankStage
   size_m: 200
   budget:
@@ -67,4 +73,4 @@ verifiers:
 - name: overview_prompt_alignment
 assets:
   packs:
-  - Scrapopolis
+  - PostApocalypticMarket

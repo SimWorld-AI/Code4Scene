@@ -3,65 +3,113 @@
 id: case_067
 kind: scene_generation
 inputs:
-  prompt: "Create a brooding Gothic cathedral complex on an irregular dark rocky mass in cold blue-gray\
-    \ mist. Pack the central cathedral with connected halls, steep roofs, flying buttresses, arcades,\
-    \ spires, and open belfries. Place smaller monumental chapels, gatehouses, and towers around it, separated\
-    \ by deep chasms and connected to the core by long elevated bridges and narrow causeways. Keep the\
-    \ footprint asymmetrical, with wings radiating outward and broad empty gaps between outer structures.\
-    \ Form stepped cliffs, boulders, and gullies beneath balustraded terraces and pointed arches supported\
-    \ by tall piers. Use weathered brown-gray masonry, dark slate, unlit windows, and sparse warm lamps\
-    \ at bridges and entrances.\n\n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below\
-    \ — asset search is not available\nin this run, so this list is your entire library. Format:\n\n \
-    \ id | name | category | width x depth x height (m) | spawn path\n\nThe id is what a scene graph refers\
-    \ to; the spawn path is what reaches UE.\nYou decide which to use, how many of each, and where they\
-    \ go — reuse entries\nfreely.\n\n- cube | Cube | basicshapes | 73.75x36.5x2.0 m | /Engine/BasicShapes/Cube.Cube\n\
-    - floor5x5_2 | Floor5x5-2 | building | 5.0x5.0x1.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_Floor5x5-2.SM_Floor5x5-2\n\
-    - floor5x5_2_half | Floor5x5-2 Half | building | 5.0x5.0x1.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_Floor5x5-2Half.SM_Floor5x5-2Half\n\
-    - modular_tower_bottom_1 | Modular Tower Bottom-1 | building | 20.36x20.36x20.32 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_ModularTowerBottom-1.SM_ModularTowerBottom-1\n\
-    - modular_tower_bottom_2 | Modular Tower Bottom-2 | building | 20.36x20.36x20.32 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_ModularTowerBottom-2.SM_ModularTowerBottom-2\n\
-    - modular_tower_top_1 | Modular Tower Top-1 | building | 20.97x20.97x63.6 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_ModularTowerTop-1.SM_ModularTowerTop-1\n\
-    - modular_tower_top_2 | Modular Tower Top-2 | building | 19.01x19.01x63.6 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_ModularTowerTop-2.SM_ModularTowerTop-2\n\
-    - roof_spire_1 | Roof Spire-1 | building | 14.0x14.0x35.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_RoofSpire-1.SM_RoofSpire-1\n\
-    - slanted_roof_1 | Slanted Roof-1 | building | 5.0x5.0x5.1 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_SlantedRoof-1.SM_SlantedRoof-1\n\
-    - slanted_roof_1_corner | Slanted Roof-1 Corner | building | 5.0x5.0x5.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_SlantedRoof-1Corner.SM_SlantedRoof-1Corner\n\
-    - slanted_roof_2 | Slanted Roof-2 | building | 5.0x5.0x10.1 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_SlantedRoof-2.SM_SlantedRoof-2\n\
-    - sm_floor5x5_1 | SM Floor5x5-1 | building | 5.0x5.0x1.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_SM_Floor5x5-1.SM_SM_Floor5x5-1\n\
-    - stone_archway_half | Stone Archway-Half | building | 3.46x1.0x8.23 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneArchway-Half.SM_StoneArchway-Half\n\
-    - stone_column_1 | Stone Column-1 | building | 0.85x0.85x3.3 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneColumn-1.SM_StoneColumn-1\n\
-    - stone_pillar1_half | Stone Pillar1-Half | building | 1.88x1.88x2.5 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StonePillar1-Half.SM_StonePillar1-Half\n\
-    - stone_pillar2_full | Stone Pillar2-Full | building | 1.88x1.88x10.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StonePillar2-Full.SM_StonePillar2-Full\n\
-    - stone_pillar2_half | Stone Pillar2-Half | building | 2.06x2.06x2.5 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StonePillar2-Half.SM_StonePillar2-Half\n\
-    - stone_pillar3_full | Stone Pillar3-Full | building | 1.88x1.88x10.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StonePillar3-Full.SM_StonePillar3-Full\n\
-    - stone_pillar3_half | Stone Pillar3-Half | building | 1.88x1.88x5.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StonePillar3-Half.SM_StonePillar3-Half\n\
-    - stone_pillar4_full | Stone Pillar4-Full | building | 6.3x0.94x6.3 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StonePillar4-Full.SM_StonePillar4-Full\n\
-    - stone_pillar4_half | Stone Pillar4-Half | building | 1.88x1.88x2.5 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StonePillar4-Half.SM_StonePillar4-Half\n\
-    - stone_pillar5_full | Stone Pillar5-Full | building | 2.88x2.88x12.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StonePillar5-Full.SM_StonePillar5-Full\n\
-    - stone_railing_1 | Stone Railing-1 | building | 0.6x5.0x1.1 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneRailing-1.SM_StoneRailing-1\n\
-    - stone_stairs4x2 | Stone Stairs4x2 | building | 4.0x2.0x2.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneStairs4x2.SM_StoneStairs4x2\n\
-    - stone_stairs4x2_half | Stone Stairs4x2 Half | building | 2.0x2.0x1.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneStairs4x2Half.SM_StoneStairs4x2Half\n\
-    - stone_support_arch_1 | Stone Support Arch-1 | building | 1.0x7.5x2.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneSupportArch-1.SM_StoneSupportArch-1\n\
-    - stone_trim5x2_1 | Stone Trim5x2-1 | building | 1.49x5.0x1.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneTrim5x2-1.SM_StoneTrim5x2-1\n\
-    - stone_trim5x2_2 | Stone Trim5x2-2 | building | 1.49x5.0x2.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneTrim5x2-2.SM_StoneTrim5x2-2\n\
-    - stone_trim5x2_3 | Stone Trim5x2-3 | building | 5.91x5.91x2.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneTrim5x2-3.SM_StoneTrim5x2-3\n\
-    - stone_trim_small_5x1 | Stone Trim Small-5x1 | building | 0.6x5.0x0.15 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_StoneTrimSmall-5x1.SM_StoneTrimSmall-5x1\n\
-    - wall10x5_1 | Wall10x5-1 | building | 5.0x0.5x10.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_Wall10x5-1.SM_Wall10x5-1\n\
-    - wall10x5_2 | Wall10x5-2 | building | 5.0x0.9x10.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_Wall10x5-2.SM_Wall10x5-2\n\
-    - wall10x5_2_window | Wall10x5-2 Window | building | 5.0x0.9x10.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_Wall10x5-2Window.SM_Wall10x5-2Window\n\
-    - wall10x5_3 | Wall10x5-3 | building | 5.0x2.0x10.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_Wall10x5-3.SM_Wall10x5-3\n\
-    - wall5x5_1 | Wall5x5-1 | building | 5.0x0.5x5.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Building/SM_Wall5x5-1.SM_Wall5x5-1\n\
-    - dried_grass_card_1 | Dried Grass Card-1 | foliage | 10.63x10.63x0.25 m | /Game/ModularGothicFantasyEnvironment/Meshes/Foliage/SM_DriedGrassCard-1.SM_DriedGrassCard-1\n\
-    - vine_mesh | Vine Mesh | foliage | 0.86x1.68x8.75 m | /Game/ModularGothicFantasyEnvironment/Meshes/Foliage/SM_VineMesh.SM_VineMesh\n\
-    - angel_statue | Angel Statue | props | 1.55x1.84x5.89 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_AngelStatue.SM_AngelStatue\n\
-    - metal_gate_1 | Metal Gate-1 | props | 3.0x0.14x8.0 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_MetalGate-1.SM_MetalGate-1\n\
-    - metal_gate_2 | Metal Gate-2 | props | 5.41x0.41x7.95 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_MetalGate-2.SM_MetalGate-2\n\
-    - metal_gate_3 | Metal Gate-3 | props | 0.41x5.41x5.95 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_MetalGate-3.SM_MetalGate-3\n\
-    - metal_gate_4 | Metal Gate-4 | props | 5.31x0.32x7.04 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_MetalGate-4.SM_MetalGate-4\n\
-    - post_lantern_1 | Post Lantern-1 | props | 2.56x2.56x4.71 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_PostLantern-1.SM_PostLantern-1\n\
-    - stone_fountain | Stone Fountain | props | 5.0x5.0x1.25 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_StoneFountain.SM_StoneFountain\n\
-    - stone_fountain_half | Stone Fountain-Half | props | 5.3x5.3x1.25 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_StoneFountain-Half.SM_StoneFountain-Half\n\
-    - wall_lantern_1 | Wall Lantern-1 | props | 4.16x2.56x3.36 m | /Game/ModularGothicFantasyEnvironment/Meshes/Props/SM_WallLantern-1.SM_WallLantern-1\n\
-    - cliff_1 | Cliff-1 | rocks | 19.27x18.61x10.29 m | /Game/ModularGothicFantasyEnvironment/Meshes/Rocks/SM_Cliff-1.SM_Cliff-1\n\
-    - rock_1 | Rock-1 | rocks | 19.42x8.52x14.14 m | /Game/ModularGothicFantasyEnvironment/Meshes/Rocks/SM_Rock-1.SM_Rock-1\n\
+  prompt: "Create a bright stylized old European street with a gently curving cobblestone road between\
+    \ two continuous rows of roughly fifteen adjoining two- and three-story facades. Use saturated yellow,\
+    \ orange, red, cream, green, and dark brick, with varied widths and setbacks. Add slim brick sidewalks,\
+    \ raised curbs, tiled overhanging roofs, tall windows, occasional shutters and balconies, and heavy\
+    \ wooden doors in rounded stone arches. Place black wall lanterns, multi-lamp streetlights, and drainpipes\
+    \ along the corridor. Bend the street toward a larger brick building at one end and let the opposite\
+    \ end open onto a flat dark horizon beneath a vivid blue sky. Exclude people, vehicles, and vegetation.\n\
+    \n=== ASSET PALETTE ===\nBuild this scene using ONLY the assets below — asset search is not available\n\
+    in this run, so this list is your entire library. Format:\n\n  id | name | category | width x depth\
+    \ x height (m) | spawn path\n\nThe id is what a scene graph refers to; the spawn path is what reaches\
+    \ UE.\nYou decide which to use, how many of each, and where they go — reuse entries\nfreely.\n\n-\
+    \ street_building_01 | street building 01 | building_01 | 3.53x4.14x7.67 m | /Game/EuropeanStreet/Meshes/Building_01/SM_street_building_01.SM_street_building_01\n\
+    - street_building_02 | street building 02 | building_02 | 6.19x4.61x6.05 m | /Game/EuropeanStreet/Meshes/Building_02/SM_street_building_02.SM_street_building_02\n\
+    - street_building_03 | street building 03 | building_03 | 5.62x5.09x7.43 m | /Game/EuropeanStreet/Meshes/Building_03/SM_street_building_03.SM_street_building_03\n\
+    - street_building_04 | street building 04 | building_04 | 12.27x6.11x11.79 m | /Game/EuropeanStreet/Meshes/Building_04/SM_street_building_04.SM_street_building_04\n\
+    - street_building_05 | street building 05 | building_05 | 14.0x6.06x12.71 m | /Game/EuropeanStreet/Meshes/Building_05/SM_street_building_05.SM_street_building_05\n\
+    - street_building_06 | street building 06 | building_06 | 5.17x5.36x7.72 m | /Game/EuropeanStreet/Meshes/Building_06/SM_street_building_06.SM_street_building_06\n\
+    - street_building_07 | street building 07 | building_07 | 8.0x5.86x9.53 m | /Game/EuropeanStreet/Meshes/Building_07/SM_street_building_07.SM_street_building_07\n\
+    - street_building_08 | street building 08 | building_08 | 20.16x28.29x12.34 m | /Game/EuropeanStreet/Meshes/Building_08/SM_street_building_08.SM_street_building_08\n\
+    - street_building_01_copy_01 | street building 01 copy 01 | buildingscopies | 5.39x6.07x10.25 m |\
+    \ /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_01_copy_01.SM_street_building_01_copy_01\n\
+    - street_building_01_copy_02 | street building 01 copy 02 | buildingscopies | 6.63x7.0x10.25 m | /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_01_copy_02.SM_street_building_01_copy_02\n\
+    - street_building_02_copy_03 | street building 02 copy 03 | buildingscopies | 9.84x8.4x8.19 m | /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_02_copy_03.SM_street_building_02_copy_03\n\
+    - street_building_03_copy_04 | street building 03 copy 04 | buildingscopies | 7.66x6.94x8.81 m | /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_03_copy_04.SM_street_building_03_copy_04\n\
+    - street_building_04_copy_05 | street building 04 copy 05 | buildingscopies | 12.79x7.57x11.79 m |\
+    \ /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_04_copy_05.SM_street_building_04_copy_05\n\
+    - street_building_04_copy_06 | street building 04 copy 06 | buildingscopies | 13.16x9.64x11.79 m |\
+    \ /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_04_copy_06.SM_street_building_04_copy_06\n\
+    - street_building_04_copy_07 | street building 04 copy 07 | buildingscopies | 13.15x9.44x11.79 m |\
+    \ /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_04_copy_07.SM_street_building_04_copy_07\n\
+    - street_building_05_copy_08 | street building 05 copy 08 | buildingscopies | 14.98x9.27x12.71 m |\
+    \ /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_05_copy_08.SM_street_building_05_copy_08\n\
+    - street_building_05_copy_09 | street building 05 copy 09 | buildingscopies | 14.66x7.92x12.71 m |\
+    \ /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_05_copy_09.SM_street_building_05_copy_09\n\
+    - street_building_07_copy_10 | street building 07 copy 10 | buildingscopies | 9.04x7.63x9.53 m | /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_07_copy_10.SM_street_building_07_copy_10\n\
+    - street_building_07_copy_11 | street building 07 copy 11 | buildingscopies | 8.69x6.96x9.53 m | /Game/EuropeanStreet/Meshes/BuildingsCopies/SM_street_building_07_copy_11.SM_street_building_07_copy_11\n\
+    - sky_sphere | Sky Sphere | enginesky | 32768.0x32768.0x32768.0 m | /Engine/EngineSky/SM_SkySphere.SM_SkySphere\n\
+    - street_drain_pipe_001 | street drain pipe 001 | pipes | 0.23x0.27x6.24 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_001.SM_street_drain_pipe_001\n\
+    - street_drain_pipe_002 | street drain pipe 002 | pipes | 0.23x0.27x6.64 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_002.SM_street_drain_pipe_002\n\
+    - street_drain_pipe_003 | street drain pipe 003 | pipes | 0.25x0.26x11.53 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_003.SM_street_drain_pipe_003\n\
+    - street_drain_pipe_004 | street drain pipe 004 | pipes | 0.23x0.13x10.62 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_004.SM_street_drain_pipe_004\n\
+    - street_drain_pipe_005 | street drain pipe 005 | pipes | 0.34x0.14x8.92 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_005.SM_street_drain_pipe_005\n\
+    - street_drain_pipe_006 | street drain pipe 006 | pipes | 0.23x0.13x10.62 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_006.SM_street_drain_pipe_006\n\
+    - street_drain_pipe_007 | street drain pipe 007 | pipes | 0.25x0.26x8.88 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_007.SM_street_drain_pipe_007\n\
+    - street_drain_pipe_008 | street drain pipe 008 | pipes | 0.33x0.18x8.92 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_008.SM_street_drain_pipe_008\n\
+    - street_drain_pipe_009 | street drain pipe 009 | pipes | 0.34x0.23x11.5 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_009.SM_street_drain_pipe_009\n\
+    - street_drain_pipe_010 | street drain pipe 010 | pipes | 0.25x0.97x11.53 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_010.SM_street_drain_pipe_010\n\
+    - street_drain_pipe_011 | street drain pipe 011 | pipes | 0.3x0.18x6.7 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_011.SM_street_drain_pipe_011\n\
+    - street_drain_pipe_012 | street drain pipe 012 | pipes | 0.27x0.25x6.24 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_012.SM_street_drain_pipe_012\n\
+    - street_drain_pipe_013 | street drain pipe 013 | pipes | 0.25x0.29x11.53 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_013.SM_street_drain_pipe_013\n\
+    - street_drain_pipe_014 | street drain pipe 014 | pipes | 0.34x0.2x8.92 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_014.SM_street_drain_pipe_014\n\
+    - street_drain_pipe_015 | street drain pipe 015 | pipes | 0.34x0.19x8.92 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_015.SM_street_drain_pipe_015\n\
+    - street_drain_pipe_016 | street drain pipe 016 | pipes | 0.32x0.23x8.92 m | /Game/EuropeanStreet/Meshes/Pipes/SM_street_drain_pipe_016.SM_street_drain_pipe_016\n\
+    - street_sidewalk_001 | street sidewalk 001 | sidewalk | 84.32x23.86x0.77 m | /Game/EuropeanStreet/Meshes/Sidewalk/SM_street_sidewalk_001.SM_street_sidewalk_001\n\
+    - street_sidewalk_002 | street sidewalk 002 | sidewalk | 12.52x17.08x0.0 m | /Game/EuropeanStreet/Meshes/Sidewalk/SM_street_sidewalk_002.SM_street_sidewalk_002\n\
+    - street_street | street street | street | 83.53x21.13x0.0 m | /Game/EuropeanStreet/Meshes/Street/SM_street_street.SM_street_street\n\
+    - street_street_lamp_02 | street street lamp 02 | streetlamps | 0.37x0.83x1.09 m | /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02.SM_street_street_lamp_02\n\
+    - street_street_lamp_02_copy_01 | street street lamp 02 copy 01 | streetlamps | 0.37x0.83x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_01.SM_street_street_lamp_02_copy_01\n\
+    - street_street_lamp_02_copy_02 | street street lamp 02 copy 02 | streetlamps | 0.37x0.83x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_02.SM_street_street_lamp_02_copy_02\n\
+    - street_street_lamp_02_copy_03 | street street lamp 02 copy 03 | streetlamps | 0.36x0.83x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_03.SM_street_street_lamp_02_copy_03\n\
+    - street_street_lamp_02_copy_04 | street street lamp 02 copy 04 | streetlamps | 0.37x0.82x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_04.SM_street_street_lamp_02_copy_04\n\
+    - street_street_lamp_02_copy_05 | street street lamp 02 copy 05 | streetlamps | 0.37x0.82x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_05.SM_street_street_lamp_02_copy_05\n\
+    - street_street_lamp_02_copy_06 | street street lamp 02 copy 06 | streetlamps | 0.37x0.81x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_06.SM_street_street_lamp_02_copy_06\n\
+    - street_street_lamp_02_copy_07 | street street lamp 02 copy 07 | streetlamps | 0.37x0.81x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_07.SM_street_street_lamp_02_copy_07\n\
+    - street_street_lamp_02_copy_08 | street street lamp 02 copy 08 | streetlamps | 0.48x0.76x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_08.SM_street_street_lamp_02_copy_08\n\
+    - street_street_lamp_02_copy_09 | street street lamp 02 copy 09 | streetlamps | 0.37x0.83x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_09.SM_street_street_lamp_02_copy_09\n\
+    - street_street_lamp_02_copy_10 | street street lamp 02 copy 10 | streetlamps | 0.37x0.83x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_10.SM_street_street_lamp_02_copy_10\n\
+    - street_street_lamp_02_copy_11 | street street lamp 02 copy 11 | streetlamps | 0.37x0.83x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_11.SM_street_street_lamp_02_copy_11\n\
+    - street_street_lamp_02_copy_12 | street street lamp 02 copy 12 | streetlamps | 0.37x0.82x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_12.SM_street_street_lamp_02_copy_12\n\
+    - street_street_lamp_02_copy_13 | street street lamp 02 copy 13 | streetlamps | 0.39x0.8x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_13.SM_street_street_lamp_02_copy_13\n\
+    - street_street_lamp_02_copy_14 | street street lamp 02 copy 14 | streetlamps | 0.39x0.8x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_14.SM_street_street_lamp_02_copy_14\n\
+    - street_street_lamp_02_copy_15 | street street lamp 02 copy 15 | streetlamps | 0.45x0.78x1.09 m |\
+    \ /Game/EuropeanStreet/Meshes/StreetLamps/SM_street_street_lamp_02_copy_15.SM_street_street_lamp_02_copy_15\n\
+    - street_street_lamp_pole_001 | street street lamp pole 001 | streetlampspoles | 0.32x0.95x3.26 m\
+    \ | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_001.SM_street_street_lamp_pole_001\n\
+    - street_street_lamp_pole_01_copy_01 | street street lamp pole 01 copy 01 | streetlampspoles | 0.32x0.95x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_01.SM_street_street_lamp_pole_01_copy_01\n\
+    - street_street_lamp_pole_01_copy_02 | street street lamp pole 01 copy 02 | streetlampspoles | 0.35x0.97x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_02.SM_street_street_lamp_pole_01_copy_02\n\
+    - street_street_lamp_pole_01_copy_03 | street street lamp pole 01 copy 03 | streetlampspoles | 0.35x0.97x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_03.SM_street_street_lamp_pole_01_copy_03\n\
+    - street_street_lamp_pole_01_copy_04 | street street lamp pole 01 copy 04 | streetlampspoles | 0.5x0.99x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_04.SM_street_street_lamp_pole_01_copy_04\n\
+    - street_street_lamp_pole_01_copy_05 | street street lamp pole 01 copy 05 | streetlampspoles | 0.5x0.99x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_05.SM_street_street_lamp_pole_01_copy_05\n\
+    - street_street_lamp_pole_01_copy_06 | street street lamp pole 01 copy 06 | streetlampspoles | 0.5x0.99x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_06.SM_street_street_lamp_pole_01_copy_06\n\
+    - street_street_lamp_pole_01_copy_07 | street street lamp pole 01 copy 07 | streetlampspoles | 0.5x0.99x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_07.SM_street_street_lamp_pole_01_copy_07\n\
+    - street_street_lamp_pole_01_copy_08 | street street lamp pole 01 copy 08 | streetlampspoles | 0.67x0.97x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_08.SM_street_street_lamp_pole_01_copy_08\n\
+    - street_street_lamp_pole_01_copy_09 | street street lamp pole 01 copy 09 | streetlampspoles | 0.66x0.97x3.26\
+    \ m | /Game/EuropeanStreet/Meshes/StreetLampsPoles/SM_street_street_lamp_pole_01_copy_09.SM_street_street_lamp_pole_01_copy_09\n\
     \n=== THE TASK ===\nRebuild the place described above on the 200 m x 200 m plate, at the density\n\
     and arrangement the description calls for. Budget is 800 tool calls and 180\nminutes; every tool result\
     \ reports how much of both you have spent. Spend as\nmuch or as little as the job needs, and decide\
@@ -72,6 +120,10 @@ inputs:
     tool_calls: 800
     wall_minutes: 180
   skills: contracts
+assets:
+  packs:
+  - EuropeanStreet
+  note: the content this task is built out of; provisioning mounts exactly these and fails if it cannot
 verifiers:
 - name: semantic_requirements
   semantic_retrieval:
@@ -79,6 +131,3 @@ verifiers:
     top_k: 5
   verification_bundle: requirements/case_067.bundle.json
 - name: overview_prompt_alignment
-assets:
-  packs:
-  - ModularGothicFantasyEnvironment
