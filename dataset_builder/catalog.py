@@ -18,6 +18,8 @@ SETTINGS = (
 )
 BLANK_STAGE = "/Game/SceneBench/BlankStage"
 BUILDER_ROOTS = ("Code4SceneInputs", "Code4SceneGT")
+#: Content roots the builder generates itself from a scene's ``supplements`` (no download).
+GENERATED_ROOTS = ("Cabin_Pack",)
 GAME_PATH = re.compile(r"/Game/[A-Za-z0-9_./-]+")
 
 

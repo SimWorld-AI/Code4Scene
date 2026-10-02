@@ -61,9 +61,13 @@ copy `<UE>/Templates/TP_BlankBP/Config` into a new directory, copy
 `Content/` directory. A minimal `.uproject` with only `"FileVersion": 3` and an
 empty `"Plugins"` list also works; step 3 adds the plugins the builder needs.
 
-The indoor scene `cyberpunk-toilet` also uses Epic's **Starter Content**
-(`Content/StarterContent`). Add it with *Add > Add Feature or Content Pack >
-Content > Starter Content*.
+The indoor scene `cyberpunk-toilet` and the outdoor scene `old-building` also
+use Epic's **Starter Content** (`Content/StarterContent`). Add it with *Add >
+Add Feature or Content Pack > Content > Starter Content*. For `old-building` the
+`gt` and `inputs` steps copy its `T_MacroVariation` texture to
+`/Game/Cabin_Pack/Master_Mat/T_MacroVariation`, which the pack's materials
+reference but the pack does not ship (the scene's `supplements` in
+`scene.json`).
 
 ## 2. Install the packs
 

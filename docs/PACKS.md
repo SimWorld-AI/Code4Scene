@@ -69,6 +69,12 @@ pack: `Chefchaouen_Village`, `EuropeanStreet`, `Ruins`, `ArchVizInteriorVol2`, `
 Feature or Content Pack > Starter Content*, or tick **Starter Content** when you
 create the project. It must be at `Content/StarterContent`.
 
+The `OldBuilding` materials also reference
+`/Game/Cabin_Pack/Master_Mat/T_MacroVariation`, which that pack does not ship.
+The dataset builder creates it (as `Content/Cabin_Pack`) from Starter
+Content's `T_MacroVariation` before it builds the `old-building` levels, so
+there is nothing to download for `Cabin_Pack`.
+
 ## Which settings need which packs
 
 You only need the packs for the settings you plan to build.
@@ -77,14 +83,14 @@ You only need the packs for the settings you plan to build.
 |---|---|---|---|
 | Text-to-scene | 150 | 31 | $736.85 + 15 packs without a recorded price |
 | Image-to-scene, indoor | 25 | 9 + Starter Content | $224.93 + 1 pack without a recorded price |
-| Image-to-scene, outdoor | 50 | 10 | $385.92 + `TrainStation` (not yet identified) |
+| Image-to-scene, outdoor | 50 | 10 + Starter Content | $385.92 + `TrainStation` (not yet identified) |
 | All public cases | 225 | 48 + Starter Content | $1,310.72 + `TrainStation`, 15 text-to-scene packs and 1 image-to-scene pack without a recorded price |
 
 Prices are Personal-tier list prices in USD, without discounts or taxes. Street New York and Russian Winter Town are used by both text-to-scene and outdoor cases, so they are counted once in the total.
 
 - **Text-to-scene:** `Abandoned_Psychiatric_Hospital`, `AbandonedBuilding`, `AncientRuins`, `BattlegroundKit`, `Big_Town`, `bugchonmunhwa`, `CastleRiver`, `Chefchaouen_Village`, `CityCore_Paris`, `ContainerYard`, `CyberPunk_City_VR_Mobile`, `CyberPunk_street`, `EgyptianTemple`, `Elven_Valley`, `EuropeanStreet`, `FactoryEnvironment`, `Hangar`, `Hong_Kong_Street`, `MedievalBuildings01`, `MedievalScandinavianVillage`, `Modular_Gardens`, `ModularGothicFantasyEnvironment`, `NordicHarbour`, `Offworld`, `PostApocalypticMarket`, `Ruins`, `Scrapopolis`, `Street_NY`, `UrbanDecay`, `Wild_West_Race`, `WinterTown`.
 - **Image-to-scene, indoor:** `ArchVizInteriorVol2`, `CyberpunkWC`, `Dungeon`, `HighSchoolClassroom`, `HorrorEnviroment`, `Laboratory_in_Loft_Style`, `MedievalForgePack`, `Office`, `StarterContent`, `VictorianRoom`.
-- **Image-to-scene, outdoor:** `AfricanLocation`, `Diner`, `Gas_Station`, `MiddleEasternTown`, `Modular_house`, `OldBuilding`, `RuralAustralia`, `Street_NY`, `TrainStation`, `WinterTown`.
+- **Image-to-scene, outdoor:** `AfricanLocation`, `Diner`, `Gas_Station`, `MiddleEasternTown`, `Modular_house`, `OldBuilding`, `RuralAustralia`, `StarterContent`, `Street_NY`, `TrainStation`, `WinterTown`.
 
 The per-case list is in `used_by` in [`benchmark/packs.yaml`](../benchmark/packs.yaml).
 
@@ -136,7 +142,7 @@ The last column lists settings with case counts. T2S = text-to-scene, I2S-in = i
 | `Ruins` | [Ruins](https://www.fab.com/listings/e108cf47-d633-4584-a392-0eef0caaf484) | Anil Isbilir | Standard License | $49.99 | Yes | 4.20-4.27, 5.0-5.8 | complete project | T2S (6) |
 | `RuralAustralia` | [Rural Australia](https://www.fab.com/listings/1c1467ce-a2f5-4be1-8988-9069f90a8571) | Andrew Svanberg Hamilton | UE Marketplace | Free | Yes | 4.26-4.27, 5.0-5.4 | asset pack | I2S-out (3) |
 | `Scrapopolis` | [Scrapopolis - Steampunk village](https://www.fab.com/listings/fa19fa3a-62e4-4528-82dc-19bc66521f3b) | ARK.KRA | — | — | Yes | — | — | T2S (4) |
-| `StarterContent` | Starter Content (ships with the engine) | Epic Games | Unreal Engine EULA (engine content) | Free | n/a | 5.8 | engine feature pack | I2S-in (2) |
+| `StarterContent` | Starter Content (ships with the engine) | Epic Games | Unreal Engine EULA (engine content) | Free | n/a | 5.8 | engine feature pack | I2S-in (2), I2S-out (6) |
 | `Street_NY` | [Street New York](https://www.fab.com/listings/d327e87a-7aaf-4e4e-b3a9-69e98e0bc25a) | ART EQUILIBRIUM | Standard License | $34.99 | Yes | 4.20-5.8 | asset pack | T2S (5), I2S-out (5) |
 | `TrainStation` | **Not yet identified** (see below) | ? | ? | ? | Yes | ? | ? | I2S-out (5) |
 | `UrbanDecay` | [Post-Industrial Environment](https://www.fab.com/listings/060b1fea-0ed5-4172-b59d-165ea89ae606) | Joshua Giles | UE Marketplace | $49.99 | Yes | 4.25-5.1 | asset pack | T2S (5) |

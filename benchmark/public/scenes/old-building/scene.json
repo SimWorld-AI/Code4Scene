@@ -23,9 +23,16 @@
     "/Game/OldBuilding/Meshes/Windows/Window02_FullTrim.Window02_FullTrim",
     "/Game/OldBuilding/Meshes/Walls/Pillar.Pillar"
   ],
-  "known_unresolved_dependencies": [
-    "/Game/Cabin_Pack/Master_Mat/T_MacroVariation"
+  "supplements": [
+    {
+      "op": "duplicate_asset",
+      "source": "/Game/StarterContent/Textures/T_MacroVariation",
+      "destination": "/Game/Cabin_Pack/Master_Mat/T_MacroVariation",
+      "asset_class": "Texture2D",
+      "reason": "the pack's pallet materials reference this texture, which the pack does not ship"
+    }
   ],
+  "known_unresolved_dependencies": [],
   "expected_fingerprint": {
     "file": "gt.fingerprint.json",
     "algorithm": "c4s-fp-1",
