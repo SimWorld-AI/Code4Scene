@@ -42,6 +42,8 @@ def run_task(task):
     kind = task["kind"]
     if kind == "blank_stage":
         return c4s_levels.create_blank_stage(task["map"], task.get("force", False))
+    if kind == "supplement":
+        return c4s_levels.ensure_supplements(task["ops"])
     if kind == "canonicalize":
         result = c4s_levels.canonicalize(task["scene"], task.get("force", False))
         if task.get("export"):

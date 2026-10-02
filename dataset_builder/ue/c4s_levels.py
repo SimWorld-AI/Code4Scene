@@ -385,6 +385,38 @@ def templates_for(ops, index):
     return result
 
 
+def ensure_supplements(ops):
+    """Generate content a scene needs that no pack ships (idempotent).
+
+    ``duplicate_asset`` copies an installed asset to the package path a pack
+    references, e.g. Starter Content's macro texture for the
+    ``/Game/Cabin_Pack/...`` texture that OldBuilding's materials expect. No
+    map or material is resaved.
+    """
+    library = unreal.EditorAssetLibrary
+    done = []
+    for op in ops:
+        if op.get("op") != "duplicate_asset":
+            raise BuildError("unknown supplement op {}".format(op.get("op")))
+        source, destination = op["source"], op["destination"]
+        if library.does_asset_exist(destination):
+            asset = library.load_asset(destination)
+            created = False
+        else:
+            if library.load_asset(source) is None:
+                raise BuildError("supplement source {} is not installed (install the pack that "
+                                 "ships it, e.g. Starter Content)".format(source))
+            asset = library.duplicate_asset(source, destination)
+            if asset is None or not library.save_asset(destination, only_if_is_dirty=False):
+                raise BuildError("could not create {} from {}".format(destination, source))
+            created = True
+        expected = op.get("asset_class")
+        if expected and asset.get_class().get_name() != expected:
+            raise BuildError("{} is a {}, expected {}".format(destination, asset.get_class().get_name(), expected))
+        done.append({"destination": destination, "source": source, "created": created})
+    return {"supplements": done}
+
+
 def canonicalize(scene, force=False):
     target = scene["ground_truth_map"]
     if unreal.EditorAssetLibrary.does_asset_exist(target) and not force:

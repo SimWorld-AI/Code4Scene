@@ -10,8 +10,10 @@ Steps (run in this order by ``all``):
   check         host-side check that every required pack folder and key asset
                 is installed under <Project>/Content (no editor needed)
   blank         create the empty start level used by text-to-scene tasks
-  gt            build each GT level from its pack demo map (identity tags +
-                scene patches) and export a scene snapshot
+  gt            generate any scene supplements (e.g. a stand-in texture a pack
+                references but does not ship), build each GT level from its
+                pack demo map (identity tags + scene patches) and export a
+                scene snapshot
   inputs        build each Input level from the local GT and its recipe and
                 export a scene snapshot
   verify        compare the exported snapshots with the shipped fingerprints
@@ -157,6 +159,21 @@ def recipe_assets(recipe: dict) -> list[str]:
     return assets
 
 
+def supplement_sources(scene: dict) -> list[str]:
+    """Assets a scene's supplements are generated from; they must be installed."""
+    return [op["source"] for op in scene.get("supplements") or () if op.get("source")]
+
+
+def supplement_tasks(scene_ids: list[str]) -> list[dict]:
+    """One editor task per scene that has supplements (idempotent in the editor)."""
+    tasks = []
+    for scene_id in scene_ids:
+        ops = catalog.load_scene(scene_id).get("supplements") or []
+        if ops:
+            tasks.append({"kind": "supplement", "id": f"{scene_id}:supplements", "ops": ops})
+    return tasks
+
+
 def check_packs(project: Path, cases: list[catalog.Case]) -> dict:
     content = project.parent / "Content"
     listing = catalog.pack_listing()
@@ -165,12 +182,13 @@ def check_packs(project: Path, cases: list[catalog.Case]) -> dict:
         if not case.task_text:
             report["cases"][case.case_id] = {"status": "no_task_definition"}
             continue
-        roots = [p for p in case.packs if p not in catalog.BUILDER_ROOTS]
+        roots = [p for p in case.packs if p not in catalog.BUILDER_ROOTS + catalog.GENERATED_ROOTS]
         assets: list[str] = []
         if case.is_i2s:
             scene = catalog.load_scene(case.scene_id)
             roots = sorted(set(roots) | set(scene.get("content_roots") or []))
-            assets = list(scene.get("key_assets") or []) + recipe_assets(case.recipe)
+            assets = (list(scene.get("key_assets") or []) + recipe_assets(case.recipe)
+                      + supplement_sources(scene))
         else:
             assets = catalog.palette_assets(case)
         missing_roots = [r for r in roots if not (content / r).is_dir()]
@@ -301,7 +319,7 @@ def step_gt(args, cases, ready):
                       "force": args.force,
                       "export": str(args.dataset / "snapshots" / "gt" / f"{scene_id}.scene.json")})
     if tasks:
-        run_job(args, "gt", tasks)
+        run_job(args, "gt", supplement_tasks([t["id"] for t in tasks]) + tasks)
 
 
 def step_inputs(args, cases, ready):
@@ -316,7 +334,8 @@ def step_inputs(args, cases, ready):
         tasks.append({"kind": "materialize", "id": case.case_id, "recipe": case.recipe, "force": args.force,
                       "export": str(args.dataset / "snapshots" / "input" / f"{case.case_id}.scene.json")})
     if tasks:
-        run_job(args, "inputs", tasks)
+        scenes = selected_scenes([c for c in cases if c.case_id in {t["id"] for t in tasks}])
+        run_job(args, "inputs", supplement_tasks(scenes) + tasks)
 
 
 def step_verify(args, cases):

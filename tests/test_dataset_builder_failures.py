@@ -243,3 +243,28 @@ def test_a_recipe_that_names_a_level_outside_the_builders_roots_is_not_built(tmp
                               recipe={"input_map": "/Game/StarterContent/Maps/Minimal"})
     build.step_inputs(args, [foreign], {})
     assert dispatched == [] and "/Game/StarterContent/Maps/Minimal" in args.problems[0]
+
+
+def test_old_building_generates_its_missing_texture_before_its_levels(tmp_path, monkeypatch):
+    dispatched = []
+    monkeypatch.setattr(build, "run_job", lambda args, name, tasks, **k: dispatched.append((name, tasks)))
+    args = Namespace(dataset=tmp_path, force=True, problems=[])
+    cases = [c for c in catalog.load_cases(None, None) if c.scene_id == "old-building"]
+    assert len(cases) == 6 and all("Cabin_Pack" in c.packs for c in cases)
+    build.step_gt(args, cases, {})
+    build.step_inputs(args, cases, {})
+    for name, tasks in dispatched:
+        assert tasks[0]["kind"] == "supplement", name
+        assert tasks[0]["ops"][0]["destination"] == "/Game/Cabin_Pack/Master_Mat/T_MacroVariation"
+        assert all(t["kind"] != "supplement" for t in tasks[1:])
+    assert [len(tasks) for _, tasks in dispatched] == [2, 7]
+
+
+def test_check_wants_starter_content_not_the_generated_cabin_pack(tmp_path):
+    project = _project(tmp_path)
+    content = project.parent / "Content"
+    cases = [c for c in catalog.load_cases(None, None) if c.scene_id == "old-building"]
+    (content / "OldBuilding").mkdir()
+    blocked = build.check_packs(project, cases)["cases"][cases[0].case_id]
+    assert "Cabin_Pack" not in blocked["missing_roots"]
+    assert "/Game/StarterContent/Textures/T_MacroVariation" in blocked["missing_assets"]

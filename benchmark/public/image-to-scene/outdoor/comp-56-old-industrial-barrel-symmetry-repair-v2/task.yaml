@@ -43,4 +43,5 @@ experiment:
 assets:
   packs:
   - OldBuilding
+  - Cabin_Pack
   - Code4SceneInputs
