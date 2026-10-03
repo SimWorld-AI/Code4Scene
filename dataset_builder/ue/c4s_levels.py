@@ -13,6 +13,8 @@ Nothing here saves a package that belongs to a Fab pack.
 """
 
 import hashlib
+import os
+import shutil
 import uuid
 
 import unreal
@@ -390,19 +392,22 @@ def ensure_supplements(ops):
 
     ``duplicate_asset`` copies an installed asset to the package path a pack
     references, e.g. Starter Content's macro texture for the
-    ``/Game/Cabin_Pack/...`` texture that OldBuilding's materials expect. No
-    map or material is resaved.
+    ``/Game/Cabin_Pack/...`` texture that OldBuilding's materials expect.
+    ``create_asset`` creates an empty asset of a class in a generated root,
+    which a package redirect substitutes for the missing one (an empty PCG
+    graph generates nothing). ``copy_engine_content`` copies content
+    that ships with the engine, unchanged, from a directory under the engine
+    root. No map or material is resaved.
     """
     library = unreal.EditorAssetLibrary
     done = []
     for op in ops:
-        if op.get("op") != "duplicate_asset":
-            raise BuildError("unknown supplement op {}".format(op.get("op")))
-        source, destination = op["source"], op["destination"]
-        if library.does_asset_exist(destination):
-            asset = library.load_asset(destination)
+        kind = op.get("op")
+        source, destination = op.get("source"), op["destination"]
+        check = op.get("check_asset", destination)
+        if library.does_asset_exist(check):
             created = False
-        else:
+        elif kind == "duplicate_asset":
             if library.load_asset(source) is None:
                 raise BuildError("supplement source {} is not installed (install the pack that "
                                  "ships it, e.g. Starter Content)".format(source))
@@ -410,9 +415,35 @@ def ensure_supplements(ops):
             if asset is None or not library.save_asset(destination, only_if_is_dirty=False):
                 raise BuildError("could not create {} from {}".format(destination, source))
             created = True
+        elif kind == "create_asset":
+            folder, name = destination.rsplit("/", 1)
+            cls = getattr(unreal, op["asset_class"])
+            factory = getattr(unreal, op["asset_class"] + "Factory")()
+            asset = unreal.AssetToolsHelpers.get_asset_tools().create_asset(name, folder, cls, factory)
+            if asset is None or not library.save_asset(destination, only_if_is_dirty=False):
+                raise BuildError("could not create {} (is the plugin that defines {} enabled?)".format(
+                    destination, op["asset_class"]))
+            created = True
+        elif kind == "copy_engine_content":
+            root = unreal.Paths.convert_relative_path_to_full(unreal.Paths.root_dir())
+            src = os.path.join(root, source)
+            dst = os.path.join(unreal.Paths.convert_relative_path_to_full(unreal.Paths.project_content_dir()),
+                               destination[len("/Game/"):])
+            if not os.path.isdir(src):
+                raise BuildError("engine content {} not found under {}".format(source, root))
+            if os.path.exists(dst):
+                raise BuildError("{} exists without {}; remove it first".format(dst, check))
+            shutil.copytree(src, dst)
+            unreal.AssetRegistryHelpers.get_asset_registry().scan_paths_synchronous([destination], True)
+            created = True
+        else:
+            raise BuildError("unknown supplement op {}".format(kind))
+        asset = library.load_asset(check)
         expected = op.get("asset_class")
+        if asset is None:
+            raise BuildError("{} did not load after its supplement step".format(check))
         if expected and asset.get_class().get_name() != expected:
-            raise BuildError("{} is a {}, expected {}".format(destination, asset.get_class().get_name(), expected))
+            raise BuildError("{} is a {}, expected {}".format(check, asset.get_class().get_name(), expected))
         done.append({"destination": destination, "source": source, "created": created})
     return {"supplements": done}
 

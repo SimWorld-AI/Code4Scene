@@ -268,3 +268,49 @@ def test_check_wants_starter_content_not_the_generated_cabin_pack(tmp_path):
     blocked = build.check_packs(project, cases)["cases"][cases[0].case_id]
     assert "Cabin_Pack" not in blocked["missing_roots"]
     assert "/Game/StarterContent/Textures/T_MacroVariation" in blocked["missing_assets"]
+
+
+def test_middle_east_and_dungeon_generate_their_missing_content_before_their_levels(tmp_path, monkeypatch):
+    dispatched = []
+    monkeypatch.setattr(build, "run_job", lambda args, name, tasks, **k: dispatched.append((name, tasks)))
+    args = Namespace(dataset=tmp_path, force=True, problems=[])
+    for scene_id, root, count, destinations in (
+            ("middle-east-river", "Rocket", 7, ["/Game/Rocket/VFX/NiagaraSystems/Textures/T_Fire_Tiled_D",
+                                                "/Game/MiddleEasternTownSupplement/PCG/PCG_Foliage"]),
+            ("dungeon-hall", "Mannequin", 2, ["/Game/Mannequin"])):
+        dispatched.clear()
+        cases = [c for c in catalog.load_cases(None, None) if c.scene_id == scene_id]
+        assert len(cases) == count and all(root in c.packs for c in cases)
+        assert not catalog.load_scene(scene_id)["known_unresolved_dependencies"]
+        build.step_gt(args, cases, {})
+        build.step_inputs(args, cases, {})
+        for name, tasks in dispatched:
+            assert tasks[0]["kind"] == "supplement", name
+            assert [op["destination"] for op in tasks[0]["ops"]] == destinations
+            assert all(t["kind"] != "supplement" for t in tasks[1:])
+        assert [len(tasks) for _, tasks in dispatched] == [2, count + 1]
+
+
+def test_the_pcg_graph_supplement_is_where_the_redirect_points():
+    redirects = build.PACKAGE_REDIRECTS.read_text(encoding="utf-8")
+    ops = catalog.load_scene("middle-east-river")["supplements"]
+    graph = next(op for op in ops if op["op"] == "create_asset")
+    assert ('+PackageRedirects=(OldName="/Game/MiddleEasternTown/PCG/PCG_Foliage",'
+            f'NewName="{graph["destination"]}")') in redirects
+    assert graph["destination"].split("/")[2] in catalog.GENERATED_ROOTS
+
+
+def test_check_wants_starter_content_not_the_generated_roots(tmp_path):
+    project = _project(tmp_path)
+    content = project.parent / "Content"
+    (content / "MiddleEasternTown").mkdir()
+    (content / "Dungeon").mkdir()
+    cases = [c for c in catalog.load_cases(None, None) if c.scene_id in ("middle-east-river", "dungeon-hall")]
+    report = build.check_packs(project, cases)["cases"]
+    for case in cases:
+        blocked = report[case.case_id]
+        assert not {"Rocket", "MiddleEasternTownSupplement", "Mannequin"} & set(blocked["missing_roots"])
+        if case.scene_id == "middle-east-river":
+            assert "/Game/StarterContent/Textures/T_Fire_Tiled_D" in blocked["missing_assets"]
+        else:
+            assert not any("Mannequin" in a or a.startswith("Templates/") for a in blocked["missing_assets"])

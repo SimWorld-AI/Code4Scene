@@ -36,5 +36,6 @@ verifiers:
 assets:
   packs:
   - Dungeon
+  - Mannequin
   - Code4SceneInputs
 status: ready

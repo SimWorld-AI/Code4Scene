@@ -409,10 +409,22 @@
     "/Game/MiddleEasternTown/Meshes/Building01_Meshes/LOD0/SM_Enbankment_01_LOD0.SM_Enbankment_01_LOD0",
     "/Game/MiddleEasternTown/Meshes/Building01_Meshes/LOD0/Buildings/CityWall/SM_B03_FloorTile01a_LOD0.SM_B03_FloorTile01a_LOD0"
   ],
-  "known_unresolved_dependencies": [
-    "/Game/MiddleEasternTown/PCG/PCG_Foliage",
-    "/Game/Rocket/VFX/NiagaraSystems/Textures/T_Fire_Tiled_D"
+  "supplements": [
+    {
+      "op": "duplicate_asset",
+      "source": "/Game/StarterContent/Textures/T_Fire_Tiled_D",
+      "destination": "/Game/Rocket/VFX/NiagaraSystems/Textures/T_Fire_Tiled_D",
+      "asset_class": "Texture2D",
+      "reason": "the pack's levels reference this fire texture, which the pack does not ship"
+    },
+    {
+      "op": "create_asset",
+      "destination": "/Game/MiddleEasternTownSupplement/PCG/PCG_Foliage",
+      "asset_class": "PCGGraph",
+      "reason": "the pack's levels reference /Game/MiddleEasternTown/PCG/PCG_Foliage, which the pack does not ship; an empty graph generates nothing, and benchmark/package_redirects.txt points the reference here"
+    }
   ],
+  "known_unresolved_dependencies": [],
   "expected_fingerprint": {
     "file": "gt.fingerprint.json",
     "algorithm": "c4s-fp-1",

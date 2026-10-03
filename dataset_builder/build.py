@@ -160,8 +160,9 @@ def recipe_assets(recipe: dict) -> list[str]:
 
 
 def supplement_sources(scene: dict) -> list[str]:
-    """Assets a scene's supplements are generated from; they must be installed."""
-    return [op["source"] for op in scene.get("supplements") or () if op.get("source")]
+    """Installed assets a scene's supplements are generated from (engine content excluded)."""
+    return [op["source"] for op in scene.get("supplements") or ()
+            if str(op.get("source", "")).startswith("/Game/")]
 
 
 def supplement_tasks(scene_ids: list[str]) -> list[dict]:

@@ -75,6 +75,16 @@ The dataset builder creates it (as `Content/Cabin_Pack`) from Starter
 Content's `T_MacroVariation` before it builds the `old-building` levels, so
 there is nothing to download for `Cabin_Pack`.
 
+Likewise, the `MiddleEasternTown` levels reference
+`/Game/Rocket/VFX/NiagaraSystems/Textures/T_Fire_Tiled_D` and
+`/Game/MiddleEasternTown/PCG/PCG_Foliage`, and the `Dungeon` mannequin skeleton
+references `/Game/Mannequin/Character/Mesh/SK_Mannequin_Female`; neither pack
+ships them. The dataset builder creates `Content/Rocket` from Starter Content's
+`T_Fire_Tiled_D`, an empty PCG graph in `Content/MiddleEasternTownSupplement`
+(reached through a package redirect), and `Content/Mannequin` by copying Epic's
+template mannequin from the engine, so there is nothing to download for
+`Rocket`, `MiddleEasternTownSupplement` or `Mannequin`.
+
 ## Which settings need which packs
 
 You only need the packs for the settings you plan to build.
@@ -142,7 +152,7 @@ The last column lists settings with case counts. T2S = text-to-scene, I2S-in = i
 | `Ruins` | [Ruins](https://www.fab.com/listings/e108cf47-d633-4584-a392-0eef0caaf484) | Anil Isbilir | Standard License | $49.99 | Yes | 4.20-4.27, 5.0-5.8 | complete project | T2S (6) |
 | `RuralAustralia` | [Rural Australia](https://www.fab.com/listings/1c1467ce-a2f5-4be1-8988-9069f90a8571) | Andrew Svanberg Hamilton | UE Marketplace | Free | Yes | 4.26-4.27, 5.0-5.4 | asset pack | I2S-out (3) |
 | `Scrapopolis` | [Scrapopolis - Steampunk village](https://www.fab.com/listings/fa19fa3a-62e4-4528-82dc-19bc66521f3b) | ARK.KRA | — | — | Yes | — | — | T2S (4) |
-| `StarterContent` | Starter Content (ships with the engine) | Epic Games | Unreal Engine EULA (engine content) | Free | n/a | 5.8 | engine feature pack | I2S-in (2), I2S-out (6) |
+| `StarterContent` | Starter Content (ships with the engine) | Epic Games | Unreal Engine EULA (engine content) | Free | n/a | 5.8 | engine feature pack | I2S-in (2), I2S-out (13) |
 | `Street_NY` | [Street New York](https://www.fab.com/listings/d327e87a-7aaf-4e4e-b3a9-69e98e0bc25a) | ART EQUILIBRIUM | Standard License | $34.99 | Yes | 4.20-5.8 | asset pack | T2S (5), I2S-out (5) |
 | `TrainStation` | **Not yet identified** (see below) | ? | ? | ? | Yes | ? | ? | I2S-out (5) |
 | `UrbanDecay` | [Post-Industrial Environment](https://www.fab.com/listings/060b1fea-0ed5-4172-b59d-165ea89ae606) | Joshua Giles | UE Marketplace | $49.99 | Yes | 4.25-5.1 | asset pack | T2S (5) |

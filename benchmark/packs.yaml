@@ -423,7 +423,10 @@ packs:
   match_confidence: exact_uid_confirmed
   notes: >-
     Free. Exact counts (135 meshes, 446 textures). The listing notes it bundles assets from PackDev packs
-    (skeletons, swords, candles, torches, tavern props), which matches the subfolders.
+    (skeletons, swords, candles, torches, tavern props), which matches the subfolders. Its mannequin
+    skeleton references /Game/Mannequin/Character/Mesh/SK_Mannequin_Female, Epic's template mannequin,
+    which the pack does not ship; the dataset builder copies it unchanged from the engine's
+    Templates/TemplateResources/High/Mannequin (Content/Mannequin, listed in the cases' packs).
 - folder: EgyptianTemple
   title: Egyptian Temple
   seller: Infuse Studio
@@ -751,7 +754,10 @@ packs:
   notes: >-
     Title and seller match (the project is named TownGigapack). The reference copy holds more assets than
     the listing reports (it may include later updates). Complete project: copy Content/MiddleEasternTown
-    into your project.
+    into your project. Its levels reference /Game/Rocket/VFX/NiagaraSystems/Textures/T_Fire_Tiled_D and
+    /Game/MiddleEasternTown/PCG/PCG_Foliage, which the pack does not ship; the dataset builder generates
+    the texture from Starter Content (Content/Rocket) and an empty PCG graph (Content/MiddleEasternTownSupplement,
+    reached through a package redirect), both listed in the cases' packs.
 - folder: Modular_Gardens
   title: Classical Modular Gardens
   seller: ScottFlinders
@@ -1009,24 +1015,33 @@ packs:
   used_by:
     counts:
       image_to_scene_indoor: 2
-      image_to_scene_outdoor: 6
+      image_to_scene_outdoor: 13
     image_to_scene_indoor:
     - indoor-atomic-v1-027
     - indoor-atomic-v1-060
     image_to_scene_outdoor:
+    - comp-13-middle-east-market-awning-recovery-v4
+    - comp-15-middle-east-produce-stall-reset-v4
+    - comp-16-middle-east-fountain-reset-v2
     - comp-29-old-industrial-bench-reset-v2
     - comp-30-old-industrial-air-tank-recovery-v2
     - comp-31-old-industrial-pallet-bay-repair-v2
+    - comp-47-middle-east-rooftop-awning-replacement-v4
+    - comp-48-middle-east-market-awning-symmetry-repair-v3
     - comp-55-old-industrial-pallet-recovery-v3
     - comp-56-old-industrial-barrel-symmetry-repair-v2
+    - comp-67-middle-east-canopy-recovery-v2
+    - comp-68-middle-east-canopy-pair-repair-v2
     - comp-76-old-industrial-barrel-row-repair-v2
   demo_maps_used: []
   match_confidence: not_applicable
   notes: >-
     No download. Add it with Add > Add Feature or Content Pack > Starter Content in the editor, or tick
     "Starter Content" when you create the project. It must end up at Content/StarterContent. Needed for
-    the CyberpunkWC scenes (two particle systems) and for the OldBuilding scene, whose Cabin_Pack
-    texture the dataset builder generates from Starter Content's T_MacroVariation.
+    the CyberpunkWC scenes (two particle systems), for the OldBuilding scene, whose Cabin_Pack
+    texture the dataset builder generates from Starter Content's T_MacroVariation, and for the
+    MiddleEasternTown scene, whose Rocket fire texture it generates from Starter Content's
+    T_Fire_Tiled_D.
 - folder: Street_NY
   title: Street New York
   seller: ART EQUILIBRIUM
