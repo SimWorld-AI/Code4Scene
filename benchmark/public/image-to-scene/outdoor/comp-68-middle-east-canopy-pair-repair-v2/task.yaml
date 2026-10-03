@@ -43,4 +43,6 @@ experiment:
 assets:
   packs:
   - MiddleEasternTown
+  - Rocket
+  - MiddleEasternTownSupplement
   - Code4SceneInputs

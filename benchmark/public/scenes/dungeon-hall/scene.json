@@ -21,9 +21,17 @@
     "/Game/Dungeon/Meshes/Props/SM_Wooden_Beam.SM_Wooden_Beam",
     "/Game/Dungeon/Meshes/Props/SM_Torture_Devices_Chains.SM_Torture_Devices_Chains"
   ],
-  "known_unresolved_dependencies": [
-    "/Game/Mannequin/Character/Mesh/SK_Mannequin_Female"
+  "supplements": [
+    {
+      "op": "copy_engine_content",
+      "source": "Templates/TemplateResources/High/Mannequin/Content",
+      "destination": "/Game/Mannequin",
+      "check_asset": "/Game/Mannequin/Character/Mesh/SK_Mannequin_Female",
+      "asset_class": "SkeletalMesh",
+      "reason": "the pack's mannequin skeleton references Epic's template mannequin, which the pack does not ship; it is copied unchanged from the engine"
+    }
   ],
+  "known_unresolved_dependencies": [],
   "expected_fingerprint": {
     "file": "gt.fingerprint.json",
     "algorithm": "c4s-fp-1",

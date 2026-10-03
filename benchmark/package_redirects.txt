@@ -15,3 +15,4 @@
 +PackageRedirects=(OldName="/Game/Dinner/Textures/tjzjeaaaw_4K_Normal",NewName="/Game/Diner/Textures/TX_Metal01_Normal")
 +PackageRedirects=(OldName="/Game/Dinner/Textures/tjzjeaaaw_4K_AORM",NewName="/Game/Diner/Textures/TX_Metal01_AORM")
 +PackageRedirects=(OldName="/Game/Developers/jordanwalker/RenderStyle/Blueprints/ToolAssets/SM_GodRay_Plane",NewName="/Game/VictorianRoom/Blueprints/Lightshaft/SM_GodRay_Plane")
++PackageRedirects=(OldName="/Game/MiddleEasternTown/PCG/PCG_Foliage",NewName="/Game/MiddleEasternTownSupplement/PCG/PCG_Foliage")

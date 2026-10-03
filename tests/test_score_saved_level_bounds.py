@@ -13,7 +13,7 @@ from code4scene.core import inventory
 
 REPO = Path(__file__).resolve().parents[1]
 TASK = REPO / "benchmark/public/image-to-scene/indoor/indoor-atomic-v1-013/task.yaml"
-DUNGEON_TASK = REPO / "benchmark/public/image-to-scene/indoor/indoor-atomic-v1-041/task.yaml"
+HIGH_SCHOOL_TASK = REPO / "benchmark/public/image-to-scene/indoor/indoor-atomic-v2-053/task.yaml"
 GT = "/Game/Code4SceneGT/archviz-apartment/GT"
 CANDIDATE = "/Game/SavedScenes/run_013"
 WORKING = CANDIDATE + "__c4s_scoring"
@@ -108,10 +108,11 @@ def test_a_candidate_the_editor_cannot_open_stops_the_run(monkeypatch, tmp_path)
 
 
 def test_the_scenes_missing_packages_are_allowed_for_its_cases_only(monkeypatch, tmp_path):
-    record, _ = _score(monkeypatch, tmp_path, _Editor(gt_present=False), task=DUNGEON_TASK)
+    record, _ = _score(monkeypatch, tmp_path, _Editor(gt_present=False), task=HIGH_SCHOOL_TASK)
     allowance = record["dependency_integrity_allowance"]
     assert allowance["mode"] == "shared_baseline_missing_dependencies.v2"
-    assert allowance["allowed_unresolved"] == ["/Game/Mannequin/Character/Mesh/SK_Mannequin_Female"]
+    assert allowance["allowed_unresolved"] == ["/Game/ArchVis/Mesh/Test/Round_Table",
+                                               "/Game/Luminous_Sign_Pack/Meshes/LasVegas_Sign"]
     other, _ = _score(monkeypatch, tmp_path / "other", _Editor(gt_present=False))
     assert other["dependency_integrity_allowance"] is None
 

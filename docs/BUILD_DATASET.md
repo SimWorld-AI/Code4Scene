@@ -61,13 +61,20 @@ copy `<UE>/Templates/TP_BlankBP/Config` into a new directory, copy
 `Content/` directory. A minimal `.uproject` with only `"FileVersion": 3` and an
 empty `"Plugins"` list also works; step 3 adds the plugins the builder needs.
 
-The indoor scene `cyberpunk-toilet` and the outdoor scene `old-building` also
-use Epic's **Starter Content** (`Content/StarterContent`). Add it with *Add >
-Add Feature or Content Pack > Content > Starter Content*. For `old-building` the
-`gt` and `inputs` steps copy its `T_MacroVariation` texture to
+The indoor scene `cyberpunk-toilet` and the outdoor scenes `old-building` and
+`middle-east-river` also use Epic's **Starter Content**
+(`Content/StarterContent`). Add it with *Add > Add Feature or Content Pack >
+Content > Starter Content*. For `old-building` the `gt` and `inputs` steps copy
+its `T_MacroVariation` texture to
 `/Game/Cabin_Pack/Master_Mat/T_MacroVariation`, which the pack's materials
 reference but the pack does not ship (the scene's `supplements` in
-`scene.json`).
+`scene.json`). In the same way, for `middle-east-river` they copy its
+`T_Fire_Tiled_D` texture to `/Game/Rocket/VFX/NiagaraSystems/Textures/` and
+create an empty PCG graph in `Content/MiddleEasternTownSupplement` (a package
+redirect from `benchmark/package_redirects.txt` points the pack's
+`/Game/MiddleEasternTown/PCG/PCG_Foliage` reference at it), and for
+`dungeon-hall` they copy Epic's template mannequin from the engine's
+`Templates/TemplateResources/High/Mannequin` to `Content/Mannequin`.
 
 ## 2. Install the packs
 
